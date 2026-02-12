@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
@@ -9,8 +10,9 @@ export default function Navigation() {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Leistungen", href: "/leistungen" },
-    { label: "Preise", href: "/preise" },
+    { label: "SEO", href: "/seo" },
+    { label: "Webdesign", href: "/webdesign" },
+    { label: "Blog", href: "/blog" },
     { label: "Über mich", href: "/ueber-mich" },
     { label: "Kontakt", href: "/kontakt" },
   ];
@@ -20,10 +22,14 @@ export default function Navigation() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-poppins font-bold text-primary">
-              MyHiwi
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/myhiwi-logo-primary.svg"
+              alt="MyHiwi"
+              width={160}
+              height={48}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,7 +47,7 @@ export default function Navigation() {
               href="/kontakt"
               className="btn btn-cta"
             >
-              Termin buchen
+              Kontakt
             </Link>
           </div>
 
@@ -78,7 +84,7 @@ export default function Navigation() {
                 className="btn btn-cta mx-4"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Termin buchen
+                Kontakt
               </Link>
             </div>
           </div>

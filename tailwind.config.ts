@@ -10,23 +10,25 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#1a365d',
-          dark: '#0f2744',
+          DEFAULT: '#1e3a5f',
+          dark: '#0f172a',
         },
         secondary: {
           DEFAULT: '#f8fafc',
         },
         accent: {
-          DEFAULT: '#2563eb',
-          hover: '#1d4ed8',
+          DEFAULT: '#3b82f6',
+          hover: '#2563eb',
         },
         cta: {
-          DEFAULT: '#f59e0b',
-          hover: '#d97706',
+          DEFAULT: '#3b82f6',
+          hover: '#2563eb',
+        },
+        cyan: {
+          DEFAULT: '#06b6d4',
         },
       },
       fontFamily: {
-        poppins: ['var(--font-poppins)', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
       },
       backdropBlur: {

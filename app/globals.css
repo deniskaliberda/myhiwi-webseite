@@ -2,21 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
-
 :root {
-  /* Color Variables - Based on STYLE_GUIDE.md */
-  --color-primary: #1a365d;
-  --color-primary-dark: #0f2744;
+  /* Color Variables - Based on Brand Guidelines */
+  --color-primary: #1e3a5f;
+  --color-primary-dark: #0f172a;
   --color-secondary: #f8fafc;
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
-  --color-cta: #f59e0b;
-  --color-cta-hover: #d97706;
-  
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-cta: #3b82f6;
+  --color-cta-hover: #2563eb;
+
   /* Typography Variables */
-  --font-poppins: 'Poppins', sans-serif;
   --font-inter: 'Inter', sans-serif;
   
   /* Shadow Variables */
@@ -44,7 +40,7 @@ body {
   font-family: var(--font-inter);
   font-size: 16px;
   line-height: 1.6;
-  color: #1e293b;
+  color: #0f172a;
   background-color: var(--color-secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -52,7 +48,7 @@ body {
 
 /* Typography Styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins);
+  font-family: var(--font-inter);
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-primary);
@@ -91,15 +87,19 @@ h6 {
 /* Mobile Typography Adjustments */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem; /* 40px */
-  }
-  
-  h2 {
     font-size: 2rem; /* 32px */
   }
-  
+
+  h2 {
+    font-size: 1.75rem; /* 28px */
+  }
+
   h3 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.25rem; /* 20px */
+  }
+
+  h4 {
+    font-size: 1.125rem; /* 18px */
   }
 }
 
@@ -107,7 +107,13 @@ h6 {
 .container-custom {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 1.5rem;
+  }
 }
 
 /* Glassmorphism Effect for Navigation */
@@ -161,9 +167,15 @@ h6 {
   background: white;
   border: 1px solid #f1f5f9;
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
 }
 
 .card:hover {
@@ -183,6 +195,241 @@ h6 {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(59, 130, 246, 0.2); }
+  50% { border-color: rgba(59, 130, 246, 0.5); }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out;
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #3b82f6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+/* Animated Gradient Background */
+.gradient-bg-animated {
+  background: linear-gradient(-45deg, #1e3a5f, #2563eb, #06b6d4, #3b82f6);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* Shimmer Button Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Gradient Border Card */
+.card-gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .card-gradient-border {
+    padding: 2rem;
+  }
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #3b82f6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.card-gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Glow Effect */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-accent:hover {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.3), 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Decorative Dots Pattern */
+.dots-pattern {
+  background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Animated Underline for Links */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; animation-fill-mode: both; }
+.stagger-2 { animation-delay: 0.2s; animation-fill-mode: both; }
+.stagger-3 { animation-delay: 0.3s; animation-fill-mode: both; }
+.stagger-4 { animation-delay: 0.4s; animation-fill-mode: both; }
+
+/* Quiz Step Slide Transitions */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.4s ease-out;
 }

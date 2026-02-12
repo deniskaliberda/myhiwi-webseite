@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -10,9 +11,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-poppins font-bold mb-4 text-white">
-              MyHiwi
-            </h3>
+            <Image
+              src="/myhiwi-logo-dark.svg"
+              alt="MyHiwi"
+              width={160}
+              height={48}
+              className="mb-4"
+            />
             <p className="text-slate-300 mb-4">
               Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.
             </p>
@@ -20,7 +25,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-poppins font-semibold mb-4 text-white">
+            <h4 className="text-lg font-inter font-semibold mb-4 text-white">
               Navigation
             </h4>
             <ul className="space-y-2">
@@ -30,13 +35,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/leistungen" className="text-slate-300 hover:text-white transition-colors">
-                  Leistungen
+                <Link href="/seo" className="text-slate-300 hover:text-white transition-colors">
+                  SEO
                 </Link>
               </li>
               <li>
-                <Link href="/preise" className="text-slate-300 hover:text-white transition-colors">
-                  Preise
+                <Link href="/webdesign" className="text-slate-300 hover:text-white transition-colors">
+                  Webdesign
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-slate-300 hover:text-white transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>
@@ -54,7 +64,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-poppins font-semibold mb-4 text-white">
+            <h4 className="text-lg font-inter font-semibold mb-4 text-white">
               Kontakt
             </h4>
             <ul className="space-y-3">

@@ -12,7 +12,7 @@ export default function ImpressumPage() {
         <h1 className="mb-8">Impressum</h1>
         
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-poppins font-bold text-primary mb-4">
+          <h2 className="text-2xl font-inter font-bold text-primary mb-4">
             Angaben gemäß § 5 TMG
           </h2>
           
@@ -29,7 +29,7 @@ export default function ImpressumPage() {
           </div>
 
           <div className="card mb-8">
-            <h3 className="text-xl font-poppins font-bold text-primary mb-4">Kontakt</h3>
+            <h3 className="text-xl font-inter font-bold text-primary mb-4">Kontakt</h3>
             <p className="text-slate-700">
               <strong>E-Mail:</strong> <a href="mailto:kontakt@myhiwe.de" className="text-accent hover:underline">kontakt@myhiwe.de</a><br />
               <strong>Telefon:</strong> +49 (0) XXX XXXXXXX
@@ -37,7 +37,7 @@ export default function ImpressumPage() {
           </div>
 
           <div className="card mb-8">
-            <h3 className="text-xl font-poppins font-bold text-primary mb-4">Umsatzsteuer-ID</h3>
+            <h3 className="text-xl font-inter font-bold text-primary mb-4">Umsatzsteuer-ID</h3>
             <p className="text-slate-700">
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
               [Ihre USt-IdNr.]
@@ -45,7 +45,7 @@ export default function ImpressumPage() {
           </div>
 
           <div className="card mb-8">
-            <h3 className="text-xl font-poppins font-bold text-primary mb-4">
+            <h3 className="text-xl font-inter font-bold text-primary mb-4">
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h3>
             <p className="text-slate-700">
@@ -56,7 +56,7 @@ export default function ImpressumPage() {
           </div>
 
           <div className="card mb-8">
-            <h3 className="text-xl font-poppins font-bold text-primary mb-4">
+            <h3 className="text-xl font-inter font-bold text-primary mb-4">
               EU-Streitschlichtung
             </h3>
             <p className="text-slate-700">
@@ -69,7 +69,7 @@ export default function ImpressumPage() {
           </div>
 
           <div className="card">
-            <h3 className="text-xl font-poppins font-bold text-primary mb-4">
+            <h3 className="text-xl font-inter font-bold text-primary mb-4">
               Verbraucherstreitbeilegung / Universalschlichtungsstelle
             </h3>
             <p className="text-slate-700">

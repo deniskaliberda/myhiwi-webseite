@@ -13,11 +13,11 @@ export default function DatenschutzPage() {
         
         <div className="prose prose-lg max-w-none">
           <div className="card mb-8">
-            <h2 className="text-2xl font-poppins font-bold text-primary mb-4">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
               1. Datenschutz auf einen Blick
             </h2>
             
-            <h3 className="text-xl font-poppins font-bold text-primary mb-3 mt-6">
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
               Allgemeine Hinweise
             </h3>
             <p className="text-slate-700 mb-4">
@@ -26,7 +26,7 @@ export default function DatenschutzPage() {
               mit denen Sie persönlich identifiziert werden können.
             </p>
 
-            <h3 className="text-xl font-poppins font-bold text-primary mb-3 mt-6">
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
               Datenerfassung auf dieser Website
             </h3>
             <p className="text-slate-700 mb-4">
@@ -37,7 +37,7 @@ export default function DatenschutzPage() {
           </div>
 
           <div className="card mb-8">
-            <h2 className="text-2xl font-poppins font-bold text-primary mb-4">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
               2. Hosting
             </h2>
             <p className="text-slate-700 mb-4">
@@ -51,11 +51,11 @@ export default function DatenschutzPage() {
           </div>
 
           <div className="card mb-8">
-            <h2 className="text-2xl font-poppins font-bold text-primary mb-4">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
               3. Allgemeine Hinweise und Pflichtinformationen
             </h2>
             
-            <h3 className="text-xl font-poppins font-bold text-primary mb-3 mt-6">
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
               Datenschutz
             </h3>
             <p className="text-slate-700 mb-4">
@@ -64,7 +64,7 @@ export default function DatenschutzPage() {
               Datenschutzvorschriften sowie dieser Datenschutzerklärung.
             </p>
 
-            <h3 className="text-xl font-poppins font-bold text-primary mb-3 mt-6">
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
               Hinweis zur verantwortlichen Stelle
             </h3>
             <p className="text-slate-700 mb-4">
@@ -80,11 +80,11 @@ export default function DatenschutzPage() {
           </div>
 
           <div className="card mb-8">
-            <h2 className="text-2xl font-poppins font-bold text-primary mb-4">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
               4. Datenerfassung auf dieser Website
             </h2>
             
-            <h3 className="text-xl font-poppins font-bold text-primary mb-3 mt-6">
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
               Kontaktformular
             </h3>
             <p className="text-slate-700 mb-4">
@@ -93,7 +93,7 @@ export default function DatenschutzPage() {
               der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
             </p>
 
-            <h3 className="text-xl font-poppins font-bold text-primary mb-3 mt-6">
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
               Server-Log-Dateien
             </h3>
             <p className="text-slate-700 mb-4">
@@ -111,11 +111,11 @@ export default function DatenschutzPage() {
           </div>
 
           <div className="card mb-8">
-            <h2 className="text-2xl font-poppins font-bold text-primary mb-4">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
               5. Analyse-Tools und Tools von Drittanbietern
             </h2>
             
-            <h3 className="text-xl font-poppins font-bold text-primary mb-3 mt-6">
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
               Calendly (Terminbuchung)
             </h3>
             <p className="text-slate-700 mb-4">
@@ -133,7 +133,7 @@ export default function DatenschutzPage() {
           </div>
 
           <div className="card mb-8">
-            <h2 className="text-2xl font-poppins font-bold text-primary mb-4">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
               6. Ihre Rechte
             </h2>
             <p className="text-slate-700 mb-4">

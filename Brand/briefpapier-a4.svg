@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="595" height="842">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6" />
+      <stop offset="100%" style="stop-color:#1e40af" />
+    </linearGradient>
+    <linearGradient id="topBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e40af" />
+      <stop offset="100%" style="stop-color:#3b82f6" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="595" height="842" fill="white"/>
+  <rect x="0" y="0" width="595" height="4" fill="url(#topBar)"/>
+  
+  <!-- Icon: 120x120 scaled to 48x48, positioned at (50, 30) -->
+  <g transform="translate(50, 30) scale(0.4)">
+    <rect x="0" y="0" width="120" height="120" rx="26" fill="url(#iconGrad)"/>
+    <path d="M34 90 L34 48 L60 28 L86 48 L86 90" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="34" y1="66" x2="86" y2="66" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    <path d="M47 40 L60 25 L73 40" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  </g>
+  <text x="108" y="58" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="24" fill="#0f172a">
+    <tspan font-weight="300">My</tspan><tspan font-weight="700">Hiwi</tspan>
+  </text>
+  <text x="108" y="74" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="8" fill="#64748b" font-weight="400" letter-spacing="2">DEIN DIGITALER HIWI</text>
+  
+  <text x="545" y="42" text-anchor="end" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="8" fill="#64748b">myhiwi.de</text>
+  <text x="545" y="55" text-anchor="end" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="8" fill="#64748b">denis@myhiwi.de</text>
+  <text x="545" y="68" text-anchor="end" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="8" fill="#64748b">+49 XXX XXXXXXXX</text>
+  
+  <line x1="50" y1="95" x2="545" y2="95" stroke="#e2e8f0" stroke-width="0.5"/>
+  
+  <text x="50" y="135" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="7" fill="#94a3b8" text-decoration="underline">MyHiwi &#183; Denis Kaliberda &#183; Musterstra&#223;e 1 &#183; 82319 Starnberg</text>
+  
+  <text x="50" y="165" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#334155">Firma Muster GmbH</text>
+  <text x="50" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#334155">Herr Max Mustermann</text>
+  <text x="50" y="195" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#334155">Musterweg 42</text>
+  <text x="50" y="210" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#334155">80331 M&#252;nchen</text>
+  
+  <text x="545" y="210" text-anchor="end" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#334155">Starnberg, 10. Februar 2026</text>
+  
+  <text x="50" y="265" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="11" fill="#0f172a" font-weight="700">Betreff: Ihr SEO-Projekt &#8212; Angebot und n&#228;chste Schritte</text>
+  
+  <text x="50" y="300" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#334155">Sehr geehrter Herr Mustermann,</text>
+  <text x="50" y="325" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#94a3b8" font-style="italic">[Brieftext hier einf&#252;gen]</text>
+  
+  <text x="50" y="440" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#334155">Mit freundlichen Gr&#252;&#223;en</text>
+  <text x="50" y="485" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#0f172a" font-weight="600">Denis Kaliberda</text>
+  <text x="50" y="500" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="9" fill="#3b82f6">MyHiwi &#8212; Dein digitaler Hiwi</text>
+  
+  <line x1="50" y1="790" x2="545" y2="790" stroke="#e2e8f0" stroke-width="0.5"/>
+  <text x="298" y="808" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="7" fill="#94a3b8">MyHiwi &#183; Denis Kaliberda &#183; Musterstra&#223;e 1 &#183; 82319 Starnberg</text>
+  <text x="298" y="820" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="7" fill="#94a3b8">Tel: +49 XXX XXXXXXXX &#183; E-Mail: denis@myhiwi.de &#183; Web: myhiwi.de</text>
+  <text x="298" y="832" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="7" fill="#94a3b8">Kaliberda Digital Intelligence UG (haftungsbeschr&#228;nkt) &#183; Starnberg &#183; USt-IdNr.: DEXXXXXXXXX</text>
+</svg>
