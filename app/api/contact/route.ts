@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const serviceLabels: Record<string, string> = {
   webdesign: 'Webdesign',
   seo: 'Local SEO',
@@ -47,6 +45,7 @@ function sanitize(str: string): string {
 
 export async function POST(request: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
 
     const { service, hasWebsite, business, businessCustom, challenge, challengeCustom, timeline, name, email, phone, website, message } = body;
