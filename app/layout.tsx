@@ -14,10 +14,14 @@ const inter = Inter({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: "MyHiwi - Local SEO & Webdesign für KMU",
+  title: {
+    default: "MyHiwi - Local SEO & Webdesign für KMU",
+    template: "%s",
+  },
   description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen. Messbare Sichtbarkeit durch Local SEO und professionelle, mobile-optimierte Webseiten.",
   keywords: ["Local SEO", "Webdesign", "KMU", "kleine Unternehmen", "lokale Sichtbarkeit"],
   authors: [{ name: "Denis Kaliberda" }],
+  metadataBase: new URL("https://myhiwi.de"),
   openGraph: {
     type: "website",
     locale: "de_DE",
@@ -26,6 +30,40 @@ export const metadata: Metadata = {
     title: "MyHiwi - Local SEO & Webdesign für KMU",
     description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "MyHiwi - Local SEO & Webdesign für KMU",
+    description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.",
+  },
+};
+
+// JSON-LD Structured Data
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "MyHiwi UG",
+  description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.",
+  url: "https://myhiwi.de",
+  logo: "https://myhiwi.de/myhiwi-logo.png",
+  email: "kontakt@myhiwi.de",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Dorfstraße 1a",
+    addressLocality: "Ahrensfelde",
+    postalCode: "16356",
+    addressCountry: "DE",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Denis Kaliberda",
+    url: "https://myhiwi.de/ueber-mich",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Deutschland",
+  },
+  serviceType: ["Local SEO", "Webdesign", "Google Business Profil Optimierung"],
+  priceRange: "€€",
 };
 
 export default function RootLayout({
@@ -35,6 +73,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={inter.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className="font-inter">
         <Navigation />
         <main>{children}</main>

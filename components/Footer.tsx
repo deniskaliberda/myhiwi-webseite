@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,13 +11,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <Image
-              src="/myhiwi-logo-dark.svg"
-              alt="MyHiwi"
-              width={160}
-              height={48}
-              className="mb-4"
-            />
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/myhiwi-logo.png"
+                alt="MyHiwi"
+                width={48}
+                height={48}
+                className="rounded-md brightness-110"
+              />
+              <span className="text-xl font-bold font-inter">MyHiwi</span>
+            </div>
             <p className="text-slate-300 mb-4">
               Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.
             </p>
@@ -42,6 +45,11 @@ export default function Footer() {
               <li>
                 <Link href="/webdesign" className="text-slate-300 hover:text-white transition-colors">
                   Webdesign
+                </Link>
+              </li>
+              <li>
+                <Link href="/starter" className="text-slate-300 hover:text-white transition-colors">
+                  Starter-Paket
                 </Link>
               </li>
               <li>
@@ -70,19 +78,13 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-slate-300">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@myhiwe.de" className="hover:text-white transition-colors">
-                  info@myhiwe.de
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-slate-300">
-                <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="tel:+49" className="hover:text-white transition-colors">
-                  +49 (0) XXX XXXXXXX
+                <a href="mailto:kontakt@myhiwi.de" className="hover:text-white transition-colors">
+                  kontakt@myhiwi.de
                 </a>
               </li>
               <li className="flex items-start gap-3 text-slate-300">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>Deutschland</span>
+                <span>Ahrensfelde, Brandenburg</span>
               </li>
             </ul>
           </div>

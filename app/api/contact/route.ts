@@ -139,7 +139,7 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: 'MyHiwi Kontakt <onboarding@resend.dev>',
-      to: [process.env.CONTACT_EMAIL || 'kontakt@myhiwe.de'],
+      to: [process.env.CONTACT_EMAIL || 'kontakt@myhiwi.de'],
       replyTo: email,
       subject: `Neue Anfrage: ${serviceLabels[service] || 'Allgemein'} – ${sanitize(name)}`,
       html,

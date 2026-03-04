@@ -4,9 +4,12 @@ import { CheckCircle, ArrowRight, Smartphone, Shield, Zap, Puzzle, TrendingUp } 
 import ScrollProcess from "@/components/ScrollProcess";
 
 export const metadata: Metadata = {
-  title: "Webdesign f\u00fcr kleine Unternehmen | MyHiwi",
-  description: "Professionelle, mobile-optimierte Websites f\u00fcr lokale Unternehmen. Modern, schnell und SEO-optimiert \u2013 Ihr digitaler Kundenmagnet.",
-  keywords: ["Webdesign KMU", "Website erstellen", "mobile-optimierte Website", "Webdesign f\u00fcr kleine Unternehmen"],
+  title: "Webdesign für KMU — Professionell, schnell & SEO-optimiert | MyHiwi",
+  description: "Professionelle, mobile-optimierte Websites für lokale Unternehmen. Modern, schnell und SEO-optimiert – Ihr digitaler Kundenmagnet.",
+  keywords: ["Webdesign KMU", "Website erstellen", "mobile-optimierte Website", "Webdesign für kleine Unternehmen"],
+  alternates: {
+    canonical: "https://myhiwi.de/webdesign",
+  },
 };
 
 export default function WebdesignPage() {

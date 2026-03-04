@@ -32,12 +32,16 @@ export default function TrustSection() {
       url: "https://de.wikipedia.org/wiki/Denis_Kaliberda",
     },
     {
-      name: "Sportschau",
-      url: "https://www.sportschau.de/volleyball/denis-kaliberda-100.html",
+      name: "Tagesspiegel",
+      url: "https://www.tagesspiegel.de/sport/vieles-fehlt-um-gut-volleyball-spielen-zu-konnen-denis-kaliberda-ist-der-hoffnungstrager-der-netzhoppers-13148944.html",
     },
     {
-      name: "Volleyball-Magazin",
-      url: "https://www.volleyball-magazin.de/tag/denis-kaliberda/",
+      name: "Volleyball-Verband",
+      url: "https://www.volleyball-verband.de/de/kader/spieler--amp--trainer/denis-kaliberda/",
+    },
+    {
+      name: "S\u00fcddeutsche Zeitung",
+      url: "https://www.sueddeutsche.de/sport/kaliberda-herrsching-volleyball-nationalmannschaft-li.3330428",
     },
   ];
 

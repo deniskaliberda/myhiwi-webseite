@@ -308,7 +308,6 @@ h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 4s ease-in-out infinite;
 }
 
 /* Animated Gradient Background */
@@ -432,4 +431,14 @@ h6 {
 
 .animate-slide-in-left {
   animation: slideInLeft 0.4s ease-out;
+}
+
+/* Timeline Draw Animation */
+@keyframes drawLine {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+.timeline-line-draw {
+  animation: drawLine 2s ease-out forwards;
 }

@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Datenschutzerklärung | MyHiwi",
   description: "Datenschutzerklärung gemäß DSGVO für MyHiwi - Local SEO & Webdesign für KMU.",
+  alternates: {
+    canonical: "https://myhiwi.de/datenschutz",
+  },
 };
 
 export default function DatenschutzPage() {
@@ -45,8 +48,8 @@ export default function DatenschutzPage() {
               erfasst werden, werden auf den Servern des Hosters gespeichert.
             </p>
             <p className="text-slate-700">
-              <strong>Hosting-Provider:</strong> [Ihr Hosting-Anbieter]<br />
-              [Adresse des Hosting-Anbieters]
+              <strong>Hosting-Provider:</strong> Vercel Inc.<br />
+              340 S Lemon Ave #4133, Walnut, CA 91789, USA
             </p>
           </div>
 
@@ -71,11 +74,11 @@ export default function DatenschutzPage() {
               Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
             </p>
             <p className="text-slate-700">
-              MyHiwi<br />
+              MyHiwi UG (haftungsbeschränkt)<br />
               Denis Kaliberda<br />
-              [Ihre Adresse]<br />
-              [PLZ] [Stadt]<br />
-              E-Mail: kontakt@myhiwe.de
+              Dorfstraße 1a<br />
+              16356 Ahrensfelde<br />
+              E-Mail: kontakt@myhiwi.de
             </p>
           </div>
 
@@ -150,13 +153,6 @@ export default function DatenschutzPage() {
             </ul>
           </div>
 
-          <div className="mt-12 p-6 bg-slate-50 rounded-lg">
-            <p className="text-sm text-slate-600">
-              <strong>Wichtiger Hinweis:</strong> Diese Datenschutzerklärung ist ein Template und muss 
-              an Ihre spezifischen Gegebenheiten angepasst werden. Konsultieren Sie einen Rechtsanwalt 
-              oder Datenschutzexperten, bevor Sie die Website veröffentlichen. Dies ist rechtlich vorgeschrieben.
-            </p>
-          </div>
         </div>
       </div>
     </main>

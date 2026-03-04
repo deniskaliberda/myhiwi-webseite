@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock, Calendar, MapPin, TrendingUp } from "lucide-react";
+import { ArrowRight, Clock, Calendar, MapPin, TrendingUp, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog | MyHiwi – Tipps für lokale Sichtbarkeit",
+  title: "Local SEO Blog — Tipps für lokale Sichtbarkeit | MyHiwi",
   description: "Praxisnahe Tipps zu Local SEO, Google Business Profil und Webdesign für kleine Unternehmen. Lernen Sie, wie Sie online besser gefunden werden.",
   keywords: ["SEO Blog", "Local SEO Tipps", "Google Business Profil", "Webdesign Tipps", "Online Marketing KMU"],
+  alternates: {
+    canonical: "https://myhiwi.de/blog",
+  },
 };
 
 const blogPosts = [
+  {
+    slug: "sonnenhof-case-study",
+    title: "Case Study: Von 0% auf 34,6% Sichtbarkeit in 4 Wochen – Sonnenhof Herrsching",
+    excerpt: "Wie eine familiengeführte Pension am Ammersee durch eine neue Website und gezielte SEO-Optimierung 14 Keywords in die Top 3 brachte und den Health Score auf 100/100 steigerte.",
+    date: "3. März 2026",
+    readTime: "10 Min. Lesezeit",
+    category: "Case Study",
+    icon: Award,
+    gradient: "from-green-500 to-emerald-700",
+  },
   {
     slug: "google-business-profil",
     title: "Google Business Profil: Warum es für lokale Unternehmen unverzichtbar ist",

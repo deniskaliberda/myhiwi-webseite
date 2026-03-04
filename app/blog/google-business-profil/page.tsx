@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Google Business Profil: Warum es für lokale Unternehmen unverzichtbar ist | MyHiwi Blog",
   description: "Erfahren Sie, warum Ihr Google Business Profil das wichtigste Werkzeug für lokale Sichtbarkeit ist. Tipps zur Optimierung und wie Sie mehr Kunden über Google Maps gewinnen.",
   keywords: ["Google Business Profil", "Google Maps SEO", "lokale Sichtbarkeit", "GBP Optimierung", "Local SEO"],
+  alternates: {
+    canonical: "https://myhiwi.de/blog/google-business-profil",
+  },
 };
 
 export default function GoogleBusinessProfilPost() {

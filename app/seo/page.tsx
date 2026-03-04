@@ -3,9 +3,12 @@ import Link from "next/link";
 import { Search, TrendingUp, CheckCircle, ArrowRight, Zap, MapPin, BarChart3, FileText, Star, Eye, EyeOff, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Local SEO f\u00fcr kleine Unternehmen | MyHiwi",
-  description: "Mehr Kunden aus Ihrer Region durch professionelles Local SEO. Google Business Profil Optimierung, Keyword-Strategie und monatliches Reporting f\u00fcr lokale Unternehmen.",
-  keywords: ["Local SEO", "Google Business Profil", "lokale Sichtbarkeit", "SEO f\u00fcr KMU", "Google Maps Ranking"],
+  title: "Local SEO für kleine Unternehmen — Mehr Kunden aus Ihrer Region | MyHiwi",
+  description: "Mehr Kunden aus Ihrer Region durch professionelles Local SEO. Google Business Profil Optimierung, Keyword-Strategie und monatliches Reporting für lokale Unternehmen.",
+  keywords: ["Local SEO", "Google Business Profil", "lokale Sichtbarkeit", "SEO für KMU", "Google Maps Ranking"],
+  alternates: {
+    canonical: "https://myhiwi.de/seo",
+  },
 };
 
 export default function SeoPage() {

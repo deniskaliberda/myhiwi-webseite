@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Impressum | MyHiwi",
   description: "Impressum und Angaben gemäß § 5 TMG für MyHiwi - Local SEO & Webdesign für KMU.",
+  alternates: {
+    canonical: "https://myhiwi.de/impressum",
+  },
 };
 
 export default function ImpressumPage() {
@@ -18,12 +21,12 @@ export default function ImpressumPage() {
           
           <div className="card mb-8">
             <p className="text-lg text-slate-700 mb-2">
-              <strong>MyHiwi</strong><br />
+              <strong>MyHiwi UG (haftungsbeschränkt)</strong><br />
               Denis Kaliberda
             </p>
             <p className="text-slate-700 mb-4">
-              [Ihre vollständige Adresse]<br />
-              [PLZ] [Stadt]<br />
+              Dorfstraße 1a<br />
+              16356 Ahrensfelde<br />
               Deutschland
             </p>
           </div>
@@ -31,16 +34,7 @@ export default function ImpressumPage() {
           <div className="card mb-8">
             <h3 className="text-xl font-inter font-bold text-primary mb-4">Kontakt</h3>
             <p className="text-slate-700">
-              <strong>E-Mail:</strong> <a href="mailto:kontakt@myhiwe.de" className="text-accent hover:underline">kontakt@myhiwe.de</a><br />
-              <strong>Telefon:</strong> +49 (0) XXX XXXXXXX
-            </p>
-          </div>
-
-          <div className="card mb-8">
-            <h3 className="text-xl font-inter font-bold text-primary mb-4">Umsatzsteuer-ID</h3>
-            <p className="text-slate-700">
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-              [Ihre USt-IdNr.]
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@myhiwi.de" className="text-accent hover:underline">kontakt@myhiwi.de</a>
             </p>
           </div>
 
@@ -50,8 +44,8 @@ export default function ImpressumPage() {
             </h3>
             <p className="text-slate-700">
               Denis Kaliberda<br />
-              [Ihre Adresse]<br />
-              [PLZ] [Stadt]
+              Dorfstraße 1a<br />
+              16356 Ahrensfelde
             </p>
           </div>
 
@@ -78,12 +72,6 @@ export default function ImpressumPage() {
             </p>
           </div>
 
-          <div className="mt-12 p-6 bg-slate-50 rounded-lg">
-            <p className="text-sm text-slate-600">
-              <strong>Hinweis:</strong> Bitte ersetzen Sie die Platzhalter-Informationen mit Ihren tatsächlichen Daten, 
-              bevor Sie die Website veröffentlichen. Dies ist eine rechtlich vorgeschriebene Seite.
-            </p>
-          </div>
         </div>
       </div>
     </main>

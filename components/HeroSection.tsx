@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle, Star, TrendingUp, TrendingDown, X, Check, Wifi, Search, Globe, Smartphone, Monitor } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles, Star, TrendingUp, TrendingDown, X, Check, Wifi, Search, Globe, Smartphone, Monitor } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -20,6 +20,23 @@ export default function HeroSection() {
       <div className="absolute bottom-1/3 right-[20%] w-2 h-2 bg-accent/20 rounded-full animate-float-delay" />
 
       <div className="container-custom py-8 md:py-20 relative z-10">
+        {/* Starter-Paket Announcement */}
+        <div className="flex justify-center mb-8 md:mb-12 animate-fade-in-up">
+          <Link
+            href="/starter"
+            className="group inline-flex items-center gap-3 px-4 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-accent via-blue-600 to-cyan rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all border border-white/20"
+          >
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white/20 rounded-full text-[11px] md:text-xs font-bold text-white uppercase tracking-wider">
+              <Sparkles className="w-3 h-3" />
+              Neu
+            </span>
+            <span className="text-sm md:text-base font-medium text-white">
+              Starter-Paket: Website + SEO ab 399&nbsp;&euro;/Mo
+            </span>
+            <ArrowRight className="w-4 h-4 text-white/80 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="order-2 lg:order-1">
@@ -68,13 +85,13 @@ export default function HeroSection() {
                 </span>
               </Link>
 
-              {/* Secondary CTA */}
+              {/* Starter-Paket CTA */}
               <Link
-                href="/leistungen"
-                className="btn bg-white text-primary border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-white flex items-center gap-2 px-6 py-3 md:px-8 md:py-4"
+                href="/starter"
+                className="btn bg-white text-primary border-2 border-amber-500/30 hover:border-amber-500 hover:bg-amber-50 flex items-center gap-2 px-6 py-3 md:px-8 md:py-4"
               >
-                <MessageCircle className="w-5 h-5" />
-                Unsere Leistungen
+                <Sparkles className="w-5 h-5 text-amber-600" />
+                Starter-Paket
               </Link>
             </div>
 

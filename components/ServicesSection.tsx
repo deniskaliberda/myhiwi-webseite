@@ -14,7 +14,6 @@ import {
   Star,
   BarChart3,
   Plus,
-  Users,
 } from "lucide-react";
 
 export default function ServicesSection() {
@@ -273,73 +272,153 @@ export default function ServicesSection() {
         </div>
 
         {/* === COMBO Section === */}
-        <div className="max-w-4xl mx-auto mb-10 md:mb-20">
-          <div className="relative card-gradient-border glow-accent overflow-hidden">
-            {/* Subtle gradient bg */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/3 via-transparent to-cyan/3 rounded-2xl" />
-            <div className="relative">
-              <div className="text-center mb-6 md:mb-8">
-                <h3 className="text-2xl md:text-3xl font-inter font-bold text-primary mb-3">
-                  Die perfekte Kombination
-                </h3>
-                <p className="text-slate-600 max-w-2xl mx-auto">
-                  Webdesign und Local SEO verst&auml;rken sich gegenseitig.
-                  Eine gut optimierte Website bringt die Grundlage &ndash; Local SEO
-                  sorgt daf&uuml;r, dass sie auch gesehen wird.
-                </p>
+        <div className="relative max-w-6xl mx-auto mb-10 md:mb-20 rounded-3xl overflow-hidden">
+          {/* Dark background with gradient */}
+          <div className="absolute inset-0 bg-primary" />
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-cyan/15" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan/10 rounded-full blur-3xl" />
+
+          <div className="relative px-6 py-10 md:px-12 md:py-16">
+            {/* Header */}
+            <div className="text-center mb-8 md:mb-12">
+              <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 bg-white/10 rounded-full border border-white/15">
+                <Plus className="w-4 h-4 text-cyan" />
+                <span className="text-sm font-semibold text-white/90">
+                  Warum beides zusammengeh&ouml;rt
+                </span>
+              </div>
+              <h3 className="text-2xl md:text-4xl font-inter font-bold text-white mb-3">
+                Die perfekte Kombination
+              </h3>
+              <p className="text-white/70 max-w-2xl mx-auto text-base md:text-lg">
+                Eine gute Website allein bringt keine Kunden. Und SEO ohne solide Website-Basis bringt keine Rankings. Erst zusammen entfalten sie ihre volle Wirkung.
+              </p>
+            </div>
+
+            {/* Two pillars side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
+              {/* Webdesign Pillar */}
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-5 md:p-7">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent to-blue-700 flex items-center justify-center shadow-lg">
+                    <Globe className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-inter font-bold text-white text-lg">
+                      Moderne Website
+                    </h4>
+                    <p className="text-xs text-white/50">Ihre digitale Basis</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5">
+                  {[
+                    "Schnelle Ladezeiten & mobile Optimierung",
+                    "Professionelles Design, das Vertrauen schafft",
+                    "Sicherheit durch SSL & DSGVO-Konformit\u00e4t",
+                    "Klare Struktur, die Google versteht",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-accent text-xs">&#10003;</span>
+                      </div>
+                      <span className="text-sm text-white/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5">
+                  <Link
+                    href="/webdesign"
+                    className="inline-flex items-center gap-2 text-sm text-accent font-semibold hover:text-white transition-colors"
+                  >
+                    Mehr erfahren
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-center">
-                {/* Webdesign Pillar */}
-                <div className="text-center p-4 md:p-6 bg-white/80 rounded-xl border border-accent/10">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-blue-700 flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <Globe className="w-7 h-7 text-white" />
+              {/* Local SEO Pillar */}
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-5 md:p-7">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan to-accent flex items-center justify-center shadow-lg">
+                    <Search className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="font-inter font-bold text-primary mb-2">
-                    Moderne Website
-                  </h4>
-                  <p className="text-xs text-slate-500">
-                    Schnell, sicher, mobiloptimiert &ndash; Ihre digitale Basis
-                  </p>
-                </div>
-
-                {/* Plus Icon */}
-                <div className="flex justify-center">
-                  <div className="w-12 h-12 rounded-full gradient-bg-animated flex items-center justify-center shadow-lg">
-                    <Plus className="w-6 h-6 text-white" />
+                  <div>
+                    <h4 className="font-inter font-bold text-white text-lg">
+                      Local SEO
+                    </h4>
+                    <p className="text-xs text-white/50">Ihre Sichtbarkeit bei Google</p>
                   </div>
                 </div>
-
-                {/* SEO Pillar */}
-                <div className="text-center p-4 md:p-6 bg-white/80 rounded-xl border border-cyan/10">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan to-accent flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <Search className="w-7 h-7 text-white" />
-                  </div>
-                  <h4 className="font-inter font-bold text-primary mb-2">
-                    Local SEO
-                  </h4>
-                  <p className="text-xs text-slate-500">
-                    Vermarktet Ihre Website &amp; macht sie bei Google sichtbar
-                  </p>
+                <ul className="space-y-2.5">
+                  {[
+                    "Google Business Profil optimieren",
+                    "Lokale Keywords & Content-Strategie",
+                    "Technische SEO-Optimierung",
+                    "Backlink-Aufbau & lokale Verzeichnisse",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-cyan/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-cyan text-xs">&#10003;</span>
+                      </div>
+                      <span className="text-sm text-white/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5">
+                  <Link
+                    href="/seo"
+                    className="inline-flex items-center gap-2 text-sm text-cyan font-semibold hover:text-white transition-colors"
+                  >
+                    Mehr erfahren
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
+            </div>
 
-              {/* Result */}
-              <div className="mt-6 md:mt-8 text-center">
-                <div className="inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-gradient-to-r from-accent/10 to-cyan/10 rounded-full border border-accent/20">
-                  <TrendingUp className="w-5 h-5 text-accent" />
-                  <span className="text-sm md:text-base font-semibold text-primary">
-                    Ergebnis: Mehr Sichtbarkeit, mehr Kunden, nachhaltiges Wachstum
-                  </span>
+            {/* Result bar */}
+            <div className="bg-gradient-to-r from-accent/20 via-white/10 to-cyan/20 rounded-xl border border-white/10 p-4 md:p-5">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full gradient-bg-animated flex items-center justify-center shadow-lg flex-shrink-0">
+                    <TrendingUp className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-white">
+                      Zusammen ergibt das: Mehr Sichtbarkeit, mehr Kunden
+                    </div>
+                    <div className="text-xs text-white/50">
+                      Wie beim Sonnenhof: Von 0% auf 34,6% Sichtbarkeit in nur 4 Wochen
+                    </div>
+                  </div>
                 </div>
+                <Link
+                  href="/blog/sonnenhof-case-study"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/15 px-4 py-2 rounded-full transition-colors flex-shrink-0"
+                >
+                  Case Study lesen
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
+            </div>
+
+            {/* Blog post links */}
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/blog/google-business-profil"
+                className="inline-flex items-center gap-2 text-xs text-white/60 hover:text-white/90 transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full border border-white/10"
+              >
+                <MapPin className="w-3 h-3" />
+                Google Business Profil Guide
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Process Steps - Visual Timeline */}
+        {/* Process Steps - Compact */}
         <div className="max-w-5xl mx-auto mb-10 md:mb-16">
-          <div className="text-center mb-8 md:mb-14">
+          <div className="text-center mb-8 md:mb-12">
             <h3 className="text-2xl md:text-3xl font-inter font-bold text-primary mb-3">
               So l&auml;uft die Zusammenarbeit
             </h3>
@@ -348,266 +427,72 @@ export default function ServicesSection() {
             </p>
           </div>
 
-          <div className="relative">
-            {/* Vertical timeline line - mobile left, desktop center */}
-            <div className="absolute left-[1.6rem] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-cyan to-accent/20 md:-translate-x-px" />
-
-            {/* Step 1: Erstgespräch */}
-            <div className="relative flex items-start mb-8 md:mb-14">
-              {/* Timeline dot */}
-              <div className="absolute left-[1.6rem] md:left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-accent to-blue-700 flex items-center justify-center z-10 shadow-lg shadow-accent/20">
-                <span className="text-white font-bold text-xs md:text-sm">01</span>
-              </div>
-
-              {/* Card - left side on desktop */}
-              <div className="ml-16 md:ml-0 md:w-[calc(50%-2.5rem)] md:mr-auto">
-                <div className="bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Mini visual: Chat mockup */}
-                    <div className="flex-shrink-0 w-full sm:w-36 bg-slate-50 rounded-xl p-3 border border-slate-100">
-                      <div className="flex justify-center gap-3 mb-2.5">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-cyan flex items-center justify-center">
-                          <Users className="w-4 h-4 text-white" />
-                        </div>
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                          <span className="text-white font-bold text-[9px]">DK</span>
-                        </div>
-                      </div>
-                      <div className="space-y-1.5">
-                        <div className="flex justify-end">
-                          <div className="bg-accent/10 text-[8px] text-accent px-2 py-1 rounded-lg rounded-tr-sm max-w-[85%]">Was macht Ihr Unternehmen?</div>
-                        </div>
-                        <div className="flex justify-start">
-                          <div className="bg-slate-200/60 text-[8px] text-slate-600 px-2 py-1 rounded-lg rounded-tl-sm max-w-[85%]">Wir sind ein Salon in...</div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Text */}
-                    <div>
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <MessageCircle className="w-4 h-4 text-accent" />
-                        <h4 className="font-inter font-bold text-primary">Erstgespr&auml;ch</h4>
-                      </div>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        In einem kostenlosen 15-Minuten-Gespr&auml;ch lernen wir uns kennen. Sie erz&auml;hlen mir von Ihrem Unternehmen, Ihren Zielen und Herausforderungen.
-                      </p>
-                      <div className="mt-2 inline-flex items-center gap-1.5 text-[11px] font-semibold text-green-600 bg-green-50 px-2.5 py-1 rounded-full">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                        Kostenlos &amp; unverbindlich
-                      </div>
-                    </div>
-                  </div>
+          {/* Horizontal steps */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+            {[
+              {
+                num: "01",
+                icon: MessageCircle,
+                title: "Erstgespr\u00e4ch",
+                desc: "Kostenloses 15-Minuten-Gespr\u00e4ch \u2013 Sie erz\u00e4hlen von Ihrem Unternehmen und Ihren Zielen.",
+                gradient: "from-accent to-blue-700",
+                tag: "Kostenlos",
+                tagColor: "text-green-600 bg-green-50",
+              },
+              {
+                num: "02",
+                icon: Target,
+                title: "Analyse",
+                desc: "Ich pr\u00fcfe Ihre Online-Pr\u00e4senz, Konkurrenz und Region \u2013 wo liegt das gr\u00f6\u00dfte Potenzial?",
+                gradient: "from-cyan to-accent",
+                tag: null,
+                tagColor: "",
+              },
+              {
+                num: "03",
+                icon: Puzzle,
+                title: "Angebot",
+                desc: "Ma\u00dfgeschneidertes Angebot f\u00fcr Ihr Unternehmen \u2013 transparent und ohne versteckte Kosten.",
+                gradient: "from-green-500 to-emerald-700",
+                tag: "Individuell",
+                tagColor: "text-accent bg-accent/10",
+              },
+              {
+                num: "04",
+                icon: TrendingUp,
+                title: "Umsetzung",
+                desc: "Ich setze um, halte Sie auf dem Laufenden und hole Ihr Feedback ein. Sie sehen, wie Ihr Projekt w\u00e4chst.",
+                gradient: "from-primary to-accent",
+                tag: null,
+                tagColor: "",
+              },
+            ].map((step) => (
+              <div
+                key={step.num}
+                className="relative bg-white rounded-2xl border border-slate-200 p-5 md:p-6 hover:shadow-md transition-all duration-300 group"
+              >
+                {/* Step number */}
+                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform`}>
+                  <span className="text-white font-bold text-xs">{step.num}</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Step 2: Analyse */}
-            <div className="relative flex items-start mb-8 md:mb-14">
-              <div className="absolute left-[1.6rem] md:left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-cyan to-accent flex items-center justify-center z-10 shadow-lg shadow-cyan/20">
-                <span className="text-white font-bold text-xs md:text-sm">02</span>
-              </div>
-
-              {/* Card - right side on desktop */}
-              <div className="ml-16 md:ml-auto md:w-[calc(50%-2.5rem)]">
-                <div className="bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Mini visual: Analysis chart */}
-                    <div className="flex-shrink-0 w-full sm:w-36 bg-slate-50 rounded-xl p-3 border border-slate-100">
-                      <div className="flex items-center gap-1.5 mb-2.5">
-                        <Search className="w-3 h-3 text-accent" />
-                        <span className="text-[8px] font-bold text-slate-500 uppercase">Analyse</span>
-                      </div>
-                      <div className="space-y-1.5">
-                        <div>
-                          <div className="flex justify-between text-[8px] text-slate-500 mb-0.5">
-                            <span>Konkurrenz</span>
-                            <span className="font-bold">78%</span>
-                          </div>
-                          <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
-                            <div className="h-full w-[78%] bg-red-400 rounded-full" />
-                          </div>
-                        </div>
-                        <div>
-                          <div className="flex justify-between text-[8px] text-primary font-bold mb-0.5">
-                            <span>Ihr Potenzial</span>
-                            <span>12%</span>
-                          </div>
-                          <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
-                            <div className="h-full w-[12%] bg-accent rounded-full" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-2 text-[8px] text-accent font-bold text-center bg-accent/10 rounded py-0.5">
-                        Potenzial erkannt
-                      </div>
-                    </div>
-                    {/* Text */}
-                    <div>
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <Target className="w-4 h-4 text-cyan" />
-                        <h4 className="font-inter font-bold text-primary">Analyse</h4>
-                      </div>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        Ich schaue mir Ihre aktuelle Online-Pr&auml;senz, Ihre Konkurrenz und Ihre Region genau an. Wo liegt das gr&ouml;&szlig;te Potenzial f&uuml;r neue Kunden?
-                      </p>
-                    </div>
-                  </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <step.icon className="w-4 h-4 text-slate-400" />
+                  <h4 className="font-inter font-bold text-primary">{step.title}</h4>
                 </div>
-              </div>
-            </div>
-
-            {/* Step 3: Angebot */}
-            <div className="relative flex items-start mb-8 md:mb-14">
-              <div className="absolute left-[1.6rem] md:left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center z-10 shadow-lg shadow-green-500/20">
-                <span className="text-white font-bold text-xs md:text-sm">03</span>
-              </div>
-
-              {/* Card - left side on desktop */}
-              <div className="ml-16 md:ml-0 md:w-[calc(50%-2.5rem)] md:mr-auto">
-                <div className="bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Mini visual: Document with checkmarks */}
-                    <div className="flex-shrink-0 w-full sm:w-36 bg-slate-50 rounded-xl p-3 border border-slate-100">
-                      <div className="flex items-center justify-between mb-2.5">
-                        <div className="flex items-center gap-1.5">
-                          <div className="w-4 h-4 rounded bg-gradient-to-br from-accent to-cyan" />
-                          <span className="text-[8px] font-bold text-slate-500">Angebot</span>
-                        </div>
-                        <span className="text-[7px] font-bold text-accent bg-accent/10 px-1.5 py-0.5 rounded-full">Individuell</span>
-                      </div>
-                      <div className="space-y-1.5">
-                        <div className="flex items-center gap-1.5 bg-green-50 rounded p-1.5 border border-green-100">
-                          <div className="w-3 h-3 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                            <span className="text-green-600 text-[7px]">&#10003;</span>
-                          </div>
-                          <span className="text-[8px] text-slate-600">Professionelle Website</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 bg-green-50 rounded p-1.5 border border-green-100">
-                          <div className="w-3 h-3 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                            <span className="text-green-600 text-[7px]">&#10003;</span>
-                          </div>
-                          <span className="text-[8px] text-slate-600">Google Business</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 bg-green-50 rounded p-1.5 border border-green-100">
-                          <div className="w-3 h-3 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                            <span className="text-green-600 text-[7px]">&#10003;</span>
-                          </div>
-                          <span className="text-[8px] text-slate-600">Laufende Betreuung</span>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Text */}
-                    <div>
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <Puzzle className="w-4 h-4 text-green-600" />
-                        <h4 className="font-inter font-bold text-primary">Angebot</h4>
-                      </div>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        Basierend auf der Analyse erstelle ich ein ma&szlig;geschneidertes Angebot &ndash; genau auf Ihr Unternehmen, Ihre Ziele und Ihr Budget zugeschnitten.
-                      </p>
-                      <div className="mt-2 inline-flex items-center gap-1.5 text-[11px] font-semibold text-slate-500">
-                        Keine versteckten Kosten &ndash; transparent &amp; fair
-                      </div>
-                    </div>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {step.desc}
+                </p>
+                {step.tag && (
+                  <div className={`mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold ${step.tagColor} px-2.5 py-1 rounded-full`}>
+                    <span className="w-1.5 h-1.5 bg-current rounded-full opacity-60" />
+                    {step.tag}
                   </div>
-                </div>
+                )}
               </div>
-            </div>
-
-            {/* Step 4: Umsetzung */}
-            <div className="relative flex items-start">
-              <div className="absolute left-[1.6rem] md:left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center z-10 shadow-lg shadow-primary/20">
-                <span className="text-white font-bold text-xs md:text-sm">04</span>
-              </div>
-
-              {/* Card - right side on desktop */}
-              <div className="ml-16 md:ml-auto md:w-[calc(50%-2.5rem)]">
-                <div className="bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Mini visual: Browser with progress */}
-                    <div className="flex-shrink-0 w-full sm:w-36 bg-slate-50 rounded-xl p-3 border border-slate-100">
-                      <div className="bg-white rounded-lg border border-slate-200 overflow-hidden mb-2">
-                        <div className="bg-slate-100 px-2 py-1 flex items-center gap-1 border-b border-slate-200">
-                          <div className="flex gap-0.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-red-300" />
-                            <div className="w-1.5 h-1.5 rounded-full bg-yellow-300" />
-                            <div className="w-1.5 h-1.5 rounded-full bg-green-300" />
-                          </div>
-                          <div className="flex-1 bg-white rounded text-[6px] text-slate-400 px-1.5 py-0.5 border border-slate-100">ihre-firma.de</div>
-                        </div>
-                        <div className="p-1.5">
-                          <div className="bg-gradient-to-r from-accent/10 to-cyan/10 rounded p-1.5 mb-1">
-                            <div className="w-3/4 h-1.5 bg-primary/40 rounded-full mb-1" />
-                            <div className="w-full h-1 bg-slate-200 rounded-full" />
-                          </div>
-                          <div className="grid grid-cols-3 gap-0.5">
-                            <div className="bg-slate-50 rounded p-1 h-4 border border-slate-100" />
-                            <div className="bg-slate-50 rounded p-1 h-4 border border-slate-100" />
-                            <div className="bg-slate-50 rounded p-1 h-4 border border-slate-100" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-between text-[8px] mb-0.5">
-                        <span className="font-semibold text-accent">Fortschritt</span>
-                        <span className="font-bold text-primary">85%</span>
-                      </div>
-                      <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
-                        <div className="h-full w-[85%] bg-gradient-to-r from-accent to-cyan rounded-full" />
-                      </div>
-                    </div>
-                    {/* Text */}
-                    <div>
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <TrendingUp className="w-4 h-4 text-accent" />
-                        <h4 className="font-inter font-bold text-primary">Umsetzung</h4>
-                      </div>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        Ich setze Ihre Website und SEO-Strategie um, halte Sie regelm&auml;&szlig;ig auf dem Laufenden und hole Ihr Feedback ein. Sie sehen, wie Ihr Projekt w&auml;chst.
-                      </p>
-                      <div className="mt-2 inline-flex items-center gap-1.5 text-[11px] font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded-full">
-                        <TrendingUp className="w-3 h-3" />
-                        Klare Meilensteine &amp; regelm&auml;&szlig;ige Updates
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center">
-          <div className="inline-flex flex-col items-center gap-4 md:gap-6 p-5 md:p-8 card-gradient-border glow-accent">
-            <div
-              className="w-16 h-16 rounded-full gradient-bg-animated flex items-center justify-center"
-              style={{ boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
-            >
-              <MessageCircle className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h3 className="text-xl font-inter font-bold text-primary mb-2">
-                Lassen Sie uns sprechen
-              </h3>
-              <p className="text-slate-600 mb-4">
-                In 15 Minuten finden wir heraus, wie ich Ihnen am besten helfen
-                kann.
-              </p>
-            </div>
-            <Link
-              href="/kontakt"
-              className="btn btn-cta btn-shimmer flex items-center gap-2 text-base md:text-lg px-6 py-3 md:px-8 md:py-4"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Jetzt Anfrage starten
-                <ArrowRight className="w-5 h-5" />
-              </span>
-            </Link>
-            <p className="text-sm text-slate-500">
-              Kostenlos &amp; unverbindlich
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

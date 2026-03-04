@@ -3,9 +3,12 @@ import Link from "next/link";
 import { Globe, Search, ArrowRight, Award, CheckCircle, Zap, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Leistungen - Local SEO & Webdesign für KMU | MyHiwi",
+  title: "Alle Leistungen — SEO & Webdesign aus einer Hand | MyHiwi",
   description: "Professionelles Webdesign und Local SEO für kleine, lokale Unternehmen. Individuelle Lösungen, die zu Ihrem Budget passen.",
   keywords: ["Webdesign für KMU", "Google Business Profil optimieren", "Local SEO", "mobile-optimierte Websites"],
+  alternates: {
+    canonical: "https://myhiwi.de/leistungen",
+  },
 };
 
 export default function LeistungenPage() {

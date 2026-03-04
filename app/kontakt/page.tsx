@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import QuizContainer from "@/components/quiz/QuizContainer";
-import { Mail, Phone, MapPin, Clock, Calendar, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Clock, Calendar, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kontakt - Kostenloses Erstgespräch | MyHiwi",
   description:
     "Beantworten Sie 5 kurze Fragen und erhalten Sie eine individuelle Einschätzung. Oder buchen Sie direkt einen Termin.",
+  alternates: {
+    canonical: "https://myhiwi.de/kontakt",
+  },
 };
 
 export default function ContactPage() {
@@ -65,27 +68,10 @@ export default function ContactPage() {
                         E-Mail
                       </div>
                       <a
-                        href="mailto:kontakt@myhiwe.de"
+                        href="mailto:kontakt@myhiwi.de"
                         className="text-primary hover:text-accent transition-colors"
                       >
-                        kontakt@myhiwe.de
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-slate-600 mb-0.5">
-                        Telefon
-                      </div>
-                      <a
-                        href="tel:+49"
-                        className="text-primary hover:text-accent transition-colors"
-                      >
-                        +49 (0) XXX XXXXXXX
+                        kontakt@myhiwi.de
                       </a>
                     </div>
                   </div>
@@ -98,7 +84,7 @@ export default function ContactPage() {
                       <div className="text-sm font-semibold text-slate-600 mb-0.5">
                         Region
                       </div>
-                      <p className="text-slate-700">Deutschland</p>
+                      <p className="text-slate-700">Ahrensfelde, Brandenburg</p>
                     </div>
                   </div>
 
