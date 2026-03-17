@@ -174,6 +174,23 @@ Die Sichtbarkeit explodierte förmlich. Von 0% auf 34,6% in nur 4 Wochen. Neue N
 
 Zahlen sind gut – aber was bedeuten sie konkret für das Geschäft?
 
+### Neue Zielgruppe erschlossen
+
+Das wichtigste Ergebnis lässt sich nicht in Rankings messen: **Der Sonnenhof erreicht jetzt eine komplett neue Zielgruppe.** Vorher kamen Gäste ausschließlich über alte Buchungsportale – jüngere, internetaffine Gäste, die über Google suchen, fanden den Sonnenhof schlicht nicht. Das hat sich grundlegend geändert.
+
+### Echte Buchungen, nicht nur Rankings
+
+Die Inhaberin bestätigt: **Mehr Buchungen kommen jetzt über die neue Website als vorher über die alte Plattform.** Allein in der letzten Woche (Stand März 2026) wurden 3 Buchungen direkt über die neue Website generiert – Gäste, die vorher über die alte Plattform gebucht hätten oder den Sonnenhof gar nicht gefunden hätten.
+
+### Die Rechnung
+
+- **167 Klicks** aus der Google-Suche in den ersten 4 Wochen
+- **10.841 Impressionen** – so oft wurde der Sonnenhof in Suchergebnissen angezeigt
+- **3+ Buchungen pro Woche** direkt über die neue Website
+- **~12 zusätzliche Buchungen pro Monat** geschätzt
+- Bei durchschnittlich 2 Nächten × 95 EUR = **~2.280 EUR zusätzlicher Umsatz pro Monat**
+- **~27.000 EUR zusätzlicher Jahresumsatz** durch die neue Online-Präsenz
+
 **Sichtbarkeit = Buchungsanfragen.** Wer in Herrsching oder am Ammersee eine Ferienwohnung sucht, findet jetzt den Sonnenhof. Und zwar nicht irgendwo auf Seite 10, sondern auf den vorderen Plätzen – genau da, wo Gäste tatsächlich klicken.
 
 Ein Beispiel: Das Keyword „Pension Herrsching" hat ein Suchvolumen von 90 Anfragen pro Monat. Auf Platz 1 bekommt der Sonnenhof davon geschätzt 25–30 Klicks. Wenn auch nur 2–3 davon eine Buchungsanfrage werden, hat sich die monatliche Investition mehrfach bezahlt.
