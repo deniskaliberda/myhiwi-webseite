@@ -1,38 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
+  ArrowRight,
   ExternalLink,
   Target,
-  Zap,
-  TrendingUp,
+  Wrench,
+  RefreshCw,
+  MessageCircle,
   Award,
+  MapPin,
+  Mail,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Section from "@/components/layout/Section";
-import Container from "@/components/layout/Container";
 import SectionReveal from "@/components/shared/SectionReveal";
 
 export const metadata: Metadata = {
-  title: "Über mich — Denis Kaliberda",
+  title: "Über mich — Denis Kaliberda, Gründer von MyHiwi",
   description:
-    "Olympia-Teilnehmer, WM-Bronze, 200+ Länderspiele — und jetzt SEO-Experte für lokale Unternehmen. Meine Geschichte.",
+    "Ex-Volleyball-Nationalspieler, Olympia-Teilnehmer 2012, WM-Bronze 2014 — und heute digitaler Partner für lokale Unternehmen. Meine Geschichte und wie ich heute arbeite.",
   alternates: {
     canonical: "https://myhiwi.de/ueber-mich",
   },
 };
 
+const achievements = [
+  { label: "Länderspiele", value: "200+" },
+  { label: "Olympia Teilnehmer", value: "London 2012" },
+  { label: "WM · Bronze", value: "Polen 2014" },
+  { label: "EM · Silber", value: "Polen/Slowenien 2017" },
+];
+
 const pressLinks = [
+  { name: "Wikipedia", url: "https://de.wikipedia.org/wiki/Denis_Kaliberda" },
   {
-    name: "Wikipedia",
-    url: "https://de.wikipedia.org/wiki/Denis_Kaliberda",
+    name: "Volleyball-Verband",
+    url: "https://www.volleyball-verband.de/de/kader/spieler--amp--trainer/denis-kaliberda/",
   },
   {
     name: "Tagesspiegel",
     url: "https://www.tagesspiegel.de/sport/vieles-fehlt-um-gut-volleyball-spielen-zu-konnen-denis-kaliberda-ist-der-hoffnungstrager-der-netzhoppers-13148944.html",
-  },
-  {
-    name: "Volleyball-Verband",
-    url: "https://www.volleyball-verband.de/de/kader/spieler--amp--trainer/denis-kaliberda/",
   },
   {
     name: "Süddeutsche Zeitung",
@@ -43,165 +48,365 @@ const pressLinks = [
 const principles = [
   {
     icon: Target,
-    title: "Analytisches Denken",
-    description:
-      "Jedes Spiel erfordert Gegner-Analyse. Bei Ihrem SEO analysiere ich Ihre Konkurrenz und finde die Schwachstellen.",
+    title: "Probleme analysieren, nicht Produkte anbieten.",
+    text: "Im Volleyball fing jede Saison mit Gegner-Analyse an — nie mit dem Angriff. Genauso in der digitalen Arbeit: erst verstehe ich Ihr Geschäft und die echten Engpässe, dann bauen wir.",
   },
   {
-    icon: Zap,
-    title: "Systematisch lösen",
-    description:
-      "Im Sport wie im Marketing: Ich erkenne Probleme, verstehe sie und gehe sie strukturiert an.",
+    icon: Wrench,
+    title: "Selber bauen, nicht weiter-verkaufen.",
+    text: "Ich liefere Code, nicht Lizenzen. Was ich für Sie baue, gehört Ihnen — kein SaaS-Dauer-Abo, kein Drittanbieter zwischen uns.",
   },
   {
-    icon: TrendingUp,
-    title: "Dranbleiben",
-    description:
-      "Erfolg kommt nicht über Nacht — weder im Sport noch bei SEO. Ich bleibe konsequent an Ihrem Projekt dran.",
+    icon: RefreshCw,
+    title: "Dranbleiben, nicht abliefern und weg.",
+    text: "Eine Saison besteht aus täglichem Training, nicht einem einzigen Spiel. Digitale Projekte sind genauso — der Wert entsteht erst durch monatliche, kontinuierliche Arbeit.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Ehrlich bleiben, auch wenn's unbequem ist.",
+    text: "Wenn ich nicht der richtige Partner bin, sage ich das im Erstgespräch. 15 Minuten Klarheit sind mehr wert als drei Monate mit falscher Richtung.",
   },
 ];
 
-export default function AboutMePage() {
+export default function UeberMichPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-navy-900 pt-32 pb-20 md:pt-40 md:pb-28">
-        <Container>
-          <div className="max-w-3xl">
-            <SectionReveal>
-              <p className="text-blue-500 font-medium text-sm tracking-wide mb-4">
-                Meine Geschichte
-              </p>
-              <h1 className="text-white text-4xl md:text-5xl font-heading font-bold leading-[1.1] mb-6">
-                Vom Leistungssport zu MyHiwi
+    <div className="bg-white text-slate-900">
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
+        <div className="absolute inset-0 grid-pattern-light mask-radial pointer-events-none" />
+        <div
+          className="absolute top-[-140px] right-[-100px] h-[500px] w-[500px] rounded-full blur-3xl opacity-60 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(59,130,246,0.18), transparent 60%)",
+          }}
+        />
+
+        <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6">
+          <div className="grid gap-12 lg:grid-cols-[1fr,420px] lg:gap-16 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-mono uppercase tracking-[0.14em] text-blue-700">
+                Über mich · Persönlich
+              </span>
+
+              <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.02] tracking-tight text-slate-900 sm:text-5xl lg:text-[64px]">
+                Denis{" "}
+                <span className="gradient-text">Kaliberda.</span>
               </h1>
-              <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                Seit 1999 im Volleyball, seit 2009 Profi. Über 200 Länderspiele
-                für Deutschland, Olympia 2012, WM-Bronze 2014, EM-Silber 2017.
-                Der Leistungssport hat mich gelehrt, analytisch zu denken und
-                Probleme systematisch anzugehen.
+              <p className="mt-4 text-lg font-medium text-slate-500">
+                Gründer MyHiwi UG · Ex-Volleyball-Nationalspieler
+              </p>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+                Zehn Jahre Profi-Volleyball. Olympia, WM-Bronze, über 200
+                Länderspiele. Heute arbeite ich mit Hotels, Handwerkern,
+                Fahrschulen und Architekturbüros an etwas anderem — digitalen
+                Systemen, die ihre Arbeit einfacher machen.
               </p>
 
-              {/* Stats */}
-              <div className="flex flex-wrap gap-8 mb-8">
-                <div className="flex items-center gap-3">
-                  <Award className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="text-white font-heading font-bold text-xl">200+</p>
-                    <p className="text-slate-400 text-xs">Länderspiele</p>
+              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
+                <span className="inline-flex items-center gap-1.5">
+                  <MapPin className="h-3.5 w-3.5" />
+                  Ahrensfelde · Berlin
+                </span>
+                <span className="hidden text-slate-300 sm:inline">·</span>
+                <span className="inline-flex items-center gap-1.5">
+                  <MapPin className="h-3.5 w-3.5" />
+                  Starnberg · Ammersee
+                </span>
+                <span className="hidden text-slate-300 sm:inline">·</span>
+                <a
+                  href="mailto:kontakt@myhiwi.de"
+                  className="inline-flex items-center gap-1.5 text-blue-600 transition-colors hover:text-blue-700"
+                >
+                  <Mail className="h-3.5 w-3.5" />
+                  kontakt@myhiwi.de
+                </a>
+              </div>
+            </div>
+
+            {/* Portrait placeholder card */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-100 via-white to-blue-50 aspect-[4/5] shadow-xl">
+                <div className="absolute inset-0 grid-pattern-light opacity-70" />
+                <div
+                  className="absolute inset-0 opacity-40"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 30% 25%, rgba(59,130,246,0.22), transparent 60%)",
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center font-mono text-xs uppercase tracking-[0.12em] text-slate-400">
+                    [ Porträt ]
+                    <br />
+                    <span className="text-slate-500">Denis Kaliberda</span>
                   </div>
                 </div>
-                <div>
-                  <p className="text-white font-heading font-bold text-xl">WM-Bronze</p>
-                  <p className="text-slate-400 text-xs">2014</p>
-                </div>
-                <div>
-                  <p className="text-white font-heading font-bold text-xl">EM-Silber</p>
-                  <p className="text-slate-400 text-xs">2017</p>
+                <div className="absolute inset-x-4 bottom-4 rounded-xl border border-slate-200 bg-white/95 px-4 py-3 backdrop-blur">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400">
+                    Seit
+                  </p>
+                  <p className="mt-0.5 font-heading text-lg font-bold text-slate-900">
+                    2024 digital · 1999 Sport
+                  </p>
                 </div>
               </div>
-
-              {/* Press links */}
-              <div className="flex flex-wrap gap-2">
-                {pressLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-slate-400 hover:text-white hover:border-white/20 transition-colors text-xs"
-                  >
-                    {link.name}
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                ))}
-              </div>
-            </SectionReveal>
+            </div>
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* Mission */}
-      <Section variant="white">
-        <div className="max-w-3xl mx-auto">
+      {/* ================= STORY ================= */}
+      <section className="relative bg-slate-50 py-20 md:py-24">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
           <SectionReveal>
-            <h2 className="text-navy-900 mb-6">Was MyHiwi für mich bedeutet</h2>
-            <p className="text-slate-600 text-lg leading-relaxed mb-4">
-              MyHiwi ist mehr als ein Business. Es ist die Überzeugung, dass
-              bessere digitale Präsenz echten Unterschied macht — für
-              Familienbetriebe, Handwerker und lokale Unternehmen, die
-              großartige Arbeit leisten.
-            </p>
-            <p className="text-slate-600 text-lg leading-relaxed mb-8">
-              Kein Upselling, keine leeren Versprechen. Einfach ehrliche Arbeit
-              mit echtem Interesse an Ihrem Erfolg.
-            </p>
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-mono uppercase tracking-[0.14em] text-slate-500">
+              Die Geschichte · vom Sport ins Digitale
+            </span>
+            <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+              Zehn Jahre auf Punkte.{" "}
+              <span className="gradient-text">Jetzt auf Systeme.</span>
+            </h2>
 
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-              <p className="text-navy-900 text-xl font-heading font-semibold italic leading-relaxed">
-                &ldquo;Jeder verdient es, gefunden zu werden. Das ist mein
-                Antrieb — jeden Tag.&rdquo;
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate-600 md:text-lg">
+              <p>
+                Ich habe mit acht angefangen, Volleyball zu spielen, und mit
+                neunzehn den ersten Profi-Vertrag unterschrieben. Zehn Jahre in
+                der Ersten Liga, dazu über zweihundert Spiele für Deutschland.
+                London 2012, Polen 2014, Slowenien 2017 — das sind nicht nur
+                Stationen in einer Biografie, das sind hunderte Trainings-Tage
+                mit klaren Zielen und messbaren Ergebnissen.
               </p>
-              <p className="text-slate-500 text-sm mt-3">
-                — Denis Kaliberda, Gründer von MyHiwi
+              <p>
+                Was der Leistungssport einem einbleut, steht in keinem
+                Marketing-Buch: Sie lernen, Probleme in ihre Einzelteile zu
+                zerlegen. Sie lernen, jeden Tag zu liefern, auch wenn es nicht
+                läuft. Und Sie lernen vor allem eines — dass Technik und
+                Disziplin zusammen mehr bewegen als Talent.
+              </p>
+              <p>
+                MyHiwi ist der logische zweite Akt. Seit 2024 baue ich
+                Websites, SEO-Strukturen, Buchungs- und Zahlungssysteme und
+                inzwischen KI-Agents für lokale Unternehmen. Nicht als
+                klassische Agentur, sondern als digitaler Partner, der im Kopf
+                Ihres Betriebs mitdenkt und die passende Lösung selbst
+                entwickelt.
+              </p>
+              <p>
+                Ich nehme maximal zwölf aktive Kunden. Das ist die Obergrenze,
+                bei der ich jeden Betrieb wirklich verstehen kann. Deswegen
+                mache ich Erstgespräche ehrlich — wenn ich nicht der richtige
+                Partner bin, sage ich das gleich.
               </p>
             </div>
           </SectionReveal>
         </div>
-      </Section>
+      </section>
 
-      {/* Principles */}
-      <Section variant="light">
-        <SectionReveal>
-          <div className="text-center mb-12">
-            <h2 className="text-navy-900 mb-4">Was das für Sie bedeutet</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Die Denkweise aus dem Sport bringe ich in jedes Projekt ein.
-            </p>
-          </div>
-        </SectionReveal>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {principles.map((principle, i) => (
-            <SectionReveal key={principle.title} delay={i * 100}>
-              <div className="bg-white rounded-xl p-6 border border-slate-200 text-center h-full">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-500/10 mb-4">
-                  <principle.icon className="w-6 h-6 text-blue-500" />
-                </div>
-                <h3 className="text-navy-900 text-lg font-heading font-bold mb-2">
-                  {principle.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {principle.description}
-                </p>
-              </div>
-            </SectionReveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* CTA */}
-      <Section variant="dark" className="py-16 md:py-24">
-        <SectionReveal>
-          <div className="text-center">
-            <h2 className="text-white mb-4">
-              Bereit, Ihre Sichtbarkeit zu steigern?
+      {/* ================= ACHIEVEMENTS ================= */}
+      <section className="relative py-20 md:py-24">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <SectionReveal>
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-mono uppercase tracking-[0.14em] text-slate-500">
+              <Award className="h-3 w-3 text-blue-600" />
+              Sportlicher Hintergrund
+            </span>
+            <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+              Zahlen, die heute{" "}
+              <span className="gradient-text">nichts mehr beweisen müssen.</span>
             </h2>
-            <p className="text-slate-400 max-w-xl mx-auto mb-8">
-              Lassen Sie uns in einem kostenlosen Erstgespräch herausfinden,
-              wie ich Ihnen helfen kann.
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
+              Der Sport ist vorbei, aber die Arbeitsweise bleibt. Die wichtigsten
+              Stationen — wenn Sie ein bisschen googeln wollen, bevor wir
+              sprechen.
             </p>
-            <Link href="/kontakt">
-              <Button
-                size="lg"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-8 h-12"
-              >
-                Jetzt Anfrage starten
-              </Button>
-            </Link>
+          </SectionReveal>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-4">
+            {achievements.map((a, i) => (
+              <SectionReveal key={a.label} delay={i * 80}>
+                <div className="h-full rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+                    {a.label}
+                  </p>
+                  <p className="mt-3 font-heading text-2xl font-extrabold leading-tight tracking-tight text-slate-900">
+                    <span className="gradient-text">{a.value}</span>
+                  </p>
+                </div>
+              </SectionReveal>
+            ))}
           </div>
-        </SectionReveal>
-      </Section>
-    </>
+
+          <SectionReveal>
+            <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-slate-200 pt-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-500">
+                Presse & Quellen:
+              </p>
+              {pressLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 transition-all hover:border-slate-300 hover:text-slate-900"
+                >
+                  {link.name}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              ))}
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* ================= PRINCIPLES ================= */}
+      <section className="relative bg-slate-50 py-20 md:py-24">
+        <div className="absolute inset-0 grid-pattern-light opacity-50 pointer-events-none" />
+        <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <SectionReveal>
+            <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+              Vier Prinzipien,{" "}
+              <span className="gradient-text">die ich aus dem Sport mitnehme.</span>
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
+              Die konkreten Dinge, die den Unterschied zwischen „Projekt
+              geliefert" und „echte Veränderung im Betrieb" machen.
+            </p>
+          </SectionReveal>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {principles.map((p, i) => (
+              <SectionReveal key={p.title} delay={i * 100}>
+                <div className="h-full rounded-2xl border border-slate-200 bg-white p-7">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 text-blue-600">
+                    <p.icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-5 font-heading text-lg font-bold leading-tight tracking-tight text-slate-900">
+                    {p.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    {p.text}
+                  </p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= COMPANY FACTS ================= */}
+      <section className="relative py-20 md:py-24">
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
+          <SectionReveal>
+            <div className="rounded-2xl border border-slate-200 bg-white p-8 md:p-12">
+              <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-mono uppercase tracking-[0.14em] text-blue-700">
+                Hinter den Kulissen
+              </span>
+              <h2 className="mt-5 font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+                Wie MyHiwi{" "}
+                <span className="gradient-text">organisiert ist.</span>
+              </h2>
+
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+                    Unternehmen
+                  </p>
+                  <p className="mt-2 text-base font-medium text-slate-900">
+                    MyHiwi UG (haftungsbeschränkt) i.&nbsp;G.
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">
+                    HRB-Eintragung läuft · Gründungsvertrag 2026-04-02
+                  </p>
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+                    Standorte
+                  </p>
+                  <p className="mt-2 text-base font-medium text-slate-900">
+                    Ahrensfelde bei Berlin (Hauptsitz)
+                  </p>
+                  <p className="mt-0.5 text-base font-medium text-slate-900">
+                    Starnberg / Ammersee, Oberbayern
+                  </p>
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+                    Kunden-Limit
+                  </p>
+                  <p className="mt-2 text-base font-medium text-slate-900">
+                    Maximal 12 aktive Kunden
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Aktuell 7 laufende Projekte · nächster freier Platz ab Mai
+                  </p>
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+                    Tech-Stack
+                  </p>
+                  <p className="mt-2 text-base font-medium text-slate-900">
+                    Next.js · Supabase · Stripe · Vercel
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Plus Claude / OpenAI für KI-Workflows
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="relative pb-24 md:pb-32">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+          <SectionReveal>
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy-900 via-navy-900 to-[#0b1a3a] px-8 py-14 text-white shadow-2xl sm:px-14 sm:py-20">
+              <div className="absolute inset-0 grid-pattern opacity-70" />
+              <div
+                className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(59,130,246,0.35), transparent 60%)",
+                }}
+              />
+
+              <div className="relative grid gap-10 md:grid-cols-[1.2fr,1fr] md:items-end">
+                <div>
+                  <h2 className="font-heading text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl">
+                    Sprechen wir{" "}
+                    <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                      persönlich?
+                    </span>
+                  </h2>
+                  <p className="mt-5 max-w-md text-base leading-relaxed text-slate-300">
+                    15 Minuten, keine Präsentation. Ich schaue mir Ihre
+                    Situation an, wir prüfen ob es passt — und wenn nicht,
+                    empfehle ich Ihnen jemanden, bei dem es besser passt.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <Link
+                    href="/kontakt"
+                    className="inline-flex items-center justify-between rounded-lg bg-white px-5 py-4 text-sm font-semibold text-navy-900 shadow-lg transition-all hover:bg-slate-100"
+                  >
+                    Kostenloses Erstgespräch
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href="/case-studies"
+                    className="inline-flex items-center justify-between rounded-lg border border-white/20 bg-white/5 px-5 py-4 text-sm font-medium text-white backdrop-blur transition-all hover:bg-white/10"
+                  >
+                    Meine Projekte ansehen
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+    </div>
   );
 }

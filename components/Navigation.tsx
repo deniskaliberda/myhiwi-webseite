@@ -19,9 +19,10 @@ export default function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Light treatment on homepage + kontakt (both already use light backgrounds).
-  // Dark treatment everywhere else.
-  const light = pathname === "/" || pathname?.startsWith("/kontakt");
+  // Entire site is now light-themed. Keep the prop around in case we
+  // re-introduce a dark page and want to flip the bar.
+  const light = true;
+  void pathname;
 
   return (
     <nav
