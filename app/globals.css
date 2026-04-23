@@ -123,6 +123,100 @@ h4 { font-size: 1.25rem; font-weight: 600; }
   animation: processFill 2.4s cubic-bezier(.2,.7,.2,1) forwards;
 }
 
+/* ============================================
+   Legacy utility aliases (used by older pages)
+   ============================================ */
+
+.container-custom {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 72rem; /* 1152px */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  .container-custom { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.card-gradient-border {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 24px -12px rgba(59, 130, 246, 0.12);
+  transition: all 0.3s ease;
+}
+.card-gradient-border:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 20px 40px -20px rgba(59, 130, 246, 0.25);
+}
+
+.glow-accent {
+  transition: box-shadow 0.3s ease;
+}
+
+.gradient-bg-animated {
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+}
+
+.bg-animated {
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+}
+.btn-shimmer:hover::before {
+  transform: translateX(120%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.15s; }
+.stagger-3 { animation-delay: 0.25s; }
+.stagger-4 { animation-delay: 0.35s; }
+.stagger-5 { animation-delay: 0.45s; }
+
 /* Scroll reveal animation */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
