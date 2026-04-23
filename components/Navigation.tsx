@@ -8,8 +8,8 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Leistungen", href: "/#leistungen" },
-  { label: "Case Study", href: "/#case" },
+  { label: "Leistungen", href: "/#kompetenzen" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Preise", href: "/#preise" },
   { label: "Über mich", href: "/ueber-mich" },
   { label: "Blog", href: "/blog" },

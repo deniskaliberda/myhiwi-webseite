@@ -702,12 +702,19 @@ export default function HomePage() {
           </div>
 
           <SectionReveal>
-            <div className="mt-10 text-center">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/blog/sonnenhof-case-study"
+                href="/case-studies/sonnenhof-herrsching"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-all hover:border-slate-400"
+              >
+                Sonnenhof-Case im Detail
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/case-studies"
                 className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700"
               >
-                Vollständige Case Study lesen
+                Alle Case Studies ansehen
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
