@@ -6,6 +6,31 @@
    MyHiwi Design System
    ============================================ */
 
+/* Shadcn/ui CSS variables — mapped to MyHiwi brand.
+   All values are HSL without the hsl() wrapper (Tailwind adds it). */
+:root {
+  --background: 0 0% 100%;               /* white */
+  --foreground: 222 47% 11%;             /* slate-900 */
+  --card: 0 0% 100%;                     /* white */
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 215 59% 20%;                /* navy-900 #1a365d */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;              /* slate-100 */
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;       /* slate-500 */
+  --accent: 217 91% 60%;                 /* blue-500 #3b82f6 */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;              /* red-500 */
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;                 /* slate-200 */
+  --input: 214 32% 91%;
+  --ring: 217 91% 60%;                   /* blue-500 */
+  --radius: 0.75rem;
+}
+
 *,
 *::before,
 *::after {
@@ -13,8 +38,8 @@
 }
 
 body {
-  background-color: #0f172a;
-  color: #e2e8f0;
+  background-color: #ffffff;
+  color: #0f172a;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
