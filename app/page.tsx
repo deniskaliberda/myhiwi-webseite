@@ -61,12 +61,12 @@ const vignettes = [
   },
   {
     field: "Automatisierung",
-    client: "FeWo Taubenhaus",
+    client: "Mr. Sherman · Tanzstudio Berlin",
     problem:
-      "Ferienwohnung in Bad Lausick verlor 15 % OTA-Provision an Booking.com + FeWo-Direkt pro Buchung.",
+      "Vier Mitgliedschafts-Tiers, monatliche Abbuchungen, Schüler-Portal, Trainer-Dashboard — keine Standard-Software konnte das abbilden.",
     solution:
-      "Direktbuchungs-System (Next.js + Supabase + Stripe) mit Kalender-Sync, automatischen Bestätigungen und Kautions-Einzug.",
-    result: "Provisions-frei · Zahlungen direkt aufs Konto · Gast-Workflow automatisch",
+      "Komplette Buchungs- und Zahlungs-Plattform auf Next.js + Supabase + Stripe: 4 Membership-Tiers, Trainer-Portal, Admin-CRM, Meta-Ads mit Server-Side CAPI-Tracking.",
+    result: "205 Leads / Monat · 7,28 € CPL (75 % unter Branchen-Benchmark) · Tiers 49 € – 1.020 € vollständig automatisiert",
     accent: "from-cyan-500 to-blue-500",
     icon: Workflow,
   },
