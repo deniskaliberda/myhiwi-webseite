@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -33,34 +34,16 @@ export default function Navigation() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <span
-              className={cn(
-                "inline-flex h-8 w-8 items-center justify-center rounded-lg shadow-sm",
-                "bg-gradient-to-br from-blue-500 to-blue-600"
-              )}
-              aria-hidden
-            >
-              <svg viewBox="0 0 120 120" className="h-5 w-5" fill="none">
-                <path
-                  d="M34 92 L34 48 L60 28 L86 48 L86 92"
-                  stroke="white"
-                  strokeWidth="11"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <line
-                  x1="34"
-                  y1="66"
-                  x2="86"
-                  y2="66"
-                  stroke="white"
-                  strokeWidth="11"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+          {/* Logo — official MyHiwi brand icon */}
+          <Link href="/" className="flex items-center gap-2.5 group" aria-label="MyHiwi — Startseite">
+            <Image
+              src="/brand/myhiwi-icon.svg"
+              alt=""
+              width={36}
+              height={36}
+              priority
+              className="h-9 w-9 rounded-lg shadow-sm"
+            />
             <span
               className={cn(
                 "font-heading font-bold tracking-tight text-base",
