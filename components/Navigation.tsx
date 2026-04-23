@@ -2,110 +2,146 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { label: "Leistungen", href: "/#leistungen" },
+  { label: "Case Study", href: "/#case" },
+  { label: "Preise", href: "/#preise" },
+  { label: "Über mich", href: "/ueber-mich" },
+  { label: "Blog", href: "/blog" },
+];
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  const navItems = [
-    { label: "Home", href: "/" },
-    { label: "SEO", href: "/seo" },
-    { label: "Webdesign", href: "/webdesign" },
-    { label: "Starter-Paket", href: "/starter" },
-    { label: "Blog", href: "/blog" },
-    { label: "Über mich", href: "/ueber-mich" },
-    { label: "Kontakt", href: "/kontakt" },
-  ];
+  // Light treatment on homepage + kontakt (both already use light backgrounds).
+  // Dark treatment everywhere else.
+  const light = pathname === "/" || pathname?.startsWith("/kontakt");
 
   return (
-    <nav className="glass-effect fixed top-0 left-0 right-0 z-50">
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-colors",
+        light
+          ? "bg-white/75 border-slate-200/70"
+          : "bg-navy-900/90 border-white/5"
+      )}
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/myhiwi-logo.png"
-              alt="MyHiwi"
-              width={44}
-              height={44}
-              priority
-              className="rounded-md"
-            />
-            <span className="hidden sm:block text-[11px] text-slate-400 font-medium tracking-wide border-l border-slate-200 pl-3 self-center leading-[1.4]">
-              Dein digitaler<br />HiWi
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <span
+              className={cn(
+                "inline-flex h-8 w-8 items-center justify-center rounded-lg shadow-sm",
+                "bg-gradient-to-br from-blue-500 to-blue-600"
+              )}
+              aria-hidden
+            >
+              <svg viewBox="0 0 120 120" className="h-5 w-5" fill="none">
+                <path
+                  d="M34 92 L34 48 L60 28 L86 48 L86 92"
+                  stroke="white"
+                  strokeWidth="11"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <line
+                  x1="34"
+                  y1="66"
+                  x2="86"
+                  y2="66"
+                  stroke="white"
+                  strokeWidth="11"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            <span
+              className={cn(
+                "font-heading font-bold tracking-tight text-base",
+                light ? "text-slate-900" : "text-white"
+              )}
+            >
+              <span className="font-light opacity-70">My</span>Hiwi
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => {
-              const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`transition-colors font-medium ${
-                    isActive
-                      ? "text-accent"
-                      : "text-slate-700 hover:text-primary"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  light
+                    ? "text-slate-600 hover:text-slate-900"
+                    : "text-slate-300 hover:text-white"
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
             <Link
               href="/kontakt"
-              className="btn btn-cta"
+              className={cn(
+                "group inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium shadow-sm transition-all",
+                "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-blue-500/30 hover:shadow-lg"
+              )}
             >
-              Kontakt
+              Erstgespräch
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile toggle */}
           <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-primary" />
-            ) : (
-              <Menu className="w-6 h-6 text-primary" />
+            type="button"
+            className={cn(
+              "md:hidden p-2 rounded-md transition-colors",
+              light ? "text-slate-700 hover:bg-slate-100" : "text-slate-300 hover:bg-white/5"
             )}
+            onClick={() => setOpen(!open)}
+            aria-label="Menü"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => {
-                const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`transition-colors font-medium px-4 py-2 ${
-                      isActive
-                        ? "text-accent"
-                        : "text-slate-700 hover:text-primary"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
+        {/* Mobile menu */}
+        {open && (
+          <div
+            className={cn(
+              "md:hidden py-4 border-t",
+              light ? "border-slate-200" : "border-white/5"
+            )}
+          >
+            <div className="flex flex-col gap-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "py-2.5 px-2 text-base font-medium rounded transition-colors",
+                    light ? "text-slate-700 hover:bg-slate-100" : "text-slate-300 hover:bg-white/5"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
               <Link
                 href="/kontakt"
-                className="btn btn-cta mx-4"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => setOpen(false)}
+                className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-blue-700"
               >
-                Kontakt
+                Erstgespräch buchen
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

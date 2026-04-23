@@ -9,33 +9,67 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // shadcn/ui CSS variable colors
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: '#1e3a5f',
-          dark: '#0f172a',
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: '#f8fafc',
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: '#3b82f6',
-          hover: '#2563eb',
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
-        cta: {
-          DEFAULT: '#3b82f6',
-          hover: '#2563eb',
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        // MyHiwi custom colors
+        navy: {
+          950: "#0a0f1a",
+          900: "#0f172a",
+          800: "#1e293b",
+          700: "#334155",
+        },
+        blue: {
+          400: "#60a5fa",
+          500: "#3b82f6",
+          600: "#2563eb",
         },
         cyan: {
-          DEFAULT: '#06b6d4',
+          500: "#06b6d4",
         },
       },
-      fontFamily: {
-        inter: ['var(--font-inter)', 'sans-serif'],
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
-      backdropBlur: {
-        xs: '2px',
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import QuizContainer from "@/components/quiz/QuizContainer";
 import { Mail, MapPin, Clock, Calendar, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Container from "@/components/layout/Container";
+import SectionReveal from "@/components/shared/SectionReveal";
 
 export const metadata: Metadata = {
-  title: "Kontakt - Kostenloses Erstgespräch | MyHiwi",
+  title: "Kontakt — Kostenloses Erstgespräch",
   description:
     "Beantworten Sie 5 kurze Fragen und erhalten Sie eine individuelle Einschätzung. Oder buchen Sie direkt einen Termin.",
   alternates: {
@@ -13,124 +16,127 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-20">
-      {/* Hero Section with Quiz */}
-      <section className="relative py-12 md:py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/30" />
-        <div className="absolute top-20 right-[10%] w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-10 left-[5%] w-48 h-48 bg-cyan/5 rounded-full blur-3xl animate-float-delay" />
-
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-            <div className="inline-flex items-center gap-2 mb-4 md:mb-6 px-3 md:px-4 py-1.5 md:py-2 bg-accent/10 rounded-full border border-accent/20">
-              <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-sm md:text-base font-semibold text-accent">
+    <>
+      {/* Quiz Section */}
+      <section className="bg-slate-50 pt-28 pb-16 md:pt-36 md:pb-24">
+        <Container>
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <SectionReveal>
+              <p className="text-blue-500 font-medium text-sm tracking-wide mb-4">
                 In 2 Minuten
-              </span>
-            </div>
-
-            <h1 className="text-primary mb-4 md:mb-6">
-              Erzählen Sie mir von Ihrem{" "}
-              <span className="gradient-text">Unternehmen</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-slate-600">
-              5 kurze Fragen — dann melde ich mich mit einer individuellen
-              Einschätzung bei Ihnen.
-            </p>
+              </p>
+              <h1 className="text-navy-900 mb-4">
+                Erzählen Sie mir von Ihrem Unternehmen
+              </h1>
+              <p className="text-slate-500 text-lg">
+                5 kurze Fragen — dann melde ich mich mit einer individuellen
+                Einschätzung bei Ihnen.
+              </p>
+            </SectionReveal>
           </div>
 
           <QuizContainer />
-        </div>
+        </Container>
       </section>
 
-      {/* Alternative Contact Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container-custom">
+      {/* Direct Contact */}
+      <section className="bg-white py-16 md:py-24">
+        <Container>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-center text-primary mb-10 md:mb-14">
-              Oder kontaktieren Sie mich direkt
-            </h2>
+            <SectionReveal>
+              <h2 className="text-center text-navy-900 mb-10">
+                Oder kontaktieren Sie mich direkt
+              </h2>
+            </SectionReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {/* Contact Info */}
-              <div className="card">
-                <h3 className="text-xl font-bold text-primary mb-6">
-                  Kontaktinformationen
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-slate-600 mb-0.5">
-                        E-Mail
+              <SectionReveal>
+                <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 h-full">
+                  <h3 className="text-lg font-heading font-bold text-navy-900 mb-6">
+                    Kontaktinformationen
+                  </h3>
+                  <div className="space-y-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-4 h-4 text-blue-500" />
                       </div>
-                      <a
-                        href="mailto:kontakt@myhiwi.de"
-                        className="text-primary hover:text-accent transition-colors"
-                      >
-                        kontakt@myhiwi.de
-                      </a>
+                      <div>
+                        <p className="text-xs font-medium text-slate-500 mb-0.5">
+                          E-Mail
+                        </p>
+                        <a
+                          href="mailto:kontakt@myhiwi.de"
+                          className="text-navy-900 hover:text-blue-500 transition-colors text-sm"
+                        >
+                          kontakt@myhiwi.de
+                        </a>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-slate-600 mb-0.5">
-                        Region
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-4 h-4 text-blue-500" />
                       </div>
-                      <p className="text-slate-700">Ahrensfelde, Brandenburg</p>
+                      <div>
+                        <p className="text-xs font-medium text-slate-500 mb-0.5">
+                          Region
+                        </p>
+                        <p className="text-navy-900 text-sm">
+                          Ahrensfelde, Brandenburg
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-slate-600 mb-0.5">
-                        Verfügbarkeit
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                        <Clock className="w-4 h-4 text-blue-500" />
                       </div>
-                      <p className="text-slate-700">Mo–Fr: 9:00 – 18:00 Uhr</p>
+                      <div>
+                        <p className="text-xs font-medium text-slate-500 mb-0.5">
+                          Verfügbarkeit
+                        </p>
+                        <p className="text-navy-900 text-sm">
+                          Mo–Fr: 9:00 – 18:00 Uhr
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </SectionReveal>
 
-              {/* Calendly Booking Card */}
-              <div className="card-gradient-border glow-accent flex flex-col items-center justify-center text-center p-8 md:p-10">
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6">
-                  <Calendar className="w-8 h-8 text-accent" />
+              {/* Calendly */}
+              <SectionReveal delay={100}>
+                <div className="bg-navy-900 rounded-xl p-6 text-center h-full flex flex-col items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-5">
+                    <Calendar className="w-7 h-7 text-blue-500" />
+                  </div>
+                  <h3 className="text-lg font-heading font-bold text-white mb-2">
+                    Lieber direkt sprechen?
+                  </h3>
+                  <p className="text-slate-400 text-sm mb-6">
+                    Buchen Sie ein kostenloses 15-Minuten-Erstgespräch direkt in
+                    meinem Kalender.
+                  </p>
+                  <a
+                    href="https://calendly.com/denis-kaliberda/beratung"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-blue-500 hover:bg-blue-600 text-white gap-2">
+                      Termin buchen
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </a>
+                  <p className="text-xs text-slate-500 mt-4">
+                    Kostenlos & unverbindlich
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-3">
-                  Lieber direkt sprechen?
-                </h3>
-                <p className="text-slate-600 mb-6">
-                  Buchen Sie ein kostenloses 15-Minuten-Erstgespräch direkt in
-                  meinem Kalender.
-                </p>
-                <a
-                  href="https://calendly.com/denis-kaliberda/beratung"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-cta flex items-center gap-2 px-6 py-3"
-                >
-                  Termin buchen
-                  <ArrowRight size={18} />
-                </a>
-                <p className="text-sm text-slate-500 mt-4">
-                  Keine Verpflichtung. Kostenlos & unverbindlich.
-                </p>
-              </div>
+              </SectionReveal>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
-    </main>
+    </>
   );
 }

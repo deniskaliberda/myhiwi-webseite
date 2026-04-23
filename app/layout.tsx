@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-
-// Font Configuration - Based on Brand Guidelines
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -16,14 +11,28 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-// SEO Metadata
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "MyHiwi - Local SEO & Webdesign für KMU",
-    template: "%s",
+    default: "Digitale Kundengewinnung für lokale Unternehmen | MyHiwi",
+    template: "%s | MyHiwi",
   },
-  description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen. Messbare Sichtbarkeit durch Local SEO und professionelle, mobile-optimierte Webseiten.",
-  keywords: ["Local SEO", "Webdesign", "KMU", "kleine Unternehmen", "lokale Sichtbarkeit"],
+  description:
+    "Website + SEO + messbare Ergebnisse ab 500 EUR/Monat. Von 0% auf 34,6% Sichtbarkeit in 4 Wochen. Kostenloses Erstgespräch.",
+  keywords: [
+    "Local SEO",
+    "Webdesign",
+    "KMU",
+    "lokale Sichtbarkeit",
+    "Kundengewinnung",
+    "SEO Agentur",
+  ],
   authors: [{ name: "Denis Kaliberda" }],
   metadataBase: new URL("https://myhiwi.de"),
   openGraph: {
@@ -31,22 +40,24 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: "https://myhiwi.de",
     siteName: "MyHiwi",
-    title: "MyHiwi - Local SEO & Webdesign für KMU",
-    description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.",
+    title: "Digitale Kundengewinnung für lokale Unternehmen | MyHiwi",
+    description:
+      "Website + SEO + messbare Ergebnisse ab 500 EUR/Monat. Sonnenhof: 0% auf 34,6% Sichtbarkeit in 4 Wochen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MyHiwi - Local SEO & Webdesign für KMU",
-    description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.",
+    title: "Digitale Kundengewinnung für lokale Unternehmen | MyHiwi",
+    description:
+      "Website + SEO + messbare Ergebnisse ab 500 EUR/Monat.",
   },
 };
 
-// JSON-LD Structured Data
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "MyHiwi UG",
-  description: "Spezialisierte SEO- und Webdesign-Agentur für kleine, lokale Unternehmen.",
+  description:
+    "Digitale Kundengewinnung für lokale Unternehmen — Website, SEO und messbare Ergebnisse.",
   url: "https://myhiwi.de",
   logo: "https://myhiwi.de/myhiwi-logo.png",
   email: "kontakt@myhiwi.de",
@@ -66,7 +77,12 @@ const organizationJsonLd = {
     "@type": "Country",
     name: "Deutschland",
   },
-  serviceType: ["Local SEO", "Webdesign", "Google Business Profil Optimierung"],
+  serviceType: [
+    "Local SEO",
+    "Webdesign",
+    "Google Ads Management",
+    "Google Business Profil Optimierung",
+  ],
   priceRange: "€€",
 };
 
@@ -76,14 +92,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={cn("font-sans", geist.variable)}>
+    <html lang="de" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
       </head>
-      <body className="font-inter">
+      <body className="font-sans">
         <Navigation />
         <main>{children}</main>
         <Footer />
