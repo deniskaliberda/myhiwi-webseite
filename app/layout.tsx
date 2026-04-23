@@ -68,7 +68,7 @@ const organizationJsonLd = {
   description:
     "Digitale Kundengewinnung für lokale Unternehmen — Website, SEO und messbare Ergebnisse.",
   url: "https://myhiwi.de",
-  logo: "https://myhiwi.de/myhiwi-logo.png",
+  logo: "https://myhiwi.de/brand/myhiwi-h-logo.svg",
   email: "kontakt@myhiwi.de",
   address: {
     "@type": "PostalAddress",

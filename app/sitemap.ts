@@ -53,12 +53,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog/sonnenhof-case-study`,
-      lastModified: new Date("2026-03-03"),
-      changeFrequency: "yearly",
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/blog/google-business-profil`,
       lastModified: new Date("2026-02-11"),
       changeFrequency: "yearly",

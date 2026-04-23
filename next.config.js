@@ -22,6 +22,11 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/blog/sonnenhof-case-study",
+        destination: "/case-studies/sonnenhof-herrsching",
+        permanent: true,
+      },
     ];
   },
 };
