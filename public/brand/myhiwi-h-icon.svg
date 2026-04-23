@@ -1,0 +1,17 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyHiwi Icon">
+  <defs>
+    <linearGradient id="hGrad" x1="0.4" y1="0" x2="0.1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="40%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="foldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="16" height="56" rx="2" fill="url(#hGrad)"/>
+  <rect x="44" y="4" width="16" height="56" rx="2" fill="url(#hGrad)"/>
+  <polygon points="20,32 31,22 44,22 44,36 20,44" fill="url(#hGrad)"/>
+  <polygon points="20,32 31,22 31,32" fill="url(#foldGrad)"/>
+</svg>

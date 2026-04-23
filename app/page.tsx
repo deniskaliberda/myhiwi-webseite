@@ -52,10 +52,10 @@ const vignettes = [
     field: "Sichtbarkeit",
     client: "Sonnenhof Herrsching",
     problem:
-      "Hotel am Ammersee — bei Google kaum sichtbar, rund 5 Online-Anfragen pro Monat trotz voller Saison-Auslastung offline.",
+      "Hotel am Ammersee — bei Google kaum sichtbar, rund 5 Online-Anfragen pro Monat, Hauptumsatz lief über 15–18 % Booking.com-Provision.",
     solution:
-      "Next.js-Website (DE + EN), Local-SEO-Fundament, Google Business Profil optimiert, Google Ads Betreuung.",
-    result: "5 → 41 Anfragen / Monat · 28 Keywords in Top-10, davon 8 auf Platz 1",
+      "Next.js-Website (DE + EN), Local-SEO-Fundament, Google Business Profil, Google Ads + Content-SEO (Familien-, Hund-, Ammersee-Cluster).",
+    result: "5 → 41 Anfragen im März (+720 %) · April-Pace ~50 · 28 Keywords Top-10, 8 auf Platz 1",
     accent: "from-blue-500 to-blue-600",
     icon: Globe,
   },
@@ -443,11 +443,12 @@ export default function HomePage() {
 
                 <div className="absolute -left-8 -top-6 rounded-xl border border-slate-200 bg-white/95 px-4 py-3 shadow-xl backdrop-blur animate-float-y">
                   <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
-                    Anfragen / Monat
+                    Anfragen · März
                   </p>
                   <p className="mt-0.5 font-heading text-xl font-bold text-slate-900">
                     5 <span className="text-slate-400">→</span>{" "}
-                    <span className="gradient-text">41</span>
+                    <span className="gradient-text">41</span>{" "}
+                    <span className="text-xs font-mono text-cyan-600">+720%</span>
                   </p>
                 </div>
 
@@ -646,9 +647,10 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="max-w-md text-base leading-relaxed text-slate-600 md:ml-auto">
-                Der Sonnenhof Herrsching bekam vor dem Relaunch rund 5 Online-Anfragen
-                pro Monat. Drei Monate später laufen 41 rein — 28 Keywords stehen
-                in den Top-10, 8 davon auf Platz 1. Ziehen Sie den Slider.
+                Vor dem Relaunch lagen rund 5 Online-Anfragen im Monat an,
+                Hauptumsatz über Booking.com-Provisionen. Drei Monate später:
+                41 Anfragen im März (+720 %), April läuft auf Pace 50+. 28
+                Keywords in den Top-10, 8 davon auf Platz 1. Ziehen Sie den Slider.
               </p>
             </div>
           </SectionReveal>
@@ -668,22 +670,22 @@ export default function HomePage() {
             <SectionReveal delay={150}>
               <div className="flex flex-col gap-3">
                 <MetricCard
-                  label="Anfragen · Monat"
-                  value="8"
-                  unit="×"
-                  description="Von rund 5 auf 41 Online-Anfragen pro Monat — über organische Suche und Google Ads."
+                  label="Anfragen · März 2026"
+                  value="+720"
+                  unit="%"
+                  description="Von rund 5 auf 41 Online-Anfragen pro Monat — April läuft auf Pace ~50."
                 />
                 <MetricCard
                   label="Top-10 Keywords"
                   value="28"
                   unit="Ø"
-                  description="Lokale Suchbegriffe auf Google-Seite 1 — 8 davon auf Platz 1."
+                  description="8 auf Platz 1 · 6 Top 2-3 · 7 Top 4-5 · 7 Top 6-10. 511+ organische Klicks seit Start."
                 />
                 <MetricCard
                   label="Google Ads · CPC"
                   value="0,30"
                   unit="€"
-                  description="Cost-per-Click bei 2.242 Klicks pro Monat · Optimierungsscore 86 %."
+                  description="Branchenschnitt 1–3 €. 2.242 Klicks, 88,7 K Impressionen, Optimierungsscore 86 %."
                 />
                 <figure className="rounded-xl border border-slate-200 bg-white p-5">
                   <blockquote className="text-sm leading-relaxed text-slate-700">

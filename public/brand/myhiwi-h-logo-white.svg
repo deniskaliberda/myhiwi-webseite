@@ -1,0 +1,11 @@
+<svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MyHiwi Logo White">
+  <!-- H Icon Mark -->
+  <rect x="4" y="4" width="16" height="56" rx="2" fill="#ffffff"/>
+  <rect x="44" y="4" width="16" height="56" rx="2" fill="#ffffff"/>
+  <polygon points="20,32 31,22 44,22 44,36 20,44" fill="#ffffff"/>
+  <polygon points="20,32 31,22 31,32" fill="rgba(0,0,0,0.15)"/>
+
+  <!-- Wordmark white -->
+  <text x="76" y="41" font-family="'DM Sans', 'Inter', system-ui, sans-serif" font-weight="700" font-size="26" letter-spacing="-0.5" fill="#ffffff">MyHiwi</text>
+  <text x="77" y="53" font-family="'DM Sans', 'Inter', system-ui, sans-serif" font-weight="400" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.6)">DEIN DIGITALER HIWI</text>
+</svg>

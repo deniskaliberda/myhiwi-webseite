@@ -34,23 +34,28 @@ export default function Navigation() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo — official MyHiwi brand icon */}
-          <Link href="/" className="flex items-center gap-2.5 group" aria-label="MyHiwi — Startseite">
+          {/* Logo — H-monogram (primary brand mark) */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 group"
+            aria-label="MyHiwi — Startseite"
+          >
             <Image
-              src="/brand/myhiwi-icon.svg"
+              src={light ? "/brand/myhiwi-h-icon.svg" : "/brand/myhiwi-h-icon-white.svg"}
               alt=""
-              width={36}
-              height={36}
+              width={32}
+              height={32}
               priority
-              className="h-9 w-9 rounded-lg shadow-sm"
+              className="h-8 w-8"
             />
             <span
               className={cn(
-                "font-heading font-bold tracking-tight text-base",
+                "font-heading tracking-tight text-[17px] leading-none",
                 light ? "text-slate-900" : "text-white"
               )}
             >
-              <span className="font-light opacity-70">My</span>Hiwi
+              <span className="font-light opacity-70">My</span>
+              <span className="font-bold">Hiwi</span>
             </span>
           </Link>
 
