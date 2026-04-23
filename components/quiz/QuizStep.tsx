@@ -24,7 +24,7 @@ export default function QuizStep({ question, subtitle, direction, children }: Qu
       <h3
         ref={headingRef}
         tabIndex={-1}
-        className="text-xl md:text-2xl font-bold text-primary mb-2 outline-none"
+        className="font-heading text-xl md:text-2xl font-bold tracking-tight text-slate-900 mb-2 outline-none"
       >
         {question}
       </h3>

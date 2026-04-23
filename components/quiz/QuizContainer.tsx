@@ -135,7 +135,7 @@ export default function QuizContainer() {
                 placeholder="Welche Branche?"
                 value={data.businessCustom}
                 onChange={e => setData(d => ({ ...d, businessCustom: e.target.value }))}
-                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-slate-900"
+                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-slate-900"
                 autoFocus
               />
             </div>
@@ -160,7 +160,7 @@ export default function QuizContainer() {
                 placeholder="Beschreiben Sie Ihre Herausforderung..."
                 value={data.challengeCustom}
                 onChange={e => setData(d => ({ ...d, challengeCustom: e.target.value }))}
-                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-slate-900"
+                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-slate-900"
                 autoFocus
               />
             </div>
@@ -194,7 +194,7 @@ export default function QuizContainer() {
                 value={data.name}
                 onChange={e => setData(d => ({ ...d, name: e.target.value }))}
                 placeholder="Ihr Name"
-                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-slate-900"
+                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-slate-900"
               />
             </div>
             <div>
@@ -208,7 +208,7 @@ export default function QuizContainer() {
                 value={data.email}
                 onChange={e => setData(d => ({ ...d, email: e.target.value }))}
                 placeholder="ihre@email.de"
-                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-slate-900"
+                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-slate-900"
               />
             </div>
             <div>
@@ -221,7 +221,7 @@ export default function QuizContainer() {
                 value={data.phone}
                 onChange={e => setData(d => ({ ...d, phone: e.target.value }))}
                 placeholder="+49 ..."
-                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-slate-900"
+                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-slate-900"
               />
             </div>
             <div>
@@ -234,7 +234,7 @@ export default function QuizContainer() {
                 value={data.website}
                 onChange={e => setData(d => ({ ...d, website: e.target.value }))}
                 placeholder="https://ihre-firma.de oder Firmenname"
-                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-slate-900"
+                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-slate-900"
               />
             </div>
             <div>
@@ -247,7 +247,7 @@ export default function QuizContainer() {
                 value={data.message}
                 onChange={e => setData(d => ({ ...d, message: e.target.value }))}
                 placeholder="Gibt es etwas, das Sie mir vorab mitteilen möchten?"
-                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-slate-900 resize-none"
+                className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-slate-900 resize-none"
               />
             </div>
           </div>
@@ -272,7 +272,7 @@ export default function QuizContainer() {
             <button
               type="button"
               onClick={goBack}
-              className="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors font-medium"
+              className="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors font-medium"
             >
               <ArrowLeft size={18} />
               Zurück
@@ -286,7 +286,7 @@ export default function QuizContainer() {
               type="button"
               onClick={goNext}
               disabled={currentStep === 5 && !canAdvanceContactStep}
-              className="btn btn-cta flex items-center gap-2 px-6 py-3 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-blue-600 to-blue-500 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-700 hover:to-blue-600 hover:shadow-blue-500/40 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
             >
               {currentStep === 5 ? 'Zur Zusammenfassung' : 'Weiter'}
               <ArrowRight size={18} />
@@ -300,7 +300,7 @@ export default function QuizContainer() {
           <button
             type="button"
             onClick={goBack}
-            className="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors font-medium"
+            className="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors font-medium"
           >
             <ArrowLeft size={18} />
             Zurück

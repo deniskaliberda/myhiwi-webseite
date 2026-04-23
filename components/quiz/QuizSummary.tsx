@@ -35,7 +35,7 @@ export default function QuizSummary({ data, onEdit, onSubmit, isSubmitting, erro
 
   return (
     <div className="animate-slide-in-right">
-      <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">
+      <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight text-slate-900 mb-2">
         Zusammenfassung
       </h3>
       <p className="text-slate-500 mb-6">
@@ -51,12 +51,12 @@ export default function QuizSummary({ data, onEdit, onSubmit, isSubmitting, erro
           >
             <div>
               <span className="text-sm text-slate-500">{row.label}</span>
-              <p className="font-medium text-primary">{row.value}</p>
+              <p className="font-medium text-slate-900">{row.value}</p>
             </div>
             <button
               type="button"
               onClick={() => onEdit(row.step)}
-              className="p-2 text-slate-400 hover:text-accent hover:bg-accent/5 rounded-lg transition-colors"
+              className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
               aria-label={`${row.label} bearbeiten`}
             >
               <Pencil size={16} />
@@ -71,13 +71,13 @@ export default function QuizSummary({ data, onEdit, onSubmit, isSubmitting, erro
             <button
               type="button"
               onClick={() => onEdit(5)}
-              className="p-2 text-slate-400 hover:text-accent hover:bg-accent/5 rounded-lg transition-colors"
+              className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
               aria-label="Kontaktdaten bearbeiten"
             >
               <Pencil size={16} />
             </button>
           </div>
-          <p className="font-medium text-primary">{data.name}</p>
+          <p className="font-medium text-slate-900">{data.name}</p>
           <p className="text-sm text-slate-600">{data.email}</p>
           {data.phone && <p className="text-sm text-slate-600">{data.phone}</p>}
           {data.website && <p className="text-sm text-slate-600">{data.website}</p>}
@@ -97,7 +97,7 @@ export default function QuizSummary({ data, onEdit, onSubmit, isSubmitting, erro
         type="button"
         onClick={onSubmit}
         disabled={isSubmitting}
-        className="w-full btn btn-cta flex items-center justify-center gap-2 text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-br from-blue-600 to-blue-500 px-6 py-4 text-base font-medium text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-700 hover:to-blue-600 hover:shadow-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
       >
         {isSubmitting ? (
           <>

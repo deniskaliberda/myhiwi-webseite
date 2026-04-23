@@ -10,16 +10,16 @@ export default function QuizProgress({ currentStep }: QuizProgressProps) {
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-medium text-slate-500">
+        <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">
           Schritt {Math.min(currentStep + 1, TOTAL_QUIZ_STEPS)} von {TOTAL_QUIZ_STEPS}
         </span>
-        <span className="text-sm font-medium text-accent">
+        <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-blue-600">
           {Math.round(progress)}%
         </span>
       </div>
-      <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-accent to-cyan transition-all duration-500 ease-out"
+          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-500 ease-out shadow-[0_0_12px_rgba(59,130,246,0.4)]"
           style={{ width: `${progress}%` }}
         />
       </div>
