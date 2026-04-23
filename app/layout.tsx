@@ -20,18 +20,26 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Digitale Kundengewinnung für lokale Unternehmen | MyHiwi",
+    default:
+      "Dein digitaler Hiwi für KMU — Website, SEO, Automation & KI | MyHiwi",
     template: "%s | MyHiwi",
   },
   description:
-    "Website + SEO + messbare Ergebnisse ab 500 EUR/Monat. Von 0% auf 34,6% Sichtbarkeit in 4 Wochen. Kostenloses Erstgespräch.",
+    "Digitaler Partner für lokale Unternehmen: Website + Local SEO, Buchungs- und Zahlungssysteme, Workflow-Automation und KI-Agents — aus einer Hand. Berlin + Bayern.",
   keywords: [
+    "digitaler Partner",
+    "digitaler Hiwi",
+    "Webdesign KMU",
     "Local SEO",
-    "Webdesign",
-    "KMU",
-    "lokale Sichtbarkeit",
-    "Kundengewinnung",
-    "SEO Agentur",
+    "Google Business Profil",
+    "Google Ads KMU",
+    "Buchungssystem erstellen lassen",
+    "Direktbuchung ohne OTA",
+    "Zahlungssystem Stripe",
+    "KI-Agent fuer Unternehmen",
+    "Workflow Automation",
+    "Next.js Website",
+    "Ahrensfelde Berlin Bayern",
   ],
   authors: [{ name: "Denis Kaliberda" }],
   metadataBase: new URL("https://myhiwi.de"),
@@ -40,15 +48,16 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: "https://myhiwi.de",
     siteName: "MyHiwi",
-    title: "Digitale Kundengewinnung für lokale Unternehmen | MyHiwi",
+    title:
+      "Dein digitaler Hiwi für KMU — Website, SEO, Automation & KI | MyHiwi",
     description:
-      "Website + SEO + messbare Ergebnisse ab 500 EUR/Monat. Sonnenhof: 0% auf 34,6% Sichtbarkeit in 4 Wochen.",
+      "Digitaler Partner, der Probleme erkennt und Lösungen baut: Website + Local SEO, Buchung + Zahlung, Workflow-Automation und KI-Agents.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digitale Kundengewinnung für lokale Unternehmen | MyHiwi",
+    title: "Dein digitaler Hiwi für KMU | MyHiwi",
     description:
-      "Website + SEO + messbare Ergebnisse ab 500 EUR/Monat.",
+      "Website, Local SEO, Buchungssystem, Automation und KI-Agents — aus einer Hand. Digitaler Partner statt Agentur.",
   },
 };
 
