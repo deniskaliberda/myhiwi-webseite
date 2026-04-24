@@ -52,10 +52,10 @@ const vignettes = [
     field: "Sichtbarkeit",
     client: "Sonnenhof Herrsching",
     problem:
-      "Hotel am Ammersee — bei Google kaum sichtbar, rund 5 Online-Anfragen pro Monat, Hauptumsatz lief über 15–18 % Booking.com-Provision.",
+      "Hotel am Ammersee — Website seit 23 Jahren nicht erneuert, Top-10-Keywords auf 6-Jahres-Tiefpunkt (24), Hauptumsatz über 15–18 % Booking.com-Provision.",
     solution:
-      "Next.js-Website (DE + EN), Local-SEO-Fundament, Google Business Profil, Google Ads + Content-SEO (Familien-, Hund-, Ammersee-Cluster).",
-    result: "5 → 41 Anfragen im März (+720 %) · April-Pace ~50 · 28 Keywords Top-10, 8 auf Platz 1",
+      "100-Tage-Relaunch: Next.js-Website (DE + EN), Local-SEO-Fundament, 10 Content-Posts, Google Business Profil, Performance-Max-Ads (Ø CPC 0,30 €).",
+    result: "108 Anfragen in 100 Tagen · +304 % Top-10-Keywords (24 → 97) · 6-Jahres-Peak laut SE Ranking API",
     accent: "from-blue-500 to-blue-600",
     icon: Globe,
   },
@@ -443,12 +443,11 @@ export default function HomePage() {
 
                 <div className="absolute -left-8 -top-6 rounded-xl border border-slate-200 bg-white/95 px-4 py-3 shadow-xl backdrop-blur animate-float-y">
                   <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
-                    Anfragen · März
+                    Anfragen · 100 Tage
                   </p>
                   <p className="mt-0.5 font-heading text-xl font-bold text-slate-900">
-                    5 <span className="text-slate-400">→</span>{" "}
-                    <span className="gradient-text">41</span>{" "}
-                    <span className="text-xs font-mono text-cyan-600">+720%</span>
+                    <span className="gradient-text">108</span>{" "}
+                    <span className="text-xs font-mono text-cyan-600">direkt · ohne Provision</span>
                   </p>
                 </div>
 
@@ -647,10 +646,10 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="max-w-md text-base leading-relaxed text-slate-600 md:ml-auto">
-                Vor dem Relaunch lagen rund 5 Online-Anfragen im Monat an,
-                Hauptumsatz über Booking.com-Provisionen. Drei Monate später:
-                41 Anfragen im März (+720 %), April läuft auf Pace 50+. 28
-                Keywords in den Top-10, 8 davon auf Platz 1. Ziehen Sie den Slider.
+                Sonnenhof-Website seit 23 Jahren unverändert, Top-10-Keywords auf
+                Dezember-Tiefpunkt. 100 Tage später: 108 direkte Gäste-Anfragen,
+                Top-10-Keywords auf 97 vervierfacht — ein 6-Jahres-Peak laut SE
+                Ranking API. Ziehen Sie den Slider.
               </p>
             </div>
           </SectionReveal>
@@ -670,16 +669,16 @@ export default function HomePage() {
             <SectionReveal delay={150}>
               <div className="flex flex-col gap-3">
                 <MetricCard
-                  label="Anfragen · März 2026"
-                  value="+720"
-                  unit="%"
-                  description="Von rund 5 auf 41 Online-Anfragen pro Monat — April läuft auf Pace ~50."
+                  label="Anfragen · 100 Tage"
+                  value="108"
+                  unit="direkt"
+                  description="28. Jan – 23. Apr 2026 · ohne Booking-Provision · April-Pace ~80 / Monat."
                 />
                 <MetricCard
                   label="Top-10 Keywords"
-                  value="28"
-                  unit="Ø"
-                  description="8 auf Platz 1 · 6 Top 2-3 · 7 Top 4-5 · 7 Top 6-10. 511+ organische Klicks seit Start."
+                  value="+304"
+                  unit="%"
+                  description="24 (Dez 2025) → 97 (Apr 2026) · 37 Top-5 + 60 Top 6–10 · 6-Jahres-Peak."
                 />
                 <MetricCard
                   label="Google Ads · CPC"

@@ -28,8 +28,8 @@ const cases = [
     client: "Sonnenhof Herrsching",
     subline: "Hotel & Ferienwohnungen am Ammersee",
     description:
-      "Von 5 auf 41 Online-Anfragen im Monat, 28 Keywords in den Top-10 und einem CPC von 0,30 € bei Google Ads — in drei Monaten aus der Booking-Provisions-Abhängigkeit.",
-    metric: { value: "+720%", label: "Anfragen · März 2026" },
+      "23 Jahre Website-Stillstand, 24 Top-10-Keywords Ende 2025. 100 Tage später: 108 direkte Gäste-Anfragen, 97 Top-10-Keywords (+304 %), 6-Jahres-Peak in der SE-Ranking-Historie.",
+    metric: { value: "108", label: "Direkte Anfragen in 100 Tagen" },
     icon: Globe,
     image: "/case-studies/sonnenhof/sonnenhof-neu.png",
     accent: "from-blue-500 to-blue-600",
