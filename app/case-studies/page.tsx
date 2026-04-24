@@ -47,6 +47,18 @@ const cases = [
     accent: "from-cyan-500 to-blue-500",
   },
   {
+    slug: "villa-gloria",
+    field: "Automatisierung · Ferienhaus",
+    client: "Villa Gloria Istrien",
+    subline: "Ferienhaus in Kaštelir · DE + EN",
+    description:
+      "Kein Smoobu-Widget mehr: eigener Kalender mit echter iCal-Verfügbarkeit, Property-Toggle (Gesamtes Haus / Poolwohnung), 3-Nächte-Regel und automatischem Email-Flow zum Verwalter.",
+    metric: { value: "88/100", label: "SEO-Score nach Relaunch" },
+    icon: Workflow,
+    image: null,
+    accent: "from-orange-400 to-cyan-500",
+  },
+  {
     slug: "formazin",
     field: "KI-Lösungen · Digitaler Partner",
     client: "Formazin · Architekturbüro",

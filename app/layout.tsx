@@ -103,6 +103,12 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="MyHiwi Blog"
+          href="/feed.xml"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
