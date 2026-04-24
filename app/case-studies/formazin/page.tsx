@@ -15,6 +15,7 @@ import {
   Check,
 } from "lucide-react";
 import SectionReveal from "@/components/shared/SectionReveal";
+import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
   title:
@@ -127,8 +128,10 @@ export default function FormazinCaseStudy() {
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               Formazin ist ein Architekturbüro. Was hier entstanden ist, ist
               kein klassisches Website-Projekt — sondern eine laufende
-              Partnerschaft, die Prozesse im Büro nach und nach automatisiert.
-              Erste Baustelle: Bauprotokolle, die sich selber schreiben.
+              Partnerschaft, die Prozesse im Büro mit{" "}
+              <Glossary term="ki-agent">KI-Agents</Glossary>{" "}
+              nach und nach automatisiert. Erste Baustelle: Bauprotokolle, die
+              sich selber schreiben.
             </p>
 
             <p className="mt-4 max-w-2xl text-base font-mono uppercase tracking-[0.12em] text-slate-500">

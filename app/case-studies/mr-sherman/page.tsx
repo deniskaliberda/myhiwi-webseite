@@ -16,6 +16,7 @@ import {
   Check,
 } from "lucide-react";
 import SectionReveal from "@/components/shared/SectionReveal";
+import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
   title:
@@ -119,8 +120,12 @@ export default function MrShermanCaseStudy() {
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
                 Kein Termin-Baukasten hätte das abgebildet: vier
                 Membership-Tiers, Sterne-Bonus-System, Schüler-Portal,
-                Trainer-Dashboard, Admin-CRM und Meta-Ads mit Server-Side
-                CAPI-Tracking. Alles selbst gebaut, alles automatisiert.
+                Trainer-Dashboard, Admin-CRM und Meta-Ads mit{" "}
+                <Glossary term="meta-capi">Server-Side CAPI-Tracking</Glossary>.
+                Alles selbst gebaut auf{" "}
+                <Glossary term="next-js">Next.js</Glossary>,{" "}
+                <Glossary term="supabase">Supabase</Glossary> und{" "}
+                <Glossary term="stripe-subscriptions">Stripe Subscriptions</Glossary>.
               </p>
 
               <a
@@ -267,7 +272,7 @@ export default function MrShermanCaseStudy() {
               Produkt · So läuft eine Anmeldung
             </span>
             <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
-              Vom Klick auf „Anmelden" bis zur{" "}
+              Vom Klick auf „Anmelden“ bis zur{" "}
               <span className="gradient-text">ersten Bestätigungs-Mail.</span>
             </h2>
           </SectionReveal>

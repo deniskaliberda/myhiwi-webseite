@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import BeforeAfterSlider from "@/components/home/BeforeAfterSlider";
 import SectionReveal from "@/components/shared/SectionReveal";
+import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
   title:
@@ -493,11 +494,14 @@ export default function SonnenhofCaseStudy() {
               </p>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
                 Die alte Sonnenhof-Website war seit 2003 faktisch unverändert. Gäste kamen
-                über Booking.com — 15–18 % Provision pro Buchung. Zwischen Januar und
-                April 2026 hat MyHiwi die Seite komplett neu gebaut, für Google
-                strukturiert und mit Google Ads flankiert. Ergebnis: 108 direkte
-                Gäste-Anfragen und ein Anstieg der Top-10-Keywords auf einen
-                6-Jahres-Peak.
+                über Booking.com —{" "}
+                <Glossary term="ota-provision">15–18 % Provision</Glossary>{" "}
+                pro Buchung. Zwischen Januar und April 2026 hat MyHiwi die Seite komplett
+                neu gebaut, für Google strukturiert und mit{" "}
+                <Glossary term="performance-max">Google Ads</Glossary>{" "}
+                flankiert. Ergebnis: 108 direkte Gäste-Anfragen und ein Anstieg der{" "}
+                <Glossary term="top-10-keywords">Top-10-Keywords</Glossary>{" "}
+                auf einen 6-Jahres-Peak.
               </p>
 
               <a
@@ -634,7 +638,8 @@ export default function SonnenhofCaseStudy() {
                 Die Website selbst war seit über 20 Jahren online, in der Struktur
                 aber nie erneuert. Die letzte Aktualisierung im Internet Archive
                 datiert auf den 14.&nbsp;Dezember 2025. Lange Ladezeiten,
-                fehlende mobile Darstellung, keine strukturierten Daten, kein
+                fehlende mobile Darstellung, keine{" "}
+                <Glossary term="schema-org">strukturierten Daten</Glossary>, kein
                 Kontaktformular, das Google versteht.
               </p>
               <p>
@@ -761,7 +766,7 @@ export default function SonnenhofCaseStudy() {
               Keyword-Pyramide · 243 Keywords · Stand April 2026
             </span>
             <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
-              Nicht nur „ranken".{" "}
+              Nicht nur „ranken“.{" "}
               <span className="gradient-text">Ranken, wo Gäste klicken.</span>
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600">

@@ -7,6 +7,12 @@ import {
   MapPin,
   TrendingUp,
   BookOpen,
+  Search,
+  Code,
+  FileCode,
+  Megaphone,
+  CreditCard,
+  BarChart3,
 } from "lucide-react";
 import SectionReveal from "@/components/shared/SectionReveal";
 
@@ -27,6 +33,66 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  {
+    slug: "keyword-kannibalisierung",
+    title: "Keyword-Kannibalisierung: der stille Killer Ihrer Top-10-Platzierungen",
+    excerpt:
+      "Wenn mehrere Seiten auf dasselbe Keyword ranken, klauen sie sich gegenseitig die Ranking-Kraft. Wie wir das beim Sonnenhof gefixt haben — und Top-10-Keywords in einem Monat verdoppelt.",
+    date: "24. April 2026",
+    readTime: "7 Min. Lesezeit",
+    category: "Technisches SEO",
+    icon: Search,
+  },
+  {
+    slug: "next-js-fuer-lokale-websites",
+    title: "Warum ich für KMU kein WordPress mehr baue",
+    excerpt:
+      "Ladezeit, Wartung, Sicherheit — drei Argumente, warum Next.js für Hotel- und Handwerker-Websites 2026 die bessere Wahl ist. Mit echten Zahlen aus dem Sonnenhof-Relaunch.",
+    date: "24. April 2026",
+    readTime: "8 Min. Lesezeit",
+    category: "Webdesign",
+    icon: Code,
+  },
+  {
+    slug: "schema-org-fuer-hotels-und-kmu",
+    title: "Schema.org — die unsichtbare Sprache, mit der Google Ihre Seite liest",
+    excerpt:
+      "Strukturierte Daten bringen Rich Results in den Suchergebnissen — Sterne, Preise, Öffnungszeiten direkt in der Liste. Welche 4 Schema-Typen jeder KMU braucht.",
+    date: "24. April 2026",
+    readTime: "6 Min. Lesezeit",
+    category: "Technisches SEO",
+    icon: FileCode,
+  },
+  {
+    slug: "google-ads-pmax-fuer-kmu",
+    title: "Google Ads Performance Max — was 2026 für KMU funktioniert",
+    excerpt:
+      "Richtig eingerichtet hat Performance Max beim Sonnenhof zu 0,30 € CPC geführt. Die Setup-Reihenfolge, die drei häufigsten Pannen und wann sich PMax rechnet.",
+    date: "24. April 2026",
+    readTime: "7 Min. Lesezeit",
+    category: "Google Ads",
+    icon: Megaphone,
+  },
+  {
+    slug: "ota-provision-vs-direktbuchung",
+    title: "Was Booking.com Sie wirklich kostet — und ab wann Direktbuchung rechnet",
+    excerpt:
+      "OTAs behalten 15–18 % jeder Buchung. Ein Rechenbeispiel für ein 30-Zimmer-Haus: 50.000 bis 100.000 € pro Jahr gehen an die Portale. Wann sich die eigene Infrastruktur lohnt.",
+    date: "24. April 2026",
+    readTime: "6 Min. Lesezeit",
+    category: "Hotellerie & FeWo",
+    icon: CreditCard,
+  },
+  {
+    slug: "sichtbarkeitsindex-lesen",
+    title: "Sichtbarkeitsindex — und warum nur Top-10 Geld bringt",
+    excerpt:
+      "Wie man einen SEO-Monatsreport wirklich liest. Die 1 %-Regel ab Seite 2, was ein guter Bericht enthalten muss und welche zwei Fragen der Inhaber jedem Agentur-Bericht stellen sollte.",
+    date: "24. April 2026",
+    readTime: "6 Min. Lesezeit",
+    category: "SEO Reporting",
+    icon: BarChart3,
+  },
   {
     slug: "google-business-profil",
     title:

@@ -59,6 +59,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/blog/keyword-kannibalisierung`,
+      lastModified: new Date("2026-04-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/next-js-fuer-lokale-websites`,
+      lastModified: new Date("2026-04-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/schema-org-fuer-hotels-und-kmu`,
+      lastModified: new Date("2026-04-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/google-ads-pmax-fuer-kmu`,
+      lastModified: new Date("2026-04-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/ota-provision-vs-direktbuchung`,
+      lastModified: new Date("2026-04-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/sichtbarkeitsindex-lesen`,
+      lastModified: new Date("2026-04-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/impressum`,
       lastModified: new Date(),
       changeFrequency: "yearly",
