@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/festpreis`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/case-studies`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -36,12 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/case-studies/mr-sherman`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/case-studies/villa-gloria`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.85,

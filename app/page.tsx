@@ -60,13 +60,13 @@ const vignettes = [
     icon: Globe,
   },
   {
-    field: "Automatisierung",
+    field: "Custom Brand-App",
     client: "Mr. Sherman · Tanzstudio Berlin",
     problem:
-      "Vier Mitgliedschafts-Tiers, monatliche Abbuchungen, Schüler-Portal, Trainer-Dashboard — keine Standard-Software konnte das abbilden.",
+      "Memberships, monatliche Abbuchungen, Schüler-Login, Trainer-Portal, Admin-CRM — keine Standard-Software (Mindbody, Eversports) konnte das so abbilden, dass das Studio-Branding trägt.",
     solution:
-      "Komplette Buchungs- und Zahlungs-Plattform auf Next.js + Supabase + Stripe: 4 Membership-Tiers, Trainer-Portal, Admin-CRM, Meta-Ads mit Server-Side CAPI-Tracking.",
-    result: "205 Leads / Monat · 7,28 € CPL (75 % unter Branchen-Benchmark) · Tiers 49 € – 1.020 € vollständig automatisiert",
+      "Eigene Brand-Applikation, gebaut speziell für Sherman: Memberships mit Stripe-Subscriptions, Schüler-App, Trainer-Portal, Admin-CRM. Alles miteinander verbunden, alles automatisiert, alles digital mit der Webseite verschmolzen.",
+    result: "205 Leads / Monat · 7,28 € CPL (75 % unter Branchen-Benchmark) · 4 Membership-Tiers vollständig automatisiert",
     accent: "from-cyan-500 to-blue-500",
     icon: Workflow,
   },
@@ -158,16 +158,16 @@ const principles = [
   },
 ];
 
-/* ---------- Tier data (public 3-tier model from CLAUDE.md) ---------- */
+/* ---------- Tier data (4-Tier model · ab 2026-07-01 · CLAUDE.md) ---------- */
 
 const tiers = [
   {
     id: "sichtbar",
     name: "Sichtbar",
     tagline: "Einstieg ohne Festlegung.",
-    price: "299",
+    price: "349",
     unit: "€ / Monat",
-    setup: "648 € einmalige Einrichtung",
+    setup: "798 € einmalige Einrichtung",
     term: "3 Monate Mindestlaufzeit",
     audience: "Handwerker & kleine Betriebe in der Proof-Phase",
     features: [
@@ -183,19 +183,19 @@ const tiers = [
   {
     id: "wachstum",
     name: "Wachstum",
-    tagline: "Unser Standard-Budget für wachsende Betriebe.",
-    price: "599",
+    tagline: "Unser Standard für wachsende Betriebe.",
+    price: "699",
     unit: "€ / Monat",
-    setup: "648 € einmalige Einrichtung",
+    setup: "798 € einmalige Einrichtung",
     term: "12 Monate Mindestlaufzeit",
     audience: "Ferienwohnungen, Fahrschulen, Friseure, Praxen",
     features: [
       "Alles aus Sichtbar",
       "Laufende SEO — Content + Technik + Backlinks",
       "Google Ads inklusive · bis 1.000 € Werbebudget",
+      "1 Workflow-Automation (Lead-Routing, Onboarding oder Reporting)",
       "1 Blog-Artikel pro Monat",
       "Monatlicher Strategie-Call",
-      "Priorisierter Support",
     ],
     highlight: true,
     cta: "Wachstum starten",
@@ -204,21 +204,41 @@ const tiers = [
     id: "dominanz",
     name: "Dominanz",
     tagline: "Für alle, die Marktführer werden wollen.",
-    price: "999",
+    price: "1.199",
     unit: "€ / Monat",
-    setup: "1.139 € einmalige Einrichtung",
+    setup: "1.339 € einmalige Einrichtung",
     term: "12 Monate Mindestlaufzeit",
     audience: "Hotels, Zahnarztpraxen, Kanzleien, regionale Ketten",
     features: [
       "Alles aus Wachstum",
       "Google Ads erweitert · 1.000–3.000 € Budget",
+      "Personal-Email-Agent für Ihre Branche",
+      "Custom Zahlungssystem inklusive",
       "Wettbewerber-Monitoring · A/B-Tests",
-      "Conversion-Optimierung auf der Website",
       "Quartals-Workshop vor Ort oder via Zoom",
-      "Branchen-Spezialisierung (Medizin, Recht, Premium)",
     ],
     highlight: false,
     cta: "Dominieren",
+  },
+  {
+    id: "dominanz-plus",
+    name: "Dominanz Plus",
+    tagline: "Done-for-you Premium.",
+    price: "2.499",
+    unit: "€ / Monat",
+    setup: "1.999 € einmalige Einrichtung",
+    term: "12 Monate Mindestlaufzeit",
+    audience: "Mehr-Standort-Betriebe & Brands mit Vertriebs-Engpass",
+    features: [
+      "Alles aus Dominanz",
+      "Google Ads Premium · bis 5.000 € Budget",
+      "Custom Buchungssystem inklusive",
+      "Voice-zu-Dokument-Agent (Bauprotokoll, Calls, Notizen)",
+      "Lead-Generation-Modul aktiv",
+      "WhatsApp-Bulk-Kampagnen (2/Quartal inkl.)",
+    ],
+    highlight: false,
+    cta: "Anfragen",
   },
 ];
 
@@ -227,25 +247,49 @@ const addons = [
     icon: CalendarClock,
     name: "Buchungssystem",
     price: "ab 2.990 € · 49 €/Mo",
-    keyword: "Direktbuchung ohne OTA-Provision",
+    keyword: "Direktbuchung ohne OTA-Provision · Hotels · FeWo · Tanzschule",
   },
   {
     icon: CreditCard,
     name: "Zahlungssystem",
     price: "ab 1.490 € · 29 €/Mo",
-    keyword: "Stripe · Mollie · SEPA",
+    keyword: "Stripe · Mollie · SEPA · Klarna",
   },
   {
     icon: Bot,
-    name: "KI-Agent",
-    price: "ab 49 € / Mo pro Use-Case",
-    keyword: "Dokumente · Antworten · Protokolle",
+    name: "Personal-Email-Agent",
+    price: "299 €/Mo · Custom 999 + 399 €/Mo",
+    keyword: "Antwortet im Stil Ihrer Branche · Inbox-Triage",
   },
   {
     icon: Workflow,
-    name: "Workflow-Automation",
-    price: "individuell",
-    keyword: "CRM · E-Mail · interne Tools",
+    name: "Voice-zu-Dokument-Agent",
+    price: "1.490 € · 199 €/Mo",
+    keyword: "Bauprotokoll · Call-Notes · Übergabe-Dokumente",
+  },
+  {
+    icon: Sparkles,
+    name: "Lead-Generation-Service",
+    price: "690 € · 299 €/Mo",
+    keyword: "Recherche · Qualifizierung · CRM-Übergabe",
+  },
+  {
+    icon: Sparkles,
+    name: "Marketing-Kampagne",
+    price: "ab 290 € pro Kampagne",
+    keyword: "Email · WhatsApp · Anzeigen · Re-Aktivierung",
+  },
+  {
+    icon: Bot,
+    name: "Custom KI-Agent",
+    price: "ab 1.490 € · ab 99 €/Mo",
+    keyword: "Leistungs-Vergleich · Kundendaten-Markt · Branchen-Tool",
+  },
+  {
+    icon: Globe,
+    name: "Zusatz-Sprache · Blog-Extra · Relaunch",
+    price: "490 € · 149 €/Stk · 990 €",
+    keyword: "Nach Bedarf modular einkaufen",
   },
 ];
 
@@ -292,7 +336,11 @@ const faqs = [
   },
   {
     q: "Was kostet eine neue Website bei MyHiwi?",
-    a: "Die Website ist Teil der drei Tiers (Sichtbar · Wachstum · Dominanz) ab 299 € / Monat inklusive Hosting, Pflege und SEO. Einmalige Einrichtung 648–1.139 €. Standalone-Websites ohne Betreuung baue ich nicht — der laufende Erfolg interessiert mich mehr als der einmalige Verkauf.",
+    a: "Zwei Wege: monatliche Begleitung in einem der vier Tiers (Sichtbar 349 € / Wachstum 699 € / Dominanz 1.199 € / Plus 2.499 € pro Monat, jeweils inkl. Hosting, Pflege und SEO) — oder Festpreis-Projekt, wenn Sie nicht monatlich binden möchten. Beim Festpreis übernehmen wir Konzept, Bau und Übergabe gegen einmalige Vergütung; nur ein kleiner Maintenance-Beitrag fällt monatlich an. Welcher Weg passt, hängt davon ab, ob Sie laufende Optimierung wollen oder einmalig investieren möchten.",
+  },
+  {
+    q: "Kann ich auch ohne monatlichen Vertrag arbeiten lassen?",
+    a: "Ja. Buchungssystem, Zahlungssystem, eine eigene KI-Lösung oder eine reine Website können auch als Festpreis-Projekt umgesetzt werden — Sie zahlen einmalig für Konzept und Bau, und nur einen kleinen Betrag für Maintenance und Support. Beispiel Buchungssystem: ab 2.990 € einmalig + 49 € / Monat. Beispiel Zahlungssystem: ab 1.490 € + 29 € / Monat. Custom KI-Agent ab 1.490 € + 99 € / Monat. Wir empfehlen die monatliche Begleitung für Betriebe, die langfristig auf Lead-Wachstum optimieren wollen — und Festpreis für klar abgegrenzte Projekte.",
   },
   {
     q: "Bauen Sie auch KI-Lösungen für mein Unternehmen?",
@@ -563,7 +611,17 @@ export default function HomePage() {
       <section id="kompetenzen" className="relative py-24 md:py-32">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
           <SectionReveal>
-            <div className="grid gap-8 md:grid-cols-[1.3fr,1fr] md:items-end">
+            <div className="grid gap-12 lg:grid-cols-[1.05fr,1fr] lg:items-center lg:gap-16">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-slate-50">
+                <Image
+                  src="/home/automatisierung.png"
+                  alt="Abstrakte Visualisierung von Workflow-Automation — geometrische Glaskarten, die einen vernetzten Prozess andeuten"
+                  fill
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                  className="object-cover"
+                  priority={false}
+                />
+              </div>
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-mono uppercase tracking-[0.14em] text-slate-500">
                   <Sparkles className="h-3 w-3 text-blue-600" />
@@ -573,12 +631,12 @@ export default function HomePage() {
                   Sichtbarkeit. Automatisierung.{" "}
                   <span className="gradient-text">KI.</span>
                 </h2>
+                <p className="mt-6 max-w-md text-base leading-relaxed text-slate-600">
+                  Keine fertigen Produkte — drei Felder, in denen ich tief genug
+                  bin, um echte Probleme zu lösen. Was Sie am Ende bekommen, hängt
+                  von Ihrem konkreten Engpass ab.
+                </p>
               </div>
-              <p className="max-w-md text-base leading-relaxed text-slate-600">
-                Keine fertigen Produkte — drei Felder, in denen ich tief genug
-                bin, um echte Probleme zu lösen. Was Sie am Ende bekommen, hängt
-                von Ihrem konkreten Engpass ab.
-              </p>
             </div>
           </SectionReveal>
 
@@ -764,29 +822,77 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 grid-pattern-light mask-radial pointer-events-none" />
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6">
+
+          {/* Philosophie-Intro — kommt VOR den Preisen */}
           <SectionReveal>
-            <div className="grid gap-8 md:grid-cols-[1fr,1fr] md:items-end">
-              <div>
-                <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-mono uppercase tracking-[0.14em] text-slate-500">
-                  <ShieldCheck className="h-3 w-3 text-blue-600" />
-                  Einstiegsbudgets · modular erweiterbar
-                </span>
-                <h2 className="mt-4 font-heading text-4xl font-bold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl">
-                  Drei Budget-Stufen.
-                  <br />
-                  Wachsen mit Ihrem{" "}
-                  <span className="gradient-text">Bedarf.</span>
-                </h2>
-              </div>
-              <p className="max-w-md text-base leading-relaxed text-slate-600 md:ml-auto">
-                Die Tiers sind Einstiegs-Budgets für die Säule Sichtbarkeit.
-                Buchungssystem, Zahlungsabwicklung, KI-Agents und
-                Workflow-Automation kommen als Module nach Bedarf dazu.
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-mono uppercase tracking-[0.14em] text-blue-700">
+                <Sparkles className="h-3 w-3" />
+                So arbeite ich
+              </span>
+              <h2 className="mt-5 font-heading text-4xl font-bold leading-[1.05] tracking-tight text-slate-900 sm:text-[52px]">
+                Zuerst der Engpass.
+                <br />
+                Dann der <span className="gradient-text">Preis.</span>
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg">
+                Ich bin am liebsten <strong>länger an Bord</strong>. Wir setzen uns
+                hin, schauen wo Ihr Engpass wirklich liegt — Sichtbarkeit, Zeit
+                oder Marketing — und packen das gemeinsam Stück für Stück an.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+                Deshalb ist die <strong>Einstiegshürde am Anfang gering</strong>.
+                Der echte Wert entsteht über Monate, nicht in der ersten Rechnung.
+                Sie wachsen — wir wachsen mit.
               </p>
             </div>
           </SectionReveal>
 
-          <div className="mt-14 grid items-stretch gap-5 md:grid-cols-3">
+          {/* Drei-Engpass-Zeile als Bridge */}
+          <SectionReveal>
+            <div className="mx-auto mt-12 grid max-w-4xl gap-3 sm:grid-cols-3">
+              {[
+                { icon: Search, label: "Sichtbarkeit", text: "gefunden werden, wenn jemand sucht" },
+                { icon: Zap, label: "Zeitersparnis", text: "Workflows + KI nehmen Routine ab" },
+                { icon: TrendingUp, label: "Marketing", text: "passende Anfragen, statt Streuung" },
+              ].map((p) => (
+                <div key={p.label} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5">
+                  <span className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-blue-100 bg-blue-50 text-blue-600">
+                    <p.icon className="h-4 w-4" />
+                  </span>
+                  <div>
+                    <p className="font-heading text-sm font-bold text-slate-900">{p.label}</p>
+                    <p className="text-xs leading-snug text-slate-500">{p.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </SectionReveal>
+
+          {/* Übergang zu konkreten Tiers */}
+          <SectionReveal>
+            <div className="mt-20 grid gap-8 md:grid-cols-[1fr,1fr] md:items-end">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-mono uppercase tracking-[0.14em] text-slate-500">
+                  <ShieldCheck className="h-3 w-3 text-blue-600" />
+                  Vier Begleitungs-Tiers · monatlich
+                </span>
+                <h3 className="mt-4 font-heading text-3xl font-bold leading-[1.05] tracking-tight text-slate-900 sm:text-4xl">
+                  Konkret —
+                  <br />
+                  was kostet die laufende{" "}
+                  <span className="gradient-text">Begleitung?</span>
+                </h3>
+              </div>
+              <p className="max-w-md text-base leading-relaxed text-slate-600 md:ml-auto">
+                Vier Stufen, modular erweiterbar. Module kommen nach Bedarf dazu —
+                oder als <strong>Festpreis-Projekt</strong> drunter, falls Sie
+                nicht monatlich binden möchten.
+              </p>
+            </div>
+          </SectionReveal>
+
+          <div className="mt-14 grid items-stretch gap-5 md:grid-cols-2 lg:grid-cols-4">
             {tiers.map((tier, i) => (
               <SectionReveal key={tier.id} delay={i * 120}>
                 <article
@@ -902,21 +1008,73 @@ export default function HomePage() {
             ))}
           </div>
 
+          {/* Festpreis-Alternative */}
+          <SectionReveal>
+            <div className="mt-10 overflow-hidden rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-cyan-50 p-7 md:p-9">
+              <div className="grid gap-6 md:grid-cols-[1.4fr,1fr] md:items-center">
+                <div>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-blue-700">
+                    Lieber einmal zahlen statt monatlich?
+                  </p>
+                  <h3 className="mt-2 font-heading text-2xl font-bold tracking-tight text-slate-900 sm:text-[28px]">
+                    Festpreis-Projekt — kein Retainer.
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    Wenn Sie ein klar abgegrenztes Vorhaben haben — Buchungssystem,
+                    Zahlung, Website oder ein eigenes KI-Tool — bauen wir das gegen
+                    Festpreis. Sie zahlen einmalig für Konzept und Umsetzung, plus
+                    einen kleinen Maintenance-Beitrag. Kein Lock-in, kein Mo-Mo-Mo.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-500" strokeWidth={3} />
+                    <span><strong>Zahlungssystem</strong> ab 490 € + 19 €/Mo<br/><span className="text-xs text-slate-500">z.B. Tennisplatz-Miete, Kurs-Buchung, einzelne Produkte</span></span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-500" strokeWidth={3} />
+                    <span><strong>Buchungssystem</strong> ab 990 € + 29 €/Mo<br/><span className="text-xs text-slate-500">FeWo, Praxis, Kurs-Slots — bis zu großen Plattformen</span></span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-500" strokeWidth={3} />
+                    <span><strong>Custom KI-Tool</strong> ab 999 € + 49 €/Mo<br/><span className="text-xs text-slate-500">Branchen-Agent, Dokumenten-Workflow, Antwort-Bot</span></span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-500" strokeWidth={3} />
+                    <span><strong>Standalone Website</strong> auf Anfrage<br/><span className="text-xs text-slate-500">Preis nach Komplexität — 8 Seiten Friseur ≠ 50 Seiten Fahrschule</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-blue-100 pt-5">
+                <Link
+                  href="/festpreis"
+                  className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-blue-700"
+                >
+                  Festpreis anfragen
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <span className="text-xs text-slate-500">
+                  Sie schreiben in eigenen Worten, ich melde mich mit konkretem Vorschlag.
+                </span>
+              </div>
+            </div>
+          </SectionReveal>
+
           {/* Add-Ons */}
           <SectionReveal>
-            <div className="mt-14 rounded-2xl border border-slate-200 bg-white p-8">
+            <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-8">
               <div className="flex flex-wrap items-end justify-between gap-4">
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">
-                    Module · modular oben drauf
+                    Module · modular oben drauf oder einzeln buchen
                   </p>
                   <h3 className="mt-2 font-heading text-2xl font-bold tracking-tight text-slate-900">
                     Erweiterungen je nach Engpass.
                   </h3>
                 </div>
                 <p className="max-w-md text-sm text-slate-600">
-                  Die meisten Kunden starten mit der Sichtbarkeits-Säule und
-                  ergänzen ein Modul, sobald das Problem sichtbar wird.
+                  Inklusive in höheren Tiers — oder einzeln buchbar als
+                  Add-On zu Festpreis oder Wachstum.
                 </p>
               </div>
 

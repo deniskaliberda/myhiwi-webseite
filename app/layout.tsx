@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SiteShell from "@/components/layout/SiteShell";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -117,9 +116,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

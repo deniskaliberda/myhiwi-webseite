@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title:
     "Case Studies — Website, SEO, Buchungsplattform & KI-Agent | MyHiwi",
   description:
-    "Drei laufende Projekte im Detail: Sonnenhof Herrsching (Local SEO + Google Ads), Mr. Sherman Tanzstudio (Buchungs- und Zahlungs-Plattform) und Formazin (Architekturbüro mit KI-Automation).",
+    "Drei laufende Projekte im Detail: Sonnenhof Herrsching (Local SEO + Google Ads), Mr. Sherman Tanzstudio (eigene Brand-App mit Mitglieder-Plattform) und Formazin (Architekturbüro mit KI-Automation).",
   alternates: {
     canonical: "https://myhiwi.de/case-studies",
   },
@@ -36,27 +36,15 @@ const cases = [
   },
   {
     slug: "mr-sherman",
-    field: "Automatisierung · Buchung + Zahlung",
+    field: "Custom Brand-App · Mitglieder-Plattform",
     client: "Mr. Sherman Tanzstudio",
-    subline: "4-Tier-Mitgliedschaften · Berlin Köpenick + Charlottenburg",
+    subline: "Eigene Studio-App · Berlin Köpenick + Charlottenburg",
     description:
-      "Komplette Plattform auf Next.js + Supabase + Stripe: vier Memberships, Trainer-Portal, Admin-CRM, Meta-Ads mit Server-Side CAPI-Tracking und automatischer Rechnungsstellung.",
-    metric: { value: "7,28 €", label: "Cost per Lead · 75% unter Benchmark" },
+      "Komplette Brand-Applikation, gebaut speziell für das Studio: Memberships mit Stripe-Subscriptions, Trainer-Portal, Admin-CRM, Schüler-Login. Alles miteinander verbunden, alles automatisiert. Kein Mindbody, kein Eversports — die App trägt das Sherman-Branding und ist mit der Webseite digital verschmolzen.",
+    metric: { value: "7,28 €", label: "Cost per Lead · 75 % unter Benchmark" },
     icon: Workflow,
-    image: null,
+    image: "/case-studies/mr-sherman/cover.png",
     accent: "from-cyan-500 to-blue-500",
-  },
-  {
-    slug: "villa-gloria",
-    field: "Automatisierung · Ferienhaus",
-    client: "Villa Gloria Istrien",
-    subline: "Ferienhaus in Kaštelir · DE + EN",
-    description:
-      "Kein Smoobu-Widget mehr: eigener Kalender mit echter iCal-Verfügbarkeit, Property-Toggle (Gesamtes Haus / Poolwohnung), 3-Nächte-Regel und automatischem Email-Flow zum Verwalter.",
-    metric: { value: "88/100", label: "SEO-Score nach Relaunch" },
-    icon: Workflow,
-    image: null,
-    accent: "from-orange-400 to-cyan-500",
   },
   {
     slug: "formazin",
@@ -67,7 +55,7 @@ const cases = [
       "Keine einmalige Webseiten-Lieferung, sondern digitaler Partner: Engpässe finden, KI-Agents bauen, im Büro-Alltag integrieren, monatlich weiterentwickeln.",
     metric: { value: "3 h → Minuten", label: "pro Bauprotokoll" },
     icon: Bot,
-    image: null,
+    image: "/case-studies/formazin/cover.png",
     accent: "from-blue-600 to-cyan-500",
   },
 ];
