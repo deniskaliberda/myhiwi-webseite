@@ -33,6 +33,9 @@ export default function ImpressumPage() {
 
           <div className="card mb-8">
             <h3 className="text-xl font-inter font-bold text-primary mb-4">Kontakt</h3>
+            <p className="text-slate-700 mb-2">
+              <strong>Telefon:</strong> <a href="tel:+4915114093066" className="text-accent hover:underline">+49 1511 4093066</a>
+            </p>
             <p className="text-slate-700">
               <strong>E-Mail:</strong> <a href="mailto:kontakt@myhiwi.de" className="text-accent hover:underline">kontakt@myhiwi.de</a>
             </p>
@@ -40,7 +43,35 @@ export default function ImpressumPage() {
 
           <div className="card mb-8">
             <h3 className="text-xl font-inter font-bold text-primary mb-4">
-              Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+              Handelsregister &amp; Pflichtangaben
+            </h3>
+            <p className="text-slate-700 mb-2">
+              <strong>Registereintrag:</strong> HRB 22263<br />
+              <strong>Registergericht:</strong> Amtsgericht Frankfurt (Oder)<br />
+              <strong>Sitz der Gesellschaft:</strong> Ahrensfelde<br />
+              <strong>Stammkapital:</strong> 3.000 EUR
+            </p>
+            <p className="text-slate-700">
+              <strong>Geschäftsführer:</strong> Denis Kaliberda<br />
+              <span className="text-sm text-slate-600">
+                (einzelvertretungsberechtigt, von den Beschränkungen des § 181 BGB befreit)
+              </span>
+            </p>
+          </div>
+
+          <div className="card mb-8">
+            <h3 className="text-xl font-inter font-bold text-primary mb-4">
+              Umsatzsteuer
+            </h3>
+            <p className="text-slate-700">
+              Eine Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG wurde
+              beantragt und wird nach Erteilung an dieser Stelle ergänzt.
+            </p>
+          </div>
+
+          <div className="card mb-8">
+            <h3 className="text-xl font-inter font-bold text-primary mb-4">
+              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
             </h3>
             <p className="text-slate-700">
               Denis Kaliberda<br />
