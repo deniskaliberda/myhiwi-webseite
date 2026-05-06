@@ -452,7 +452,7 @@ export default function MrShermanCaseStudy() {
                 href="/kontakt"
                 className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-blue-600 to-blue-500 px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-700 hover:to-blue-600"
               >
-                Kostenloses Erstgespräch
+                Quick-Check anfragen
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

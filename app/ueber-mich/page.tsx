@@ -187,10 +187,13 @@ export default function UeberMichPage() {
                 entwickelt.
               </p>
               <p>
-                Ich nehme maximal zwölf aktive Kunden. Das ist die Obergrenze,
-                bei der ich jeden Betrieb wirklich verstehen kann. Deswegen
-                mache ich Erstgespräche ehrlich — wenn ich nicht der richtige
-                Partner bin, sage ich das gleich.
+                Mein Versprechen ist einfach: Wenn Sie mir schreiben, lesen das
+                nicht zehn Vertriebs-Mitarbeiter, sondern ich. Wenn Sie ein
+                Problem haben, höre ich mir das selbst an und überlege selbst,
+                ob ich helfen kann. Mein Ziel ist nicht, einen weiteren
+                Account zu schließen — sondern dass Ihr Betrieb digital
+                gefunden wird und mehr Anfragen reinkommen. Wenn ich der
+                falsche Partner für Sie bin, sage ich das im ersten Gespräch.
               </p>
             </div>
           </SectionReveal>
@@ -301,7 +304,31 @@ export default function UeberMichPage() {
                 <span className="gradient-text">organisiert ist.</span>
               </h2>
 
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {/* Personal promise — prominent card */}
+              <div className="mt-8 relative overflow-hidden rounded-2xl border border-cyan-200 bg-gradient-to-br from-cyan-50 via-white to-blue-50 p-7 md:p-9">
+                <div
+                  className="absolute -top-16 -right-16 h-48 w-48 rounded-full blur-3xl opacity-60 pointer-events-none"
+                  style={{
+                    background:
+                      "radial-gradient(circle, rgba(6,182,212,0.18), transparent 65%)",
+                  }}
+                />
+                <p className="relative font-mono text-[10px] uppercase tracking-[0.14em] text-cyan-700">
+                  Mein Versprechen
+                </p>
+                <p className="relative mt-3 font-heading text-2xl font-bold leading-snug tracking-tight text-slate-900 sm:text-[26px]">
+                  Sie reden direkt mit mir — nicht mit einem Account-Manager.
+                </p>
+                <p className="relative mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
+                  Wenn Sie schreiben, lese ich. Wenn Sie ein Problem schildern,
+                  überlege ich selbst, ob und wie ich helfen kann. Mein Ziel
+                  ist nicht der nächste Vertragsabschluss — sondern dass Ihr
+                  Betrieb digital gefunden wird und mehr Anfragen bekommt.
+                </p>
+              </div>
+
+              {/* Operational facts */}
+              <div className="mt-6 grid gap-6 md:grid-cols-3">
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
                     Unternehmen
@@ -318,21 +345,10 @@ export default function UeberMichPage() {
                     Standorte
                   </p>
                   <p className="mt-2 text-base font-medium text-slate-900">
-                    Ahrensfelde bei Berlin (Hauptsitz)
+                    Ahrensfelde bei Berlin
                   </p>
                   <p className="mt-0.5 text-base font-medium text-slate-900">
-                    Starnberg / Ammersee, Oberbayern
-                  </p>
-                </div>
-                <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
-                    Kunden-Limit
-                  </p>
-                  <p className="mt-2 text-base font-medium text-slate-900">
-                    Maximal 12 aktive Kunden
-                  </p>
-                  <p className="mt-1 text-sm text-slate-500">
-                    Aktuell 7 laufende Projekte · nächster freier Platz ab Mai
+                    Starnberg / Ammersee
                   </p>
                 </div>
                 <div>
@@ -385,7 +401,7 @@ export default function UeberMichPage() {
                     href="/kontakt"
                     className="inline-flex items-center justify-between rounded-lg bg-white px-5 py-4 text-sm font-semibold text-navy-900 shadow-lg transition-all hover:bg-slate-100"
                   >
-                    Kostenloses Erstgespräch
+                    Quick-Check anfragen
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link

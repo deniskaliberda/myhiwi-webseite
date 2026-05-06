@@ -143,8 +143,8 @@ const principles = [
   },
   {
     icon: MessageSquare,
-    title: "Wenige Kunden, intensiv.",
-    text: "Ich nehme maximal 12 aktive Kunden. Damit ich weiß wie Ihr Betrieb atmet, nicht nur einen Slack-Channel habe.",
+    title: "Persönlich, kein Funnel.",
+    text: "Wenn Sie schreiben, landet das bei mir — nicht bei einem Account-Manager. Ich kümmere mich selbst um Ihr Problem, von der ersten Diagnose bis zur Lösung.",
   },
   {
     icon: LineChart,
@@ -324,7 +324,7 @@ const stats = [
 const faqs = [
   {
     q: "Was unterscheidet MyHiwi von einer klassischen Agentur?",
-    a: "Ich arbeite mit maximal 12 Kunden parallel, persönlich und fortlaufend. Sie bekommen keinen Account-Manager, sondern einen digitalen Partner, der Probleme erkennt und die passende Lösung selbst baut — von der Website bis zum KI-Agenten. Keine Zwischenschichten, keine Timesheets, kein Agentur-Theater.",
+    a: "Sie reden direkt mit mir — keine Account-Manager-Schicht, keine Slack-Channel-Stille. Ich höre mir das Problem an, baue die Lösung selbst (Website, Buchung, KI-Agent) und bleibe danach dran. Keine Timesheets, kein Agentur-Theater. Mein Ziel ist nicht der nächste Vertragsabschluss, sondern dass Ihr Betrieb digital gefunden wird.",
   },
   {
     q: "Baut ihr auch Buchungssysteme und Zahlungsintegrationen?",
@@ -348,7 +348,7 @@ const faqs = [
   },
   {
     q: "Wie lange dauert ein Projekt?",
-    a: "Ein Erstgespräch dauert 15 Minuten. Ein Audit 1–2 Wochen. Eine neue Website geht nach 3–4 Wochen live. Größere Systeme (Buchung, Zahlung, KI-Agent) brauchen 4–8 Wochen vom Kick-off bis zum produktiven Einsatz. Die laufende Betreuung hat keinen Endpunkt — sie wächst mit dem Unternehmen.",
+    a: "Ein Quick-Check dauert 15 Minuten. Ein Audit 1–2 Wochen. Eine neue Website geht nach 3–4 Wochen live. Größere Systeme (Buchung, Zahlung, KI-Agent) brauchen 4–8 Wochen vom Kick-off bis zum produktiven Einsatz. Die laufende Betreuung hat keinen Endpunkt — sie wächst mit dem Unternehmen.",
   },
   {
     q: "Wo sitzt MyHiwi?",
@@ -431,7 +431,7 @@ export default function HomePage() {
                   href="/kontakt"
                   className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-blue-600 to-blue-500 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-700 hover:to-blue-600 hover:shadow-blue-500/40"
                 >
-                  Kostenloses Erstgespräch
+                  Quick-Check anfragen
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
@@ -447,7 +447,7 @@ export default function HomePage() {
 
               <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-slate-200 pt-6">
                 {[
-                  "Max. 12 Kunden · persönlich",
+                  "Direkt zu mir · kein Funnel",
                   "Custom gebaut · kein SaaS-Weiterverkauf",
                   "DSGVO · Made in Deutschland",
                 ].map((t) => (
@@ -1162,7 +1162,7 @@ export default function HomePage() {
 
                 <div className="mt-8 grid grid-cols-3 gap-3">
                   {[
-                    ["Kunden-Limit", "Max. 12"],
+                    ["Erreichbar", "Direkt zu mir"],
                     ["Aktive Projekte", "7 KMU"],
                     ["Standort", "Berlin + Bayern"],
                   ].map(([k, v]) => (
@@ -1301,7 +1301,7 @@ export default function HomePage() {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
                       <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     </span>
-                    Erstgespräch · Kostenlos
+                    Quick-Check · Kostenlos
                   </span>
 
                   <h2 className="mt-5 font-heading text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
