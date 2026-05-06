@@ -1,175 +1,252 @@
-import type { Metadata } from "next";
-import QuizContainer from "@/components/quiz/QuizContainer";
-import { Mail, MapPin, Clock, Calendar, ArrowRight } from "lucide-react";
-import SectionReveal from "@/components/shared/SectionReveal";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Kontakt — Kostenloses Erstgespräch | MyHiwi",
-  description:
-    "Beantworten Sie 5 kurze Fragen und erhalten Sie eine individuelle Einschätzung. Oder buchen Sie direkt einen 15-Min-Termin.",
-  alternates: {
-    canonical: "https://myhiwi.de/kontakt",
-  },
-};
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { ArrowRight, Loader2, ArrowLeft } from "lucide-react";
 
-export default function ContactPage() {
+export default function KontaktPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  // Auto-grow textarea
+  useEffect(() => {
+    if (messageRef.current) {
+      messageRef.current.style.height = "auto";
+      messageRef.current.style.height = messageRef.current.scrollHeight + "px";
+    }
+  }, [message]);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError(null);
+
+    if (!name.trim() || !email.trim() || !website.trim() || !message.trim()) {
+      setError("Name, E-Mail, Webseite/Firma und Anliegen sind nötig.");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, website, message, phone }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Anfrage konnte nicht gesendet werden.");
+      }
+      setDone(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unbekannter Fehler");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (done) {
+    return (
+      <div className="bg-white text-slate-900 min-h-screen flex items-center">
+        <div className="mx-auto max-w-[820px] px-6 py-32 sm:px-10 md:py-44">
+          <p className="text-xs uppercase tracking-[0.22em] text-cyan-600 font-semibold mb-6">
+            Anfrage angekommen
+          </p>
+          <h1 className="font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl">
+            Danke, {name.split(" ")[0]}.
+          </h1>
+          <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-slate-600">
+            Ich schaue mir{" "}
+            <span className="font-medium text-slate-900">{website}</span>{" "}
+            in den nächsten Tagen an und melde mich per E-Mail bei Ihnen mit
+            einer ersten Einschätzung. Kein Auto-Responder, keine
+            Vertriebs-Kette — eine kurze, ehrliche Antwort.
+          </p>
+          <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-slate-500">
+            Falls es länger als drei Werktage dauert, schreiben Sie mir gerne
+            direkt an{" "}
+            <a
+              href="mailto:kontakt@myhiwi.de"
+              className="text-blue-600 hover:underline"
+            >
+              kontakt@myhiwi.de
+            </a>
+            .
+          </p>
+          <div className="mt-12 flex flex-wrap gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-slate-400 hover:text-slate-900"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Zur Startseite
+            </Link>
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 rounded-lg bg-navy-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-900/90"
+            >
+              Meine Projekte ansehen
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white text-slate-900">
-      {/* ================= QUIZ HERO ================= */}
-      <section className="relative overflow-hidden bg-slate-50 pt-28 pb-16 md:pt-36 md:pb-24">
-        <div className="absolute inset-0 grid-pattern-light mask-radial pointer-events-none" />
-        <div
-          className="absolute top-[-120px] right-[-80px] h-[420px] w-[420px] rounded-full blur-3xl opacity-60 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(59,130,246,0.18), transparent 60%)",
-          }}
-        />
+      <div className="mx-auto max-w-[820px] px-6 pt-32 pb-20 sm:px-10 md:pt-40 md:pb-28">
+        <p className="text-xs uppercase tracking-[0.22em] text-cyan-600 font-semibold">
+          Webseite · Quick-Check
+        </p>
+        <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[56px]">
+          Schicken Sie mir Ihre Webseite —{" "}
+          <span className="gradient-text">ich schau mir das an.</span>
+        </h1>
+        <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-slate-600">
+          Kurze Form unten ausfüllen. Ich melde mich in 1–3 Werktagen mit einer
+          ehrlichen Ersteinschätzung — was funktioniert, was hängt, ob ich der
+          richtige Partner für Sie bin. Kein Sales-Funnel, kein Auto-Responder.
+        </p>
 
-        <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6">
-          <div className="mx-auto mb-10 max-w-3xl text-center">
-            <SectionReveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-mono uppercase tracking-[0.14em] text-blue-700">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-blue-600" />
-                </span>
-                Erstgespräch · in 2 Minuten erzählt
-              </span>
-
-              <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[56px]">
-                Erzählen Sie mir von{" "}
-                <span className="gradient-text">Ihrem Unternehmen.</span>
-              </h1>
-
-              <p className="mt-5 text-lg leading-relaxed text-slate-600">
-                5 kurze Fragen — dann melde ich mich mit einer individuellen
-                Einschätzung bei Ihnen. Kein Sales-Funnel, keine
-                Auto-Responder.
-              </p>
-            </SectionReveal>
+        <form onSubmit={handleSubmit} className="mt-14 space-y-10">
+          {/* Name */}
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-slate-900"
+            >
+              Wie heißen Sie?
+            </label>
+            <input
+              id="name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Vor- und Nachname"
+              autoComplete="name"
+              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
+            />
           </div>
 
-          <div className="mx-auto max-w-6xl">
-            <QuizContainer />
+          {/* Email */}
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-slate-900"
+            >
+              Wo erreiche ich Sie per E-Mail?
+            </label>
+            <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="ihre@firma.de"
+              autoComplete="email"
+              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* ================= DIRECT CONTACT ================= */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
-          <SectionReveal>
-            <div className="text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-mono uppercase tracking-[0.14em] text-slate-500">
-                Oder direkt
-              </span>
-              <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
-                Lieber sofort{" "}
-                <span className="gradient-text">Termin oder Mail?</span>
-              </h2>
-            </div>
-          </SectionReveal>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {/* Contact Info */}
-            <SectionReveal>
-              <div className="h-full rounded-2xl border border-slate-200 bg-white p-7">
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">
-                  Kontaktinformationen
-                </p>
-                <div className="mt-6 space-y-5">
-                  <div className="flex items-start gap-3">
-                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 text-blue-600">
-                      <Mail className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <p className="text-xs font-medium text-slate-500">
-                        E-Mail
-                      </p>
-                      <a
-                        href="mailto:kontakt@myhiwi.de"
-                        className="text-base font-medium text-slate-900 transition-colors hover:text-blue-600"
-                      >
-                        kontakt@myhiwi.de
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 text-blue-600">
-                      <MapPin className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <p className="text-xs font-medium text-slate-500">
-                        Standorte
-                      </p>
-                      <p className="text-base font-medium text-slate-900">
-                        Ahrensfelde · Berlin
-                      </p>
-                      <p className="text-sm text-slate-600">
-                        Starnberg / Ammersee · Bayern
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 text-blue-600">
-                      <Clock className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <p className="text-xs font-medium text-slate-500">
-                        Verfügbarkeit
-                      </p>
-                      <p className="text-base font-medium text-slate-900">
-                        Mo – Fr · 9:00 – 18:00 Uhr
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SectionReveal>
-
-            {/* Calendly */}
-            <SectionReveal delay={100}>
-              <div className="relative flex h-full flex-col justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-900 to-[#0b1a3a] p-8 text-white shadow-xl">
-                <div className="absolute inset-0 grid-pattern opacity-60" />
-                <div
-                  className="absolute -top-20 -right-20 h-64 w-64 rounded-full blur-3xl"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(59,130,246,0.35), transparent 60%)",
-                  }}
-                />
-                <div className="relative">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg">
-                    <Calendar className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-5 font-heading text-xl font-bold leading-tight tracking-tight text-white">
-                    Lieber direkt sprechen?
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                    Buchen Sie sich ein kostenloses 15-Min-Erstgespräch direkt
-                    in meinem Kalender.
-                  </p>
-                  <a
-                    href="https://calendly.com/denis-kaliberda/beratung"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group mt-6 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-navy-900 shadow-md transition-all hover:bg-slate-100"
-                  >
-                    Termin buchen
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                  <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400">
-                    Kostenlos · unverbindlich
-                  </p>
-                </div>
-              </div>
-            </SectionReveal>
+          {/* Webseite / Firma */}
+          <div>
+            <label
+              htmlFor="website"
+              className="block text-sm font-medium text-slate-900"
+            >
+              Welche Webseite oder Firma?
+            </label>
+            <input
+              id="website"
+              type="text"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              placeholder="ihre-firma.de oder Firmenname"
+              autoComplete="url"
+              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
+            />
+            <p className="mt-2 text-xs text-slate-500">
+              URL falls vorhanden — sonst einfach Firmenname.
+            </p>
           </div>
-        </div>
-      </section>
+
+          {/* Anliegen */}
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-slate-900"
+            >
+              Worum geht's?
+            </label>
+            <textarea
+              ref={messageRef}
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Zwei, drei Sätze reichen — was läuft gerade nicht, was möchten Sie verbessern, oder einfach 'Quick-Check bitte'."
+              rows={3}
+              className="mt-3 w-full resize-none border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
+            />
+          </div>
+
+          {/* Telefon optional */}
+          <div>
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-slate-900"
+            >
+              Telefon{" "}
+              <span className="font-normal text-slate-400">(optional)</span>
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Falls Sie lieber telefonieren möchten"
+              autoComplete="tel"
+              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
+            />
+          </div>
+
+          {error && (
+            <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {error}
+            </p>
+          )}
+
+          <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs text-slate-500">
+              Ihre Daten gehen direkt an mich — nicht an einen Sales-Bot oder
+              CRM-Funnel.
+            </p>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-navy-900 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-navy-900/90 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {submitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Senden…
+                </>
+              ) : (
+                <>
+                  Anfrage senden
+                  <ArrowRight className="h-4 w-4" />
+                </>
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
