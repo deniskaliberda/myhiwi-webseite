@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   ExternalLink,
@@ -124,24 +125,17 @@ export default function UeberMichPage() {
               </div>
             </div>
 
-            {/* Portrait placeholder card */}
+            {/* Portrait card */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-100 via-white to-blue-50 aspect-[4/5] shadow-xl">
-                <div className="absolute inset-0 grid-pattern-light opacity-70" />
-                <div
-                  className="absolute inset-0 opacity-40"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 30% 25%, rgba(59,130,246,0.22), transparent 60%)",
-                  }}
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-[4/5] shadow-xl">
+                <Image
+                  src="/ueber-mich/portrait.jpg"
+                  alt="Denis Kaliberda mit Volleyball vor dem Märkische-Allgemeine-Gebäude"
+                  fill
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="object-cover object-center"
+                  priority
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center font-mono text-xs uppercase tracking-[0.12em] text-slate-400">
-                    [ Porträt ]
-                    <br />
-                    <span className="text-slate-500">Denis Kaliberda</span>
-                  </div>
-                </div>
                 <div className="absolute inset-x-4 bottom-4 rounded-xl border border-slate-200 bg-white/95 px-4 py-3 backdrop-blur">
                   <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400">
                     Seit
