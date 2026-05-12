@@ -26,9 +26,9 @@ import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
   title:
-    "Sonnenhof Herrsching — 108 Anfragen in 100 Tagen | MyHiwi Case Study",
+    "Sonnenhof Herrsching — 156 Anfragen, 80.000 € Pipeline in 4 Monaten | MyHiwi Case Study",
   description:
-    "Wie ein Hotel am Ammersee nach 23 Jahren Website-Stillstand in 100 Tagen auf 97 Top-10-Keywords, 108 direkte Gästeanfragen und 315 monatliche Besucher kam. Mit SE-Ranking-API-Daten und Google-Ads-Zahlen.",
+    "Wie ein Hotel am Ammersee nach 23 Jahren Website-Stillstand in 4 Monaten auf 156 direkte Gäste-Anfragen mit über 80.000 € Pipeline-Wert kam. Mit SE-Ranking-API-Daten, Google-Ads-Zahlen und echtem Formspree-Export.",
   alternates: {
     canonical: "https://myhiwi.de/case-studies/sonnenhof-herrsching",
   },
@@ -58,19 +58,19 @@ const HISTORY: number[][] = [
 
 const heroMetrics = [
   {
-    value: "108",
+    value: "156",
     label: "Direkte Gäste-Anfragen",
-    sub: "28. Jan – 23. Apr 2026",
+    sub: "28. Jan – 12. Mai 2026",
+  },
+  {
+    value: "80.454 €",
+    label: "Pipeline-Wert",
+    sub: "Ø 516 € pro Anfrage",
   },
   {
     value: "+304 %",
     label: "Top-10 Keywords",
     sub: "24 (Dez 2025) → 97 (Apr 2026)",
-  },
-  {
-    value: "315",
-    label: "Besucher / Monat organisch",
-    sub: "Vorher-Tiefpunkt: 100 (Okt 2025)",
   },
 ];
 
@@ -347,27 +347,28 @@ function HistoryChart() {
 }
 
 function RequestsChart() {
-  // Monthly Anfragen — from the 100-Tage-Report
-  // Jan: 0, Feb: ~6, Mar: 41, Apr (23 days): 61 → pace ~80
+  // Monthly Anfragen — from the Formspree export (Stand 12. Mai 2026)
+  // Jan: 1, Feb: 11, Mar: 45, Apr: 57, Mai (12 days): 42 → pace ~105
   const data = [
-    { label: "Jan", value: 0 },
-    { label: "Feb", value: 6 },
-    { label: "Mär", value: 41 },
-    { label: "Apr", value: 61, isPace: true },
+    { label: "Jan", value: 1 },
+    { label: "Feb", value: 11 },
+    { label: "Mär", value: 45 },
+    { label: "Apr", value: 57 },
+    { label: "Mai", value: 42, isPace: true },
   ];
-  const max = 80;
+  const max = 100;
   const W = 640;
   const H = 240;
   const PAD = 40;
-  const barW = 80;
-  const gap = (W - 2 * PAD - 4 * barW) / 3;
+  const barW = 60;
+  const gap = (W - 2 * PAD - data.length * barW) / (data.length - 1);
 
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
       className="w-full h-auto"
       role="img"
-      aria-label="Monatliche Anfragen über das Website-Formular: Januar 0, Februar 6, März 41, April bis 23. April 61"
+      aria-label="Monatliche Anfragen über das Website-Formular: Januar 1, Februar 11, März 45, April 57, Mai bis 12. Mai 42"
     >
       <defs>
         <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
@@ -381,7 +382,7 @@ function RequestsChart() {
       </defs>
 
       {/* grid */}
-      {[0, 20, 40, 60, 80].map((v) => {
+      {[0, 25, 50, 75, 100].map((v) => {
         const y = PAD + (1 - v / max) * (H - PAD - 40);
         return (
           <g key={v}>
@@ -486,8 +487,8 @@ export default function SonnenhofCaseStudy() {
               </span>
 
               <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.02] tracking-tight text-slate-900 sm:text-5xl lg:text-[60px]">
-                108 Anfragen in{" "}
-                <span className="gradient-text">100 Tagen</span> — nach 23 Jahren Stillstand.
+                156 Anfragen,{" "}
+                <span className="gradient-text">80.000 € Pipeline</span> — nach 23 Jahren Stillstand.
               </h1>
               <p className="mt-4 text-lg font-medium text-slate-500">
                 Sonnenhof Herrsching · Hotel & Ferienwohnungen direkt am Ammersee
@@ -496,10 +497,11 @@ export default function SonnenhofCaseStudy() {
                 Die alte Sonnenhof-Website war seit 2003 faktisch unverändert. Gäste kamen
                 über Booking.com —{" "}
                 <Glossary term="ota-provision">15–18 % Provision</Glossary>{" "}
-                pro Buchung. Zwischen Januar und April 2026 hat MyHiwi die Seite komplett
+                pro Buchung. Zwischen Januar und Mai 2026 hat MyHiwi die Seite komplett
                 neu gebaut, für Google strukturiert und mit{" "}
                 <Glossary term="performance-max">Google Ads</Glossary>{" "}
-                flankiert. Ergebnis: 108 direkte Gäste-Anfragen und ein Anstieg der{" "}
+                flankiert. Ergebnis: 156 direkte Gäste-Anfragen, ein Pipeline-Wert von über 80.000 €
+                und ein Anstieg der{" "}
                 <Glossary term="top-10-keywords">Top-10-Keywords</Glossary>{" "}
                 auf einen 6-Jahres-Peak.
               </p>
@@ -736,17 +738,17 @@ export default function SonnenhofCaseStudy() {
                   Das, wofür wir arbeiten
                 </span>
                 <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
-                  108 direkte{" "}
+                  156 direkte{" "}
                   <span className="gradient-text">Gäste-Anfragen.</span>
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-slate-600">
                   Jede dieser Anfragen landet direkt beim Sonnenhof — ohne Portal, ohne
                   Provision. Der Aufwärtstrend startet mit dem Relaunch und dem
                   Content-Cluster im Februar, beschleunigt im März nach dem Ads-Launch,
-                  und läuft im April auf eine Pace von 80+ Anfragen pro Monat.
+                  und läuft im Mai auf eine Pace von über 100&nbsp;Anfragen pro Monat.
                 </p>
                 <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-slate-400">
-                  Quelle: Sonnenhof-Inbox · Jan – 23.&nbsp;Apr&nbsp;2026
+                  Quelle: Sonnenhof-Inbox (Formspree-Export) · Jan – 12.&nbsp;Mai&nbsp;2026
                 </p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-7">
@@ -863,7 +865,7 @@ export default function SonnenhofCaseStudy() {
                 Das ist jetzt bei Google zu sehen."
               </blockquote>
               <figcaption className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-slate-400">
-                Conny Bauer · Sonnenhof Herrsching
+                Conny Roemmelt · Inhaberin Sonnenhof Herrsching
               </figcaption>
             </figure>
           </SectionReveal>
