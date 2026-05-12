@@ -26,9 +26,9 @@ import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
   title:
-    "Sonnenhof Herrsching — 156 Anfragen, 80.000 € Pipeline in 4 Monaten | MyHiwi Case Study",
+    "Sonnenhof Herrsching — 156 direkte Gäste-Anfragen in 4 Monaten | MyHiwi Case Study",
   description:
-    "Wie ein Hotel am Ammersee nach 23 Jahren Website-Stillstand in 4 Monaten auf 156 direkte Gäste-Anfragen mit über 80.000 € Pipeline-Wert kam. Mit SE-Ranking-API-Daten, Google-Ads-Zahlen und echtem Formspree-Export.",
+    "Wie ein Hotel am Ammersee nach 23 Jahren Website-Stillstand in 4 Monaten von 1 auf 57 Anfragen pro Monat kam. 97 Top-10-Keywords, 315 Besucher/Monat. Mit SE-Ranking-API-Daten und echtem Formspree-Export.",
   alternates: {
     canonical: "https://myhiwi.de/case-studies/sonnenhof-herrsching",
   },
@@ -63,14 +63,14 @@ const heroMetrics = [
     sub: "28. Jan – 12. Mai 2026",
   },
   {
-    value: "80.454 €",
-    label: "Pipeline-Wert",
-    sub: "Ø 516 € pro Anfrage",
-  },
-  {
     value: "+304 %",
     label: "Top-10 Keywords",
     sub: "24 (Dez 2025) → 97 (Apr 2026)",
+  },
+  {
+    value: "315",
+    label: "Besucher / Monat organisch",
+    sub: "Vorher-Tiefpunkt: 100 (Okt 2025)",
   },
 ];
 
@@ -487,8 +487,8 @@ export default function SonnenhofCaseStudy() {
               </span>
 
               <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.02] tracking-tight text-slate-900 sm:text-5xl lg:text-[60px]">
-                156 Anfragen,{" "}
-                <span className="gradient-text">80.000 € Pipeline</span> — nach 23 Jahren Stillstand.
+                Von 1 auf 57 Anfragen{" "}
+                <span className="gradient-text">pro Monat</span> — nach 23 Jahren Stillstand.
               </h1>
               <p className="mt-4 text-lg font-medium text-slate-500">
                 Sonnenhof Herrsching · Hotel & Ferienwohnungen direkt am Ammersee
@@ -500,8 +500,8 @@ export default function SonnenhofCaseStudy() {
                 pro Buchung. Zwischen Januar und Mai 2026 hat MyHiwi die Seite komplett
                 neu gebaut, für Google strukturiert und mit{" "}
                 <Glossary term="performance-max">Google Ads</Glossary>{" "}
-                flankiert. Ergebnis: 156 direkte Gäste-Anfragen, ein Pipeline-Wert von über 80.000 €
-                und ein Anstieg der{" "}
+                flankiert. Ergebnis: 156 direkte Gäste-Anfragen über das eigene
+                Formular und ein Anstieg der{" "}
                 <Glossary term="top-10-keywords">Top-10-Keywords</Glossary>{" "}
                 auf einen 6-Jahres-Peak.
               </p>
