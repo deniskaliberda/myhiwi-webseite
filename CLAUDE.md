@@ -2,6 +2,38 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Design system — read first
+
+Before touching any UI, tokens, components, or page, read in this order:
+
+1. [`DESIGN.md`](./DESIGN.md) — repo-root design spec with Google Stitch `design.md` YAML frontmatter (all tokens live here as the source of truth).
+2. [`docs/design-system/HANDOVER.md`](./docs/design-system/HANDOVER.md) — agent entry point: what to build, what not to build, in which order.
+3. [`docs/design-system/`](./docs/design-system/) — deep source for everything that does not fit into the root file:
+   - `SUMMARY.md` — what is fixed, what is critical, what comes first
+   - `tokens.json` — machine-readable token export (mirrored in the root `DESIGN.md` frontmatter)
+   - `components.md` — component inventory with variants, tokens, mobile behaviour, usage matrix
+   - `page-archetypes.md` — 7 page types with binding section order and content rules
+   - `implementation.md` — stack, build order, conventions
+   - `compliance.md` — claim, GDPR, language rules
+   - `build-plan.md` — concrete file-path map for the upcoming redesign rollout
+
+**Hard rules** (full list in `DESIGN.md` §8 Do's and Don'ts and `docs/design-system/compliance.md`):
+- Tokens only — no magic numbers, no new colors, no new fonts, no new components without an entry in `components.md`.
+- One italic highlight per headline, one primary CTA per section, CTA texts verbatim from the table in `DESIGN.md` §7.
+- Real umlauts (ä/ö/ü/ß), no `ae/oe/ue`.
+- No fake numbers, no invented testimonials, no blanket GDPR claims, no stock photos.
+- `prefers-reduced-motion` respected; Framer Motion only for the `Reveal` component.
+
+The current implementation under `app/` and `components/` predates this design system and will be replaced. Treat the design system as the target state; treat the old code as legacy until the rollout plan in `docs/design-system/build-plan.md` replaces it.
+
+To lint the root `DESIGN.md`:
+
+```bash
+node node_modules/@google/design.md/dist/index.js lint DESIGN.md
+# or, when a TTY is available:
+npx -y -p @google/design.md design.md lint DESIGN.md
+```
+
 ## Project Overview
 
 MyHiwi (myhiwi.de) is a German-language marketing website for a Local SEO & Web Design agency targeting small local businesses (KMU). Built with Next.js 14 App Router, Tailwind CSS, and Framer Motion. Deployed on Vercel.

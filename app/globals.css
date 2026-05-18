@@ -31,6 +31,261 @@
   --radius: 0.75rem;
 }
 
+/* ============================================
+   MyHiwi Redesign 2026 — DESIGN.md semantic tokens
+   Atlantik (default) + Calm voicing for FeWo.
+   Atlantik is applied at :root so the new tokens
+   are always available; Calm overrides them only
+   inside elements that carry data-theme="calm"
+   (e.g. <main data-theme="calm"> on /fewo).
+   ============================================ */
+
+:root {
+  /* Atlantik — defaults.
+     Color tokens are stored as space-separated RGB channels so they
+     work with Tailwind's `<alpha-value>` opacity modifier
+     (e.g. `bg-mh-accent/10`). A separate hex-form variable is kept
+     for any plain CSS that needs the full color directly. */
+  --mh-bg-c: 255 255 255;
+  --mh-surface-c: 248 250 252;
+  --mh-card-c: 255 255 255;
+  --mh-text-primary-c: 15 23 42;
+  --mh-text-secondary-c: 71 85 105;
+  --mh-text-on-dark-c: 255 255 255;
+  --mh-accent-c: 37 99 235;
+  --mh-accent-hover-c: 30 64 175;
+  --mh-glow-c: 6 182 212;
+  --mh-danger-c: 220 38 38;
+
+  /* Hex-form mirrors for plain CSS rules below
+     (.mh-italic-accent, .mh-final-cta-bg, …). */
+  --mh-bg: #FFFFFF;
+  --mh-surface: #F8FAFC;
+  --mh-card: #FFFFFF;
+  --mh-text-primary: #0F172A;
+  --mh-text-secondary: #475569;
+  --mh-text-on-dark: #FFFFFF;
+  --mh-accent: #2563EB;
+  --mh-accent-hover: #1E40AF;
+  --mh-glow: #06B6D4;
+  --mh-danger: #DC2626;
+
+  /* Composite (already-aplhaed) tokens — used directly. */
+  --mh-accent-soft: rgba(37, 99, 235, 0.10);
+  --mh-border: rgba(15, 23, 42, 0.10);
+  --mh-divider: rgba(15, 23, 42, 0.10);
+
+  /* Default-easing token mirror — used by motion utilities */
+  --mh-ease-default: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-theme="calm"] {
+  --mh-bg-c: 246 242 234;
+  --mh-surface-c: 237 231 218;
+  --mh-card-c: 246 242 234;
+  --mh-text-primary-c: 31 42 42;
+  --mh-text-secondary-c: 90 94 85;
+  /* Accent toned down ~10 % per DESIGN.md §3 Calm-Voicing */
+  --mh-accent-c: 31 79 201;
+  --mh-accent-hover-c: 22 63 158;
+
+  --mh-bg: #F6F2EA;
+  --mh-surface: #EDE7DA;
+  --mh-card: #F6F2EA;
+  --mh-text-primary: #1F2A2A;
+  --mh-text-secondary: #5A5E55;
+  --mh-accent: #1F4FC9;
+  --mh-accent-hover: #163F9E;
+
+  --mh-accent-soft: rgba(31, 79, 201, 0.10);
+  --mh-border: rgba(31, 42, 42, 0.12);
+  --mh-divider: rgba(31, 42, 42, 0.12);
+}
+
+/* ============================================
+   MyHiwi Redesign 2026 — Typography scale
+   DESIGN.md §4. Apply via class on heading/body
+   nodes inside redesign components. Legacy
+   `h1…h4` rules below are NOT touched.
+   ============================================ */
+
+.mh-display-1 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 52px;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+@media (min-width: 1024px) {
+  .mh-display-1 { font-size: 96px; }
+}
+
+.mh-hero-title {
+  max-width: 10.5ch;
+}
+@media (min-width: 1024px) {
+  .mh-hero-title {
+    font-size: clamp(72px, 6.4vw, 86px);
+    max-width: 11.5ch;
+  }
+}
+
+.mh-display-2 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 44px;
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+@media (min-width: 1024px) {
+  .mh-display-2 { font-size: 72px; }
+}
+
+.mh-display-3 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 36px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+@media (min-width: 1024px) {
+  .mh-display-3 { font-size: 58px; }
+}
+
+.mh-display-4 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 28px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+@media (min-width: 1024px) {
+  .mh-display-4 { font-size: 40px; }
+}
+
+.mh-display-5 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 1024px) {
+  .mh-display-5 { font-size: 24px; }
+}
+
+.mh-body-large {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+@media (min-width: 1024px) {
+  .mh-body-large { font-size: 21px; }
+}
+
+.mh-body-medium {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+@media (min-width: 1024px) {
+  .mh-body-medium { font-size: 17px; }
+}
+
+.mh-body-small {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .mh-body-small { font-size: 14.5px; }
+}
+
+.mh-body-xs {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.mh-label-mono {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.0;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.mh-label-mono-sm {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 10px;
+  line-height: 1.0;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Italic accent — one word per headline (DESIGN.md §4) */
+.mh-italic-accent {
+  font-style: italic;
+  font-variation-settings: "opsz" 96, "wght" 400;
+  color: var(--mh-accent);
+}
+
+/* Final-CTA-Sektion gradient + glow overlay (DESIGN.md §3) */
+.mh-final-cta-bg {
+  background-image:
+    radial-gradient(60% 100% at 50% 100%, rgba(6, 182, 212, 0.55), transparent 70%),
+    linear-gradient(135deg, #0F172A 0%, #18305A 100%);
+}
+
+/* Mockup-Plate gradient (DESIGN.md §10) */
+.mh-mockup-plate {
+  background-image: linear-gradient(135deg, #0F172A 0%, #2563EB 55%, #06B6D4 100%);
+}
+
+/* Mockup-Plate stripe texture overlay (1px every 12px, 4 % alpha) */
+.mh-mockup-stripes {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+
+/* Accent strip (Progress-Bars, dünne Banner) */
+.mh-accent-strip {
+  background-image: linear-gradient(90deg, var(--mh-accent), var(--mh-glow));
+}
+
+/* Reveal — sichtbarer Endzustand wird via `.is-visible` getriggert.
+   Respektiert prefers-reduced-motion. */
+.mh-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s var(--mh-ease-default),
+    transform 0.9s var(--mh-ease-default);
+}
+.mh-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-reveal,
+  .mh-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 *,
 *::before,
 *::after {

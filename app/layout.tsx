@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Instrument_Serif,
+  Inter,
+  Inter_Tight,
+  JetBrains_Mono,
+  Poppins,
+} from "next/font/google";
 import "./globals.css";
 import SiteShell from "@/components/layout/SiteShell";
 
@@ -17,25 +24,55 @@ const poppins = Poppins({
   weight: ["500", "600", "700", "800"],
 });
 
+// MyHiwi Redesign 2026 — DESIGN.md typography
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-bricolage",
+  display: "swap",
+  weight: ["400", "600", "700", "800"],
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-inter-tight",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+  weight: ["500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+  weight: ["400"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   title: {
     default:
-      "Dein digitaler Hiwi für KMU — Website, SEO, Automation & KI | MyHiwi",
+      "Digitale Wachstumssysteme für lokale Unternehmen | MyHiwi",
     template: "%s | MyHiwi",
   },
   description:
-    "Digitaler Partner für lokale Unternehmen: Website + Local SEO, Buchungs- und Zahlungssysteme, Workflow-Automation und KI-Agents — aus einer Hand. Berlin + Bayern.",
+    "MyHiwi verbindet Website, Google-Sichtbarkeit, Anfragewege, Buchung, Zahlung und AI zu digitalen Wachstumssystemen für lokale Unternehmen.",
   keywords: [
-    "digitaler Partner",
-    "digitaler Hiwi",
-    "Webdesign KMU",
+    "digitale Wachstumssysteme",
+    "lokale Unternehmen digitalisieren",
+    "Website KMU",
     "Local SEO",
     "Google Business Profil",
     "Google Ads KMU",
     "Buchungssystem erstellen lassen",
     "Direktbuchung ohne OTA",
     "Zahlungssystem Stripe",
-    "KI-Agent fuer Unternehmen",
+    "AI Automation KMU",
     "Workflow Automation",
     "Next.js Website",
     "Ahrensfelde Berlin Bayern",
@@ -48,15 +85,15 @@ export const metadata: Metadata = {
     url: "https://myhiwi.de",
     siteName: "MyHiwi",
     title:
-      "Dein digitaler Hiwi für KMU — Website, SEO, Automation & KI | MyHiwi",
+      "Digitale Wachstumssysteme für lokale Unternehmen | MyHiwi",
     description:
-      "Digitaler Partner, der Probleme erkennt und Lösungen baut: Website + Local SEO, Buchung + Zahlung, Workflow-Automation und KI-Agents.",
+      "Website, Google-Sichtbarkeit, Anfragewege, Buchung, Zahlung und AI als zusammenhängendes System für lokale Unternehmen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dein digitaler Hiwi für KMU | MyHiwi",
+    title: "Digitale Wachstumssysteme für lokale Unternehmen | MyHiwi",
     description:
-      "Website, Local SEO, Buchungssystem, Automation und KI-Agents — aus einer Hand. Digitaler Partner statt Agentur.",
+      "MyHiwi verbindet Sichtbarkeit, Website, Anfrageweg und passende Automatisierung für lokale Unternehmen.",
   },
 };
 
@@ -65,7 +102,7 @@ const organizationJsonLd = {
   "@type": "LocalBusiness",
   name: "MyHiwi UG",
   description:
-    "Digitale Kundengewinnung für lokale Unternehmen — Website, SEO und messbare Ergebnisse.",
+    "Digitale Wachstumssysteme für lokale Unternehmen — Website, Sichtbarkeit, Anfragewege und passende Automatisierung.",
   url: "https://myhiwi.de",
   logo: "https://myhiwi.de/brand/myhiwi-h-logo.svg",
   email: "kontakt@myhiwi.de",
@@ -90,6 +127,7 @@ const organizationJsonLd = {
     "Webdesign",
     "Google Ads Management",
     "Google Business Profil Optimierung",
+    "Workflow Automation",
   ],
   priceRange: "€€",
 };
@@ -100,7 +138,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${inter.variable} ${poppins.variable}`}>
+    <html
+      lang="de"
+      className={`${inter.variable} ${poppins.variable} ${bricolage.variable} ${interTight.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
+    >
       <head>
         <link
           rel="alternate"
