@@ -1,8 +1,20 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
-import { ArrowRight, Loader2, ArrowLeft } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, Loader2, Mail, MessageSquare, SearchCheck } from "lucide-react";
+
+import { Card } from "@/components/myhiwi/card/Card";
+import { BtnGhost } from "@/components/myhiwi/cta/BtnGhost";
+import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
+import { Container } from "@/components/myhiwi/layout/Container";
+import { Section } from "@/components/myhiwi/layout/Section";
+import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
+import { ComplianceNote } from "@/components/myhiwi/trust/ComplianceNote";
+
+const fieldClass =
+  "mt-mh-2 w-full rounded-mh-sm border border-mh-divider bg-mh-paper px-mh-4 py-mh-3 font-mh-body text-[16px] text-mh-text-primary shadow-sm transition-colors placeholder:text-mh-text-secondary/60 focus:border-mh-accent focus:outline-none focus:ring-2 focus:ring-mh-accent/20";
+
+const labelClass = "mh-body-small font-semibold text-mh-text-primary";
 
 export default function KontaktPage() {
   const [name, setName] = useState("");
@@ -15,11 +27,10 @@ export default function KontaktPage() {
   const [error, setError] = useState<string | null>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
-  // Auto-grow textarea
   useEffect(() => {
     if (messageRef.current) {
       messageRef.current.style.height = "auto";
-      messageRef.current.style.height = messageRef.current.scrollHeight + "px";
+      messageRef.current.style.height = `${messageRef.current.scrollHeight}px`;
     }
   }, [message]);
 
@@ -53,200 +64,238 @@ export default function KontaktPage() {
 
   if (done) {
     return (
-      <div className="bg-white text-slate-900 min-h-screen flex items-center">
-        <div className="mx-auto max-w-[820px] px-6 py-32 sm:px-10 md:py-44">
-          <p className="text-xs uppercase tracking-[0.22em] text-cyan-600 font-semibold mb-6">
-            Anfrage angekommen
-          </p>
-          <h1 className="font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl">
-            Danke, {name.split(" ")[0]}.
-          </h1>
-          <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-slate-600">
-            Ich schaue mir{" "}
-            <span className="font-medium text-slate-900">{website}</span>{" "}
-            in den nächsten Tagen an und melde mich per E-Mail bei Ihnen mit
-            einer ersten Einschätzung. Kein Auto-Responder, keine
-            Vertriebs-Kette — eine kurze, ehrliche Antwort.
-          </p>
-          <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-slate-500">
-            Falls es länger als drei Werktage dauert, schreiben Sie mir gerne
-            direkt an{" "}
-            <a
-              href="mailto:kontakt@myhiwi.de"
-              className="text-blue-600 hover:underline"
-            >
-              kontakt@myhiwi.de
-            </a>
-            .
-          </p>
-          <div className="mt-12 flex flex-wrap gap-3">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-slate-400 hover:text-slate-900"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Zur Startseite
-            </Link>
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 rounded-lg bg-navy-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-900/90"
-            >
-              Meine Projekte ansehen
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </div>
+      <Section background="paper" padding="large" className="min-h-screen">
+        <Container className="max-w-[980px]">
+          <Card className="relative overflow-hidden">
+            <div
+              aria-hidden="true"
+              className="absolute right-0 top-0 h-40 w-40 translate-x-12 -translate-y-12 rounded-full bg-mh-accent-soft blur-3xl"
+            />
+            <div className="relative">
+              <SectionMark index="OK" label="Anfrage angekommen" tone="accent" />
+              <h1 className="mt-mh-4 mh-display-2">
+                Danke{name.trim() ? `, ${name.trim().split(" ")[0]}` : ""}.
+              </h1>
+              <p className="mt-mh-4 max-w-mh-text mh-body-large text-mh-text-secondary">
+                Ich schaue mir{" "}
+                <span className="font-semibold text-mh-text-primary">
+                  {website}
+                </span>{" "}
+                in den nächsten Tagen an und melde mich per E-Mail mit einer
+                ersten Einschätzung. Kein Auto-Responder, keine Vertriebs-Kette —
+                eine kurze, ehrliche Antwort.
+              </p>
+              <p className="mt-mh-4 max-w-mh-text mh-body-small text-mh-text-secondary">
+                Falls es länger als drei Werktage dauert, schreiben Sie mir gerne
+                direkt an{" "}
+                <a
+                  href="mailto:kontakt@myhiwi.de"
+                  className="font-semibold text-mh-accent hover:text-mh-accent-hover"
+                >
+                  kontakt@myhiwi.de
+                </a>
+                .
+              </p>
+              <div className="mt-mh-6 flex flex-col gap-mh-3 sm:flex-row">
+                <BtnGhost href="/" fullWidthOnMobile>
+                  <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                  Zur Startseite
+                </BtnGhost>
+                <BtnPrimary href="/case-studies" fullWidthOnMobile>
+                  Projekte ansehen
+                </BtnPrimary>
+              </div>
+            </div>
+          </Card>
+        </Container>
+      </Section>
     );
   }
 
   return (
-    <div className="bg-white text-slate-900">
-      <div className="mx-auto max-w-[820px] px-6 pt-32 pb-20 sm:px-10 md:pt-40 md:pb-28">
-        <p className="text-xs uppercase tracking-[0.22em] text-cyan-600 font-semibold">
-          Webseite · Quick-Check
-        </p>
-        <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[56px]">
-          Schicken Sie mir Ihre Webseite —{" "}
-          <span className="gradient-text">ich schau mir das an.</span>
-        </h1>
-        <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-slate-600">
-          Kurze Form unten ausfüllen. Ich melde mich in 1–3 Werktagen mit einer
-          ehrlichen Ersteinschätzung — was funktioniert, was hängt, ob ich der
-          richtige Partner für Sie bin. Kein Sales-Funnel, kein Auto-Responder.
-        </p>
-
-        <form onSubmit={handleSubmit} className="mt-14 space-y-10">
-          {/* Name */}
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-slate-900"
-            >
-              Wie heißen Sie?
-            </label>
-            <input
-              id="name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Vor- und Nachname"
-              autoComplete="name"
-              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-slate-900"
-            >
-              Wo erreiche ich Sie per E-Mail?
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="ihre@firma.de"
-              autoComplete="email"
-              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
-            />
-          </div>
-
-          {/* Webseite / Firma */}
-          <div>
-            <label
-              htmlFor="website"
-              className="block text-sm font-medium text-slate-900"
-            >
-              Welche Webseite oder Firma?
-            </label>
-            <input
-              id="website"
-              type="text"
-              value={website}
-              onChange={(e) => setWebsite(e.target.value)}
-              placeholder="ihre-firma.de oder Firmenname"
-              autoComplete="url"
-              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
-            />
-            <p className="mt-2 text-xs text-slate-500">
-              URL falls vorhanden — sonst einfach Firmenname.
+    <Section background="paper" padding="large">
+      <Container>
+        <div className="grid gap-mh-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
+            <SectionMark index="01" label="Kontakt" tone="accent" />
+            <h1 className="mt-mh-4 mh-display-2">
+              Schicken Sie mir Ihre Webseite — ich schau mir das an.
+            </h1>
+            <p className="mt-mh-4 max-w-mh-text mh-body-large text-mh-text-secondary">
+              Kurze Form ausfüllen. Ich melde mich in 1–3 Werktagen mit einer
+              ehrlichen Ersteinschätzung: was funktioniert, was hängt und ob
+              MyHiwi der richtige Partner ist.
             </p>
+
+            <div className="mt-mh-6 grid gap-mh-3">
+              <Card padded="compact" className="flex gap-mh-3">
+                <SearchCheck
+                  className="mt-1 h-5 w-5 shrink-0 text-mh-accent"
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+                <div>
+                  <h2 className="mh-body-small font-semibold text-mh-text-primary">
+                    Erste Sichtung statt Sales-Funnel
+                  </h2>
+                  <p className="mt-1 mh-body-xs text-mh-text-secondary">
+                    Kein automatisches Angebot. Erst schauen, dann ehrlich
+                    einschätzen.
+                  </p>
+                </div>
+              </Card>
+              <Card padded="compact" className="flex gap-mh-3">
+                <MessageSquare
+                  className="mt-1 h-5 w-5 shrink-0 text-mh-accent"
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+                <div>
+                  <h2 className="mh-body-small font-semibold text-mh-text-primary">
+                    Direkt mit Denis
+                  </h2>
+                  <p className="mt-1 mh-body-xs text-mh-text-secondary">
+                    Die Nachricht landet bei mir, nicht in einer fremden
+                    Vertriebsstrecke.
+                  </p>
+                </div>
+              </Card>
+              <Card padded="compact" className="flex gap-mh-3">
+                <Mail
+                  className="mt-1 h-5 w-5 shrink-0 text-mh-accent"
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+                <div>
+                  <h2 className="mh-body-small font-semibold text-mh-text-primary">
+                    Antwort in wenigen Werktagen
+                  </h2>
+                  <p className="mt-1 mh-body-xs text-mh-text-secondary">
+                    Meist per E-Mail, optional telefonisch, wenn das einfacher
+                    ist.
+                  </p>
+                </div>
+              </Card>
+            </div>
           </div>
 
-          {/* Anliegen */}
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-slate-900"
-            >
-              Worum geht's?
-            </label>
-            <textarea
-              ref={messageRef}
-              id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Zwei, drei Sätze reichen — was läuft gerade nicht, was möchten Sie verbessern, oder einfach 'Quick-Check bitte'."
-              rows={3}
-              className="mt-3 w-full resize-none border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
-            />
-          </div>
+          <Card as="form" onSubmit={handleSubmit} className="space-y-mh-5">
+            <div>
+              <h2 className="mh-display-4">Kostenlosen Digital-Check anfragen</h2>
+              <p className="mt-mh-2 mh-body-small text-mh-text-secondary">
+                Ein paar Stichpunkte reichen. Pflichtfelder sind Name, E-Mail,
+                Webseite/Firma und Anliegen.
+              </p>
+            </div>
 
-          {/* Telefon optional */}
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-slate-900"
-            >
-              Telefon{" "}
-              <span className="font-normal text-slate-400">(optional)</span>
-            </label>
-            <input
-              id="phone"
-              type="tel"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="Falls Sie lieber telefonieren möchten"
-              autoComplete="tel"
-              className="mt-3 w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-0"
-            />
-          </div>
+            <div>
+              <label htmlFor="name" className={labelClass}>
+                Wie heißen Sie?
+              </label>
+              <input
+                id="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Vor- und Nachname"
+                autoComplete="name"
+                className={fieldClass}
+              />
+            </div>
 
-          {error && (
-            <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-              {error}
-            </p>
-          )}
+            <div>
+              <label htmlFor="email" className={labelClass}>
+                Wo erreiche ich Sie per E-Mail?
+              </label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="ihre@firma.de"
+                autoComplete="email"
+                className={fieldClass}
+              />
+            </div>
 
-          <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs text-slate-500">
-              Ihre Daten gehen direkt an mich — nicht an einen Sales-Bot oder
-              CRM-Funnel.
-            </p>
-            <button
-              type="submit"
-              disabled={submitting}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-navy-900 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-navy-900/90 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {submitting ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  Senden…
-                </>
-              ) : (
-                <>
-                  Anfrage senden
-                  <ArrowRight className="h-4 w-4" />
-                </>
-              )}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+            <div>
+              <label htmlFor="website" className={labelClass}>
+                Welche Webseite oder Firma?
+              </label>
+              <input
+                id="website"
+                type="text"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                placeholder="ihre-firma.de oder Firmenname"
+                autoComplete="url"
+                className={fieldClass}
+              />
+              <p className="mt-mh-2 mh-body-xs text-mh-text-secondary">
+                URL falls vorhanden — sonst einfach Firmenname.
+              </p>
+            </div>
+
+            <div>
+              <label htmlFor="message" className={labelClass}>
+                Worum geht&apos;s?
+              </label>
+              <textarea
+                ref={messageRef}
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Zwei, drei Sätze reichen — was läuft gerade nicht, was möchten Sie verbessern, oder einfach: Quick-Check bitte."
+                rows={4}
+                className={`${fieldClass} min-h-[132px] resize-none`}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className={labelClass}>
+                Telefon{" "}
+                <span className="font-normal text-mh-text-secondary">
+                  (optional)
+                </span>
+              </label>
+              <input
+                id="phone"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Falls Sie lieber telefonieren möchten"
+                autoComplete="tel"
+                className={fieldClass}
+              />
+            </div>
+
+            {error ? (
+              <p className="rounded-mh-sm border border-red-200 bg-red-50 px-mh-4 py-mh-3 mh-body-small text-red-700">
+                {error}
+              </p>
+            ) : null}
+
+            <ComplianceNote variant="compact" />
+
+            <div className="flex flex-col gap-mh-4 pt-mh-2 sm:flex-row sm:items-center sm:justify-between">
+              <p className="mh-body-xs text-mh-text-secondary">
+                Ihre Daten gehen direkt an MyHiwi — nicht an einen Sales-Bot oder
+                eine fremde CRM-Kette.
+              </p>
+              <BtnPrimary type="submit" disabled={submitting} fullWidthOnMobile>
+                {submitting ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                    Senden…
+                  </>
+                ) : (
+                  "Anfrage senden"
+                )}
+              </BtnPrimary>
+            </div>
+          </Card>
+        </div>
+      </Container>
+    </Section>
   );
 }

@@ -1,8 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Header as MyHiwiHeader } from "@/components/myhiwi/layout/Header";
 import { Footer as MyHiwiFooter } from "@/components/myhiwi/layout/Footer";
 
@@ -106,9 +104,16 @@ export default function SiteShell({
 
   return (
     <>
-      <Navigation />
+      <MyHiwiHeader
+        navItems={HOME_NAV}
+        drawerGroups={HOME_DRAWER}
+        cta={{
+          label: "Kostenlosen Digital-Check anfragen",
+          href: "/kontakt",
+        }}
+      />
       <main>{children}</main>
-      <Footer />
+      <MyHiwiFooter columns={HOME_FOOTER_COLUMNS} />
     </>
   );
 }
