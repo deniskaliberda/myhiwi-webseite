@@ -381,14 +381,17 @@ Sparsam einsetzen. **Drei Stufen, mehr nicht.**
 
 **Häufige Icons (alle aus Lucide):** `Check` · `ArrowRight` · `Globe` · `TrendingUp` · `LineChart` · `MessageSquare` · `CalendarClock` · `CreditCard` · `Sparkles` · `Bot` (sparsam).
 
-**Bildsprache.** Aktuell **keine echten Fotos**. Bis sie da sind:
+**Bildsprache.** Echte MyHiwi-/Kundenbilder sind erlaubt, wenn sie aus dem Projektbestand kommen und nicht wie Stockfoto-Material wirken:
 
-- **Mockup-Plates** mit Gradient (`linear-gradient(135deg, {color.ink.950}, {color.semantic.accent} 55%, {color.semantic.glow})`) plus subtile horizontale Streifen-Textur (1px alle 12px, 4% Opacity).
+- **Logo:** echte SVG-Assets aus `public/brand/` verwenden (`myhiwi-h-logo.svg`, `myhiwi-h-logo-white.svg`, Icons). Keine frühen H-Placeholder als finale Marke.
+- **Founder-Portrait:** `/ueber-mich/portrait.jpg` als 4:5-Portrait-Card mit dunklem Verlauf und Caption-Struktur.
+- **Case-Visuals:** echte Projekt-/Hero-Screenshots für ProofCards, z. B. `/case-studies/sonnenhof/sonnenhof-neu.png`, `/case-studies/mr-sherman/cover.png`, `/case-studies/formazin/cover.png`, jeweils mit dunklem Gradient-Overlay für Lesbarkeit.
+- **Mockup-Plates** bleiben gültig, wenn kein echtes Projektvisual existiert: Gradient (`linear-gradient(135deg, {color.ink.950}, {color.semantic.accent} 55%, {color.semantic.glow})`) plus subtile horizontale Streifen-Textur.
 - **Browser-Mockup** mit Domain-Pill und stilisiertem Page-Body.
 - **Phone-Frame** mit Notch und Sticky-Header für Anfrageflow-Demos.
-- **Portrait-Platzhalter** für Founder-Module: warmer Creme-Gradient (`{color.calm.portraitWarm1}` → `{color.calm.portraitWarm2}`), freundliche SVG-Silhouette, Italic-Signatur „Denis" unten rechts.
+- **Portrait-Platzhalter** nur verwenden, wenn kein echtes Portrait verfügbar ist.
 
-Wenn ein echtes Foto da ist, ersetzt es den Platzhalter 1:1 (gleiche Aspect-Ratio, gleiche Caption-Struktur). **Kein Stockfoto.**
+**Kein Stockfoto.** Keine generischen Menschen-/Laptop-Bilder. Echte Visuals müssen einen MyHiwi-/Kundenbezug haben.
 
 ## 7. Components
 

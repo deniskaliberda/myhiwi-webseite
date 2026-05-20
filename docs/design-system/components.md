@@ -138,11 +138,12 @@ Jede Komponente trägt:
 **Varianten:** `4-step` (FeWo-Calm), `5-step-dark` (Homepage Process, falls reaktiviert).
 
 ### Proof Card / Case Card
-**Zweck:** ein Case-Eintrag in /cases.
-**Aufbau:** Mockup-Plate (135deg-Gradient) oben mit Branchen-Caption, dann Mono-Kicker + Display-5 Kunde + Ausgangslage-Body + Gebaut-Body + Hairline-Trenner mit Bausteine-Pills und Stat-Zeile rechts.
+**Zweck:** ein Case-Eintrag in /cases oder auf der Homepage.
+**Aufbau:** Visual-Plate oben/links mit echtem Case-Bild, wenn vorhanden, sonst Mockup-Plate (135deg-Gradient). Immer Branchen-Caption + Kunde über dunklem Gradient-Overlay, danach Mono-Kicker + Ausgangslage-Body + Gebaut-Body + Hairline-Trenner mit Bausteine-Pills und optionaler Stat-Zeile.
+**Produktionsbilder:** Sonnenhof `/case-studies/sonnenhof/sonnenhof-neu.png`, Mr. Sherman `/case-studies/mr-sherman/cover.png`, Formazin `/case-studies/formazin/cover.png`.
 **Varianten:** `lead-spread` (Sonnenhof groß, Halbseite), `regular` (in 2-Spalten-Grid).
-**Tokens:** `radius.lg`, `border`, `font.mono`, `font.display`.
-**Mobile:** stapelt, Mockup oben.
+**Tokens:** `radius.lg`, `border`, `font.mono`, `font.display`, `ink`-Overlay.
+**Mobile:** stapelt, Visual oben.
 
 ### Testimonial / Quote Card
 **Zweck:** Original-Zitat eines Kunden.
