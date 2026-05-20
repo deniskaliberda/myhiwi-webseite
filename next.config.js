@@ -3,6 +3,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/digital-check",
+        destination: "/kontakt",
+        permanent: false,
+      },
+      {
         source: "/leistungen",
         destination: "/",
         permanent: true,

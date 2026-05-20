@@ -334,10 +334,10 @@ export default function UeberMichPage() {
                     Unternehmen
                   </p>
                   <p className="mt-2 text-base font-medium text-slate-900">
-                    MyHiwi UG (haftungsbeschränkt) i.&nbsp;G.
+                    MyHiwi UG (haftungsbeschränkt)
                   </p>
                   <p className="mt-1 text-sm text-slate-500">
-                    HRB-Eintragung läuft · Gründungsvertrag 2026-04-02
+                    HRB 22263 FF · gegründet 2026
                   </p>
                 </div>
                 <div>
