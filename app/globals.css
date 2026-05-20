@@ -125,8 +125,8 @@
 }
 @media (min-width: 1024px) {
   .mh-hero-title {
-    font-size: clamp(72px, 6.4vw, 86px);
-    max-width: 11.5ch;
+    font-size: clamp(68px, 5.8vw, 80px);
+    max-width: 10.4ch;
   }
 }
 

@@ -11,64 +11,35 @@ type MyHiwiMarkProps = {
   className?: string;
 };
 
+const LOGO_SRC: Record<NonNullable<MyHiwiMarkProps["variant"]>, string> = {
+  default: "/brand/myhiwi-h-logo.svg",
+  "mono-on-light": "/brand/myhiwi-h-logo-dark.svg",
+  "mono-on-dark": "/brand/myhiwi-h-logo-white.svg",
+};
+
 /**
  * MyHiwi Redesign 2026 — MyHiwiMark
- * Logo = H-Icon + Wordmark. components.md §8.
- * Sub-Komponente für Header + Footer. Bewusst minimal gehalten —
- * volle SVG-Variante landet später unter `public/brand/`.
+ * Rendert die echte Logo-SVG aus `public/brand/`, nicht den frühen H-Placeholder.
  */
 export function MyHiwiMark({
   variant = "default",
-  size = 28,
+  size = 32,
   href = "/",
   className,
 }: MyHiwiMarkProps) {
-  const wordmarkColor =
-    variant === "mono-on-dark"
-      ? "text-mh-text-on-dark"
-      : variant === "mono-on-light"
-        ? "text-mh-text-primary"
-        : "text-mh-text-primary";
-
-  const iconBgClass =
-    variant === "default"
-      ? "bg-mh-ink-950 text-mh-text-on-dark"
-      : variant === "mono-on-dark"
-        ? "border border-mh-text-on-dark/40 text-mh-text-on-dark"
-        : "border border-mh-text-primary/40 text-mh-text-primary";
-
   const inner = (
     <span
-      className={cn(
-        "inline-flex items-center gap-mh-2 leading-none",
-        className,
-      )}
+      className={cn("inline-flex items-center leading-none", className)}
       aria-label="MyHiwi"
     >
-      <span
-        aria-hidden="true"
-        className={cn(
-          "inline-flex items-center justify-center rounded-mh-sm",
-          iconBgClass,
-        )}
-        style={{ height: size, width: size }}
-      >
-        <span
-          className="font-mh-display font-extrabold"
-          style={{ fontSize: size * 0.6, lineHeight: 1 }}
-        >
-          H
-        </span>
-      </span>
-      <span
-        className={cn(
-          "font-mh-display font-bold tracking-tight",
-          wordmarkColor,
-        )}
-        style={{ fontSize: size * 0.78 }}
-      >
-        MyHiwi
-      </span>
+      <img
+        src={LOGO_SRC[variant]}
+        alt="MyHiwi"
+        width={Math.round(size * 3.44)}
+        height={size}
+        className="block h-auto w-auto"
+        style={{ height: size }}
+      />
     </span>
   );
 
@@ -76,6 +47,7 @@ export function MyHiwiMark({
   return (
     <Link
       href={href}
+      aria-label="MyHiwi Startseite"
       className="inline-flex items-center transition-opacity duration-mh-fast ease-mh-default hover:opacity-80"
     >
       {inner}

@@ -18,6 +18,10 @@ type ProofCardProps = {
   pillars?: string[];
   /** Optionale Stat-Zeile rechts unten (Lead-Spread). */
   stat?: string;
+  /** Hero-/Coverbild aus public, z. B. „/case-studies/sonnenhof/sonnenhof-neu.png". */
+  imageSrc?: string;
+  /** Alt-Text für das optionale Coverbild. */
+  imageAlt?: string;
   /** Detail-Link, z. B. „/cases/sonnenhof-herrsching". */
   href?: string;
   /** Lead-Spread (Halbseite, Editorial) vs. regular (im Grid). */
@@ -37,6 +41,8 @@ export function ProofCard({
   gebaut,
   pillars,
   stat,
+  imageSrc,
+  imageAlt,
   href,
   variant = "regular",
   className,
@@ -53,19 +59,39 @@ export function ProofCard({
         className,
       )}
     >
-      {/* Mockup-Plate */}
+      {/* Visual plate */}
       <div
         className={cn(
-          "relative mh-mockup-plate text-mh-text-on-dark",
-          isLeadSpread ? "lg:w-[44%]" : "h-44",
+          "relative overflow-hidden mh-mockup-plate text-mh-text-on-dark",
+          isLeadSpread ? "lg:w-[44%]" : "h-52",
         )}
       >
-        <div className="absolute inset-0 mh-mockup-stripes" aria-hidden="true" />
-        <div className="relative flex h-full min-h-44 flex-col justify-end gap-mh-2 p-mh-5">
-          <span className="mh-label-mono-sm text-mh-text-on-dark/80">
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={imageAlt ?? `${client} Projektbild`}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        ) : null}
+        <div
+          className={cn(
+            "absolute inset-0",
+            imageSrc
+              ? "bg-gradient-to-t from-mh-ink-950 via-mh-ink-950/58 to-mh-ink-950/12"
+              : "mh-mockup-stripes",
+          )}
+          aria-hidden="true"
+        />
+        {imageSrc ? (
+          <div className="absolute inset-0 mh-mockup-stripes opacity-55" aria-hidden="true" />
+        ) : null}
+        <div className="relative flex h-full min-h-52 flex-col justify-end gap-mh-2 p-mh-5">
+          <span className="mh-label-mono-sm text-mh-text-on-dark/82">
             {industry}
           </span>
-          <span className="mh-display-5 font-mh-display">{client}</span>
+          <span className="mh-display-5 font-mh-display drop-shadow-sm">{client}</span>
         </div>
       </div>
 

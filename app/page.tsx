@@ -209,10 +209,10 @@ export default function HomePage() {
 
       <Section background="paper" padding="large" className="overflow-hidden">
         <Container>
-          <div className="grid gap-mh-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-mh-9">
+          <div className="grid gap-mh-8 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.9fr)] lg:items-center lg:gap-mh-10">
             <div className="max-w-[760px]">
               <SectionMark index="00" label="Positionierung" tone="accent" />
-              <h1 className="mt-mh-4 mh-display-1 mh-hero-title">
+              <h1 className="relative z-10 mt-mh-4 mh-display-1 mh-hero-title">
                 Digitale Wachstumssysteme für lokale{" "}
                 <em className="mh-italic-accent">Unternehmen</em>.
               </h1>
@@ -239,7 +239,7 @@ export default function HomePage() {
               </CtaRow>
             </div>
 
-            <div className="relative">
+            <div className="relative z-0 lg:pl-mh-3">
               <BrowserMockup domain="myhiwi.de/system" className="mx-auto max-w-[560px]">
                 <div className="bg-mh-paper p-mh-5">
                   <div className="grid gap-mh-3">
@@ -333,10 +333,20 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-mh-4 sm:grid-cols-2">
-              {pains.map((pain) => (
-                <Card key={pain.title} as="article" interactive>
-                  <h3 className="mh-display-5">{pain.title}</h3>
-                  <p className="mt-mh-3 mh-body-small text-mh-text-secondary">
+              {pains.map((pain, index) => (
+                <Card
+                  key={pain.title}
+                  as="article"
+                  interactive
+                  className="flex h-full min-h-[220px] flex-col justify-between gap-mh-5"
+                >
+                  <div>
+                    <span className="mh-label-mono-sm text-mh-accent">
+                      Diagnose {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-mh-4 mh-display-5">{pain.title}</h3>
+                  </div>
+                  <p className="mh-body-small text-mh-text-secondary">
                     {pain.text}
                   </p>
                 </Card>
@@ -417,20 +427,26 @@ export default function HomePage() {
       <Section background="paper" padding="large">
         <Container>
           <div className="grid gap-mh-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div className="relative overflow-hidden rounded-mh-xl border border-mh-divider bg-mh-subtle p-mh-6 shadow-mh-card">
-              <div className="aspect-[4/5] rounded-mh-lg bg-gradient-to-br from-mh-calm-portrait-warm-1 to-mh-calm-portrait-warm-2 p-mh-6">
-                <div className="flex h-full flex-col justify-between rounded-mh-lg border border-mh-divider bg-mh-paper/72 p-mh-5">
-                  <span className="mh-label-mono text-mh-text-secondary">
+            <div className="relative overflow-hidden rounded-mh-xl border border-mh-divider bg-mh-subtle p-mh-3 shadow-mh-card">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-mh-lg bg-mh-ink-950">
+                <img
+                  src="/ueber-mich/portrait.jpg"
+                  alt="Denis Kaliberda, Gründer von MyHiwi"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-mh-ink-950/82 via-mh-ink-950/18 to-transparent" aria-hidden="true" />
+                <div className="absolute inset-x-0 bottom-0 p-mh-5 text-mh-text-on-dark">
+                  <span className="mh-label-mono text-mh-text-on-dark/70">
                     Gründer
                   </span>
-                  <div>
-                    <p className="font-mh-display text-[44px] font-bold leading-none tracking-mh-display text-mh-text-primary">
-                      Denis
-                    </p>
-                    <p className="mt-mh-2 mh-body-small text-mh-text-secondary">
-                      Ahrensfelde bei Berlin · Ammersee, Bayern
-                    </p>
-                  </div>
+                  <p className="mt-mh-3 font-mh-display text-[44px] font-bold leading-none tracking-mh-display">
+                    Denis
+                  </p>
+                  <p className="mt-mh-2 mh-body-small text-mh-text-on-dark/74">
+                    Ahrensfelde bei Berlin · Ammersee, Bayern
+                  </p>
                 </div>
               </div>
             </div>
@@ -493,6 +509,8 @@ export default function HomePage() {
               gebaut="Relaunch, Local-SEO-Fundament, bessere Anfrageführung und sichtbare Trust-Signale."
               pillars={["Sichtbarkeit", "Nachfrage", "Anfrage & Buchung"]}
               stat="108 Anfragen / 100 Tage"
+              imageSrc="/case-studies/sonnenhof/sonnenhof-neu.png"
+              imageAlt="Neue Website des Sonnenhof Herrsching"
               href="/case-studies/sonnenhof-herrsching"
             />
 
@@ -504,6 +522,8 @@ export default function HomePage() {
                 ausgangslage="Mitgliedschaften, Studio-Website und operative Abläufe mussten zusammen gedacht werden."
                 gebaut="Brand-App, Mitgliederlogik und digitale Übergaben als verbundenes System."
                 pillars={["Anfrage & Buchung", "Zahlung", "Automation"]}
+                imageSrc="/case-studies/mr-sherman/cover.png"
+                imageAlt="Mr. Sherman Tanzstudio Projektansicht"
                 href="/case-studies/mr-sherman"
               />
               <ProofCard
@@ -513,6 +533,8 @@ export default function HomePage() {
                 ausgangslage="Wiederkehrende Dokumentationsarbeit sollte schneller und strukturierter vorbereitet werden."
                 gebaut="AI-gestützter Pilot für Notizen, Fotos und projektbezogene Übergaben."
                 pillars={["AI & Automation", "Interne Abläufe"]}
+                imageSrc="/case-studies/formazin/cover.png"
+                imageAlt="Formazin Architektur Projektvisual"
                 href="/case-studies/formazin"
               />
             </div>
