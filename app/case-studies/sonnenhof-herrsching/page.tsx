@@ -13,8 +13,11 @@ import {
  Languages,
  Megaphone,
  MousePointer,
+ Quote,
+ Repeat,
  Search,
  Sparkles,
+ Star,
  Target,
  TrendingUp,
  Wrench,
@@ -31,9 +34,9 @@ import { BrowserMockup } from "@/components/myhiwi/mockup/BrowserMockup";
 
 export const metadata: Metadata = {
  title:
-   "Sonnenhof Herrsching — direkte Gäste-Anfragen über die eigene Website | MyHiwi Case Study",
+   "Sonnenhof Herrsching — 199 direkte Gäste-Anfragen in 4 Monaten | MyHiwi Case Study",
  description:
-   "Case Study: Wie MyHiwi Website, technische SEO, regionale Inhalte und Google Ads für Sonnenhof Herrsching zu einem messbaren Direktanfrage-System verbunden hat.",
+   "Case Study: Wie MyHiwi für Sonnenhof Herrsching in 4 Monaten 199 direkte Anfragen, 1.158 organische Google-Klicks und einen 24-Monats-Folgevertrag aufgebaut hat.",
  alternates: {
    canonical: "https://myhiwi.de/case-studies/sonnenhof-herrsching",
  },
@@ -116,23 +119,24 @@ const HISTORY: number[][] = [
  [2026, 2, 47, 174],
  [2026, 3, 46, 136],
  [2026, 4, 97, 315],
+ [2026, 5, 99, 340],
 ];
 
 const heroMetrics = [
  {
-   value: "156",
+   value: "199",
    label: "direkte Gäste-Anfragen",
-   sub: "Formular-Anfragen · 28. Jan – 12. Mai 2026",
+   sub: "Formular-Anfragen · 28. Jan – 25. Mai 2026",
  },
  {
-   value: "97",
+   value: "1.158",
+   label: "organische Google-Klicks",
+   sub: "Search Console · letzte 90 Tage, gemessen",
+ },
+ {
+   value: "99",
    label: "Top-10-Keywords",
-   sub: "SE Ranking · April 2026",
- },
- {
-   value: "315",
-   label: "organische Besucher / Monat",
-   sub: "SE Ranking Traffic-Schätzung · April 2026",
+   sub: "SE Ranking · Mai 2026 (Start Januar: 36)",
  },
 ];
 
@@ -189,11 +193,28 @@ const capabilities = [
 ];
 
 const keywordBuckets = [
- { label: "Top 1–5", count: 37, width: 37 },
- { label: "Top 6–10", count: 60, width: 60 },
- { label: "Top 11–20", count: 33, width: 33 },
- { label: "Top 21–50", count: 93, width: 93 },
- { label: "Top 51–100", count: 123, width: 123 },
+ { label: "Top 1–5", count: 41, width: 41 },
+ { label: "Top 6–10", count: 58, width: 58 },
+ { label: "Top 11–20", count: 51, width: 51 },
+ { label: "Top 21–50", count: 132, width: 132 },
+ { label: "Top 51–100", count: 134, width: 134 },
+];
+
+/* GSC top queries · 24. Feb – 25. Mai 2026 (90 days) */
+const gscTopQueries: {
+ query: string;
+ clicks: number;
+ position: number;
+ tag: "Brand" | "Non-Brand";
+}[] = [
+ { query: "sonnenhof herrsching", clicks: 125, position: 1.08, tag: "Brand" },
+ { query: "ammersee mit hund", clicks: 46, position: 2.79, tag: "Non-Brand" },
+ { query: "sonnenhof herrsching am ammersee", clicks: 38, position: 1.0, tag: "Brand" },
+ { query: "ammersee mit kindern", clicks: 18, position: 5.36, tag: "Non-Brand" },
+ { query: "sonnenhof ammersee", clicks: 17, position: 1.06, tag: "Brand" },
+ { query: "urlaub am ammersee", clicks: 15, position: 8.12, tag: "Non-Brand" },
+ { query: "ammersee sehenswürdigkeiten pähler schlucht", clicks: 8, position: 6.34, tag: "Non-Brand" },
+ { query: "ammersee hundestrand", clicks: 7, position: 4.22, tag: "Non-Brand" },
 ];
 
 const startingPoints = [
@@ -383,7 +404,7 @@ function HistoryChart() {
          fontWeight="800"
          fill="var(--mh-text-primary)"
        >
-         97
+         99
        </text>
        <text
          x={xOf(aprilIdx) - 10}
@@ -392,7 +413,7 @@ function HistoryChart() {
          fontSize="10"
          fill="var(--mh-text-secondary)"
        >
-         Apr 2026
+         Mai 2026
        </text>
      </g>
    </svg>
@@ -405,9 +426,9 @@ function RequestsChart() {
    { label: "Feb", value: 11 },
    { label: "Mär", value: 45 },
    { label: "Apr", value: 57 },
-   { label: "Mai", value: 42 },
+   { label: "Mai", value: 85 },
  ];
- const max = 60;
+ const max = 100;
 
  return (
    <div className="flex h-72 items-end gap-mh-3 border-b border-mh-divider pb-mh-4">
@@ -511,11 +532,11 @@ export default function SonnenhofCaseStudy() {
              </h2>
              <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
                Die Kurve zeigt, wie viele Keywords des Sonnenhofs bei Google in
-               den Top 10 stehen. Ende 2025: 24 Top-10-Keywords. April 2026:
-               97 Top-10-Keywords.
+               den Top 10 stehen. Ende 2025: 24 Top-10-Keywords. Mai 2026:
+               99 Top-10-Keywords — fast eine Vervierfachung in fünf Monaten.
              </p>
              <p className="mt-mh-4 mh-label-mono text-mh-text-secondary">
-               Quelle: SE Ranking API · Abruf 23. April 2026 · Google.de
+               Quelle: SE Ranking API · Abruf 8. Mai 2026 · Google.de
              </p>
            </div>
            <Card padded="compact" className="overflow-hidden">
@@ -659,15 +680,16 @@ export default function SonnenhofCaseStudy() {
            <div>
              <SectionMark index="06" label="Direktanfragen" tone="accent" />
              <h2 className="mt-mh-4 mh-display-3">
-               156 direkte Gäste-Anfragen über das eigene Formular.
+               199 direkte Gäste-Anfragen über das eigene Formular.
              </h2>
              <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
                Jede Anfrage landet beim Sonnenhof selbst — nicht zuerst bei einem
-               Portal. Der Verlauf zeigt den Aufbau nach Relaunch, Content-Arbeit
-               und Ads-Start.
+               Portal. Aus 1 Anfrage im Januar wurden bis 25. Mai 85 Anfragen
+               allein im laufenden Monat. Provisionen für Portale entfallen
+               für genau diese Buchungen.
              </p>
              <p className="mt-mh-4 mh-label-mono text-mh-text-secondary">
-               Quelle: Sonnenhof-Inbox / Formspree-Export · 28. Jan – 12. Mai 2026
+               Quelle: Sonnenhof-Inbox / Formspree-Export · 28. Jan – 25. Mai 2026
              </p>
            </div>
            <Card>
@@ -707,7 +729,7 @@ export default function SonnenhofCaseStudy() {
                </div>
              ))}
              <p className="pt-mh-2 mh-label-mono text-mh-text-secondary">
-               Stand April 2026 · 243 Keywords in den Top 100
+               Stand Mai 2026 · 416 Keywords in den Top 100
              </p>
            </Card>
          </div>
@@ -716,7 +738,70 @@ export default function SonnenhofCaseStudy() {
 
      <Section background="paper" padding="large">
        <Container>
-         <SectionMark index="08" label="Konkrete Leistungen" />
+         <div className="grid gap-mh-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+           <div>
+             <SectionMark index="08" label="Was Gäste wirklich gesucht haben" tone="accent" />
+             <h2 className="mt-mh-4 mh-display-3">
+               1.158 echte Google-Klicks. Und sie sagen, was Gäste suchen.
+             </h2>
+             <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
+               Die Search Console zählt jeden Klick aus organischer Suche — kein
+               Modell, keine Schätzung. In 90 Tagen kamen 1.158 Klicks bei
+               56.578 Impressionen zusammen, mobile dominant. Spannender als
+               die Summe sind aber die Suchbegriffe: drei Viertel sind regionale
+               Themen wie „Ammersee mit Hund" oder „Ausflugsziele Herrsching".
+               Genau dort soll der Sonnenhof gefunden werden.
+             </p>
+             <p className="mt-mh-4 mh-label-mono text-mh-text-secondary">
+               Quelle: Google Search Console · 24. Feb – 25. Mai 2026
+             </p>
+           </div>
+           <Card className="overflow-hidden">
+             <div className="grid grid-cols-[1fr_auto_auto] items-center gap-mh-3 border-b border-mh-divider pb-mh-3">
+               <span className="mh-label-mono-sm text-mh-text-secondary">Suchbegriff</span>
+               <span className="mh-label-mono-sm text-mh-text-secondary">Pos.</span>
+               <span className="mh-label-mono-sm text-mh-text-secondary text-right w-[64px]">Klicks</span>
+             </div>
+             <ul className="space-y-mh-3 pt-mh-3">
+               {gscTopQueries.map((q) => (
+                 <li
+                   key={q.query}
+                   className="grid grid-cols-[1fr_auto_auto] items-center gap-mh-3"
+                 >
+                   <div>
+                     <span className="mh-body-small font-semibold text-mh-text-primary">
+                       {q.query}
+                     </span>
+                     <span
+                       className={`ml-mh-2 inline-block rounded-mh-sm px-mh-1 py-px text-[10px] font-semibold uppercase tracking-wider ${
+                         q.tag === "Brand"
+                           ? "bg-mh-subtle text-mh-text-secondary"
+                           : "bg-mh-accent/10 text-mh-accent"
+                       }`}
+                     >
+                       {q.tag === "Brand" ? "Brand" : "Non-Brand"}
+                     </span>
+                   </div>
+                   <span className="mh-label-mono-sm text-mh-text-secondary tabular-nums">
+                     {q.position.toLocaleString("de-DE", { minimumFractionDigits: q.position % 1 === 0 ? 0 : 2, maximumFractionDigits: 2 })}
+                   </span>
+                   <span className="text-right font-mh-display text-[20px] font-semibold text-mh-text-primary tabular-nums w-[64px]">
+                     {q.clicks}
+                   </span>
+                 </li>
+               ))}
+             </ul>
+             <p className="mt-mh-4 border-t border-mh-divider pt-mh-3 mh-label-mono text-mh-text-secondary">
+               Non-Brand-Begriffe = Gäste, die den Sonnenhof vorher nicht kannten.
+             </p>
+           </Card>
+         </div>
+       </Container>
+     </Section>
+
+     <Section background="subtle" padding="large">
+       <Container>
+         <SectionMark index="09" label="Konkrete Leistungen" />
          <h2 className="mt-mh-4 max-w-[760px] mh-display-3">
            Was im Hintergrund zusammenarbeiten musste.
          </h2>
@@ -731,11 +816,11 @@ export default function SonnenhofCaseStudy() {
        </Container>
      </Section>
 
-     <Section background="subtle" padding="large">
+     <Section background="paper" padding="large">
        <Container>
          <div className="grid gap-mh-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
            <div>
-             <SectionMark index="09" label="Google Ads" />
+             <SectionMark index="10" label="Google Ads" />
              <h2 className="mt-mh-4 mh-display-3">
                Bezahlter Traffic als Verstärker — nicht als Ersatz.
              </h2>
@@ -743,20 +828,110 @@ export default function SonnenhofCaseStudy() {
                Ads wurden nicht eingesetzt, um eine schwache Website zu überdecken.
                Sie flankierten den organischen Aufbau, lieferten zusätzliche Nachfrage-
                Signale und halfen, relevante Suchintentionen schneller zu erkennen.
+               Drei Viertel der Klicks kamen mobil — passend zur Suchsituation am Ammersee.
              </p>
              <p className="mt-mh-4 mh-label-mono text-mh-text-secondary">
-               Quelle: Google Ads Konto · Kampagnen-Snapshot März 2026
+               Quelle: Google Ads Konto · 24. Feb – 25. Mai 2026 (90 Tage)
              </p>
            </div>
            <div className="grid gap-mh-4 sm:grid-cols-2">
              {[
-               ["2.242", "Klicks", "Google Ads · aktive Kampagnenphase"],
-               ["88.713", "Impressionen", "zusätzliche Nachfrage-Signale"],
-               ["0,30 €", "Ø CPC", "im dokumentierten Zeitraum"],
-               ["86 %", "Optimierungsscore", "Google-Konto-Ebene"],
+               ["4.105", "Klicks", "Google Ads · 90 Tage"],
+               ["142.931", "Impressionen", "Sichtbarkeit für Reise-Suchen"],
+               ["0,28 €", "Ø CPC", "kontinuierlich unter 30 Cent gehalten"],
+               ["90,5 %", "Optimierungsscore", "Google-Konto-Ebene"],
              ].map(([value, label, sub]) => (
                <MetricCard key={label} value={value} label={label} sub={sub} />
              ))}
+           </div>
+         </div>
+       </Container>
+     </Section>
+
+     <Section background="ink" padding="large">
+       <Container>
+         <div className="grid gap-mh-8 lg:grid-cols-[1fr_1fr] lg:items-stretch">
+           <div className="flex flex-col">
+             <SectionMark index="11" label="Vertrauen, sichtbar gemacht" tone="accent" onDark />
+             <h2 className="mt-mh-4 mh-display-3 text-mh-text-on-dark">
+               „Mehr als verdoppelt — und komplett neue Gäste."
+             </h2>
+             <p className="mt-mh-5 mh-body-medium text-mh-text-on-dark/75">
+               Aussage von Conny Römmelt im Mai 2026, nach vier Monaten Zusammenarbeit.
+               Im selben Monat hat die Familie Römmelt für die nächsten 24 Monate
+               verlängert — ohne Druck, ohne Rabatt-Bait, auf Basis der Zahlen
+               und der Praxis-Erfahrung im Anfrage-Eingang.
+             </p>
+             <div className="mt-mh-6 grid gap-mh-3 sm:grid-cols-2 lg:mt-auto">
+               <div className="rounded-mh-lg border border-mh-text-on-dark/15 bg-mh-text-on-dark/[0.04] p-mh-5">
+                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-mh-sm bg-mh-glow text-mh-ink-950">
+                   <Repeat className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
+                 </span>
+                 <p className="mt-mh-3 font-mh-display text-[40px] font-semibold leading-none text-mh-text-on-dark">
+                   24
+                 </p>
+                 <p className="mt-mh-2 mh-label-mono text-mh-glow">
+                   Monate Folgevertrag
+                 </p>
+                 <p className="mt-mh-1 mh-body-xs text-mh-text-on-dark/70">
+                   unterschrieben Mai 2026
+                 </p>
+               </div>
+               <div className="rounded-mh-lg border border-mh-text-on-dark/15 bg-mh-text-on-dark/[0.04] p-mh-5">
+                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-mh-sm bg-mh-glow text-mh-ink-950">
+                   <Star className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
+                 </span>
+                 <p className="mt-mh-3 font-mh-display text-[40px] font-semibold leading-none text-mh-text-on-dark">
+                   4,5 ★
+                 </p>
+                 <p className="mt-mh-2 mh-label-mono text-mh-glow">
+                   Google-Bewertungen
+                 </p>
+                 <p className="mt-mh-1 mh-body-xs text-mh-text-on-dark/70">
+                   39 Reviews · Stand Mai 2026
+                 </p>
+               </div>
+             </div>
+           </div>
+           <div className="flex h-full flex-col gap-mh-4">
+             <figure className="flex flex-col rounded-mh-lg border border-mh-text-on-dark/15 bg-mh-text-on-dark/[0.04] p-mh-6">
+               <Quote className="h-8 w-8 text-mh-glow" strokeWidth={1.5} aria-hidden="true" />
+               <blockquote className="mt-mh-4 mh-body-large italic text-mh-text-on-dark/90">
+                 „Es sind viel, viel mehr Anfragen geworden — locker mehr als
+                 doppelt so viele. Und das Spannende: Es sind komplett neue
+                 Gäste dabei, die uns vorher gar nicht kannten."
+               </blockquote>
+               <figcaption className="pt-mh-5">
+                 <p className="mh-label-mono text-mh-text-on-dark">
+                   Conny Römmelt · Sonnenhof Herrsching
+                 </p>
+                 <p className="mh-body-xs text-mh-text-on-dark/60">
+                   Inhaberin · Statement Mai 2026, paraphrasiert
+                 </p>
+               </figcaption>
+             </figure>
+             <div className="overflow-hidden rounded-mh-lg border border-mh-text-on-dark/15 bg-mh-text-on-dark/[0.04]">
+               <div className="relative aspect-video w-full bg-mh-ink-950">
+                 <Image
+                   src="/case-studies/sonnenhof/sonnenhof-neu.png"
+                   alt="Sonnenhof Herrsching — Video-Statement Conny Römmelt (folgt)"
+                   fill
+                   sizes="(max-width: 1024px) 100vw, 50vw"
+                   className="object-cover opacity-50"
+                 />
+                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-mh-2 bg-mh-ink-950/50 text-center text-mh-text-on-dark">
+                   <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-mh-glow text-mh-ink-950">
+                     <svg viewBox="0 0 24 24" className="h-6 w-6 translate-x-px" fill="currentColor" aria-hidden="true">
+                       <path d="M8 5v14l11-7z" />
+                     </svg>
+                   </span>
+                   <p className="mh-label-mono">Video-Statement Conny</p>
+                   <p className="mh-body-xs text-mh-text-on-dark/70">
+                     folgt Juni 2026
+                   </p>
+                 </div>
+               </div>
+             </div>
            </div>
          </div>
        </Container>
@@ -766,7 +941,7 @@ export default function SonnenhofCaseStudy() {
        <Container>
          <div className="grid gap-mh-8 lg:grid-cols-[0.82fr_1.18fr]">
            <div>
-             <SectionMark index="10" label="Nächste Arbeit" tone="accent" />
+             <SectionMark index="12" label="Nächste Arbeit" tone="accent" />
              <h2 className="mt-mh-4 mh-display-3">
                Eine gute Case Study endet nicht beim Screenshot.
              </h2>
@@ -799,7 +974,7 @@ export default function SonnenhofCaseStudy() {
            <div className="mx-auto mb-mh-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-mh-glow text-mh-ink-950">
              <Sparkles className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
            </div>
-           <SectionMark index="11" label="Ihr Projekt" tone="accent" onDark className="justify-center" />
+           <SectionMark index="13" label="Ihr Projekt" tone="accent" onDark className="justify-center" />
            <h2 className="mt-mh-4 mh-display-2 text-mh-text-on-dark">
              Gleiche Logik für Ihre Region?
            </h2>
