@@ -178,7 +178,7 @@ export function Header({
         aria-label="Hauptmenü"
         hidden={!open}
         className={cn(
-          "fixed inset-x-0 bottom-0 top-[var(--mh-header-h,128px)] z-50",
+          "absolute inset-x-0 top-full z-50 h-[calc(100dvh-100%)] overflow-hidden",
           "bg-mh-paper text-mh-text-primary",
           "lg:hidden",
         )}
@@ -194,7 +194,7 @@ export function Header({
                   <ul className="flex flex-col">
                     {group.items.map((item) => (
                       <li
-                        key={item.href}
+                        key={`${group.label}-${item.label}-${item.href}`}
                         className="border-t border-mh-divider first:border-t-0"
                       >
                         <Link

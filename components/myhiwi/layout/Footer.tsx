@@ -101,7 +101,7 @@ export function Footer({
               </span>
               <ul className="flex flex-col gap-mh-3">
                 {column.items.map((item) => (
-                  <li key={item.href}>
+                  <li key={`${column.label}-${item.label}-${item.href}`}>
                     <Link
                       href={item.href}
                       className="mh-body-small text-mh-text-on-dark/90 transition-colors duration-mh-fast ease-mh-default hover:text-mh-glow"

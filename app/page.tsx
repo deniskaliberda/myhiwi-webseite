@@ -210,10 +210,10 @@ export default function HomePage() {
       <Section background="paper" padding="large" className="overflow-hidden">
         <Container>
           <div className="grid gap-mh-8 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.9fr)] lg:items-center lg:gap-mh-10">
-            <div className="max-w-[760px]">
+            <div className="min-w-0 max-w-[760px]">
               <SectionMark index="00" label="Positionierung" tone="accent" />
               <h1 className="relative z-10 mt-mh-4 mh-display-1 mh-hero-title">
-                Digitale Wachstumssysteme für lokale{" "}
+                Digitale Wachstums{"\u00ad"}systeme für lokale{" "}
                 <em className="mh-italic-accent">Unternehmen</em>.
               </h1>
               <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-secondary">
