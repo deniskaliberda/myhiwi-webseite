@@ -195,10 +195,10 @@ const STATS_ROW: { num: string; unit?: string; label: string; sub: string }[] = 
   { num: "90,5", unit: "%", label: "Ads-Score", sub: "Konto-Optimierung" },
 ];
 
-const ECONOMICS_ROW: { num: string; unit?: string; label: string; sub: string }[] = [
-  { num: "jede 3.", label: "Anfrage wird zur Buchung", sub: "Schätzung Conny · Mai 2026" },
-  { num: "~700", unit: "€", label: "Umsatz je Buchung", sub: "Ø · aktuell nur Ferienwohnungen" },
+const BANNER_STATS: { num: string; unit?: string; label: string; sub: string }[] = [
   { num: "80", unit: "%", label: "Belegung über die eigene Website", sub: "O-Ton Conny · Mai 2026" },
+  { num: "199", label: "direkte Anfragen", sub: "Formspree · 28. Jan – 25. Mai" },
+  { num: "jede 3.", label: "Anfrage wird zur Buchung", sub: "~700 € Ø · Schätzung" },
 ];
 
 /* ===================== HOOKS ===================== */
@@ -986,7 +986,7 @@ function BrowserMock({
 
 /* ===================== VIDEO STATEMENT ===================== */
 
-function VideoStatement({ aspect = "16/9" }: { aspect?: string }) {
+function VideoStatement({ aspect = "9/16" }: { aspect?: string }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -1102,20 +1102,7 @@ function VideoStatement({ aspect = "16/9" }: { aspect?: string }) {
             <span
               style={{
                 display: "block",
-                fontFamily: "var(--font-serif)",
-                fontStyle: "italic",
-                fontSize: 22,
-                lineHeight: 1.3,
-                color: "#fff",
-                maxWidth: "32ch",
-              }}
-            >
-              „Jetzt werde ich wieder gefunden."
-            </span>
-            <span
-              style={{
-                display: "block",
-                marginTop: 10,
+                marginTop: 0,
                 fontFamily: "var(--font-mono)",
                 fontSize: 10,
                 letterSpacing: "0.14em",
@@ -1560,6 +1547,103 @@ export default function CaseStudyClient() {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      {/* ============== ERFOLGS-BANNER · Conny-Video ============== */}
+      <section
+        style={{
+          padding: "clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px)",
+          background: "var(--subtle)",
+          borderTop: "1px solid var(--border-soft)",
+          borderBottom: "1px solid var(--border-soft)",
+        }}
+      >
+        <Reveal>
+          <div
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--blue-500)",
+            }}
+          >
+            Was wir geschafft haben · im O-Ton der Gastgeberin
+          </div>
+        </Reveal>
+        <div
+          className="mh-banner-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "300px minmax(0, 1fr)",
+            gap: "clamp(28px, 5vw, 56px)",
+            marginTop: 28,
+            alignItems: "center",
+          }}
+        >
+          <Reveal>
+            <div style={{ width: "100%", maxWidth: 320 }}>
+              <VideoStatement aspect="9/16" />
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div>
+              <p
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontStyle: "italic",
+                  fontSize: "clamp(28px, 4vw, 52px)",
+                  lineHeight: 1.14,
+                  letterSpacing: "-0.015em",
+                  margin: 0,
+                  maxWidth: "20ch",
+                  color: "var(--ink-950)",
+                }}
+              >
+                „Jetzt werde ich wieder{" "}
+                <span style={{ color: "var(--blue-500)" }}>gefunden</span>."
+              </p>
+              <p
+                style={{
+                  marginTop: 14,
+                  fontSize: 15,
+                  lineHeight: 1.6,
+                  color: "var(--muted)",
+                  maxWidth: "46ch",
+                }}
+              >
+                Conny Römmelt, Sonnenhof Herrsching — nach vier Monaten, in ihrem eigenen Video.
+              </p>
+              <div
+                className="mh-banner-stats"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                  gap: 14,
+                  marginTop: 28,
+                }}
+              >
+                {BANNER_STATS.map((s, i) => (
+                  <BigStat key={i} {...s} />
+                ))}
+              </div>
+              <p
+                style={{
+                  marginTop: 14,
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 11,
+                  lineHeight: 1.6,
+                  color: "var(--muted)",
+                  maxWidth: "70ch",
+                }}
+              >
+                Schätzwerte der Gastgeberin (E-Mail/Video, Mai 2026), bewusst vorsichtig — kein
+                automatisches Buchungs-Tracking, aktuell nur Ferienwohnungen buchbar.
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* ============== 02 · SEO TRAJEKTORIE ============== */}
@@ -2065,125 +2149,33 @@ export default function CaseStudyClient() {
           <SectionMark num="06" label="Vertrauen, sichtbar gemacht" accent />
         </Reveal>
 
-        <div
-          className="mh-trust-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 1.05fr) minmax(0, 0.95fr)",
-            gap: "clamp(32px, 5vw, 64px)",
-            marginTop: 40,
-            alignItems: "start",
-          }}
-        >
-          <Reveal delay={80}>
-            <VideoStatement aspect="16/9" />
-          </Reveal>
-          <Reveal delay={160}>
-            <div>
-              <p
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontStyle: "italic",
-                  fontSize: "clamp(28px, 4vw, 52px)",
-                  lineHeight: 1.14,
-                  letterSpacing: "-0.015em",
-                  margin: 0,
-                  maxWidth: "18ch",
-                  color: "var(--ink-950)",
-                }}
-              >
-                „Jetzt werde ich wieder{" "}
-                <span style={{ color: "var(--blue-500)" }}>gefunden</span>."
-              </p>
-              <p
-                style={{
-                  marginTop: 24,
-                  fontSize: 17,
-                  lineHeight: 1.6,
-                  color: "var(--muted)",
-                  maxWidth: "48ch",
-                }}
-              >
-                Conny Römmelt im Mai 2026, nach vier Monaten Zusammenarbeit. 80 % ihrer Belegung
-                laufen inzwischen über die neue Website. Ihre eigene Schätzung: rund jede dritte
-                Online-Anfrage wird zur Buchung, im Schnitt etwa 700 € Umsatz pro Buchung — und das,
-                obwohl aktuell nur Ferienwohnungen buchbar sind (Gästezimmer erst ab Juli). Im selben
-                Monat hat sie für 24 Monate verlängert — ohne Druck, ohne Rabatt-Bait.
-              </p>
-              <div style={{ marginTop: 24, display: "flex", alignItems: "center", gap: 14 }}>
-                <div
-                  style={{
-                    width: 52,
-                    height: 52,
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #F5EDE0, #D4B896)",
-                    border: "1px solid var(--border-strong)",
-                    flexShrink: 0,
-                  }}
-                  aria-hidden="true"
-                />
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontWeight: 700,
-                      fontSize: 17,
-                      color: "var(--ink-950)",
-                    }}
-                  >
-                    Conny Römmelt
-                  </div>
-                  <div style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.5 }}>
-                    Inhaberin · Sonnenhof Herrsching · wörtlich aus E-Mail, Mai 2026
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-
-        <Reveal delay={200}>
-          <div style={{ marginTop: "clamp(40px, 5vw, 56px)" }}>
-            <div
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "var(--blue-500)",
-              }}
-            >
-              Von der Anfrage zum Umsatz · Schätzung der Gastgeberin
-            </div>
-            <div
-              className="mh-econ-row"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                gap: 14,
-                marginTop: 22,
-              }}
-            >
-              {ECONOMICS_ROW.map((s, i) => (
-                <BigStat key={i} {...s} />
-              ))}
-            </div>
-            <p
-              style={{
-                marginTop: 16,
-                fontFamily: "var(--font-mono)",
-                fontSize: 12,
-                lineHeight: 1.6,
-                color: "var(--muted)",
-                maxWidth: "74ch",
-              }}
-            >
-              Eigene Einschätzung von Conny Römmelt (E-Mail, Mai 2026) — bewusst vorsichtig:
-              Schätzwerte, kein automatisches Buchungs-Tracking. Aktuell sind nur Ferienwohnungen
-              buchbar, Gästezimmer erst ab Juli.
-            </p>
-          </div>
+        <Reveal delay={80}>
+          <p
+            style={{
+              marginTop: 40,
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+              fontSize: "clamp(22px, 2.6vw, 30px)",
+              lineHeight: 1.4,
+              color: "var(--ink-950)",
+              maxWidth: "46ch",
+            }}
+          >
+            Im Mai 2026 hat Conny Römmelt nach vier Monaten für 24 weitere Monate verlängert — ohne
+            Druck, ohne Rabatt-Bait, auf Basis der Zahlen und der Praxis-Erfahrung im
+            Anfrage-Eingang.
+          </p>
+          <p
+            style={{
+              marginTop: 14,
+              fontFamily: "var(--font-mono)",
+              fontSize: 12,
+              letterSpacing: "0.06em",
+              color: "var(--muted)",
+            }}
+          >
+            Conny Römmelt · Inhaberin Sonnenhof Herrsching
+          </p>
         </Reveal>
 
         <Reveal delay={240}>
@@ -2350,6 +2342,8 @@ export default function CaseStudyClient() {
           .mh-trust-grid { grid-template-columns: 1fr !important; }
           .mh-stats-row { grid-template-columns: 1fr 1fr !important; }
           .mh-econ-row { grid-template-columns: 1fr !important; }
+          .mh-banner-grid { grid-template-columns: 1fr !important; }
+          .mh-banner-stats { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 639px) {
           .mh-steps-grid { grid-template-columns: 1fr !important; }
