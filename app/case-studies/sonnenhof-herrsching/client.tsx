@@ -195,6 +195,12 @@ const STATS_ROW: { num: string; unit?: string; label: string; sub: string }[] = 
   { num: "90,5", unit: "%", label: "Ads-Score", sub: "Konto-Optimierung" },
 ];
 
+const ECONOMICS_ROW: { num: string; unit?: string; label: string; sub: string }[] = [
+  { num: "jede 3.", label: "Anfrage wird zur Buchung", sub: "Schätzung Conny · Mai 2026" },
+  { num: "~700", unit: "€", label: "Umsatz je Buchung", sub: "Ø · aktuell nur Ferienwohnungen" },
+  { num: "80", unit: "%", label: "Belegung über die eigene Website", sub: "O-Ton Conny · Mai 2026" },
+];
+
 /* ===================== HOOKS ===================== */
 
 function useInView<T extends HTMLElement>(threshold = 0.15) {
@@ -978,153 +984,150 @@ function BrowserMock({
   );
 }
 
-/* ===================== VIDEO PLACEHOLDER ===================== */
+/* ===================== VIDEO STATEMENT ===================== */
 
-function VideoStatement({ aspect = "4/3" }: { aspect?: string }) {
-  const [hovered, setHovered] = useState(false);
+function VideoStatement({ aspect = "16/9" }: { aspect?: string }) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const start = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    void v.play();
+    setPlaying(true);
+  };
+
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      role="button"
-      aria-label="Video-Statement Conny Römmelt · Platzhalter, Original folgt Juni 2026"
-      tabIndex={0}
       style={{
         position: "relative",
         width: "100%",
         aspectRatio: aspect,
         borderRadius: 14,
         overflow: "hidden",
-        background: "linear-gradient(135deg, #1F2A2A 0%, #2F4858 40%, #4A7F9E 100%)",
+        background: "#0F172A",
         border: "1px solid var(--border-strong)",
         boxShadow: "var(--shadow-hero)",
-        cursor: "pointer",
       }}
     >
-      <svg
-        viewBox="0 0 800 450"
-        preserveAspectRatio="xMidYMax slice"
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.7 }}
-        aria-hidden="true"
-      >
-        <path
-          d="M0 320 L120 220 L240 280 L360 200 L480 260 L600 210 L720 250 L800 230 L800 450 L0 450 Z"
-          fill="rgba(15,23,42,0.55)"
-        />
-        <path
-          d="M0 360 L160 290 L320 330 L480 280 L640 320 L800 290 L800 450 L0 450 Z"
-          fill="rgba(15,23,42,0.78)"
-        />
-      </svg>
-      <div
+      <video
+        ref={videoRef}
+        src="/case-studies/sonnenhof/conny-statement.mp4"
+        poster="/case-studies/sonnenhof/conny-poster.jpg"
+        controls={playing}
+        playsInline
+        preload="none"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
         style={{
           position: "absolute",
           inset: 0,
-          background: "radial-gradient(70% 60% at 50% 40%, transparent 0%, rgba(0,0,0,0.45) 100%)",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          background: "#0F172A",
         }}
       />
-      <div
-        style={{
-          position: "absolute",
-          top: 18,
-          left: 18,
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          padding: "7px 12px",
-          background: "rgba(220, 38, 38, 0.92)",
-          color: "#fff",
-          borderRadius: 999,
-          fontFamily: "var(--font-mono)",
-          fontSize: 10,
-          fontWeight: 700,
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-        }}
-      >
-        <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#fff" }} />
-        Platzhalter · Fake-Video
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 18,
-          right: 18,
-          padding: "6px 10px",
-          background: "rgba(0,0,0,0.55)",
-          color: "rgba(255,255,255,0.9)",
-          borderRadius: 6,
-          fontFamily: "var(--font-mono)",
-          fontSize: 10,
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-        }}
-      >
-        00:00 / 01:24
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: `translate(-50%, -50%) scale(${hovered ? 1.06 : 1})`,
-          transition: "transform 0.2s",
-          width: 88,
-          height: 88,
-          borderRadius: "50%",
-          background: "rgba(255,255,255,0.95)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: "0 12px 40px rgba(0,0,0,0.45)",
-        }}
-      >
-        <svg width="26" height="30" viewBox="0 0 28 32" fill="none" aria-hidden="true">
-          <path d="M4 3 L26 16 L4 29 Z" fill="#0F172A" />
-        </svg>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          right: 0,
-          bottom: 0,
-          padding: "22px 24px 20px",
-          background: "linear-gradient(to top, rgba(0,0,0,0.65), transparent)",
-          color: "#fff",
-        }}
-      >
-        <div
+      {!playing && (
+        <button
+          type="button"
+          onClick={start}
+          aria-label="Video-Statement von Conny Römmelt abspielen"
           style={{
-            fontFamily: "var(--font-serif)",
-            fontStyle: "italic",
-            fontSize: 22,
-            lineHeight: 1.3,
-            color: "#fff",
-            maxWidth: "38ch",
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            margin: 0,
+            padding: 0,
+            border: "none",
+            cursor: "pointer",
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.66), rgba(0,0,0,0.06) 46%, rgba(0,0,0,0.12))",
           }}
         >
-          „Es sind viel, viel mehr Anfragen geworden …"
-        </div>
-        <div
-          style={{
-            marginTop: 10,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: 8,
-            fontFamily: "var(--font-mono)",
-            fontSize: 10,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.75)",
-          }}
-        >
-          <span>Conny Römmelt · Sonnenhof Herrsching</span>
-          <span style={{ color: "var(--cyan-500)" }}>● Original folgt Juni 2026</span>
-        </div>
-      </div>
+          <span
+            style={{
+              position: "absolute",
+              top: 16,
+              left: 16,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "6px 11px",
+              background: "rgba(15,23,42,0.78)",
+              color: "#fff",
+              borderRadius: 999,
+              fontFamily: "var(--font-mono)",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+            }}
+          >
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--cyan-500)" }} />
+            Video · Gastgeberin
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
+              width: 84,
+              height: 84,
+              borderRadius: "50%",
+              background: "rgba(255,255,255,0.95)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 12px 40px rgba(0,0,0,0.45)",
+            }}
+          >
+            <svg width="26" height="30" viewBox="0 0 28 32" fill="none" aria-hidden="true">
+              <path d="M4 3 L26 16 L4 29 Z" fill="#0F172A" />
+            </svg>
+          </span>
+          <span
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              bottom: 0,
+              padding: "22px 24px 20px",
+              display: "block",
+              textAlign: "left",
+            }}
+          >
+            <span
+              style={{
+                display: "block",
+                fontFamily: "var(--font-serif)",
+                fontStyle: "italic",
+                fontSize: 22,
+                lineHeight: 1.3,
+                color: "#fff",
+                maxWidth: "32ch",
+              }}
+            >
+              „Jetzt werde ich wieder gefunden."
+            </span>
+            <span
+              style={{
+                display: "block",
+                marginTop: 10,
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.75)",
+              }}
+            >
+              Conny Römmelt · Sonnenhof Herrsching · ~2 Min
+            </span>
+          </span>
+        </button>
+      )}
     </div>
   );
 }
@@ -2073,7 +2076,7 @@ export default function CaseStudyClient() {
           }}
         >
           <Reveal delay={80}>
-            <VideoStatement aspect="4/3" />
+            <VideoStatement aspect="16/9" />
           </Reveal>
           <Reveal delay={160}>
             <div>
@@ -2089,9 +2092,8 @@ export default function CaseStudyClient() {
                   color: "var(--ink-950)",
                 }}
               >
-                „Mehr als{" "}
-                <span style={{ color: "var(--blue-500)" }}>verdoppelt</span> — und komplett neue
-                Gäste."
+                „Jetzt werde ich wieder{" "}
+                <span style={{ color: "var(--blue-500)" }}>gefunden</span>."
               </p>
               <p
                 style={{
@@ -2102,9 +2104,11 @@ export default function CaseStudyClient() {
                   maxWidth: "48ch",
                 }}
               >
-                Aussage von Conny Römmelt im Mai 2026, nach vier Monaten Zusammenarbeit. Im selben
-                Monat hat die Familie Römmelt für die nächsten 24 Monate verlängert — ohne Druck,
-                ohne Rabatt-Bait, auf Basis der Zahlen und der Praxis-Erfahrung im Anfrage-Eingang.
+                Conny Römmelt im Mai 2026, nach vier Monaten Zusammenarbeit. 80 % ihrer Belegung
+                laufen inzwischen über die neue Website. Ihre eigene Schätzung: rund jede dritte
+                Online-Anfrage wird zur Buchung, im Schnitt etwa 700 € Umsatz pro Buchung — und das,
+                obwohl aktuell nur Ferienwohnungen buchbar sind (Gästezimmer erst ab Juli). Im selben
+                Monat hat sie für 24 Monate verlängert — ohne Druck, ohne Rabatt-Bait.
               </p>
               <div style={{ marginTop: 24, display: "flex", alignItems: "center", gap: 14 }}>
                 <div
@@ -2130,13 +2134,57 @@ export default function CaseStudyClient() {
                     Conny Römmelt
                   </div>
                   <div style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.5 }}>
-                    Inhaberin · Sonnenhof Herrsching · Statement Mai 2026, paraphrasiert
+                    Inhaberin · Sonnenhof Herrsching · wörtlich aus E-Mail, Mai 2026
                   </div>
                 </div>
               </div>
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={200}>
+          <div style={{ marginTop: "clamp(40px, 5vw, 56px)" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--blue-500)",
+              }}
+            >
+              Von der Anfrage zum Umsatz · Schätzung der Gastgeberin
+            </div>
+            <div
+              className="mh-econ-row"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                gap: 14,
+                marginTop: 22,
+              }}
+            >
+              {ECONOMICS_ROW.map((s, i) => (
+                <BigStat key={i} {...s} />
+              ))}
+            </div>
+            <p
+              style={{
+                marginTop: 16,
+                fontFamily: "var(--font-mono)",
+                fontSize: 12,
+                lineHeight: 1.6,
+                color: "var(--muted)",
+                maxWidth: "74ch",
+              }}
+            >
+              Eigene Einschätzung von Conny Römmelt (E-Mail, Mai 2026) — bewusst vorsichtig:
+              Schätzwerte, kein automatisches Buchungs-Tracking. Aktuell sind nur Ferienwohnungen
+              buchbar, Gästezimmer erst ab Juli.
+            </p>
+          </div>
+        </Reveal>
 
         <Reveal delay={240}>
           <div
@@ -2301,6 +2349,7 @@ export default function CaseStudyClient() {
           .mh-dark-grid { grid-template-columns: 1fr !important; }
           .mh-trust-grid { grid-template-columns: 1fr !important; }
           .mh-stats-row { grid-template-columns: 1fr 1fr !important; }
+          .mh-econ-row { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 639px) {
           .mh-steps-grid { grid-template-columns: 1fr !important; }
