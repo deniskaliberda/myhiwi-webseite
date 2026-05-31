@@ -225,28 +225,21 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <Section background="paper" padding="large" className="overflow-hidden">
+      <Section background="paper" padding="large" className="overflow-hidden lg:flex lg:flex-col lg:justify-center lg:min-h-[100svh]">
         <Container>
           <div className="grid gap-mh-8 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.9fr)] lg:items-center lg:gap-mh-10">
             <div className="min-w-0 max-w-[760px]">
               <SectionMark index="00" label="Positionierung" tone="accent" />
-              <h1 className="relative z-10 mt-mh-4 mh-display-1 mh-hero-title">
-                Mehr direkte Anfragen für lokale Betriebe — sauber
-                eingesammelt, in <em className="mh-italic-accent">Buchungen</em>{" "}
-                verwandelt.
+              <h1 className="relative z-10 mt-mh-5 mh-display-1 mh-hero-title">
+                Aus Sichtbarkeit werden{" "}
+                <em className="mh-italic-accent">Buchungen</em>.
               </h1>
-              <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-secondary">
-                MyHiwi baut lokalen Dienstleistern den Weg, auf dem aus
-                Google-Sichtbarkeit echte Anfragen werden — und aus Anfragen
-                verbindliche Buchungen. Mehr Umsatz, weniger Handarbeit. Die KI
-                arbeitet im Maschinenraum, Sie behalten die Kontrolle.
-              </p>
-              <p className="mt-mh-4 max-w-mh-text mh-body-medium text-mh-text-secondary">
-                Wir verkaufen keine Webseiten als Einzelteil. Wir bauen den
-                digitalen Weg, auf dem lokale Nachfrage bei Ihnen ankommt.
+              <p className="mt-mh-6 max-w-mh-text mh-body-large text-mh-text-secondary">
+                Der Weg von der Google-Suche bis zur verbindlichen Buchung —
+                gebaut für lokale Betriebe. Mehr Umsatz, weniger Handarbeit.
               </p>
               <CtaRow
-                className="mt-mh-6"
+                className="mt-mh-7"
                 microcopy="kostenlos · unverbindlich · Sie reden direkt mit Denis"
               >
                 <BtnPrimary href={primaryCta.href} fullWidthOnMobile>
@@ -255,7 +248,6 @@ export default function HomePage() {
                 <BtnGhost href={secondaryCta.href} fullWidthOnMobile>
                   {secondaryCta.label}
                 </BtnGhost>
-                <BtnTertiary href="#pakete">Angebote ansehen</BtnTertiary>
               </CtaRow>
             </div>
 
