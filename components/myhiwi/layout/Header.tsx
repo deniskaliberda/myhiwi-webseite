@@ -87,7 +87,7 @@ export function Header({
   navItems = DEFAULT_NAV,
   drawerGroups = DEFAULT_DRAWER,
   status = "verfügbar · Ahrensfelde + Ammersee",
-  caption = "MyHiwi · Digitale Wachstumssysteme",
+  caption = "MyHiwi · Anfrage- & Buchungssysteme",
   cta = DEFAULT_CTA,
 }: HeaderProps) {
   const [open, setOpen] = useState(false);

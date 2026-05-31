@@ -66,7 +66,7 @@ const DEFAULT_LEGAL: { label: string; href: string }[] = [
  * Marketing-Layouts eingebunden.
  */
 export function Footer({
-  tagline = "Digitale Wachstumssysteme für lokale Unternehmen.",
+  tagline = "Anfrage- & Buchungssysteme für lokale Betriebe.",
   location = "Ahrensfelde bei Berlin · Ammersee, Bayern",
   columns = DEFAULT_COLUMNS,
   legalLinks = DEFAULT_LEGAL,
