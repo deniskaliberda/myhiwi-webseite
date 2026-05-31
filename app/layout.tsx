@@ -57,13 +57,15 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: {
     default:
-      "Digitale Wachstumssysteme für lokale Unternehmen | MyHiwi",
+      "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
     template: "%s | MyHiwi",
   },
   description:
-    "MyHiwi verbindet Website, Google-Sichtbarkeit, Anfragewege, Buchung, Zahlung und AI zu digitalen Wachstumssystemen für lokale Unternehmen.",
+    "MyHiwi baut lokalen Dienstleistern, Pensionen & Ferienwohnungen den Weg von Google-Sichtbarkeit zu direkten Anfragen und Buchungen. Berlin-Ost & Bayern.",
   keywords: [
-    "digitale Wachstumssysteme",
+    "Direktanfragen lokale Betriebe",
+    "Direktbuchung Ferienwohnung",
+    "Anfragesystem Pension",
     "lokale Unternehmen digitalisieren",
     "Website KMU",
     "Local SEO",
@@ -72,9 +74,6 @@ export const metadata: Metadata = {
     "Buchungssystem erstellen lassen",
     "Direktbuchung ohne OTA",
     "Zahlungssystem Stripe",
-    "AI Automation KMU",
-    "Workflow Automation",
-    "Next.js Website",
     "Ahrensfelde Berlin Bayern",
   ],
   authors: [{ name: "Denis Kaliberda" }],
@@ -85,15 +84,15 @@ export const metadata: Metadata = {
     url: "https://myhiwi.de",
     siteName: "MyHiwi",
     title:
-      "Digitale Wachstumssysteme für lokale Unternehmen | MyHiwi",
+      "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
     description:
-      "Website, Google-Sichtbarkeit, Anfragewege, Buchung, Zahlung und AI als zusammenhängendes System für lokale Unternehmen.",
+      "Aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen — gebaut für lokale Betriebe in Berlin-Ost und am Ammersee.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digitale Wachstumssysteme für lokale Unternehmen | MyHiwi",
+    title: "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
     description:
-      "MyHiwi verbindet Sichtbarkeit, Website, Anfrageweg und passende Automatisierung für lokale Unternehmen.",
+      "Aus Sichtbarkeit werden direkte Anfragen und Buchungen — für lokale Betriebe, Pensionen und Ferienwohnungen.",
   },
 };
 
@@ -102,7 +101,7 @@ const organizationJsonLd = {
   "@type": "LocalBusiness",
   name: "MyHiwi UG",
   description:
-    "Digitale Wachstumssysteme für lokale Unternehmen — Website, Sichtbarkeit, Anfragewege und passende Automatisierung.",
+    "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
   url: "https://myhiwi.de",
   logo: "https://myhiwi.de/brand/myhiwi-h-logo.svg",
   email: "kontakt@myhiwi.de",
@@ -123,11 +122,12 @@ const organizationJsonLd = {
     name: "Deutschland",
   },
   serviceType: [
+    "Direktbuchungssystem für Unterkünfte",
+    "Anfragesystem für lokale Betriebe",
     "Local SEO",
     "Webdesign",
     "Google Ads Management",
     "Google Business Profil Optimierung",
-    "Workflow Automation",
   ],
   priceRange: "€€",
 };

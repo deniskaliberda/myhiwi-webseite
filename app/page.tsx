@@ -37,9 +37,9 @@ const secondaryCta = {
 
 export const metadata: Metadata = {
   title:
-    "Digitale Wachstumssysteme für lokale Unternehmen | MyHiwi",
+    "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
   description:
-    "MyHiwi verbindet Website, Google-Sichtbarkeit, Anfragewege, Buchung, Zahlung und AI zu Wachstumssystemen für lokale Unternehmen.",
+    "MyHiwi baut lokalen Dienstleistern, Pensionen & Ferienwohnungen den Weg von Google-Sichtbarkeit zu direkten Anfragen und Buchungen. Berlin-Ost & Bayern.",
   alternates: {
     canonical: "https://myhiwi.de",
   },
@@ -69,6 +69,24 @@ const pains = [
   {
     title: "Buchung und Zahlung bleiben Handarbeit.",
     text: "Reservierungen, Anzahlungen, Bestätigungen und Rechnungen kosten Zeit, obwohl ein Teil davon verbindlich digital laufen könnte.",
+  },
+];
+
+const benefits = [
+  {
+    index: "01",
+    title: "Mehr Umsatz",
+    text: "Sichtbar werden ist kein Selbstzweck. Der Weg ist so gebaut, dass aus Suchenden konkrete Anfragen und direkte Buchungen werden — nicht nur Klicks in einer Statistik.",
+  },
+  {
+    index: "02",
+    title: "Weniger Zeit",
+    text: "Anfragen kommen strukturiert an — mit den Infos, die Sie für eine Antwort brauchen. Routine-Schritte laufen vorbereitet, die Entscheidung bleibt bei Ihnen.",
+  },
+  {
+    index: "03",
+    title: "Weniger Kosten",
+    text: "Jede Direktbuchung spart die Portal-Provision. Werbung läuft auf echte Anfragen statt auf Reichweite, die nichts bringt.",
   },
 ];
 
@@ -213,13 +231,15 @@ export default function HomePage() {
             <div className="min-w-0 max-w-[760px]">
               <SectionMark index="00" label="Positionierung" tone="accent" />
               <h1 className="relative z-10 mt-mh-4 mh-display-1 mh-hero-title">
-                Digitale Wachstums{"\u00ad"}systeme für lokale{" "}
-                <em className="mh-italic-accent">Unternehmen</em>.
+                Mehr direkte Anfragen für lokale Betriebe — sauber
+                eingesammelt, in <em className="mh-italic-accent">Buchungen</em>{" "}
+                verwandelt.
               </h1>
               <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-secondary">
-                MyHiwi verbindet Website, Google-Sichtbarkeit, Anfragewege,
-                Buchung, Zahlung und AI so, dass aus Sichtbarkeit bessere
-                Anfragen, Buchungen und verbindliche nächste Schritte werden können.
+                MyHiwi baut lokalen Dienstleistern den Weg, auf dem aus
+                Google-Sichtbarkeit echte Anfragen werden — und aus Anfragen
+                verbindliche Buchungen. Mehr Umsatz, weniger Handarbeit. Die KI
+                arbeitet im Maschinenraum, Sie behalten die Kontrolle.
               </p>
               <p className="mt-mh-4 max-w-mh-text mh-body-medium text-mh-text-secondary">
                 Wir verkaufen keine Webseiten als Einzelteil. Wir bauen den
@@ -240,7 +260,7 @@ export default function HomePage() {
             </div>
 
             <div className="relative z-0 lg:pl-mh-3">
-              <BrowserMockup domain="myhiwi.de/system" className="mx-auto max-w-[560px]">
+              <BrowserMockup domain="myhiwi.de/anfragen" className="mx-auto max-w-[560px]">
                 <div className="bg-mh-paper p-mh-5">
                   <div className="grid gap-mh-3">
                     <div className="rounded-mh-lg border border-mh-divider bg-mh-subtle p-mh-4">
@@ -300,13 +320,38 @@ export default function HomePage() {
                 </div>
               </BrowserMockup>
               <FloatingMetricCard
-                value="108 Anfragen / 100 Tage"
+                value="199 Anfragen / 4 Monate"
                 caption="Sonnenhof Herrsching"
                 tag="belegter Case 2026"
                 className="mt-mh-4 lg:absolute lg:-right-mh-4 lg:-top-mh-4 lg:mt-0"
               />
             </div>
           </div>
+        </Container>
+      </Section>
+
+      <Section background="paper" padding="large">
+        <Container>
+          <SectionMark index="00" label="Warum Betriebe mit mir arbeiten" tone="accent" />
+          <h2 className="mt-mh-4 mh-display-3">
+            Drei Dinge sollen besser werden.{" "}
+            <em className="mh-italic-accent">Mehr nicht.</em>
+          </h2>
+          <div className="mt-mh-7 grid gap-mh-4 sm:grid-cols-3">
+            {benefits.map((benefit) => (
+              <Card key={benefit.index} className="flex h-full flex-col gap-mh-3">
+                <span className="mh-label-mono text-mh-accent">{benefit.index}</span>
+                <h3 className="mh-body-large font-semibold text-mh-text-primary">
+                  {benefit.title}
+                </h3>
+                <p className="mh-body-medium text-mh-text-secondary">{benefit.text}</p>
+              </Card>
+            ))}
+          </div>
+          <p className="mt-mh-5 mh-body-small text-mh-text-secondary">
+            Die KI ist dabei nur das Werkzeug im Hintergrund — sie beschleunigt, sie
+            entscheidet nicht.
+          </p>
         </Container>
       </Section>
 
