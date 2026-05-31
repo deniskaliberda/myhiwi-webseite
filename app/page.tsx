@@ -377,6 +377,15 @@ export default function HomePage() {
                 Werbung oder ein Formular. Der Engpass entsteht dort, wo diese
                 Teile nicht miteinander arbeiten.
               </p>
+              <div className="mt-mh-6 hidden overflow-hidden rounded-mh-xl border border-mh-divider bg-mh-paper shadow-mh-card lg:block">
+                <img
+                  src="/home/anfrage-flow.png"
+                  alt="Aus einzelnen Bausteinen wird ein verbundener Weg von der Suche bis zur Buchung"
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[3/2] w-full object-cover"
+                />
+              </div>
             </div>
 
             <div className="grid gap-mh-4 sm:grid-cols-2">
@@ -450,6 +459,15 @@ export default function HomePage() {
                 wird dort eingesetzt, wo ein klarer Ablauf schon existiert und
                 menschliche Kontrolle erhalten bleibt.
               </p>
+              <div className="mt-mh-6 overflow-hidden rounded-mh-xl border border-mh-divider bg-mh-paper shadow-mh-card">
+                <img
+                  src="/home/automatisierung.png"
+                  alt="MyHiwi — KI als Werkzeug im Hintergrund, mit menschlicher Freigabe"
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[16/10] w-full object-cover"
+                />
+              </div>
             </div>
 
             <div className="grid gap-mh-4">
