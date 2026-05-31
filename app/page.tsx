@@ -255,7 +255,10 @@ export default function HomePage() {
               <BrowserMockup domain="myhiwi.de/anfragen" className="mx-auto max-w-[560px]">
                 <div className="bg-mh-paper p-mh-5">
                   <div className="grid gap-mh-3">
-                    <div className="rounded-mh-lg border border-mh-divider bg-mh-subtle p-mh-4">
+                    <div
+                      className="mh-funnel-step rounded-mh-lg border border-mh-divider bg-mh-subtle p-mh-4"
+                      style={{ animationDelay: "0s" }}
+                    >
                       <div className="flex items-center justify-between gap-mh-3">
                         <span className="mh-label-mono-sm text-mh-text-secondary">
                           Besucher
@@ -264,25 +267,29 @@ export default function HomePage() {
                       </div>
                     </div>
                     {[
-                      ["01", "Sichtbarkeit", "gefunden werden"],
-                      ["02", "Nachfrage", "passende Besucher"],
-                      ["03", "Anfrage", "klarer nächster Schritt"],
-                      ["04", "Zahlung", "verbindlicher Ablauf"],
-                    ].map(([number, title, text]) => (
+                      { n: "01", Icon: Globe, title: "Sichtbarkeit", text: "gefunden werden" },
+                      { n: "02", Icon: TrendingUp, title: "Nachfrage", text: "passende Besucher" },
+                      { n: "03", Icon: CalendarClock, title: "Anfrage", text: "klarer nächster Schritt" },
+                      { n: "04", Icon: CreditCard, title: "Zahlung", text: "verbindlicher Ablauf" },
+                    ].map((step, i) => (
                       <div
-                        key={number}
-                        className="grid grid-cols-[44px_1fr_auto] items-center gap-mh-3 rounded-mh-md border border-mh-divider bg-mh-paper p-mh-3"
+                        key={step.n}
+                        className="mh-funnel-step grid grid-cols-[40px_1fr_auto] items-center gap-mh-3 rounded-mh-md border border-mh-divider bg-mh-paper p-mh-3"
+                        style={{ animationDelay: `${0.15 + i * 0.15}s` }}
                       >
-                        <span className="mh-label-mono text-mh-accent">
-                          {number}
+                        <span className="flex h-10 w-10 items-center justify-center rounded-mh-pill bg-mh-accent-soft">
+                          <step.Icon
+                            className="h-5 w-5 text-mh-accent"
+                            strokeWidth={1.8}
+                            aria-hidden="true"
+                          />
                         </span>
                         <div>
                           <p className="mh-body-small font-semibold text-mh-text-primary">
-                            {title}
+                            <span className="mh-label-mono-sm text-mh-accent">{step.n} </span>
+                            {step.title}
                           </p>
-                          <p className="mh-body-xs text-mh-text-secondary">
-                            {text}
-                          </p>
+                          <p className="mh-body-xs text-mh-text-secondary">{step.text}</p>
                         </div>
                         <ArrowRight
                           className="h-4 w-4 text-mh-text-secondary"
@@ -291,7 +298,10 @@ export default function HomePage() {
                         />
                       </div>
                     ))}
-                    <div className="rounded-mh-lg bg-mh-ink-950 p-mh-4 text-mh-text-on-dark">
+                    <div
+                      className="mh-funnel-step rounded-mh-lg bg-mh-ink-950 p-mh-4 text-mh-text-on-dark"
+                      style={{ animationDelay: "0.78s" }}
+                    >
                       <div className="flex items-center gap-mh-3">
                         <Check
                           className="h-5 w-5 text-mh-glow"
