@@ -168,10 +168,12 @@ export default function DatenschutzPage() {
             </p>
             <p className="text-slate-700 mb-4">
               <strong>E-Mail-Versand:</strong> Bei Versand über das Kontaktformular wird Ihre
-              Anfrage technisch über den E-Mail-Dienstleister Resend Inc. (San Francisco, USA)
-              an unsere Empfangsadresse weitergeleitet. Mit Resend besteht ein
-              Auftragsverarbeitungsvertrag; die Übermittlung in die USA erfolgt auf Grundlage
-              von Standardvertragsklauseln (SCCs) gemäß Art. 46 Abs. 2 lit. c DSGVO.
+              Anfrage technisch über den E-Mail-Dienstleister Resend (Resend Inc.) an unsere
+              Empfangsadresse weitergeleitet. Die Verarbeitung der Formulardaten erfolgt in
+              einem Rechenzentrum in der Europäischen Union (Region eu-west-1, Irland). Mit
+              Resend besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO; soweit im
+              Einzelfall eine Übermittlung in die USA erfolgt, geschieht dies auf Grundlage von
+              Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
               Datenschutzerklärung von Resend:&nbsp;
               <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                 resend.com/legal/privacy-policy
@@ -259,8 +261,8 @@ export default function DatenschutzPage() {
                 <strong>Vercel Inc.</strong> (USA) — Hosting der Website (siehe Abschnitt 2)
               </li>
               <li>
-                <strong>Resend Inc.</strong> (USA) — Versand von Formular-Anfragen
-                (siehe Abschnitt 4)
+                <strong>Resend</strong> (Resend Inc.; Verarbeitung in der EU, Region
+                Irland) — Versand von Formular-Anfragen (siehe Abschnitt 4)
               </li>
             </ul>
             <p className="text-slate-700">

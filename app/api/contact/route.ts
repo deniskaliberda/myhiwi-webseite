@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
     `;
 
     await resend.emails.send({
-      from: "MyHiwi Kontakt <onboarding@resend.dev>",
+      from: "MyHiwi Formular <formular@myhiwi.de>",
       to: [process.env.CONTACT_EMAIL || "kontakt@myhiwi.de"],
       replyTo: email,
       subject: `Quick-Check: ${sanitize(website)} — ${sanitize(name)}`,
