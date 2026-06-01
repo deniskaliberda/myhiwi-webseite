@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <main className="min-h-screen bg-white pt-32 pb-20 text-slate-900">
+    <main className="legal-doc min-h-screen bg-mh-paper pt-32 pb-24 text-mh-text-secondary">
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
         <h1 className="mb-8">Impressum</h1>
         
@@ -21,8 +21,8 @@ export default function ImpressumPage() {
           
           <div className="card mb-8">
             <p className="text-lg text-slate-700 mb-2">
-              <strong>MyHiwi UG (haftungsbeschränkt)</strong><br />
-              Denis Kaliberda
+              <strong>Kaliberda Digital Intelligence UG (haftungsbeschränkt)</strong><br />
+              <span className="text-sm text-slate-600">– handelnd unter der Marke „MyHiwi" –</span>
             </p>
             <p className="text-slate-700 mb-4">
               Dorfstraße 1a<br />

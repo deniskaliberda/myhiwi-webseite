@@ -22,6 +22,7 @@ export default function KontaktPage() {
   const [website, setWebsite] = useState("");
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("");
+  const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,12 +44,17 @@ export default function KontaktPage() {
       return;
     }
 
+    if (!consent) {
+      setError("Bitte bestätigen Sie die Einwilligung zur Kontaktaufnahme.");
+      return;
+    }
+
     setSubmitting(true);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, website, message, phone }),
+        body: JSON.stringify({ name, email, website, message, phone, consent }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -276,6 +282,27 @@ export default function KontaktPage() {
             ) : null}
 
             <ComplianceNote variant="compact" />
+
+            <label className="flex cursor-pointer items-start gap-mh-3">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 h-[18px] w-[18px] shrink-0 cursor-pointer accent-[color:var(--mh-accent)]"
+              />
+              <span className="mh-body-xs text-mh-text-secondary">
+                Ich bin einverstanden, dass MyHiwi meine Angaben zur Bearbeitung meiner
+                Anfrage speichert und mich per E-Mail und – falls angegeben – telefonisch
+                kontaktiert. Hinweise dazu in der{" "}
+                <a
+                  href="/datenschutz"
+                  className="font-semibold text-mh-accent hover:text-mh-accent-hover"
+                >
+                  Datenschutzerklärung
+                </a>
+                .
+              </span>
+            </label>
 
             <div className="flex flex-col gap-mh-4 pt-mh-2 sm:flex-row sm:items-center sm:justify-between">
               <p className="mh-body-xs text-mh-text-secondary">

@@ -14,11 +14,18 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
 
-    const { name, email, website, message, phone } = body;
+    const { name, email, website, message, phone, consent } = body;
 
     if (!name || !email || !website || !message) {
       return NextResponse.json(
         { error: "Name, E-Mail, Webseite/Firma und Anliegen sind Pflichtfelder." },
+        { status: 400 }
+      );
+    }
+
+    if (!consent) {
+      return NextResponse.json(
+        { error: "Ohne Einwilligung kann die Anfrage nicht verarbeitet werden." },
         { status: 400 }
       );
     }
@@ -59,6 +66,10 @@ export async function POST(request: NextRequest) {
           </tr>`
               : ""
           }
+          <tr>
+            <td style="padding: 8px 12px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Einwilligung</td>
+            <td style="padding: 8px 12px; border-bottom: 1px solid #e2e8f0;">Ja — Kontaktaufnahme per E-Mail/Telefon zugestimmt</td>
+          </tr>
         </table>
 
         <h3 style="color: #3b82f6; margin-top: 24px;">Anliegen</h3>

@@ -565,3 +565,66 @@ h4 { font-size: 1.25rem; font-weight: 600; }
     animation: none;
   }
 }
+
+/* ============================================
+   Legal-Seiten (Impressum / Datenschutz)
+   Brand-Typografie ueber .legal-doc-Wrapper.
+   Hoehere Spezifitaet als die Inline-Utilities,
+   daher ohne Aenderung jeder einzelnen Klasse.
+   ============================================ */
+.legal-doc h1 {
+  font-weight: 800;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--mh-text-primary);
+  margin-bottom: 0.6em;
+}
+.legal-doc h2 {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--mh-text-primary);
+  margin-bottom: 0.5em;
+}
+.legal-doc h3 {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--mh-text-primary);
+  margin: 1.2em 0 0.4em;
+}
+.legal-doc p,
+.legal-doc li {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--mh-text-secondary);
+}
+.legal-doc p {
+  margin-bottom: 0.9em;
+}
+.legal-doc strong {
+  color: var(--mh-text-primary);
+  font-weight: 600;
+}
+.legal-doc a {
+  color: var(--mh-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-doc a:hover {
+  color: var(--mh-accent-hover);
+}
+.legal-doc ul {
+  padding-left: 1.25em;
+  margin-bottom: 0.9em;
+}
+.legal-doc li {
+  margin-bottom: 0.3em;
+}
+.legal-doc .card {
+  border: 1px solid var(--mh-divider);
+  border-radius: 14px;
+  background: var(--mh-surface);
+  padding: 22px 26px;
+  margin-bottom: 18px;
+}
