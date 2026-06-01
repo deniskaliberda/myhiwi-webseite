@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Impressum | MyHiwi",
+  title: "Impressum",
   description: "Impressum und Angaben gemäß § 5 TMG für MyHiwi - Local SEO & Webdesign für KMU.",
   alternates: {
     canonical: "https://myhiwi.de/impressum",
@@ -34,7 +34,7 @@ export default function ImpressumPage() {
           <div className="card mb-8">
             <h3 className="text-xl font-inter font-bold text-primary mb-4">Kontakt</h3>
             <p className="text-slate-700 mb-2">
-              <strong>Telefon:</strong> <a href="tel:+4915114093066" className="text-accent hover:underline">+49 1511 4093066</a>
+              <strong>Telefon:</strong> <a href="tel:+4915114993066" className="text-accent hover:underline">+49 1511 4993066</a>
             </p>
             <p className="text-slate-700">
               <strong>E-Mail:</strong> <a href="mailto:kontakt@myhiwi.de" className="text-accent hover:underline">kontakt@myhiwi.de</a>

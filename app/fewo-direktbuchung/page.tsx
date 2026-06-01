@@ -32,7 +32,7 @@ const primaryCta = {
 };
 
 export const metadata: Metadata = {
-  title: "Direktbuchung für Ferienwohnungen & Hotels | MyHiwi",
+  title: "Direktbuchung für Ferienwohnungen & Hotels",
   description:
     "Mehr Direktbuchungen, weniger Booking-Provision: MyHiwi baut Ihre Direktbuchungs-Strecke und fährt die Anzeigen, die darauf konvertieren — messbar, aus einer Hand.",
   alternates: {

@@ -36,8 +36,9 @@ const secondaryCta = {
 };
 
 export const metadata: Metadata = {
-  title:
-    "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
+  // Root segment: Next does NOT apply layout's title.template here, so the
+  // brand suffix must stay explicit (nested pages get "| MyHiwi" from the template).
+  title: "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
   description:
     "MyHiwi baut lokalen Dienstleistern, Pensionen & Ferienwohnungen den Weg von Google-Sichtbarkeit zu direkten Anfragen und Buchungen. Berlin-Ost & Bayern.",
   alternates: {
@@ -573,7 +574,7 @@ export default function HomePage() {
               ausgangslage="Website und Sichtbarkeit mussten nach vielen Jahren neu sortiert werden."
               gebaut="Relaunch, Local-SEO-Fundament, bessere Anfrageführung und sichtbare Trust-Signale."
               pillars={["Sichtbarkeit", "Nachfrage", "Anfrage & Buchung"]}
-              stat="108 Anfragen / 100 Tage"
+              stat="199 Anfragen / 4 Monate"
               imageSrc="/case-studies/sonnenhof/sonnenhof-neu.png"
               imageAlt="Neue Website des Sonnenhof Herrsching"
               href="/case-studies/sonnenhof-herrsching"
@@ -604,6 +605,15 @@ export default function HomePage() {
               />
             </div>
           </div>
+          <p className="mt-mh-7 mh-body-small text-mh-text-secondary">
+            Ferienwohnung oder Hotel?{" "}
+            <Link
+              href="/fewo-direktbuchung"
+              className="font-semibold text-mh-accent hover:text-mh-accent-hover"
+            >
+              So holen Sie mehr Direktbuchungen — ohne Portal-Provision →
+            </Link>
+          </p>
         </Container>
       </Section>
 

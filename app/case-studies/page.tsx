@@ -1,38 +1,59 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowRight,
-  Globe,
-  Workflow,
-  Bot,
-  Sparkles,
-  ExternalLink,
-} from "lucide-react";
-import SectionReveal from "@/components/shared/SectionReveal";
+import { ArrowRight, Globe, Workflow, Bot, MapPin } from "lucide-react";
+import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
+import { Card } from "@/components/myhiwi/card/Card";
+import { Container } from "@/components/myhiwi/layout/Container";
+import { CtaRow } from "@/components/myhiwi/cta/CtaRow";
+import { Section } from "@/components/myhiwi/layout/Section";
+import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
 
 export const metadata: Metadata = {
-  title:
-    "Case Studies — Website, SEO, Buchungsplattform & KI-Agent | MyHiwi",
+  title: "Case Studies — Website, SEO, Buchungsplattform & KI-Agent",
   description:
-    "Drei laufende Projekte im Detail: Sonnenhof Herrsching (Local SEO + Google Ads), Mr. Sherman Tanzstudio (eigene Brand-App mit Mitglieder-Plattform) und Formazin (Architekturbüro mit KI-Automation).",
+    "Laufende Projekte im Detail: Sonnenhof Herrsching (Local SEO + Direktbuchung), Villa Gloria (Direktbuchung Istrien), Mr. Sherman Tanzstudio (eigene Brand-App) und Formazin (Architekturbüro mit KI-Automation).",
   alternates: {
     canonical: "https://myhiwi.de/case-studies",
   },
 };
 
-const cases = [
+type CaseMetric = { value: string; label: string };
+
+const cases: Array<{
+  slug: string;
+  field: string;
+  client: string;
+  subline: string;
+  description: string;
+  metric: CaseMetric | null;
+  pillars: string[];
+  icon: typeof Globe;
+  image: string | null;
+}> = [
   {
     slug: "sonnenhof-herrsching",
-    field: "Sichtbarkeit · Local SEO",
+    field: "Sichtbarkeit · Local SEO · Direktbuchung",
     client: "Sonnenhof Herrsching",
     subline: "Hotel & Ferienwohnungen am Ammersee",
     description:
-      "23 Jahre Website-Stillstand, 24 Top-10-Keywords Ende 2025. 100 Tage später: 108 direkte Gäste-Anfragen, 97 Top-10-Keywords (+304 %), 6-Jahres-Peak in der SE-Ranking-Historie.",
-    metric: { value: "108", label: "Direkte Anfragen in 100 Tagen" },
+      "23 Jahre Website-Stillstand, 24 Top-10-Keywords Ende 2025. 4 Monate später: 199 direkte Gäste-Anfragen, 97 Top-10-Keywords (+304 %), 6-Jahres-Peak in der SE-Ranking-Historie.",
+    metric: { value: "199", label: "Direkte Anfragen in 4 Monaten" },
+    pillars: ["Sichtbarkeit", "Direktbuchung", "Anzeigen"],
     icon: Globe,
     image: "/case-studies/sonnenhof/sonnenhof-neu.png",
-    accent: "from-blue-500 to-blue-600",
+  },
+  {
+    slug: "villa-gloria",
+    field: "Direktbuchung · Sichtbarkeit · Ads",
+    client: "Villa Gloria",
+    subline: "Ferienunterkunft · Istrien",
+    description:
+      "Eigene Buchungsstrecke, Sichtbarkeit und Anzeigen aus einer Hand — damit Gäste direkt buchen statt über Portale.",
+    metric: null,
+    pillars: ["Direktbuchung", "Sichtbarkeit", "Anzeigen"],
+    icon: MapPin,
+    image: null,
   },
   {
     slug: "mr-sherman",
@@ -42,9 +63,9 @@ const cases = [
     description:
       "Komplette Brand-Applikation, gebaut speziell für das Studio: Memberships mit Stripe-Subscriptions, Trainer-Portal, Admin-CRM, Schüler-Login. Alles miteinander verbunden, alles automatisiert. Kein Mindbody, kein Eversports — die App trägt das Sherman-Branding und ist mit der Webseite digital verschmolzen.",
     metric: { value: "7,28 €", label: "Cost per Lead · 75 % unter Benchmark" },
+    pillars: ["Brand-App", "Memberships", "CRM"],
     icon: Workflow,
     image: "/case-studies/mr-sherman/cover.png",
-    accent: "from-cyan-500 to-blue-500",
   },
   {
     slug: "formazin",
@@ -54,159 +75,192 @@ const cases = [
     description:
       "Keine einmalige Webseiten-Lieferung, sondern digitaler Partner: Engpässe finden, KI-Agents bauen, im Büro-Alltag integrieren, monatlich weiterentwickeln.",
     metric: { value: "3 h → Minuten", label: "pro Bauprotokoll" },
+    pillars: ["KI-Agent", "Automation", "Partner"],
     icon: Bot,
     image: "/case-studies/formazin/cover.png",
-    accent: "from-blue-600 to-cyan-500",
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://myhiwi.de" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Case Studies",
+      item: "https://myhiwi.de/case-studies",
+    },
+  ],
+};
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: cases.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: c.client,
+    url: `https://myhiwi.de/case-studies/${c.slug}`,
+  })),
+};
+
 export default function CaseStudiesOverviewPage() {
   return (
-    <div className="bg-white text-slate-900">
-      {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
-        <div className="absolute inset-0 grid-pattern-light mask-radial pointer-events-none" />
-        <div
-          className="absolute top-[-140px] right-[-100px] h-[500px] w-[500px] rounded-full blur-3xl opacity-50 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(59,130,246,0.18), transparent 60%)",
-          }}
-        />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
 
-        <div className="relative mx-auto w-full max-w-5xl px-4 sm:px-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-mono uppercase tracking-[0.14em] text-blue-700">
-            <Sparkles className="h-3 w-3" />
-            Case Studies · 2026
-          </span>
-
-          <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[64px]">
-            Drei Projekte,{" "}
-            <span className="gradient-text">drei Engpässe,</span>
-            <br />
-            drei sehr unterschiedliche Lösungen.
+      {/* HERO */}
+      <Section background="paper" padding="large">
+        <Container>
+          <SectionMark index="00" label="Case Studies · 2026" tone="accent" />
+          <h1 className="mt-mh-4 mh-display-1 mh-hero-title max-w-[860px]">
+            Vier Projekte, vier Engpässe,{" "}
+            <em className="mh-italic-accent">vier Lösungen.</em>
           </h1>
-
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+          <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-secondary">
             Auf der Homepage in drei Zeilen, hier in der Tiefe: was ich konkret
             gebaut habe, welche Daten dahinterstehen und wie diese Kunden heute
             digital arbeiten.
           </p>
-        </div>
-      </section>
+          <p className="mt-mh-4 mh-body-small text-mh-text-secondary">
+            Schwerpunkt Ferienwohnungen &amp; Hotels?{" "}
+            <Link
+              href="/fewo-direktbuchung"
+              className="font-semibold text-mh-accent hover:text-mh-accent-hover"
+            >
+              Mehr zur Direktbuchung für Unterkünfte →
+            </Link>
+          </p>
+        </Container>
+      </Section>
 
-      {/* ================= CASE LIST ================= */}
-      <section className="relative bg-slate-50 py-16 md:py-24">
-        <div className="absolute inset-0 grid-pattern-light opacity-50 pointer-events-none" />
-        <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 space-y-6">
-          {cases.map((c, i) => (
-            <SectionReveal key={c.slug} delay={i * 120}>
-              <Link
-                href={`/case-studies/${c.slug}`}
-                className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10"
-              >
-                <div className={`h-1 w-full bg-gradient-to-r ${c.accent}`} />
-                <div className="grid gap-0 md:grid-cols-[1fr,380px]">
-                  {/* Content side */}
-                  <div className="flex flex-col gap-4 p-8 md:p-10">
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 text-blue-600">
-                        <c.icon className="h-5 w-5" />
+      {/* CASE LIST */}
+      <Section background="subtle" padding="large">
+        <Container>
+          <div className="grid gap-mh-5">
+            {cases.map((c) => (
+              <Card key={c.slug} padded="none" interactive className="overflow-hidden">
+                <Link
+                  href={`/case-studies/${c.slug}`}
+                  className="group grid md:grid-cols-[1fr_360px]"
+                >
+                  {/* Content */}
+                  <div className="flex flex-col gap-mh-4 p-mh-6 md:p-mh-7">
+                    <div className="flex items-center gap-mh-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-mh-md bg-mh-accent-soft text-mh-accent">
+                        <c.icon className="h-5 w-5" strokeWidth={1.7} aria-hidden="true" />
                       </span>
-                      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">
+                      <span className="mh-label-mono-sm text-mh-text-secondary">
                         {c.field}
                       </span>
                     </div>
 
                     <div>
-                      <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl">
-                        {c.client}
-                      </h2>
-                      <p className="mt-1 text-sm font-medium text-blue-600">
+                      <h2 className="mh-display-4">{c.client}</h2>
+                      <p className="mt-1 mh-body-small font-semibold text-mh-accent">
                         {c.subline}
                       </p>
                     </div>
 
-                    <p className="text-base leading-relaxed text-slate-600">
+                    <p className="mh-body-small text-mh-text-secondary">
                       {c.description}
                     </p>
 
-                    <div className="mt-auto flex flex-wrap items-end justify-between gap-4 border-t border-slate-100 pt-5">
-                      <div>
-                        <p className="font-heading text-3xl font-extrabold leading-none tracking-tight text-slate-900">
-                          <span className="gradient-text">{c.metric.value}</span>
-                        </p>
-                        <p className="mt-1 text-xs text-slate-500">
-                          {c.metric.label}
-                        </p>
-                      </div>
-                      <span className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-all group-hover:bg-blue-600">
-                        Case Study ansehen
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <div className="mt-auto flex flex-wrap items-end justify-between gap-mh-4 border-t border-mh-divider pt-mh-4">
+                      {c.metric ? (
+                        <div>
+                          <p className="mh-display-5 text-mh-text-primary">
+                            {c.metric.value}
+                          </p>
+                          <p className="mt-1 mh-body-xs text-mh-text-secondary">
+                            {c.metric.label}
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="flex flex-wrap gap-1.5">
+                          {c.pillars.map((p) => (
+                            <span
+                              key={p}
+                              className="rounded-mh-pill border border-mh-divider bg-mh-paper px-mh-3 py-1 mh-body-xs text-mh-text-secondary"
+                            >
+                              {p}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <span className="inline-flex items-center gap-mh-2 mh-body-small font-semibold text-mh-text-primary transition-colors group-hover:text-mh-accent">
+                        Case ansehen
+                        <ArrowRight
+                          className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                          strokeWidth={1.7}
+                          aria-hidden="true"
+                        />
                       </span>
                     </div>
                   </div>
 
-                  {/* Visual side */}
-                  <div className="relative min-h-[220px] overflow-hidden bg-gradient-to-br from-slate-100 via-white to-blue-50 md:min-h-0">
-                    <div className="absolute inset-0 grid-pattern-light opacity-60" />
-                    <div
-                      className="absolute inset-0 opacity-40"
-                      style={{
-                        background:
-                          "radial-gradient(circle at 70% 30%, rgba(59,130,246,0.18), transparent 55%)",
-                      }}
-                    />
+                  {/* Visual */}
+                  <div className="relative min-h-[200px] overflow-hidden border-t border-mh-divider bg-mh-subtle md:border-l md:border-t-0">
                     {c.image ? (
-                      <div className="absolute inset-6 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
-                        <Image
-                          src={c.image}
-                          alt={`${c.client} — Preview`}
-                          fill
-                          sizes="380px"
-                          className="object-cover object-top"
-                        />
-                      </div>
+                      <Image
+                        src={c.image}
+                        alt={`${c.client} — Vorschau`}
+                        fill
+                        sizes="360px"
+                        className="object-cover object-top"
+                      />
                     ) : (
-                      <div className="absolute inset-6 flex items-center justify-center rounded-xl border border-slate-200 bg-white/70 backdrop-blur">
-                        <div className="text-center">
-                          <c.icon className="mx-auto h-12 w-12 text-blue-500" />
-                          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
-                            {c.field.split("·")[0]}
-                          </p>
-                        </div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <c.icon
+                          className="h-12 w-12 text-mh-text-secondary/40"
+                          strokeWidth={1.3}
+                          aria-hidden="true"
+                        />
                       </div>
                     )}
                   </div>
-                </div>
-              </Link>
-            </SectionReveal>
-          ))}
-        </div>
-      </section>
+                </Link>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
-      {/* ================= CTA ================= */}
-      <section className="relative py-20 md:py-28">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 text-center">
-          <SectionReveal>
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
-              Welches Problem{" "}
-              <span className="gradient-text">darf ich lösen?</span>
+      {/* FINAL CTA */}
+      <Section background="ink" padding="finalCta" finalCta>
+        <Container>
+          <div className="max-w-4xl">
+            <SectionMark index="01" label="Ihr Projekt" tone="accent" onDark />
+            <h2 className="mt-mh-4 mh-display-2">
+              Welches Problem darf ich{" "}
+              <em className="mh-italic-accent text-mh-glow">lösen?</em>
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-slate-600">
-              15 Minuten, unverbindlich. Ich schaue mir Ihre Situation an und
-              sage ehrlich, ob ich der richtige Partner bin — oder nicht.
+            <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-on-dark/80">
+              15 Minuten, unverbindlich. Ich schaue mir Ihre Situation an und sage
+              ehrlich, ob ich der richtige Partner bin — oder nicht.
             </p>
-            <Link
-              href="/kontakt"
-              className="group mt-8 inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-blue-600 to-blue-500 px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-700 hover:to-blue-600 hover:shadow-blue-500/40"
-            >
-              Quick-Check anfragen
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </SectionReveal>
-        </div>
-      </section>
-    </div>
+            <CtaRow className="mt-mh-7">
+              <BtnPrimary
+                href="/kontakt"
+                pill
+                fullWidthOnMobile
+                className="bg-mh-text-on-dark text-mh-ink-950 hover:bg-mh-glow"
+              >
+                Kostenlosen Digital-Check anfragen
+              </BtnPrimary>
+            </CtaRow>
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }

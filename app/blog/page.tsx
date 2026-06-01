@@ -17,7 +17,7 @@ import {
 import SectionReveal from "@/components/shared/SectionReveal";
 
 export const metadata: Metadata = {
-  title: "Blog — Tipps zu Local SEO, Webdesign & KI für KMU | MyHiwi",
+  title: "Blog — Tipps zu Local SEO, Webdesign & KI für KMU",
   description:
     "Praxisnahe Beiträge rund um Local SEO, Google Business Profil, Webdesign und digitale Automation — für lokale Unternehmen, die online besser gefunden werden wollen.",
   keywords: [

@@ -125,10 +125,19 @@ const organizationJsonLd = {
     name: "Denis Kaliberda",
     url: "https://myhiwi.de/ueber-mich",
   },
-  areaServed: {
-    "@type": "Country",
-    name: "Deutschland",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Berlin" },
+    { "@type": "AdministrativeArea", name: "Brandenburg" },
+    { "@type": "AdministrativeArea", name: "Landkreis Starnberg" },
+    { "@type": "Place", name: "Ammersee-Region" },
+  ],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.5719,
+    longitude: 13.5733,
   },
+  telephone: "+49 1511 4993066",
+  // TODO(Denis): sameAs (Social-Profile) ergaenzen, sobald vorhanden.
   serviceType: [
     "Direktbuchungssystem für Unterkünfte",
     "Anfragesystem für lokale Betriebe",

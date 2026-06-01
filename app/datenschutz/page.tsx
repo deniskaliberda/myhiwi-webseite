@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung | MyHiwi",
+  title: "Datenschutzerklärung",
   description: "Datenschutzerklärung gemäß DSGVO für MyHiwi - Local SEO & Webdesign für KMU.",
   alternates: {
     canonical: "https://myhiwi.de/datenschutz",
@@ -96,7 +96,7 @@ export default function DatenschutzPage() {
               Geschäftsführer: Denis Kaliberda<br />
               Dorfstraße 1a<br />
               16356 Ahrensfelde<br />
-              Telefon: +49 1511 4093066<br />
+              Telefon: +49 1511 4993066<br />
               E-Mail: kontakt@myhiwi.de
             </p>
 
