@@ -7,8 +7,16 @@ import {
   JetBrains_Mono,
   Poppins,
 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SiteShell from "@/components/layout/SiteShell";
+import { ConsentProvider } from "@/components/analytics/ConsentProvider";
+import { ConsentBanner } from "@/components/analytics/ConsentBanner";
+import { MetaPixel } from "@/components/analytics/MetaPixel";
+
+const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID?.trim() || "";
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim() || "";
+const GTAG_PRIMARY = GA4_ID || GOOGLE_ADS_ID;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -157,7 +165,24 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
-        <SiteShell>{children}</SiteShell>
+        {GTAG_PRIMARY ? (
+          <>
+            {/* Consent Mode v2 default = denied (EU). Set BEFORE the gtag loader. */}
+            <Script id="gtag-consent-default" strategy="beforeInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});gtag('js',new Date());${GA4_ID ? `gtag('config','${GA4_ID}');` : ""}${GOOGLE_ADS_ID ? `gtag('config','${GOOGLE_ADS_ID}');` : ""}`}
+            </Script>
+            <Script
+              id="gtag-src"
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_PRIMARY}`}
+            />
+          </>
+        ) : null}
+        <ConsentProvider>
+          <SiteShell>{children}</SiteShell>
+          <MetaPixel />
+          <ConsentBanner />
+        </ConsentProvider>
       </body>
     </html>
   );

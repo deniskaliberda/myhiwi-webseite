@@ -223,19 +223,94 @@ export default function DatenschutzPage() {
 
           <div className="card mb-8">
             <h2 className="text-2xl font-inter font-bold text-primary mb-4">
-              6. Cookies und Tracking
+              6. Cookies, Reichweitenmessung und Werbeerfolgsmessung
             </h2>
             <p className="text-slate-700 mb-4">
-              Diese Website setzt <strong>keine optionalen Tracking- oder Werbe-Cookies</strong>
-              ein. Es werden weder Google Analytics, Meta-Pixel, LinkedIn-Insight noch
-              vergleichbare Tracking-Tools auf myhiwi.de geladen. Lediglich technisch
-              notwendige Cookies (z.B. zur Session-Verwaltung) können temporär gesetzt werden;
-              diese erfordern keine Einwilligung gemäß § 25 Abs. 2 Nr. 2 TDDDG.
+              Optionale Cookies sowie Mess- und Werbe-Tools (Meta, Google) werden
+              auf myhiwi.de <strong>erst nach Ihrer aktiven Einwilligung</strong> über
+              unseren Cookie-Banner geladen (Opt-in, keine Vorauswahl). Ohne
+              Zustimmung werden weder das Meta-Pixel noch Google Ads/Analytics
+              aktiviert und keine entsprechenden Cookies gesetzt. Technisch
+              notwendige Cookies, die für den Betrieb der Seite erforderlich sind,
+              bleiben gemäß § 25 Abs. 2 Nr. 2 TDDDG einwilligungsfrei.
             </p>
-            <p className="text-slate-700">
-              Sollte sich dies in Zukunft ändern, wird vor dem Einsatz optionaler Cookies
-              ein Consent-Banner mit aktiver Einwilligungsmöglichkeit angezeigt und diese
-              Datenschutzerklärung entsprechend aktualisiert.
+            <p className="text-slate-700 mb-4">
+              Rechtsgrundlage für den Einsatz der optionalen Tools ist Ihre
+              Einwilligung gemäß <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> sowie
+              § 25 Abs. 1 TDDDG. Ihre Einwilligung ist freiwillig und kann jederzeit
+              mit Wirkung für die Zukunft widerrufen werden — durch erneutes Öffnen
+              des Cookie-Banners oder durch Löschen der lokal gespeicherten
+              Entscheidung in Ihrem Browser.
+            </p>
+
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
+              Google Consent Mode v2
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Wir setzen den Google Consent Mode v2 ein. Vor einer Einwilligung
+              stehen alle Einwilligungssignale (ad_storage, ad_user_data,
+              ad_personalization, analytics_storage) standardmäßig auf
+              &bdquo;denied&ldquo;; es werden keine Werbe- oder Analyse-Cookies
+              gespeichert. Erst nach Ihrer Zustimmung werden die Signale auf
+              &bdquo;granted&ldquo; gesetzt und die Tags vollständig ausgeführt.
+            </p>
+
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
+              Meta-Pixel und Conversions API (Meta Platforms Ireland Ltd.)
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Nach Ihrer Einwilligung nutzen wir Technologien der Meta Platforms
+              Ireland Ltd. (4 Grand Canal Square, Dublin 2, Irland), um die
+              Wirksamkeit unserer Werbeanzeigen zu messen. Dabei kommen zwei Wege
+              zum Einsatz: das browserseitige <strong>Meta-Pixel</strong> und die
+              serverseitige <strong>Conversions API (CAPI)</strong>.
+            </p>
+            <p className="text-slate-700 mb-4">
+              Wenn Sie nach erteilter Einwilligung über unser Formular eine Anfrage
+              absenden, übermitteln wir an Meta ein Ereignis (&bdquo;Lead&ldquo;).
+              Über die Conversions API werden dabei — soweit vorhanden — Ihre
+              <strong> in gehashter Form (SHA-256)</strong> übergebene E-Mail-Adresse
+              und Telefonnummer sowie Ihre IP-Adresse, Browser-Informationen und die
+              Meta-Cookie-Kennungen (_fbp, _fbc) verarbeitet. Die Hashbildung erfolgt
+              vor der Übertragung, sodass Meta keine Klartext-Kontaktdaten erhält. Ein
+              gemeinsamer Ereignis-Schlüssel (event_id) verhindert eine Doppelzählung
+              von Pixel und Conversions API.
+            </p>
+            <p className="text-slate-700 mb-4">
+              Hinsichtlich der Erhebung und Weitergabe dieser Daten sind wir gemeinsam
+              mit Meta Verantwortliche im Sinne des Art. 26 DSGVO (Controller-Addendum
+              von Meta). Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a
+              DSGVO). Eine Übermittlung in die USA ist nicht ausgeschlossen; Meta
+              Platforms, Inc. ist unter dem EU-US Data Privacy Framework zertifiziert,
+              ergänzend bestehen Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
+              Mehr in den Datenschutzhinweisen von Meta:&nbsp;
+              <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                facebook.com/privacy/policy
+              </a>
+            </p>
+
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
+              Google Ads Conversion-Tracking und Google Analytics 4 (Google Ireland Ltd.)
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Nach Ihrer Einwilligung setzen wir Google Analytics 4 sowie das Google
+              Ads Conversion-Tracking der Google Ireland Ltd. (Gordon House, Barrow
+              Street, Dublin 4, Irland) ein, um die Nutzung der Website zu analysieren
+              und den Erfolg unserer Werbeanzeigen zu messen. Dabei können Cookies
+              gesetzt und eine pseudonyme Nutzungskennung sowie Ereignisdaten (z.B.
+              das Absenden einer Anfrage) verarbeitet werden.
+            </p>
+            <p className="text-slate-700 mb-4">
+              Sofern aktiviert, nutzen wir &bdquo;Enhanced Conversions for Leads&ldquo;,
+              bei dem eine <strong>gehashte (SHA-256)</strong> E-Mail-Adresse an Google
+              übermittelt wird, um Conversions Ihrer Anfrage zuzuordnen. Rechtsgrundlage
+              ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Eine Übermittlung in
+              die USA ist nicht ausgeschlossen; Google LLC ist unter dem EU-US Data
+              Privacy Framework zertifiziert, ergänzend bestehen Standardvertragsklauseln
+              (Art. 46 Abs. 2 lit. c DSGVO). Mehr in der Datenschutzerklärung von Google:&nbsp;
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                policies.google.com/privacy
+              </a>
             </p>
 
             <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
@@ -245,6 +320,53 @@ export default function DatenschutzPage() {
               Diese Website bindet alle Schriftarten lokal ein (self-hosted über next/font).
               Es werden <strong>keine</strong> Schriften von externen Servern wie Google
               Fonts geladen — Ihre IP-Adresse wird dabei nicht an Dritte übertragen.
+            </p>
+          </div>
+
+          <div className="card mb-8">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
+              6a. Akquise-Korrespondenz und Erstkontakt
+            </h2>
+            <p className="text-slate-700 mb-4">
+              Im Rahmen unserer Geschäftsanbahnung kontaktieren wir potenzielle
+              Geschäftskunden gelegentlich proaktiv per Brief oder Telefon. Sollten Sie
+              eine entsprechende Kontaktaufnahme von uns erhalten, gilt Folgendes:
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Datenquellen:</strong> Wir verwenden ausschließlich öffentlich
+              zugängliche geschäftliche Kontaktdaten (z.B. Firmen-Webseite,
+              Google Maps, Branchenverzeichnisse, Handelsregister).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Datenkategorien:</strong> Geschäftliche Kontaktdaten (Firmenname,
+              Geschäftsadresse, geschäftliche E-Mail-Adresse oder Telefonnummer,
+              Ansprechpartner mit Geschäftsfunktion).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+              Interesse an B2B-Geschäftsanbahnung). Die Abwägung berücksichtigt die
+              ausschließliche Verwendung öffentlicher geschäftlicher Quellen und das
+              jederzeitige Widerspruchsrecht.
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Speicherdauer:</strong> Bei Kontakten ohne Reaktion maximal
+              12 Monate, bei Kontakten mit Antwort ohne Vertragsabschluss maximal
+              24 Monate. Steuerlich relevante Korrespondenz unterliegt den
+              gesetzlichen Aufbewahrungsfristen (§ 257 HGB, § 147 AO, bis zu 10 Jahre).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie können der
+              Verarbeitung Ihrer Daten zu Werbe-/Akquisezwecken jederzeit
+              widersprechen. Eine kurze Nachricht an kontakt@myhiwi.de mit dem
+              Stichwort &bdquo;Widerspruch&ldquo; oder &bdquo;Bitte löschen&ldquo; genügt — Ihre
+              Daten werden umgehend aus unserer Akquise-Liste entfernt und nicht
+              weiter kontaktiert.
+            </p>
+            <p className="text-slate-700">
+              <strong>Pflichtinformation gemäß Art. 14 DSGVO:</strong> Da Ihre Daten
+              nicht direkt bei Ihnen erhoben wurden, weisen wir Sie hiermit
+              ausdrücklich auf Ihre Rechte gemäß Art. 15 bis 21 DSGVO hin (siehe
+              Abschnitt 8).
             </p>
           </div>
 
@@ -263,6 +385,16 @@ export default function DatenschutzPage() {
               <li>
                 <strong>Resend</strong> (Resend Inc.; Verarbeitung in der EU, Region
                 Irland) — Versand von Formular-Anfragen (siehe Abschnitt 4)
+              </li>
+              <li>
+                <strong>Meta Platforms Ireland Ltd.</strong> (Irland) — Meta-Pixel
+                und Conversions API zur Werbeerfolgsmessung,{" "}
+                <em>nur nach Einwilligung</em> (siehe Abschnitt 6)
+              </li>
+              <li>
+                <strong>Google Ireland Ltd.</strong> (Irland) — Google Analytics 4
+                und Google Ads Conversion-Tracking,{" "}
+                <em>nur nach Einwilligung</em> (siehe Abschnitt 6)
               </li>
             </ul>
             <p className="text-slate-700">
@@ -311,7 +443,7 @@ export default function DatenschutzPage() {
               9. Aktualität und Änderungen dieser Datenschutzerklärung
             </h2>
             <p className="text-slate-700">
-              Diese Datenschutzerklärung hat den Stand <strong>Mai 2026</strong>. Durch die
+              Diese Datenschutzerklärung hat den Stand <strong>Juni 2026</strong>. Durch die
               Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter
               gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden,
               diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung

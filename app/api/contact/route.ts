@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { sendMetaLeadCapi } from "@/lib/metaCapi";
+
+// node:crypto in metaCapi requires the Node.js runtime (not Edge).
+export const runtime = "nodejs";
+export const maxDuration = 30;
 
 function sanitize(str: string): string {
   return str
@@ -14,11 +19,23 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
 
-    const { name, email, website, message, phone, consent } = body;
+    const {
+      name,
+      email,
+      website,
+      message,
+      phone,
+      consent,
+      // tracking fields (optional)
+      event_id,
+      adConsent,
+      page,
+      source,
+    } = body;
 
-    if (!name || !email || !website || !message) {
+    if (!name || !email || !website) {
       return NextResponse.json(
-        { error: "Name, E-Mail, Webseite/Firma und Anliegen sind Pflichtfelder." },
+        { error: "Name, E-Mail und Webseite/Firma sind Pflichtfelder." },
         { status: 400 }
       );
     }
@@ -38,10 +55,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const isFewo = source === "fewo-direktbuchung";
+    const heading = isFewo
+      ? "Neue Direktbuchungs-Check-Anfrage (FeWo)"
+      : "Neue Quick-Check-Anfrage über MyHiwi";
+    const subject = isFewo
+      ? `Direktbuchungs-Check: ${sanitize(website)} — ${sanitize(name)}`
+      : `Quick-Check: ${sanitize(website)} — ${sanitize(name)}`;
+
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1e3a5f;">
         <h2 style="color: #1e3a5f; border-bottom: 2px solid #3b82f6; padding-bottom: 12px;">
-          Neue Quick-Check-Anfrage über MyHiwi
+          ${heading}
         </h2>
 
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
@@ -72,12 +97,19 @@ export async function POST(request: NextRequest) {
           </tr>
         </table>
 
+        ${
+          message
+            ? `
         <h3 style="color: #3b82f6; margin-top: 24px;">Anliegen</h3>
-        <p style="background: #f1f5f9; padding: 16px; border-radius: 8px; line-height: 1.6; white-space: pre-wrap;">${sanitize(message)}</p>
+        <p style="background: #f1f5f9; padding: 16px; border-radius: 8px; line-height: 1.6; white-space: pre-wrap;">${sanitize(message)}</p>`
+            : ""
+        }
 
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
         <p style="color: #94a3b8; font-size: 12px;">
-          Gesendet am ${new Date().toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" })} über myhiwi.de
+          Gesendet am ${new Date().toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" })} über myhiwi.de${
+            page ? ` · Seite: ${sanitize(String(page))}` : ""
+          }
         </p>
       </div>
     `;
@@ -86,9 +118,33 @@ export async function POST(request: NextRequest) {
       from: "MyHiwi Formular <formular@myhiwi.de>",
       to: [process.env.CONTACT_EMAIL || "kontakt@myhiwi.de"],
       replyTo: email,
-      subject: `Quick-Check: ${sanitize(website)} — ${sanitize(name)}`,
+      subject,
       html,
     });
+
+    // Server-side Meta CAPI Lead — only with ad-tracking consent and PII allowed.
+    // Awaited (sendMetaLeadCapi has an internal timeout) so the call reliably
+    // completes before the serverless function freezes — pure fire-and-forget is
+    // unreliable on Vercel. Wrapped so a CAPI error never breaks the visitor's 200.
+    if (adConsent === true && event_id) {
+      try {
+        await sendMetaLeadCapi({
+          eventId: String(event_id),
+          email,
+          phone: phone || undefined,
+          name,
+          eventSourceUrl:
+            (typeof page === "string" && page) ||
+            "https://myhiwi.de/fewo-direktbuchung",
+          clientIp: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim(),
+          userAgent: request.headers.get("user-agent") ?? undefined,
+          fbp: request.cookies.get("_fbp")?.value,
+          fbc: request.cookies.get("_fbc")?.value,
+        });
+      } catch (e) {
+        console.error("CAPI Lead failed:", e);
+      }
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

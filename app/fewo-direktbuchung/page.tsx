@@ -23,10 +23,12 @@ import { ProofCard } from "@/components/myhiwi/card/ProofCard";
 import { Section } from "@/components/myhiwi/layout/Section";
 import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
 import { TrustStrip } from "@/components/myhiwi/trust/TrustStrip";
+import { FewoCheckForm } from "@/components/myhiwi/fewo/FewoCheckForm";
+import { FewoViewTracker } from "@/components/myhiwi/fewo/FewoViewTracker";
 
 const primaryCta = {
   label: "Kostenlosen Direktbuchungs-Check anfragen",
-  href: "/kontakt",
+  href: "#check-anfragen",
 };
 
 export const metadata: Metadata = {
@@ -205,6 +207,7 @@ export default function FeWoDirektbuchungPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <FewoViewTracker />
 
       <Section background="paper" padding="large" className="overflow-hidden lg:flex lg:flex-col lg:justify-center lg:min-h-[100svh]">
         <Container>
@@ -536,36 +539,31 @@ export default function FeWoDirektbuchungPage() {
         </Container>
       </Section>
 
-      <Section background="ink" padding="finalCta" finalCta>
+      <Section
+        id="check-anfragen"
+        background="ink"
+        padding="finalCta"
+        finalCta
+        className="scroll-mt-24"
+      >
         <Container>
-          <div className="max-w-4xl">
-            <SectionMark index="07" label="Final CTA" tone="accent" onDark />
-            <h2 className="mt-mh-4 mh-display-2">
-              Soll ich prüfen, wie viel Provision Sie{" "}
-              <em className="mh-italic-accent text-mh-glow">sparen</em> können?
-            </h2>
-            <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-on-dark/80">
-              Schicken Sie mir kurz Ihre Ausgangslage. Ich schaue auf Ihre
-              Buchungsstrecke und Sichtbarkeit und sage ehrlich, wo der erste Hebel
-              für mehr Direktbuchungen liegt.
-            </p>
-            <CtaRow
-              className="mt-mh-7"
-              microcopy={
-                <span className="text-mh-text-on-dark/70">
-                  kostenlos · unverbindlich · 20 Minuten · Sie reden direkt mit Denis
-                </span>
-              }
-            >
-              <BtnPrimary
-                href={primaryCta.href}
-                pill
-                fullWidthOnMobile
-                className="bg-mh-text-on-dark text-mh-ink-950 hover:bg-mh-glow"
-              >
-                {primaryCta.label}
-              </BtnPrimary>
-            </CtaRow>
+          <div className="grid gap-mh-8 lg:grid-cols-[1fr_1.05fr] lg:items-start lg:gap-mh-10">
+            <div>
+              <SectionMark index="07" label="Direktbuchungs-Check" tone="accent" onDark />
+              <h2 className="mt-mh-4 mh-display-2">
+                Soll ich prüfen, wie viel Provision Sie{" "}
+                <em className="mh-italic-accent text-mh-glow">sparen</em> können?
+              </h2>
+              <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-on-dark/80">
+                Schicken Sie mir kurz Ihre Ausgangslage. Ich schaue auf Ihre
+                Buchungsstrecke und Sichtbarkeit und sage ehrlich, wo der erste
+                Hebel für mehr Direktbuchungen liegt.
+              </p>
+              <p className="mt-mh-6 mh-label-mono-sm text-mh-text-on-dark/70">
+                kostenlos · unverbindlich · Sie reden direkt mit Denis
+              </p>
+            </div>
+            <FewoCheckForm />
           </div>
         </Container>
       </Section>
