@@ -206,7 +206,7 @@ export default function FeWoDirektbuchungPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <Section background="paper" padding="large" className="overflow-hidden">
+      <Section background="paper" padding="large" className="overflow-hidden lg:flex lg:flex-col lg:justify-center lg:min-h-[100svh]">
         <Container>
           <div className="grid gap-mh-8 lg:grid-cols-[minmax(0,1fr)_minmax(400px,0.85fr)] lg:items-center lg:gap-mh-10">
             <div className="min-w-0 max-w-[760px]">
@@ -216,12 +216,9 @@ export default function FeWoDirektbuchungPage() {
               </h1>
               <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-secondary">
                 Wir bauen Ihre Direktbuchungs-Strecke — Website, Buchung, Zahlung,
-                sauberes Tracking — und fahren dann genau die Anzeigen, die darauf
-                konvertieren. Aus einer Hand.
-              </p>
-              <p className="mt-mh-4 max-w-mh-text mh-body-medium text-mh-text-secondary">
-                So zahlen Sie nicht 15–18 % Provision an Portale, sondern holen sich
-                planbar eigene Buchungen — messbar, Anfrage für Anfrage.
+                sauberes Tracking — und fahren dann die Anzeigen, die darauf
+                konvertieren. Statt 15–18 % Provision an Portale: planbar eigene
+                Buchungen, Anfrage für Anfrage.
               </p>
               <CtaRow
                 className="mt-mh-6"
