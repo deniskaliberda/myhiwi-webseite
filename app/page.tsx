@@ -46,10 +46,10 @@ export const metadata: Metadata = {
 };
 
 const trustItems = [
-  { label: "Sonnenhof", caption: "Pension · Herrsching" },
-  { label: "Mr. Sherman", caption: "Tanzstudio · Berlin" },
-  { label: "Formazin", caption: "Architektur · Pilot" },
-  { label: "Villa Gloria", caption: "Unterkunft · Projekt" },
+  { label: "Sonnenhof", caption: "Pension · Herrsching", logo: "/clients/sonnenhof.png" },
+  { label: "Mr. Sherman", caption: "Tanzstudio · Berlin", logo: "/clients/mr-sherman.png" },
+  { label: "Formazin", caption: "Architektur · Pilot", logo: "/clients/formazin.png" },
+  { label: "Villa Gloria", caption: "Unterkunft · Projekt", logo: "/clients/villa-gloria.png" },
   { label: "FeWo Taubenhaus", caption: "Direktanfragen" },
 ];
 

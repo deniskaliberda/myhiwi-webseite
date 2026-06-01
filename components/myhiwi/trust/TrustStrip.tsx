@@ -5,6 +5,8 @@ type TrustStripItem = {
   label: string;
   /** Optionaler Sub-Tag in Mono, z. B. „Pension · Herrsching". */
   caption?: string;
+  /** Optionales Logo (Bild-Pfad). Ohne Logo wird das Wordmark gezeigt. */
+  logo?: string;
 };
 
 type TrustStripProps = {
@@ -45,9 +47,19 @@ export function TrustStrip({
             key={item.label}
             className="flex flex-col gap-1 border-t border-mh-divider pt-mh-3 lg:border-t-0 lg:border-l lg:pl-mh-4 lg:pt-0"
           >
-            <span className="font-mh-display text-[20px] font-semibold tracking-mh-display text-mh-text-primary">
-              {item.label}
-            </span>
+            {item.logo ? (
+              <img
+                src={item.logo}
+                alt={item.label}
+                loading="lazy"
+                decoding="async"
+                className="h-12 w-auto max-w-[150px] object-contain object-left"
+              />
+            ) : (
+              <span className="flex h-12 items-center font-mh-display text-[20px] font-semibold tracking-mh-display text-mh-text-primary">
+                {item.label}
+              </span>
+            )}
             {item.caption ? (
               <span className="mh-label-mono-sm text-mh-text-secondary">
                 {item.caption}
