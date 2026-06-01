@@ -291,16 +291,13 @@ export default function KontaktPage() {
                 className="mt-0.5 h-[18px] w-[18px] shrink-0 cursor-pointer accent-[color:var(--mh-accent)]"
               />
               <span className="mh-body-xs text-mh-text-secondary">
-                Ich bin einverstanden, dass MyHiwi meine Angaben zur Bearbeitung meiner
-                Anfrage speichert und mich per E-Mail und – falls angegeben – telefonisch
-                kontaktiert. Hinweise dazu in der{" "}
+                Ich bin einverstanden, dass MyHiwi sich zu meiner Anfrage bei mir meldet.{" "}
                 <a
                   href="/datenschutz"
                   className="font-semibold text-mh-accent hover:text-mh-accent-hover"
                 >
-                  Datenschutzerklärung
+                  Datenschutz
                 </a>
-                .
               </span>
             </label>
 
