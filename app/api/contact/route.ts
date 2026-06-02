@@ -116,7 +116,10 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: "MyHiwi Formular <formular@myhiwi.de>",
-      to: [process.env.CONTACT_EMAIL || "kontakt@myhiwi.de"],
+      to: (process.env.CONTACT_EMAIL || "denis@myhiwi.de")
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean),
       replyTo: email,
       subject,
       html,
