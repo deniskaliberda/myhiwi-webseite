@@ -6,6 +6,7 @@ import { Footer as MyHiwiFooter } from "@/components/myhiwi/layout/Footer";
 
 const HOME_NAV = [
   { label: "System", href: "/#system" },
+  { label: "Region", href: "/region/berlin-ost-barnim" },
   { label: "Cases", href: "/case-studies" },
   { label: "Pakete", href: "/#pakete" },
   { label: "Über MyHiwi", href: "/ueber-mich" },
@@ -43,12 +44,13 @@ const HOME_DRAWER = [
 
 const HOME_FOOTER_COLUMNS = [
   {
-    label: "System",
+    label: "Lösungen",
     items: [
-      { label: "Sichtbarkeit", href: "/#system" },
-      { label: "Anfrage & Buchung", href: "/#system" },
-      { label: "Zahlung & Verbindlichkeit", href: "/#system" },
-      { label: "AI & Automation", href: "/#system" },
+      { label: "Region Berlin-Ost & Barnim", href: "/region/berlin-ost-barnim" },
+      { label: "Für Handwerker", href: "/loesungen/handwerk" },
+      { label: "Für Fahrschulen", href: "/loesungen/fahrschule" },
+      { label: "FeWo & Hotels", href: "/fewo-direktbuchung" },
+      { label: "Wissen", href: "/wissen" },
     ],
   },
   {
