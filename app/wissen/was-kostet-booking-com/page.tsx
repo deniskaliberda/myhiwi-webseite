@@ -8,6 +8,7 @@ import { CtaRow } from "@/components/myhiwi/cta/CtaRow";
 import { FAQAccordion, type FAQItem } from "@/components/myhiwi/faq/FAQAccordion";
 import { Section } from "@/components/myhiwi/layout/Section";
 import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
+import { BookingProvisionRechner } from "@/components/myhiwi/fewo/BookingProvisionRechner";
 
 const UPDATED = "2026-06-02";
 
@@ -149,6 +150,16 @@ export default function Page() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="mh-display-4">Rechnen Sie es selbst aus</h2>
+            <p className="mt-mh-3 mh-body-medium text-mh-text-secondary">
+              Ihre eigenen Zahlen — sofort sehen, was Booking.com Sie im Jahr kostet:
+            </p>
+            <div className="mt-mh-4">
+              <BookingProvisionRechner />
             </div>
           </div>
 
