@@ -143,6 +143,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/wissen/was-kostet-seo-monatlich`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/region/berlin-ost-barnim`,
       lastModified: new Date("2026-06-02"),
       changeFrequency: "monthly",
@@ -156,6 +162,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/loesungen/fahrschule`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/loesungen/friseur`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/loesungen/praxis-physio`,
       lastModified: new Date("2026-06-02"),
       changeFrequency: "monthly",
       priority: 0.8,

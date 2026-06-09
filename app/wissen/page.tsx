@@ -33,6 +33,12 @@ const articles = [
     tag: "Sichtbarkeit",
   },
   {
+    href: "/wissen/was-kostet-seo-monatlich",
+    title: "Was kostet SEO monatlich?",
+    teaser: "Branchen-Richtwerte 2026 — und warum Anfragen zählen, nicht Rankings.",
+    tag: "Kosten",
+  },
+  {
     href: "/wissen/was-kostet-booking-com",
     title: "Was kostet Booking.com wirklich?",
     teaser: "Provision 2026 (effektiv bis 22–25 %) — und wie man Direktbuchungen zurückholt.",
