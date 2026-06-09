@@ -149,6 +149,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/wissen/lokaler-betrieb-bei-google-gefunden-werden`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/wissen/eigenes-buchungssystem-vs-booking-com`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/region/berlin-ost-barnim`,
       lastModified: new Date("2026-06-02"),
       changeFrequency: "monthly",

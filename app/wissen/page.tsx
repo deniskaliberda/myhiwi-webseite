@@ -15,6 +15,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    href: "/wissen/lokaler-betrieb-bei-google-gefunden-werden",
+    title: "Wie wird mein lokaler Betrieb bei Google gefunden?",
+    teaser: "Der komplette Leitfaden: Profil, Bewertungen, Website, Anfrageweg, Anzeigen.",
+    tag: "Leitfaden",
+  },
+  {
     href: "/wissen/was-kostet-website-handwerker",
     title: "Was kostet eine Website für Handwerker?",
     teaser: "Ehrliche Preisspannen 2026 — und warum der günstigste Preis selten der beste ist.",
@@ -42,6 +48,12 @@ const articles = [
     href: "/wissen/was-kostet-booking-com",
     title: "Was kostet Booking.com wirklich?",
     teaser: "Provision 2026 (effektiv bis 22–25 %) — und wie man Direktbuchungen zurückholt.",
+    tag: "Ferienwohnung",
+  },
+  {
+    href: "/wissen/eigenes-buchungssystem-vs-booking-com",
+    title: "Eigenes Buchungssystem vs. Booking.com",
+    teaser: "Portal, SaaS-Tool oder eigene Lösung — der ehrliche Vergleich für Ferienwohnungen.",
     tag: "Ferienwohnung",
   },
 ];
