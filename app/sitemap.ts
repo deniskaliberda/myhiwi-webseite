@@ -113,6 +113,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/wissen`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/wissen/was-kostet-website-handwerker`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/wissen/lohnt-sich-google-ads-kleine-unternehmen`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/wissen/brauche-ich-website-oder-google-profil`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/wissen/was-kostet-booking-com`,
+      lastModified: new Date("2026-06-02"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/impressum`,
       lastModified: new Date(),
       changeFrequency: "yearly",

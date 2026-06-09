@@ -34,6 +34,7 @@ const HOME_DRAWER = [
     label: "MyHiwi",
     items: [
       { label: "Über MyHiwi", href: "/ueber-mich" },
+      { label: "Wissen", href: "/wissen" },
       { label: "Blog", href: "/blog" },
       { label: "Datenschutz", href: "/datenschutz" },
     ],
@@ -66,6 +67,7 @@ const HOME_FOOTER_COLUMNS = [
     label: "MyHiwi",
     items: [
       { label: "Über MyHiwi", href: "/ueber-mich" },
+      { label: "Wissen", href: "/wissen" },
       { label: "Blog", href: "/blog" },
       { label: "Kontakt", href: "/kontakt" },
     ],
