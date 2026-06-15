@@ -4,78 +4,11 @@ import { usePathname } from "next/navigation";
 import { Header as MyHiwiHeader } from "@/components/myhiwi/layout/Header";
 import { Footer as MyHiwiFooter } from "@/components/myhiwi/layout/Footer";
 
-const HOME_NAV = [
-  { label: "System", href: "/#system" },
-  { label: "Region", href: "/region/berlin-ost-barnim" },
-  { label: "Cases", href: "/case-studies" },
-  { label: "Pakete", href: "/#pakete" },
-  { label: "Über MyHiwi", href: "/ueber-mich" },
-];
-
-const HOME_DRAWER = [
-  {
-    label: "Homepage",
-    items: [
-      { label: "System", href: "/#system" },
-      { label: "Pakete", href: "/#pakete" },
-      { label: "Kontakt", href: "/kontakt" },
-    ],
-  },
-  {
-    label: "Cases",
-    items: [
-      { label: "Alle Case Studies", href: "/case-studies" },
-      {
-        label: "Sonnenhof Herrsching",
-        href: "/case-studies/sonnenhof-herrsching",
-      },
-    ],
-  },
-  {
-    label: "MyHiwi",
-    items: [
-      { label: "Über MyHiwi", href: "/ueber-mich" },
-      { label: "Wissen", href: "/wissen" },
-      { label: "Blog", href: "/blog" },
-      { label: "Datenschutz", href: "/datenschutz" },
-    ],
-  },
-];
-
-const HOME_FOOTER_COLUMNS = [
-  {
-    label: "Lösungen",
-    items: [
-      { label: "Region Berlin-Ost & Barnim", href: "/region/berlin-ost-barnim" },
-      { label: "Für Handwerker", href: "/loesungen/handwerk" },
-      { label: "Für Fahrschulen", href: "/loesungen/fahrschule" },
-      { label: "FeWo & Hotels", href: "/fewo-direktbuchung" },
-      { label: "Wissen", href: "/wissen" },
-    ],
-  },
-  {
-    label: "Cases",
-    items: [
-      { label: "Alle Case Studies", href: "/case-studies" },
-      {
-        label: "Sonnenhof Herrsching",
-        href: "/case-studies/sonnenhof-herrsching",
-      },
-      { label: "Mr. Sherman Tanzstudio", href: "/case-studies/mr-sherman" },
-      { label: "Formazin", href: "/case-studies/formazin" },
-    ],
-  },
-  {
-    label: "MyHiwi",
-    items: [
-      { label: "Über MyHiwi", href: "/ueber-mich" },
-      { label: "Wissen", href: "/wissen" },
-      { label: "Blog", href: "/blog" },
-      { label: "Kontakt", href: "/kontakt" },
-    ],
-  },
-];
-
+/**
+ * MyHiwi Mobile-Revamp 2026 — SiteShell
+ * Header + Footer lesen ihre Navigation jetzt zentral aus `lib/navigation.ts`.
+ * Proposal-Seiten (`/p/*`) rendern ohne Shell.
+ */
 export default function SiteShell({
   children,
 }: {
@@ -83,41 +16,16 @@ export default function SiteShell({
 }) {
   const pathname = usePathname();
   const isProposal = pathname?.startsWith("/p/");
-  const isHome = pathname === "/";
 
   if (isProposal) {
     return <>{children}</>;
   }
 
-  if (isHome) {
-    return (
-      <>
-        <MyHiwiHeader
-          navItems={HOME_NAV}
-          drawerGroups={HOME_DRAWER}
-          cta={{
-            label: "Kostenlosen Digital-Check anfragen",
-            href: "/kontakt",
-          }}
-        />
-        <main>{children}</main>
-        <MyHiwiFooter columns={HOME_FOOTER_COLUMNS} />
-      </>
-    );
-  }
-
   return (
     <>
-      <MyHiwiHeader
-        navItems={HOME_NAV}
-        drawerGroups={HOME_DRAWER}
-        cta={{
-          label: "Kostenlosen Digital-Check anfragen",
-          href: "/kontakt",
-        }}
-      />
+      <MyHiwiHeader />
       <main>{children}</main>
-      <MyHiwiFooter columns={HOME_FOOTER_COLUMNS} />
+      <MyHiwiFooter />
     </>
   );
 }

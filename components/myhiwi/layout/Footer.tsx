@@ -1,125 +1,92 @@
 import Link from "next/link";
 import { MyHiwiMark } from "@/components/myhiwi/brand/MyHiwiMark";
 import { Container } from "@/components/myhiwi/layout/Container";
+import {
+  CONTACT_EMAIL,
+  FOOTER_COLUMNS,
+  LEGAL_LINKS,
+  type NavGroup,
+  type NavItem,
+} from "@/lib/navigation";
 
-export type FooterColumn = {
-  label: string;
-  items: { label: string; href: string }[];
-};
+export type FooterColumn = NavGroup;
 
 type FooterProps = {
   /** Tagline unter dem Brand-Block. */
   tagline?: string;
-  /** Standort-Caption unter der Tagline. */
+  /** Standort-Caption — wandert in den Legal-Strip. */
   location?: string;
-  /** 3 Link-Spalten rechts. */
-  columns?: FooterColumn[];
+  /** Link-Spalten. */
+  columns?: NavGroup[];
   /** Footer-Strip-Links unten. */
-  legalLinks?: { label: string; href: string }[];
+  legalLinks?: NavItem[];
   /** Copyright-Jahr. Default: aktuelles Jahr. */
   copyrightYear?: number;
 };
 
-const DEFAULT_COLUMNS: FooterColumn[] = [
-  {
-    label: "System",
-    items: [
-      { label: "Sichtbarkeit", href: "/#system" },
-      { label: "Nachfrage", href: "/#system" },
-      { label: "Anfrage & Buchung", href: "/#system" },
-      { label: "Zahlung", href: "/#system" },
-      { label: "AI & Automation", href: "/#system" },
-    ],
-  },
-  {
-    label: "Cases",
-    items: [
-      { label: "Alle Case Studies", href: "/case-studies" },
-      { label: "Sonnenhof Herrsching", href: "/case-studies/sonnenhof-herrsching" },
-      { label: "Mr. Sherman Tanzstudio", href: "/case-studies/mr-sherman" },
-      { label: "Formazin", href: "/case-studies/formazin" },
-    ],
-  },
-  {
-    label: "MyHiwi",
-    items: [
-      { label: "Über MyHiwi", href: "/ueber-mich" },
-      { label: "Blog", href: "/blog" },
-      { label: "Festpreis", href: "/festpreis" },
-      { label: "Kontakt", href: "/kontakt" },
-    ],
-  },
-];
-
-const DEFAULT_LEGAL: { label: string; href: string }[] = [
-  { label: "Impressum", href: "/impressum" },
-  { label: "Datenschutz", href: "/datenschutz" },
-];
-
 /**
- * MyHiwi Redesign 2026 — Footer
- * components.md §1: 4-Spalten-Grid Desktop (1.4fr / 1fr / 1fr / 1fr),
- * Brand-Block + 3 Link-Spalten. Mono-Footer-Strip mit Impressum +
- * Datenschutz + Copyright. ink-Hintergrund. Stapelt 1-spaltig auf Mobile.
- *
- * Ersetzt NICHT die alte `components/Footer.tsx` — wird gezielt in neuen
- * Marketing-Layouts eingebunden.
+ * MyHiwi Mobile-Revamp 2026 — Footer
+ * Akzent-Strip als Top-Border (DESIGN.md §2) trennt die Final-CTA-Sektion
+ * sichtbar vom Footer — sonst verschmelzen zwei ink-950-Flächen mobil.
+ * Link-Spalten auf Mobile als 2-Spalten-Grid (statt einer langen Liste).
+ * Standort wandert in den Legal-Strip, kein Duplikat zur Drawer-Statuszeile.
  */
 export function Footer({
   tagline = "Anfrage- & Buchungssysteme für lokale Betriebe.",
-  location = "Ahrensfelde bei Berlin · Ammersee, Bayern",
-  columns = DEFAULT_COLUMNS,
-  legalLinks = DEFAULT_LEGAL,
+  location = "Ahrensfelde + Ammersee",
+  columns = FOOTER_COLUMNS,
+  legalLinks = LEGAL_LINKS,
   copyrightYear = new Date().getFullYear(),
 }: FooterProps) {
   return (
     <footer className="bg-mh-ink-950 text-mh-text-on-dark">
+      {/* Akzent-Strip — Signatur-Trenner zwischen Final-CTA und Footer. */}
+      <div aria-hidden="true" className="mh-accent-strip h-[3px] w-full" />
       <Container>
-        <div className="grid gap-mh-7 py-mh-9 md:py-mh-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-mh-8">
+        <div className="grid gap-mh-7 py-mh-section-lg-m md:py-mh-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-mh-8">
           {/* Brand block */}
           <div className="flex flex-col gap-mh-4">
             <MyHiwiMark variant="mono-on-dark" size={34} href="/" />
             <p className="mh-body-medium text-mh-text-on-dark/85 max-w-mh-text">
               {tagline}
             </p>
-            <span className="mh-label-mono text-mh-text-on-dark/60">
-              {location}
-            </span>
             <a
-              href="mailto:denis@myhiwi.de"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="mh-body-small font-semibold text-mh-text-on-dark border-b border-mh-glow/60 self-start pb-1 transition-colors duration-mh-fast ease-mh-default hover:border-mh-glow"
             >
-              denis@myhiwi.de
+              {CONTACT_EMAIL}
             </a>
           </div>
 
-          {/* Link columns */}
-          {columns.map((column) => (
-            <div key={column.label} className="flex flex-col gap-mh-4">
-              <span className="mh-label-mono text-mh-text-on-dark/60">
-                {column.label}
-              </span>
-              <ul className="flex flex-col gap-mh-3">
-                {column.items.map((item) => (
-                  <li key={`${column.label}-${item.label}-${item.href}`}>
-                    <Link
-                      href={item.href}
-                      className="mh-body-small text-mh-text-on-dark/90 transition-colors duration-mh-fast ease-mh-default hover:text-mh-glow"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Link columns — 2-Spalten-Grid auf Mobile, 3 Spalten ab lg. */}
+          <div className="grid grid-cols-2 gap-mh-6 sm:gap-mh-7 lg:contents">
+            {columns.map((column) => (
+              <div key={column.label} className="flex flex-col gap-mh-4">
+                <span className="mh-label-mono text-mh-glow/70">
+                  {column.label}
+                </span>
+                <ul className="flex flex-col gap-mh-3">
+                  {column.items.map((item) => (
+                    <li key={`${column.label}-${item.label}-${item.href}`}>
+                      <Link
+                        href={item.href}
+                        className="mh-body-small text-mh-text-on-dark/90 transition-colors duration-mh-fast ease-mh-default hover:text-mh-glow"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Mono footer strip */}
         <div className="border-t border-mh-text-on-dark/10">
           <div className="flex flex-col gap-mh-3 py-mh-5 mh-label-mono text-mh-text-on-dark/60 md:flex-row md:items-center md:justify-between">
             <span>
-              © {copyrightYear} Kaliberda Digital Intelligence UG · MyHiwi
+              © {copyrightYear} Kaliberda Digital Intelligence UG · MyHiwi · {location}
             </span>
             <ul className="flex flex-wrap gap-mh-5">
               {legalLinks.map((link) => (
