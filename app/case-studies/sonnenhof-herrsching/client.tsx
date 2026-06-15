@@ -862,7 +862,9 @@ function BrowserMock({
       <div style={{ position: "relative", aspectRatio: "4/3", background: "#0F172A" }}>
         {crossfade ? (
           <>
-            <style>{`
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `
               @keyframes xfadeOld {
                 0%, 30% { opacity: 1; }
                 42%, 70% { opacity: 0; }
@@ -891,7 +893,9 @@ function BrowserMock({
                 .xfade-old, .xfade-badge-old { opacity: 0; animation: none; }
                 .xfade-new, .xfade-badge-new { opacity: 1; animation: none; }
               }
-            `}</style>
+            `,
+              }}
+            />
             <Image
               src="/case-studies/sonnenhof/sonnenhof-alt.jpg"
               alt="Sonnenhof-Website vor dem Relaunch"
@@ -1381,7 +1385,12 @@ export default function CaseStudyClient() {
           flexWrap: "wrap",
         }}
       >
-        <span>MyHiwi · Case Studies / sonnenhof-herrsching</span>
+        <Link
+          href="/case-studies"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          ← MyHiwi · Alle Cases / sonnenhof-herrsching
+        </Link>
         <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
           <span
             style={{
@@ -1461,7 +1470,7 @@ export default function CaseStudyClient() {
             </Reveal>
             <Reveal delay={240}>
               <div style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap" }}>
-                <CtaPrimary href="/kontakt">Ähnlichen Hebel prüfen</CtaPrimary>
+                <CtaPrimary href="/kontakt">Kostenlosen Digital-Check anfragen</CtaPrimary>
                 <a
                   href="https://sonnenhof-herrsching.de"
                   target="_blank"
@@ -2298,28 +2307,10 @@ export default function CaseStudyClient() {
         </div>
       </section>
 
-      {/* Mono footer strip */}
-      <footer
-        style={{
-          padding: "20px clamp(20px, 5vw, 64px)",
-          background: "#000",
-          color: "rgba(255,255,255,0.5)",
-          fontFamily: "var(--font-mono)",
-          fontSize: 10,
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-          display: "flex",
-          justifyContent: "space-between",
-          gap: 16,
-          flexWrap: "wrap",
-        }}
-      >
-        <span>© 2026 MyHiwi · Kaliberda Digital Intelligence UG</span>
-        <span>denis@myhiwi.de · Ahrensfelde + Ammersee</span>
-      </footer>
-
       {/* Responsive overrides */}
-      <style>{`
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @media (max-width: 1023px) {
           .mh-hero-grid { grid-template-columns: 1fr !important; }
           .mh-evidence-wall {
@@ -2351,7 +2342,9 @@ export default function CaseStudyClient() {
         @media (prefers-reduced-motion: reduce) {
           [style*="transition"] { transition: none !important; }
         }
-      `}</style>
+      `,
+        }}
+      />
     </div>
   );
 }

@@ -189,19 +189,15 @@ export default function UeberMichPage() {
           </h2>
           <div className="mt-mh-6 space-y-mh-4 mh-body-medium text-mh-text-secondary">
             <p>
-              Ich habe mit acht angefangen, Volleyball zu spielen, und mit
-              neunzehn den ersten Profi-Vertrag unterschrieben. Zehn Jahre in der
-              Ersten Liga, dazu über zweihundert Spiele für Deutschland. London
-              2012, Polen 2014, Slowenien 2017 — das sind nicht nur Stationen in
-              einer Biografie, das sind hunderte Trainings-Tage mit klaren Zielen
-              und messbaren Ergebnissen.
+              Mit acht angefangen, mit neunzehn Profi. Zehn Jahre Erste Liga, über
+              zweihundert Spiele für Deutschland — hunderte Trainings-Tage mit
+              klaren Zielen und messbaren Ergebnissen.
             </p>
             <p>
               Was der Leistungssport einem einbleut, steht in keinem
-              Marketing-Buch: Sie lernen, Probleme in ihre Einzelteile zu
-              zerlegen. Sie lernen, jeden Tag zu liefern, auch wenn es nicht
-              läuft. Und Sie lernen vor allem eines — dass Technik und Disziplin
-              zusammen mehr bewegen als Talent.
+              Marketing-Buch: Probleme in ihre Einzelteile zerlegen. Jeden Tag
+              liefern, auch wenn es nicht läuft. Und vor allem — dass Technik und
+              Disziplin zusammen mehr bewegen als Talent.
             </p>
             <p>
               MyHiwi ist der logische zweite Akt. Seit 2024 baue ich Websites,
@@ -209,15 +205,6 @@ export default function UeberMichPage() {
               KI-Agents für lokale Unternehmen. Nicht als klassische Agentur,
               sondern als digitaler Partner, der im Kopf Ihres Betriebs mitdenkt
               und die passende Lösung selbst entwickelt.
-            </p>
-            <p>
-              Mein Versprechen ist einfach: Wenn Sie mir schreiben, lesen das
-              nicht zehn Vertriebs-Mitarbeiter, sondern ich. Wenn Sie ein Problem
-              haben, höre ich mir das selbst an und überlege selbst, ob ich helfen
-              kann. Mein Ziel ist nicht, einen weiteren Account zu schließen —
-              sondern dass Ihr Betrieb digital gefunden wird und mehr Anfragen
-              reinkommen. Wenn ich der falsche Partner für Sie bin, sage ich das
-              im ersten Gespräch.
             </p>
           </div>
         </Container>
@@ -236,13 +223,15 @@ export default function UeberMichPage() {
             Stationen — wenn Sie ein bisschen googeln wollen, bevor wir sprechen.
           </p>
 
-          <div className="mt-mh-7 grid gap-mh-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-mh-7 grid grid-cols-2 gap-mh-3 sm:gap-mh-4 lg:grid-cols-4">
             {achievements.map((a) => (
-              <Card key={a.label} className="flex flex-col gap-mh-2">
+              <Card key={a.label} padded="compact" className="flex flex-col gap-mh-2">
                 <span className="mh-label-mono-sm text-mh-text-secondary">
                   {a.label}
                 </span>
-                <span className="mh-display-4 text-mh-text-primary">{a.value}</span>
+                <span className="mh-display-5 text-mh-text-primary [overflow-wrap:anywhere]">
+                  {a.value}
+                </span>
               </Card>
             ))}
           </div>
@@ -355,9 +344,8 @@ export default function UeberMichPage() {
               <em className="mh-italic-accent text-mh-glow">persönlich?</em>
             </h2>
             <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-on-dark/80">
-              15 Minuten, keine Präsentation. Ich schaue mir Ihre Situation an,
-              wir prüfen ob es passt — und wenn nicht, empfehle ich Ihnen jemanden,
-              bei dem es besser passt.
+              15 Minuten, keine Präsentation. Ich schaue mir Ihre Situation an —
+              und sage ehrlich, ob es passt.
             </p>
             <CtaRow className="mt-mh-7">
               <BtnPrimary

@@ -395,7 +395,7 @@ export default function HomePage() {
                   key={pain.title}
                   as="article"
                   interactive
-                  className="flex h-full min-h-[220px] flex-col justify-between gap-mh-5"
+                  className="flex h-full flex-col justify-between gap-mh-4 sm:min-h-[220px] sm:gap-mh-5"
                 >
                   <div>
                     <span className="mh-label-mono-sm text-mh-accent">

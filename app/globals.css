@@ -628,3 +628,68 @@ h4 { font-size: 1.25rem; font-weight: 600; }
   padding: 22px 26px;
   margin-bottom: 18px;
 }
+
+/* ============================================
+   Blog-Prose — hebt die (älteren) Blog-Artikel-
+   Bodies auf das mh-Design-System, ohne jede
+   Inline-Utility-Klasse einzeln zu entfernen.
+   Descendant-Selektoren (.blog-prose h2 = 0,0,2)
+   schlagen die Tailwind-Utilities (.text-slate-900
+   = 0,0,1) per Spezifität — ohne !important.
+   ============================================ */
+.blog-prose {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--mh-text-secondary);
+}
+@media (min-width: 768px) {
+  .blog-prose { font-size: 17px; }
+}
+.blog-prose h2 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--mh-text-primary);
+}
+@media (min-width: 768px) {
+  .blog-prose h2 { font-size: 32px; }
+}
+.blog-prose h3 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--mh-text-primary);
+}
+.blog-prose strong {
+  color: var(--mh-text-primary);
+  font-weight: 600;
+}
+.blog-prose a {
+  color: var(--mh-accent);
+  text-underline-offset: 2px;
+}
+.blog-prose a:hover {
+  color: var(--mh-accent-hover);
+}
+.blog-prose code {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 0.875em;
+  background: var(--mh-surface);
+  border: 1px solid var(--mh-divider);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  color: var(--mh-text-primary);
+}
+/* Inline-Callout-Boxen (frühere blue-50/blue-200-Kästen) auf Akzent-Soft. */
+.blog-prose .bg-blue-50 {
+  background: var(--mh-accent-soft) !important;
+  border-color: rgba(37, 99, 235, 0.22) !important;
+}
+.blog-prose .text-blue-700 {
+  color: var(--mh-accent) !important;
+}
