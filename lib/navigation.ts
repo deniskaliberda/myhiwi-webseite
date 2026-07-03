@@ -35,7 +35,7 @@ export const DRAWER_GROUPS: NavGroup[] = [
     items: [
       { label: "FeWo & Hotels", href: "/fewo-direktbuchung" },
       { label: "Handwerk", href: "/loesungen/handwerk" },
-      { label: "Fahrschulen", href: "/loesungen/fahrschule" },
+      { label: "Fahrschulen", href: "/fahrschule" },
       { label: "Region Berlin-Ost & Barnim", href: "/region/berlin-ost-barnim" },
     ],
   },
@@ -63,7 +63,7 @@ export const FOOTER_COLUMNS: NavGroup[] = [
     items: [
       { label: "FeWo & Hotels", href: "/fewo-direktbuchung" },
       { label: "Handwerk", href: "/loesungen/handwerk" },
-      { label: "Fahrschulen", href: "/loesungen/fahrschule" },
+      { label: "Fahrschulen", href: "/fahrschule" },
       { label: "Friseure", href: "/loesungen/friseur" },
       { label: "Praxis & Physio", href: "/loesungen/praxis-physio" },
       { label: "Region Berlin-Ost & Barnim", href: "/region/berlin-ost-barnim" },

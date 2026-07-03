@@ -16,8 +16,11 @@ export default function SiteShell({
 }) {
   const pathname = usePathname();
   const isProposal = pathname?.startsWith("/p/");
+  // /fahrschule bringt eine eigene Shell mit (app/fahrschule/layout.tsx) —
+  // Beweis-Schicht ohne Site-Navigation, siehe app/fahrschule/DESIGN.md.
+  const isFahrschule = pathname?.startsWith("/fahrschule");
 
-  if (isProposal) {
+  if (isProposal || isFahrschule) {
     return <>{children}</>;
   }
 

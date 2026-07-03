@@ -173,10 +173,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/loesungen/fahrschule`,
-      lastModified: new Date("2026-06-02"),
+      url: `${baseUrl}/fahrschule`,
+      lastModified: new Date("2026-07-03"),
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/loesungen/friseur`,
