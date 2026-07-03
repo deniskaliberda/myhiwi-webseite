@@ -32,6 +32,14 @@ const nextConfig = {
         destination: "/case-studies/sonnenhof-herrsching",
         permanent: true,
       },
+      {
+        // /fahrschule ist seit 2026-07 die kanonische Fahrschul-LP
+        // (Web-Konzept 2026-07-03) — die alte Lösungsseite leitet um,
+        // damit keine zwei Seiten um dieselbe Suche konkurrieren.
+        source: "/loesungen/fahrschule",
+        destination: "/fahrschule",
+        permanent: true,
+      },
     ];
   },
 };

@@ -28,7 +28,7 @@ const towns = ["Ahrensfelde", "Bernau", "Werneuchen", "Marzahn-Hellersdorf", "Li
 
 const verticals = [
   { icon: Wrench, label: "Handwerk", href: "/loesungen/handwerk" },
-  { icon: Car, label: "Fahrschulen", href: "/loesungen/fahrschule" },
+  { icon: Car, label: "Fahrschulen", href: "/fahrschule" },
   { icon: Scissors, label: "Friseure & Kosmetik", href: "/loesungen/friseur" },
   { icon: Stethoscope, label: "Praxen & Physio", href: "/loesungen/praxis-physio" },
 ];

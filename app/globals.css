@@ -102,6 +102,86 @@
   --mh-divider: rgba(31, 42, 42, 0.12);
 }
 
+/* Fahrschule-Shell (app/fahrschule/DESIGN.md, status review).
+   Gedecktes Signal-Amber exklusiv für CTAs + Garantie-Block —
+   Betrieb/Handwerk statt Tech-Startup. Scope: nur /fahrschule. */
+[data-theme="fahrschule"] {
+  --mh-accent-c: 180 83 9;
+  --mh-accent-hover-c: 146 64 14;
+
+  --mh-accent: #B45309;
+  --mh-accent-hover: #92400E;
+
+  --mh-accent-soft: rgba(180, 83, 9, 0.10);
+}
+
+/* Fahrschule-LP-Typografie: Lesebrillen-Realität des Avatars (45–60).
+   Grundschrift 19px mobil / 20px Desktop, Zeilenhöhe 1,6,
+   Headlines 32–40px mobil, Navy auf Weiß — kein Grau-auf-Grau. */
+.fs-h1 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 38px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+@media (min-width: 1024px) {
+  .fs-h1 { font-size: 56px; line-height: 1.04; }
+}
+.fs-h2 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+@media (min-width: 1024px) {
+  .fs-h2 { font-size: 40px; }
+}
+.fs-body {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+@media (min-width: 1024px) {
+  .fs-body { font-size: 20px; }
+}
+
+/* Fahrschule-CTA-Buttons: tel:/wa.me als große Flächen,
+   Touch-Ziel ≥ 56px, Amber solid + Amber outline. */
+.fs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 16px 26px;
+  border-radius: 8px;
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: background-color 0.2s var(--mh-ease-default),
+    border-color 0.2s var(--mh-ease-default),
+    color 0.2s var(--mh-ease-default);
+}
+.fs-btn-primary {
+  background-color: #B45309;
+  color: #FFFFFF;
+  box-shadow: 0 14px 30px -14px rgba(180, 83, 9, 0.55);
+}
+.fs-btn-primary:hover { background-color: #92400E; }
+.fs-btn-outline {
+  background-color: transparent;
+  color: #92400E;
+  border: 2px solid rgba(180, 83, 9, 0.55);
+}
+.fs-btn-outline:hover {
+  background-color: rgba(180, 83, 9, 0.10);
+  border-color: #B45309;
+}
+
 /* ============================================
    MyHiwi Redesign 2026 — Typography scale
    DESIGN.md §4. Apply via class on heading/body

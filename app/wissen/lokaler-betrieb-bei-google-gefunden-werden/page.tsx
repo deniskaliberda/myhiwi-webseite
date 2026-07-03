@@ -183,7 +183,7 @@ export default function Page() {
           <div className="mt-mh-6 grid gap-mh-3 sm:grid-cols-2">
             {[
               ["Handwerk", "/loesungen/handwerk"],
-              ["Fahrschulen", "/loesungen/fahrschule"],
+              ["Fahrschulen", "/fahrschule"],
               ["Friseure & Kosmetik", "/loesungen/friseur"],
               ["Praxen & Physiotherapie", "/loesungen/praxis-physio"],
               ["Ferienwohnungen & Hotels", "/fewo-direktbuchung"],
