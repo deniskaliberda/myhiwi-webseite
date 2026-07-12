@@ -6,6 +6,7 @@ import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
 import { FAQAccordion, type FAQItem } from "@/components/myhiwi/faq/FAQAccordion";
 import { FsCtaRow } from "./FsCta";
 import { DossierMuster, ZettelMuster } from "./Muster";
+import ScrollWelt from "@/components/myhiwi/fahrschule-welt/ScrollWelt";
 
 /**
  * myhiwi.de/fahrschule — kanonische Landingpage (Phase 0, statisch).
@@ -145,6 +146,10 @@ export default function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
+
+      {/* 0 · Scroll-Welt — Kamerafahrt durch das Volle-Kurse-System (Hero) */}
+      <ScrollWelt />
+      <div id="fs-start" aria-hidden="true" />
 
       {/* 1 · Hero — Inhaber-Währung, Anruf + WhatsApp, kein Formular */}
       <Section background="paper" padding="large">
