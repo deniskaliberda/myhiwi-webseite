@@ -1,10 +1,10 @@
 ---
 name: MyHiwi-Fahrschule-Shell
 display-name: myhiwi.de/fahrschule — Beweis-Schicht für den Fahrschul-Vertrieb (eigene Design-Shell)
-version: 1.0.0
+version: 1.1.0
 status: review
 owner: Denis Kaliberda (Kaliberda Digital Intelligence UG)
-last-updated: 2026-07-03
+last-updated: 2026-07-13
 derived-from:
   - ../../DESIGN.md (Repo-Root, canonical — Tokens gelten, sofern hier nicht überschrieben)
   - denis-workspace/dokumente/MyHiwi_Fahrschule_Web_Konzept_2026-07-03.md (§8 Design-Direction, Denis-gelockt)
@@ -64,7 +64,7 @@ Datenschutz-Links. Begründung: Beweis-Schicht, ein Job, keine Ausstiege in die 
 
 | # | Sektion | Kern |
 |---|---------|------|
-| 1 | **Hero** | „Wenn in Ihrem Kiez jemand eine Fahrschule sucht — landet er bei Ihnen oder drüben?" · CTAs = Anruf + WhatsApp (KEIN Formular) · Microcopy „Sie reden direkt mit Denis" |
+| 1 | **Scroll-World-Hero** | Vier Szenen als scroll-gesteuerte Kamerafahrt: heutige Fahrschule → auf der Karte → jede Anfrage gezählt → volle Kurse · CTAs = Anruf + WhatsApp (KEIN Formular) |
 | 2 | **Problem-Spiegel** | 3 Inhaber-Sätze aus dem v4-Stack (weniger Anmeldungen · „drüben 200 Bewertungen" · Portale ab 2027) — spiegeln, nicht belehren; KEINE Marktprozente |
 | 3 | **Das System in 3 Schritten** | 14-Tage-Start-Sprint → wir zählen jede Anfrage ab Tag 0 → monatlicher Anfragen-Zettel per WhatsApp. Der **Zettel als Bild** (gebauter Muster-Mock, klar als „Muster" beschriftet — das Artefakt verkauft) |
 | 4 | **Anfragen-Garantie (Held-Block, Amber)** | NUR Kurzfassung bis Anwalts-Freigabe: „Wir zählen jede Anfrage ab Tag 0 — die genaue Zusage legen wir gemeinsam schriftlich fest." **Floor-12 NIE öffentlich.** |
@@ -114,3 +114,64 @@ Events: `pageview` (nur /fs/<rep>-Hits, im Redirect-Handler geloggt, mit `rep` +
 `call_click`, `whatsapp_click` (via `navigator.sendBeacon` an eigenen Endpoint, payload ohne
 Identifier). UTM-Schema: `utm_source=leavebehind, utm_medium=print, utm_campaign=fahrschule-tuer,
 utm_content=<charge>, utm_term=<rep-gebiet>`.
+
+## 7. Scroll-World-Hero
+
+Der Hero auf `/fahrschule` ist eine scroll-gesteuerte Kamerafahrt durch vier Szenen des
+Volle-Kurse-Systems. Er ersetzt den früheren Text-Hero vollständig. Die Beweis-Inhalte ab dem
+Problem-Spiegel bleiben die anschließende, normal scrollende Seite; der Shell-Kopf bleibt während
+der gesamten Welt sichtbar.
+
+### Szenen-Palette und CTAs
+
+Die Welt-Palette ist ausschließlich auf den Hero-Container begrenzt: Calm-Paper `#F6F2EA`, Sand
+`#EDE7DA`, Holz `#D4B896` und Ink `#1F2A2A`. Blau `#2563EB` und Cyan `#06B6D4` sind innerhalb der
+Szenen nur funktionale Signale, etwa für Karten-Pins und Zähl-Glow. Diese Farben ändern weder die
+Amber-Regel der Fahrschul-Shell noch globale Tokens.
+
+Im Finale führt „Anrufen" als gefüllter Primär-CTA in Signal-Amber `#B45309`, beim Hover
+`#92400E`, mit weißem Text. „Per WhatsApp schreiben" bleibt die sekundäre Outline-Aktion. Beide
+Ziele sind mindestens 56 px hoch und erhalten sichtbare Fokuszustände. Es gibt weder einen
+Formular- noch einen Begleitungs-Funnel-Link im Hero.
+
+### Skip- und Bewegungsregel
+
+„Direkt zu den Details ↓" ist die einzige Abkürzung in der Welt; Engine-Navigation,
+Szenen-Punkte und zusätzliche Kopfleisten bleiben ausgeschaltet. Der Skip ist im Welt-Viewport
+stets sichtbar, springt zum Problem-Spiegel und überträgt den Fokus dorthin. Nach dem Handoff der
+Welt wird er zusammen mit `.sw-past` verborgen und `inert`, damit kein unsichtbares Fokusziel
+zurückbleibt.
+
+Die normale Variante koppelt die Videozeit an den Scroll-Fortschritt. Bei
+`prefers-reduced-motion` gilt ausschließlich der Stills-Modus ohne Video-Requests. Die
+route-spezifische Ausnahme von den globalen Motion-Stufen ist im Root-`DESIGN.md` festgehalten.
+
+### Datenbudget und Engine-Grenzen
+
+Akzeptiertes Worst-Case-Budget bei vollständiger Durchfahrt: rund 17 MB. Der Mobile-Tier spart
+mit 17,06 MB gegenüber 17,76 MB auf Desktop nur wenig; deshalb werden Poster zuerst und die Clips
+progressiv geladen. `saveData` beziehungsweise `effectiveType` führen, wo der Browser diese
+Signale anbietet, zum Stills-Downgrade; auf iOS greift dieser automatisch nur im Low-Power-Mode.
+Weitere Re-Encodes oder ein zusätzlicher Video/Stills-Schalter gehören nicht zu diesem Paket.
+
+Die vendorte Vanilla-JS-Engine und alle von ihr erzeugten Klassen verwenden ausschließlich den
+Namespace `.sw-*`. Styles, Zustände und DOM-Manipulationen bleiben am Welt-Container gekapselt und
+dürfen nicht auf andere Sektionen oder Routen leaken. Inhaltliche Änderungen an den eingefrorenen
+Szenen erfordern neue Dateinamen, weil die Welt-Assets immutable ausgeliefert werden.
+
+### Provenienz und Freigabe-Gate
+
+Quelle der Provenienz sind die Higgsfield-Job-Manifeste unter
+`~/Projekte/Experimente/myhiwi-scroll-world/jobs/*.json`:
+
+- Die vier übernommenen Szenen-Stills weisen im Feld `params.model` jeweils
+  `videotape-alpha` aus (`fs_scene_1.json` bis `fs_scene_4.json`).
+- Die vorhandenen Modellfelder der Leg-Manifeste weisen `seedance_2_0` aus. In den finalen
+  Manifesten `fs_leg_2.json`, `fs_leg_3.json` und `fs_leg_4.json` fehlt das Feld `params.model`;
+  diese Lücke bleibt ausdrücklich und wird nicht durch eine Vermutung ersetzt.
+- Die Medien wurden im Higgsfield-Workspace mit kommerziellen Nutzungsrechten erstellt.
+
+Vor der Produktionsfreigabe ist eine visuelle Marken-Prüfung aller Stills, Poster und Videos
+Pflicht, insbesondere für Fahrzeug-Emblem, Dachzeichen, Ladenbeschilderung und sonstige erkennbare
+Logos. Sobald eine reale Marke erkennbar ist oder die Zuordnung unklar bleibt, ist die
+Veröffentlichung bis zur ausdrücklichen Freigabe durch Denis gesperrt.

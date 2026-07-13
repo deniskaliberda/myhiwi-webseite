@@ -87,6 +87,68 @@
    ========================================================================== */
 
 function mountScrollWorld(container, config) {
+  // Embed patch (3c/3d): keep enough pre-mount state for an exact, StrictMode-safe teardown.
+  const originalClass = container.getAttribute('class');
+  const originalStyle = container.getAttribute('style');
+  const originalMounted = container.getAttribute('data-sw-mounted');
+  const originalChildren = new Set(container.children);
+  const fallbackState = Array.from(container.querySelectorAll('[data-sw-seo]')).map(node => ({
+    node,
+    hidden: node.hasAttribute('hidden'),
+    ariaHidden: node.getAttribute('aria-hidden'),
+    inert: node.hasAttribute('inert'),
+  }));
+  const cleanups = [];
+  const fetchControllers = new Set();
+  const blobUrls = new Set();
+  let disposed = false;
+  let cssToken = null;
+  let readFrame = 0;
+  let seekFrame = 0;
+  let readyFrame = 0;
+
+  const restoreFallback = () => {
+    fallbackState.forEach(({ node, hidden, ariaHidden, inert }) => {
+      node.toggleAttribute('hidden', hidden);
+      node.toggleAttribute('inert', inert);
+      if (ariaHidden == null) node.removeAttribute('aria-hidden');
+      else node.setAttribute('aria-hidden', ariaHidden);
+    });
+  };
+
+  const destroy = () => {
+    if (disposed) return;
+    disposed = true;
+    if (readFrame) cancelAnimationFrame(readFrame);
+    if (seekFrame) cancelAnimationFrame(seekFrame);
+    if (readyFrame) cancelAnimationFrame(readyFrame);
+    fetchControllers.forEach(controller => controller.abort());
+    fetchControllers.clear();
+    cleanups.splice(0).reverse().forEach(cleanup => {
+      try { cleanup(); } catch (e) {}
+    });
+    blobUrls.forEach(url => URL.revokeObjectURL(url));
+    blobUrls.clear();
+    Array.from(container.children).forEach(node => {
+      if (!originalChildren.has(node)) node.remove();
+    });
+    restoreFallback();
+    if (originalClass == null) container.removeAttribute('class');
+    else container.setAttribute('class', originalClass);
+    if (originalStyle == null) container.removeAttribute('style');
+    else container.setAttribute('style', originalStyle);
+    if (originalMounted == null) container.removeAttribute('data-sw-mounted');
+    else container.setAttribute('data-sw-mounted', originalMounted);
+    releaseCSS(cssToken);
+    cssToken = null;
+  };
+
+  const failMount = error => {
+    destroy();
+    if (typeof config.onError === 'function') config.onError(error);
+  };
+
+  try {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // BEHAVIOUR hardening (seek step, priming, particles, resize gating) keys off input
   // type + viewport: `coarse` is captured once (input type doesn't change mid-session);
@@ -117,13 +179,11 @@ function mountScrollWorld(container, config) {
   const CONN_W = config.connScroll || 0.9;
   const CROSSFADE = (config.crossfade != null) ? config.crossfade : 0.12;  // seam dissolve width (vh)
   const N = SECTIONS.length;
-  if (!N) return;
+  if (!N) return destroy;
 
-  injectCSS();
+  cssToken = injectCSS();
   container.classList.add('sw-root');
-  // Server-rendered SEO copy (crawlers/no-JS read it from the HTML); once the
-  // engine mounts, the visual layer takes over and the static block hides.
-  container.querySelectorAll('[data-sw-seo]').forEach(n => { n.hidden = true; });
+  container.dataset.swMounted = 'true';
 
   // ---- build the interleaved segment chain: dive0, conn0, dive1, … diveN-1 ----
   const SEGMENTS = [];
@@ -183,12 +243,25 @@ function mountScrollWorld(container, config) {
   hint.appendChild(el('i'));
   const track = el('div', 'sw-track');
 
-  [sky, scrollbar, topbar, stage, copylayer, route, hint, track].forEach(n => container.appendChild(n));
+  // Embed patch (3f): route:false removes the unlabelled mobile controls entirely.
+  const engineNodes = [sky, scrollbar];
+  if (topbar.childElementCount) engineNodes.push(topbar);
+  engineNodes.push(stage, copylayer);
+  if (config.route !== false) engineNodes.push(route);
+  engineNodes.push(hint, track);
+  engineNodes.forEach(n => container.appendChild(n));
 
   // segment scenes
-  SEGMENTS.forEach(s => {
+  SEGMENTS.forEach((s, i) => {
     const scene = el('div', 'sw-scene'); scene.style.setProperty('--sw-accent', s.accent || '');
-    const img = el('img', 'sw-scene__still'); img.alt = ''; img.decoding = 'async'; img.loading = 'lazy';
+    const img = el('img', 'sw-scene__still'); img.alt = ''; img.decoding = 'async';
+    // Embed patch (3i): the first poster is the LCP candidate; later posters stay lazy.
+    if (i === 0) {
+      img.loading = 'eager';
+      img.setAttribute('fetchpriority', 'high');
+    } else {
+      img.loading = 'lazy';
+    }
     // Prefer the extracted-frame poster (pixel-identical to the clip's first frame,
     // so the still→video swap can't pop) — matching the encode the device will get.
     // In stills mode the clip never loads, so the higher-fidelity source still is the
@@ -205,18 +278,24 @@ function mountScrollWorld(container, config) {
   const copies = [], dots = [];
   SECTIONS.forEach((s, i) => {
     const c = el('article', 'sw-copy'); c.style.setProperty('--sw-accent', s.accent || '');
+    // Embed patch (3g): only the active scene copy participates in the accessibility tree.
+    c.inert = true;
+    c.setAttribute('aria-hidden', 'true');
+    const titleTag = i === 0 ? 'h1' : 'h2';
     c.innerHTML =
       `<span class="sw-copy__num">${pad(i + 1)} / ${pad(N)}</span>` +
       (s.eyebrow ? `<span class="sw-copy__eyebrow">${esc(s.eyebrow)}</span>` : '') +
-      (s.title ? `<h2 class="sw-copy__title">${esc(s.title)}</h2>` : '') +
+      (s.title ? `<${titleTag} class="sw-copy__title">${esc(s.title)}</${titleTag}>` : '') +
       (s.body ? `<p class="sw-copy__body">${esc(s.body)}</p>` : '') +
       (s.tags && s.tags.length ? `<ul class="sw-copy__tags">${s.tags.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : '') +
       (s.cta ? `<div class="sw-copy__cta">${ctaBtns(s.cta)}</div>` : '');
     copylayer.appendChild(c); copies.push(c);
 
-    const dot = el('button', 'sw-route__dot'); dot.style.setProperty('--sw-accent', s.accent || '');
-    dot.innerHTML = `<span class="sw-route__label">${esc(s.label || '')}</span><i></i>`;
-    dot.addEventListener('click', () => jumpTo(i)); route.appendChild(dot); dots.push(dot);
+    if (config.route !== false) {
+      const dot = el('button', 'sw-route__dot'); dot.style.setProperty('--sw-accent', s.accent || '');
+      dot.innerHTML = `<span class="sw-route__label">${esc(s.label || '')}</span><i></i>`;
+      dot.addEventListener('click', () => jumpTo(i)); route.appendChild(dot); dots.push(dot);
+    }
 
     if (config.nav !== false) {
       const b = el('button', 'sw-nav__item'); b.textContent = s.label || '';
@@ -227,14 +306,21 @@ function mountScrollWorld(container, config) {
   // ---- math ----
   const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
   const smooth = x => { x = clamp(x); return x * x * (3 - 2 * x); };
+  const listen = (target, type, handler, options) => {
+    target.addEventListener(type, handler, options);
+    cleanups.push(() => target.removeEventListener(type, handler, options));
+  };
   // Per-section dwell: monotone remap of scroll→time so the camera settles mid-scene
   // (where the copy peaks) and moves quicker near the seams. L=0 linear, L=1 full
   // mid-scene pause. f(0)=0, f(1)=1 always, so seam frames are untouched.
   const lingerEase = (x, L) => { L = clamp(L); const c = x - 0.5; return (1 - L) * x + L * (4 * c * c * c + 0.5); };
   let vh = window.innerHeight, stageX = 0, totalW = 0, activeIndex = -1, ticking = false;
+  let worldStart = 0, worldEnd = 0, worldVisible = true;
+  let engineReady = false;
   let laidOutW = window.innerWidth;   // width the current layout was computed at (see onResize)
 
   function layout() {
+    if (disposed) return;
     vh = window.innerHeight;
     laidOutW = window.innerWidth;
     stageX = window.innerWidth > 860 ? 4 : 0;
@@ -245,24 +331,49 @@ function mountScrollWorld(container, config) {
     let off = 0;
     SEGMENTS.forEach(s => { s.start = off * vh; off += s.w * wf; s.end = off * vh; });
     totalW = off;
-    track.style.height = (totalW * vh + vh) + 'px';   // +1vh so the last flight completes
+    // Embedded hero: keep the post-finale dwell short (0.25vh) — the release point is
+    // the track bottom (worldEnd), so a long dwell would show an empty sky with the
+    // proof content bleeding in underneath. Track height and release derive from the
+    // same boundary (spec step 3b).
+    track.style.height = (totalW * vh + 0.25 * vh) + 'px';
+    // Embed patch (3a/3b): measure one document-space boundary for all hero math and handoff.
+    worldStart = container.getBoundingClientRect().top + window.scrollY;
+    worldEnd = track.getBoundingClientRect().bottom + window.scrollY;
     read();
   }
 
   function jumpTo(i) {
     const seg = SECTIONS[i]._seg;
-    window.scrollTo({ top: seg.start + (seg.end - seg.start) * 0.5, behavior: reduce ? 'auto' : 'smooth' });
+    // Embed patch (3a): scene jumps are relative to the embedded world's document offset.
+    window.scrollTo({ top: worldStart + seg.start + (seg.end - seg.start) * 0.5, behavior: reduce ? 'auto' : 'smooth' });
+  }
+
+  let firstPosterReady = false;
+  let lcpConfirmed = false;
+  let videoLoadAllowed = false;
+
+  function allowVideoLoading() {
+    if (disposed || videoLoadAllowed) return;
+    videoLoadAllowed = true;
+    read();
   }
 
   function enterStillsMode() {
-    if (stillsOnly) return;
+    if (disposed || stillsOnly) return;
     stillsOnly = true;
+    fetchControllers.forEach(controller => controller.abort());
+    fetchControllers.clear();
     SEGMENTS.forEach(s => {
       if (s.video) {
         try { s.video.pause(); } catch (e) {}
-        try { URL.revokeObjectURL(s.video.src); } catch (e) {}
         s.video.remove();
       }
+      if (s.blobUrl) {
+        URL.revokeObjectURL(s.blobUrl);
+        blobUrls.delete(s.blobUrl);
+        s.blobUrl = null;
+      }
+      if (s.still) s.img.src = s.still;
       s.el.classList.remove('has-clip');
       s.video = null; s.hasClip = false; s.ready = false; s.loading = false;
     });
@@ -270,30 +381,65 @@ function mountScrollWorld(container, config) {
   }
 
   function loadClip(s) {
-    if (stillsOnly || s.loading || !s.clip) return;
+    if (disposed || stillsOnly || s.loading || !s.clip) return;
+    // Embed patch (3i): scene one cannot fetch video before scroll intent or its LCP.
+    if (s === SEGMENTS[0] && !videoLoadAllowed) return;
     s.loading = true;
     // Serve the lighter mobile encode on phone-class devices when one was provided
     // (tablets and desktops get the full master — see phoneClass above).
     const url = (phoneClass && s.clipM) ? s.clipM : s.clip;
-    fetch(url).then(r => r.ok ? r.blob() : Promise.reject(new Error('404')))
+    const controller = new AbortController();
+    fetchControllers.add(controller);
+    fetch(url, { signal: controller.signal }).then(r => {
+      if (disposed) return Promise.reject(new DOMException('Disposed', 'AbortError'));
+      return r.ok ? r.blob() : Promise.reject(new Error('404'));
+    })
       .then(blob => {
+        fetchControllers.delete(controller);
+        if (disposed) return;
         const v = document.createElement('video');
         v.className = 'sw-scene__video';
         v.muted = true; v.playsInline = true; v.preload = 'auto';
         v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
-        v.src = URL.createObjectURL(blob);
-        v.addEventListener('loadedmetadata', () => { s.ready = true; read(); });
+        const blobUrl = URL.createObjectURL(blob);
+        blobUrls.add(blobUrl); s.blobUrl = blobUrl; v.src = blobUrl;
+        listen(v, 'loadedmetadata', () => {
+          if (disposed) return;
+          s.ready = true;
+          read();
+        });
         // Reveal the video (hide the still poster) only once a real frame has
         // painted — on iOS a seeked-but-never-played muted video stays blank, so
         // hiding the still on metadata alone would flash an empty scene.
-        v.addEventListener('seeked', () => { s.el.classList.add('has-clip'); }, { once: true });
-        v.addEventListener('loadeddata', () => { try { v.pause(); } catch (e) {} if (userReady) primeVideo(v); });
+        listen(v, 'seeked', () => {
+          if (!disposed) s.el.classList.add('has-clip');
+        }, { once: true });
+        listen(v, 'loadeddata', () => {
+          if (disposed) return;
+          try { v.pause(); } catch (e) {}
+          if (userReady) primeVideo(v);
+        });
+        if (disposed) {
+          URL.revokeObjectURL(blobUrl);
+          blobUrls.delete(blobUrl);
+          return;
+        }
         s.el.appendChild(v); s.video = v; s.hasClip = true;
-      }).catch(() => { s.loading = false; });
+      }).catch(error => {
+        fetchControllers.delete(controller);
+        if (!disposed && error && error.name !== 'AbortError') s.loading = false;
+      });
   }
 
   function read() {
-    const y = window.scrollY || window.pageYOffset;
+    if (disposed) return;
+    const pageY = window.scrollY || window.pageYOffset;
+    // Embed patch (3a): clamp page scroll into local world coordinates (including Y=0).
+    const y = Math.max(0, pageY - worldStart);
+    if (container.hasAttribute('data-sw-skip-exit') && pageY < worldEnd - 0.25 * vh) {
+      container.removeAttribute('data-sw-skip-exit');
+    }
+    const pastWorld = pageY >= worldEnd || container.hasAttribute('data-sw-skip-exit');
     const fade = CROSSFADE * vh;
     let ci = 0;
     for (let i = 0; i < NSEG; i++) if (y >= SEGMENTS[i].start) ci = i;
@@ -307,7 +453,9 @@ function mountScrollWorld(container, config) {
       const local = clamp((y - s.start) / (s.end - s.start), 0, 1);
       s.target = s.linger ? lingerEase(local, s.linger) : local;
       let outside = 0;
-      if (y < s.start) outside = s.start - y; else if (y > s.end) outside = y - s.end;
+      // The finale scene never fades on its own — it stays up through the dwell and
+      // leaves with the whole world at the sw-past release (no empty-sky window).
+      if (y < s.start) outside = s.start - y; else if (y > s.end) outside = (i === NSEG - 1) ? 0 : y - s.end;
       const op = smooth(1 - outside / fade);
       s.el.style.opacity = op; s.visible = op > 0.001;
       s.el.style.zIndex = (i === ci) ? '120' : String(100 + Math.round(op * 10));
@@ -325,13 +473,19 @@ function mountScrollWorld(container, config) {
       // Plateau statt Dreiecks-Peak: Copy blendet kurz ein, STEHT über die
       // Szenenmitte fest und blendet erst kurz vor der Naht aus (Denis 2026-07-12:
       // "Texte gehen zu schnell weg").
-      if (i === 0) cop = after ? 0 : smooth(clamp((1 - pr) / 0.3));          // greets, hält bis ~70%
-      else if (i === N - 1) cop = before ? 0 : smooth(clamp(pr / 0.25));     // holds CTA at the end
+      if (i === N - 1) {
+        // Embed fix: once the finale reaches its copy peak, hold it through the +1vh dwell.
+        cop = before ? 0 : (pr < 0.25 ? smooth(clamp(pr / 0.25)) : 1);
+      }
+      else if (i === 0) cop = after ? 0 : smooth(clamp((1 - pr) / 0.3));     // greets, hält bis ~70%
       else cop = (before || after) ? 0 : smooth(clamp(pr / 0.15)) * smooth(clamp((1 - pr) / 0.15));
       const c = copies[i];
       c.style.opacity = cop;
       c.style.transform = reduce ? 'none' : `translateY(${(0.5 - pr) * 4}vh)`;
-      c.style.pointerEvents = cop > 0.5 ? 'auto' : 'none';
+      const copyActive = engineReady && !pastWorld && cop > 0.5;
+      c.style.pointerEvents = copyActive ? 'auto' : 'none';
+      c.inert = !copyActive;
+      c.setAttribute('aria-hidden', copyActive ? 'false' : 'true');
     }
 
     const cur = SEGMENTS[ci];
@@ -343,32 +497,51 @@ function mountScrollWorld(container, config) {
       nav.querySelectorAll('.sw-nav__item').forEach((n, k) => n.classList.toggle('is-active', k === near));
       container.style.setProperty('--sw-accent', SECTIONS[near].accent || '');
     }
-    scrollbarFill.style.transform = `scaleX(${clamp(y / (totalW * vh))})`;
+    scrollbarFill.style.transform = `scaleX(${clamp(y / Math.max(1, worldEnd - worldStart))})`;
     hint.style.opacity = clamp(1 - y / (0.5 * vh));
     if (particles) particles.style.transform = `translate3d(0, ${-y * 0.05}px, 0)`;
     // Embedded mode: when the page continues BELOW the world (hero use), release
     // the fixed layers once the visitor scrolls past the track — and bring them
     // back when scrolling up. On a standalone page this never triggers.
-    container.classList.toggle('sw-past', y > totalW * vh + 0.15 * vh);
+    // Embed patch (3b): release at the measured track-bottom; the wrapper may hold the
+    // exit during a skip-margin jump until the visitor deliberately scrolls back up.
+    container.classList.toggle('sw-past', pastWorld);
+    worldVisible = !pastWorld && pageY < worldEnd && pageY + vh > worldStart;
     ticking = false;
+    readFrame = 0;
+    scheduleSeekFrame();
+  }
+
+  function scheduleSeekFrame() {
+    if (disposed || seekFrame) return;
+    const needsSeek = SEGMENTS.some(s => s.hasClip && s.ready && s.video &&
+      ((worldVisible && s.visible) || Math.abs(s.cur - s.target) >= 0.002 || s.video.seeking));
+    // Embed patch (3e): RAFs stop outside the world once all seeks have converged.
+    if (!worldVisible && !needsSeek) return;
+    if (!needsSeek) return;
+    seekFrame = requestAnimationFrame(raf);
   }
 
   function raf() {
+    seekFrame = 0;
+    if (disposed) return;
     const eps = isMobile() ? 0.02 : 0.008;   // coarser seek step on phones = fewer decodes
+    let needsSeek = false;
     for (let i = 0; i < NSEG; i++) {
       const s = SEGMENTS[i];
       if (!s.hasClip || !s.ready || !s.video) continue;
       // Never queue a seek while the decoder is still resolving the last one.
       // On phones a fast flick would otherwise pile up seeks and freeze the clip;
       // cur keeps lerping, so we snap to the latest target the moment it's free.
-      if (s.video.seeking) continue;
+      if (s.video.seeking) { needsSeek = true; continue; }
       if (!s.visible && Math.abs(s.cur - s.target) < 0.002) continue;
       s.cur += (s.target - s.cur) * (reduce ? 1 : 0.18);
       const dur = s.video.duration || 1;
       const t = clamp(s.cur, 0, 0.999) * dur;
       if (Math.abs(s.video.currentTime - t) > eps) { try { s.video.currentTime = t; } catch (e) {} }
+      if (Math.abs(s.cur - s.target) >= 0.002 || s.video.seeking) needsSeek = true;
     }
-    requestAnimationFrame(raf);
+    if ((worldVisible || needsSeek) && needsSeek) scheduleSeekFrame();
   }
 
   // iOS needs a user gesture before a muted video will decode/paint reliably. On the
@@ -377,39 +550,124 @@ function mountScrollWorld(container, config) {
   // clips prime themselves (see loadClip).
   let userReady = false;
   function primeVideo(v) {
-    if (!isMobile() || !v) return;
+    if (disposed || !isMobile() || !v) return;
     // A muted, playsinline play() that REJECTS on a user gesture means the OS is
     // blocking video — in practice iOS Low Power Mode, where currentTime scrubbing
     // doesn't work either. Fall back to stills for the whole page instead of showing
     // frozen/blank scenes.
-    try { const p = v.play(); if (p && p.then) p.then(() => { try { v.pause(); } catch (e) {} }).catch(() => { enterStillsMode(); }); }
+    try {
+      const p = v.play();
+      if (p && p.then) p.then(() => {
+        if (disposed) return;
+        try { v.pause(); } catch (e) {}
+      }).catch(() => {
+        if (!disposed) enterStillsMode();
+      });
+    }
     catch (e) {}
   }
   function onFirstGesture() {
-    if (userReady) return;
+    if (disposed || userReady) return;
     userReady = true;
     SEGMENTS.forEach(s => primeVideo(s.video));
   }
-  window.addEventListener('pointerdown', onFirstGesture, { once: true, passive: true });
-  window.addEventListener('touchstart', onFirstGesture, { once: true, passive: true });
+  listen(window, 'pointerdown', onFirstGesture, { once: true, passive: true });
+  listen(window, 'touchstart', onFirstGesture, { once: true, passive: true });
 
   // Particles are a per-frame cost we can't afford alongside video scrubbing on a phone.
   seedParticles(particles, reduce || coarse);
-  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(read); } }, { passive: true });
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      readFrame = requestAnimationFrame(read);
+    }
+  }
+  function onScrollIntent(event) {
+    if (event.type !== 'keydown' || ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) {
+      allowVideoLoading();
+    }
+  }
+  listen(window, 'scroll', onScroll, { passive: true });
+  listen(window, 'wheel', onScrollIntent, { once: true, passive: true });
+  listen(window, 'touchmove', onScrollIntent, { once: true, passive: true });
+  listen(window, 'keydown', onScrollIntent);
   // Mobile browsers fire `resize` every time the URL bar slides in/out. Re-running
   // layout() there rebuilds the track height and yanks the scroll position, so on
   // touch we ignore height-only changes and only relayout when the width actually
   // changes (rotation still comes through orientationchange). layout() records the
   // width it laid out at.
   function onResize() {
-    if (coarse && window.innerWidth === laidOutW) return;
+    if (coarse && window.innerWidth === laidOutW) {
+      worldStart = container.getBoundingClientRect().top + window.scrollY;
+      worldEnd = track.getBoundingClientRect().bottom + window.scrollY;
+      read();
+      return;
+    }
     layout();
   }
-  window.addEventListener('resize', onResize);
-  window.addEventListener('orientationchange', layout);
-  window.addEventListener('load', layout);
+  listen(window, 'resize', onResize);
+  listen(window, 'orientationchange', layout);
+  listen(window, 'load', layout);
+
+  // Embed patch (3i): LCP unlocks scene-one video only after its poster is paint-ready.
+  if ('PerformanceObserver' in window) {
+    try {
+      const lcpObserver = new PerformanceObserver(list => {
+        if (disposed) return;
+        const firstPoster = SEGMENTS[0].img;
+        const confirmed = list.getEntries().some(entry => {
+          const element = entry.element;
+          return element === firstPoster || (element && element.matches && element.matches('[data-sw-lcp]'));
+        });
+        if (confirmed) {
+          lcpObserver.disconnect();
+          lcpConfirmed = true;
+          if (firstPosterReady) allowVideoLoading();
+        }
+      });
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+      cleanups.push(() => lcpObserver.disconnect());
+    } catch (e) {}
+  }
+
   layout();
-  requestAnimationFrame(raf);
+
+  const firstPoster = SEGMENTS[0].img;
+  const revealEngine = () => {
+    if (disposed || engineReady) return;
+    firstPosterReady = true;
+    readyFrame = requestAnimationFrame(() => {
+      readyFrame = 0;
+      if (disposed) return;
+      fallbackState.forEach(({ node }) => {
+        node.hidden = true;
+        node.setAttribute('aria-hidden', 'true');
+        node.inert = true;
+      });
+      engineReady = true;
+      container.classList.add('sw-ready');
+      // Hiding the in-flow fallback moves the track, so remeasure before paint handoff.
+      layout();
+      if (lcpConfirmed) allowVideoLoading();
+      if (typeof config.onReady === 'function') config.onReady();
+    });
+  };
+  const posterFailed = () => failMount(new Error('Scene-one poster failed to load'));
+  if (firstPoster.complete) {
+    if (firstPoster.naturalWidth > 0) {
+      if (typeof firstPoster.decode === 'function') {
+        firstPoster.decode().then(() => {
+          if (!disposed) revealEngine();
+        }).catch(() => {
+          if (!disposed && firstPoster.naturalWidth > 0) revealEngine();
+          else if (!disposed) posterFailed();
+        });
+      } else revealEngine();
+    } else posterFailed();
+  } else {
+    listen(firstPoster, 'load', revealEngine, { once: true });
+    listen(firstPoster, 'error', posterFailed, { once: true });
+  }
 
   // ---- helpers ----
   function el(tag, cls) { const n = document.createElement(tag); if (cls) n.className = cls; return n; }
@@ -421,6 +679,11 @@ function mountScrollWorld(container, config) {
     if (cta.secondary) h += `<a class="sw-btn sw-btn--ghost" href="${esc(cta.secondary.href || '#')}">${esc(cta.secondary.label)}</a>`;
     if (cta.tertiary) h += `<a class="sw-btn sw-btn--ghost" href="${esc(cta.tertiary.href || '#')}">${esc(cta.tertiary.label)}</a>`;
     return h;
+  }
+  return destroy;
+  } catch (error) {
+    failMount(error);
+    return destroy;
   }
 }
 
@@ -442,13 +705,23 @@ function seedParticles(host, reduce) {
 }
 
 function injectCSS() {
-  if (document.getElementById('sw-css')) return;
+  const existing = document.getElementById('sw-css');
+  if (existing) {
+    const users = Number(existing.dataset.swUsers || 0);
+    if (users > 0) {
+      existing.dataset.swUsers = String(users + 1);
+      return { style: existing, managed: true };
+    }
+    return { style: existing, managed: false };
+  }
   const css = `
   .sw-root{--sw-bg:#F5EDE0;--sw-ink:#241d2b;--sw-ink-soft:#6a6072;--sw-accent:#8a7bb5;
     --sw-font-display:ui-rounded,"SF Pro Rounded","Segoe UI",system-ui,sans-serif;
     --sw-font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    position:relative;margin:0;background:var(--sw-bg,#F5EDE0);overflow-x:clip;
     color:var(--sw-ink);font-family:var(--sw-font-body);}
-  html,body{margin:0;background:var(--sw-bg,#F5EDE0);overflow-x:hidden;}
+  /* Embed patch (3h): engine visibility and resets stay scoped to its container. */
+  .sw-root:not(.sw-ready) .sw-sky,.sw-root:not(.sw-ready) .sw-topbar,.sw-root:not(.sw-ready) .sw-stage,.sw-root:not(.sw-ready) .sw-copylayer,.sw-root:not(.sw-ready) .sw-route,.sw-root:not(.sw-ready) .sw-scrollbar,.sw-root:not(.sw-ready) .sw-hint{opacity:0!important;visibility:hidden;}
   .sw-sky{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:var(--sw-bg);}
   .sw-sky,.sw-topbar,.sw-stage,.sw-copylayer,.sw-route,.sw-scrollbar{transition:opacity .35s;}
   .sw-root.sw-past .sw-sky,.sw-root.sw-past .sw-topbar,.sw-root.sw-past .sw-stage,.sw-root.sw-past .sw-copylayer,.sw-root.sw-past .sw-route,.sw-root.sw-past .sw-scrollbar,.sw-root.sw-past .sw-hint{opacity:0 !important;visibility:hidden;transition:opacity .35s,visibility 0s .35s;}
@@ -484,9 +757,10 @@ function injectCSS() {
   .sw-copy__tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;}
   .sw-copy__tags li{font-size:.82rem;font-weight:600;color:color-mix(in srgb,var(--sw-accent) 70%,#000);padding:7px 14px;border-radius:999px;background:color-mix(in srgb,var(--sw-accent) 14%,#fff);border:1px solid color-mix(in srgb,var(--sw-accent) 30%,transparent);}
   .sw-copy__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;pointer-events:auto;}
-  .sw-btn{text-decoration:none;font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:transform .2s;}
-  .sw-btn--primary{color:#fff;background:var(--sw-ink);} .sw-btn--primary:hover{transform:translateY(-2px);}
-  .sw-btn--ghost{color:var(--sw-ink);border:1.5px solid color-mix(in srgb,var(--sw-ink) 25%,transparent);} .sw-btn--ghost:hover{transform:translateY(-2px);}
+  .sw-root .sw-btn{display:inline-flex;min-height:56px;align-items:center;justify-content:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:transform .2s,background-color .2s,color .2s;}
+  .sw-root .sw-btn--primary{color:#fff;background:#B45309;} .sw-root .sw-btn--primary:hover{background:#92400E;transform:translateY(-2px);}
+  .sw-root .sw-btn--ghost{color:var(--sw-ink);border:1.5px solid color-mix(in srgb,var(--sw-ink) 35%,transparent);background:color-mix(in srgb,var(--sw-bg) 88%,#fff);} .sw-root .sw-btn--ghost:hover{transform:translateY(-2px);}
+  .sw-root .sw-btn:focus-visible{outline:3px solid #2563EB;outline-offset:4px;}
   .sw-route{position:fixed;right:clamp(14px,2.4vw,30px);top:50%;z-index:40;transform:translateY(-50%);display:flex;flex-direction:column;gap:22px;padding:18px 10px;}
   .sw-route::before{content:"";position:absolute;left:50%;top:22px;bottom:22px;width:2px;transform:translateX(-50%);background:var(--sw-accent);opacity:.28;}
   .sw-route__dot{position:relative;border:0;background:transparent;cursor:pointer;width:14px;height:14px;display:grid;place-items:center;}
@@ -510,6 +784,9 @@ function injectCSS() {
     .sw-copy__title{font-size:clamp(1.9rem,7.5vw,2.7rem);}
     .sw-copy__body{max-width:none;font-size:clamp(.98rem,3.6vw,1.1rem);} .sw-scene__video,.sw-scene__still{object-position:center 46%;}
     .sw-hint{bottom:calc(20px + env(safe-area-inset-bottom));}
+    /* Keep the first-visit story controls clear of the route's consent dialog. */
+    .sw-root.sw-consent-visible .sw-copy{bottom:calc(var(--sw-consent-clearance,200px) + env(safe-area-inset-bottom));}
+    .sw-root.sw-consent-visible .sw-hint{left:auto;right:18px;top:calc(var(--fs-header-height,77px) + 68px);bottom:auto;transform:none;}
     .sw-route{gap:16px;right:6px;} .sw-route__label{display:none;}
   }
   /* Portrait phones crop a 16:9 clip hard; keep the framing centred so the focal
@@ -525,12 +802,19 @@ function injectCSS() {
   }
   @media (prefers-reduced-motion:reduce){ .sw-hint i::after{animation:none;} .sw-pt{display:none;} }
   `;
-  // Wrap in a cascade layer so the page's own theme tokens (unlayered
-  // :root / .sw-root { --sw-bg / --sw-ink / --sw-accent … }) always win over
-  // these defaults, regardless of injection order. Enables clean dark themes.
+  // Embed patch (3h): inject late without a cascade layer so scoped rules beat preflight.
   const style = document.createElement('style'); style.id = 'sw-css';
-  style.textContent = '@layer sw {\n' + css + '\n}';
+  style.dataset.swUsers = '1';
+  style.textContent = css;
   document.head.appendChild(style);
+  return { style, managed: true };
+}
+
+function releaseCSS(token) {
+  if (!token || !token.managed || !token.style) return;
+  const users = Number(token.style.dataset.swUsers || 1) - 1;
+  if (users <= 0) token.style.remove();
+  else token.style.dataset.swUsers = String(users);
 }
 
 // Expose for module + global use.

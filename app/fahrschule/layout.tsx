@@ -14,8 +14,11 @@ export default function FahrschuleLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div data-theme="fahrschule" className="bg-mh-paper text-mh-text-primary">
-      <header className="border-b border-mh-divider">
+    <div
+      data-theme="fahrschule"
+      className="bg-mh-paper text-mh-text-primary [--fs-header-height:77px]"
+    >
+      <header className="sticky top-0 z-[200] border-b border-mh-divider bg-mh-paper">
         <div className="mx-auto flex max-w-mh-container items-center justify-between px-5 py-mh-4 md:px-16">
           <div className="flex items-center gap-mh-4">
             <Link href="/fahrschule" aria-label="MyHiwi — Fahrschulen">

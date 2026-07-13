@@ -62,6 +62,24 @@ Jede Komponente trägt:
 **Tokens:** wie Homepage Hero.
 **Mobile:** stapelt, Mockup-Plate unter Text, max 480px Höhe.
 
+### Scroll-World Engine
+**Zweck:** vendorte Vanilla-JS-Engine für die scroll-gesteuerte Kamerafahrt des Fahrschul-Heros.
+**Aufbau:** erzeugt Track, fixierte Bühne, Szenen-Layer, Copy-Layer und progressive Video-/Stills-Medien innerhalb eines übergebenen Containers; alle Klassen liegen im Namespace `.sw-*`.
+**Varianten:** `video-scrub`, `stills` bei Sparsignalen und `reduced-motion` ausschließlich mit Stills und ohne Video-Requests.
+**Tokens:** container-scoped `--sw-bg`, `--sw-ink`, `--sw-ink-soft`, `--sw-accent`, `--sw-font-display`, `--sw-font-body`.
+**Mobile:** eigener Scroll-Faktor und mobile Poster/Clips; kein Szenen-Menü und keine Route-Dots.
+**Verwenden:** ausschließlich als technische Basis des Scroll-World-Heros auf `/fahrschule`.
+**Nicht verwenden:** auf anderen Routen, für dekorative Parallax-Effekte oder als allgemeines Reveal-System.
+
+### Scroll-World Hero · Fahrschule
+**Zweck:** erster, narrativer Einstieg in das Volle-Kurse-System auf `/fahrschule`.
+**Aufbau:** vier Szenen „Ihre Fahrschule heute" → „Auf der Karte" → „Jede Anfrage gezählt" → „Volle Kurse"; server-gerenderter SEO-/No-JS-Fallback; Shell-Kopf oberhalb der Engine; Skip „Direkt zu den Details ↓" mit Fokusübergabe zum Problem-Spiegel; finale CTAs „Anrufen" und „Per WhatsApp schreiben".
+**Varianten:** Engine aktiv oder Fallback; bei `prefers-reduced-motion` Stills ohne Video-Requests.
+**Tokens:** Calm-Weltpalette nur im Container; Finale-Primär-CTA Amber `#B45309`, Hover `#92400E`; Bricolage Grotesque und Inter Tight über die vorhandenen CSS-Variablen; Touch-Ziele mindestens 56 px.
+**Mobile:** keine unbeschrifteten Szenen-Controls; Copy, Skip und CTAs bleiben bedienbar und ohne horizontalen Überlauf.
+**Verwenden:** nur als Hero von `/fahrschule`; er ersetzt dort den bisherigen Vertical Hero.
+**Nicht verwenden:** unterhalb eines zweiten Heros, mit Engine-Brand-Bar, Formular-/Begleitungs-Funnel oder außerhalb der route-scoped Motion-Ausnahme.
+
 ### Case Hero
 **Zweck:** /cases/[slug] Einstieg.
 **Aufbau:** Crumb mit „belegter Case" oder „beobachteter Effekt", SectionMark mit Case-Name, Display-2 H1 (z. B. "108 *Direktanfragen* in 100 Tagen"), Lead, Bausteine-Pills, CtaRow. Rechts: 4:5-Plate mit Domain-Pill und Stat-Block.
@@ -295,6 +313,8 @@ Jede Komponente trägt:
 | Homepage Hero | ✅ | – | – | – | – | – | – |
 | Subpage Hero | – | – | ✅ | – | ✅ | – | – |
 | Vertical Hero | – | ✅ | – | – | – | ✅ | – |
+| Scroll-World Engine | – | nur `/fahrschule` | – | – | – | – | – |
+| Scroll-World Hero · Fahrschule | – | nur `/fahrschule` | – | – | – | – | – |
 | Case Hero | – | – | – | ✅ | – | – | – |
 | SectionMark | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | SystemPill | ✅ | – | ✅ | ✅ | ✅ | ✅ | – |

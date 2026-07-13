@@ -359,6 +359,8 @@ Sparsam einsetzen. **Drei Stufen, mehr nicht.**
 
 **Verboten.** Keine Page-Load-Splash-Animationen. Keine Auto-Carousels. Keine Parallax. Keine Scroll-Snap-Effekte ohne expliziten Bedarf. Keine Lottie. Keine Custom-SVG-Hero-Illustrationen mit Loop.
 
+**Eng gefasste Ausnahme — nur `/fahrschule`-Hero.** Der dort registrierte Scroll-World-Hero darf die Abspielzeit seiner vier Szenen-Clips an den Scroll-Fortschritt koppeln. Die Ausnahme gilt weder für weitere Sektionen noch für andere Routen oder allgemeine Parallax-/Loop-Effekte. Bei `prefers-reduced-motion` rendert die Welt ausschließlich Stills und fordert keine Videos an; alle übrigen Motion-Stufen und Verbote bleiben verbindlich.
+
 ## 6. Shapes
 
 **Radius-Skala.**

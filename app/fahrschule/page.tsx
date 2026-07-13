@@ -148,32 +148,74 @@ export default function Page() {
       ))}
 
       {/* 0 · Scroll-Welt — Kamerafahrt durch das Volle-Kurse-System (Hero) */}
-      <ScrollWelt />
-      <div id="fs-start" aria-hidden="true" />
-
-      {/* 1 · Hero — Inhaber-Währung, Anruf + WhatsApp, kein Formular */}
-      <Section background="paper" padding="large">
-        <Container>
-          <div className="max-w-[820px]">
-            <SectionMark index="FS" label="Für Fahrschul-Inhaber in Berlin" tone="accent" />
-            <h1 className="fs-h1 mt-mh-4">
-              Wenn in Ihrem Kiez jemand eine Fahrschule sucht — landet er bei
-              Ihnen <em className="mh-italic-accent">oder drüben?</em>
-            </h1>
-            <p className="fs-body mt-mh-5 max-w-[62ch]">
-              Wir sorgen dafür, dass die, die suchen, bei Ihnen landen — und
-              zählen jede Anfrage, damit Sie schwarz auf weiß sehen, was es
-              bringt.
-            </p>
-            <div className="mt-mh-6">
-              <FsCtaRow microcopy="Sie reden direkt mit Denis — kein Callcenter, kein Formular." />
+      <ScrollWelt>
+        <div data-sw-seo className="bg-mh-paper text-mh-text-primary">
+          <section className="relative flex min-h-[calc(100svh-var(--fs-header-height))] items-end overflow-hidden px-5 py-mh-7 md:px-16 md:py-mh-9">
+            <Image
+              src="/fahrschule-welt/heute-poster.webp"
+              alt="Fahrschule in der Volle-Kurse-Welt"
+              fill
+              priority
+              data-sw-lcp
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div className="relative z-10 max-w-[620px] rounded-mh-lg border border-mh-divider bg-mh-paper/95 p-mh-5 md:p-mh-7">
+              <span className="font-mh-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#92400E]">
+                Das Volle-Kurse-System
+              </span>
+              <h1 className="fs-h1 mt-mh-3">Volle Kurse kommen nicht von allein.</h1>
+              <p className="fs-body mt-mh-4">
+                Gute Fahrschulen haben heute leere Plätze — nicht weil sie schlecht
+                ausbilden, sondern weil niemand sie findet.
+              </p>
             </div>
+          </section>
+          <div className="grid gap-mh-5 px-5 py-mh-7 md:grid-cols-3 md:px-16 md:py-mh-9">
+            <article className="rounded-mh-lg border border-mh-divider bg-white p-mh-5">
+              <h2 className="fs-h2">Wer im Kiez sucht, findet Sie.</h2>
+              <p className="fs-body mt-mh-4">
+                Neue Website, Google-Profil auf Vordermann, echte Bewertungen Ihrer
+                Schüler — in zwei Wochen sichtbar neu.
+              </p>
+            </article>
+            <article className="rounded-mh-lg border border-mh-divider bg-white p-mh-5">
+              <h2 className="fs-h2">Jede Anfrage wird gezählt — ab Tag 0.</h2>
+              <p className="fs-body mt-mh-4">
+                Anrufe, WhatsApp, Formular: Jeden Monat kommt Ihr Anfragen-Zettel per
+                WhatsApp. Ein Zettel, den Sie in dreißig Sekunden verstehen.
+              </p>
+            </article>
+            <article className="rounded-mh-lg border border-mh-divider bg-white p-mh-5">
+              <h2 className="fs-h2">Volle Kurse. Die einzige Zahl, die zählt.</h2>
+              <p className="fs-body mt-mh-4">
+                349 € im Monat zzgl. MwSt., 12 Monate Betreuung — und Sie reden direkt
+                mit Denis.
+              </p>
+              <div className="mt-mh-5 flex flex-col gap-3">
+                <a href="tel:+4915114993066" className="fs-btn fs-btn-primary">
+                  Anrufen
+                </a>
+                <a
+                  href="https://wa.me/4915114993066?text=Hallo%20Denis%2C%20ich%20komme%20von%20der%20Fahrschul-Seite."
+                  className="fs-btn fs-btn-outline"
+                >
+                  Per WhatsApp schreiben
+                </a>
+              </div>
+            </article>
           </div>
-        </Container>
-      </Section>
+        </div>
+      </ScrollWelt>
 
-      {/* 2 · Problem-Spiegel — spiegeln, nicht belehren */}
-      <Section background="subtle" padding="default">
+      {/* 1 · Problem-Spiegel — spiegeln, nicht belehren */}
+      <Section
+        id="fs-start"
+        tabIndex={-1}
+        background="subtle"
+        padding="default"
+        className="scroll-mt-[var(--fs-header-height)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#2563EB]"
+      >
         <Container>
           <SectionMark index="01" label="Kommt Ihnen das bekannt vor?" />
           <div className="mt-mh-6 grid gap-mh-4 md:grid-cols-3">
