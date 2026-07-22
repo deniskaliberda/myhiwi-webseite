@@ -1017,7 +1017,7 @@ Die Basisschulung ist ein eigenständiges Produkt. Mögliche Folgeangebote werde
 
 ### 22.1 AI Act – aktueller Stand
 
-Der ursprüngliche Artikel 4 der Verordnung (EU) 2024/1689 gilt seit dem 2. Februar 2025. Der im Juli 2026 final angenommene Digital Omnibus ändert die Formulierung: Anbieter und Betreiber sollen Maßnahmen ergreifen, die Entwicklung von KI-Kompetenz ihrer Mitarbeitenden und weiterer in ihrem Auftrag handelnder Personen zu unterstützen. Dabei bleiben technisches Wissen, Erfahrung, Bildung, Nutzungskontext und betroffene Personengruppen maßgeblich. Der finale Text stellt klar, dass kein bestimmtes Kompetenzniveau jedes Einzelnen garantiert werden muss.
+Der ursprüngliche Artikel 4 der Verordnung (EU) 2024/1689 gilt seit dem 2. Februar 2025. Der Digital Omnibus wurde vom Europäischen Parlament am 16. Juni 2026 angenommen, erhielt am 29. Juni 2026 die endgültige Zustimmung des Rates und wurde am 8. Juli 2026 unterzeichnet. Am 22. Juli 2026 war die Veröffentlichung im Amtsblatt noch ausstehend; bis zum Inkrafttreten am dritten Tag nach dieser Veröffentlichung bleibt die bisherige Fassung von Artikel 4 maßgeblich. Der unterzeichnete finale Text ändert die Formulierung anschließend dahin gehend, dass Anbieter und Betreiber Maßnahmen ergreifen müssen, um die Entwicklung von KI-Kompetenz ihrer Mitarbeitenden und weiterer in ihrem Auftrag handelnder Personen zu unterstützen. Daraus folgt weiterhin kein garantierbares, einheitliches Kompetenzniveau jedes Einzelnen.
 
 Für MyHiwi folgt daraus:
 
@@ -1027,7 +1027,7 @@ Für MyHiwi folgt daraus:
 - bei Hochrisiko- oder Spezialfällen zusätzliche Maßnahmen empfehlen,
 - rechtliche Aussagen vor Veröffentlichung und bei jedem größeren Update erneut prüfen.
 
-Da die amtliche Veröffentlichung und konsolidierte Fassung zum Erstellungszeitpunkt noch nachgeführt werden können, muss vor dem Livegang der Landingpage der aktuelle EUR-Lex-Stand geprüft werden.
+Da die Veröffentlichung im Amtsblatt und die konsolidierte Fassung zum Erstellungszeitpunkt noch ausstanden, muss vor dem Livegang und vor jeder größeren Aktualisierung der aktuelle EUR-Lex-Stand erneut geprüft werden.
 
 ### 22.2 Datenschutz und Informationssicherheit
 
@@ -1043,11 +1043,13 @@ Die Schulung vermittelt keine Toolfreigabe. Sie lehrt stattdessen:
 ### 22.3 Verbindliche Quellenbasis
 
 1. [Verordnung (EU) 2024/1689 – Artificial Intelligence Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
-2. [Finaler Text des Digital Omnibus on AI, PE-CONS 30/1/26 REV 1 vom 8. Juli 2026](https://data.consilium.europa.eu/doc/document/PE-30-2026-REV-1/en/pdf)
-3. [EU-Kommission: AI Literacy – Questions & Answers](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers)
-4. [BSI: Generative KI-Modelle – Chancen und Risiken für Industrie und Behörden](https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.pdf?__blob=publicationFile&v=7)
-5. [DSK: Orientierungshilfe Künstliche Intelligenz und Datenschutz](https://www.datenschutzkonferenz-online.de/media/oh/20240506_DSK_Orientierungshilfe_KI_und_Datenschutz.pdf)
-6. [DSK: Empfohlene technische und organisatorische Maßnahmen bei KI-Systemen](https://www.datenschutzkonferenz-online.de/media/oh/DSK-OH_KI-Systeme.pdf)
+2. [Digital Omnibus on AI – unterzeichneter finaler Rechtsakt vom 8. Juli 2026](https://data.consilium.europa.eu/doc/document/PE-30-2026-REV-1/en/pdf)
+3. [Europäisches Parlament – Verfahrensstand 2025/0359(COD)](https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2025%2F0359%28COD%29)
+4. [Rat der EU – endgültige Zustimmung vom 29. Juni 2026](https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/)
+5. [EU-Kommission: AI Literacy – Questions & Answers](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers)
+6. [BSI: Generative KI-Modelle – Chancen und Risiken für Industrie und Behörden](https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.pdf?__blob=publicationFile&v=7)
+7. [DSK: Orientierungshilfe Künstliche Intelligenz und Datenschutz](https://www.datenschutzkonferenz-online.de/media/oh/20240506_DSK_Orientierungshilfe_KI_und_Datenschutz.pdf)
+8. [DSK: Empfohlene technische und organisatorische Maßnahmen bei KI-Systemen](https://www.datenschutzkonferenz-online.de/media/oh/DSK-OH_KI-Systeme.pdf)
 
 ## 23. Startklar für das erste Kundengespräch
 
