@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import zlib from "node:zlib";
 
 const root = process.cwd();
 const factsPath = path.join(root, "content/ai-startklar/product-facts.json");
@@ -52,6 +53,229 @@ const forbidden = [
 function fail(message) {
   console.error(`FAIL: ${message}`);
   process.exitCode = 1;
+}
+
+function readZipEntries(file) {
+  const archive = fs.readFileSync(file);
+  const minimumEocdSize = 22;
+  const maximumCommentSize = 0xffff;
+  let eocdOffset = -1;
+  for (
+    let offset = archive.length - minimumEocdSize;
+    offset >= Math.max(0, archive.length - minimumEocdSize - maximumCommentSize);
+    offset -= 1
+  ) {
+    if (archive.readUInt32LE(offset) === 0x06054b50) {
+      eocdOffset = offset;
+      break;
+    }
+  }
+  if (eocdOffset < 0) throw new Error("ZIP end-of-central-directory record not found");
+
+  const entryCount = archive.readUInt16LE(eocdOffset + 10);
+  let centralOffset = archive.readUInt32LE(eocdOffset + 16);
+  const entries = new Map();
+  for (let index = 0; index < entryCount; index += 1) {
+    if (archive.readUInt32LE(centralOffset) !== 0x02014b50) {
+      throw new Error(`invalid ZIP central-directory entry ${index + 1}`);
+    }
+    const compressionMethod = archive.readUInt16LE(centralOffset + 10);
+    const compressedSize = archive.readUInt32LE(centralOffset + 20);
+    const fileNameLength = archive.readUInt16LE(centralOffset + 28);
+    const extraLength = archive.readUInt16LE(centralOffset + 30);
+    const commentLength = archive.readUInt16LE(centralOffset + 32);
+    const localOffset = archive.readUInt32LE(centralOffset + 42);
+    const fileName = archive
+      .subarray(centralOffset + 46, centralOffset + 46 + fileNameLength)
+      .toString("utf8");
+
+    if (archive.readUInt32LE(localOffset) !== 0x04034b50) {
+      throw new Error(`invalid ZIP local header for ${fileName}`);
+    }
+    const localNameLength = archive.readUInt16LE(localOffset + 26);
+    const localExtraLength = archive.readUInt16LE(localOffset + 28);
+    const dataStart = localOffset + 30 + localNameLength + localExtraLength;
+    const compressed = archive.subarray(dataStart, dataStart + compressedSize);
+    let data;
+    if (compressionMethod === 0) data = compressed;
+    else if (compressionMethod === 8) data = zlib.inflateRawSync(compressed);
+    else throw new Error(`unsupported ZIP compression method ${compressionMethod} for ${fileName}`);
+    entries.set(fileName, data);
+    centralOffset += 46 + fileNameLength + extraLength + commentLength;
+  }
+  return entries;
+}
+
+function decodeXml(value) {
+  return value
+    .replaceAll("&quot;", '"')
+    .replaceAll("&apos;", "'")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&amp;", "&");
+}
+
+function xmlAttribute(attributes, name) {
+  const match = attributes.match(new RegExp(`\\b${name}=(?:"([^"]*)"|'([^']*)')`));
+  return match ? decodeXml(match[1] ?? match[2]) : undefined;
+}
+
+function columnNumber(reference) {
+  const letters = reference.match(/^[A-Z]+/)?.[0];
+  if (!letters) return 0;
+  return [...letters].reduce((value, letter) => value * 26 + letter.charCodeAt(0) - 64, 0);
+}
+
+function verifyAttendanceWorkbook(file) {
+  const entries = readZipEntries(file);
+  const sheetBuffer = entries.get("xl/worksheets/sheet1.xml");
+  if (!sheetBuffer) throw new Error("xl/worksheets/sheet1.xml is missing");
+  const sheet = sheetBuffer.toString("utf8");
+  const cells = new Map();
+  const cellPattern = /<(?:[\w-]+:)?c\b([^>]*?)\/>|<(?:[\w-]+:)?c\b([^>]*)>([\s\S]*?)<\/(?:[\w-]+:)?c>/g;
+  for (const match of sheet.matchAll(cellPattern)) {
+    const reference = xmlAttribute(match[1] ?? match[2], "r");
+    if (!reference) continue;
+    const valueMatch = match[3]?.match(/<(?:[\w-]+:)?v\b[^>]*>([\s\S]*?)<\/(?:[\w-]+:)?v>/);
+    cells.set(reference, valueMatch ? decodeXml(valueMatch[1]) : "");
+  }
+
+  const expectedHeaders = ["Nr.", "Name der teilnehmenden Person", "Team / Rolle", "Status", "Unterschrift"];
+  expectedHeaders.forEach((value, index) => {
+    const reference = `${String.fromCharCode(65 + index)}7`;
+    if (cells.get(reference) !== value) {
+      fail(`13-teilnahmeliste.xlsx must have header ${JSON.stringify(value)} in ${reference}`);
+    }
+  });
+
+  const participantRows = [];
+  for (const [reference, value] of cells) {
+    const row = Number(reference.match(/\d+$/)?.[0]);
+    if (columnNumber(reference) === 1 && row >= 8 && /^\d+$/.test(value)) participantRows.push([row, Number(value)]);
+  }
+  participantRows.sort((left, right) => left[0] - right[0]);
+  const expectedParticipantRows = Array.from({ length: 15 }, (_, index) => [index + 8, index + 1]);
+  if (JSON.stringify(participantRows) !== JSON.stringify(expectedParticipantRows)) {
+    fail("13-teilnahmeliste.xlsx must have exactly 15 participant input rows in rows 8 through 22");
+  }
+  for (let row = 8; row <= 22; row += 1) {
+    for (const column of ["B", "C", "D", "E"]) {
+      if (!cells.has(`${column}${row}`)) {
+        fail(`13-teilnahmeliste.xlsx participant input cell ${column}${row} is missing`);
+      }
+    }
+  }
+
+  const validations = [...sheet.matchAll(/<(?:[\w-]+:)?dataValidation\b([^>]*)>([\s\S]*?)<\/(?:[\w-]+:)?dataValidation>/g)];
+  const validation = validations[0];
+  const formula = validation?.[2].match(/<(?:[\w-]+:)?formula1\b[^>]*>([\s\S]*?)<\/(?:[\w-]+:)?formula1>/)?.[1];
+  const statusValues = formula ? decodeXml(formula).replace(/^"|"$/g, "").split(",") : [];
+  if (
+    validations.length !== 1 ||
+    xmlAttribute(validation?.[1] ?? "", "type") !== "list" ||
+    xmlAttribute(validation?.[1] ?? "", "sqref") !== "D8:D22" ||
+    JSON.stringify(statusValues) !== JSON.stringify(["anwesend", "teilweise", "nicht anwesend"])
+  ) {
+    fail('13-teilnahmeliste.xlsx must validate D8:D22 with exactly "anwesend", "teilweise", "nicht anwesend"');
+  }
+
+  const pane = sheet.match(/<(?:[\w-]+:)?pane\b([^>]*)\/>/)?.[1] ?? "";
+  if (
+    xmlAttribute(pane, "state") !== "frozen" ||
+    xmlAttribute(pane, "ySplit") !== "7" ||
+    xmlAttribute(pane, "topLeftCell") !== "A8"
+  ) {
+    fail("13-teilnahmeliste.xlsx must freeze the header through row 7 with A8 as the first scrolling cell");
+  }
+
+  const columnDefinitions = [];
+  for (const match of sheet.matchAll(/<(?:[\w-]+:)?col\b([^>]*)\/>/g)) {
+    const minimum = Number(xmlAttribute(match[1], "min"));
+    const maximum = Number(xmlAttribute(match[1], "max"));
+    const width = Number(xmlAttribute(match[1], "width"));
+    const hidden = xmlAttribute(match[1], "hidden");
+    for (let column = minimum; column <= maximum; column += 1) {
+      columnDefinitions.push({ column, width, hidden });
+    }
+  }
+  if (
+    JSON.stringify(columnDefinitions.map(({ column }) => column)) !== JSON.stringify([1, 2, 3, 4, 5]) ||
+    columnDefinitions.some(({ width }) => !Number.isFinite(width) || width < 5 || width > 40) ||
+    columnDefinitions.some(({ hidden }) => hidden === "1" || hidden === "true")
+  ) {
+    fail("13-teilnahmeliste.xlsx must define visible, sensibly sized columns A:E only");
+  }
+
+  const usedReferences = [...cells.keys()];
+  const usedColumns = usedReferences.map(columnNumber);
+  const usedRows = usedReferences.map((reference) => Number(reference.match(/\d+$/)?.[0]));
+  if (
+    Math.min(...usedColumns) !== 1 ||
+    Math.max(...usedColumns) !== 5 ||
+    Math.min(...usedRows) !== 1 ||
+    Math.max(...usedRows) !== 25 ||
+    !/<(?:[\w-]+:)?pageMargins\b[^>]*\/>/.test(sheet)
+  ) {
+    fail("13-teilnahmeliste.xlsx must use the printable A1:E25 area with page margins");
+  }
+  if ([...cells.keys()].some((reference) => columnNumber(reference) > 5) || cells.has("F7")) {
+    fail("13-teilnahmeliste.xlsx must not contain an additional or hidden tracking column");
+  }
+}
+
+function verifyAttendanceSource(file) {
+  const text = fs.readFileSync(file, "utf8");
+  const rows = [...text.matchAll(/^\|\s*(\d+)\s*\|/gm)].map((match) => Number(match[1]));
+  const expectedRows = Array.from({ length: 15 }, (_, index) => index + 1);
+  if (JSON.stringify(rows) !== JSON.stringify(expectedRows)) {
+    fail("13-teilnahmeliste.md must contain exactly 15 numbered Markdown table rows");
+  }
+  const statusSentence = text.match(/Zulässige Statuswerte sind exakt ([^\n]+)\./)?.[1] ?? "";
+  const statusValues = [...statusSentence.matchAll(/`([^`]+)`/g)].map((match) => match[1]);
+  if (JSON.stringify(statusValues) !== JSON.stringify(["anwesend", "teilweise", "nicht anwesend"])) {
+    fail('13-teilnahmeliste.md must name exactly the status values "anwesend", "teilweise", "nicht anwesend"');
+  }
+}
+
+function verifyUseRuleSource(file) {
+  const text = fs.readFileSync(file, "utf8");
+  const fields = text.match(/## Unternehmensspezifische Festlegung\n([\s\S]*?)(?:\n## |$)/)?.[1] ?? "";
+  if (!fields.includes("- **Version:**")) {
+    fail("15-ki-nutzungsregel.md must contain a Version field in the company-specific section");
+  }
+  const safeRule = "ausschließlich synthetische oder robust anonymisierte, sichere Beispiele";
+  const prohibitedRule = "Reale personenbezogene, vertrauliche, sicherheitsrelevante oder rote Daten werden nie live in ein KI-Werkzeug eingegeben.";
+  if (!text.includes(safeRule) || !text.includes(prohibitedRule)) {
+    fail("15-ki-nutzungsregel.md must allow only synthetic or robustly anonymized safe data and prohibit real personal, confidential, security-relevant, or red data as live input");
+  }
+}
+
+function verifyActionSource(file) {
+  const text = fs.readFileSync(file, "utf8");
+  const section = text.match(/## Maßnahmen für die nächsten 30 Tage\n([\s\S]*?)(?:\n## |$)/)?.[1] ?? "";
+  const rows = section
+    .split("\n")
+    .filter((line) => /^\|\s*\d+\s*\|/.test(line))
+    .map((line) => line.split("|").slice(1, -1).map((value) => value.trim()));
+  const expectedMeasures = [
+    "freigegebene Werkzeuge und Kontotypen dokumentieren",
+    "interne Ansprech- und Freigabestellen benennen",
+    "einseitige KI-Nutzungsregel finalisieren",
+    "zwei risikoarme Anwendungsfälle kontrolliert testen",
+    "Vorfälle und Unsicherheiten erfassbar machen",
+    "Auffrischung oder Vertiefung nach sechs bis zwölf Monaten prüfen",
+  ];
+  if (
+    rows.length !== 6 ||
+    rows.some((row, index) => row.length !== 5 || row[0] !== String(index + 1) || row[1] !== expectedMeasures[index])
+  ) {
+    fail("16-management-massnahmenblatt.md must contain exactly the six required numbered measures");
+  }
+  rows.forEach((row, index) => {
+    if (row[2] !== "`[Owner]`" || row[3] !== "`[TT.MM.JJJJ]`") {
+      fail(`16-management-massnahmenblatt.md measure ${index + 1} must have an Owner and due date in the same row`);
+    }
+  });
 }
 
 requireText("13-teilnahmeliste.md", [
@@ -149,6 +373,13 @@ for (const file of requiredSources) {
     if (pattern.test(text)) fail(`${file} contains forbidden claim ${pattern}`);
   }
 }
+
+const attendanceSourcePath = path.join(salesDir, "13-teilnahmeliste.md");
+if (fs.existsSync(attendanceSourcePath)) verifyAttendanceSource(attendanceSourcePath);
+const useRuleSourcePath = path.join(salesDir, "15-ki-nutzungsregel.md");
+if (fs.existsSync(useRuleSourcePath)) verifyUseRuleSource(useRuleSourcePath);
+const actionSourcePath = path.join(salesDir, "16-management-massnahmenblatt.md");
+if (fs.existsSync(actionSourcePath)) verifyActionSource(actionSourcePath);
 
 function requireText(file, values) {
   const target = path.join(salesDir, file);
@@ -282,6 +513,14 @@ for (const file of requiredOutputs) {
   const target = path.join(outputDir, file);
   if (!fs.existsSync(target) || fs.statSync(target).size === 0) {
     fail(`missing or empty output ${file}`);
+  }
+}
+const attendanceWorkbookPath = path.join(outputDir, "13-teilnahmeliste.xlsx");
+if (fs.existsSync(attendanceWorkbookPath) && fs.statSync(attendanceWorkbookPath).size > 0) {
+  try {
+    verifyAttendanceWorkbook(attendanceWorkbookPath);
+  } catch (error) {
+    fail(`13-teilnahmeliste.xlsx could not be structurally verified: ${error.message}`);
   }
 }
 if (!process.exitCode) console.log("PASS: AI-Startklar sales kit is consistent");
