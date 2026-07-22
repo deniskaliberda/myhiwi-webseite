@@ -1,8 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
 const sourceDir = path.join(root, "content/ai-startklar/training");
+const outputDir = path.join(root, "deliverables/ai-startklar/schulung");
+const requiredOutputs = [
+  "06-trainerfolien.pptx",
+  "06-trainerfolien.pdf",
+];
 const requiredSources = [
   "06-folienmanuskript.md",
   "07-trainerleitfaden.md",
@@ -58,6 +64,17 @@ const slideFields = [
   "Sprechhinweis",
 ];
 const expectedDurations = [15, 20, 25, 25, 10, 30, 30, 15, 10];
+const expectedGuideSections = [
+  ["Modul 1 – Einstieg, Ziele und Werkzeugrahmen", "01–05"],
+  ["Modul 2 – KI-Grundlagen", "06–09"],
+  ["Modul 3 – Möglichkeiten und Grenzen", "10–17"],
+  ["Modul 4 – Gute Prompts", "18–22"],
+  ["Pause", null],
+  ["Modul 5 – Sicherer und verantwortungsvoller Einsatz", "24–32"],
+  ["Modul 6 – Unternehmensbezogene Praxisübung", "33–37"],
+  ["Modul 7 – Prüfen, verbessern und freigeben", "38"],
+  ["Modul 8 – Lerncheck und nächste Schritte", "39–40"],
+];
 const guideFields = [
   "Lernziel",
   "Folien",
@@ -98,6 +115,85 @@ function readIfPresent(file) {
 
 const [slidesText, guideText] = requiredSources.map(readIfPresent);
 
+for (const file of requiredOutputs) {
+  const target = path.join(outputDir, file);
+  if (!fs.existsSync(target)) fail(`missing output ${file}`);
+}
+
+function readZipEntry(archive, entry) {
+  return execFileSync("unzip", ["-p", archive, entry], {
+    encoding: "utf8",
+    maxBuffer: 10 * 1024 * 1024,
+  });
+}
+
+function listZipEntries(archive) {
+  return execFileSync("unzip", ["-Z1", archive], {
+    encoding: "utf8",
+    maxBuffer: 10 * 1024 * 1024,
+  }).trim().split("\n").filter(Boolean);
+}
+
+function xmlText(xml) {
+  return [...xml.matchAll(/<a:t>([\s\S]*?)<\/a:t>/g)]
+    .map((match) => match[1]
+      .replaceAll("&amp;", "&")
+      .replaceAll("&lt;", "<")
+      .replaceAll("&gt;", ">")
+      .replaceAll("&quot;", '"')
+      .replaceAll("&apos;", "'"))
+    .join(" ");
+}
+
+const pptxPath = path.join(outputDir, "06-trainerfolien.pptx");
+if (fs.existsSync(pptxPath)) {
+  try {
+    const entries = listZipEntries(pptxPath);
+    const slideEntries = entries.filter((entry) => /^ppt\/slides\/slide\d+\.xml$/.test(entry));
+    const noteEntries = entries.filter((entry) => /^ppt\/notesSlides\/notesSlide\d+\.xml$/.test(entry));
+    if (slideEntries.length !== 40) fail(`trainer deck: expected 40 slides, found ${slideEntries.length}`);
+    if (noteEntries.length !== 40) fail(`trainer deck: expected 40 speaker-note pages, found ${noteEntries.length}`);
+
+    const slideTexts = Array.from({ length: 40 }, (_, index) =>
+      xmlText(readZipEntry(pptxPath, `ppt/slides/slide${index + 1}.xml`))
+    );
+    const noteTexts = Array.from({ length: 40 }, (_, index) =>
+      xmlText(readZipEntry(pptxPath, `ppt/notesSlides/notesSlide${index + 1}.xml`))
+    );
+    noteTexts.forEach((text, index) => {
+      if (!text.includes("Sprechhinweis:")) fail(`slide ${index + 1}: speaker note missing Sprechhinweis`);
+      if (!text.includes("Moderation:")) fail(`slide ${index + 1}: speaker note missing facilitation note`);
+    });
+
+    const requiredSlideStrings = new Map([
+      [23, ["Pause", "Daten einordnen", "praktisch anwenden"]],
+      [32, ["Nur freigegebene Werkzeuge und Unternehmenskonten nutzen", "Vor jeder Eingabe die Datenampel anwenden", "KI-Ausgaben vor Verwendung", "Verantwortung und folgenreiche Entscheidungen bleiben beim Menschen", "Unsichere, sensible oder ungewöhnliche Fälle stoppen"]],
+      [38, ["Fakten", "Quellen", "Vollständigkeit", "Verzerrung", "Rechte & Daten", "Ton & Wirkung", "Verantwortung"]],
+      [40, ["Nächster sicherer Anwendungsfall", "Fachliche Prüfung", "Toolfreigabe", "Datenschutz", "Informationssicherheit", "Eskalationsstelle"]],
+    ]);
+    for (const [slideNumber, strings] of requiredSlideStrings) {
+      for (const required of strings) {
+        if (!slideTexts[slideNumber - 1].includes(required)) {
+          fail(`slide ${slideNumber}: missing key text "${required}"`);
+        }
+      }
+    }
+  } catch (error) {
+    fail(`trainer deck: structural inspection failed (${error.message})`);
+  }
+}
+
+const pdfPath = path.join(outputDir, "06-trainerfolien.pdf");
+if (fs.existsSync(pdfPath)) {
+  try {
+    const info = execFileSync("pdfinfo", [pdfPath], { encoding: "utf8" });
+    const pages = Number(info.match(/^Pages:\s+(\d+)$/m)?.[1]);
+    if (pages !== 40) fail(`trainer deck PDF: expected 40 pages, found ${pages || "unknown"}`);
+  } catch (error) {
+    fail(`trainer deck PDF: page inspection failed (${error.message})`);
+  }
+}
+
 if (slidesText !== null) {
   const headings = [...slidesText.matchAll(/^## Folie (\d{2})\s*$/gm)];
   const numbers = headings.map((match) => Number(match[1]));
@@ -132,6 +228,25 @@ if (guideText !== null) {
   }
   const total = durations.reduce((sum, value) => sum + value, 0);
   if (total !== 180) fail(`expected 180 guide minutes, found ${total}`);
+
+  const guideHeadingMatches = [...guideText.matchAll(/^## (.+)$/gm)];
+  const guideHeadings = guideHeadingMatches.map((match) => match[1].trim());
+  const expectedHeadings = ["Einsatzrahmen", ...expectedGuideSections.map(([heading]) => heading)];
+  if (JSON.stringify(guideHeadings) !== JSON.stringify(expectedHeadings)) {
+    fail(`expected guide sections ${expectedHeadings.join(" | ")}, found ${guideHeadings.join(" | ") || "none"}`);
+  }
+  for (const [heading, expectedRange] of expectedGuideSections) {
+    if (expectedRange === null) continue;
+    const headingIndex = guideHeadings.indexOf(heading);
+    const start = guideHeadingMatches[headingIndex]?.index ?? -1;
+    const bodyStart = start < 0 ? -1 : start + guideHeadingMatches[headingIndex][0].length;
+    const bodyEnd = guideHeadingMatches[headingIndex + 1]?.index ?? guideText.length;
+    const section = bodyStart < 0 ? "" : guideText.slice(bodyStart, bodyEnd);
+    const actualRange = section.match(/^\*\*Folien:\*\*\s*(\S+)\s*$/m)?.[1];
+    if (actualRange !== expectedRange) {
+      fail(`${heading}: expected slide range ${expectedRange}, found ${actualRange ?? "missing"}`);
+    }
+  }
 
   const modules = guideText.split(/^## Modul \d+\b.*$/gm).slice(1);
   if (modules.length !== 8) fail(`expected 8 teaching modules, found ${modules.length}`);
