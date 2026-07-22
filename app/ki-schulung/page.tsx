@@ -6,6 +6,7 @@ import {
   formatEuro,
 } from "@/lib/ai-startklar/product";
 import { Card } from "@/components/myhiwi/card/Card";
+import { AiStartklarForm } from "@/components/myhiwi/ai-startklar/AiStartklarForm";
 import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
 import { CtaRow } from "@/components/myhiwi/cta/CtaRow";
 import {
@@ -313,28 +314,29 @@ export default function KiSchulungPage() {
         finalCta
       >
         <Container>
-          <div className="max-w-3xl">
-            <SectionMark
-              index="→"
-              label="Erstgespräch"
-              tone="accent"
-              onDark
-            />
-            <h2 className="mt-mh-4 mh-display-2 text-mh-text-on-dark">
-              Passt AI-Startklar zu Ihrem Team?
-            </h2>
-            <p className="mt-mh-5 mh-body-large text-mh-text-on-dark/80">
-              Im unverbindlichen Erstgespräch klären wir Teilnehmer, Werkzeug,
-              Praxisfokus und sensible Themen. Bitte senden Sie keine
-              personenbezogenen, vertraulichen oder sicherheitsrelevanten
-              Inhalte.
-            </p>
-            <a
-              className="mt-mh-6 inline-flex font-semibold text-mh-glow underline decoration-mh-glow/50 underline-offset-4 transition-colors hover:text-mh-text-on-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mh-glow focus-visible:ring-offset-4 focus-visible:ring-offset-mh-ink-950"
-              href="mailto:kontakt@myhiwi.de?subject=Anfrage%20AI-Startklar"
-            >
-              kontakt@myhiwi.de
-            </a>
+          <div className="grid min-w-0 gap-mh-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="min-w-0 break-words">
+              <SectionMark
+                index="→"
+                label="Erstgespräch"
+                tone="accent"
+                onDark
+              />
+              <h2 className="mt-mh-4 mh-display-2 text-mh-text-on-dark">
+                Passt AI-Startklar zu Ihrem Team?
+              </h2>
+              <p className="mt-mh-5 mh-body-large text-mh-text-on-dark/80">
+                In 25 bis 30 Minuten klären wir Teilnehmer, Wissensstand,
+                Werkzeug, Praxisfokus und sensible Themen. Danach erhalten Sie
+                eine klare Empfehlung: Standardpaket, individuelles Angebot
+                oder zuerst eine fachliche Spezialprüfung.
+              </p>
+              <p className="mt-mh-4 mh-body-small text-mh-text-on-dark/65">
+                Kein automatisches Angebot und keine pauschale rechtliche
+                Freigabe.
+              </p>
+            </div>
+            <AiStartklarForm />
           </div>
         </Container>
       </Section>

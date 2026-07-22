@@ -195,3 +195,174 @@ test("@page strukturiert Überschriften, Abläufe und Leistungslisten semantisch
     ),
   ).toBeVisible();
 });
+
+test("@form zeigt alle Qualifizierungsfelder und den Sensitivitätshinweis", async ({ page }) => {
+  await page.goto("/ki-schulung#erstgespraech");
+
+  await expect(page.getByLabel("Unternehmen")).toBeVisible();
+  await expect(page.getByLabel("Vor- und Nachname")).toBeVisible();
+  await expect(page.getByLabel("Geschäftliche E-Mail-Adresse")).toBeVisible();
+  await expect(page.getByLabel("Ungefähre Teilnehmerzahl")).toBeVisible();
+  await expect(page.getByLabel("Gewünschtes Format")).toBeVisible();
+  await expect(page.getByLabel("Gewünschter Zeitraum")).toBeVisible();
+  await expect(
+    page.getByLabel("Aktuell genutzte oder geplante KI-Werkzeuge"),
+  ).toBeVisible();
+  await expect(page.getByLabel("Gewünschter Schulungsfokus")).toBeVisible();
+  await expect(page.getByLabel(/Telefon/)).toBeVisible();
+  await expect(page.getByLabel(/Kurze Ergänzung/)).toBeVisible();
+  await expect(page.getByLabel(/Ich bin einverstanden/)).toBeVisible();
+  await expect(
+    page.locator("form").getByRole("link", { name: "Datenschutz" }),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      /keine personenbezogenen, vertraulichen oder sicherheitsrelevanten Inhalte/i,
+    ),
+  ).toBeVisible();
+});
+
+test("@form sendet nur die freigegebene Anfrage und bestätigt den Eingang", async ({ page }) => {
+  let payload: Record<string, unknown> | undefined;
+  await page.route("**/api/ai-startklar", async (route) => {
+    payload = route.request().postDataJSON() as Record<string, unknown>;
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: '{"success":true}',
+    });
+  });
+  await page.goto("/ki-schulung#erstgespraech");
+  await page.getByLabel("Unternehmen").fill("Muster GmbH");
+  await page.getByLabel("Vor- und Nachname").fill("Mara Muster");
+  await page
+    .getByLabel("Geschäftliche E-Mail-Adresse")
+    .fill("mara@example.de");
+  await page.getByLabel("Ungefähre Teilnehmerzahl").fill("12");
+  await page.getByLabel("Gewünschtes Format").selectOption("online");
+  await page.getByLabel("Gewünschter Zeitraum").fill("September 2026");
+  await page
+    .getByLabel("Aktuell genutzte oder geplante KI-Werkzeuge")
+    .fill("Microsoft Copilot");
+  await page
+    .getByLabel("Gewünschter Schulungsfokus")
+    .selectOption("buero-verwaltung");
+  await page.getByLabel(/Telefon/).fill("030 123456");
+  await page.getByLabel(/Kurze Ergänzung/).fill("Einsteigergruppe");
+  await page.getByLabel(/Ich bin einverstanden/).check();
+  await page
+    .getByRole("button", { name: "Erstgespräch anfragen" })
+    .click();
+
+  const acknowledgement = page.getByRole("status");
+  await expect(acknowledgement).toHaveAttribute("aria-live", "polite");
+  await expect(
+    acknowledgement.getByRole("heading", {
+      name: "Danke – Ihre Anfrage ist angekommen.",
+    }),
+  ).toBeVisible();
+  expect(payload).toBeDefined();
+  expect(Object.keys(payload ?? {}).sort()).toEqual(
+    [
+      "company",
+      "name",
+      "email",
+      "participants",
+      "format",
+      "timeframe",
+      "tools",
+      "focus",
+      "phone",
+      "message",
+      "consent",
+      "page",
+    ].sort(),
+  );
+  expect(payload).toEqual({
+    company: "Muster GmbH",
+    name: "Mara Muster",
+    email: "mara@example.de",
+    participants: 12,
+    format: "online",
+    timeframe: "September 2026",
+    tools: "Microsoft Copilot",
+    focus: "buero-verwaltung",
+    phone: "030 123456",
+    message: "Einsteigergruppe",
+    consent: true,
+    page: "http://127.0.0.1:3000/ki-schulung#erstgespraech",
+  });
+  expect(typeof payload?.participants).toBe("number");
+  expect(typeof payload?.consent).toBe("boolean");
+  for (const key of [
+    "company",
+    "name",
+    "email",
+    "format",
+    "timeframe",
+    "tools",
+    "focus",
+    "phone",
+    "message",
+    "page",
+  ]) {
+    expect(typeof payload?.[key]).toBe("string");
+  }
+});
+
+test("@form kündigt eine 400-Antwort an und bleibt ausfüllbar", async ({ page }) => {
+  await page.route("**/api/ai-startklar", async (route) => {
+    await route.fulfill({
+      status: 400,
+      contentType: "application/json",
+      body: '{"error":"Bitte prüfen Sie Ihre Angaben."}',
+    });
+  });
+  await page.goto("/ki-schulung#erstgespraech");
+  await page.getByLabel("Unternehmen").fill("Muster GmbH");
+  await page.getByLabel("Vor- und Nachname").fill("Mara Muster");
+  await page
+    .getByLabel("Geschäftliche E-Mail-Adresse")
+    .fill("mara@example.de");
+  await page.getByLabel("Ungefähre Teilnehmerzahl").fill("12");
+  await page.getByLabel("Gewünschtes Format").selectOption("online");
+  await page.getByLabel("Gewünschter Zeitraum").fill("September 2026");
+  await page
+    .getByLabel("Aktuell genutzte oder geplante KI-Werkzeuge")
+    .fill("Microsoft Copilot");
+  await page
+    .getByLabel("Gewünschter Schulungsfokus")
+    .selectOption("buero-verwaltung");
+  await page.getByLabel(/Ich bin einverstanden/).check();
+  await page
+    .getByRole("button", { name: "Erstgespräch anfragen" })
+    .click();
+
+  const alert = page
+    .getByRole("alert")
+    .filter({ hasText: "Bitte prüfen Sie Ihre Angaben." });
+  await expect(alert).toBeVisible();
+  await expect(alert).toHaveAttribute("aria-live", "polite");
+  await expect(alert).toHaveText("Bitte prüfen Sie Ihre Angaben.");
+  await expect(page.getByLabel("Unternehmen")).toHaveValue("Muster GmbH");
+  await page.getByLabel("Unternehmen").fill("Muster & Partner GmbH");
+  await expect(page.getByLabel("Unternehmen")).toHaveValue(
+    "Muster & Partner GmbH",
+  );
+  await expect(
+    page.getByRole("heading", {
+      name: "Danke – Ihre Anfrage ist angekommen.",
+    }),
+  ).toHaveCount(0);
+});
+
+test("@form bleibt bei mobilem 200-Prozent-Zoom ohne horizontalen Overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 195, height: 422 });
+  await page.goto("/ki-schulung#erstgespraech");
+
+  const dimensions = await page.locator("#erstgespraech").evaluate((section) => ({
+    clientWidth: section.clientWidth,
+    scrollWidth: section.scrollWidth,
+  }));
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
+});
