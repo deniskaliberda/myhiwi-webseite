@@ -52,7 +52,8 @@ Der Kunde stellt sicher:
 - Freigabe des verwendeten KI-Werkzeugs oder Zustimmung zur Trainerdemonstration,
 - funktionierende Laptops und Zugänge bei praktischer Mitarbeit,
 - geeigneten Raum, Bildschirm und Internetzugang bei Vor-Ort-Terminen,
-- ausschließlich synthetische, ausreichend anonymisierte oder ausdrücklich freigegebene Übungsinhalte,
+- ausschließlich synthetische oder robust anonymisierte, sichere Übungsinhalte.
+- reale personenbezogene, vertrauliche, sicherheitsrelevante oder rote Daten werden nie in Live-Übungen eingegeben.
 - Benennung einer internen Ansprechperson für Datenschutz, IT-Sicherheit und Freigabefragen,
 - rechtzeitige Rücksendung des Vorbereitungsfragebogens.
 
