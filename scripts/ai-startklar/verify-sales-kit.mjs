@@ -11,6 +11,11 @@ const requiredSources = [
   "03-fit-risikocheck.md",
   "04-angebotsvorlage.md",
   "05-vorbereitungsfragebogen.md",
+  "13-teilnahmeliste.md",
+  "14-teilnahmebestaetigung.md",
+  "15-ki-nutzungsregel.md",
+  "16-management-massnahmenblatt.md",
+  "17-nachbesprechungsprotokoll.md",
   "19-anfragebestaetigung.md",
 ];
 const requiredOutputs = [
@@ -24,6 +29,17 @@ const requiredOutputs = [
   "04-angebotsvorlage.pdf",
   "05-vorbereitungsfragebogen.docx",
   "05-vorbereitungsfragebogen.pdf",
+  "13-teilnahmeliste.xlsx",
+  "13-teilnahmeliste.docx",
+  "13-teilnahmeliste.pdf",
+  "14-teilnahmebestaetigung.docx",
+  "14-teilnahmebestaetigung.pdf",
+  "15-ki-nutzungsregel.docx",
+  "15-ki-nutzungsregel.pdf",
+  "16-management-massnahmenblatt.docx",
+  "16-management-massnahmenblatt.pdf",
+  "17-nachbesprechungsprotokoll.docx",
+  "17-nachbesprechungsprotokoll.pdf",
   "19-anfragebestaetigung.docx",
   "19-anfragebestaetigung.pdf",
 ];
@@ -37,6 +53,62 @@ function fail(message) {
   console.error(`FAIL: ${message}`);
   process.exitCode = 1;
 }
+
+requireText("13-teilnahmeliste.md", [
+  "Kunde",
+  "Datum",
+  "Format",
+  "Trainer/in",
+  "Name der teilnehmenden Person",
+  "Team / Rolle",
+  "Unterschrift oder Status",
+  "maximal 15",
+  "Aufbewahrung",
+]);
+
+requireText("14-teilnahmebestaetigung.md", [
+  "**[Name]** hat am **[Datum]** an der dreistündigen Live-Schulung „MyHiwi AI-Startklar“ teilgenommen. Behandelt wurden Grundlagen generativer KI, geeignete Anwendungsfälle, Promptgestaltung, Daten- und Risikoeinordnung, Prüfung von KI-Ausgaben, menschliche Kontrolle und betriebliche Nutzungsregeln. Diese Bestätigung dokumentiert die Teilnahme. Sie ist keine rechtliche Zertifizierung und bestätigt keine vollständige Compliance einer Person oder Organisation.",
+]);
+
+requireText("15-ki-nutzungsregel.md", [
+  "Nur freigegebene Werkzeuge und Unternehmenskonten nutzen.",
+  "Vor jeder Eingabe die Datenampel anwenden; rote Daten im Basisgebrauch nicht eingeben.",
+  "KI-Ausgaben vor Verwendung auf Fakten, Quellen, Rechte, Ton und Wirkung prüfen.",
+  "Verantwortung und folgenreiche Entscheidungen bleiben beim Menschen.",
+  "Unsichere, sensible oder ungewöhnliche Fälle stoppen und an die benannte interne Stelle eskalieren.",
+  "Freigegebene Werkzeuge / Kontotypen",
+  "Eingeschränkte Nutzungen",
+  "KI-/Tool-Verantwortung",
+  "Datenschutzkontakt",
+  "Sicherheitskontakt",
+  "Freigabeweg",
+  "Gültig ab",
+  "Management-Unterschrift",
+]);
+
+requireText("16-management-massnahmenblatt.md", [
+  "freigegebene Werkzeuge und Kontotypen dokumentieren",
+  "interne Ansprech- und Freigabestellen benennen",
+  "einseitige KI-Nutzungsregel finalisieren",
+  "zwei risikoarme Anwendungsfälle kontrolliert testen",
+  "Vorfälle und Unsicherheiten erfassbar machen",
+  "Auffrischung oder Vertiefung nach sechs bis zwölf Monaten prüfen",
+  "Owner",
+  "Fälligkeit",
+]);
+
+requireText("17-nachbesprechungsprotokoll.md", [
+  "Welche Anwendungsfälle waren sinnvoll und akzeptiert?",
+  "Wo bestanden Unsicherheiten oder Regelungslücken?",
+  "Welche Werkzeuge müssen geklärt oder freigegeben werden?",
+  "Wer übernimmt Verantwortung für Regeln, Fragen und Aktualisierung?",
+  "Welche drei Maßnahmen werden innerhalb von 30 Tagen umgesetzt?",
+  "Offene Punkte",
+  "Spezialistenverweise",
+  "Nächster Review-Termin",
+  "Optionales Follow-up",
+  "kein automatisches Folgeangebot",
+]);
 
 if (!fs.existsSync(factsPath)) {
   fail("missing content/ai-startklar/product-facts.json");
