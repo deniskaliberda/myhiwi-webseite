@@ -12,11 +12,26 @@ const requiredOutputs = [
   "07-trainerleitfaden.pdf",
   "08-teilnehmerheft.docx",
   "08-teilnehmerheft.pdf",
+  "09-promptvorlage.docx",
+  "09-promptvorlage.pdf",
+  "10-datenampel.docx",
+  "10-datenampel.pdf",
+  "11-pruefcheckliste.docx",
+  "11-pruefcheckliste.pdf",
+  "12-lerncheck.docx",
+  "12-lerncheck.pdf",
+  "12-loesungsschluessel.docx",
+  "12-loesungsschluessel.pdf",
 ];
 const requiredSources = [
   "06-folienmanuskript.md",
   "07-trainerleitfaden.md",
   "08-teilnehmerheft.md",
+  "09-promptvorlage.md",
+  "10-datenampel.md",
+  "11-pruefcheckliste.md",
+  "12-lerncheck.md",
+  "12-loesungsschluessel.md",
   "praxisfaelle/01-buero-verwaltung.md",
   "praxisfaelle/02-vertrieb-kundenkommunikation.md",
   "praxisfaelle/03-marketing-content.md",
@@ -55,6 +70,67 @@ const reviewSteps = [
   "Ton und Wirkung",
   "Verantwortung",
 ];
+const approvedPrompt = "Erstelle [Ergebnis] für [Zielgruppe/Zweck]. Nutze ausschließlich [freigegebenes Material]. Beachte [Anforderungen und Grenzen]. Gib das Ergebnis als [Format] aus. Kennzeichne Unsicherheiten und nenne, welche Punkte vor der Verwendung geprüft werden müssen.";
+const approvedReviewSteps = [
+  ["Fakten", "Stimmen Namen, Zahlen, Termine und Aussagen?"],
+  ["Quelle", "Sind Quellen vorhanden, echt, aktuell und passend?"],
+  ["Vollständigkeit", "Fehlt relevanter Kontext oder eine Einschränkung?"],
+  ["Verzerrung", "Ist die Ausgabe einseitig, diskriminierend oder unangemessen?"],
+  ["Rechte und Daten", "Enthält sie sensible, vertrauliche oder möglicherweise geschützte Inhalte?"],
+  ["Ton und Wirkung", "Passt die Ausgabe zur Zielgruppe und Unternehmenskommunikation?"],
+  ["Verantwortung", "Wer prüft, entscheidet und gibt frei?"],
+];
+const approvedLearningQuestions = [
+  "Warum kann eine sprachlich überzeugende KI-Antwort trotzdem falsch sein?",
+  "Welche sechs Bestandteile hat ein guter Prompt in dieser Schulung?",
+  "Nennen Sie zwei typische Risiken generativer KI.",
+  "Welche Informationen gehören im Basistraining in die rote Ampelzone?",
+  "Was bedeutet die gelbe Ampelzone?",
+  "Wer trägt die Verantwortung für die Verwendung einer KI-Ausgabe?",
+  "Welche Punkte prüfen Sie bei Zahlen und Quellen?",
+  "Was tun Sie, wenn ein Ergebnis eine Person erheblich betreffen könnte?",
+  "Warum reicht ein privater kostenloser Toolzugang nicht automatisch für Unternehmensdaten?",
+  "An wen eskalieren Sie im Unternehmen einen unklaren Fall?",
+];
+const approvedLearningAnswers = [
+  "Generative KI erzeugt sprachlich wahrscheinliche Ausgaben und prüft nicht automatisch, ob jede Aussage wahr, aktuell oder vollständig ist.",
+  "Aufgabe, Kontext, Material, Anforderungen, Ausgabeformat und Prüfkriterien.",
+  "Zwei passende Beispiele aus: erfundene Fakten, veraltete Informationen, falsche Quellen, Verzerrungen, Datenabfluss, Rechteprobleme oder unangemessene Ausgaben.",
+  "Insbesondere Zugangsdaten, Geschäftsgeheimnisse, Beschäftigten-, Bewerber-, Kunden-, Patienten-, Gesundheits- und andere besonders sensible Daten sowie sicherheitskritische Informationen.",
+  "Nicht eingeben, sondern Werkzeug, Zweck, Daten und interne Freigabe zuerst mit der zuständigen Stelle klären.",
+  "Der verantwortliche Mensch beziehungsweise die vom Unternehmen festgelegte freigabeberechtigte Stelle.",
+  "Zahlen mit einer belastbaren Originalquelle abgleichen; Quelle auf Existenz, Aussage, Aktualität und Kontext prüfen.",
+  "Einsatz stoppen, nicht automatisch entscheiden lassen und den Fall an die zuständige Fach-, Rechts-, Datenschutz- oder Sicherheitsstelle geben.",
+  "Weil Vertrag, Kontotyp, Einstellungen, Datenverwendung, Speicherort, Zugriffe und Unternehmensfreigabe entscheidend sind.",
+  "Die im Management-Vorgespräch benannte interne Stelle; ohne benannte Stelle wird der Fall an die verantwortliche Führungskraft zurückgegeben.",
+];
+const approvedDataZones = new Map([
+  ["Grün – im freigegebenen Werkzeug grundsätzlich nutzbar", [
+    "selbst erstellte synthetische Beispieldaten",
+    "bereits rechtmäßig veröffentlichte Informationen",
+    "ausdrücklich für diesen Zweck freigegebene Unternehmensinformationen",
+    "robuste, tatsächlich nicht rückführbare anonymisierte Inhalte",
+    "allgemeine Ideen und Aufgaben ohne Personen- oder Geheimnisbezug",
+  ]],
+  ["Gelb – erst nach interner Prüfung und Freigabe", [
+    "interne, nicht öffentliche Informationen mit geringer Sensibilität",
+    "Vertrags- oder Projektdaten ohne offensichtliche Personendaten",
+    "pseudonymisierte Daten",
+    "umfangreiche fremde oder lizenzierte Inhalte",
+    "Informationen, deren Vertraulichkeit oder Rechtslage unklar ist",
+    "Daten, die nur in bestimmten Unternehmenskonten oder technischen Umgebungen zulässig sein könnten",
+  ]],
+  ["Rot – im Basistraining niemals eingeben", [
+    "Passwörter, Zugangsdaten, Schlüssel und Sicherheitsinformationen",
+    "Geschäftsgeheimnisse und hochvertrauliche Strategien",
+    "nicht veröffentlichte Finanz-, Transaktions- oder Preisinformationen",
+    "Beschäftigten-, Bewerber-, Kunden- oder Patientendaten",
+    "Gesundheitsdaten und andere besonders geschützte personenbezogene Daten",
+    "Rechtsfälle, Berufsgeheimnisse oder vertrauliche Beratungssachverhalte",
+    "sicherheitskritische technische Informationen",
+    "Inhalte, für deren Verwendung keine Rechte oder Freigaben bestehen",
+  ]],
+]);
 const expectedPracticeSignals = new Map([
   ["praxisfaelle/01-buero-verwaltung.md", /unsortierte[^\n]*Notizen[^\n]*Aufgabenliste/i],
   ["praxisfaelle/02-vertrieb-kundenkommunikation.md", /synthetische[^\n]*Kundenanfrage/i],
@@ -204,6 +280,103 @@ const sourceTexts = new Map(requiredSources.map((file) => [file, readIfPresent(f
 const slidesText = sourceTexts.get("06-folienmanuskript.md");
 const guideText = sourceTexts.get("07-trainerleitfaden.md");
 const workbookText = sourceTexts.get("08-teilnehmerheft.md");
+const promptTemplateText = sourceTexts.get("09-promptvorlage.md");
+const dataTrafficLightText = sourceTexts.get("10-datenampel.md");
+const reviewChecklistText = sourceTexts.get("11-pruefcheckliste.md");
+const learningCheckText = sourceTexts.get("12-lerncheck.md");
+const answerKeyText = sourceTexts.get("12-loesungsschluessel.md");
+
+function plainMarkdown(text) {
+  return text
+    .replaceAll("**", "")
+    .replace(/^>\s?/gm, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+if (promptTemplateText !== null) {
+  for (const [index, part] of promptParts.entries()) {
+    if (!promptTemplateText.includes(`## ${index + 1}. ${part}`)) {
+      fail(`prompt template: missing section ${index + 1} ${part}`);
+    }
+  }
+  if (!plainMarkdown(promptTemplateText).includes(approvedPrompt)) {
+    fail("prompt template: approved complete prompt sentence is missing or changed");
+  }
+  if (!/Datenampel/i.test(promptTemplateText) || !/freigegeben/i.test(promptTemplateText)) {
+    fail("prompt template: missing safe-input reminder");
+  }
+}
+
+if (dataTrafficLightText !== null) {
+  if (!/Lern- und Entscheidungsstütze/i.test(dataTrafficLightText)
+      || !/ersetzt keine Tool-, Vertrags- oder Datenschutzprüfung/i.test(dataTrafficLightText)) {
+    fail("data traffic light: missing scope boundary");
+  }
+  for (const [heading, examples] of approvedDataZones) {
+    if (!dataTrafficLightText.includes(`## ${heading}`)) {
+      fail(`data traffic light: missing zone heading ${heading}`);
+    }
+    for (const example of examples) {
+      if (!dataTrafficLightText.includes(example)) {
+        fail(`data traffic light: missing approved example "${example}"`);
+      }
+    }
+  }
+  if (!dataTrafficLightText.includes("Gelb bedeutet nicht „vorsichtig eingeben“, sondern „vorher zuständige Person und zulässiges Werkzeug klären“.")) {
+    fail("data traffic light: yellow must explicitly mean stop and clarify first");
+  }
+  if (!dataTrafficLightText.includes("Auch grüne Inhalte dürfen nur in genehmigten Werkzeugen und für legitime Zwecke verwendet werden.")) {
+    fail("data traffic light: missing green tool-and-purpose boundary");
+  }
+  if (!dataTrafficLightText.includes("Diese Prüfung ist nicht Teil des Basisprodukts.")) {
+    fail("data traffic light: missing red specialized-system boundary");
+  }
+}
+
+if (reviewChecklistText !== null) {
+  for (const [index, [label, question]] of approvedReviewSteps.entries()) {
+    const expected = `${index + 1}. **${label}:** ${question}`;
+    if (!reviewChecklistText.includes(expected)) {
+      fail(`review checklist: missing approved step ${index + 1} ${label}`);
+    }
+  }
+  if (!plainMarkdown(reviewChecklistText).includes("Je größer die mögliche Wirkung eines Fehlers, desto stärker muss die menschliche Prüfung sein – bis hin zum vollständigen Verzicht auf den KI-Einsatz.")) {
+    fail("review checklist: approved reminder is missing or changed");
+  }
+}
+
+if (learningCheckText !== null) {
+  const actualQuestions = [...learningCheckText.matchAll(/^(\d+)\. (.+)\s*$/gm)]
+    .map((match) => match[2]);
+  if (JSON.stringify(actualQuestions) !== JSON.stringify(approvedLearningQuestions)) {
+    fail(`learning check: expected exactly the ten approved questions, found ${actualQuestions.length}`);
+  }
+  if (!/keine formale Prüfung/i.test(learningCheckText)) {
+    fail("learning check: missing non-exam boundary");
+  }
+  for (const answer of approvedLearningAnswers) {
+    if (plainMarkdown(learningCheckText).includes(answer)) {
+      fail("learning check: approved answer leaked into participant source");
+    }
+  }
+  for (const pattern of [/Musterantwort/i, /Korrekturhinweis/i, /Nur für Trainer/i, /\bbestanden\b/i, /Prüfungsergebnis/i, /Kompetenzzertifikat/i]) {
+    if (pattern.test(learningCheckText)) fail(`learning check: forbidden participant wording ${pattern}`);
+  }
+}
+
+if (answerKeyText !== null) {
+  if (!/Nur für Trainer/i.test(answerKeyText)) fail("answer key: missing trainer-only marking");
+  for (const [index, answer] of approvedLearningAnswers.entries()) {
+    if (!plainMarkdown(answerKeyText).includes(answer)) {
+      fail(`answer key: approved answer ${index + 1} is missing or changed`);
+    }
+  }
+  const corrections = answerKeyText.match(/^\*\*Korrekturhinweis:\*\*\s*\S.+$/gm) ?? [];
+  if (corrections.length !== 10) {
+    fail(`answer key: expected 10 correction notes, found ${corrections.length}`);
+  }
+}
 
 for (const file of practiceSources) {
   const text = sourceTexts.get(file);
@@ -429,9 +602,90 @@ for (const [label, archive, requiredSignals, forbiddenSignals] of [
   }
 }
 
+const jobAidDocxChecks = [
+  ["prompt template DOCX", "09-promptvorlage.docx", [...promptParts, approvedPrompt], []],
+  [
+    "data traffic light DOCX",
+    "10-datenampel.docx",
+    [
+      ...approvedDataZones.keys(),
+      "Gelb bedeutet nicht „vorsichtig eingeben“",
+      "vorher zuständige Person und zulässiges Werkzeug klären",
+    ],
+    [],
+  ],
+  ["review checklist DOCX", "11-pruefcheckliste.docx", approvedReviewSteps.flat(), []],
+  ["learning check DOCX", "12-lerncheck.docx", approvedLearningQuestions, approvedLearningAnswers],
+  ["answer key DOCX", "12-loesungsschluessel.docx", ["Nur für Trainer", ...approvedLearningAnswers, "Korrekturhinweis"], []],
+];
+const participantAnswerLeakSignals = [
+  "Musterantwort",
+  "Korrekturhinweis",
+  "Nur für Trainer",
+  approvedLearningAnswers[0],
+  approvedLearningAnswers[5],
+  approvedLearningAnswers[9],
+];
+
+for (const [label, file, requiredSignals, forbiddenSignals] of jobAidDocxChecks) {
+  const archive = path.join(outputDir, file);
+  if (!fs.existsSync(archive)) continue;
+  try {
+    const entries = new Set(listZipEntries(archive));
+    for (const entry of ["word/document.xml", "word/styles.xml", "word/numbering.xml"]) {
+      if (!entries.has(entry)) fail(`${label}: missing ${entry}`);
+    }
+    const documentXml = readZipEntry(archive, "word/document.xml");
+    const headerEntries = [...entries].filter((entry) => /^word\/header\d+\.xml$/.test(entry));
+    const text = [
+      wordXmlText(documentXml),
+      ...headerEntries.map((entry) => wordXmlText(readZipEntry(archive, entry))),
+    ].join(" ");
+    for (const signal of requiredSignals) {
+      if (!text.includes(signal)) fail(`${label}: missing key text "${signal}"`);
+    }
+    for (const signal of forbiddenSignals) {
+      if (text.includes(signal)) fail(`${label}: answer leaked into participant output`);
+    }
+    for (const pattern of forbiddenClaims) {
+      if (pattern.test(text)) fail(`${label}: forbidden claim ${pattern}`);
+    }
+    for (const pattern of [/\bbestanden\b/i, /Prüfungsergebnis/i, /Kompetenzzertifikat/i, /\bzertifiziert\b/i]) {
+      if (pattern.test(text)) fail(`${label}: forbidden formal-assessment wording ${pattern}`);
+    }
+    if (file !== "12-loesungsschluessel.docx") {
+      for (const signal of participantAnswerLeakSignals) {
+        if (text.includes(signal)) fail(`${label}: trainer-only answer signal leaked into participant output`);
+      }
+    }
+    if (file === "10-datenampel.docx") {
+      for (const altText of ["Kreis – GRÜN", "Dreieck – GELB", "Achteck – ROT"]) {
+        if (!documentXml.includes(`descr="${altText}"`)) {
+          fail(`${label}: missing grayscale-safe shape marker ${altText}`);
+        }
+      }
+    }
+    if (file === "12-loesungsschluessel.docx") {
+      if (headerEntries.length === 0) fail(`${label}: missing running trainer-only header`);
+      for (const header of headerEntries) {
+        if (!wordXmlText(readZipEntry(archive, header)).includes("Nur für Trainer")) {
+          fail(`${label}: ${header} is missing trainer-only marking`);
+        }
+      }
+    }
+  } catch (error) {
+    fail(`${label}: structural inspection failed (${error.message})`);
+  }
+}
+
 for (const [label, file, expectedPages] of [
-  ["trainer guide PDF", "07-trainerleitfaden.pdf", 21],
+  ["trainer guide PDF", "07-trainerleitfaden.pdf", 22],
   ["participant workbook PDF", "08-teilnehmerheft.pdf", 12],
+  ["prompt template PDF", "09-promptvorlage.pdf", 1],
+  ["data traffic light PDF", "10-datenampel.pdf", 1],
+  ["review checklist PDF", "11-pruefcheckliste.pdf", 1],
+  ["learning check PDF", "12-lerncheck.pdf", 2],
+  ["answer key PDF", "12-loesungsschluessel.pdf", 5],
 ]) {
   const target = path.join(outputDir, file);
   if (!fs.existsSync(target)) continue;
@@ -444,6 +698,41 @@ for (const [label, file, expectedPages] of [
     }
   } catch (error) {
     fail(`${label}: page inspection failed (${error.message})`);
+  }
+}
+
+const participantPdfFiles = [
+  "09-promptvorlage.pdf",
+  "10-datenampel.pdf",
+  "11-pruefcheckliste.pdf",
+  "12-lerncheck.pdf",
+];
+for (const file of participantPdfFiles) {
+  const target = path.join(outputDir, file);
+  if (!fs.existsSync(target)) continue;
+  try {
+    const text = execFileSync("pdftotext", [target, "-"], { encoding: "utf8" });
+    for (const signal of participantAnswerLeakSignals) {
+      if (text.includes(signal)) fail(`${file}: trainer-only answer signal leaked into participant PDF`);
+    }
+  } catch (error) {
+    fail(`${file}: text inspection failed (${error.message})`);
+  }
+}
+
+const answerKeyPdfPath = path.join(outputDir, "12-loesungsschluessel.pdf");
+if (fs.existsSync(answerKeyPdfPath)) {
+  try {
+    const info = execFileSync("pdfinfo", [answerKeyPdfPath], { encoding: "utf8" });
+    const pages = Number(info.match(/^Pages:\s+(\d+)$/m)?.[1]);
+    for (let page = 1; page <= pages; page += 1) {
+      const pageText = execFileSync("pdftotext", ["-f", String(page), "-l", String(page), answerKeyPdfPath, "-"], { encoding: "utf8" });
+      if (!pageText.includes("Nur für Trainer")) {
+        fail(`answer key PDF: page ${page} missing trainer-only marking`);
+      }
+    }
+  } catch (error) {
+    fail(`answer key PDF: trainer-only page inspection failed (${error.message})`);
   }
 }
 
