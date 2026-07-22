@@ -10,7 +10,7 @@ Produktfakten werden zuerst in `product-facts.json` geändert, danach in den Que
 
 ## Versionierung
 
-Jedes Asset trägt Version, Datum und Dokumenttyp.
+Jedes Asset trägt Version, Datum und Dokumenttyp. Die kanonische Quelle führt diese Angaben unter `metadata`; Quellen und Exporte übernehmen die jeweils gültigen Metadaten aus dieser Quelle.
 
 ## Dateiindex
 

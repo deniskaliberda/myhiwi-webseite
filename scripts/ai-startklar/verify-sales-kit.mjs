@@ -32,6 +32,16 @@ if (!fs.existsSync(factsPath)) {
   for (const [key, value] of Object.entries(expected)) {
     if (facts[key] !== value) fail(`${key} must equal ${JSON.stringify(value)}`);
   }
+  const expectedMetadata = {
+    version: "1.0",
+    date: "2026-07-22",
+    documentType: "Produktdaten",
+  };
+  for (const [key, value] of Object.entries(expectedMetadata)) {
+    if (facts.metadata?.[key] !== value) {
+      fail(`metadata.${key} must equal ${JSON.stringify(value)}`);
+    }
+  }
   if (facts.pricing?.onlineNet !== 1490) fail("onlineNet must equal 1490");
   if (facts.pricing?.onsiteNet !== 1790) fail("onsiteNet must equal 1790");
 }
