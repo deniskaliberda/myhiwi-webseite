@@ -425,3 +425,162 @@ test("@form bleibt bei mobilem 200-Prozent-Zoom ohne horizontalen Overflow", asy
   }));
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
 });
+
+test("@seo liefert kanonische Social-Metadaten und valide strukturierte Daten", async ({ page }) => {
+  await page.goto("/ki-schulung");
+
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    "https://myhiwi.de/ki-schulung",
+  );
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+    "content",
+    "KI-Schulung für Unternehmen | MyHiwi AI-Startklar",
+  );
+  await expect(
+    page.locator('meta[property="og:description"]'),
+  ).toHaveAttribute(
+    "content",
+    "Drei Stunden live: KI-Grundlagen, gute Prompts, Datenampel, Ergebnisprüfung und klare Nutzungsregeln.",
+  );
+  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+    "content",
+    "https://myhiwi.de/ki-schulung",
+  );
+  await expect(page.locator('meta[property="og:type"]')).toHaveAttribute(
+    "content",
+    "website",
+  );
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    "content",
+    "https://myhiwi.de/ki-schulung/opengraph-image",
+  );
+  await expect(
+    page.locator('meta[property="og:image:width"]'),
+  ).toHaveAttribute("content", "1200");
+  await expect(
+    page.locator('meta[property="og:image:height"]'),
+  ).toHaveAttribute("content", "630");
+
+  const scriptContents = await page
+    .locator('script[type="application/ld+json"]')
+    .allTextContents();
+  const schemas = scriptContents.map(
+    (source) => JSON.parse(source) as Record<string, unknown>,
+  );
+  const schemaByType = (type: string) =>
+    schemas.find((schema) => schema["@type"] === type);
+
+  expect(schemaByType("Service")).toMatchObject({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: AI_STARTKLAR.name,
+    description: AI_STARTKLAR.summary,
+    serviceType: "KI-Grundlagenschulung für Unternehmen",
+    provider: {
+      "@type": "Organization",
+      name: "MyHiwi",
+      url: "https://myhiwi.de",
+    },
+    url: "https://myhiwi.de/ki-schulung",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Online",
+        price: "1490",
+        priceCurrency: "EUR",
+      },
+      {
+        "@type": "Offer",
+        name: "Vor Ort",
+        price: "1790",
+        priceCurrency: "EUR",
+      },
+    ],
+  });
+
+  const faqSchema = schemaByType("FAQPage") as
+    | (Record<string, unknown> & { mainEntity: unknown[] })
+    | undefined;
+  expect(faqSchema?.mainEntity).toHaveLength(AI_STARTKLAR_FAQ.length);
+  expect(faqSchema?.mainEntity).toEqual(
+    AI_STARTKLAR_FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  );
+
+  const breadcrumbSchema = schemaByType("BreadcrumbList") as
+    | (Record<string, unknown> & { itemListElement: unknown[] })
+    | undefined;
+  expect(breadcrumbSchema?.itemListElement).toEqual([
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Start",
+      item: "https://myhiwi.de",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "KI-Schulung",
+      item: "https://myhiwi.de/ki-schulung",
+    },
+  ]);
+  expect(JSON.stringify(schemas)).not.toMatch(/AggregateRating|"review"/i);
+});
+
+test("@seo liefert das 1200-mal-630-Open-Graph-Bild als PNG", async ({ request }) => {
+  const response = await request.get("/ki-schulung/opengraph-image");
+  expect(response.status()).toBe(200);
+  expect(response.headers()["content-type"]).toContain("image/png");
+
+  const image = await response.body();
+  expect(image.subarray(0, 8)).toEqual(
+    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
+  );
+  expect(image.readUInt32BE(16)).toBe(1200);
+  expect(image.readUInt32BE(20)).toBe(630);
+  expect(image.byteLength).toBeGreaterThan(10_000);
+});
+
+test("@seo veröffentlicht den stabilen Sitemap-Eintrag", async ({ request }) => {
+  const response = await request.get("/sitemap.xml");
+  expect(response.status()).toBe(200);
+  const sitemap = await response.text();
+  const entry = sitemap
+    .split("<url>")
+    .find((item) => item.includes("<loc>https://myhiwi.de/ki-schulung</loc>"));
+
+  expect(entry).toBeDefined();
+  expect(entry).toContain("<lastmod>2026-07-22T00:00:00.000Z</lastmod>");
+  expect(entry).toContain("<changefreq>monthly</changefreq>");
+  expect(entry).toContain("<priority>0.9</priority>");
+});
+
+test("@seo macht die KI-Schulung in Footer und geöffnetem Drawer auffindbar", async ({ page }) => {
+  await page.setViewportSize({ width: 195, height: 422 });
+  await page.goto("/ki-schulung");
+
+  const footerLink = page
+    .locator("footer")
+    .getByRole("link", { name: "KI-Schulung für Unternehmen", exact: true });
+  await expect(footerLink).toBeVisible();
+  await expect(footerLink).toHaveAttribute("href", "/ki-schulung");
+
+  const documentWidth = await page.evaluate(
+    () => document.documentElement.scrollWidth,
+  );
+  expect(documentWidth).toBeLessThanOrEqual(337);
+
+  await page.getByRole("button", { name: "Menü öffnen" }).click();
+  const drawer = page.getByRole("dialog", { name: "Hauptmenü" });
+  const drawerLink = drawer.getByRole("link", {
+    name: "KI-Schulung für Unternehmen",
+    exact: true,
+  });
+  await expect(drawerLink).toBeVisible();
+  await expect(drawerLink).toHaveAttribute("href", "/ki-schulung");
+  await expect(drawerLink).toHaveAttribute("aria-current", "page");
+});

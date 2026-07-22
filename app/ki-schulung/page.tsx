@@ -22,7 +22,75 @@ export const metadata: Metadata = {
   description:
     "Dreistündige KI-Grundlagenschulung für Unternehmen: sinnvolle Anwendungen, bessere Prompts, Datenampel, Ergebnisprüfung und klare Nutzungsregeln.",
   alternates: { canonical: "https://myhiwi.de/ki-schulung" },
+  openGraph: {
+    title: "KI-Schulung für Unternehmen | MyHiwi AI-Startklar",
+    description:
+      "Drei Stunden live: KI-Grundlagen, gute Prompts, Datenampel, Ergebnisprüfung und klare Nutzungsregeln.",
+    url: "https://myhiwi.de/ki-schulung",
+    type: "website",
+    images: [
+      { url: "/ki-schulung/opengraph-image", width: 1200, height: 630 },
+    ],
+  },
 };
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: AI_STARTKLAR.name,
+    description: AI_STARTKLAR.summary,
+    serviceType: "KI-Grundlagenschulung für Unternehmen",
+    provider: {
+      "@type": "Organization",
+      name: "MyHiwi",
+      url: "https://myhiwi.de",
+    },
+    areaServed: { "@type": "Country", name: "Deutschland" },
+    url: "https://myhiwi.de/ki-schulung",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Online",
+        price: "1490",
+        priceCurrency: "EUR",
+      },
+      {
+        "@type": "Offer",
+        name: "Vor Ort",
+        price: "1790",
+        priceCurrency: "EUR",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: AI_STARTKLAR_FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Start",
+        item: "https://myhiwi.de",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "KI-Schulung",
+        item: "https://myhiwi.de/ki-schulung",
+      },
+    ],
+  },
+];
 
 const safeDocumentAnswer = (
   <p>
@@ -46,6 +114,13 @@ const faqItems: FAQItem[] = AI_STARTKLAR_FAQ.map((item) => ({
 export default function KiSchulungPage() {
   return (
     <>
+      {jsonLd.map((schema) => (
+        <script
+          key={schema["@type"]}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Section background="paper" padding="large">
         <Container>
           <div className="max-w-[820px]">
