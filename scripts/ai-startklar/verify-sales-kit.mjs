@@ -5,8 +5,19 @@ const root = process.cwd();
 const factsPath = path.join(root, "content/ai-startklar/product-facts.json");
 const salesDir = path.join(root, "content/ai-startklar/sales");
 const outputDir = path.join(root, "deliverables/ai-startklar/vertrieb");
-const requiredSources = [];
-const requiredOutputs = [];
+const requiredSources = [
+  "01-produkt-one-pager.md",
+  "02-erstgespraechsleitfaden.md",
+  "03-fit-risikocheck.md",
+];
+const requiredOutputs = [
+  "01-produkt-one-pager.docx",
+  "01-produkt-one-pager.pdf",
+  "02-erstgespraechsleitfaden.docx",
+  "02-erstgespraechsleitfaden.pdf",
+  "03-fit-risikocheck.docx",
+  "03-fit-risikocheck.pdf",
+];
 const forbidden = [
   /AI[- ]?Act[- ]?zertifiziert/i,
   /garantiert compliant/i,
