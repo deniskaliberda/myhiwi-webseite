@@ -92,3 +92,16 @@ test("@api weist eine unvollständige Anfrage vor dem Mailversand ab", async ({
     error: "Bitte füllen Sie alle Pflichtfelder aus.",
   });
 });
+
+test("@page rendert Nutzen, Ablauf, Preis und Leistungsgrenze im Server-HTML", async ({ request }) => {
+  const response = await request.get("/ki-schulung", { headers: { accept: "text/html" } });
+  expect(response.status()).toBe(200);
+  const html = await response.text();
+  expect(html).toContain("KI sinnvoll nutzen. Risiken erkennen. Sicherer entscheiden.");
+  expect(html).toContain("1.490");
+  expect(html).toContain("1.790");
+  expect(html).toContain("bis 15 Personen");
+  expect(html).toContain("keine Rechtsberatung");
+  expect(html).toContain('id="erstgespraech"');
+  expect(html).not.toMatch(/AI[- ]?Act[- ]?zertifiziert|garantiert compliant|100\s*%\s*DSGVO/i);
+});
