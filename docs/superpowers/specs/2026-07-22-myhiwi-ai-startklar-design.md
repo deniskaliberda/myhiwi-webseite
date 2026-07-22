@@ -129,7 +129,7 @@ Das Standardpaket enthält:
 | Variante | Preis | Rahmen |
 | --- | ---: | --- |
 | Online | 1.490 € netto | bis 15 Personen |
-| Vor Ort | 1.790 € netto | bis 15 Personen, zuzüglich größerer Anfahrtskosten |
+| Vor Ort | 1.790 € netto | bis 15 Personen; Reise- und gegebenenfalls Übernachtungsaufwand wird vor Beauftragung separat ausgewiesen |
 
 Preise gelten für das definierte Standardprodukt. Mehrere Gruppen, größere Teilnehmerzahlen, andere Sprachen, Sonderbranchen, Spezialtools oder vertiefte Governance-Anforderungen erhalten ein individuelles Angebot.
 
@@ -301,6 +301,15 @@ Der Kunde stellt sicher:
 - ausschließlich synthetische, ausreichend anonymisierte oder ausdrücklich freigegebene Übungsinhalte,
 - Benennung einer internen Ansprechperson für Datenschutz, IT-Sicherheit und Freigabefragen,
 - rechtzeitige Rücksendung des Vorbereitungsfragebogens.
+
+### 7.4 Aufzeichnung und Teilnehmerdaten
+
+- Die Schulung wird standardmäßig weder durch MyHiwi noch durch den Kunden aufgezeichnet.
+- Eine gewünschte Aufzeichnung ist kein Bestandteil des Standardpakets und muss vorab gesondert auf Zweck, Einwilligung oder andere Rechtsgrundlage, Zugriffe, Speicherort und Löschung geprüft werden.
+- Namen werden nur erhoben, soweit sie für Teilnahmeliste und persönliche Teilnahmebestätigung benötigt werden.
+- Teilnehmende tragen in Lerncheck und Übungen keine personenbezogenen oder vertraulichen Inhalte ein.
+- Speicherung, Übermittlung und Löschung der Teilnehmerdaten richten sich nach den jeweils gültigen MyHiwi-Datenschutz- und Aufbewahrungsregeln.
+- Der Kunde erhält nur die vereinbarte Dokumentation. Individuelle Lernantworten werden nicht für Leistungs- oder Beschäftigtenbewertungen verwendet.
 
 ## 8. Vorbereitung
 
@@ -523,6 +532,55 @@ Merksatz:
 4. ein persönlicher nächster Anwendungsfall pro Teilnehmer,
 5. Hinweis auf Unterlagen und Nachbesprechung.
 
+### 11.9 Verbindliche Dramaturgie der Trainerfolien
+
+Das Standarddeck umfasst 40 Kernfolien. Branchenspezifische Beispiele ersetzen gekennzeichnete Praxisfolien, ohne die Lernziele oder das Timing zu verändern.
+
+| Folie | Inhalt |
+| ---: | --- |
+| 1 | Titel, Kunde, Datum und Trainer |
+| 2 | Ergebnisversprechen der drei Stunden |
+| 3 | Agenda und Pausenzeit |
+| 4 | Sicherer Arbeitsrahmen: keine sensiblen Live-Daten |
+| 5 | Kurze Handzeichen-Abfrage zur bisherigen Nutzung |
+| 6 | Was mit „KI“ in dieser Schulung gemeint ist |
+| 7 | Generative KI, Suchmaschine und klassische Software |
+| 8 | Vereinfachtes Funktionsmodell eines Sprachmodells |
+| 9 | Modell, Anwendung, Kontotyp und Einstellungen unterscheiden |
+| 10 | Sechs typische Aufgabenarten im Arbeitsalltag |
+| 11 | Geeignete, kontrollbedürftige und ungeeignete Aufgaben |
+| 12 | Überblick über typische Grenzen und Risiken |
+| 13 | Demonstration einer überzeugenden falschen Antwort |
+| 14 | Aktualität, Quellen und erfundene Belege |
+| 15 | Verzerrungen, Stereotype und fehlender Kontext |
+| 16 | Rechte an Eingaben und Ausgaben |
+| 17 | Miniübung zur Einordnung von drei Aufgaben |
+| 18 | Warum klare Prompts bessere Arbeitsgrundlagen schaffen |
+| 19 | Vorher-Nachher-Beispiel eines Prompts |
+| 20 | Die sechs Bausteine der MyHiwi-Promptvorlage |
+| 21 | Basisübung: schlechten Prompt verbessern |
+| 22 | Fortgeschritten: Ausgabe kritisieren und überarbeiten |
+| 23 | Pause und Wiedereinstiegszeit |
+| 24 | Verantwortung bleibt beim Menschen |
+| 25 | Nur freigegebene Werkzeuge und Konten |
+| 26 | Die Datenampel im Überblick |
+| 27 | Grün: geeignete Beispieldaten |
+| 28 | Gelb: erst intern prüfen und freigeben |
+| 29 | Rot: im Basistraining niemals eingeben |
+| 30 | Besonders folgenreiche Anwendungsfälle erkennen |
+| 31 | Menschliche Kontrolle und Freigabewege |
+| 32 | Fünf betriebliche Grundregeln |
+| 33 | Unternehmensbezogener Praxisfall und Ziel |
+| 34 | Schritt 1: Aufgabe und gewünschtes Ergebnis |
+| 35 | Schritt 2: Daten einordnen |
+| 36 | Schritt 3: Prompt formulieren |
+| 37 | Schritt 4: Beispielausgabe analysieren |
+| 38 | Siebenstufige Prüfroutine und Verbesserung |
+| 39 | Zehnteiliger Lern- und Transfercheck |
+| 40 | Ansprechpartner, nächste Schritte und Abschluss |
+
+Zusatzfolien dürfen nur als Backup für Fragen oder eine zweite Übungsstufe angelegt werden. Sie verändern nicht die zugesagte Dauer.
+
 ## 12. Branchenbezogene Praxisfälle
 
 Alle Fälle werden synthetisch formuliert und vorab an Branche, Tonalität und Rollen angepasst.
@@ -626,7 +684,20 @@ Die Kundenversion enthält Felder für freigegebene Werkzeuge, interne Ansprechp
 9. Warum reicht ein privater kostenloser Toolzugang nicht automatisch für Unternehmensdaten?
 10. An wen eskalieren Sie im Unternehmen einen unklaren Fall?
 
-### 15.2 Auswertung
+### 15.2 Lösungsschlüssel
+
+1. Generative KI erzeugt sprachlich wahrscheinliche Ausgaben und prüft nicht automatisch, ob jede Aussage wahr, aktuell oder vollständig ist.
+2. Aufgabe, Kontext, Material, Anforderungen, Ausgabeformat und Prüfkriterien.
+3. Zwei passende Beispiele aus: erfundene Fakten, veraltete Informationen, falsche Quellen, Verzerrungen, Datenabfluss, Rechteprobleme oder unangemessene Ausgaben.
+4. Insbesondere Zugangsdaten, Geschäftsgeheimnisse, Beschäftigten-, Bewerber-, Kunden-, Patienten-, Gesundheits- und andere besonders sensible Daten sowie sicherheitskritische Informationen.
+5. Nicht eingeben, sondern Werkzeug, Zweck, Daten und interne Freigabe zuerst mit der zuständigen Stelle klären.
+6. Der verantwortliche Mensch beziehungsweise die vom Unternehmen festgelegte freigabeberechtigte Stelle.
+7. Zahlen mit einer belastbaren Originalquelle abgleichen; Quelle auf Existenz, Aussage, Aktualität und Kontext prüfen.
+8. Einsatz stoppen, nicht automatisch entscheiden lassen und den Fall an die zuständige Fach-, Rechts-, Datenschutz- oder Sicherheitsstelle geben.
+9. Weil Vertrag, Kontotyp, Einstellungen, Datenverwendung, Speicherort, Zugriffe und Unternehmensfreigabe entscheidend sind.
+10. Die im Management-Vorgespräch benannte interne Stelle; ohne benannte Stelle wird der Fall an die verantwortliche Führungskraft zurückgegeben.
+
+### 15.3 Auswertung
 
 - Der Check dient Lerntransfer und Dokumentation, nicht als formale Prüfung.
 - Sieben richtige Antworten gelten intern als Hinweis auf solides Basisverständnis.
@@ -634,13 +705,13 @@ Die Kundenversion enthält Felder für freigegebene Werkzeuge, interne Ansprechp
 - Eine Teilnahmebestätigung wird nicht als Kompetenzzertifikat bezeichnet.
 - Es wird nicht behauptet, ein Ergebnis beweise Compliance.
 
-### 15.3 Teilnahmebestätigung
+### 15.4 Teilnahmebestätigung
 
 Verbindliche Kernaussage:
 
 > **[Name]** hat am **[Datum]** an der dreistündigen Live-Schulung „MyHiwi AI-Startklar“ teilgenommen. Behandelt wurden Grundlagen generativer KI, geeignete Anwendungsfälle, Promptgestaltung, Daten- und Risikoeinordnung, Prüfung von KI-Ausgaben, menschliche Kontrolle und betriebliche Nutzungsregeln. Diese Bestätigung dokumentiert die Teilnahme. Sie ist keine rechtliche Zertifizierung und bestätigt keine vollständige Compliance einer Person oder Organisation.
 
-### 15.4 Interne Schulungsdokumentation
+### 15.5 Interne Schulungsdokumentation
 
 Dokumentiert werden:
 
@@ -816,7 +887,7 @@ Online:
 
 Vor Ort:
 
-> 1.790 € netto · bis 15 Personen · zuzüglich größerer Anfahrtskosten
+> 1.790 € netto · bis 15 Personen · Reise- und gegebenenfalls Übernachtungsaufwand wird vor Beauftragung separat ausgewiesen
 
 Hinweis:
 
@@ -913,6 +984,22 @@ Empfohlene 30-Tage-Maßnahmen:
 - Vorfälle und Unsicherheiten erfassbar machen,
 - Auffrischung oder Vertiefung nach sechs bis zwölf Monaten prüfen.
 
+### 20.1 Produktmessung nach dem Start
+
+Für die ersten fünf bezahlten Durchführungen werden ohne erfundene Marketingkennzahlen dokumentiert:
+
+- Herkunft der Anfrage,
+- Verhältnis aus Erstgesprächen, passenden Anfragen, Angeboten und Buchungen,
+- häufigste Gründe für Standard-Fit oder Sonderbedarf,
+- gewählter Praxisfokus,
+- Einhaltung der 180 Minuten,
+- häufigste falsche Lerncheck-Antworten,
+- offene Management-Maßnahmen,
+- qualitative Rückmeldung zu Verständlichkeit, Praxisnähe und Sicherheit,
+- aufgetretene Daten-, Technik- oder Abgrenzungsprobleme.
+
+Erst nach diesen fünf Durchführungen werden belastbare interne Zielwerte und mögliche Änderungen an Preis, Teilnehmerzahl, Dauer oder Materialien beschlossen. Kundenaussagen oder Kennzahlen dürfen nur mit belegbarer Grundlage und Freigabe auf die Landingpage übernommen werden.
+
 ## 21. Folgeangebote
 
 Die Basisschulung ist ein eigenständiges Produkt. Mögliche Folgeangebote werden nur bei erkennbarem Bedarf angeboten:
@@ -977,7 +1064,7 @@ Für ein Erstgespräch am nächsten Arbeitstag müssen noch nicht alle Schulungs
 
 Die vertriebliche Kurzfassung lautet:
 
-> MyHiwi AI-Startklar ist eine dreistündige Live-Schulung für Teams bis 15 Personen. Wir schaffen einen gemeinsamen KI-Grundstand, trainieren gute Prompts, sensible Dateneinordnung und Ergebnisprüfung und passen zwei Übungen an den Arbeitsalltag des Unternehmens an. Enthalten sind Vor- und Nachgespräch, Teilnehmerunterlagen, Nutzungsregeln und Teilnahmebestätigungen. Online kostet das Standardpaket 1.490 Euro netto, vor Ort 1.790 Euro netto zuzüglich größerer Anfahrtskosten.
+> MyHiwi AI-Startklar ist eine dreistündige Live-Schulung für Teams bis 15 Personen. Wir schaffen einen gemeinsamen KI-Grundstand, trainieren gute Prompts, sensible Dateneinordnung und Ergebnisprüfung und passen zwei Übungen an den Arbeitsalltag des Unternehmens an. Enthalten sind Vor- und Nachgespräch, Teilnehmerunterlagen, Nutzungsregeln und Teilnahmebestätigungen. Online kostet das Standardpaket 1.490 Euro netto, vor Ort 1.790 Euro netto. Reise- und gegebenenfalls Übernachtungsaufwand wird vor Beauftragung separat ausgewiesen.
 
 ## 24. Abnahmekriterien für das Launch-Kit
 
@@ -1002,7 +1089,7 @@ Das Produkt ist operativ startklar, wenn:
 - dreistündiges Kernformat,
 - maximal 15 Personen,
 - Onlinepreis 1.490 Euro netto,
-- Vor-Ort-Preis 1.790 Euro netto zuzüglich größerer Anfahrtskosten,
+- Vor-Ort-Preis 1.790 Euro netto; Reise- und gegebenenfalls Übernachtungsaufwand wird separat ausgewiesen,
 - 30 Minuten Management-Vorgespräch und 30 Minuten Nachbesprechung,
 - fester Kern mit austauschbarem Branchenblock,
 - Landingpage-Variante „Vertrauen und Klarheit“,
