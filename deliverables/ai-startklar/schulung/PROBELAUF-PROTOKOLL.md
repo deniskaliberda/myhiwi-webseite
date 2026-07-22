@@ -15,14 +15,14 @@ Dieses Protokoll dokumentiert einen vollständigen, evidenzbasierten Desktop-Dur
 - **Prüfwerkzeuge:** Quellenabgleich, Node-Verifier, LibreOffice-/Poppler-Rendering, PDF-/ZIP-Integritätsprüfung und visuelle Seiten-/Folienprüfung
 - **Praxisfall:** `content/ai-startklar/training/praxisfaelle/01-buero-verwaltung.md` – ausschließlich synthetische Angaben
 - **Deck:** sichtbarer Stand `v1.0 · 22.07.2026`; letzte Deck-Korrektur `fbed065`
-- **Trainerleitfaden:** Materialstand Commit `61af39a`; in der Datei fehlt eine sichtbare semantische Versionsnummer (Gate M1)
+- **Trainerleitfaden:** Materialstand einschließlich Hardening `4b0d2f3`; sichtbare Metadaten `Version 1.0 · Stand 22. Juli 2026` auf allen 22 Seiten
 
 ## Statusmatrix
 
 | Gate | Status | Aussage |
 | --- | --- | --- |
 | Verkaufs-/Erstgesprächsbereit | **Bereit** | Produktgrenzen, 180-Minuten-Agenda, Unterlagen, Praxisfall, Kundenfragen und Vorbedingungen können belastbar vorgestellt werden. |
-| Materialbereit | **Bedingt bereit; Hardening läuft** | Das kundenfähige PDF-Set ist vollständig und lesbar. Metadaten-, Index-, Dokumentations- und Zwei-Beispiele-Lücken werden parallel korrigiert und danach retestet; das editierbare DOCX-Set benötigt zusätzlich den Layout-Retest D5. |
+| Materialbereit | **Bereit** | PDF- und DOCX-Set sind vollständig, versioniert und lesbar. Metadaten, Paketindex, Dokumentationsblatt und die Zuordnung der zwei vorbereiteten Beispiele wurden im Hardening `4b0d2f3` geschlossen und retestet. |
 | Vollständiger moderierter 175–185-Minuten-Human-Probelauf | **Ausstehend / nicht behauptet** | Der Desktop-Audit ersetzt keine Live-Moderation mit Teilnehmenden und keine Messung der tatsächlichen Schulungsdauer. |
 
 ## Geplanter 180-Minuten-Ablauf und Materialverzahnung
@@ -82,10 +82,11 @@ Geprüfter Weg: Aufgabenliste plus Rückfragen/Agenda als Ziel → sechs synthet
 - Quelleninventar: **14/14** erwartete Markdown-Quellen vorhanden (8 Kernquellen einschließlich zweier Lerncheck-Quellen und 6 Praxisfälle).
 - Ausgabeinventar: **16/16** erwartete Binärausgaben vorhanden (PPTX/PDF plus 7 DOCX/PDF-Paare).
 - Baseline zu Auditbeginn: `node scripts/ai-startklar/verify-training-kit.mjs` → **PASS – 40 Folien, 180 Minuten** für den damaligen Prüfstand.
-- Frischer Abschlusslauf nach paralleler Verschärfung des Verifiers: **FAIL** auf genau den inzwischen explizit geprüften Metadaten-/Versions-, Dokumentations- und Zwei-Beispiele-Lücken D1, D3 und D4. Dieser Lauf wird nicht als PASS ausgegeben; der vollständige Retest folgt nach dem laufenden Hardening. OOXML-ZIP- und PDF-Integrität blieben dabei jeweils **PASS**.
+- Frischer Abschlusslauf nach Hardening `4b0d2f3`: `node scripts/ai-startklar/verify-training-kit.mjs` → **PASS – 40 Folien, 180 Minuten**; der verschärfte Verifier prüft zusätzlich Quellenmetadaten, DOCX-Core-Properties und Footer, sichtbare PDF-Metadaten auf jeder Seite, Paketindex, Dokumentationsfelder sowie Kurzfall A und Hauptfall B.
+- Frischer Vertriebsabgleich nach Hardening: `node scripts/ai-startklar/verify-sales-kit.mjs` → **PASS**.
 - Deck: **40/40 PPTX-Folien** und **40/40 PDF-Seiten** gerendert und visuell geprüft; kein inhaltliches Überlappen oder Abschneiden im kundenfähigen Deck-PDF.
 - Dokument-PDFs: 22 + 12 + 1 + 1 + 1 + 2 + 5 = **44/44 Seiten** gerendert; Hauptinhalte und Arbeitsfelder sind im gelieferten PDF-Set lesbar.
-- DOCX: **44/44 Seiten** frisch gerendert und gegen die gelieferten PDFs abgeglichen; Befund D1 bleibt für einzelne Kopf-/Abschnittszeilen offen.
+- DOCX: **44/44 Seiten** frisch gerendert und gegen die gelieferten PDFs abgeglichen; keine abgeschnittenen Kopf-, Abschnitts- oder Fußzeilen im Abschluss-Retest.
 - Daten-/Claim-Prüfung im Baseline-Lauf: keine verbotenen Vollständigkeits-, Zertifizierungs-, Rechts- oder Compliance-Versprechen; Übungen bleiben synthetisch, Safety Stops sind vorhanden.
 - Antwort-Leak-Prüfung im Baseline-Lauf: Lerncheck für Teilnehmende enthält keine Musterantworten; Lösungsschlüssel ist auf allen fünf Seiten als Trainerunterlage gekennzeichnet.
 - Renderbelege (nicht Teil des Commits): `.superpowers/sdd/training-task-6-render/deck-pptx/`, `.superpowers/sdd/training-task-6-render/pdfs/`, `.superpowers/sdd/training-task-6-render/docx/`.
@@ -94,13 +95,13 @@ Geprüfter Weg: Aufgabenliste plus Rückfragen/Agenda als Ziel → sechs synthet
 
 | ID | Befund | Korrektur / Retest | Ergebnis |
 | --- | --- | --- | --- |
-| D1 | Metadaten-/Versionsstand ist im Gesamtpaket nicht durchgehend einheitlich sichtbar. | Parallel-Hardening ergänzt/vereinheitlicht den Stand. | **Korrektur läuft; Retest nach Hardening** |
-| D2 | Index-/Navigationslücke im finalen Gesamtpaket. | Parallel-Hardening ergänzt die fehlende Paketnavigation. | **Korrektur läuft; Retest nach Hardening** |
-| D3 | Dokumentationslücke im finalen Gesamtpaket. | Parallel-Hardening ergänzt die fehlende Betriebs-/Übergabedokumentation. | **Korrektur läuft; Retest nach Hardening** |
-| D4 | Zwei geforderte Beispiele sind im finalen Paket noch nicht vollständig nachgewiesen. | Parallel-Hardening ergänzt die beiden Beispiele und führt den Paket-Retest aus. | **Korrektur läuft; Retest nach Hardening** |
-| D5 | Einzelne DOCX-Neurender zeigen gegenüber den gelieferten PDFs Abweichungen bzw. Anschnitt an laufenden Kopf-/Abschnittszeilen. Die kundenfähigen PDF-Hauptinhalte bleiben lesbar. | Vor Übergabe editierbarer DOCX: in der Ziel-Office-Version öffnen, Kopf-/Abschnittsanker korrigieren, alle 44 Seiten erneut rendern und visuell prüfen. | **Retest nach Hardening erforderlich** |
+| D1 | Metadaten-/Versionsstand war im Gesamtpaket nicht durchgehend einheitlich sichtbar. | Hardening `4b0d2f3` ergänzt Quellenmetadaten sowie sichtbare Footer und korrigierte Core-Properties; Verifier prüft jede PDF-Seite. | PASS |
+| D2 | Index-/Navigationslücke im finalen Gesamtpaket. | Separater Trainings- und Delivery-Index ergänzt, ohne den Vertriebs-Paketindex zu verändern. | PASS |
+| D3 | Dokumentationslücke im finalen Gesamtpaket. | Leitfaden Seite 22 ist jetzt ein ausfüllbares einseitiges Nachdokumentationsblatt mit allen Pflichtfeldern. | PASS |
+| D4 | Zwei geforderte Beispiele waren im finalen Paket noch nicht vollständig nachgewiesen. | Kurzfall A ist Modul 4/Folien 21–22 und Hauptfall B den Modulen 6–7 verbindlich zugeordnet; Teilnehmerheft und Verifier bilden die Zuordnung ab. | PASS |
+| D5 | Einzelne DOCX-Neurender zeigten gegenüber den gelieferten PDFs Abweichungen bzw. Anschnitt an laufenden Kopf-/Abschnittszeilen. | Alle sieben Dokumente neu erzeugt; sämtliche 44 PDF- und DOCX-Seiten frisch gerendert und visuell auf Anschnitt geprüft. | PASS |
 | R1 | Frühere Deck-Lesbarkeitskorrektur `fbed065`. | 40 PPTX-Folien und 40 Deck-PDF-Seiten erneut gerendert/geprüft. | PASS |
-| R2 | Frühere Vervollständigung des Leitfadens `61af39a`. | 22 Seiten, Modulzeiten, Folienfolgen, zehn Kurzlösungen, Abschluss und Nachdokumentation erneut geprüft. | Inhaltlich PASS; D1–D5 bleiben separat im Hardening/Retest. |
+| R2 | Frühere Vervollständigung des Leitfadens `61af39a`. | 22 Seiten, Modulzeiten, Folienfolgen, zehn Kurzlösungen, Abschluss und Nachdokumentation erneut geprüft. | PASS; D1–D5 sind mit `4b0d2f3` geschlossen. |
 
 ## Offene Betriebs-, Kunden- und Deployment-Gates
 
@@ -110,11 +111,11 @@ Geprüfter Weg: Aufgabenliste plus Rückfragen/Agenda als Ziel → sechs synthet
 4. Interne Rollen für Fachprüfung, Toolfreigabe, Datenschutz, Informationssicherheit, Rechte/Kommunikation und Eskalation eintragen.
 5. Raum/Link, Präsentation, Strom/Netz und Ausdrucke real prüfen; Offline-Fallmappe bereitlegen.
 6. Lösungsschlüssel getrennt und nur an Trainer ausgeben; Teilnehmerunterlagen vor Verteilung auf Antwort-Leaks prüfen.
-7. D1–D5 im Parallel-Hardening schließen und die finalen kundenfähigen Dateien danach versionieren, inventarisieren und erneut rendern.
+7. Vor jeder Kundenlieferung Version 1.0 und Stand 22. Juli 2026 im Paketindex sowie in den finalen Ausgaben abgleichen; spätere Inhaltsänderungen gemeinsam versionieren und neu rendern.
 8. Einen **vollständig moderierten 175–185-Minuten-Human-Probelauf inklusive Pause** mit realer Moderation, Fragen, Übungsdynamik und Nachbesprechung durchführen. Dieses Gate ist weiterhin **ausstehend**.
 9. Externen Resend-Provider-E2E mit verifizierter Senderidentität in der Zielumgebung durchführen; der lokale/technische Nachweis ersetzt ihn nicht.
 10. Eine qualifizierte Rechts-, Datenschutz- und Informationssicherheitsprüfung der kunden-/branchenspezifischen Fassung durchführen; das Basistraining erteilt keine Rechts- oder Security-Freigabe.
 
 ## Schlussbefund
 
-Das Produkt ist für Verkauf und Erstgespräch belastbar beschreibbar; der geplante Ablauf ist auf exakt 180 Minuten geschlossen und der sichere synthetische Bürofall ist vollständig durchspielbar. Das PDF-Set ist als Durchführungsbasis nutzbar. D1–D5 werden im Parallel-Hardening geschlossen und anschließend retestet. Resend-Provider-E2E, qualifizierte Rechts-/Security-Prüfung und Human-Probelauf bleiben reale externe Gates. Eine Aussage wie „180 Minuten live erfolgreich geprobt“ wird ausdrücklich **nicht** getroffen.
+Das Produkt ist für Verkauf und Erstgespräch belastbar beschreibbar; der geplante Ablauf ist auf exakt 180 Minuten geschlossen und der sichere synthetische Bürofall ist vollständig durchspielbar. Das versionierte PDF-/DOCX-Set ist als Durchführungsbasis nutzbar, D1–D5 sind geschlossen und retestet. Resend-Provider-E2E, qualifizierte Rechts-/Security-Prüfung und Human-Probelauf bleiben reale externe Gates. Eine Aussage wie „180 Minuten live erfolgreich geprobt“ wird ausdrücklich **nicht** getroffen.
