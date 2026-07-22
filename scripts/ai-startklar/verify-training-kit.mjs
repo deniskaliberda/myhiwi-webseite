@@ -104,6 +104,25 @@ const expectedSlideTopics = [
   "Zehnteiliger Lern- und Transfercheck",
   "Ansprechpartner, nächste Schritte und Abschluss",
 ];
+const expectedDeckTitleOverrides = new Map([
+  [1, "AI-Startklar"],
+  [4, "Sicher arbeiten: keine sensiblen Live-Daten"],
+  [5, "Wie oft nutzen Sie generative KI?"],
+  [7, "Drei Werkzeugarten unterscheiden"],
+  [8, "So erzeugt ein Sprachmodell Antworten"],
+  [9, "Modell, Anwendung, Konto und Einstellungen"],
+  [11, "Aufgaben nach Risiko einordnen"],
+  [13, "Eine überzeugende Antwort kann falsch sein"],
+  [18, "Klare Prompts schaffen bessere Arbeitsgrundlagen"],
+  [22, "Ausgabe kritisieren und gezielt überarbeiten"],
+  [23, "Pause"],
+  [30, "Folgenreiche Anwendungsfälle früh stoppen"],
+  [40, "Ansprechpartner und nächste Schritte"],
+]);
+const officialAiActSources = [
+  "https://eur-lex.europa.eu/eli/reg/2024/1689/",
+  "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+];
 const slideFields = [
   "Thema",
   "Ziel",
@@ -262,7 +281,34 @@ if (fs.existsSync(pptxPath)) {
     noteTexts.forEach((text, index) => {
       if (!text.includes("Sprechhinweis:")) fail(`slide ${index + 1}: speaker note missing Sprechhinweis`);
       if (!text.includes("Moderation:")) fail(`slide ${index + 1}: speaker note missing facilitation note`);
+      if (!text.includes(`Thema: ${expectedSlideTopics[index]}`)) {
+        fail(`slide ${index + 1}: speaker note is not mapped to manuscript topic "${expectedSlideTopics[index]}"`);
+      }
     });
+
+    slideTexts.forEach((text, index) => {
+      const number = index + 1;
+      const expectedTitle = expectedDeckTitleOverrides.get(number) ?? expectedSlideTopics[index];
+      if (!text.includes(expectedTitle)) {
+        fail(`slide ${number}: expected deck title "${expectedTitle}"`);
+      }
+    });
+
+    for (const [kind, texts] of [["slide", slideTexts], ["speaker notes", noteTexts]]) {
+      texts.forEach((text, index) => {
+        for (const pattern of forbiddenClaims) {
+          if (pattern.test(text)) fail(`${kind} ${index + 1}: forbidden claim ${pattern}`);
+        }
+      });
+    }
+
+    for (const slideNumber of [24, 25, 30, 32]) {
+      for (const source of officialAiActSources) {
+        if (!noteTexts[slideNumber - 1].includes(source)) {
+          fail(`slide ${slideNumber}: speaker notes missing official source ${source}`);
+        }
+      }
+    }
 
     const requiredSlideStrings = new Map([
       [23, ["Pause", "Daten einordnen", "praktisch anwenden"]],
