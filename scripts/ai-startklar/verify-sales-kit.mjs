@@ -4,46 +4,24 @@ import zlib from "node:zlib";
 
 const root = process.cwd();
 const factsPath = path.join(root, "content/ai-startklar/product-facts.json");
+const readmePath = path.join(root, "content/ai-startklar/README.md");
 const salesDir = path.join(root, "content/ai-startklar/sales");
 const outputDir = path.join(root, "deliverables/ai-startklar/vertrieb");
-const requiredSources = [
-  "01-produkt-one-pager.md",
-  "02-erstgespraechsleitfaden.md",
-  "03-fit-risikocheck.md",
-  "04-angebotsvorlage.md",
-  "05-vorbereitungsfragebogen.md",
-  "13-teilnahmeliste.md",
-  "14-teilnahmebestaetigung.md",
-  "15-ki-nutzungsregel.md",
-  "16-management-massnahmenblatt.md",
-  "17-nachbesprechungsprotokoll.md",
-  "19-anfragebestaetigung.md",
+const packageIndex = [
+  ["01", "01-produkt-one-pager.md", ["01-produkt-one-pager.docx", "01-produkt-one-pager.pdf"], "Geschäftsführung und Entscheider/innen", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Orientierung und Bedarfserkennung"],
+  ["02", "02-erstgespraechsleitfaden.md", ["02-erstgespraechsleitfaden.docx", "02-erstgespraechsleitfaden.pdf"], "MyHiwi Vertrieb", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Erstgespräch und Qualifizierung"],
+  ["03", "03-fit-risikocheck.md", ["03-fit-risikocheck.docx", "03-fit-risikocheck.pdf"], "MyHiwi Vertrieb und Delivery", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Fit- und Risikoprüfung"],
+  ["04", "04-angebotsvorlage.md", ["04-angebotsvorlage.docx", "04-angebotsvorlage.pdf"], "Kundenentscheidende und Einkauf", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Angebot und Beauftragung"],
+  ["05", "05-vorbereitungsfragebogen.md", ["05-vorbereitungsfragebogen.docx", "05-vorbereitungsfragebogen.pdf"], "Kundenansprechperson und Management", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Sichere Vorbereitung"],
+  ["13", "13-teilnahmeliste.md", ["13-teilnahmeliste.xlsx", "13-teilnahmeliste.docx", "13-teilnahmeliste.pdf"], "Trainer/in und Teilnehmende", "Markdown, XLSX und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Durchführung und Anwesenheitsdokumentation"],
+  ["14", "14-teilnahmebestaetigung.md", ["14-teilnahmebestaetigung.docx", "14-teilnahmebestaetigung.pdf"], "Teilnehmende und Kundenorganisation", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Nachbereitung und Teilnahmenachweis"],
+  ["15", "15-ki-nutzungsregel.md", ["15-ki-nutzungsregel.docx", "15-ki-nutzungsregel.pdf"], "Management und Mitarbeitende", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Betriebliche Einführung und Regelsetzung"],
+  ["16", "16-management-massnahmenblatt.md", ["16-management-massnahmenblatt.docx", "16-management-massnahmenblatt.pdf"], "Management", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "30-Tage-Umsetzung"],
+  ["17", "17-nachbesprechungsprotokoll.md", ["17-nachbesprechungsprotokoll.docx", "17-nachbesprechungsprotokoll.pdf"], "Management und MyHiwi", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Management-Follow-up"],
+  ["19", "19-anfragebestaetigung.md", ["19-anfragebestaetigung.docx", "19-anfragebestaetigung.pdf"], "Interessentinnen und Interessenten", "Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen", "Anfrageeingang und Bestätigung"],
 ];
-const requiredOutputs = [
-  "01-produkt-one-pager.docx",
-  "01-produkt-one-pager.pdf",
-  "02-erstgespraechsleitfaden.docx",
-  "02-erstgespraechsleitfaden.pdf",
-  "03-fit-risikocheck.docx",
-  "03-fit-risikocheck.pdf",
-  "04-angebotsvorlage.docx",
-  "04-angebotsvorlage.pdf",
-  "05-vorbereitungsfragebogen.docx",
-  "05-vorbereitungsfragebogen.pdf",
-  "13-teilnahmeliste.xlsx",
-  "13-teilnahmeliste.docx",
-  "13-teilnahmeliste.pdf",
-  "14-teilnahmebestaetigung.docx",
-  "14-teilnahmebestaetigung.pdf",
-  "15-ki-nutzungsregel.docx",
-  "15-ki-nutzungsregel.pdf",
-  "16-management-massnahmenblatt.docx",
-  "16-management-massnahmenblatt.pdf",
-  "17-nachbesprechungsprotokoll.docx",
-  "17-nachbesprechungsprotokoll.pdf",
-  "19-anfragebestaetigung.docx",
-  "19-anfragebestaetigung.pdf",
-];
+const requiredSources = packageIndex.map(([, source]) => source);
+const requiredOutputs = packageIndex.flatMap(([, , outputs]) => outputs);
 const forbidden = [
   /AI[- ]?Act[- ]?zertifiziert/i,
   /garantiert compliant/i,
@@ -53,6 +31,39 @@ const forbidden = [
 function fail(message) {
   console.error(`FAIL: ${message}`);
   process.exitCode = 1;
+}
+
+function verifyReadme(file) {
+  if (!fs.existsSync(file)) {
+    fail("missing content/ai-startklar/README.md");
+    return;
+  }
+  const text = fs.readFileSync(file, "utf8");
+  const expectedMetadata = [
+    "**Version:** 1.0",
+    "**Stand:** 22. Juli 2026",
+    "**Dokumenttyp:** Paketindex und Pflegehinweise",
+  ];
+  for (const value of expectedMetadata) {
+    if (!text.includes(value)) fail(`README.md must contain ${JSON.stringify(value)}`);
+  }
+
+  const section = text.match(/## Paketindex\n([\s\S]*?)(?:\n## |$)/)?.[1] ?? "";
+  const actualRows = section
+    .split("\n")
+    .filter((line) => /^\|\s*\d{2}\s*\|/.test(line))
+    .map((line) => line.split("|").slice(1, -1).map((value) => value.trim()));
+  const expectedRows = packageIndex.map(([number, source, outputs, audience, editability, journey]) => [
+    number,
+    `\`${source}\``,
+    outputs.map((output) => `\`${output}\``).join(", "),
+    audience,
+    editability,
+    journey,
+  ]);
+  if (JSON.stringify(actualRows) !== JSON.stringify(expectedRows)) {
+    fail("README.md package index must contain exactly the 11 canonical source/output mappings with audience, editability, and customer journey");
+  }
 }
 
 function readZipEntries(file) {
@@ -289,6 +300,8 @@ function verifyActionSource(file) {
     }
   });
 }
+
+verifyReadme(readmePath);
 
 requireText("13-teilnahmeliste.md", [
   "Kunde",
