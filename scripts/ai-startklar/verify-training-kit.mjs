@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
@@ -43,6 +44,7 @@ const packageVersionSource = "**Version:** 1.0";
 const packageStandSource = "**Stand:** 22. Juli 2026";
 const packageVersionVisible = "Version 1.0";
 const packageStandVisible = "Stand 22. Juli 2026";
+const expectedDeckFooterImageInventoryHash = "8661ce4ccd6be22ba4b938c0805e3c71d4a6752e33ff89f07a335ff304c11cd4";
 const versionedDocumentFiles = [
   "07-trainerleitfaden",
   "08-teilnehmerheft",
@@ -496,6 +498,12 @@ function readZipEntry(archive, entry) {
   });
 }
 
+function readZipBuffer(archive, entry) {
+  return execFileSync("unzip", ["-p", archive, entry], {
+    maxBuffer: 10 * 1024 * 1024,
+  });
+}
+
 function listZipEntries(archive) {
   return execFileSync("unzip", ["-Z1", archive], {
     encoding: "utf8",
@@ -537,12 +545,67 @@ if (fs.existsSync(pptxPath)) {
     if (slideEntries.length !== 40) fail(`trainer deck: expected 40 slides, found ${slideEntries.length}`);
     if (noteEntries.length !== 40) fail(`trainer deck: expected 40 speaker-note pages, found ${noteEntries.length}`);
 
-    const slideTexts = Array.from({ length: 40 }, (_, index) =>
-      xmlText(readZipEntry(pptxPath, `ppt/slides/slide${index + 1}.xml`))
+    const coreXml = readZipEntry(pptxPath, "docProps/core.xml");
+    for (const signal of [
+      "MyHiwi",
+      "AI-Startklar",
+      "Trainerfolien",
+      "Version 1.0",
+      "Stand 22. Juli 2026",
+      "2026-07-22T00:00:00Z",
+    ]) {
+      if (!coreXml.includes(signal)) fail(`trainer deck: core properties missing "${signal}"`);
+    }
+    if (coreXml.includes("<dc:title>Presentation</dc:title>")) {
+      fail("trainer deck: generic PPTX title must be replaced");
+    }
+
+    const slideXmls = Array.from({ length: 40 }, (_, index) =>
+      readZipEntry(pptxPath, `ppt/slides/slide${index + 1}.xml`)
     );
+    const slideTexts = slideXmls.map((xml) => xmlText(xml));
     const noteTexts = Array.from({ length: 40 }, (_, index) =>
       xmlText(readZipEntry(pptxPath, `ppt/notesSlides/notesSlide${index + 1}.xml`))
     );
+
+    if (!slideTexts[0].includes("v1.0") || !slideTexts[0].includes("Stand 22.07.2026")) {
+      fail("trainer deck: title slide missing visible version/stand metadata");
+    }
+    if (!slideTexts[22].includes("v1.0") || !slideTexts[22].includes("Stand 22.07.2026")) {
+      fail("trainer deck: pause slide missing visible version/stand metadata");
+    }
+
+    const footerImageInventory = [];
+    slideXmls.forEach((xml, index) => {
+      const slideNumber = index + 1;
+      if (slideNumber === 1 || slideNumber === 23) return;
+
+      const footerPicture = [...xml.matchAll(/<p:pic>[\s\S]*?<\/p:pic>/g)]
+        .map((match) => match[0])
+        .find((picture) => picture.includes('y="6324600"') && picture.includes('cy="533400"'));
+      const relationshipId = footerPicture?.match(/<a:blip\b[^>]*\br:embed="([^"]+)"/)?.[1];
+      if (!footerPicture || !relationshipId) {
+        fail(`slide ${slideNumber}: missing the visible versioned footer image`);
+        return;
+      }
+
+      const relationships = readZipEntry(pptxPath, `ppt/slides/_rels/slide${slideNumber}.xml.rels`);
+      const relationshipTag = [...relationships.matchAll(/<Relationship\b[^>]*\/>/g)]
+        .map((match) => match[0])
+        .find((tag) => tag.includes(`Id="${relationshipId}"`));
+      const target = relationshipTag?.match(/\bTarget="([^"]+)"/)?.[1]?.replace(/^\//, "");
+      if (!target?.startsWith("ppt/media/")) {
+        fail(`slide ${slideNumber}: footer image relationship is missing or invalid`);
+        return;
+      }
+
+      const imageHash = crypto.createHash("sha256").update(readZipBuffer(pptxPath, target)).digest("hex");
+      footerImageInventory.push(`${slideNumber}:${imageHash}`);
+    });
+    const footerInventoryHash = crypto.createHash("sha256").update(footerImageInventory.join("\n")).digest("hex");
+    if (footerInventoryHash !== expectedDeckFooterImageInventoryHash) {
+      fail("trainer deck: versioned footer image inventory changed; render and visually re-approve all affected slides");
+    }
     noteTexts.forEach((text, index) => {
       if (!text.includes("Sprechhinweis:")) fail(`slide ${index + 1}: speaker note missing Sprechhinweis`);
       if (!text.includes("Moderation:")) fail(`slide ${index + 1}: speaker note missing facilitation note`);

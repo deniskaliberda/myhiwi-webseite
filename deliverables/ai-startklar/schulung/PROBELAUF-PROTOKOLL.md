@@ -14,7 +14,7 @@ Dieses Protokoll dokumentiert einen vollständigen, evidenzbasierten Desktop-Dur
 - **Tatsächliche Audit-Dauer:** 11 Min. 52 Sek.; keine Aussage zur Live-Trainingsdauer
 - **Prüfwerkzeuge:** Quellenabgleich, Node-Verifier, LibreOffice-/Poppler-Rendering, PDF-/ZIP-Integritätsprüfung und visuelle Seiten-/Folienprüfung
 - **Praxisfall:** `content/ai-startklar/training/praxisfaelle/01-buero-verwaltung.md` – ausschließlich synthetische Angaben
-- **Deck:** sichtbarer Stand `v1.0 · 22.07.2026`; letzte Deck-Korrektur `fbed065`
+- **Deck:** sichtbarer Stand `v1.0 · Stand 22.07.2026` auf Titel- und Pausenfolie sowie im festen Footerband aller übrigen Folien; PPTX-Core-Properties mit Version und Stand nachgehärtet
 - **Trainerleitfaden:** Materialstand einschließlich Hardening `4b0d2f3`; sichtbare Metadaten `Version 1.0 · Stand 22. Juli 2026` auf allen 22 Seiten
 
 ## Statusmatrix
