@@ -1,0 +1,167 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const root = process.cwd();
+const sourceDir = path.join(root, "content/ai-startklar/training");
+const requiredSources = [
+  "06-folienmanuskript.md",
+  "07-trainerleitfaden.md",
+];
+const expectedSlideTopics = [
+  "Titel, Kunde, Datum und Trainer",
+  "Ergebnisversprechen der drei Stunden",
+  "Agenda und Pausenzeit",
+  "Sicherer Arbeitsrahmen: keine sensiblen Live-Daten",
+  "Kurze Handzeichen-Abfrage zur bisherigen Nutzung",
+  "Was mit „KI“ in dieser Schulung gemeint ist",
+  "Generative KI, Suchmaschine und klassische Software",
+  "Vereinfachtes Funktionsmodell eines Sprachmodells",
+  "Modell, Anwendung, Kontotyp und Einstellungen unterscheiden",
+  "Sechs typische Aufgabenarten im Arbeitsalltag",
+  "Geeignete, kontrollbedürftige und ungeeignete Aufgaben",
+  "Überblick über typische Grenzen und Risiken",
+  "Demonstration einer überzeugenden falschen Antwort",
+  "Aktualität, Quellen und erfundene Belege",
+  "Verzerrungen, Stereotype und fehlender Kontext",
+  "Rechte an Eingaben und Ausgaben",
+  "Miniübung zur Einordnung von drei Aufgaben",
+  "Warum klare Prompts bessere Arbeitsgrundlagen schaffen",
+  "Vorher-Nachher-Beispiel eines Prompts",
+  "Die sechs Bausteine der MyHiwi-Promptvorlage",
+  "Basisübung: schlechten Prompt verbessern",
+  "Fortgeschritten: Ausgabe kritisieren und überarbeiten",
+  "Pause und Wiedereinstiegszeit",
+  "Verantwortung bleibt beim Menschen",
+  "Nur freigegebene Werkzeuge und Konten",
+  "Die Datenampel im Überblick",
+  "Grün: geeignete Beispieldaten",
+  "Gelb: erst intern prüfen und freigeben",
+  "Rot: im Basistraining niemals eingeben",
+  "Besonders folgenreiche Anwendungsfälle erkennen",
+  "Menschliche Kontrolle und Freigabewege",
+  "Fünf betriebliche Grundregeln",
+  "Unternehmensbezogener Praxisfall und Ziel",
+  "Schritt 1: Aufgabe und gewünschtes Ergebnis",
+  "Schritt 2: Daten einordnen",
+  "Schritt 3: Prompt formulieren",
+  "Schritt 4: Beispielausgabe analysieren",
+  "Siebenstufige Prüfroutine und Verbesserung",
+  "Zehnteiliger Lern- und Transfercheck",
+  "Ansprechpartner, nächste Schritte und Abschluss",
+];
+const slideFields = [
+  "Thema",
+  "Ziel",
+  "Kernaussage",
+  "Bildidee",
+  "On-slide-Text",
+  "Sprechhinweis",
+];
+const expectedDurations = [15, 20, 25, 25, 10, 30, 30, 15, 10];
+const guideFields = [
+  "Lernziel",
+  "Folien",
+  "Trainerwortlaut",
+  "Interaktion",
+  "Erwartete Reaktion",
+  "Zeitwarnung",
+  "Typisches Missverständnis",
+  "Sicherheitsgrenze",
+  "Offline-Fallback",
+];
+const forbiddenClaims = [
+  /AI[- ]?Act[- ]?zertifiziert/i,
+  /garantiert(?:e|er|es|en|em)?\s+(?:vollständig\s+)?(?:compliant|Compliance|Konformität)/i,
+  /100\s*%\s*(?:DSGVO|compliant|konform)/i,
+  /rechtssicher(?:e|er|es|en|em)?\s+(?:Freigabe|Garantie|Nutzung)/i,
+  /garantiert(?:e|er|es|en|em)?\s+Kompetenzniveau/i,
+];
+let failed = false;
+
+function fail(message) {
+  failed = true;
+  console.error(`FAIL: ${message}`);
+}
+
+function readIfPresent(file) {
+  const target = path.join(sourceDir, file);
+  if (!fs.existsSync(target)) {
+    fail(`missing source ${file}`);
+    return null;
+  }
+  const text = fs.readFileSync(target, "utf8");
+  for (const pattern of forbiddenClaims) {
+    if (pattern.test(text)) fail(`${file}: forbidden claim ${pattern}`);
+  }
+  return text;
+}
+
+const [slidesText, guideText] = requiredSources.map(readIfPresent);
+
+if (slidesText !== null) {
+  const headings = [...slidesText.matchAll(/^## Folie (\d{2})\s*$/gm)];
+  const numbers = headings.map((match) => Number(match[1]));
+  const expectedNumbers = Array.from({ length: 40 }, (_, index) => index + 1);
+  if (JSON.stringify(numbers) !== JSON.stringify(expectedNumbers)) {
+    fail(`expected sequential slides 01–40, found ${numbers.map(String).join(", ") || "none"}`);
+  }
+
+  const sections = slidesText.split(/^## Folie \d{2}\s*$/gm).slice(1);
+  sections.forEach((section, index) => {
+    const label = `slide ${String(index + 1).padStart(2, "0")}`;
+    for (const field of slideFields) {
+      if (!new RegExp(`^\\*\\*${field}:\\*\\*\\s*\\S`, "m").test(section)) {
+        fail(`${label}: missing or empty ${field}`);
+      }
+    }
+    const topic = section.match(/^\*\*Thema:\*\*\s*(.+)$/m)?.[1]?.trim();
+    if (topic !== expectedSlideTopics[index]) {
+      fail(`${label}: expected topic "${expectedSlideTopics[index]}", found "${topic ?? "missing"}"`);
+    }
+    const onSlide = section.match(/^\*\*On-slide-Text:\*\*\s*([\s\S]*?)(?=^\*\*Sprechhinweis:\*\*)/m)?.[1] ?? "";
+    if (/\b(?:Minute|min\.|Timing|Zeitwarnung)\b/i.test(onSlide)) {
+      fail(`${label}: internal timing note found in on-slide copy`);
+    }
+  });
+}
+
+if (guideText !== null) {
+  const durations = [...guideText.matchAll(/^Dauer:\s*(\d+)\s*Minuten\s*$/gm)].map((match) => Number(match[1]));
+  if (JSON.stringify(durations) !== JSON.stringify(expectedDurations)) {
+    fail(`expected guide durations ${expectedDurations.join(", ")}, found ${durations.join(", ") || "none"}`);
+  }
+  const total = durations.reduce((sum, value) => sum + value, 0);
+  if (total !== 180) fail(`expected 180 guide minutes, found ${total}`);
+
+  const modules = guideText.split(/^## Modul \d+\b.*$/gm).slice(1);
+  if (modules.length !== 8) fail(`expected 8 teaching modules, found ${modules.length}`);
+  modules.forEach((module, index) => {
+    const label = `module ${index + 1}`;
+    for (const field of guideFields) {
+      if (!new RegExp(`^\\*\\*${field}:\\*\\*\\s*\\S`, "m").test(module)) {
+        fail(`${label}: missing or empty ${field}`);
+      }
+    }
+  });
+
+  const requiredSafetyLanguage = [
+    /synthetisch/i,
+    /rote Daten[^\n]*nicht/i,
+    /gelbe Daten[^\n]*synthetisch/i,
+    /menschliche(?:n|r)? (?:Prüfung|Verantwortung)/i,
+    /folgenreich[^\n]*(?:Mensch|verantwort)/i,
+    /keine Rechtsberatung/i,
+    /keine Datenschutz(?:prüfung|-Folgenabschätzung)/i,
+    /kein Informationssicherheitsaudit/i,
+    /keine (?:Prüfung oder )?Freigabe konkreter KI-Anbieter/i,
+    /keine Garantie[^\n]*Kompetenzniveau/i,
+    /keine Zertifizierung/i,
+    /keine[^\n]*(?:AI Act|AI-Act)[^\n]*(?:Konformität|Compliance)/i,
+  ];
+  for (const pattern of requiredSafetyLanguage) {
+    if (!pattern.test(guideText)) fail(`trainer guide: missing safety boundary ${pattern}`);
+  }
+}
+
+if (failed) process.exitCode = 1;
+else console.log("PASS: AI-Startklar training kit is consistent (40 slides, 180 minutes)");
