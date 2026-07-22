@@ -12,7 +12,56 @@ const requiredOutputs = [
 const requiredSources = [
   "06-folienmanuskript.md",
   "07-trainerleitfaden.md",
+  "praxisfaelle/01-buero-verwaltung.md",
+  "praxisfaelle/02-vertrieb-kundenkommunikation.md",
+  "praxisfaelle/03-marketing-content.md",
+  "praxisfaelle/04-fuehrung-entscheidungsvorbereitung.md",
+  "praxisfaelle/05-handwerk-dokumentation.md",
+  "praxisfaelle/06-dienstleistung-kundenanfragen.md",
 ];
+const practiceSources = requiredSources.filter((file) => file.startsWith("praxisfaelle/"));
+const practiceSections = [
+  "Sichere synthetische Ausgangslage",
+  "Rolle und gewünschtes Ergebnis",
+  "Datenampel",
+  "Absichtlich schwacher Startprompt",
+  "Verbesserter Prompt mit sechs Bausteinen",
+  "Plausible, aber unvollkommene Modellausgabe",
+  "Siebenstufige Prüfung",
+  "Verbesserte Ausgabe",
+  "Menschlicher Prüf- und Freigabeweg",
+  "Basis- und Fortgeschrittenenvariante",
+  "Trainerwarnung",
+];
+const promptParts = [
+  "Aufgabe",
+  "Kontext",
+  "Material",
+  "Anforderungen",
+  "Ausgabeformat",
+  "Prüfkriterien",
+];
+const reviewSteps = [
+  "Fakten",
+  "Quellen",
+  "Vollständigkeit",
+  "Verzerrung",
+  "Rechte und Daten",
+  "Ton und Wirkung",
+  "Verantwortung",
+];
+const expectedPracticeSignals = new Map([
+  ["praxisfaelle/01-buero-verwaltung.md", /unsortierte[^\n]*Notizen[^\n]*Aufgabenliste/i],
+  ["praxisfaelle/02-vertrieb-kundenkommunikation.md", /synthetische[^\n]*Kundenanfrage/i],
+  ["praxisfaelle/03-marketing-content.md", /freigegebene[^\n]*Leistungsbeschreibung/i],
+  ["praxisfaelle/04-fuehrung-entscheidungsvorbereitung.md", /nicht personenbezogene[^\n]*Entscheidung/i],
+  ["praxisfaelle/05-handwerk-dokumentation.md", /synthetische[^\n]*Baustellennotizen/i],
+  ["praxisfaelle/06-dienstleistung-kundenanfragen.md", /unklare[^\n]*Anfrage[^\n]*Rückfragen/i],
+]);
+const practiceSafetySignals = new Map([
+  ["praxisfaelle/04-fuehrung-entscheidungsvorbereitung.md", /KI erhält keine Entscheidungs- oder Freigabekompetenz/i],
+  ["praxisfaelle/05-handwerk-dokumentation.md", /keine Freigabe für sicherheitskritische/i],
+]);
 const expectedSlideTopics = [
   "Titel, Kunde, Datum und Trainer",
   "Ergebnisversprechen der drei Stunden",
@@ -113,7 +162,57 @@ function readIfPresent(file) {
   return text;
 }
 
-const [slidesText, guideText] = requiredSources.map(readIfPresent);
+const sourceTexts = new Map(requiredSources.map((file) => [file, readIfPresent(file)]));
+const slidesText = sourceTexts.get("06-folienmanuskript.md");
+const guideText = sourceTexts.get("07-trainerleitfaden.md");
+
+for (const file of practiceSources) {
+  const text = sourceTexts.get(file);
+  if (text === null) continue;
+
+  for (const [index, heading] of practiceSections.entries()) {
+    const number = index + 1;
+    if (!new RegExp(`^## ${number}\\. ${heading}$`, "m").test(text)) {
+      fail(`${file}: missing section ${number} "${heading}"`);
+    }
+  }
+  for (const part of promptParts) {
+    if (!new RegExp(`^\\*\\*${part}:\\*\\*\\s*\\S`, "m").test(text)) {
+      fail(`${file}: missing or empty prompt part ${part}`);
+    }
+  }
+  for (const [index, step] of reviewSteps.entries()) {
+    if (!new RegExp(`^${index + 1}\\. \\*\\*${step}:\\*\\*\\s*\\S`, "m").test(text)) {
+      fail(`${file}: missing or empty review step ${index + 1} ${step}`);
+    }
+  }
+  for (const zone of ["Grün", "Gelb", "Rot"]) {
+    if (!new RegExp(`^### ${zone}$`, "m").test(text)) {
+      fail(`${file}: missing data zone ${zone}`);
+    }
+  }
+  for (const variant of ["Basis", "Fortgeschritten"]) {
+    if (!new RegExp(`^### ${variant}$`, "m").test(text)) {
+      fail(`${file}: missing variant ${variant}`);
+    }
+  }
+  if (!expectedPracticeSignals.get(file)?.test(text)) {
+    fail(`${file}: missing approved industry scenario`);
+  }
+  if (!/ausschließlich synthetisch/i.test(text)) {
+    fail(`${file}: missing explicit synthetic-only boundary`);
+  }
+  if (!/menschlich[^\n]*(?:prüf|freig)/i.test(text)) {
+    fail(`${file}: missing human review or approval path`);
+  }
+  const safetySignal = practiceSafetySignals.get(file);
+  if (safetySignal && !safetySignal.test(text)) {
+    fail(`${file}: missing industry-specific safety boundary`);
+  }
+  if (/\b[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}\b/i.test(text)) {
+    fail(`${file}: email-like identifier found in synthetic practice source`);
+  }
+}
 
 for (const file of requiredOutputs) {
   const target = path.join(outputDir, file);
