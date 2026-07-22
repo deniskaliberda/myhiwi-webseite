@@ -112,7 +112,7 @@ Dauer: 25 Minuten
 
 **Trainerwortlaut:** „Ein guter Prompt ist ein klarer Arbeitsauftrag, keine Zauberformel. Unsere sechs Bausteine sind: erstens Aufgabe, zweitens Kontext, drittens Material, viertens Anforderungen, fünftens Ausgabeformat und sechstens Prüfkriterien. Die Vorlage lautet: Erstelle **[Ergebnis]** für **[Zielgruppe/Zweck]**. Nutze ausschließlich **[freigegebenes Material]**. Beachte **[Anforderungen und Grenzen]**. Gib das Ergebnis als **[Format]** aus. Kennzeichne Unsicherheiten und nenne, welche Punkte vor der Verwendung geprüft werden müssen. Auch ein guter Prompt garantiert kein richtiges Ergebnis.“
 
-**Interaktion:** Paare verbessern den Prompt „Schreib eine Antwort an den Kunden“ für eine synthetische Anfrage. Basisgruppen füllen die sechs Felder. Fortgeschrittene prüfen eine vorbereitete Ausgabe selbst, fordern anschließend Kritik an und entscheiden, welche Verbesserungen sie übernehmen.
+**Interaktion:** Paare verbessern den vorbereiteten schwachen Startprompt aus Kurzfall A im gewählten Praxisfokus. Basisgruppen füllen die sechs Felder. Fortgeschrittene prüfen eine vorbereitete Ausgabe selbst, fordern anschließend Kritik an und entscheiden, welche Verbesserungen sie übernehmen.
 
 **Erwartete Reaktion:** Die Prompts nennen ein konkretes Ergebnis, Zielgruppe und Zweck, ausschließlich freigegebenes Material, Ton und Grenzen, ein Format sowie Prüfkriterien. Fortgeschrittene behandeln die KI-Kritik als Hinweis, nicht als Freigabe.
 
@@ -120,7 +120,7 @@ Dauer: 25 Minuten
 
 **Typisches Missverständnis:** „Je länger der Prompt, desto besser die Antwort.“ Korrektur: Entscheidend sind Relevanz, Klarheit, zulässiges Material und prüfbare Anforderungen, nicht Textmenge.
 
-**Sicherheitsgrenze:** Es wird ausschließlich die ausgegebene synthetische Kundenanfrage verwendet. Niemand ersetzt Platzhalter spontan durch echte Namen, Vorgänge oder interne Angaben.
+**Sicherheitsgrenze:** Es wird ausschließlich das ausgegebene synthetische Material aus Kurzfall A verwendet. Niemand ersetzt Platzhalter spontan durch echte Namen, Vorgänge oder interne Angaben.
 
 **Offline-Fallback:** Arbeiten Sie mit ausgedruckter Promptvorlage, Beispielausgabe und Kritikversion; die Gruppe markiert die sechs Bausteine farbig.
 

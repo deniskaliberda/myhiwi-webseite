@@ -295,9 +295,9 @@ Dieses Manuskript definiert die 40 Kernfolien des dreistündigen Standardtrainin
 
 **Bildidee:** Arbeitsblatt mit sechs leeren Feldern neben einem schwachen Beispielprompt.
 
-**On-slide-Text:** Verbessern Sie: „Schreib eine Antwort an den Kunden.“ Nutzen Sie alle sechs Bausteine.
+**On-slide-Text:** Verbessern Sie den schwachen Startprompt aus Kurzfall A. Nutzen Sie alle sechs Bausteine.
 
-**Sprechhinweis:** Geben Sie nur den synthetischen Kundenfall aus dem Material frei. Lassen Sie Paare fehlende Informationen benennen, bevor sie formulieren.
+**Sprechhinweis:** Geben Sie nur den vorbereiteten synthetischen Kurzfall A aus dem gewählten Praxisfokus frei. Lassen Sie Paare fehlende Informationen benennen, bevor sie formulieren.
 
 ## Folie 22
 

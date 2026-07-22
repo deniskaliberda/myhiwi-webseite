@@ -88,7 +88,9 @@ Prüfung und Freigabe: `________________________________________________________
 
 ## 5. Basisübung: einen schwachen Prompt verbessern
 
-**Schwacher Startprompt:** „Schreib eine Antwort an den Kunden.“
+**Schwacher Startprompt aus Kurzfall A:**
+
+`______________________________________________________________________________`
 
 Arbeiten Sie nur mit dem vorbereiteten synthetischen Kurzfall A aus der Schulung.
 

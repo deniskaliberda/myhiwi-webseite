@@ -45,6 +45,8 @@ const packageStandSource = "**Stand:** 22. Juli 2026";
 const packageVersionVisible = "Version 1.0";
 const packageStandVisible = "Stand 22. Juli 2026";
 const expectedDeckFooterImageInventoryHash = "8661ce4ccd6be22ba4b938c0805e3c71d4a6752e33ff89f07a335ff304c11cd4";
+const forbiddenFixedShortCasePrompt = "Schreib eine Antwort an den Kunden";
+const adaptiveShortCasePrompt = "Startprompt aus Kurzfall A";
 const versionedDocumentFiles = [
   "07-trainerleitfaden",
   "08-teilnehmerheft",
@@ -310,6 +312,15 @@ const dataTrafficLightText = sourceTexts.get("10-datenampel.md");
 const reviewChecklistText = sourceTexts.get("11-pruefcheckliste.md");
 const learningCheckText = sourceTexts.get("12-lerncheck.md");
 const answerKeyText = sourceTexts.get("12-loesungsschluessel.md");
+for (const file of ["06-folienmanuskript.md", "07-trainerleitfaden.md", "08-teilnehmerheft.md"]) {
+  const text = sourceTexts.get(file);
+  if (text?.includes(forbiddenFixedShortCasePrompt)) {
+    fail(`${file}: Kurzfall A must adapt to the selected practice focus`);
+  }
+  if (!text?.toLocaleLowerCase("de-DE").includes(adaptiveShortCasePrompt.toLocaleLowerCase("de-DE"))) {
+    fail(`${file}: missing adaptive Kurzfall A prompt wording`);
+  }
+}
 const packageReadmePath = path.join(root, "content/ai-startklar/README.md");
 if (!fs.existsSync(packageReadmePath)) {
   fail("missing content/ai-startklar/README.md");
@@ -613,6 +624,14 @@ if (fs.existsSync(pptxPath)) {
         fail(`slide ${index + 1}: speaker note is not mapped to manuscript topic "${expectedSlideTopics[index]}"`);
       }
     });
+    for (const signal of ["Kurzfall A", "gewählten Praxisfokus"]) {
+      if (!noteTexts[20].includes(signal)) {
+        fail(`slide 21: speaker notes missing adaptive focus signal "${signal}"`);
+      }
+    }
+    if (noteTexts[20].includes("synthetischen Kundenfall")) {
+      fail("slide 21: speaker notes incorrectly fix Kurzfall A to customer communication");
+    }
 
     slideTexts.forEach((text, index) => {
       const number = index + 1;
@@ -639,6 +658,7 @@ if (fs.existsSync(pptxPath)) {
     }
 
     const requiredSlideStrings = new Map([
+      [21, ["Verbessern Sie den schwachen Startprompt aus Kurzfall A", "Nutzen Sie alle sechs Bausteine"]],
       [23, ["Pause", "Daten einordnen", "praktisch anwenden"]],
       [32, ["Nur freigegebene Werkzeuge und Unternehmenskonten nutzen", "Vor jeder Eingabe die Datenampel anwenden", "KI-Ausgaben vor Verwendung", "Verantwortung und folgenreiche Entscheidungen bleiben beim Menschen", "Unsichere, sensible oder ungewöhnliche Fälle stoppen"]],
       [38, ["Fakten", "Quellen", "Vollständigkeit", "Verzerrung", "Rechte & Daten", "Ton & Wirkung", "Verantwortung"]],
@@ -651,6 +671,9 @@ if (fs.existsSync(pptxPath)) {
         }
       }
     }
+    if (slideTexts.some((text) => text.includes(forbiddenFixedShortCasePrompt))) {
+      fail("trainer deck: Kurzfall A is incorrectly fixed to customer communication");
+    }
   } catch (error) {
     fail(`trainer deck: structural inspection failed (${error.message})`);
   }
@@ -662,6 +685,13 @@ if (fs.existsSync(pdfPath)) {
     const info = execFileSync("pdfinfo", [pdfPath], { encoding: "utf8" });
     const pages = Number(info.match(/^Pages:\s+(\d+)$/m)?.[1]);
     if (pages !== 40) fail(`trainer deck PDF: expected 40 pages, found ${pages || "unknown"}`);
+    const practicePage = execFileSync("pdftotext", ["-f", "21", "-l", "21", pdfPath, "-"], { encoding: "utf8" });
+    if (!practicePage.includes("schwachen Startprompt aus Kurzfall A")) {
+      fail("trainer deck PDF: slide 21 missing adaptive Kurzfall A prompt wording");
+    }
+    if (practicePage.includes(forbiddenFixedShortCasePrompt)) {
+      fail("trainer deck PDF: slide 21 is incorrectly fixed to customer communication");
+    }
   } catch (error) {
     fail(`trainer deck PDF: page inspection failed (${error.message})`);
   }
@@ -687,6 +717,7 @@ for (const [label, archive, requiredSignals, forbiddenSignals] of [
       "Nachdokumentation – direkt nach der Schulung",
       "Kurzfall A",
       "Hauptfall B",
+      "vorbereiteten schwachen Startprompt aus Kurzfall A im gewählten Praxisfokus",
       ...documentationFields,
     ],
     [],
@@ -702,6 +733,7 @@ for (const [label, archive, requiredSignals, forbiddenSignals] of [
       "Dienstleistung und Kundenanfragen",
       "Keine realen sensiblen",
       "Kurzfall A",
+      "Schwacher Startprompt aus Kurzfall A",
     ],
     ["Trainerwortlaut", "Kurzlösung", "Trainerantwort", "Rechtsberatung"],
   ],
@@ -863,6 +895,23 @@ for (const stem of versionedDocumentFiles) {
     }
   } catch (error) {
     fail(`${stem}.pdf: visible metadata inspection failed (${error.message})`);
+  }
+}
+
+for (const [file, requiredSignal] of [
+  ["07-trainerleitfaden.pdf", "vorbereiteten schwachen Startprompt aus Kurzfall A im gewählten"],
+  ["08-teilnehmerheft.pdf", "Schwacher Startprompt aus Kurzfall A"],
+]) {
+  const target = path.join(outputDir, file);
+  if (!fs.existsSync(target)) continue;
+  try {
+    const text = execFileSync("pdftotext", [target, "-"], { encoding: "utf8" });
+    if (!text.includes(requiredSignal)) fail(`${file}: missing adaptive Kurzfall A prompt wording`);
+    if (text.includes(forbiddenFixedShortCasePrompt)) {
+      fail(`${file}: Kurzfall A is incorrectly fixed to customer communication`);
+    }
+  } catch (error) {
+    fail(`${file}: adaptive Kurzfall A PDF inspection failed (${error.message})`);
   }
 }
 
@@ -1030,6 +1079,9 @@ if (workbookText !== null) {
   }
   if (!/vorbereiteten synthetischen Kurzfall A/i.test(workbookText)) {
     fail("participant workbook: basis exercise must reference the prepared synthetic Kurzfall A");
+  }
+  if (workbookText.includes(forbiddenFixedShortCasePrompt)) {
+    fail("participant workbook: Kurzfall A must adapt to the selected practice focus");
   }
 }
 
