@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { readFile } from "node:fs/promises";
 import {
   AI_STARTKLAR,
   AI_STARTKLAR_FAQ,
@@ -461,7 +462,6 @@ test("@seo liefert kanonische Social-Metadaten und valide strukturierte Daten", 
   await expect(
     page.locator('meta[property="og:image:height"]'),
   ).toHaveAttribute("content", "630");
-
   const scriptContents = await page
     .locator('script[type="application/ld+json"]')
     .allTextContents();
@@ -503,13 +503,30 @@ test("@seo liefert kanonische Social-Metadaten und valide strukturierte Daten", 
     | (Record<string, unknown> & { mainEntity: unknown[] })
     | undefined;
   expect(faqSchema?.mainEntity).toHaveLength(AI_STARTKLAR_FAQ.length);
-  expect(faqSchema?.mainEntity).toEqual(
-    AI_STARTKLAR_FAQ.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
+  const ownDocumentsQuestion = "Können wir eigene Dokumente verwenden?";
+  await page
+    .getByRole("button", { name: ownDocumentsQuestion, exact: true })
+    .click();
+  const visibleAnswer = page.getByRole("region", {
+    name: ownDocumentsQuestion,
+    exact: true,
+  });
+  const visibleAnswerText = (await visibleAnswer.textContent())
+    ?.replace(/\s+/g, " ")
+    .trim();
+  const ownDocumentsEntity = faqSchema?.mainEntity.find(
+    (entity) =>
+      (entity as Record<string, unknown>).name === ownDocumentsQuestion,
+  ) as
+    | {
+        acceptedAnswer: { text: string };
+      }
+    | undefined;
+  expect(visibleAnswerText).toBe(
+    "Nein. Wir arbeiten ausschließlich mit synthetischen oder robust anonymisierten sicheren Praxisbeispielen. Reale personenbezogene, vertrauliche, sicherheitsrelevante oder rote Daten werden nie live eingegeben.",
   );
+  expect(visibleAnswerText).not.toMatch(/freigegeben/i);
+  expect(ownDocumentsEntity?.acceptedAnswer.text).toBe(visibleAnswerText);
 
   const breadcrumbSchema = schemaByType("BreadcrumbList") as
     | (Record<string, unknown> & { itemListElement: unknown[] })
@@ -529,6 +546,30 @@ test("@seo liefert kanonische Social-Metadaten und valide strukturierte Daten", 
     },
   ]);
   expect(JSON.stringify(schemas)).not.toMatch(/AggregateRating|"review"/i);
+});
+
+test("@seo liefert den exportierten Open-Graph-Alttext aus", async ({ page }) => {
+  await page.goto("/ki-schulung");
+  await expect(
+    page.locator('meta[property="og:image:alt"]'),
+  ).toHaveAttribute(
+    "content",
+    "MyHiwi AI-Startklar – KI sinnvoll nutzen. Risiken erkennen. Sicherer entscheiden.",
+  );
+});
+
+test("@seo serialisiert JSON-LD sicher gegen schließende Script-Tags", async () => {
+  const pageSource = await readFile(
+    "app/ki-schulung/page.tsx",
+    "utf8",
+  );
+  expect(pageSource).toContain(
+    'return JSON.stringify(value).replace(/</g, "\\\\u003c");',
+  );
+  expect(pageSource).toContain(
+    "dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}",
+  );
+  expect(pageSource).not.toContain("export function serializeJsonLd");
 });
 
 test("@seo liefert das 1200-mal-630-Open-Graph-Bild als PNG", async ({ request }) => {

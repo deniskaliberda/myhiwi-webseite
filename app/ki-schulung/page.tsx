@@ -17,6 +17,9 @@ import { Container } from "@/components/myhiwi/layout/Container";
 import { Section } from "@/components/myhiwi/layout/Section";
 import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
 
+const OPEN_GRAPH_IMAGE_ALT =
+  "MyHiwi AI-Startklar – KI sinnvoll nutzen. Risiken erkennen. Sicherer entscheiden.";
+
 export const metadata: Metadata = {
   title: "KI-Schulung für Unternehmen",
   description:
@@ -29,10 +32,26 @@ export const metadata: Metadata = {
     url: "https://myhiwi.de/ki-schulung",
     type: "website",
     images: [
-      { url: "/ki-schulung/opengraph-image", width: 1200, height: 630 },
+      {
+        url: "/ki-schulung/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: OPEN_GRAPH_IMAGE_ALT,
+      },
     ],
   },
 };
+
+const SAFE_DOCUMENT_ANSWER =
+  "Nein. Wir arbeiten ausschließlich mit synthetischen oder robust anonymisierten sicheren Praxisbeispielen. Reale personenbezogene, vertrauliche, sicherheitsrelevante oder rote Daten werden nie live eingegeben.";
+
+const faqContent = AI_STARTKLAR_FAQ.map((item) => ({
+  question: item.question,
+  answer:
+    item.question === "Können wir eigene Dokumente verwenden?"
+      ? SAFE_DOCUMENT_ANSWER
+      : item.answer,
+}));
 
 const jsonLd = [
   {
@@ -66,7 +85,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: AI_STARTKLAR_FAQ.map((item) => ({
+    mainEntity: faqContent.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: { "@type": "Answer", text: item.answer },
@@ -92,23 +111,13 @@ const jsonLd = [
   },
 ];
 
-const safeDocumentAnswer = (
-  <p>
-    Nein. Wir arbeiten ausschließlich mit synthetischen oder robust
-    anonymisierten sicheren Praxisbeispielen. Reale personenbezogene,
-    vertrauliche, sicherheitsrelevante oder rote Daten werden nie live
-    eingegeben.
-  </p>
-);
+function serializeJsonLd(value: unknown): string {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
 
-const faqItems: FAQItem[] = AI_STARTKLAR_FAQ.map((item) => ({
+const faqItems: FAQItem[] = faqContent.map((item) => ({
   question: item.question,
-  answer:
-    item.question === "Können wir eigene Dokumente verwenden?" ? (
-      safeDocumentAnswer
-    ) : (
-      <p>{item.answer}</p>
-    ),
+  answer: <p>{item.answer}</p>,
 }));
 
 export default function KiSchulungPage() {
@@ -118,7 +127,7 @@ export default function KiSchulungPage() {
         <script
           key={schema["@type"]}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
         />
       ))}
       <Section background="paper" padding="large">
