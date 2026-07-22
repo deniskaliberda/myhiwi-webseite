@@ -1,5 +1,8 @@
 # Praxisfall 06 – Dienstleistung und Kundenanfragen
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 **Einsatz:** Austauschbarer 30-Minuten-Praxisblock für Dienstleistung und Kundenservice. Alle Angaben sind ausschließlich synthetisch.
 
 ## 1. Sichere synthetische Ausgangslage

@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Datenampel
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 Die Ampel ist eine Lern- und Entscheidungsstütze. Sie ersetzt keine Tool-, Vertrags- oder Datenschutzprüfung.
 
 ## Grün – im freigegebenen Werkzeug grundsätzlich nutzbar

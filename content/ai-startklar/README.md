@@ -38,3 +38,34 @@ Jedes Asset trägt Version, Datum und Dokumenttyp. Die kanonische Quelle führt 
 | 16 | `16-management-massnahmenblatt.md` | `16-management-massnahmenblatt.docx`, `16-management-massnahmenblatt.pdf` | Management | Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen | 30-Tage-Umsetzung |
 | 17 | `17-nachbesprechungsprotokoll.md` | `17-nachbesprechungsprotokoll.docx`, `17-nachbesprechungsprotokoll.pdf` | Management und MyHiwi | Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen | Management-Follow-up |
 | 19 | `19-anfragebestaetigung.md` | `19-anfragebestaetigung.docx`, `19-anfragebestaetigung.pdf` | Interessentinnen und Interessenten | Markdown und DOCX editierbar; PDF nicht zur Bearbeitung vorgesehen | Anfrageeingang und Bestätigung |
+
+## Trainings- und Delivery-Index
+
+Diese separate Übersicht ergänzt den unveränderten Vertriebs-Paketindex um Schulungsquellen, Praxisfälle und Delivery-Pfade.
+
+### Schulungsquellen und Ausgaben
+
+- `training/06-folienmanuskript.md` → `../../deliverables/ai-startklar/schulung/06-trainerfolien.pptx` und `06-trainerfolien.pdf`
+- `training/07-trainerleitfaden.md` → `../../deliverables/ai-startklar/schulung/07-trainerleitfaden.docx` und `07-trainerleitfaden.pdf`
+- `training/08-teilnehmerheft.md` → `../../deliverables/ai-startklar/schulung/08-teilnehmerheft.docx` und `08-teilnehmerheft.pdf`
+- `training/09-promptvorlage.md` → `../../deliverables/ai-startklar/schulung/09-promptvorlage.docx` und `09-promptvorlage.pdf`
+- `training/10-datenampel.md` → `../../deliverables/ai-startklar/schulung/10-datenampel.docx` und `10-datenampel.pdf`
+- `training/11-pruefcheckliste.md` → `../../deliverables/ai-startklar/schulung/11-pruefcheckliste.docx` und `11-pruefcheckliste.pdf`
+- `training/12-lerncheck.md` → `../../deliverables/ai-startklar/schulung/12-lerncheck.docx` und `12-lerncheck.pdf`
+- `training/12-loesungsschluessel.md` → `../../deliverables/ai-startklar/schulung/12-loesungsschluessel.docx` und `12-loesungsschluessel.pdf` (nur Trainer)
+
+### Sichere Praxisfälle
+
+- `training/praxisfaelle/01-buero-verwaltung.md`
+- `training/praxisfaelle/02-vertrieb-kundenkommunikation.md`
+- `training/praxisfaelle/03-marketing-content.md`
+- `training/praxisfaelle/04-fuehrung-entscheidungsvorbereitung.md`
+- `training/praxisfaelle/05-handwerk-dokumentation.md`
+- `training/praxisfaelle/06-dienstleistung-kundenanfragen.md`
+
+### Delivery und Prüfung
+
+- Delivery-Verzeichnis: `../../deliverables/ai-startklar/schulung/`
+- Trainings-Verifier: `../../scripts/ai-startklar/verify-training-kit.mjs`
+- Vertriebs-Verifier: `../../scripts/ai-startklar/verify-sales-kit.mjs`
+- Landingpage Nr. 18: `/ki-schulung`

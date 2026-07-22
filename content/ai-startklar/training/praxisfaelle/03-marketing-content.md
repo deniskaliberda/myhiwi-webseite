@@ -1,5 +1,8 @@
 # Praxisfall 03 – Marketing und Content
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 **Einsatz:** Austauschbarer 30-Minuten-Praxisblock für Marketing- und Contentteams. Alle Angaben sind ausschließlich synthetisch.
 
 ## 1. Sichere synthetische Ausgangslage

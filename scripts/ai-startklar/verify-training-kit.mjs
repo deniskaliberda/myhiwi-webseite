@@ -39,6 +39,29 @@ const requiredSources = [
   "praxisfaelle/05-handwerk-dokumentation.md",
   "praxisfaelle/06-dienstleistung-kundenanfragen.md",
 ];
+const packageVersionSource = "**Version:** 1.0";
+const packageStandSource = "**Stand:** 22. Juli 2026";
+const packageVersionVisible = "Version 1.0";
+const packageStandVisible = "Stand 22. Juli 2026";
+const versionedDocumentFiles = [
+  "07-trainerleitfaden",
+  "08-teilnehmerheft",
+  "09-promptvorlage",
+  "10-datenampel",
+  "11-pruefcheckliste",
+  "12-lerncheck",
+  "12-loesungsschluessel",
+];
+const documentationFields = [
+  "Kunde / Kontakt",
+  "Datum / Format / Trainer / tatsächliche Dauer",
+  "Zielgruppe / Rollen",
+  "Werkzeug / Konto / Offline",
+  "Behandelte Module",
+  "Praxisfall / synthetisch",
+  "Ausgegebene Unterlagen",
+  "Offene Punkte / Folgemaßnahmen",
+];
 const practiceSources = requiredSources.filter((file) => file.startsWith("praxisfaelle/"));
 const practiceSections = [
   "Sichere synthetische Ausgangslage",
@@ -285,6 +308,41 @@ const dataTrafficLightText = sourceTexts.get("10-datenampel.md");
 const reviewChecklistText = sourceTexts.get("11-pruefcheckliste.md");
 const learningCheckText = sourceTexts.get("12-lerncheck.md");
 const answerKeyText = sourceTexts.get("12-loesungsschluessel.md");
+const packageReadmePath = path.join(root, "content/ai-startklar/README.md");
+if (!fs.existsSync(packageReadmePath)) {
+  fail("missing content/ai-startklar/README.md");
+} else {
+  const readmeText = fs.readFileSync(packageReadmePath, "utf8");
+  const packageIndexPosition = readmeText.indexOf("## Paketindex");
+  const trainingIndexPosition = readmeText.indexOf("## Trainings- und Delivery-Index");
+  if (trainingIndexPosition <= packageIndexPosition) {
+    fail("README: training index must be a separate section after Paketindex");
+  }
+  for (const signal of [
+    "training/06-folienmanuskript.md",
+    "training/07-trainerleitfaden.md",
+    "training/08-teilnehmerheft.md",
+    "training/09-promptvorlage.md",
+    "training/10-datenampel.md",
+    "training/11-pruefcheckliste.md",
+    "training/12-lerncheck.md",
+    "training/12-loesungsschluessel.md",
+    "training/praxisfaelle/01-buero-verwaltung.md",
+    "training/praxisfaelle/06-dienstleistung-kundenanfragen.md",
+    "deliverables/ai-startklar/schulung/",
+    "scripts/ai-startklar/verify-training-kit.mjs",
+    "/ki-schulung",
+  ]) {
+    if (!readmeText.includes(signal)) fail(`README: missing training package signal "${signal}"`);
+  }
+}
+
+for (const [file, text] of sourceTexts) {
+  if (text === null) continue;
+  const opening = text.split("\n").slice(0, 12).join("\n");
+  if (!opening.includes(packageVersionSource)) fail(`${file}: missing visible source version 1.0`);
+  if (!opening.includes(packageStandSource)) fail(`${file}: missing visible source stand 22. Juli 2026`);
+}
 
 function plainMarkdown(text) {
   return text
@@ -564,6 +622,9 @@ for (const [label, archive, requiredSignals, forbiddenSignals] of [
       "Fall 01 · Büro und Verwaltung",
       "Fall 06 · Dienstleistung und Kundenanfragen",
       "Nachdokumentation – direkt nach der Schulung",
+      "Kurzfall A",
+      "Hauptfall B",
+      ...documentationFields,
     ],
     [],
   ],
@@ -577,6 +638,7 @@ for (const [label, archive, requiredSignals, forbiddenSignals] of [
       "Büro und Verwaltung",
       "Dienstleistung und Kundenanfragen",
       "Keine realen sensiblen",
+      "Kurzfall A",
     ],
     ["Trainerwortlaut", "Kurzlösung", "Trainerantwort", "Rechtsberatung"],
   ],
@@ -599,6 +661,29 @@ for (const [label, archive, requiredSignals, forbiddenSignals] of [
     }
   } catch (error) {
     fail(`${label}: structural inspection failed (${error.message})`);
+  }
+}
+
+for (const stem of versionedDocumentFiles) {
+  const archive = path.join(outputDir, `${stem}.docx`);
+  if (!fs.existsSync(archive)) continue;
+  try {
+    const entries = new Set(listZipEntries(archive));
+    if (!entries.has("docProps/core.xml")) fail(`${stem}.docx: missing core properties`);
+    const footerEntries = [...entries].filter((entry) => /^word\/footer\d+\.xml$/.test(entry));
+    if (footerEntries.length === 0) fail(`${stem}.docx: missing visible footer metadata`);
+    const footerText = footerEntries.map((entry) => wordXmlText(readZipEntry(archive, entry))).join(" ");
+    if (!footerText.includes(packageVersionVisible)) fail(`${stem}.docx: footer missing Version 1.0`);
+    if (!footerText.includes(packageStandVisible)) fail(`${stem}.docx: footer missing Stand 22. Juli 2026`);
+
+    const coreXml = readZipEntry(archive, "docProps/core.xml");
+    if (!coreXml.includes("2026-07-22T00:00:00Z")) fail(`${stem}.docx: core properties missing 2026-07-22 timestamp`);
+    if (coreXml.includes("2013-12-23")) fail(`${stem}.docx: stale python-docx 2013 timestamp`);
+    if (!coreXml.includes("MyHiwi") || !coreXml.includes("Version 1.0")) {
+      fail(`${stem}.docx: incomplete core properties`);
+    }
+  } catch (error) {
+    fail(`${stem}.docx: metadata inspection failed (${error.message})`);
   }
 }
 
@@ -698,6 +783,23 @@ for (const [label, file, expectedPages] of [
     }
   } catch (error) {
     fail(`${label}: page inspection failed (${error.message})`);
+  }
+}
+
+for (const stem of versionedDocumentFiles) {
+  const target = path.join(outputDir, `${stem}.pdf`);
+  if (!fs.existsSync(target)) continue;
+  try {
+    const info = execFileSync("pdfinfo", [target], { encoding: "utf8" });
+    const pages = Number(info.match(/^Pages:\s+(\d+)$/m)?.[1]);
+    for (let page = 1; page <= pages; page += 1) {
+      const pageText = execFileSync("pdftotext", ["-f", String(page), "-l", String(page), target, "-"], { encoding: "utf8" });
+      if (!pageText.includes(packageVersionVisible) || !pageText.includes(packageStandVisible)) {
+        fail(`${stem}.pdf: page ${page} missing visible Version/Stand metadata`);
+      }
+    }
+  } catch (error) {
+    fail(`${stem}.pdf: visible metadata inspection failed (${error.message})`);
   }
 }
 
@@ -818,6 +920,15 @@ if (guideText !== null) {
   for (const pattern of requiredSafetyLanguage) {
     if (!pattern.test(guideText)) fail(`trainer guide: missing safety boundary ${pattern}`);
   }
+  if (!/Kurzfall A.*Modul 4.*Folien 21[–-]22/i.test(guideText)) {
+    fail("trainer guide: Kurzfall A must be assigned to module 4, slides 21–22");
+  }
+  if (!/Hauptfall B.*Modul 6[–-]7/i.test(guideText)) {
+    fail("trainer guide: Hauptfall B must be assigned to modules 6–7");
+  }
+  for (const field of documentationFields) {
+    if (!guideText.includes(field)) fail(`trainer guide: documentation source missing field "${field}"`);
+  }
 }
 
 if (workbookText !== null) {
@@ -853,6 +964,9 @@ if (workbookText !== null) {
   if (!/synthetisch/i.test(workbookText)) fail("participant workbook: missing synthetic-data boundary");
   for (const pattern of [/Kurzlösung/i, /Trainerantwort/i, /Rechtsberatung/i]) {
     if (pattern.test(workbookText)) fail(`participant workbook: forbidden answer or legal commentary ${pattern}`);
+  }
+  if (!/vorbereiteten synthetischen Kurzfall A/i.test(workbookText)) {
+    fail("participant workbook: basis exercise must reference the prepared synthetic Kurzfall A");
   }
 }
 

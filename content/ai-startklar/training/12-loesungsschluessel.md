@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Lösungsschlüssel
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 **Nur für Trainer**
 
 ## 1. Warum kann eine sprachlich überzeugende KI-Antwort trotzdem falsch sein?

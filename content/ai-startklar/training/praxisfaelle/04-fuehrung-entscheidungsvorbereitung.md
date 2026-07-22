@@ -1,5 +1,8 @@
 # Praxisfall 04 – Führung und Entscheidungsvorbereitung
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 **Einsatz:** Austauschbarer 30-Minuten-Praxisblock für Führungskräfte. Alle Angaben sind ausschließlich synthetisch.
 
 ## 1. Sichere synthetische Ausgangslage

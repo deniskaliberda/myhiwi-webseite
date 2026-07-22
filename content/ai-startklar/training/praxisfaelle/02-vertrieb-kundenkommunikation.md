@@ -1,5 +1,8 @@
 # Praxisfall 02 – Vertrieb und Kundenkommunikation
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 **Einsatz:** Austauschbarer 30-Minuten-Praxisblock für Vertrieb und Kundenkommunikation. Alle Angaben sind ausschließlich synthetisch.
 
 ## 1. Sichere synthetische Ausgangslage

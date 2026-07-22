@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Trainerleitfaden
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 ## Einsatzrahmen
 
 Dieser Leitfaden steuert das dreistündige Live-Training für höchstens 15 Personen. Der Standardablauf umfasst 170 Lehrminuten und eine zehnminütige Pause, zusammen 180 Minuten. Branchenbeispiele werden vorab synthetisch erstellt oder robust anonymisiert. Zusatzfragen verändern den Kernablauf nicht.
@@ -105,6 +108,8 @@ Dauer: 25 Minuten
 
 **Folien:** 18–22
 
+**Praxisbeispiel:** Kurzfall A wird in Modul 4 auf den Folien 21–22 als vorbereiteter synthetischer Fokusfall genutzt: zuerst den schwachen Prompt verbessern, danach die vorbereitete Ausgabe kritisieren und gezielt überarbeiten.
+
 **Trainerwortlaut:** „Ein guter Prompt ist ein klarer Arbeitsauftrag, keine Zauberformel. Unsere sechs Bausteine sind: erstens Aufgabe, zweitens Kontext, drittens Material, viertens Anforderungen, fünftens Ausgabeformat und sechstens Prüfkriterien. Die Vorlage lautet: Erstelle **[Ergebnis]** für **[Zielgruppe/Zweck]**. Nutze ausschließlich **[freigegebenes Material]**. Beachte **[Anforderungen und Grenzen]**. Gib das Ergebnis als **[Format]** aus. Kennzeichne Unsicherheiten und nenne, welche Punkte vor der Verwendung geprüft werden müssen. Auch ein guter Prompt garantiert kein richtiges Ergebnis.“
 
 **Interaktion:** Paare verbessern den Prompt „Schreib eine Antwort an den Kunden“ für eine synthetische Anfrage. Basisgruppen füllen die sechs Felder. Fortgeschrittene prüfen eine vorbereitete Ausgabe selbst, fordern anschließend Kritik an und entscheiden, welche Verbesserungen sie übernehmen.
@@ -185,6 +190,8 @@ Dauer: 30 Minuten
 **Lernziel:** Die Teilnehmenden bearbeiten einen sicheren, synthetischen Branchenfall vom Ziel über Datenampel und Prompt bis zur ersten Analyse und benennen den Freigabeweg.
 
 **Folien:** 33–37
+
+**Praxisbeispiel:** Hauptfall B wird im vereinbarten Fokus in Modul 6–7 vollständig bearbeitet: Ziel und Daten einordnen, Prompt formulieren, Ausgabe prüfen, verbessern und den menschlichen Freigabeweg festlegen.
 
 **Trainerwortlaut:** „Wir bearbeiten jetzt einen vorbereiteten Fall aus Ihrem Arbeitsalltag. Der Fall ist synthetisch; reale rote Daten verwenden wir nicht und gelbe Daten sind standardmäßig synthetisch ersetzt. Unser Weg hat sieben Schritte: Aufgabe und gewünschtes Ergebnis klären, Daten mit der Ampel einordnen, Prompt mit sechs Bausteinen erstellen, Ausgabe erzeugen oder das Trainerbeispiel analysieren, Ausgabe prüfen, Ergebnis verbessern und Freigabeweg samt Verantwortlichem benennen. Bei jeder Unsicherheit stoppen wir.“
 
@@ -294,3 +301,16 @@ Dauer: 10 Minuten
 3. Pro Person einen kleinen, freigegebenen nächsten Anwendungsfall festhalten.
 4. Auf Teilnehmerunterlagen und Management-Nachbesprechung hinweisen.
 5. Danken und mit „Klein starten, sorgfältig prüfen, Verantwortung klar halten“ schließen.
+
+### Schulungsdokumentationsblatt – Pflichtfelder
+
+- **Kunde / Kontakt:** Kundenorganisation und verantwortliche Kontaktperson.
+- **Datum / Format / Trainer / tatsächliche Dauer:** Durchführung vollständig festhalten.
+- **Zielgruppe / Rollen:** Teilnehmendenrollen oder Zielgruppen dokumentieren.
+- **Werkzeug / Konto / Offline:** genutztes oder demonstriertes Werkzeug, Kontoart oder Offline-Durchführung.
+- **Behandelte Module:** tatsächlich durchgeführte Module markieren.
+- **Praxisfall / synthetisch:** Kurzfall A und Hauptfall B mit Fokus und synthetischer Durchführung dokumentieren.
+- **Ausgegebene Unterlagen:** Teilnehmermaterialien und weitere Ausgaben festhalten.
+- **Offene Punkte / Folgemaßnahmen:** Verantwortliche, Zieltermine und empfohlene Nachgänge notieren.
+
+Kompakte Nachdokumentationschecks: Teilnahmeliste geschützt ablegen; Safety Stops und Abweichungen ohne sensible Inhalte dokumentieren; Lerncheck und häufige Missverständnisse festhalten; Trainerantworten nicht verteilen; keine Rechts-, Datenschutz-, Sicherheits-, Tool- oder Compliance-Freigabe behaupten.

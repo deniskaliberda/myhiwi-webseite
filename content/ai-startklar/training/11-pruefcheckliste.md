@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Prüfen, verbessern und freigeben
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 Verbindliche Prüfroutine für KI-Ausgaben:
 
 1. **Fakten:** Stimmen Namen, Zahlen, Termine und Aussagen?

@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Folienmanuskript
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 Dieses Manuskript definiert die 40 Kernfolien des dreistündigen Standardtrainings. Platzhalter in eckigen Klammern werden vor der Durchführung ersetzt. Praxisdaten sind ausschließlich synthetisch oder robust anonymisiert.
 
 ## Folie 01

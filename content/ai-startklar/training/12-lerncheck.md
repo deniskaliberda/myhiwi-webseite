@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Lern- und Transfercheck
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 Dieser Check dient dem Lerntransfer und der Dokumentation. Er ist keine formale Prüfung.
 
 1. Warum kann eine sprachlich überzeugende KI-Antwort trotzdem falsch sein?

@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Promptvorlage
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 Diese Vorlage hilft, einen klaren und prüfbaren Arbeitsauftrag zu formulieren. Vor jeder Eingabe die Datenampel anwenden und ausschließlich freigegebene Informationen in einem genehmigten Werkzeug verwenden.
 
 ## 1. Aufgabe

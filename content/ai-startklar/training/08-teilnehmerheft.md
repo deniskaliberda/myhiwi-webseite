@@ -1,5 +1,8 @@
 # MyHiwi AI-Startklar – Teilnehmerheft
 
+**Version:** 1.0
+**Stand:** 22. Juli 2026
+
 Dieses Arbeitsheft begleitet die dreistündige Live-Schulung. Es ist zum Mitschreiben, Anwenden und Übertragen auf den eigenen Arbeitsalltag gedacht.
 
 > **Sicher üben:** Tragen Sie in dieses Heft und in KI-Werkzeuge keine realen sensiblen, personenbezogenen, vertraulichen oder sicherheitskritischen Daten ein. Nutzen Sie ausschließlich die bereitgestellten synthetischen Beispiele oder robust anonymisierte und intern freigegebene Inhalte.
@@ -87,7 +90,7 @@ Prüfung und Freigabe: `________________________________________________________
 
 **Schwacher Startprompt:** „Schreib eine Antwort an den Kunden.“
 
-Arbeiten Sie nur mit der synthetischen Anfrage aus der Schulung.
+Arbeiten Sie nur mit dem vorbereiteten synthetischen Kurzfall A aus der Schulung.
 
 **Aufgabe:**
 
