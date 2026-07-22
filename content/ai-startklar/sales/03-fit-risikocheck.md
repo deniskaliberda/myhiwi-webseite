@@ -9,10 +9,10 @@ Nutzen Sie diese Ein-Seiten-Entscheidungshilfe nach dem Erstgespräch. Bei einem
 | Standardpaket | Individuelles Angebot | Stoppen / zuerst prüfen |
 | --- | --- | --- |
 | Bis zu 15 Personen | Mehrere Gruppen oder mehr als 15 Personen | Verlangte Rechtsgarantie, „AI-Act-Zertifizierung“ oder rechtssichere Freigabe |
-| Basis- oder mittleres Vorwissen | Andere Sprachen oder internationale Anforderungen | Reale rote Daten: ungeprüfte vertrauliche Dokumente, Zugangsdaten, Geschäfts- oder Berufsgeheimnisse in einem öffentlichen Tool |
+| Basis- oder mittleres Vorwissen | Andere Sprachen oder internationale Anforderungen | Reale personenbezogene, vertrauliche, sicherheitsrelevante oder rote Daten: immer stoppen / zuerst prüfen und niemals in Live-Übungen eingeben |
 | Schwerpunkt auf alltäglicher generativer KI | Regulierter Kontext oder besondere Berufsgeheimnisse | HR-, Gesundheits-, Finanz-, Versicherungs- oder Scoringentscheidungen |
 | Freigegebenes Werkzeug oder Zustimmung zu einer reinen Trainerdemonstration | Vertiefte Governance-, Datenschutz- oder Sicherheitsanforderungen | Biometrische Erkennung oder Kategorisierung |
-| Synthetische, anonymisierte oder ausdrücklich freigegebene Beispiele | Kundenspezifische Werkzeuge, Toolprüfung oder Toolfreigabe erwartet | Sicherheitskritische Entscheidungen, Steuerung oder technische Freigaben |
+| Ausschließlich synthetische oder robust anonymisierte, sichere Beispiele | Kundenspezifische Werkzeuge, Toolprüfung oder Toolfreigabe erwartet | Sicherheitskritische Entscheidungen, Steuerung oder technische Freigaben |
 | Führungskraft oder benannte verantwortliche Person begleitet die Einführung | Tiefere Arbeit in einzelnen Abteilungen oder an Spezialprozessen | Ungeklärter Vorfall, möglicher Rechtsverstoß oder Erwartung, die Schulung solle einen Vorfall „heilen“ |
 
 ## Entscheidung
