@@ -9,6 +9,9 @@ const requiredSources = [
   "01-produkt-one-pager.md",
   "02-erstgespraechsleitfaden.md",
   "03-fit-risikocheck.md",
+  "04-angebotsvorlage.md",
+  "05-vorbereitungsfragebogen.md",
+  "19-anfragebestaetigung.md",
 ];
 const requiredOutputs = [
   "01-produkt-one-pager.docx",
@@ -17,6 +20,12 @@ const requiredOutputs = [
   "02-erstgespraechsleitfaden.pdf",
   "03-fit-risikocheck.docx",
   "03-fit-risikocheck.pdf",
+  "04-angebotsvorlage.docx",
+  "04-angebotsvorlage.pdf",
+  "05-vorbereitungsfragebogen.docx",
+  "05-vorbereitungsfragebogen.pdf",
+  "19-anfragebestaetigung.docx",
+  "19-anfragebestaetigung.pdf",
 ];
 const forbidden = [
   /AI[- ]?Act[- ]?zertifiziert/i,
@@ -68,6 +77,70 @@ for (const file of requiredSources) {
     if (pattern.test(text)) fail(`${file} contains forbidden claim ${pattern}`);
   }
 }
+
+function requireText(file, values) {
+  const target = path.join(salesDir, file);
+  if (!fs.existsSync(target)) return;
+  const text = fs.readFileSync(target, "utf8");
+  for (const value of values) {
+    if (!text.includes(value)) fail(`${file} must contain ${JSON.stringify(value)}`);
+  }
+}
+
+requireText("04-angebotsvorlage.md", [
+  "[Kunde]",
+  "[Angebotsnummer]",
+  "[Datum]",
+  "[Gültig bis]",
+  "[Termin]",
+  "[Format]",
+  "[Praxisfokus]",
+  "1.490 € netto",
+  "1.790 € netto",
+  "Reise- und gegebenenfalls Übernachtungsaufwand wird vor Beauftragung separat ausgewiesen",
+  "50 Prozent bei verbindlicher Beauftragung",
+  "50 Prozent nach Durchführung",
+  "keine Rechtsberatung",
+  "keine Datenschutzprüfung",
+  "kein Informationssicherheitsaudit",
+  "keine Toolfreigabe",
+  "keine Compliance-Zertifizierung",
+  "keine Garantie eines bestimmten individuellen Kompetenzniveaus",
+  "aktuellen MyHiwi-Vertragsunterlagen",
+]);
+
+const questionnairePath = path.join(salesDir, "05-vorbereitungsfragebogen.md");
+if (fs.existsSync(questionnairePath)) {
+  const text = fs.readFileSync(questionnairePath, "utf8");
+  for (let number = 1; number <= 12; number += 1) {
+    if (!text.includes(`## ${number}.`)) fail(`05-vorbereitungsfragebogen.md must contain question ${number}`);
+  }
+  const warning = "Bitte tragen Sie keine personenbezogenen, vertraulichen oder sicherheitsrelevanten Inhalte ein und laden Sie keine entsprechenden Dokumente hoch.";
+  const warningCount = text.split(warning).length - 1;
+  if (warningCount !== 10) fail(`05-vorbereitungsfragebogen.md must repeat the free-text warning 10 times, found ${warningCount}`);
+  requireText("05-vorbereitungsfragebogen.md", [
+    "1 – keine Erfahrung",
+    "5 – routinierte Nutzung",
+    "Büro und Verwaltung",
+    "Vertrieb und Kundenkommunikation",
+    "Marketing und Content",
+    "Führung und Entscheidungsvorbereitung",
+    "Handwerk und Dokumentation",
+    "Dienstleistung und Kundenanfragen",
+  ]);
+}
+
+requireText("19-anfragebestaetigung.md", [
+  "Variante A – Bestätigung auf dem Formularbildschirm",
+  "Variante B – Bestätigung per E-Mail",
+  "[Online / vor Ort]",
+  "[Teilnehmerzahl]",
+  "[Zeitraum]",
+  "Fit-Prüfung",
+  "kein automatisches Angebot",
+  "keine personenbezogenen, vertraulichen oder sicherheitsrelevanten Inhalte",
+]);
+
 for (const file of requiredOutputs) {
   const target = path.join(outputDir, file);
   if (!fs.existsSync(target) || fs.statSync(target).size === 0) {
