@@ -8,10 +8,15 @@ const outputDir = path.join(root, "deliverables/ai-startklar/schulung");
 const requiredOutputs = [
   "06-trainerfolien.pptx",
   "06-trainerfolien.pdf",
+  "07-trainerleitfaden.docx",
+  "07-trainerleitfaden.pdf",
+  "08-teilnehmerheft.docx",
+  "08-teilnehmerheft.pdf",
 ];
 const requiredSources = [
   "06-folienmanuskript.md",
   "07-trainerleitfaden.md",
+  "08-teilnehmerheft.md",
   "praxisfaelle/01-buero-verwaltung.md",
   "praxisfaelle/02-vertrieb-kundenkommunikation.md",
   "praxisfaelle/03-marketing-content.md",
@@ -154,6 +159,20 @@ const guideFields = [
   "Sicherheitsgrenze",
   "Offline-Fallback",
 ];
+const expectedWorkbookHeadings = [
+  "1. Meine Lernziele",
+  "2. Ein vereinfachtes Modell generativer KI",
+  "3. Welche Aufgaben eignen sich?",
+  "4. Die sechs Bausteine eines guten Prompts",
+  "5. Basisübung: einen schwachen Prompt verbessern",
+  "6. Datenampel: vor jeder Eingabe",
+  "7. Unser ausgewählter Unternehmensfall",
+  "8. Die siebenstufige Prüfroutine",
+  "9. Unsere fünf betrieblichen Grundregeln",
+  "10. Interne Ansprechpartner und Freigabewege",
+  "11. Mein nächster sicherer Anwendungsfall",
+  "12. Mein 30-Tage-Transfer",
+];
 const forbiddenClaims = [
   /AI[- ]?Act[- ]?zertifiziert/i,
   /garantiert(?:e|er|es|en|em)?\s+(?:vollständig\s+)?(?:compliant|Compliance|Konformität)/i,
@@ -184,6 +203,7 @@ function readIfPresent(file) {
 const sourceTexts = new Map(requiredSources.map((file) => [file, readIfPresent(file)]));
 const slidesText = sourceTexts.get("06-folienmanuskript.md");
 const guideText = sourceTexts.get("07-trainerleitfaden.md");
+const workbookText = sourceTexts.get("08-teilnehmerheft.md");
 
 for (const file of practiceSources) {
   const text = sourceTexts.get(file);
@@ -263,6 +283,20 @@ function xmlText(xml) {
     .join(" ");
 }
 
+function wordXmlText(xml) {
+  return xml
+    .replace(/<w:tab\b[^>]*\/>/g, " ")
+    .replace(/<\/w:p>/g, " ")
+    .replace(/<[^>]+>/g, "")
+    .replaceAll("&amp;", "&")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&apos;", "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 const pptxPath = path.join(outputDir, "06-trainerfolien.pptx");
 if (fs.existsSync(pptxPath)) {
   try {
@@ -336,6 +370,80 @@ if (fs.existsSync(pdfPath)) {
     if (pages !== 40) fail(`trainer deck PDF: expected 40 pages, found ${pages || "unknown"}`);
   } catch (error) {
     fail(`trainer deck PDF: page inspection failed (${error.message})`);
+  }
+}
+
+const guideDocxPath = path.join(outputDir, "07-trainerleitfaden.docx");
+const workbookDocxPath = path.join(outputDir, "08-teilnehmerheft.docx");
+for (const [label, archive, requiredSignals, forbiddenSignals] of [
+  [
+    "trainer guide DOCX",
+    guideDocxPath,
+    [
+      "Preflight – 20 Minuten vor Beginn",
+      "Ablauf auf einen Blick",
+      ...expectedGuideSections.map(([heading]) => heading),
+      "Trainerwortlaut",
+      "Interaktion",
+      "Typisches Missverständnis",
+      "Safety Stop",
+      "Technik-Fallback",
+      "Fall 01 · Büro und Verwaltung",
+      "Fall 06 · Dienstleistung und Kundenanfragen",
+      "Nachdokumentation – direkt nach der Schulung",
+    ],
+    [],
+  ],
+  [
+    "participant workbook DOCX",
+    workbookDocxPath,
+    [
+      ...expectedWorkbookHeadings,
+      ...promptParts,
+      ...reviewSteps,
+      "Büro und Verwaltung",
+      "Dienstleistung und Kundenanfragen",
+      "Keine realen sensiblen",
+    ],
+    ["Trainerwortlaut", "Kurzlösung", "Trainerantwort", "Rechtsberatung"],
+  ],
+]) {
+  if (!fs.existsSync(archive)) continue;
+  try {
+    const entries = new Set(listZipEntries(archive));
+    for (const entry of ["word/document.xml", "word/styles.xml", "word/numbering.xml"]) {
+      if (!entries.has(entry)) fail(`${label}: missing ${entry}`);
+    }
+    const text = wordXmlText(readZipEntry(archive, "word/document.xml"));
+    for (const signal of requiredSignals) {
+      if (!text.includes(signal)) fail(`${label}: missing key text "${signal}"`);
+    }
+    for (const signal of forbiddenSignals) {
+      if (text.includes(signal)) fail(`${label}: forbidden participant-only text "${signal}"`);
+    }
+    for (const pattern of forbiddenClaims) {
+      if (pattern.test(text)) fail(`${label}: forbidden claim ${pattern}`);
+    }
+  } catch (error) {
+    fail(`${label}: structural inspection failed (${error.message})`);
+  }
+}
+
+for (const [label, file, expectedPages] of [
+  ["trainer guide PDF", "07-trainerleitfaden.pdf", 21],
+  ["participant workbook PDF", "08-teilnehmerheft.pdf", 12],
+]) {
+  const target = path.join(outputDir, file);
+  if (!fs.existsSync(target)) continue;
+  try {
+    const info = execFileSync("pdfinfo", [target], { encoding: "utf8" });
+    const pages = Number(info.match(/^Pages:\s+(\d+)$/m)?.[1]);
+    if (pages !== expectedPages) fail(`${label}: expected ${expectedPages} pages, found ${pages || "unknown"}`);
+    if (!/^Page size:\s+612 x 792 pts \(letter\)$/m.test(info)) {
+      fail(`${label}: expected US Letter page size`);
+    }
+  } catch (error) {
+    fail(`${label}: page inspection failed (${error.message})`);
   }
 }
 
@@ -420,6 +528,42 @@ if (guideText !== null) {
   ];
   for (const pattern of requiredSafetyLanguage) {
     if (!pattern.test(guideText)) fail(`trainer guide: missing safety boundary ${pattern}`);
+  }
+}
+
+if (workbookText !== null) {
+  const headings = [...workbookText.matchAll(/^## (.+)$/gm)].map((match) => match[1].trim());
+  if (JSON.stringify(headings) !== JSON.stringify(expectedWorkbookHeadings)) {
+    fail(`participant workbook: expected ordered sections ${expectedWorkbookHeadings.join(" | ")}, found ${headings.join(" | ") || "none"}`);
+  }
+  for (const part of promptParts) {
+    if (!new RegExp(`\\*\\*${part}:\\*\\*`, "m").test(workbookText)) {
+      fail(`participant workbook: missing prompt part ${part}`);
+    }
+  }
+  for (const [index, step] of reviewSteps.entries()) {
+    if (!new RegExp(`^${index + 1}\\. \\*\\*${step}:\\*\\*`, "m").test(workbookText)) {
+      fail(`participant workbook: missing review step ${index + 1} ${step}`);
+    }
+  }
+  const practiceOptions = [
+    "Büro und Verwaltung",
+    "Vertrieb und Kundenkommunikation",
+    "Marketing und Content",
+    "Führung und Entscheidungsvorbereitung",
+    "Handwerk und Dokumentation",
+    "Dienstleistung und Kundenanfragen",
+  ];
+  for (const option of practiceOptions) {
+    if (!workbookText.includes(`- [ ] ${option}`)) fail(`participant workbook: missing practice option ${option}`);
+  }
+  const sensitiveReminders = workbookText.toLowerCase().match(/keine realen sensiblen/g)?.length ?? 0;
+  if (sensitiveReminders < 3) {
+    fail(`participant workbook: expected at least 3 repeated no-real-sensitive-data reminders, found ${sensitiveReminders}`);
+  }
+  if (!/synthetisch/i.test(workbookText)) fail("participant workbook: missing synthetic-data boundary");
+  for (const pattern of [/Kurzlösung/i, /Trainerantwort/i, /Rechtsberatung/i]) {
+    if (pattern.test(workbookText)) fail(`participant workbook: forbidden answer or legal commentary ${pattern}`);
   }
 }
 
