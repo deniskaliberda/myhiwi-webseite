@@ -130,7 +130,10 @@ function verifyAttendanceWorkbook(file) {
   const entries = readZipEntries(file);
   const sheetBuffer = entries.get("xl/worksheets/sheet1.xml");
   if (!sheetBuffer) throw new Error("xl/worksheets/sheet1.xml is missing");
+  const workbookBuffer = entries.get("xl/workbook.xml");
+  if (!workbookBuffer) throw new Error("xl/workbook.xml is missing");
   const sheet = sheetBuffer.toString("utf8");
+  const workbookXml = workbookBuffer.toString("utf8");
   const cells = new Map();
   const cellPattern = /<(?:[\w-]+:)?c\b([^>]*?)\/>|<(?:[\w-]+:)?c\b([^>]*)>([\s\S]*?)<\/(?:[\w-]+:)?c>/g;
   for (const match of sheet.matchAll(cellPattern)) {
@@ -217,6 +220,15 @@ function verifyAttendanceWorkbook(file) {
     !/<(?:[\w-]+:)?pageMargins\b[^>]*\/>/.test(sheet)
   ) {
     fail("13-teilnahmeliste.xlsx must use the printable A1:E25 area with page margins");
+  }
+  const printAreas = [...workbookXml.matchAll(/<(?:[\w-]+:)?definedName\b([^>]*)>([\s\S]*?)<\/(?:[\w-]+:)?definedName>/g)]
+    .filter((match) => xmlAttribute(match[1], "name") === "_xlnm.Print_Area");
+  if (
+    printAreas.length !== 1 ||
+    xmlAttribute(printAreas[0]?.[1] ?? "", "localSheetId") !== "0" ||
+    decodeXml(printAreas[0]?.[2] ?? "") !== "'Teilnahmeliste'!$A$1:$E$25"
+  ) {
+    fail("13-teilnahmeliste.xlsx must define local sheet 0 print area exactly as 'Teilnahmeliste'!$A$1:$E$25");
   }
   if ([...cells.keys()].some((reference) => columnNumber(reference) > 5) || cells.has("F7")) {
     fail("13-teilnahmeliste.xlsx must not contain an additional or hidden tracking column");
