@@ -179,6 +179,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/ki-schulung`,
+      lastModified: new Date("2026-07-22"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/loesungen/friseur`,
       lastModified: new Date("2026-06-02"),
       changeFrequency: "monthly",

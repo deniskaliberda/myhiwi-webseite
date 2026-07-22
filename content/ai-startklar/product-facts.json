@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "date": "2026-07-22",
+    "documentType": "Produktdaten"
+  },
+  "name": "MyHiwi AI-Startklar",
+  "subtitle": "Die praxisnahe KI-Grundlagenschulung für Unternehmen",
+  "promise": "KI sinnvoll nutzen. Risiken erkennen. Sicherer entscheiden.",
+  "durationMinutes": 180,
+  "capacity": 15,
+  "preparationMinutes": 30,
+  "followupMinutes": 30,
+  "pricing": {
+    "onlineNet": 1490,
+    "onsiteNet": 1790,
+    "currency": "EUR",
+    "travel": "Reise- und gegebenenfalls Übernachtungsaufwand wird vor Beauftragung separat ausgewiesen."
+  },
+  "payment": { "atCommissioningPercent": 50, "afterDeliveryPercent": 50 },
+  "cta": "Unverbindliches Erstgespräch anfragen",
+  "boundaries": [
+    "keine Rechtsberatung",
+    "keine Datenschutzprüfung",
+    "kein Informationssicherheitsaudit",
+    "keine Toolfreigabe",
+    "keine Compliance-Zertifizierung",
+    "keine Garantie eines bestimmten individuellen Kompetenzniveaus"
+  ]
+}
