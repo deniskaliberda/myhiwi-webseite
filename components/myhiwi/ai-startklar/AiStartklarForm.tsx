@@ -285,7 +285,7 @@ export function AiStartklarForm() {
           </p>
         ) : null}
 
-        <label className="flex cursor-pointer items-start gap-mh-3">
+        <label className="flex min-h-[44px] cursor-pointer items-start gap-mh-3">
           <input
             name="consent"
             type="checkbox"

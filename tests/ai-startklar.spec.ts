@@ -282,6 +282,18 @@ test("@form begrenzt Texteingaben analog zur Servervalidierung", async ({ page }
   );
 });
 
+test("@form bietet auch für die Einwilligung eine praktische 44-Pixel-Touchfläche", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/ki-schulung#erstgespraech");
+
+  const consent = page.getByLabel(/Ich bin einverstanden/);
+  const target = consent.locator("xpath=ancestor::label");
+  const box = await target.boundingBox();
+
+  expect(box).not.toBeNull();
+  expect(box?.height).toBeGreaterThanOrEqual(44);
+});
+
 test("@form sendet nur die freigegebene Anfrage und bestätigt den Eingang", async ({ page }) => {
   let payload: Record<string, unknown> | undefined;
   await page.route("**/api/ai-startklar", async (route) => {
