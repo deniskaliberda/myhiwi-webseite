@@ -105,3 +105,93 @@ test("@page rendert Nutzen, Ablauf, Preis und Leistungsgrenze im Server-HTML", a
   expect(html).toContain('id="erstgespraech"');
   expect(html).not.toMatch(/AI[- ]?Act[- ]?zertifiziert|garantiert compliant|100\s*%\s*DSGVO/i);
 });
+
+test("@page strukturiert Überschriften, Abläufe und Leistungslisten semantisch", async ({ page }) => {
+  await page.goto("/ki-schulung");
+
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    "https://myhiwi.de/ki-schulung",
+  );
+  await expect(
+    page.getByRole("link", { name: AI_STARTKLAR.cta, exact: true }),
+  ).toHaveAttribute("href", "#erstgespraech");
+
+  for (const heading of [
+    "Das ist in Ihrer Schulung enthalten.",
+    "Zwei Formate, klar kalkuliert.",
+    "Von der Anfrage bis zur Nachbesprechung.",
+    "Klare Leistungsgrenzen.",
+  ]) {
+    await expect(
+      page.getByRole("heading", { level: 2, name: heading, exact: true }),
+    ).toBeVisible();
+  }
+
+  const outcomes = page.locator("section").filter({
+    has: page.getByRole("heading", {
+      level: 2,
+      name: "Nach der Schulung kann Ihr Team",
+      exact: true,
+    }),
+  });
+  await expect(outcomes.getByRole("list")).toHaveCount(1);
+  await expect(outcomes.getByRole("listitem")).toHaveCount(
+    AI_STARTKLAR.outcomes.length,
+  );
+
+  const agenda = page.locator("section").filter({
+    has: page.getByRole("heading", {
+      level: 2,
+      name: "Theorie, sichere Anwendung und Ihr Arbeitsalltag.",
+      exact: true,
+    }),
+  });
+  await expect(agenda.getByRole("listitem")).toHaveCount(
+    AI_STARTKLAR.agenda.length,
+  );
+  for (const item of AI_STARTKLAR.agenda) {
+    await expect(agenda.getByText(item, { exact: true })).toBeVisible();
+  }
+
+  const included = page.locator("section").filter({
+    has: page.getByRole("heading", {
+      level: 2,
+      name: "Das ist in Ihrer Schulung enthalten.",
+      exact: true,
+    }),
+  });
+  await expect(included.getByRole("list")).toHaveCount(1);
+  await expect(included.getByRole("listitem")).toHaveCount(
+    AI_STARTKLAR.included.length,
+  );
+
+  const packages = page.locator("section").filter({
+    has: page.getByRole("heading", {
+      level: 2,
+      name: "Zwei Formate, klar kalkuliert.",
+      exact: true,
+    }),
+  });
+  await expect(
+    packages.getByText(AI_STARTKLAR.travel, { exact: true }),
+  ).toBeVisible();
+
+  const process = page.locator("section").filter({
+    has: page.getByRole("heading", {
+      level: 2,
+      name: "Von der Anfrage bis zur Nachbesprechung.",
+      exact: true,
+    }),
+  });
+  await expect(process.getByRole("listitem")).toHaveCount(
+    AI_STARTKLAR.process.length,
+  );
+
+  await expect(
+    page.getByText(
+      "Wir arbeiten ausschließlich mit synthetischen oder robust anonymisierten sicheren Praxisbeispielen. Reale personenbezogene, vertrauliche, sicherheitsrelevante oder rote Daten werden nie live eingegeben.",
+      { exact: true },
+    ),
+  ).toBeVisible();
+});

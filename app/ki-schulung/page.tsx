@@ -81,9 +81,14 @@ export default function KiSchulungPage() {
           <h2 className="mt-mh-4 max-w-[760px] mh-display-3">
             Nach der Schulung kann Ihr Team
           </h2>
-          <div className="mt-mh-6 grid gap-mh-3 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-mh-6 grid gap-mh-3 md:grid-cols-2 lg:grid-cols-3">
             {AI_STARTKLAR.outcomes.map((outcome) => (
-              <Card key={outcome} padded="compact" className="flex gap-mh-3">
+              <Card
+                as="li"
+                key={outcome}
+                padded="compact"
+                className="flex gap-mh-3"
+              >
                 <Check
                   className="mt-0.5 h-5 w-5 shrink-0 text-mh-accent"
                   aria-hidden="true"
@@ -93,7 +98,7 @@ export default function KiSchulungPage() {
                 </span>
               </Card>
             ))}
-          </div>
+          </ul>
         </Container>
       </Section>
 
@@ -189,9 +194,12 @@ export default function KiSchulungPage() {
       <Section background="subtle" padding="large">
         <Container>
           <SectionMark index="04" label="Enthalten" />
-          <div className="mt-mh-6 grid gap-mh-3 md:grid-cols-2">
+          <h2 className="mt-mh-4 max-w-[760px] mh-display-3">
+            Das ist in Ihrer Schulung enthalten.
+          </h2>
+          <ul className="mt-mh-6 grid gap-mh-3 md:grid-cols-2">
             {AI_STARTKLAR.included.map((item) => (
-              <div
+              <li
                 key={item}
                 className="flex gap-mh-3 border-t border-mh-divider pt-mh-4"
               >
@@ -202,15 +210,18 @@ export default function KiSchulungPage() {
                 <span className="mh-body-small text-mh-text-secondary">
                   {item}
                 </span>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </Container>
       </Section>
 
       <Section background="paper" padding="large">
         <Container>
           <SectionMark index="05" label="Pakete" />
+          <h2 className="mt-mh-4 max-w-[760px] mh-display-3">
+            Zwei Formate, klar kalkuliert.
+          </h2>
           <div className="mt-mh-6 grid gap-mh-4 md:grid-cols-2">
             <Card>
               <span className="mh-label-mono text-mh-accent">Online</span>
@@ -242,6 +253,9 @@ export default function KiSchulungPage() {
       <Section background="subtle" padding="large">
         <Container>
           <SectionMark index="06" label="Zusammenarbeit" />
+          <h2 className="mt-mh-4 max-w-[760px] mh-display-3">
+            Von der Anfrage bis zur Nachbesprechung.
+          </h2>
           <ol className="mt-mh-6 grid gap-mh-3 lg:grid-cols-5">
             {AI_STARTKLAR.process.map((item, index) => (
               <Card as="li" key={item} padded="compact">
@@ -258,9 +272,9 @@ export default function KiSchulungPage() {
       <Section background="paper" padding="compact">
         <Container className="max-w-[900px]">
           <Card tone="ink">
-            <span className="mh-label-mono text-mh-glow">
-              Klare Leistungsgrenze
-            </span>
+            <h2 className="mh-display-4 text-mh-text-on-dark">
+              Klare Leistungsgrenzen.
+            </h2>
             <p className="mt-mh-4 mh-body-large text-mh-text-on-dark/85">
               AI-Startklar unterstützt den strukturierten und dokumentierbaren
               Aufbau grundlegender KI-Kompetenz.
