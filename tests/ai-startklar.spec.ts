@@ -219,7 +219,66 @@ test("@form zeigt alle Qualifizierungsfelder und den Sensitivitätshinweis", asy
     page.getByText(
       /keine personenbezogenen, vertraulichen oder sicherheitsrelevanten Inhalte/i,
     ),
-  ).toBeVisible();
+  ).toHaveCount(2);
+
+  const participants = page.getByLabel("Ungefähre Teilnehmerzahl");
+  await expect(participants).toHaveAttribute(
+    "aria-describedby",
+    "ai-startklar-participants-help",
+  );
+  await expect(page.locator("#ai-startklar-participants-help")).toContainText(
+    "bis zu 15 Personen",
+  );
+
+  const sensitiveWarning =
+    "Bitte übermitteln Sie keine personenbezogenen, vertraulichen oder sicherheitsrelevanten Inhalte.";
+  const tools = page.getByLabel(
+    "Aktuell genutzte oder geplante KI-Werkzeuge",
+  );
+  await expect(tools).toHaveAttribute(
+    "aria-describedby",
+    "ai-startklar-tools-help",
+  );
+  await expect(page.locator("#ai-startklar-tools-help")).toHaveText(
+    sensitiveWarning,
+  );
+
+  const message = page.getByLabel(/Kurze Ergänzung/);
+  await expect(message).toHaveAttribute(
+    "aria-describedby",
+    "ai-startklar-message-help",
+  );
+  await expect(page.locator("#ai-startklar-message-help")).toHaveText(
+    sensitiveWarning,
+  );
+});
+
+test("@form begrenzt Texteingaben analog zur Servervalidierung", async ({ page }) => {
+  await page.goto("/ki-schulung#erstgespraech");
+
+  await expect(page.getByLabel("Unternehmen")).toHaveAttribute(
+    "maxlength",
+    "160",
+  );
+  await expect(page.getByLabel("Vor- und Nachname")).toHaveAttribute(
+    "maxlength",
+    "120",
+  );
+  await expect(
+    page.getByLabel("Geschäftliche E-Mail-Adresse"),
+  ).toHaveAttribute("maxlength", "240");
+  await expect(page.getByLabel("Gewünschter Zeitraum")).toHaveAttribute(
+    "maxlength",
+    "120",
+  );
+  await expect(
+    page.getByLabel("Aktuell genutzte oder geplante KI-Werkzeuge"),
+  ).toHaveAttribute("maxlength", "500");
+  await expect(page.getByLabel(/Telefon/)).toHaveAttribute("maxlength", "80");
+  await expect(page.getByLabel(/Kurze Ergänzung/)).toHaveAttribute(
+    "maxlength",
+    "1600",
+  );
 });
 
 test("@form sendet nur die freigegebene Anfrage und bestätigt den Eingang", async ({ page }) => {

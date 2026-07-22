@@ -105,6 +105,7 @@ export function AiStartklarForm() {
             id="ai-startklar-company"
             name="company"
             required
+            maxLength={160}
             autoComplete="organization"
             className={fieldClass}
           />
@@ -117,6 +118,7 @@ export function AiStartklarForm() {
             id="ai-startklar-name"
             name="name"
             required
+            maxLength={120}
             autoComplete="name"
             className={fieldClass}
           />
@@ -130,6 +132,7 @@ export function AiStartklarForm() {
             name="email"
             type="email"
             required
+            maxLength={240}
             autoComplete="email"
             className={fieldClass}
           />
@@ -146,9 +149,13 @@ export function AiStartklarForm() {
             min={1}
             max={500}
             inputMode="numeric"
+            aria-describedby="ai-startklar-participants-help"
             className={fieldClass}
           />
-          <p className="mt-mh-2 mh-body-xs text-mh-text-secondary">
+          <p
+            id="ai-startklar-participants-help"
+            className="mt-mh-2 mh-body-xs text-mh-text-secondary"
+          >
             Das Standardpaket gilt für bis zu 15 Personen. Größere Gruppen
             kalkulieren wir individuell.
           </p>
@@ -180,6 +187,7 @@ export function AiStartklarForm() {
             id="ai-startklar-timeframe"
             name="timeframe"
             required
+            maxLength={120}
             placeholder="z. B. September 2026"
             className={fieldClass}
           />
@@ -192,10 +200,19 @@ export function AiStartklarForm() {
             id="ai-startklar-tools"
             name="tools"
             required
+            maxLength={500}
             rows={2}
             placeholder="z. B. Microsoft Copilot, ChatGPT oder noch offen"
+            aria-describedby="ai-startklar-tools-help"
             className={`${fieldClass} resize-y`}
           />
+          <p
+            id="ai-startklar-tools-help"
+            className="mt-mh-2 mh-body-xs font-semibold text-mh-text-secondary"
+          >
+            Bitte übermitteln Sie keine personenbezogenen, vertraulichen oder
+            sicherheitsrelevanten Inhalte.
+          </p>
         </div>
         <div>
           <label htmlFor="ai-startklar-focus" className={labelClass}>
@@ -229,6 +246,7 @@ export function AiStartklarForm() {
             id="ai-startklar-phone"
             name="phone"
             type="tel"
+            maxLength={80}
             autoComplete="tel"
             className={fieldClass}
           />
@@ -245,9 +263,13 @@ export function AiStartklarForm() {
             name="message"
             maxLength={1600}
             rows={3}
+            aria-describedby="ai-startklar-message-help"
             className={`${fieldClass} resize-y`}
           />
-          <p className="mt-mh-2 mh-body-xs font-semibold text-mh-text-secondary">
+          <p
+            id="ai-startklar-message-help"
+            className="mt-mh-2 mh-body-xs font-semibold text-mh-text-secondary"
+          >
             Bitte übermitteln Sie keine personenbezogenen, vertraulichen oder
             sicherheitsrelevanten Inhalte.
           </p>
