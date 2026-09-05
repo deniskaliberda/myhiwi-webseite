@@ -22,6 +22,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: false,
   weight: ["400", "500", "600", "700"],
 });
 
@@ -29,21 +30,24 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
+  preload: false,
   weight: ["500", "600", "700", "800"],
 });
 
 // MyHiwi Redesign 2026 — DESIGN.md typography
 const bricolage = Bricolage_Grotesque({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-bricolage",
-  display: "swap",
+  display: "optional",
+  preload: false,
   weight: ["400", "600", "700", "800"],
 });
 
 const interTight = Inter_Tight({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-inter-tight",
   display: "swap",
+  preload: false,
   weight: ["400", "500", "600", "700"],
 });
 
@@ -51,65 +55,52 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin", "latin-ext"],
   variable: "--font-jetbrains-mono",
   display: "swap",
+  preload: false,
   weight: ["500", "600", "700"],
 });
 
 const instrumentSerif = Instrument_Serif({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-instrument-serif",
-  display: "swap",
+  display: "optional",
+  preload: false,
   weight: ["400"],
   style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
+    default: "Webseiten, Google- & KI-Sichtbarkeit | MyHiwi Ahrensfelde",
     template: "%s | MyHiwi",
   },
   description:
-    "MyHiwi baut lokalen Dienstleistern, Pensionen & Ferienwohnungen den Weg von Google-Sichtbarkeit zu direkten Anfragen und Buchungen. Berlin-Ost & Bayern.",
-  keywords: [
-    "Direktanfragen lokale Betriebe",
-    "Direktbuchung Ferienwohnung",
-    "Anfragesystem Pension",
-    "lokale Unternehmen digitalisieren",
-    "Website KMU",
-    "Local SEO",
-    "Google Business Profil",
-    "Google Ads KMU",
-    "Buchungssystem erstellen lassen",
-    "Direktbuchung ohne OTA",
-    "Zahlungssystem Stripe",
-    "Ahrensfelde Berlin Bayern",
-  ],
-  authors: [{ name: "Denis Kaliberda" }],
+    "Webseiten, Local SEO und KI-Sichtbarkeit für lokale Betriebe. MyHiwi aus Ahrensfelde: persönlich mit Denis, von der ersten Suche bis zur Anfrage.",
+  authors: [{ name: "Denis Kaliberda", url: "https://myhiwi.de/ueber-mich" }],
   metadataBase: new URL("https://myhiwi.de"),
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://myhiwi.de",
     siteName: "MyHiwi",
-    title:
-      "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
+    title: "Webseiten, Google- & KI-Sichtbarkeit | MyHiwi",
     description:
-      "Aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen — gebaut für lokale Betriebe in Berlin-Ost und am Ammersee.",
+      "Für Betriebe, die vor Ort überzeugen. Persönlich aus Ahrensfelde.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
+    title: "Webseiten, Google- & KI-Sichtbarkeit | MyHiwi",
     description:
-      "Aus Sichtbarkeit werden direkte Anfragen und Buchungen — für lokale Betriebe, Pensionen und Ferienwohnungen.",
+      "Für Betriebe, die vor Ort überzeugen. Persönlich aus Ahrensfelde.",
   },
 };
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "MyHiwi UG",
+  "@id": "https://myhiwi.de/#organization",
+  name: "MyHiwi",
+  legalName: "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
   description:
-    "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+    "Webseiten, Google-Sichtbarkeit und KI-Sichtbarkeit für lokale Betriebe aus Ahrensfelde, Berlin-Ost und Barnim.",
   url: "https://myhiwi.de",
   logo: "https://myhiwi.de/brand/myhiwi-h-logo.svg",
   email: "kontakt@myhiwi.de",
@@ -139,8 +130,8 @@ const organizationJsonLd = {
   telephone: "+49 1511 4993066",
   // TODO(Denis): sameAs (Social-Profile) ergaenzen, sobald vorhanden.
   serviceType: [
-    "Direktbuchungssystem für Unterkünfte",
-    "Anfragesystem für lokale Betriebe",
+    "KI-Sichtbarkeit",
+    "Webseiten für lokale Betriebe",
     "Local SEO",
     "Webdesign",
     "Google Ads Management",
@@ -173,7 +164,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans">
+      <body className="font-mh-body">
         {GTAG_PRIMARY ? (
           <>
             {/* Consent Mode v2 default = denied (EU). Set BEFORE the gtag loader. */}

@@ -19,7 +19,7 @@ import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
   title:
-    "Formazin Architekturbüro — KI-Agent als digitaler Partner | MyHiwi Case Study",
+    "Formazin Architekturbüro — KI-Agent als digitaler Partner",
   description:
     "Nicht eine einmalige Webseite — sondern digitaler Partner, der Prozesse im Architekturbüro automatisiert. Erste Baustelle: KI-Agent für Bauprotokolle, Pilot Mai 2026.",
   alternates: {

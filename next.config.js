@@ -14,12 +14,12 @@ const nextConfig = {
       },
       {
         source: "/seo",
-        destination: "/",
+        destination: "/leistungen/google-sichtbarkeit",
         permanent: true,
       },
       {
         source: "/webdesign",
-        destination: "/",
+        destination: "/leistungen/webseiten",
         permanent: true,
       },
       {

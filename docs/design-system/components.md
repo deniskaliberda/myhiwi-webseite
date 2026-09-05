@@ -318,3 +318,8 @@ Jede Komponente trägt:
 ---
 
 **Ende components.md.**
+
+## Relaunch 2026-09-05
+
+- `app/page.tsx` / `app/relaunch.module.css`: servergerenderte Startseite mit Hero, echtem Projektbild, optimierten Kundenlogos, redaktionellen Leistungszeilen, Projekten, Ablauf, Gründer, nativen FAQ-Details und Sichtbarkeitscheck. Mobile einspaltig mit Systemfonts; Desktop ink/blue Editorial-Aufteilung.
+- `components/myhiwi/services/`: gemeinsame servergerenderte Leistungsdarstellung für Webseiten, Google- und KI-Sichtbarkeit. Scoped CSS; eigene Inhalte, Metadata und JSON-LD je Route.

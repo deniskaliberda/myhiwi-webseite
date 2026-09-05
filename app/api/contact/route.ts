@@ -16,8 +16,10 @@ function sanitize(str: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const body = await request.json();
+    const body = await request.json().catch(() => null);
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
+      return NextResponse.json({ error: "Bitte prüfen Sie Ihre Angaben." }, { status: 400 });
+    }
 
     const {
       name,
@@ -33,14 +35,18 @@ export async function POST(request: NextRequest) {
       source,
     } = body;
 
-    if (!name || !email || !website) {
+    if ([name, email, website].some((value) => typeof value !== "string" || !value.trim())) {
       return NextResponse.json(
         { error: "Name, E-Mail und Webseite/Firma sind Pflichtfelder." },
         { status: 400 }
       );
     }
 
-    if (!consent) {
+    if ([message, phone].some((value) => value != null && typeof value !== "string")) {
+      return NextResponse.json({ error: "Bitte prüfen Sie Ihre Angaben." }, { status: 400 });
+    }
+
+    if (consent !== true) {
       return NextResponse.json(
         { error: "Ohne Einwilligung kann die Anfrage nicht verarbeitet werden." },
         { status: 400 }
@@ -58,10 +64,10 @@ export async function POST(request: NextRequest) {
     const isFewo = source === "fewo-direktbuchung";
     const heading = isFewo
       ? "Neue Direktbuchungs-Check-Anfrage (FeWo)"
-      : "Neue Quick-Check-Anfrage über MyHiwi";
+      : "Neue Sichtbarkeitscheck-Anfrage über MyHiwi";
     const subject = isFewo
       ? `Direktbuchungs-Check: ${sanitize(website)} — ${sanitize(name)}`
-      : `Quick-Check: ${sanitize(website)} — ${sanitize(name)}`;
+      : `Sichtbarkeitscheck: ${sanitize(website)} — ${sanitize(name)}`;
 
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1e3a5f;">
@@ -114,7 +120,8 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    await resend.emails.send({
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const delivery = await resend.emails.send({
       from: "MyHiwi Formular <formular@myhiwi.de>",
       to: (process.env.CONTACT_EMAIL || "denis@myhiwi.de")
         .split(",")
@@ -124,6 +131,16 @@ export async function POST(request: NextRequest) {
       subject,
       html,
     });
+
+    // Resend returns API errors in the result instead of throwing them.
+    // Only an accepted email may show a confirmation or emit a lead event.
+    if (delivery.error || !delivery.data?.id) {
+      console.error("Contact email not accepted:", delivery.error?.name || "missing_message_id");
+      return NextResponse.json(
+        { error: "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut." },
+        { status: 502 }
+      );
+    }
 
     // Server-side Meta CAPI Lead — only with ad-tracking consent and PII allowed.
     // Awaited (sendMetaLeadCapi has an internal timeout) so the call reliably

@@ -4,6 +4,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://myhiwi.de";
 
   return [
+    ...["webseiten", "google-sichtbarkeit", "ki-sichtbarkeit"].map((slug) => ({
+      url: `${baseUrl}/leistungen/${slug}`,
+      lastModified: new Date("2026-09-05"),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
     {
       url: baseUrl,
       lastModified: new Date(),

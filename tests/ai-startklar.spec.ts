@@ -362,7 +362,7 @@ test("@form sendet nur die freigegebene Anfrage und bestätigt den Eingang", asy
     phone: "030 123456",
     message: "Einsteigergruppe",
     consent: true,
-    page: "http://127.0.0.1:3000/ki-schulung#erstgespraech",
+    page: `http://127.0.0.1:${process.env.PLAYWRIGHT_PORT ?? "3000"}/ki-schulung#erstgespraech`,
   });
   expect(typeof payload?.participants).toBe("number");
   expect(typeof payload?.consent).toBe("boolean");

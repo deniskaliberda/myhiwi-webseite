@@ -5,7 +5,7 @@ import SectionReveal from "@/components/shared/SectionReveal";
 import { BlogArticleShell } from "@/components/myhiwi/blog/BlogArticleShell";
 
 export const metadata: Metadata = {
-  title: "Warum Next.js für lokale KMU-Websites die beste Wahl ist | MyHiwi Blog",
+  title: "Warum Next.js für lokale KMU-Websites die beste Wahl ist",
   description:
     "Warum ich keine WordPress-Sites mehr baue — und was Next.js für KMU konkret besser macht: Ladezeit, SEO, Wartung, Sicherheit. Mit realen Zahlen aus dem Sonnenhof-Relaunch.",
   keywords: [

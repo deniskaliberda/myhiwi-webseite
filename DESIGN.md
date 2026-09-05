@@ -475,3 +475,9 @@ Auf dunklem Hintergrund: Accent-Farbe + dünner Glow-Strich. Auf hellem Hintergr
 ---
 
 **Deep source:** [`docs/design-system/`](./docs/design-system/) · Einstieg [`HANDOVER.md`](./docs/design-system/HANDOVER.md).
+
+## Relaunch 05.09.2026 — bestätigte Positionierung
+
+Denis hat den SEO-Audit und die Umsetzung für lokale Betriebe bestätigt. Die neue Hauptpositionierung lautet Webseiten, Google-Sichtbarkeit und KI-Sichtbarkeit. Diese Entscheidung ersetzt die älteren Einschränkungen zu Webdesign/GEO als Leistung und die frühere Digital-Check-CTA-Vorgabe. Sichtbarkeit wird konkret als zugängliche Informationen, passende Suchanfragen und nachvollziehbare Entwicklung erklärt, ohne Ranking- oder KI-Empfehlungsgarantie.
+
+Primärer CTA: „Sichtbarkeit prüfen lassen“, mobil „Sichtbarkeitscheck“. Hauptleistungen unter `/leistungen/webseiten`, `/leistungen/google-sichtbarkeit`, `/leistungen/ki-sichtbarkeit`. Bestehende Branchen-/Schulungsseiten bleiben bestehen. Atlantik-Farben und vorhandene Fonts bleiben; neue Layouts in CSS Modules, mobile Systemfonts entsprechend bestehender Performance-Arbeit. Ruhige Editorial-Abschnitte, echte Projektbilder, native FAQ-Details und solide Farbflächen; kein Hero-Loop. Dieses Kapitel hat für die geänderten Hauptseiten Vorrang vor alten Positionierungs- und Seitenreihenfolge-Vorgaben.

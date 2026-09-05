@@ -4,7 +4,7 @@ import CaseStudyClient from "./client";
 
 export const metadata: Metadata = {
   title:
-    "Sonnenhof Herrsching — 199 direkte Gäste-Anfragen in 4 Monaten | MyHiwi Case Study",
+    "Sonnenhof Herrsching — 199 direkte Gäste-Anfragen in 4 Monaten",
   description:
     "Case Study: Wie MyHiwi für Sonnenhof Herrsching in 4 Monaten 199 direkte Anfragen, 1.158 organische Google-Klicks und einen 24-Monats-Folgevertrag aufgebaut hat.",
   alternates: {

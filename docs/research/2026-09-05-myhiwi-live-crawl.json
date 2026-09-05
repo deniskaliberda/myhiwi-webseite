@@ -1,0 +1,5607 @@
+[
+  {
+    "url": "https://myhiwi.de",
+    "final": "https://myhiwi.de",
+    "status": 200,
+    "x_robots": null,
+    "title": "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
+    "h1": [
+      "Aus Sichtbarkeit werden",
+      " "
+    ],
+    "description": "MyHiwi baut lokalen Dienstleistern, Pensionen & Ferienwohnungen den Weg von Google-Sichtbarkeit zu direkten Anfragen und Buchungen. Berlin-Ost & Bayern.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/kontakt",
+      "/case-studies",
+      "/ueber-mich",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/fewo-direktbuchung",
+      "/kontakt",
+      "/kontakt",
+      "/kontakt",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist ein digitales Wachstumssystem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ein digitales Wachstumssystem verbindet Sichtbarkeit, Website, Anfrageweg, Buchung, Zahlung und passende Automatisierung. Es ist keine einzelne neue Webseite, sondern ein Ablauf, der aus Aufmerksamkeit konkrete Anfragen machen soll."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist MyHiwi eine klassische Webdesign-Agentur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Eine neue Website kann ein Baustein sein, aber sie wird immer im Zusammenhang mit Google-Sichtbarkeit, Anfragequalität und operativer Entlastung geplant. Ziel ist ein funktionierender Weg vom ersten Besuch bis zur verbindlichen Anfrage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie läuft der kostenlose Digital-Check ab?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sie schicken kurz Ihre Ausgangslage. Danach schaut Denis persönlich auf Website, Google-Auftritt und Anfrageweg und meldet sich mit einer ehrlichen Einschätzung, wo ein sinnvoller erster Hebel liegen könnte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Für welche Betriebe passt das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MyHiwi passt besonders für lokale Unternehmen mit wiederkehrenden Anfragen, Terminen, Buchungen oder Zahlungen. Typische Beispiele sind Unterkünfte, Fahrschulen, Sportanbieter, Praxen, Kanzleien, Handwerk und regionale Dienstleister."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie gehen Sie mit Daten und DSGVO um?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wir arbeiten DSGVO-bewusst, mit AVV und Anbieterübersicht projektbezogen. Vor Datenflüssen wird geklärt, welche Anbieter eingesetzt werden, welche Daten wirklich nötig sind und welche Abläufe besser reduziert werden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wann ist MyHiwi nicht passend?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wenn Sie nur eine möglichst billige einzelne Unterseite oder schnelle Design-Kosmetik suchen, ist MyHiwi wahrscheinlich nicht der richtige Partner. Der Ansatz lohnt sich dort, wo Website, Nachfrage und Betrieb zusammen verbessert werden sollen."
+            }
+          }
+        ]
+      }
+    ],
+    "bytes": 179738,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/ueber-mich",
+    "final": "https://myhiwi.de/ueber-mich",
+    "status": 200,
+    "x_robots": null,
+    "title": "Über mich — Denis Kaliberda, Gründer von MyHiwi | MyHiwi",
+    "h1": [
+      "Denis "
+    ],
+    "description": "Ex-Volleyball-Nationalspieler, Olympia-Teilnehmer 2012, WM-Bronze 2014 — und heute digitaler Partner für lokale Unternehmen. Meine Geschichte und wie ich heute arbeite.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/ueber-mich"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "mailto:kontakt@myhiwi.de",
+      "https://de.wikipedia.org/wiki/Denis_Kaliberda",
+      "https://www.volleyball-verband.de/de/kader/spieler--amp--trainer/denis-kaliberda/",
+      "https://www.tagesspiegel.de/sport/vieles-fehlt-um-gut-volleyball-spielen-zu-konnen-denis-kaliberda-ist-der-hoffnungstrager-der-netzhoppers-13148944.html",
+      "https://www.sueddeutsche.de/sport/kaliberda-herrsching-volleyball-nationalmannschaft-li.3330428",
+      "/kontakt",
+      "/case-studies",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Denis Kaliberda",
+        "jobTitle": "Gründer & Geschäftsführer, MyHiwi",
+        "description": "Ehemaliger Volleyball-Nationalspieler (Olympia 2012, WM-Bronze 2014), heute digitaler Partner für lokale Unternehmen.",
+        "url": "https://myhiwi.de/ueber-mich",
+        "image": "https://myhiwi.de/ueber-mich/portrait.jpg",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "url": "https://myhiwi.de"
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Ahrensfelde bei Berlin"
+        },
+        "sameAs": [
+          "https://de.wikipedia.org/wiki/Denis_Kaliberda",
+          "https://www.volleyball-verband.de/de/kader/spieler--amp--trainer/denis-kaliberda/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Über mich",
+            "item": "https://myhiwi.de/ueber-mich"
+          }
+        ]
+      }
+    ],
+    "bytes": 94679,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/kontakt",
+    "final": "https://myhiwi.de/kontakt",
+    "status": 200,
+    "x_robots": null,
+    "title": "Kontakt — kostenlosen Digital-Check anfragen | MyHiwi",
+    "h1": [
+      "Schicken Sie mir Ihre Webseite — ich schau mir das an."
+    ],
+    "description": "Schicken Sie MyHiwi Ihre Webseite oder Firma — Sie bekommen in 1–3 Werktagen eine ehrliche Ersteinschätzung. Kein Sales-Funnel, Antwort direkt von Denis.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/kontakt"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/datenschutz",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 52022,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/festpreis",
+    "final": "https://myhiwi.de/festpreis",
+    "status": 200,
+    "x_robots": null,
+    "title": "Website & System zum Festpreis anfragen | MyHiwi",
+    "h1": [
+      "Erzählen Sie mir,"
+    ],
+    "description": "Beschreiben Sie in eigenen Worten, was Sie brauchen — Website, Buchungs- oder Zahlungssystem, eigenes KI-Tool. Antwort in 24 Stunden mit konkretem Festpreis, kein Verkaufs-Telefonat.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/festpreis"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 49024,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/fewo-direktbuchung",
+    "final": "https://myhiwi.de/fewo-direktbuchung",
+    "status": 200,
+    "x_robots": null,
+    "title": "Direktbuchung für Ferienwohnungen & Hotels | MyHiwi",
+    "h1": [
+      "Gäste, die "
+    ],
+    "description": "Mehr Direktbuchungen, weniger Booking-Provision: MyHiwi baut Ihre Direktbuchungs-Strecke und fährt die Anzeigen, die darauf konvertieren — messbar, aus einer Hand.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/fewo-direktbuchung"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "#check-anfragen",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/sonnenhof-herrsching",
+      "/datenschutz",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Muss ich Booking.com komplett kündigen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Ziel ist, den direkten Anteil Schritt für Schritt zu erhöhen. Portale bleiben als Ergänzung — sie kosten Sie dann aber nicht mehr jede Buchung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wer zahlt das Werbebudget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das Werbebudget zahlen Sie direkt an Google oder Meta. Wir betreuen die Kampagnen. Honorar und Werbebudget bleiben getrennt und transparent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ab wann lohnt sich Werbung überhaupt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Erst wenn die Buchungsstrecke steht und sauber misst. Anzeigen auf eine Seite, die nicht bucht, sind verbranntes Geld — deshalb bauen wir immer zuerst die Strecke."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das hängt von Größe und Zielen ab und gehört ins Erstgespräch, nicht in eine pauschale Tabelle. Den Direktbuchungs-Check bekommen Sie kostenlos und unverbindlich."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie geht ihr mit Daten und DSGVO um?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DSGVO-bewusst, mit AVV und Anbieterübersicht. Das Tracking läuft consent-konform — gemessen wird nur, was wir auch dürfen."
+            }
+          }
+        ]
+      }
+    ],
+    "bytes": 145676,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/case-studies",
+    "final": "https://myhiwi.de/case-studies",
+    "status": 200,
+    "x_robots": null,
+    "title": "Case Studies — Website, SEO, Buchungsplattform & KI-Agent | MyHiwi",
+    "h1": [
+      "Vier Projekte, vier Engpässe,",
+      " "
+    ],
+    "description": "Laufende Projekte im Detail: Sonnenhof Herrsching (Local SEO + Direktbuchung), Villa Gloria (Direktbuchung Istrien), Mr. Sherman Tanzstudio (eigene Brand-App) und Formazin (Architekturbüro mit KI-Automation).",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/case-studies"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/villa-gloria",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://myhiwi.de/case-studies"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Sonnenhof Herrsching",
+            "url": "https://myhiwi.de/case-studies/sonnenhof-herrsching"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Villa Gloria",
+            "url": "https://myhiwi.de/case-studies/villa-gloria"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mr. Sherman Tanzstudio",
+            "url": "https://myhiwi.de/case-studies/mr-sherman"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Formazin · Architekturbüro",
+            "url": "https://myhiwi.de/case-studies/formazin"
+          }
+        ]
+      }
+    ],
+    "bytes": 85612,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/case-studies/sonnenhof-herrsching",
+    "final": "https://myhiwi.de/case-studies/sonnenhof-herrsching",
+    "status": 200,
+    "x_robots": null,
+    "title": "Sonnenhof Herrsching — 199 direkte Gäste-Anfragen in 4 Monaten | MyHiwi Case Study | MyHiwi",
+    "h1": [
+      "Sichtbarkeit, die in "
+    ],
+    "description": "Case Study: Wie MyHiwi für Sonnenhof Herrsching in 4 Monaten 199 direkte Anfragen, 1.158 organische Google-Klicks und einen 24-Monats-Folgevertrag aufgebaut hat.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/case-studies/sonnenhof-herrsching"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/case-studies",
+      "/kontakt",
+      "https://sonnenhof-herrsching.de",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 114307,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/case-studies/mr-sherman",
+    "final": "https://myhiwi.de/case-studies/mr-sherman",
+    "status": 200,
+    "x_robots": null,
+    "title": "Mr. Sherman Tanzstudio — Buchungs- und Zahlungs-Plattform | MyHiwi Case Study | MyHiwi",
+    "h1": [
+      "Mr.",
+      " "
+    ],
+    "description": "Komplette Membership-Plattform für ein Berliner Tanzstudio: Next.js + Supabase + Stripe mit 4 Tiers (49–1.020 €/Mo), Trainer-Portal, Admin-CRM und Meta-Ads mit Server-Side CAPI.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/case-studies/mr-sherman"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/case-studies",
+      "https://mr-sherman.de",
+      "/kontakt",
+      "/case-studies",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 116581,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/case-studies/formazin",
+    "final": "https://myhiwi.de/case-studies/formazin",
+    "status": 200,
+    "x_robots": null,
+    "title": "Formazin Architekturbüro — KI-Agent als digitaler Partner | MyHiwi Case Study | MyHiwi",
+    "h1": [],
+    "description": "Nicht eine einmalige Webseite — sondern digitaler Partner, der Prozesse im Architekturbüro automatisiert. Erste Baustelle: KI-Agent für Bauprotokolle, Pilot Mai 2026.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/case-studies/formazin"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/case-studies",
+      "/kontakt",
+      "/case-studies",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 97412,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/case-studies/villa-gloria",
+    "final": "https://myhiwi.de/case-studies/villa-gloria",
+    "status": 200,
+    "x_robots": null,
+    "title": "Villa Gloria Istrien — Custom Buchungs-Flow mit iCal-Sync | MyHiwi Case Study | MyHiwi",
+    "h1": [
+      "Vom Smoobu-Widget",
+      " "
+    ],
+    "description": "Wie ein Ferienhaus in Istrien das alte Smoobu-Widget durch einen Custom-Kalender mit echter Verfügbarkeitsprüfung ersetzt hat. Next.js + iCal-Parser + Property-Toggle + DE/EN.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/case-studies/villa-gloria"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/case-studies",
+      "https://villa-gloria-istrien.de",
+      "/kontakt",
+      "/case-studies",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 105212,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog",
+    "final": "https://myhiwi.de/blog",
+    "status": 200,
+    "x_robots": null,
+    "title": "Blog — Praxis-Notizen zu Local SEO, Webdesign & KI für KMU | MyHiwi",
+    "h1": [
+      "Praxis-Notizen aus echten",
+      " "
+    ],
+    "description": "Praxisnahe Notizen zu Local SEO, Google Business Profil, Webdesign und Direktbuchung — aus echten Projekten für lokale Betriebe.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog/keyword-kannibalisierung",
+      "/blog/next-js-fuer-lokale-websites",
+      "/blog/schema-org-fuer-hotels-und-kmu",
+      "/blog/google-ads-pmax-fuer-kmu",
+      "/blog/ota-provision-vs-direktbuchung",
+      "/blog/sichtbarkeitsindex-lesen",
+      "/blog/google-business-profil",
+      "/case-studies",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 75168,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog/google-business-profil",
+    "final": "https://myhiwi.de/blog/google-business-profil",
+    "status": 200,
+    "x_robots": null,
+    "title": "Google Business Profil: Warum es für lokale Unternehmen unverzichtbar ist | MyHiwi Blog | MyHiwi",
+    "h1": [
+      "Google Business Profil: warum es für lokale Betriebe",
+      " "
+    ],
+    "description": "Warum Ihr Google Business Profil das wichtigste Werkzeug für lokale Sichtbarkeit ist — mit konkreten Schritten, wie Sie über Google Maps mehr Kunden gewinnen.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog/google-business-profil"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog",
+      "/wissen/lokaler-betrieb-bei-google-gefunden-werden",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Google Business Profil: Warum es für lokale Unternehmen unverzichtbar ist",
+        "datePublished": "2026-02-11",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/blog/google-business-profil"
+      }
+    ],
+    "bytes": 75150,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog/keyword-kannibalisierung",
+    "final": "https://myhiwi.de/blog/keyword-kannibalisierung",
+    "status": 200,
+    "x_robots": null,
+    "title": "Keyword-Kannibalisierung verstehen und fixen | MyHiwi Blog | MyHiwi",
+    "h1": [
+      "Keyword-Kannibalisierung: der stille Killer",
+      " "
+    ],
+    "description": "Was Keyword-Kannibalisierung ist, wie sie entsteht, und wie Sonnenhof Herrsching damit in 100 Tagen die Top-10-Keywords vervierfachen konnte. Praktischer Leitfaden für KMU-Websites.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog/keyword-kannibalisierung"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog",
+      "/case-studies/sonnenhof-herrsching",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Keyword-Kannibalisierung verstehen und fixen",
+        "datePublished": "2026-04-24",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/blog/keyword-kannibalisierung"
+      }
+    ],
+    "bytes": 75741,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog/next-js-fuer-lokale-websites",
+    "final": "https://myhiwi.de/blog/next-js-fuer-lokale-websites",
+    "status": 200,
+    "x_robots": null,
+    "title": "Warum Next.js für lokale KMU-Websites die beste Wahl ist | MyHiwi Blog | MyHiwi",
+    "h1": [
+      "Warum ich für KMU",
+      " "
+    ],
+    "description": "Warum ich keine WordPress-Sites mehr baue — und was Next.js für KMU konkret besser macht: Ladezeit, SEO, Wartung, Sicherheit. Mit realen Zahlen aus dem Sonnenhof-Relaunch.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog/next-js-fuer-lokale-websites"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog",
+      "/case-studies/sonnenhof-herrsching",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Warum Next.js für lokale KMU-Websites die beste Wahl ist",
+        "datePublished": "2026-04-24",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/blog/next-js-fuer-lokale-websites"
+      }
+    ],
+    "bytes": 74477,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog/schema-org-fuer-hotels-und-kmu",
+    "final": "https://myhiwi.de/blog/schema-org-fuer-hotels-und-kmu",
+    "status": 200,
+    "x_robots": null,
+    "title": "Schema.org für Hotels und KMU — was Google wirklich braucht | MyHiwi Blog | MyHiwi",
+    "h1": [
+      "Schema.org — die unsichtbare Sprache,",
+      " "
+    ],
+    "description": "Strukturierte Daten sind unsichtbare SEO-Arbeit mit sichtbarem Effekt. Welche Schema-Typen KMU brauchen (Hotel, LocalBusiness, FAQ), wie man sie richtig setzt, und warum das Rich Results entscheidet.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog/schema-org-fuer-hotels-und-kmu"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog",
+      "https://search.google.com/test/rich-results",
+      "/case-studies/sonnenhof-herrsching",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Schema.org für Hotels und KMU",
+        "datePublished": "2026-04-24",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/blog/schema-org-fuer-hotels-und-kmu"
+      }
+    ],
+    "bytes": 72442,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog/google-ads-pmax-fuer-kmu",
+    "final": "https://myhiwi.de/blog/google-ads-pmax-fuer-kmu",
+    "status": 200,
+    "x_robots": null,
+    "title": "Google Ads Performance Max für KMU — was 2026 funktioniert | MyHiwi Blog | MyHiwi",
+    "h1": [
+      "Google Ads Performance Max —",
+      " "
+    ],
+    "description": "Performance Max ist seit 2023 Googles Standard-Kampagnentyp. Wie es funktioniert, wann es für KMU rechnet, und was beim Sonnenhof-Ammersee zu 0,30 € CPC geführt hat — bei Branchenschnitt 1–3 €.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog/google-ads-pmax-fuer-kmu"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog",
+      "/case-studies/sonnenhof-herrsching",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Google Ads Performance Max für KMU — was 2026 funktioniert",
+        "datePublished": "2026-04-24",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/blog/google-ads-pmax-fuer-kmu"
+      }
+    ],
+    "bytes": 71951,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog/ota-provision-vs-direktbuchung",
+    "final": "https://myhiwi.de/blog/ota-provision-vs-direktbuchung",
+    "status": 200,
+    "x_robots": null,
+    "title": "OTA-Provision vs. Direktbuchung — die ehrliche Rechnung | MyHiwi Blog | MyHiwi",
+    "h1": [
+      "Was Booking.com Sie wirklich kostet —",
+      " "
+    ],
+    "description": "Booking.com und FeWo-Direkt behalten 15–18 % jeder Buchung. Wann sich eine eigene Direktbuchungs-Infrastruktur rechnet — konkret, mit Zahlen am Ammersee-Beispiel.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog/ota-provision-vs-direktbuchung"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog",
+      "/case-studies/sonnenhof-herrsching",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "OTA-Provision vs. Direktbuchung — die ehrliche Rechnung",
+        "datePublished": "2026-04-24",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/blog/ota-provision-vs-direktbuchung"
+      }
+    ],
+    "bytes": 74489,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/blog/sichtbarkeitsindex-lesen",
+    "final": "https://myhiwi.de/blog/sichtbarkeitsindex-lesen",
+    "status": 200,
+    "x_robots": null,
+    "title": "Sichtbarkeitsindex lesen — was Top-10-Keywords wirklich bedeuten | MyHiwi Blog | MyHiwi",
+    "h1": [
+      "Sichtbarkeitsindex —",
+      " "
+    ],
+    "description": "Was der Sichtbarkeitsindex bei Sistrix und SE Ranking aussagt, warum nur Top-10-Keywords Traffic bringen, und wie man als KMU-Inhaber einen Monats-Bericht richtig interpretiert.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/blog/sichtbarkeitsindex-lesen"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/blog",
+      "/case-studies/sonnenhof-herrsching",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Sichtbarkeitsindex lesen — was Top-10-Keywords wirklich bedeuten",
+        "datePublished": "2026-04-24",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/blog/sichtbarkeitsindex-lesen"
+      }
+    ],
+    "bytes": 73293,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen",
+    "final": "https://myhiwi.de/wissen",
+    "status": 200,
+    "x_robots": null,
+    "title": "Wissen — ehrliche Antworten für lokale Betriebe | MyHiwi",
+    "h1": [
+      "Ehrliche Antworten für lokale",
+      " "
+    ],
+    "description": "Kurze, ehrliche Antworten auf die Fragen, die lokale Betriebe vor dem nächsten digitalen Schritt stellen: Kosten, Google Ads, Website vs. Profil, Direktbuchung.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/wissen/lokaler-betrieb-bei-google-gefunden-werden",
+      "/wissen/was-kostet-website-handwerker",
+      "/wissen/lohnt-sich-google-ads-kleine-unternehmen",
+      "/wissen/brauche-ich-website-oder-google-profil",
+      "/wissen/was-kostet-seo-monatlich",
+      "/wissen/was-kostet-booking-com",
+      "/wissen/eigenes-buchungssystem-vs-booking-com",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 64416,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen/was-kostet-website-handwerker",
+    "final": "https://myhiwi.de/wissen/was-kostet-website-handwerker",
+    "status": 200,
+    "x_robots": null,
+    "title": "Was kostet eine Website für Handwerker? (2026) | MyHiwi",
+    "h1": [
+      "Was kostet eine Website für "
+    ],
+    "description": "Was eine Website für einen Handwerksbetrieb 2026 wirklich kostet — ehrliche Preisspannen (Baukasten, Freelancer, Agentur) und warum der günstigste Preis selten der beste ist.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen/was-kostet-website-handwerker"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/ueber-mich",
+      "/festpreis",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Was kostet eine Website für Handwerker? (2026)",
+        "datePublished": "2026-06-02",
+        "dateModified": "2026-06-02",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/wissen/was-kostet-website-handwerker"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Reicht eine günstige Baukasten-Website (Wix, Jimdo)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zum Start kann ein Baukasten reichen. Sobald die Seite aber Anfragen bringen, in Google gefunden werden oder Termine/Zahlungen abwickeln soll, stößt man schnell an Grenzen — und zahlt das monatliche Abo dauerhaft. Für einen Betrieb, der online Aufträge gewinnen will, lohnt sich eine eigene, suchmaschinen-optimierte Seite meist mehr."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet die laufende Pflege einer Handwerker-Website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Laufende Kosten liegen je nach Modell grob zwischen 10–100 €/Monat (Hosting + kleine Wartung) bis hin zu einem Betreuungs-Paket mit SEO und Anpassungen. Wichtig: einmalige Erstellung und laufende Betreuung getrennt betrachten — eine fertige Seite ohne Pflege verliert mit der Zeit Sichtbarkeit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert eine Handwerker-Website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine fokussierte Website für einen lokalen Handwerksbetrieb ist meist in wenigen Wochen live — abhängig davon, wie schnell Texte, Fotos und Referenzen bereitstehen. Der zeitintensivere Teil ist nicht das Bauen, sondern das saubere Aufsetzen von Sichtbarkeit (Google-Profil, lokale Suche)."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wissen",
+            "item": "https://myhiwi.de/wissen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Was kostet eine Website für Handwerker?",
+            "item": "https://myhiwi.de/wissen/was-kostet-website-handwerker"
+          }
+        ]
+      }
+    ],
+    "bytes": 76196,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen/lohnt-sich-google-ads-kleine-unternehmen",
+    "final": "https://myhiwi.de/wissen/lohnt-sich-google-ads-kleine-unternehmen",
+    "status": 200,
+    "x_robots": null,
+    "title": "Lohnt sich Google Ads für kleine Unternehmen? (2026) | MyHiwi",
+    "h1": [
+      "Lohnt sich Google Ads für "
+    ],
+    "description": "Ab welchem Budget sich Google Ads für lokale Betriebe lohnt, was eine Anfrage kostet und wann es sich NICHT lohnt — ehrlich erklärt, mit Zahlen.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen/lohnt-sich-google-ads-kleine-unternehmen"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/ueber-mich",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Lohnt sich Google Ads für kleine Unternehmen? (2026)",
+        "datePublished": "2026-06-02",
+        "dateModified": "2026-06-02",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/wissen/lohnt-sich-google-ads-kleine-unternehmen"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie viel Budget brauche ich mindestens?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für lokale Betriebe lohnt sich Google Ads meist ab etwa 500 €/Monat Werbebudget. Unter ~300 € fehlt oft das Volumen, um genug Daten für eine sinnvolle Optimierung zu sammeln. Das Werbebudget zahlt man direkt an Google — getrennt vom Honorar für die Betreuung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Zahle ich pro Klick oder pro Anfrage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bei Google bezahlt man pro Klick (CPC). Bei lokalen Handwerks-Suchen liegt der Klickpreis meist bei 1,50–4 €. Die relevante Kennzahl ist aber nicht der Klickpreis, sondern die Kosten pro echter Anfrage — und die hängt davon ab, wie gut die Seite hinter der Anzeige konvertiert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wer zahlt das Werbebudget — ich oder die Agentur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das Werbebudget zahlen Sie direkt an Google, transparent und getrennt vom Betreuungs-Honorar. Bei MyHiwi läuft das Konto auf Ihre Daten; das Honorar für die Kampagnen-Betreuung wird separat abgerechnet — nie Ad-Budget mit Honorar vermischt."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wissen",
+            "item": "https://myhiwi.de/wissen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Lohnt sich Google Ads für kleine Unternehmen?",
+            "item": "https://myhiwi.de/wissen/lohnt-sich-google-ads-kleine-unternehmen"
+          }
+        ]
+      }
+    ],
+    "bytes": 72005,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen/brauche-ich-website-oder-google-profil",
+    "final": "https://myhiwi.de/wissen/brauche-ich-website-oder-google-profil",
+    "status": 200,
+    "x_robots": null,
+    "title": "Brauche ich eine Website oder reicht das Google-Profil? | MyHiwi",
+    "h1": [
+      "Brauche ich eine Website oder reicht das",
+      " "
+    ],
+    "description": "Reicht ein Google-Unternehmensprofil, oder braucht ein lokaler Betrieb eine eigene Website? Was beides kann, was nur die Website kann — ehrlich erklärt.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen/brauche-ich-website-oder-google-profil"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/ueber-mich",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Brauche ich eine Website oder reicht das Google-Profil?",
+        "datePublished": "2026-06-02",
+        "dateModified": "2026-06-02",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/wissen/brauche-ich-website-oder-google-profil"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kann ich mit einem Google-Profil ohne Website Kunden gewinnen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, zum Start oft schon. Ein vollständig gepflegtes Google-Unternehmensprofil bringt lokale Sichtbarkeit in der Karten-Suche und kann erste Anfragen (Anrufe, Routen) auslösen — ohne eigene Website. Für reine lokale Auffindbarkeit ist es der schnellste Hebel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kann die Website, was das Profil nicht kann?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die eigene Website ist der einzige Ort, den Sie kontrollieren: ein eigener Anfrage- oder Buchungsweg, Zahlung/Anzahlung, mehr Vertrauen durch echte Inhalte und Referenzen — und Unabhängigkeit vom Plattform-Algorithmus. Das Profil bringt Sichtbarkeit, die Website verwandelt sie in verbindliche Anfragen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ab wann lohnt sich eine eigene Website wirklich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sobald Anfragen, Termine oder Buchungen verbindlich und ohne Plattform-Abhängigkeit laufen sollen — oder wenn Sie in der Google-Suche (nicht nur in der Karte) gefunden werden wollen. Für einen Betrieb mit Wachstumsabsicht ist die Website langfristig Pflicht, nicht Kür."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wissen",
+            "item": "https://myhiwi.de/wissen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Brauche ich eine Website oder reicht das Google-Profil?",
+            "item": "https://myhiwi.de/wissen/brauche-ich-website-oder-google-profil"
+          }
+        ]
+      }
+    ],
+    "bytes": 71504,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen/was-kostet-booking-com",
+    "final": "https://myhiwi.de/wissen/was-kostet-booking-com",
+    "status": 200,
+    "x_robots": null,
+    "title": "Was kostet Booking.com wirklich? (2026) | MyHiwi",
+    "h1": [
+      "Was kostet "
+    ],
+    "description": "Wie hoch die Booking.com-Provision 2026 wirklich ist (Basis, Genius, Preferred Partner, Zahlungsgebühren), was sie eine Ferienwohnung im Jahr kostet — und wie man Direktbuchungen zurückholt.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen/was-kostet-booking-com"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/ueber-mich",
+      "/case-studies/sonnenhof-herrsching",
+      "/fewo-direktbuchung",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Was kostet Booking.com wirklich? (2026)",
+        "datePublished": "2026-06-02",
+        "dateModified": "2026-06-02",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/wissen/was-kostet-booking-com"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Muss ich Booking.com komplett kündigen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Portale bleiben eine gute Akquise-Quelle für Neukunden, die Ihr Haus nie gegoogelt hätten. Das Ziel ist nicht, sie abzuschaffen, sondern den direkten Anteil Schritt für Schritt zu erhöhen — vor allem bei Stammgästen und Wiederkehr-Buchungen, die Sie sonst über die Plattform teuer zurückkaufen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie viel kann ich mit Direktbuchungen sparen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Booking.com nimmt 2026 effektiv oft 22–25 % pro Buchung. Schon 5 Direktbuchungen pro Monat sparen je nach Buchungswert leicht über 1.000 € im Jahr. Eine durchschnittliche Ferienwohnung zahlt grob 2.000–8.000 € Provision jährlich — Geld, das bei Direktbuchung komplett bei Ihnen bleibt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie bekomme ich überhaupt Direktbuchungen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Über eine eigene Buchungsstrecke (Website + Verfügbarkeit + Buchung + Zahlung), die in der lokalen Google-Suche gefunden wird, plus den Billboard-Effekt: viele Gäste suchen Ihr Haus nach dem Portal-Fund nochmal direkt. Der Schlüssel ist, dass dieser direkte Weg sauber existiert und konvertiert."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wissen",
+            "item": "https://myhiwi.de/wissen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Was kostet Booking.com wirklich?",
+            "item": "https://myhiwi.de/wissen/was-kostet-booking-com"
+          }
+        ]
+      }
+    ],
+    "bytes": 79547,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen/was-kostet-seo-monatlich",
+    "final": "https://myhiwi.de/wissen/was-kostet-seo-monatlich",
+    "status": 200,
+    "x_robots": null,
+    "title": "Was kostet SEO monatlich? (2026) | MyHiwi",
+    "h1": [
+      "Was kostet "
+    ],
+    "description": "Was lokale SEO 2026 monatlich kostet (Branchen-Richtwerte für KMU und lokale Betriebe) — und warum die entscheidende Kennzahl Anfragen sind, nicht Rankings.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen/was-kostet-seo-monatlich"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/ueber-mich",
+      "/wissen/lohnt-sich-google-ads-kleine-unternehmen",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Was kostet SEO monatlich? (2026)",
+        "datePublished": "2026-06-02",
+        "dateModified": "2026-06-02",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/wissen/was-kostet-seo-monatlich"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Warum ist SEO ein monatlicher Posten und kein Einmal-Preis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO ist laufende Arbeit: technische Pflege, Inhalte, lokale Signale und Reaktion auf Google-Updates. Eine einmalige Optimierung verpufft mit der Zeit. Deshalb wird SEO meist monatlich abgerechnet — eine kleinere, dauerhaft gepflegte Betreuung bringt mehr als ein großer Einmal-Aufschlag."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie schnell sieht man bei SEO Ergebnisse?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO ist ein 6–12-Monats-Aufbau, gerade bei jungen Domains. Erste Bewegungen bei Long-Tail- und lokalen Suchen oft ab Monat 3–6, spürbare Wirkung danach. Wer sofortige Anfragen braucht, kombiniert SEO mit Google Ads — Ads für jetzt, SEO als Fundament."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist die richtige Kennzahl für den SEO-Erfolg?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nicht Rankings, sondern Anfragen. Platz 1 für ein Keyword, das niemand sucht, bringt nichts. Bei MyHiwi ist die Schlüsselgröße deshalb, ob mehr echte Anfragen reinkommen — Sichtbarkeit ist nur das Mittel dazu."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wissen",
+            "item": "https://myhiwi.de/wissen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Was kostet SEO monatlich?",
+            "item": "https://myhiwi.de/wissen/was-kostet-seo-monatlich"
+          }
+        ]
+      }
+    ],
+    "bytes": 70942,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen/lokaler-betrieb-bei-google-gefunden-werden",
+    "final": "https://myhiwi.de/wissen/lokaler-betrieb-bei-google-gefunden-werden",
+    "status": 200,
+    "x_robots": null,
+    "title": "Wie wird mein lokaler Betrieb bei Google gefunden? (2026) | MyHiwi",
+    "h1": [
+      "Wie wird mein lokaler Betrieb bei",
+      " "
+    ],
+    "description": "Der komplette, ehrliche Leitfaden: Google-Profil, Bewertungen, lokale Website, Anfrageweg und Anzeigen — wie ein lokaler Betrieb in Berlin-Ost & Barnim 2026 bei Google (und in der KI-Suche) gefunden wird.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen/lokaler-betrieb-bei-google-gefunden-werden"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/ueber-mich",
+      "/wissen/brauche-ich-website-oder-google-profil",
+      "/region/berlin-ost-barnim",
+      "/wissen/lohnt-sich-google-ads-kleine-unternehmen",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/fewo-direktbuchung",
+      "/wissen/was-kostet-website-handwerker",
+      "/wissen/was-kostet-seo-monatlich",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Wie wird mein lokaler Betrieb bei Google gefunden? (2026)",
+        "datePublished": "2026-06-02",
+        "dateModified": "2026-06-02",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/wissen/lokaler-betrieb-bei-google-gefunden-werden"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist der schnellste Weg, lokal bei Google gefunden zu werden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ein vollständig ausgefülltes Google-Unternehmensprofil mit präziser Kategorie, echten Fotos und aktuellen Bewertungen. Es erscheint in der Karten-Suche und ist der schnellste lokale Hebel — oft mit ersten Effekten in 30–90 Tagen, weitgehend unabhängig von der Website."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Brauche ich dafür eine Website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zum Start nicht zwingend — das Profil reicht für die reine Auffindbarkeit. Sobald Anfragen strukturiert reinkommen, Buchungen/Zahlungen laufen oder Sie in der Google-Suche (nicht nur in der Karte) gefunden werden wollen, ist die eigene Website der nächste Schritt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert es, bis man Wirkung sieht?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Im Map Pack oft 30–90 Tage für lokale Begriffe. Klassisches SEO (Google-Suche) ist ein 6–12-Monats-Aufbau. Wer sofort Anfragen braucht, kombiniert das mit Google Ads — Ads für jetzt, Profil + SEO als Fundament."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Werde ich damit auch in ChatGPT oder Perplexity empfohlen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zunehmend ja. KI-Suchen greifen auf dieselben Signale zurück: ein gepflegtes Profil, konsistente Einträge in Verzeichnissen, Bewertungen und klare, fragen­orientierte Inhalte auf der Website. Wer lokal sauber aufgestellt ist, taucht auch in den KI-Antworten häufiger auf."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wissen",
+            "item": "https://myhiwi.de/wissen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Wie wird mein lokaler Betrieb bei Google gefunden?",
+            "item": "https://myhiwi.de/wissen/lokaler-betrieb-bei-google-gefunden-werden"
+          }
+        ]
+      }
+    ],
+    "bytes": 87485,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/wissen/eigenes-buchungssystem-vs-booking-com",
+    "final": "https://myhiwi.de/wissen/eigenes-buchungssystem-vs-booking-com",
+    "status": 200,
+    "x_robots": null,
+    "title": "Eigenes Buchungssystem vs. Booking.com (2026) | MyHiwi",
+    "h1": [
+      "Eigenes Buchungssystem vs.",
+      " "
+    ],
+    "description": "Portal, SaaS-Tool oder eigene Buchungs-Website? Der ehrliche Vergleich für Ferienwohnungen & Hotels — Provision, laufende Kosten und ab wann sich die eigene Lösung rechnet.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/wissen/eigenes-buchungssystem-vs-booking-com"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/ueber-mich",
+      "/wissen/was-kostet-booking-com",
+      "/fewo-direktbuchung",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Eigenes Buchungssystem vs. Booking.com (2026)",
+        "datePublished": "2026-06-02",
+        "dateModified": "2026-06-02",
+        "author": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myhiwi.de/brand/myhiwi-h-logo.svg"
+          }
+        },
+        "mainEntityOfPage": "https://myhiwi.de/wissen/eigenes-buchungssystem-vs-booking-com"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist der Unterschied zwischen Portal, SaaS-Tool und eigenem System?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ein Portal (Booking.com) bringt Reichweite, nimmt aber effektiv oft 22–25 % Provision pro Buchung. Ein SaaS-Tool (z. B. Smoobu, Lodgify) kostet eine monatliche Miete plus teils kleine Provision. Ein eigenes, individuell gebautes Buchungssystem kostet einmalig in der Erstellung, danach nur geringe laufende Kosten — ohne Provision, mit Ihren Gästen und Daten bei Ihnen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ab wann rechnet sich ein eigenes Buchungssystem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sobald ein nennenswerter Teil der Buchungen direkt laufen könnte. Da Portale effektiv 22–25 % nehmen und eine durchschnittliche Ferienwohnung grob 2.000–8.000 € Provision im Jahr zahlt, amortisiert sich eine eigene Lösung oft schon nach wenigen Monaten verschobener Direktbuchungen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Resellt MyHiwi ein SaaS-Tool wie Smoobu oder Lodgify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. MyHiwi baut die Buchungsstrecke individuell (Next.js + Supabase + Stripe), damit keine dauerhafte SaaS-Miete und keine Provision anfällt — die Lösung gehört Ihnen, nicht einem Drittanbieter."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wissen",
+            "item": "https://myhiwi.de/wissen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Eigenes Buchungssystem vs. Booking.com",
+            "item": "https://myhiwi.de/wissen/eigenes-buchungssystem-vs-booking-com"
+          }
+        ]
+      }
+    ],
+    "bytes": 84966,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/region/berlin-ost-barnim",
+    "final": "https://myhiwi.de/region/berlin-ost-barnim",
+    "status": 200,
+    "x_robots": null,
+    "title": "Webagentur & lokale Sichtbarkeit in Berlin-Ost & Barnim | MyHiwi",
+    "h1": [
+      "Lokale Betriebe in Berlin-Ost & Barnim,",
+      " "
+    ],
+    "description": "MyHiwi aus Ahrensfelde baut lokalen Betrieben in Berlin-Ost, im Landkreis Barnim und im Speckgürtel den Weg von Google-Sichtbarkeit zur direkten Anfrage — persönlich, vor Ort, ergebnisorientiert.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/region/berlin-ost-barnim"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/kontakt",
+      "/case-studies",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Lokale Sichtbarkeit & Anfrage-/Buchungssysteme für Betriebe in Berlin-Ost & Barnim",
+        "serviceType": "Local SEO, Webdesign, Anfrage- und Buchungssysteme",
+        "provider": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "url": "https://myhiwi.de"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin-Ost"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Barnim"
+          },
+          {
+            "@type": "Place",
+            "name": "Ahrensfelde"
+          }
+        ],
+        "url": "https://myhiwi.de/region/berlin-ost-barnim"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Arbeitet MyHiwi wirklich lokal in Berlin-Ost und Barnim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. MyHiwi sitzt in Ahrensfelde (16356) und betreut Betriebe in Berlin-Ost, im Landkreis Barnim und im Speckgürtel — Handwerk, Fahrschulen, Friseure, Praxen und mehr. Sie reden direkt mit dem Gründer, nicht mit einer Vertriebskette."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Werde ich damit für „in der Nähe“-Suchen gefunden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Genau darauf ist die Arbeit ausgerichtet: ein vollständiges Google-Unternehmensprofil plus eine Website, die für lokale Suchen (z. B. „Betrieb + Ort“) optimiert ist. Die Nähe zu Ahrensfelde/Barnim ist dabei ein Vorteil — für regionale Suchen ist die Hürde deutlich niedriger als für ein generisches „Berlin“."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Je nach Umfang gibt es einen Festpreis (einmalig) oder eine laufende Betreuung. Konkrete Preise klären wir im kostenlosen Digital-Check — jeder Betrieb ist anders."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Region Berlin-Ost & Barnim",
+            "item": "https://myhiwi.de/region/berlin-ost-barnim"
+          }
+        ]
+      }
+    ],
+    "bytes": 86204,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/loesungen/handwerk",
+    "final": "https://myhiwi.de/loesungen/handwerk",
+    "status": 200,
+    "x_robots": null,
+    "title": "Mehr Anfragen für Handwerksbetriebe — Website & Sichtbarkeit | MyHiwi",
+    "h1": [
+      "Mehr Anfragen für Ihren "
+    ],
+    "description": "Über 90 % suchen einen Handwerksbetrieb zuerst bei Google. MyHiwi baut Handwerkern in Berlin-Ost & Barnim Website, lokale Sichtbarkeit und einen sauberen Anfrageweg — auf mehr Aufträge gebaut.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/loesungen/handwerk"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/kontakt",
+      "/wissen/was-kostet-website-handwerker",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Website & lokale Sichtbarkeit für Handwerksbetriebe",
+        "serviceType": "Webdesign, Local SEO, Anfragesystem",
+        "provider": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "url": "https://myhiwi.de"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin-Ost"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Barnim"
+          }
+        ],
+        "url": "https://myhiwi.de/loesungen/handwerk"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie gewinnt ein Handwerksbetrieb online neue Kunden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Der erste Hebel ist Auffindbarkeit: ein vollständiges Google-Unternehmensprofil und eine Website, die für lokale Suchen („Gewerk + Ort“) optimiert ist. Mehr als 90 % suchen einen Handwerksbetrieb zuerst online — wer dort sauber erscheint und einen klaren Anfrageweg bietet, gewinnt die Anfrage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet eine Website für meinen Handwerksbetrieb?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Grob 200–800 € (Baukasten), 800–2.500 € (Freelancer) oder 3.000–10.000 €+ (Agentur). Entscheidend ist, ob die Seite Anfragen bringt. Details in unserer Antwort „Was kostet eine Website für Handwerker?“ und im kostenlosen Quick-Check."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Brauche ich überhaupt eine Website oder reicht Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zum Start kann das Google-Profil reichen. Sobald Anfragen strukturiert reinkommen sollen oder Sie auch in der Google-Suche gefunden werden wollen, ist die Website der nächste Schritt — sie verwandelt Sichtbarkeit in verbindliche Anfragen."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Lösungen",
+            "item": "https://myhiwi.de/loesungen/handwerk"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Handwerk",
+            "item": "https://myhiwi.de/loesungen/handwerk"
+          }
+        ]
+      }
+    ],
+    "bytes": 76248,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/fahrschule",
+    "final": "https://myhiwi.de/fahrschule",
+    "status": 200,
+    "x_robots": null,
+    "title": "Das Volle-Kurse-System — mehr Anfragen für Ihre Fahrschule in Berlin | MyHiwi",
+    "h1": [
+      "Wenn in Ihrem Kiez jemand eine Fahrschule sucht — landet er bei Ihnen "
+    ],
+    "description": "Neue Website, Google-Profil auf Vordermann, echte Bewertungen Ihrer Schüler — und jede Anfrage gezählt, schwarz auf weiß per WhatsApp. 349 € im Monat zzgl. MwSt. Sie reden direkt mit Denis.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/fahrschule"
+    ],
+    "links": [
+      "/fahrschule",
+      "tel:+4915114993066",
+      "tel:+4915114993066",
+      "https://wa.me/4915114993066?text=Hallo%2C%20ich%20komme%20von%20myhiwi.de%2Ffahrschule%20%E2%80%94%20bitte%20melden%20Sie%20sich%20bei%20mir.",
+      "tel:+4915114993066",
+      "https://wa.me/4915114993066?text=Hallo%2C%20ich%20komme%20von%20myhiwi.de%2Ffahrschule%20%E2%80%94%20bitte%20melden%20Sie%20sich%20bei%20mir.",
+      "/impressum",
+      "/datenschutz",
+      "/",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Das Volle-Kurse-System",
+        "serviceType": "Website, Google-Unternehmensprofil und Anfragen-Messung für Fahrschulen",
+        "provider": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "url": "https://myhiwi.de"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          }
+        ],
+        "url": "https://myhiwi.de/fahrschule"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ich kann keinen Computer — funktioniert das trotzdem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Sie müssen nichts am Computer machen — alles läuft über WhatsApp. Was wir an Zugängen brauchen, holen wir beim Termin vor Ort bei Ihnen ab, die Fotos machen wir dabei auch. Danach hören Sie von uns per WhatsApp — und Ihr Anfragen-Zettel kommt genauso an."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist, wenn es nicht klappt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wir zählen jede Anfrage ab Tag 0 — die genaue Zusage legen wir gemeinsam schriftlich fest. Bevor Sie unterschreiben, steht die vereinbarte Anfragen-Zahl schwarz auf weiß im Vertrag. Sie können die Zähldaten einsehen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wem gehört die Website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ihnen. Die Website bezahlen Sie einmalig — danach gehört sie Ihnen für immer, egal wie es mit uns weitergeht. Sie ist nicht an die monatliche Betreuung gekoppelt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange bin ich gebunden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die Betreuung läuft 12 Monate und kostet 349 € im Monat zzgl. MwSt., ab dem ersten Monat. Was der Vertrag genau enthält — inklusive der vereinbarten Anfragen-Zahl — gehen wir vor der Unterschrift gemeinsam durch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist mit SEO und Werbung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO heißt am Ende nur: Wer im Kiez nach einer Fahrschule sucht, findet Sie — auf der Karte, in der Suche, in den Google-Antworten. Genau daran arbeiten wir, das ist Teil des Systems und kostet nichts extra. Bezahlte Anzeigen verkaufen wir Ihnen an der Tür nicht: Erst wenn Ihr Anfragen-Zettel nach ein paar Monaten zeigt, was eine Anfrage bei Ihnen wert ist, lohnt sich das Gespräch darüber überhaupt."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Fahrschule",
+            "item": "https://myhiwi.de/fahrschule"
+          }
+        ]
+      }
+    ],
+    "bytes": 86638,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/ki-schulung",
+    "final": "https://myhiwi.de/ki-schulung",
+    "status": 200,
+    "x_robots": null,
+    "title": "KI-Schulung für Unternehmen | MyHiwi",
+    "h1": [
+      "KI sinnvoll nutzen. Risiken erkennen. Sicherer entscheiden."
+    ],
+    "description": "Dreistündige KI-Grundlagenschulung für Unternehmen: sinnvolle Anwendungen, bessere Prompts, Datenampel, Ergebnisprüfung und klare Nutzungsregeln.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/ki-schulung"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "#erstgespraech",
+      "/datenschutz",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "MyHiwi AI-Startklar",
+        "description": "Die praxisnahe dreistündige KI-Grundlagenschulung für Unternehmen – live, verständlich und auf Ihren Arbeitsalltag zugeschnitten.",
+        "serviceType": "KI-Grundlagenschulung für Unternehmen",
+        "provider": {
+          "@type": "Organization",
+          "name": "MyHiwi",
+          "url": "https://myhiwi.de"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Deutschland"
+        },
+        "url": "https://myhiwi.de/ki-schulung",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Online",
+            "price": "1490",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Vor Ort",
+            "price": "1790",
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ist die Schulung für Einsteiger geeignet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Der gemeinsame Kern beginnt bei den Grundlagen. Erfahrenere Teilnehmende erhalten zusätzliche Prüf- und Verbesserungsaufgaben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Benötigen wir ein freigegebenes KI-Werkzeug?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für praktische Arbeit am eigenen Gerät ja. Ohne freigegebenes Werkzeug kann die Schulung mit Trainerdemonstrationen und vorbereiteten Beispielausgaben stattfinden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Können wir eigene Dokumente verwenden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Wir arbeiten ausschließlich mit synthetischen oder robust anonymisierten sicheren Praxisbeispielen. Reale personenbezogene, vertrauliche, sicherheitsrelevante oder rote Daten werden nie live eingegeben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hilft die Schulung beim KI-Kompetenzaufbau im Sinne des AI Acts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die Schulung behandelt KI-Verständnis, Nutzungskontext, Chancen, Risiken, menschliche Kontrolle und betriebliche Regeln. Sie kann den organisationsbezogenen Kompetenzaufbau unterstützen und dokumentieren. Ob Maßnahmen im Einzelfall ausreichen, hängt von Systemen, Rollen und Risiken ab und wird nicht rechtlich garantiert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Erhalten Teilnehmende ein Zertifikat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sie erhalten eine persönliche Teilnahmebestätigung mit Datum, Dauer und Inhalten. Sie ist keine rechtliche Zertifizierung oder Compliance-Bestätigung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist bei sensiblen Branchen oder Einsatzfällen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Grundlagen können häufig im Standardformat vermittelt werden. Gesundheits-, Personal-, Finanz-, Scoring-, biometrische oder besonders folgenreiche Anwendungen werden nicht im Basistraining freigegeben und können eine gesonderte Prüfung benötigen."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "KI-Schulung",
+            "item": "https://myhiwi.de/ki-schulung"
+          }
+        ]
+      }
+    ],
+    "bytes": 121407,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/loesungen/friseur",
+    "final": "https://myhiwi.de/loesungen/friseur",
+    "status": 200,
+    "x_robots": null,
+    "title": "Mehr Kunden für Ihren Friseursalon — Website & Online-Termine | MyHiwi",
+    "h1": [
+      "Mehr Kunden für Ihren "
+    ],
+    "description": "„Friseur in der Nähe“ ist eine der meistgesuchten lokalen Suchen. MyHiwi baut Salons in Berlin-Ost & Barnim Website, lokale Sichtbarkeit und eine eigene Online-Terminbuchung — ohne SaaS-Gebühren.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/loesungen/friseur"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/kontakt",
+      "/region/berlin-ost-barnim",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Website, Sichtbarkeit & Online-Terminbuchung für Friseursalons",
+        "serviceType": "Webdesign, Local SEO, Online-Terminbuchung",
+        "provider": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "url": "https://myhiwi.de"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin-Ost"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Barnim"
+          }
+        ],
+        "url": "https://myhiwi.de/loesungen/friseur"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie gewinnt ein Friseursalon online neue Kunden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "„Friseur in der Nähe“ gehört zu den meistgesuchten lokalen Suchbegriffen. Der Hebel ist ein gepflegtes Google-Profil mit guten Bewertungen, eine moderne Website und eine einfache Online-Terminbuchung — so wird aus Sichtbarkeit ein gebuchter Termin statt nur ein Anruf, der nicht zustande kommt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Lohnt sich eine Online-Terminbuchung für Friseure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Meist ja: weniger Telefon-Unterbrechungen, Buchungen rund um die Uhr und Erinnerungen, die Terminausfälle reduzieren. Bei MyHiwi gibt es die Buchung als eigene Lösung — ohne dauerhafte SaaS-Gebühr und ohne Abhängigkeit von einem Portal-Anbieter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Je nach Umfang als Festpreis oder laufende Betreuung. Den genauen Umfang und Preis klären wir im kostenlosen Erstgespräch — abhängig davon, ob nur Website/Sichtbarkeit oder auch Online-Buchung dazukommt."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Lösungen",
+            "item": "https://myhiwi.de/loesungen/friseur"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Friseur",
+            "item": "https://myhiwi.de/loesungen/friseur"
+          }
+        ]
+      }
+    ],
+    "bytes": 74716,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/loesungen/praxis-physio",
+    "final": "https://myhiwi.de/loesungen/praxis-physio",
+    "status": 200,
+    "x_robots": null,
+    "title": "Website für Praxen & Physiotherapie — Termine & Recruiting | MyHiwi",
+    "h1": [
+      "Mehr Patienten, weniger "
+    ],
+    "description": "Mehr Patienten, weniger Terminausfälle und — gerade in der Physiotherapie — bessere Bewerber. MyHiwi baut Praxen eine moderne Website, Online-Terminbuchung und eine Karriere-Strecke.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/loesungen/praxis-physio"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/kontakt",
+      "/region/berlin-ost-barnim",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Website, Online-Terminbuchung & Recruiting für Praxen und Physiotherapie",
+        "serviceType": "Webdesign, Local SEO, Online-Terminbuchung, Recruiting-Funnel",
+        "provider": {
+          "@type": "Organization",
+          "name": "Kaliberda Digital Intelligence UG (haftungsbeschränkt)",
+          "url": "https://myhiwi.de"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin-Ost"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Barnim"
+          }
+        ],
+        "url": "https://myhiwi.de/loesungen/praxis-physio"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Lohnt sich eine Online-Terminbuchung für eine Praxis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Meist ja. Sie entlastet das Telefon, ermöglicht Buchungen rund um die Uhr und reduziert über automatische Erinnerungen die Terminausfälle (No-Shows) spürbar. Wichtig ist eine Lösung, die zum Praxisalltag passt — bei MyHiwi als eigene Strecke, nicht als teures Drittanbieter-Abo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie hilft eine Website bei der Personalsuche (Physiotherapie)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Physiotherapie zählt zu den Engpassberufen — gute Bewerber sind knapp. Eine eigene Karriere-Seite mit einfachem Bewerbungsweg, ehrlichem Praxis-Einblick und Sichtbarkeit in Google macht aus der Website auch ein Recruiting-Werkzeug, nicht nur einen Patienten-Kanal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Je nach Umfang als Festpreis oder laufende Betreuung. Ob nur Website/Sichtbarkeit, Online-Terminbuchung oder zusätzlich ein Recruiting-Funnel — den passenden Zuschnitt klären wir im kostenlosen Erstgespräch."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://myhiwi.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Lösungen",
+            "item": "https://myhiwi.de/loesungen/praxis-physio"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Praxis & Physio",
+            "item": "https://myhiwi.de/loesungen/praxis-physio"
+          }
+        ]
+      }
+    ],
+    "bytes": 75031,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/impressum",
+    "final": "https://myhiwi.de/impressum",
+    "status": 200,
+    "x_robots": null,
+    "title": "Impressum | MyHiwi",
+    "h1": [
+      "Impressum"
+    ],
+    "description": "Impressum und Angaben gemäß § 5 TMG für MyHiwi - Local SEO & Webdesign für KMU.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/impressum"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "tel:+4915114993066",
+      "mailto:kontakt@myhiwi.de",
+      "https://ec.europa.eu/consumers/odr/",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 50797,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/datenschutz",
+    "final": "https://myhiwi.de/datenschutz",
+    "status": 200,
+    "x_robots": null,
+    "title": "Datenschutzerklärung | MyHiwi",
+    "h1": [
+      "Datenschutzerklärung"
+    ],
+    "description": "Datenschutzerklärung gemäß DSGVO für MyHiwi - Local SEO & Webdesign für KMU.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de/datenschutz"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "https://vercel.com/legal/privacy-policy",
+      "https://resend.com/legal/privacy-policy",
+      "https://www.facebook.com/privacy/policy",
+      "https://policies.google.com/privacy",
+      "https://www.lda.brandenburg.de",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      }
+    ],
+    "bytes": 86229,
+    "tracking_markers": []
+  },
+  {
+    "url": "http://myhiwi.de",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "http://www.myhiwi.de",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://www.myhiwi.de",
+    "final": "https://myhiwi.de/",
+    "status": 200,
+    "x_robots": null,
+    "title": "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
+    "h1": [
+      "Aus Sichtbarkeit werden",
+      " "
+    ],
+    "description": "MyHiwi baut lokalen Dienstleistern, Pensionen & Ferienwohnungen den Weg von Google-Sichtbarkeit zu direkten Anfragen und Buchungen. Berlin-Ost & Bayern.",
+    "robots": null,
+    "canonical": [
+      "https://myhiwi.de"
+    ],
+    "links": [
+      "/",
+      "/",
+      "/#system",
+      "/fewo-direktbuchung",
+      "/case-studies",
+      "/wissen",
+      "/ueber-mich",
+      "/kontakt",
+      "/kontakt",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/ueber-mich",
+      "/wissen",
+      "/kontakt",
+      "/kontakt",
+      "mailto:denis@myhiwi.de",
+      "/kontakt",
+      "/case-studies",
+      "/ueber-mich",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/fewo-direktbuchung",
+      "/kontakt",
+      "/kontakt",
+      "/kontakt",
+      "/kontakt",
+      "/",
+      "mailto:denis@myhiwi.de",
+      "/fewo-direktbuchung",
+      "/loesungen/handwerk",
+      "/fahrschule",
+      "/ki-schulung",
+      "/loesungen/friseur",
+      "/loesungen/praxis-physio",
+      "/region/berlin-ost-barnim",
+      "/case-studies",
+      "/case-studies/sonnenhof-herrsching",
+      "/case-studies/mr-sherman",
+      "/case-studies/formazin",
+      "/ueber-mich",
+      "/wissen",
+      "/blog",
+      "/festpreis",
+      "/impressum",
+      "/datenschutz",
+      "/datenschutz"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyHiwi UG",
+        "description": "Anfrage- und Buchungssysteme für lokale Betriebe — aus Google-Sichtbarkeit werden direkte Anfragen und Buchungen.",
+        "url": "https://myhiwi.de",
+        "logo": "https://myhiwi.de/brand/myhiwi-h-logo.svg",
+        "email": "kontakt@myhiwi.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dorfstraße 1a",
+          "addressLocality": "Ahrensfelde",
+          "postalCode": "16356",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Denis Kaliberda",
+          "url": "https://myhiwi.de/ueber-mich"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Berlin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brandenburg"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Landkreis Starnberg"
+          },
+          {
+            "@type": "Place",
+            "name": "Ammersee-Region"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.5719,
+          "longitude": 13.5733
+        },
+        "telephone": "+49 1511 4993066",
+        "serviceType": [
+          "Direktbuchungssystem für Unterkünfte",
+          "Anfragesystem für lokale Betriebe",
+          "Local SEO",
+          "Webdesign",
+          "Google Ads Management",
+          "Google Business Profil Optimierung"
+        ],
+        "priceRange": "€€"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist ein digitales Wachstumssystem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ein digitales Wachstumssystem verbindet Sichtbarkeit, Website, Anfrageweg, Buchung, Zahlung und passende Automatisierung. Es ist keine einzelne neue Webseite, sondern ein Ablauf, der aus Aufmerksamkeit konkrete Anfragen machen soll."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist MyHiwi eine klassische Webdesign-Agentur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Eine neue Website kann ein Baustein sein, aber sie wird immer im Zusammenhang mit Google-Sichtbarkeit, Anfragequalität und operativer Entlastung geplant. Ziel ist ein funktionierender Weg vom ersten Besuch bis zur verbindlichen Anfrage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie läuft der kostenlose Digital-Check ab?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sie schicken kurz Ihre Ausgangslage. Danach schaut Denis persönlich auf Website, Google-Auftritt und Anfrageweg und meldet sich mit einer ehrlichen Einschätzung, wo ein sinnvoller erster Hebel liegen könnte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Für welche Betriebe passt das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MyHiwi passt besonders für lokale Unternehmen mit wiederkehrenden Anfragen, Terminen, Buchungen oder Zahlungen. Typische Beispiele sind Unterkünfte, Fahrschulen, Sportanbieter, Praxen, Kanzleien, Handwerk und regionale Dienstleister."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie gehen Sie mit Daten und DSGVO um?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wir arbeiten DSGVO-bewusst, mit AVV und Anbieterübersicht projektbezogen. Vor Datenflüssen wird geklärt, welche Anbieter eingesetzt werden, welche Daten wirklich nötig sind und welche Abläufe besser reduziert werden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wann ist MyHiwi nicht passend?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wenn Sie nur eine möglichst billige einzelne Unterseite oder schnelle Design-Kosmetik suchen, ist MyHiwi wahrscheinlich nicht der richtige Partner. Der Ansatz lohnt sich dort, wo Website, Nachfrage und Betrieb zusammen verbessert werden sollen."
+            }
+          }
+        ]
+      }
+    ],
+    "bytes": 179738,
+    "tracking_markers": []
+  },
+  {
+    "url": "https://myhiwi.de/seo-audit-missing-20260905",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

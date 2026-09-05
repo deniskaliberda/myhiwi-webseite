@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type TrustStripItem = {
@@ -48,11 +49,14 @@ export function TrustStrip({
             className="flex flex-col gap-1 border-t border-mh-divider pt-mh-3 lg:border-t-0 lg:border-l lg:pl-mh-4 lg:pt-0"
           >
             {item.logo ? (
-              <img
+              <Image
                 src={item.logo}
                 alt={item.label}
+                width={150}
+                height={48}
+                sizes="150px"
+                quality={60}
                 loading="lazy"
-                decoding="async"
                 className="h-12 w-auto max-w-[150px] object-contain object-left"
               />
             ) : (

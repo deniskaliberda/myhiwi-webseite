@@ -87,7 +87,7 @@ export function Header({
   navItems = NAV_PRIMARY,
   drawerGroups = DRAWER_GROUPS,
   status = STATUS_LINE,
-  caption = "MyHiwi · Anfrage- & Buchungssysteme",
+  caption = "Webseiten · Google · KI-Sichtbarkeit",
   cta = PRIMARY_CTA,
 }: HeaderProps) {
   const [open, setOpen] = useState(false);
@@ -140,12 +140,11 @@ export function Header({
       {/* Main bar */}
       <Container>
         <div className="flex items-center justify-between gap-mh-3 py-mh-3 md:py-mh-4">
-          <MyHiwiMark size={26} className="md:hidden" />
-          <MyHiwiMark size={28} className="hidden md:inline-flex" />
+          <MyHiwiMark size={32} />
 
           <nav
             aria-label="Hauptnavigation"
-            className="hidden lg:flex items-center gap-mh-2 rounded-mh-pill border border-mh-divider px-mh-2 py-1"
+            className="hidden lg:flex items-center gap-mh-2 px-mh-2 py-1"
           >
             {navItems.map((item) => (
               <Link
@@ -153,7 +152,7 @@ export function Header({
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
-                  "mh-body-small rounded-mh-pill px-mh-4 py-mh-2 font-semibold transition-colors duration-mh-fast ease-mh-default hover:bg-mh-accent-soft hover:text-mh-accent",
+                  "mh-body-small rounded-mh-sm px-mh-4 py-mh-2 font-semibold transition-colors duration-mh-fast ease-mh-default hover:bg-mh-accent-soft hover:text-mh-accent",
                   isActive(item.href)
                     ? "bg-mh-accent-soft text-mh-accent"
                     : "text-mh-text-primary",
@@ -170,7 +169,7 @@ export function Header({
               href={cta.href}
               pill
               hideArrow
-              className="md:hidden min-h-[44px] px-mh-4 py-[12px] text-[14px]"
+              className="md:hidden min-h-[44px] px-mh-3 py-[12px] text-[12px]"
             >
               {cta.shortLabel ?? cta.label}
             </BtnPrimary>
@@ -223,7 +222,10 @@ export function Header({
       >
         <div className="flex h-full flex-col">
           <Container className="flex-1 overflow-y-auto py-mh-6">
-            <nav aria-label="Mobile Navigation" className="flex flex-col gap-mh-6">
+            <nav
+              aria-label="Mobile Navigation"
+              className="flex flex-col gap-mh-6"
+            >
               {drawerGroups.map((group) => (
                 <div key={group.label} className="flex flex-col gap-mh-3">
                   <span className="mh-label-mono text-mh-glow/80">
@@ -243,9 +245,7 @@ export function Header({
                             aria-current={active ? "page" : undefined}
                             className={cn(
                               "flex items-center justify-between gap-mh-3 py-mh-4 mh-display-5",
-                              active
-                                ? "text-mh-glow"
-                                : "text-mh-text-on-dark",
+                              active ? "text-mh-glow" : "text-mh-text-on-dark",
                             )}
                           >
                             {item.label}
@@ -292,7 +292,10 @@ export function Header({
                     />
                     {status}
                   </span>
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-mh-text-on-dark">
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-mh-text-on-dark"
+                  >
                     {CONTACT_EMAIL}
                   </a>
                 </div>

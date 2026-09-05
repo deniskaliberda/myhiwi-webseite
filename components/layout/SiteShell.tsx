@@ -9,11 +9,7 @@ import { Footer as MyHiwiFooter } from "@/components/myhiwi/layout/Footer";
  * Header + Footer lesen ihre Navigation jetzt zentral aus `lib/navigation.ts`.
  * Proposal-Seiten (`/p/*`) rendern ohne Shell.
  */
-export default function SiteShell({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isProposal = pathname?.startsWith("/p/");
   // /fahrschule bringt eine eigene Shell mit (app/fahrschule/layout.tsx) —
@@ -26,8 +22,16 @@ export default function SiteShell({
 
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:p-4 focus:text-mh-ink-950"
+      >
+        Zum Inhalt
+      </a>
       <MyHiwiHeader />
-      <main>{children}</main>
+      <main id="main-content" tabIndex={-1}>
+        {children}
+      </main>
       <MyHiwiFooter />
     </>
   );

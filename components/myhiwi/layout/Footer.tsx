@@ -32,8 +32,8 @@ type FooterProps = {
  * Standort wandert in den Legal-Strip, kein Duplikat zur Drawer-Statuszeile.
  */
 export function Footer({
-  tagline = "Anfrage- & Buchungssysteme für lokale Betriebe.",
-  location = "Ahrensfelde + Ammersee",
+  tagline = "Webseiten, Google und KI-Sichtbarkeit. Für Betriebe, die vor Ort überzeugen.",
+  location = "Ahrensfelde · Berlin-Ost · Barnim",
   columns = FOOTER_COLUMNS,
   legalLinks = LEGAL_LINKS,
   copyrightYear = new Date().getFullYear(),
@@ -41,7 +41,7 @@ export function Footer({
   return (
     <footer className="bg-mh-ink-950 text-mh-text-on-dark">
       {/* Akzent-Strip — Signatur-Trenner zwischen Final-CTA und Footer. */}
-      <div aria-hidden="true" className="mh-accent-strip h-[3px] w-full" />
+      <div aria-hidden="true" className="bg-mh-ink-800 h-px w-full" />
       <Container>
         <div className="grid gap-mh-7 py-mh-section-lg-m md:py-mh-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-mh-8">
           {/* Brand block */}
@@ -86,7 +86,8 @@ export function Footer({
         <div className="border-t border-mh-text-on-dark/10">
           <div className="flex flex-col gap-mh-3 py-mh-5 mh-label-mono text-mh-text-on-dark/60 md:flex-row md:items-center md:justify-between">
             <span>
-              © {copyrightYear} Kaliberda Digital Intelligence UG · MyHiwi · {location}
+              © {copyrightYear} Kaliberda Digital Intelligence UG · MyHiwi ·{" "}
+              {location}
             </span>
             <ul className="flex flex-wrap gap-mh-5">
               {legalLinks.map((link) => (

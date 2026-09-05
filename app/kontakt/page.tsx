@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import KontaktClient from "./KontaktClient";
 
 export const metadata: Metadata = {
-  title: "Kontakt — kostenlosen Digital-Check anfragen",
+  title: "Kontakt — Sichtbarkeitscheck anfragen",
   description:
-    "Schicken Sie MyHiwi Ihre Webseite oder Firma — Sie bekommen in 1–3 Werktagen eine ehrliche Ersteinschätzung. Kein Sales-Funnel, Antwort direkt von Denis.",
+    "Lassen Sie Ihre Webseite und lokale Sichtbarkeit bei Google und in der KI-Suche prüfen. Persönliche Ersteinschätzung von MyHiwi in 1–3 Werktagen.",
   alternates: {
     canonical: "https://myhiwi.de/kontakt",
   },

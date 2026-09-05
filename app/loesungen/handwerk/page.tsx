@@ -13,7 +13,7 @@ import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
 export const metadata: Metadata = {
   title: "Mehr Anfragen für Handwerksbetriebe — Website & Sichtbarkeit",
   description:
-    "Über 90 % suchen einen Handwerksbetrieb zuerst bei Google. MyHiwi baut Handwerkern in Berlin-Ost & Barnim Website, lokale Sichtbarkeit und einen sauberen Anfrageweg — auf mehr Aufträge gebaut.",
+    "MyHiwi baut Handwerkern in Berlin-Ost & Barnim Website, lokale Sichtbarkeit und einen sauberen Anfrageweg — auf mehr Aufträge gebaut.",
   keywords: [
     "Marketing für Handwerker",
     "Website Handwerksbetrieb",
@@ -27,7 +27,7 @@ const faqCopy = [
   {
     question: "Wie gewinnt ein Handwerksbetrieb online neue Kunden?",
     answer:
-      "Der erste Hebel ist Auffindbarkeit: ein vollständiges Google-Unternehmensprofil und eine Website, die für lokale Suchen („Gewerk + Ort“) optimiert ist. Mehr als 90 % suchen einen Handwerksbetrieb zuerst online — wer dort sauber erscheint und einen klaren Anfrageweg bietet, gewinnt die Anfrage.",
+      "Der erste Hebel ist Auffindbarkeit: ein vollständiges Google-Unternehmensprofil und eine Website, die für lokale Suchen („Gewerk + Ort“) optimiert ist. Wer dort seine Leistungen verständlich erklärt und einen klaren Anfrageweg bietet, erleichtert Kunden die Kontaktaufnahme.",
   },
   {
     question: "Was kostet eine Website für meinen Handwerksbetrieb?",
@@ -87,7 +87,7 @@ export default function Page() {
               Mehr Anfragen für Ihren <em className="mh-italic-accent">Handwerksbetrieb</em>.
             </h1>
             <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-secondary">
-              Über 90 % suchen einen Handwerksbetrieb zuerst bei Google. MyHiwi baut Ihnen die
+              MyHiwi baut Ihnen die
               Sichtbarkeit (Google-Profil + Website) und einen sauberen Anfrageweg — damit aus
               Suchenden konkrete Aufträge werden, nicht nur Klicks.
             </p>

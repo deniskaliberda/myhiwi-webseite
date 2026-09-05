@@ -20,7 +20,7 @@ import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
   title:
-    "Mr. Sherman Tanzstudio — Buchungs- und Zahlungs-Plattform | MyHiwi Case Study",
+    "Mr. Sherman Tanzstudio — Buchungs- und Zahlungs-Plattform",
   description:
     "Komplette Membership-Plattform für ein Berliner Tanzstudio: Next.js + Supabase + Stripe mit 4 Tiers (49–1.020 €/Mo), Trainer-Portal, Admin-CRM und Meta-Ads mit Server-Side CAPI.",
   alternates: {
