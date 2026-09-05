@@ -12,6 +12,7 @@ import {
   Search,
 } from "lucide-react";
 import styles from "./relaunch.module.css";
+import { CASE_STUDIES, getCaseStudy } from "@/content/case-studies";
 
 export const metadata: Metadata = {
   title: {
@@ -114,6 +115,9 @@ function SectionLabel({
 }
 
 export default function HomePage() {
+  const sonnenhof = getCaseStudy("sonnenhof-herrsching");
+  const antje = getCaseStudy("physio-antje-foerster");
+  const result = sonnenhof.metrics[0];
   return (
     <div className={styles.page}>
       <script
@@ -189,8 +193,8 @@ export default function HomePage() {
               <Globe2 size={12} aria-hidden="true" />
             </div>
             <Image
-              src="/case-studies/sonnenhof/sonnenhof-neu.png"
-              alt="Die von MyHiwi gestaltete Sonnenhof-Website mit direktem Anfrageweg"
+              src={sonnenhof.cover.src}
+              alt={sonnenhof.cover.alt}
               width={1420}
               height={810}
               priority
@@ -201,12 +205,13 @@ export default function HomePage() {
           <div className={styles.projectResult}>
             <div>
               <span className={styles.resultNumber}>
-                199<span>↗</span>
+                {result.value}
+                <span>↗</span>
               </span>
               <p>
-                direkte Gäste-Anfragen
+                {result.label}
                 <br />
-                <span>in vier Monaten</span>
+                <span>{result.period}</span>
               </p>
             </div>
             <Link
@@ -221,7 +226,8 @@ export default function HomePage() {
             <span>Website · SEO · Anzeigen</span>
           </div>
           <p className={styles.resultNote}>
-            Formularanfragen aus mehreren Kanälen. Zeitraum und Quellen im{" "}
+            Formularanfragen aus mehreren Kanälen, keine Buchungen. Quelle:{" "}
+            {result.source}. Details im{" "}
             <Link href="/case-studies/sonnenhof-herrsching">
               Projektbericht
             </Link>
@@ -241,36 +247,65 @@ export default function HomePage() {
             <strong>Echte Betriebe.</strong>
           </p>
           <div className={styles.clientLogos}>
-            {[
-              {
-                name: "Sonnenhof",
-                image: "sonnenhof",
-                slug: "sonnenhof-herrsching",
-              },
-              { name: "Mr. Sherman", image: "mr-sherman", slug: "mr-sherman" },
-              { name: "Formazin", image: "formazin", slug: "formazin" },
-              {
-                name: "Villa Gloria",
-                image: "villa-gloria",
-                slug: "villa-gloria",
-              },
-            ].map((c) => (
-              <Link
-                key={c.slug}
-                href={`/case-studies/${c.slug}`}
-                aria-label={`${c.name}: Projekt ansehen`}
-              >
-                <Image
-                  src={`/clients/${c.image}.png`}
-                  alt={c.name}
-                  width={150}
-                  height={48}
-                  sizes="150px"
-                  className={styles.clientLogo}
-                />
+            {CASE_STUDIES.map((project) => (
+              <Link key={project.slug} href={`/case-studies/${project.slug}`}>
+                <span className={styles.clientName}>{project.name}</span>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.wrap} ${styles.section}`}
+        aria-labelledby="before-after-title"
+      >
+        <SectionLabel number="01">Ein Relaunch, den man sieht</SectionLabel>
+        <div className={styles.sectionHeading}>
+          <h2 id="before-after-title">
+            Gleiche Praxis.
+            <br />
+            <span>Ein neuer Auftritt.</span>
+          </h2>
+          <p>
+            Bei Antje Förster zeigen wir, was sich verändert hat: von der alten
+            Website zu klaren Leistungen und kurzen Kontaktwegen.
+          </p>
+        </div>
+        {antje.comparison && (
+          <div className={styles.comparison}>
+            {[antje.comparison.before, antje.comparison.after].map(
+              (picture) => (
+                <figure key={picture.src}>
+                  <div className={styles.comparisonImage}>
+                    <Image
+                      src={picture.src}
+                      alt={picture.alt}
+                      width={1440}
+                      height={1000}
+                      sizes="(max-width: 767px) 90vw, 46vw"
+                    />
+                  </div>
+                  <figcaption>{picture.caption}</figcaption>
+                </figure>
+              ),
+            )}
+          </div>
+        )}
+        <div className={styles.comparisonFooter}>
+          <p>
+            <strong>
+              {antje.metrics[0].value} {antje.metrics[0].label}
+            </strong>{" "}
+            · {antje.metrics[0].period}. {antje.comparison?.note}
+          </p>
+          <Link
+            href={`/case-studies/${antje.slug}`}
+            className={styles.textLink}
+          >
+            Antjes Relaunch ansehen{" "}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
@@ -281,7 +316,7 @@ export default function HomePage() {
       >
         <span id="system" className={styles.anchor} />
         <span id="kompetenzen" className={styles.anchor} />
-        <SectionLabel number="01">Was ich für Sie tue</SectionLabel>
+        <SectionLabel number="02">Was ich für Sie tue</SectionLabel>
         <div className={styles.sectionHeading}>
           <h2 id="services-title">
             Ihr Können ist da.
@@ -325,7 +360,7 @@ export default function HomePage() {
         aria-labelledby="work-title"
       >
         <div className={styles.wrap}>
-          <SectionLabel number="02">Einblick in die Arbeit</SectionLabel>
+          <SectionLabel number="03">Einblick in die Arbeit</SectionLabel>
           <div className={styles.sectionHeading}>
             <h2 id="work-title">
               Keine Beispiele von der Stange.
@@ -338,53 +373,48 @@ export default function HomePage() {
             </Link>
           </div>
           <div className={styles.projectGrid}>
-            <Link
-              className={styles.workCard}
-              href="/case-studies/sonnenhof-herrsching"
-            >
-              <div className={styles.workImage}>
-                <Image
-                  src="/case-studies/sonnenhof/sonnenhof-neu.png"
-                  alt="Sonnenhof Herrsching: neuer Webauftritt"
-                  width={1420}
-                  height={810}
-                  sizes="(max-width: 767px) 90vw, 48vw"
-                />
-              </div>
-              <div className={styles.workCaption}>
-                <div>
-                  <span>Unterkunft · Herrsching am Ammersee</span>
-                  <h3>Sonnenhof Herrsching</h3>
-                  <p>
-                    Ein neuer Auftritt. Lokale Suchsichtbarkeit. Ein direkter
-                    Weg zur Gäste-Anfrage.
-                  </p>
-                </div>
-                <ArrowUpRight size={25} aria-hidden="true" />
-              </div>
-            </Link>
-            <Link className={styles.workCard} href="/case-studies/mr-sherman">
-              <div className={`${styles.workImage} ${styles.shermanImage}`}>
-                <Image
-                  src="/case-studies/mr-sherman/cover.png"
-                  alt="Mr. Sherman Tanzstudio: Website und Buchungsplattform"
-                  width={1420}
-                  height={810}
-                  sizes="(max-width: 767px) 90vw, 48vw"
-                />
-              </div>
-              <div className={styles.workCaption}>
-                <div>
-                  <span>Tanzstudio · Berlin</span>
-                  <h3>Mr. Sherman</h3>
-                  <p>
-                    Von der Website bis zur Kursbuchung: ein zusammenhängender
-                    Auftritt für das Studio.
-                  </p>
-                </div>
-                <ArrowUpRight size={25} aria-hidden="true" />
-              </div>
-            </Link>
+            {[
+              "mannis-fahrschule",
+              "sonnenhof-herrsching",
+              "formazin",
+              "mr-sherman",
+            ].map((slug) => {
+              const project = getCaseStudy(slug);
+              const metric = project.metrics[0];
+              return (
+                <Link
+                  className={styles.workCard}
+                  href={`/case-studies/${slug}`}
+                  key={slug}
+                >
+                  <div className={styles.workImage}>
+                    <Image
+                      src={project.cover.src}
+                      alt={project.cover.alt}
+                      width={1440}
+                      height={1000}
+                      sizes="(max-width: 767px) 90vw, 46vw"
+                    />
+                  </div>
+                  <div className={styles.workCaption}>
+                    <div>
+                      <span>
+                        {project.industry} · {project.location}
+                      </span>
+                      <h3>{project.name}</h3>
+                      <p>{project.summary}</p>
+                      <div className={styles.cardMetric}>
+                        <strong>
+                          {metric.value} <span>{metric.label}</span>
+                        </strong>
+                        <small>{metric.period}</small>
+                      </div>
+                    </div>
+                    <ArrowUpRight size={25} aria-hidden="true" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -393,7 +423,7 @@ export default function HomePage() {
         className={`${styles.wrap} ${styles.section}`}
         aria-labelledby="process-title"
       >
-        <SectionLabel number="03">So kommen wir weiter</SectionLabel>
+        <SectionLabel number="04">So kommen wir weiter</SectionLabel>
         <div className={styles.sectionHeading}>
           <h2 id="process-title">
             Erst verstehen.
@@ -445,7 +475,7 @@ export default function HomePage() {
             <span>Denis Kaliberda · Gründer von MyHiwi</span>
           </div>
           <div className={styles.founderCopy}>
-            <SectionLabel number="04">Persönlich aus Ahrensfelde</SectionLabel>
+            <SectionLabel number="05">Persönlich aus Ahrensfelde</SectionLabel>
             <h2 id="founder-title">
               Ihr Ansprechpartner?
               <br />
@@ -458,7 +488,8 @@ export default function HomePage() {
             </p>
             <p>
               Vom ersten Gespräch bis zur Umsetzung arbeiten Sie direkt mit mir.
-              Ich möchte Ihren Betrieb verstehen, verständlich beraten und Dinge
+              Ob Praxiswebsite, digitale Fahrschul-Anmeldung oder
+              Studio-Plattform: Ich möchte Ihren Betrieb verstehen und Dinge
               bauen, die im Alltag funktionieren.
             </p>
             <Link href="/ueber-mich" className={styles.textLink}>
@@ -483,7 +514,7 @@ export default function HomePage() {
         aria-labelledby="faq-title"
       >
         <div>
-          <SectionLabel number="05">Noch eine Frage?</SectionLabel>
+          <SectionLabel number="06">Noch eine Frage?</SectionLabel>
           <h2 id="faq-title">
             Gut zu <span>wissen.</span>
           </h2>

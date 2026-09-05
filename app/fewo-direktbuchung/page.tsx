@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { getCaseStudy } from "@/content/case-studies";
+
+const sonnenhof = getCaseStudy("sonnenhof-herrsching");
+const sonnenhofResult = sonnenhof.metrics[0];
 import {
   ArrowRight,
   Building2,
@@ -276,9 +280,9 @@ export default function FeWoDirektbuchungPage() {
                 </div>
               </Card>
               <FloatingMetricCard
-                value="199 Anfragen / 4 Monate"
-                caption="Sonnenhof Herrsching"
-                tag="belegter Case 2026"
+                value={`${sonnenhofResult.value} ${sonnenhofResult.label}`}
+                caption={`Sonnenhof · ${sonnenhofResult.period}`}
+                tag="Formularanfragen · keine Buchungen"
                 className="mt-mh-4 lg:absolute lg:-right-mh-4 lg:-top-mh-4 lg:mt-0"
               />
             </div>
@@ -370,14 +374,12 @@ export default function FeWoDirektbuchungPage() {
             <div>
               <SectionMark index="03" label="Proof" />
               <h2 className="mt-mh-4 mh-display-3">
-                Ein belegter Case, vorsichtig{" "}
-                <em className="mh-italic-accent">formuliert</em>.
+                Sonnenhof Herrsching. Vom Auftritt zur{" "}
+                <em className="mh-italic-accent">Anfrage</em>.
               </h2>
             </div>
             <p className="mh-body-medium text-mh-text-secondary">
-              Harte Zahlen erscheinen nur dort, wo sie als realer Case geführt werden.
-              Und wenn das Tracking nicht stimmt, sehen wir das zuerst — bevor Budget
-              verbrennt.
+              Die neue Fallstudie zeigt die Entwicklung der Website und die gezählten Formularanfragen. Quelle: {sonnenhofResult.source}. Die Anfragen stammen aus mehreren Kanälen und sind noch keine bestätigten Buchungen.
             </p>
           </div>
 
@@ -390,9 +392,9 @@ export default function FeWoDirektbuchungPage() {
               ausgangslage="Website und Sichtbarkeit mussten nach vielen Jahren neu sortiert werden, Buchungen liefen stark über Portale."
               gebaut="Relaunch, Local-SEO-Fundament, saubere Anfrageführung, sichtbare Trust-Signale und messbares Tracking als Basis für die Anzeigen."
               pillars={["Direktbuchungs-Strecke", "Tracking", "Anzeigen"]}
-              stat="199 Anfragen / 4 Monate"
-              imageSrc="/case-studies/sonnenhof/sonnenhof-neu.png"
-              imageAlt="Neue Website des Sonnenhof Herrsching"
+              stat={`${sonnenhofResult.value} ${sonnenhofResult.label} · ${sonnenhofResult.period}`}
+              imageSrc={sonnenhof.cover.src}
+              imageAlt={sonnenhof.cover.alt}
               href="/case-studies/sonnenhof-herrsching"
             />
           </div>

@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, Loader2, Mail, MessageSquare, SearchCheck } from "lucide-react";
+import {
+  ArrowLeft,
+  Loader2,
+  Mail,
+  MessageSquare,
+  SearchCheck,
+} from "lucide-react";
 
 import { Card } from "@/components/myhiwi/card/Card";
 import { BtnGhost } from "@/components/myhiwi/cta/BtnGhost";
@@ -15,7 +21,11 @@ const fieldClass =
 
 const labelClass = "mh-body-small font-semibold text-mh-text-primary";
 
-export default function KontaktClient() {
+export default function KontaktClient({
+  projectName,
+}: {
+  projectName?: string;
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -68,19 +78,31 @@ export default function KontaktClient() {
           name: name.trim(),
           email: email.trim(),
           website: website.trim(),
-          message: [message.trim(), region.trim() ? `Ort / Region: ${region.trim()}` : ""].filter(Boolean).join("\n\n"),
+          message: [
+            message.trim(),
+            projectName ? `Projektbezug: ${projectName}` : "",
+            region.trim() ? `Ort / Region: ${region.trim()}` : "",
+          ]
+            .filter(Boolean)
+            .join("\n\n"),
           phone: phone.trim(),
           consent,
         }),
       });
       const data = await res.json().catch(() => null);
       if (!res.ok || data?.success !== true) {
-        setError(typeof data?.error === "string" ? data.error : "Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.");
+        setError(
+          typeof data?.error === "string"
+            ? data.error
+            : "Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+        );
         return;
       }
       setDone(true);
     } catch {
-      setError("Die Verbindung wurde unterbrochen. Bitte versuchen Sie es erneut. Ihre Angaben bleiben erhalten.");
+      setError(
+        "Die Verbindung wurde unterbrochen. Bitte versuchen Sie es erneut. Ihre Angaben bleiben erhalten.",
+      );
     } finally {
       setSubmitting(false);
     }
@@ -96,8 +118,16 @@ export default function KontaktClient() {
               className="absolute right-0 top-0 h-40 w-40 translate-x-12 -translate-y-12 rounded-full bg-mh-accent-soft blur-3xl"
             />
             <div className="relative" role="status" aria-live="polite">
-              <SectionMark index="OK" label="Anfrage angekommen" tone="accent" />
-              <h1 ref={successRef} tabIndex={-1} className="mt-mh-4 mh-display-2">
+              <SectionMark
+                index="OK"
+                label="Anfrage angekommen"
+                tone="accent"
+              />
+              <h1
+                ref={successRef}
+                tabIndex={-1}
+                className="mt-mh-4 mh-display-2"
+              >
                 Danke. Ihre Anfrage ist angekommen.
               </h1>
               <p className="mt-mh-4 max-w-mh-text mh-body-large text-mh-text-secondary">
@@ -105,12 +135,12 @@ export default function KontaktClient() {
                 <span className="font-semibold text-mh-text-primary">
                   {website}
                 </span>{" "}
-                an und melde mich in 1–3 Werktagen per E-Mail mit einer
-                ersten Einschätzung zu Ihrer Webseite und Sichtbarkeit.
+                an und melde mich in 1–3 Werktagen per E-Mail mit einer ersten
+                Einschätzung zu Ihrer Webseite und Sichtbarkeit.
               </p>
               <p className="mt-mh-4 max-w-mh-text mh-body-small text-mh-text-secondary">
-                Falls es länger als drei Werktage dauert, schreiben Sie mir gerne
-                direkt an{" "}
+                Falls es länger als drei Werktage dauert, schreiben Sie mir
+                gerne direkt an{" "}
                 <a
                   href="mailto:kontakt@myhiwi.de"
                   className="font-semibold text-mh-accent hover:text-mh-accent-hover"
@@ -145,12 +175,19 @@ export default function KontaktClient() {
               Wie sichtbar ist Ihr Betrieb?
             </h1>
             <p className="mt-mh-4 max-w-mh-text mh-body-large text-mh-text-secondary">
-              Schicken Sie mir Ihre Webseite oder den Namen Ihres Betriebs.
-              Sie erhalten in 1–3 Werktagen eine persönliche Ersteinschätzung:
-              Wie wirkt Ihre Webseite, wie sind Sie bei Google auffindbar und
-              welche Grundlagen fehlen für die KI-Suche?
+              Schicken Sie mir Ihre Webseite oder den Namen Ihres Betriebs. Sie
+              erhalten in 1–3 Werktagen eine persönliche Ersteinschätzung: Wie
+              wirkt Ihre Webseite, wie sind Sie bei Google auffindbar und welche
+              Grundlagen fehlen für die KI-Suche?
             </p>
 
+            {projectName && (
+              <p className="mt-mh-4 rounded-mh-md border border-mh-divider px-mh-4 py-mh-3 mh-body-small text-mh-text-secondary">
+                Ihr Einstieg:{" "}
+                <strong className="text-mh-text-primary">{projectName}</strong>.
+                Diesen Projektbezug senden wir mit Ihrer Anfrage.
+              </p>
+            )}
             <div className="mt-mh-6 grid gap-mh-3">
               <Card padded="compact" className="flex gap-mh-3">
                 <SearchCheck
@@ -163,8 +200,8 @@ export default function KontaktClient() {
                     Ein klarer nächster Schritt
                   </h2>
                   <p className="mt-1 mh-body-xs text-mh-text-secondary">
-                    Sie erfahren, wo sich eine Verbesserung Ihrer Webseite
-                    oder lokalen Sichtbarkeit lohnt.
+                    Sie erfahren, wo sich eine Verbesserung Ihrer Webseite oder
+                    lokalen Sichtbarkeit lohnt.
                   </p>
                 </div>
               </Card>
@@ -179,8 +216,8 @@ export default function KontaktClient() {
                     Direkt mit Denis
                   </h2>
                   <p className="mt-1 mh-body-xs text-mh-text-secondary">
-                    Ich sehe mir Ihren Betrieb an und beantworte Ihre
-                    Fragen persönlich.
+                    Ich sehe mir Ihren Betrieb an und beantworte Ihre Fragen
+                    persönlich.
                   </p>
                 </div>
               </Card>
@@ -195,19 +232,25 @@ export default function KontaktClient() {
                     Antwort in 1–3 Werktagen
                   </h2>
                   <p className="mt-1 mh-body-xs text-mh-text-secondary">
-                    Sie bekommen die Einschätzung per E-Mail. Für einen
-                    Rückruf können Sie Ihre Telefonnummer angeben.
+                    Sie bekommen die Einschätzung per E-Mail. Für einen Rückruf
+                    können Sie Ihre Telefonnummer angeben.
                   </p>
                 </div>
               </Card>
             </div>
           </div>
 
-          <Card as="form" onSubmit={handleSubmit} aria-busy={submitting} className="min-w-0 space-y-mh-5">
+          <Card
+            as="form"
+            onSubmit={handleSubmit}
+            aria-busy={submitting}
+            className="min-w-0 space-y-mh-5"
+          >
             <div>
               <h2 className="mh-display-4">Sichtbarkeitscheck anfragen</h2>
               <p className="mt-mh-2 mh-body-small text-mh-text-secondary">
-                Ein paar Stichpunkte reichen. Mit * markierte Felder sind Pflichtfelder.
+                Ein paar Stichpunkte reichen. Mit * markierte Felder sind
+                Pflichtfelder.
               </p>
             </div>
 
@@ -284,7 +327,10 @@ export default function KontaktClient() {
 
             <div>
               <label htmlFor="region" className={labelClass}>
-                Ort oder Region <span className="font-normal text-mh-text-secondary">(optional)</span>
+                Ort oder Region{" "}
+                <span className="font-normal text-mh-text-secondary">
+                  (optional)
+                </span>
               </label>
               <input
                 id="region"
@@ -317,7 +363,12 @@ export default function KontaktClient() {
             </div>
 
             {error ? (
-              <p ref={errorRef} tabIndex={-1} role="alert" className="rounded-mh-sm border border-red-200 bg-red-50 px-mh-4 py-mh-3 mh-body-small text-red-700">
+              <p
+                ref={errorRef}
+                tabIndex={-1}
+                role="alert"
+                className="rounded-mh-sm border border-red-200 bg-red-50 px-mh-4 py-mh-3 mh-body-small text-red-700"
+              >
                 {error}
               </p>
             ) : null}
@@ -332,7 +383,8 @@ export default function KontaktClient() {
                 className="mt-0.5 h-[18px] w-[18px] shrink-0 cursor-pointer accent-[color:var(--mh-accent)]"
               />
               <span className="mh-body-xs text-mh-text-secondary">
-                Ich bin einverstanden, dass MyHiwi sich zu meiner Anfrage bei mir meldet. *{" "}
+                Ich bin einverstanden, dass MyHiwi sich zu meiner Anfrage bei
+                mir meldet. *{" "}
                 <a
                   href="/datenschutz"
                   className="font-semibold text-mh-accent hover:text-mh-accent-hover"
@@ -349,7 +401,10 @@ export default function KontaktClient() {
               <BtnPrimary type="submit" disabled={submitting} fullWidthOnMobile>
                 {submitting ? (
                   <>
-                    <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                    <Loader2
+                      className="h-4 w-4 animate-spin"
+                      aria-hidden="true"
+                    />
                     Senden…
                   </>
                 ) : (

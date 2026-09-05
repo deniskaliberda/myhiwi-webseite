@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { CASE_STUDIES } from "@/content/case-studies";
 import {
   ExternalLink,
   Target,
@@ -335,6 +337,22 @@ export default function UeberMichPage() {
       </Section>
 
       {/* FINAL CTA */}
+      <Section background="paper" padding="large">
+        <Container>
+          <SectionMark index="PROJEKTE" label="Woran ich heute arbeite" />
+          <h2 className="mt-mh-4 mh-display-3">Von der Praxiswebsite bis zur Studio-Plattform.</h2>
+          <p className="mt-mh-4 max-w-mh-text mh-body-large text-mh-text-secondary">Jeder Betrieb bringt eine andere Aufgabe mit. Die aktuellen Projekte zeigen, was ich umgesetzt habe und wie wir die Entwicklung beurteilen.</p>
+          <div className="mt-mh-7 grid gap-mh-5 md:grid-cols-2">
+            {CASE_STUDIES.map((project) => (
+              <Link key={project.slug} href={`/case-studies/${project.slug}`} className="border-t border-mh-divider pt-mh-4">
+                <h3 className="mh-display-5">{project.name} <span aria-hidden="true">↗</span></h3>
+                <p className="mt-mh-3 mh-body-medium text-mh-text-secondary">{project.summary}</p>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       <Section background="ink" padding="finalCta" finalCta>
         <Container>
           <div className="max-w-4xl">

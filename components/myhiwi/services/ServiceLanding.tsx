@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import styles from "./ServiceLanding.module.css";
+import { getCaseStudy } from "@/content/case-studies";
 
 export type ServiceContent = {
   slug: string;
@@ -15,15 +16,7 @@ export type ServiceContent = {
   challenge: { title: string; text: string };
   deliverables: { title: string; text: string }[];
   process: { title: string; text: string }[];
-  evidence: {
-    eyebrow: string;
-    title: string;
-    text: string;
-    href: string;
-    link: string;
-    image?: string;
-    imageAlt?: string;
-  };
+  evidence: Array<{ slug: string; context: string; metricIndex?: number }>;
   measurement: { title: string; text: string };
   faqs: { question: string; answer: string }[];
   sources?: ReactNode;
@@ -170,33 +163,49 @@ export default function ServiceLanding({
             ))}
           </ol>
         </section>
-        <section className={styles.evidence} aria-labelledby="evidence-title">
-          {content.evidence.image ? (
-            <div className={styles.projectImage}>
-              <Image
-                src={content.evidence.image}
-                alt={content.evidence.imageAlt || ""}
-                fill
-                sizes="(max-width: 767px) 100vw, 50vw"
-              />
-            </div>
-          ) : (
-            <div className={styles.caseMark} aria-hidden="true">
-              <span>
-                Aus der
-                <br />
-                Praxis.
-              </span>
-              <span>MYHIWI / PROJEKTE</span>
-            </div>
-          )}
-          <div className={styles.evidenceText}>
-            <p className={styles.kicker}>{content.evidence.eyebrow}</p>
-            <h2 id="evidence-title">{content.evidence.title}</h2>
-            <p>{content.evidence.text}</p>
-            <Link className={styles.textLink} href={content.evidence.href}>
-              {content.evidence.link} <span aria-hidden="true">↗</span>
-            </Link>
+        <section
+          className={styles.projectEvidence}
+          aria-labelledby="evidence-title"
+        >
+          <p className={styles.kicker}>Aus der Zusammenarbeit</p>
+          <h2 id="evidence-title">So sieht das in der Praxis aus.</h2>
+          <div className={styles.evidenceGrid}>
+            {content.evidence.map((entry) => {
+              const project = getCaseStudy(entry.slug);
+              const metric = project.metrics[entry.metricIndex ?? 0];
+              return (
+                <article key={project.slug} className={styles.evidenceCard}>
+                  <div className={styles.projectImage}>
+                    <Image
+                      src={project.cover.src}
+                      alt={project.cover.alt}
+                      fill
+                      sizes="(max-width: 767px) 90vw, 45vw"
+                    />
+                  </div>
+                  <div className={styles.evidenceText}>
+                    <p className={styles.kicker}>
+                      {project.industry} · {project.location}
+                    </p>
+                    <h3>{project.name}</h3>
+                    <p>{entry.context}</p>
+                    <p className={styles.evidenceMetric}>
+                      <strong>{metric.value}</strong> {metric.label}
+                      <small>
+                        {metric.period} · {metric.source}
+                      </small>
+                    </p>
+                    <Link
+                      className={styles.textLink}
+                      href={`/case-studies/${project.slug}`}
+                    >
+                      Projekt und Messmethode ansehen{" "}
+                      <span aria-hidden="true">↗</span>
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
         <section className={styles.measurement}>

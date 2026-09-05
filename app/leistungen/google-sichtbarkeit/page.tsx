@@ -75,16 +75,10 @@ const content: ServiceContent = {
       text: "Wir vergleichen geeignete Zeiträume und erklären, welche Seiten und Suchanfragen sich verändern. Daraus leiten wir die nächsten Aufgaben ab. Saison, Standort und Wettbewerb gehören zur Einordnung.",
     },
   ],
-  evidence: {
-    eyebrow: "Projekt / Sonnenhof Herrsching",
-    title: "Suchdaten und Anfragen gemeinsam betrachten.",
-    text: "Der Sonnenhof-Projektbericht zeigt organische Google-Klicks und direkte Gäste-Anfragen mit ihren jeweiligen Messzeiträumen. Diese Kennzahlen bleiben getrennt: Eine direkte Anfrage ist nicht automatisch eine Google-Anfrage und noch keine Buchung. So lässt sich ein Projekt nachvollziehbar beurteilen.",
-    href: "/case-studies/sonnenhof-herrsching",
-    link: "Projekt und Messung ansehen",
-    image: "/case-studies/sonnenhof/sonnenhof-neu.png",
-    imageAlt:
-      "Website des Sonnenhofs Herrsching als Beispiel eines lokalen Kundenprojekts",
-  },
+  evidence: [
+    { slug: "sonnenhof-herrsching", metricIndex: 1, context: "Unterkunftsseiten, regionale Inhalte und ein direkter Anfrageweg werden laufend weiterentwickelt. Im August wurden mehr Google-Klicks gemessen als im Juli. Welche Anfragen daraus entstanden, betrachten wir separat." },
+    { slug: "mannis-fahrschule", metricIndex: 1, context: "Eine bereits bekannte Fahrschule bekommt eine neue Website und hilfreiche Inhalte zu Führerscheinklassen. Der vollständige August zeigt die Entwicklung der Suchsichtbarkeit; die Web-Anfragen werden gesondert gezählt." },
+  ],
   measurement: {
     title: "Sichtbarkeit messen. Geschäftswert verstehen.",
     text: "Wir betrachten relevante Suchanfragen, Impressionen, Klicks und passende Zielseiten in der Search Console. Bei verfügbaren Profildaten ergänzen wir Interaktionen. Gemeinsam halten wir fest, welche qualifizierten Anfragen entstehen. Positionen schwanken je nach Suche und Standort; ein fester Google-Platz oder eine bestimmte Anzahl neuer Kunden ist nicht garantiert.",

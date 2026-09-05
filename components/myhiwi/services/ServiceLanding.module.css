@@ -484,3 +484,67 @@
     padding: 48px 0;
   }
 }
+
+.projectEvidence {
+  padding-block: 64px;
+  border-top: 1px solid var(--mh-divider);
+}
+.projectEvidence > h2 {
+  margin: 16px 0 32px;
+}
+.evidenceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.evidenceCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--mh-divider);
+  border-radius: 8px;
+  background: var(--mh-surface);
+}
+.evidenceCard .projectImage {
+  position: relative;
+  aspect-ratio: 1.6;
+  min-height: 0;
+}
+.evidenceCard .projectImage img {
+  object-fit: cover;
+  object-position: top;
+}
+.evidenceCard .evidenceText {
+  padding: 28px;
+}
+.evidenceCard h3 {
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin-block: 12px 16px;
+}
+.evidenceMetric {
+  border-top: 1px solid var(--mh-divider);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+.evidenceMetric strong {
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--mh-accent);
+  display: block;
+}
+.evidenceMetric small {
+  font-size: 12px;
+  line-height: 1.6;
+  display: block;
+  margin-top: 8px;
+}
+@media (max-width: 767px) {
+  .evidenceGrid {
+    grid-template-columns: 1fr;
+  }
+  .evidenceCard .evidenceText {
+    padding: 24px;
+  }
+}

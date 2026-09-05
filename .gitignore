@@ -38,3 +38,10 @@ next-env.d.ts
 # Browser verification output
 /test-results/
 /playwright-report/
+
+# Local customer evidence for reference refresh (repository is public).
+/docs/research/2026-09-05-refresh-*
+/docs/research/2026-09-05-reference-claims.md
+/docs/research/2026-09-05-reference-assets.md
+/docs/superpowers/plans/2026-09-05-referenz-refresh-masterplan.md
+/docs/research/legacy-public-snapshots/

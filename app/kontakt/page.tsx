@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import KontaktClient from "./KontaktClient";
+import { CASE_STUDIES } from "@/content/case-studies";
 
 export const metadata: Metadata = {
   title: "Kontakt — Sichtbarkeitscheck anfragen",
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KontaktPage() {
-  return <KontaktClient />;
+export default function KontaktPage({
+  searchParams,
+}: {
+  searchParams?: { projekt?: string | string[] };
+}) {
+  const project = CASE_STUDIES.find(
+    (entry) => entry.slug === searchParams?.projekt,
+  );
+  return <KontaktClient projectName={project?.name} />;
 }

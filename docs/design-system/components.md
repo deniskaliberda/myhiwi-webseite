@@ -323,3 +323,15 @@ Jede Komponente trägt:
 
 - `app/page.tsx` / `app/relaunch.module.css`: servergerenderte Startseite mit Hero, echtem Projektbild, optimierten Kundenlogos, redaktionellen Leistungszeilen, Projekten, Ablauf, Gründer, nativen FAQ-Details und Sichtbarkeitscheck. Mobile einspaltig mit Systemfonts; Desktop ink/blue Editorial-Aufteilung.
 - `components/myhiwi/services/`: gemeinsame servergerenderte Leistungsdarstellung für Webseiten, Google- und KI-Sichtbarkeit. Scoped CSS; eigene Inhalte, Metadata und JSON-LD je Route.
+
+## Referenzen — Editorial Case Study (05.09.2026)
+
+`components/myhiwi/cases/CaseStudyPage.tsx` renders the five current project stories on the server from `content/case-studies`. The overview consumes that same dataset; Villa Gloria remains a smaller supplementary reference. Existing Header/Footer come from SiteShell.
+
+- **CaseStudyPage**: one H1, industry/location, visible author/update date, actual project cover, results with source/period/note, dated before/after figures, challenge, numbered improvements, gallery, collaboration timeline, open native methodology details (`#messmethode`), outlook, related services and project-specific contact CTA. Optional native video uses controls, poster and `preload="none"`.
+- **ProjectImage**: Next Image with explicit responsive sizes. Covers use top-aligned crop; comparisons and gallery use `object-fit: contain` so the complete evidence stays visible. Gallery pairs a native-ratio mobile screenshot with a wider desktop detail. Captions are always rendered in HTML. No slider, carousel or client component is required.
+- **Case overview row**: actual project screenshot paired with editorial copy, linked project name and detail link. Supplementary Villa card does not repeat outdated performance claims.
+- **Metadata helper**: each detail route derives canonical, article Open Graph, unique cover, Twitter card and Article/Breadcrumb structured data from the same content. Visible author and update date match structured data.
+- **Style/tokens**: `Cases.module.css`, existing `--mh-*` ink/blue/surface/divider variables, Bricolage headings, Inter Tight body, mono markers. 1240px content maximum; 40px desktop/20px mobile inset. At 700px comparisons, gallery, editorial splits and case rows stack; system fonts match relaunch mobile performance. Visible keyboard focus and reduced-motion handling included.
+
+`components/myhiwi/card/ProjectTeaser.tsx` is the compact project reference used on industry and about pages. It reads the shared case-study dataset so names, summary, current image and detail URL stay consistent with the editorial reference pages.

@@ -75,13 +75,10 @@ const content: ServiceContent = {
       text: "Nach den Änderungen wiederholen wir die Suchtests unter dokumentierten Bedingungen. Schwankungen bleiben sichtbar. Wir zeigen, welche Fragen noch keine passenden Hinweise auf Ihren Betrieb liefern.",
     },
   ],
-  evidence: {
-    eyebrow: "Projektwissen als Grundlage",
-    title: "Erfahrung braucht nachvollziehbare Belege.",
-    text: "Der Sonnenhof-Bericht zeigt, wie wir reale Arbeit mit Kontext und Messzeiträumen beschreiben. Solche Projektinformationen können Kunden bei ihrer Entscheidung helfen. Der Bericht ist ein Beispiel für belegbare Inhalte; er belegt keine erreichten KI-Empfehlungen.",
-    href: "/case-studies/sonnenhof-herrsching",
-    link: "Beispiel für einen Projektbericht ansehen",
-  },
+  evidence: [
+    { slug: "sonnenhof-herrsching", metricIndex: 2, context: "Im Formular-Export tragen Anfragen die Quellenmarkierung chatgpt.com. Das ist eine dokumentierte Zuordnung im Anfrageweg. Sie belegt weder einen bestimmten ChatGPT-Prompt noch bestätigte Buchungen oder eine vollständige Herkunftsmessung." },
+    { slug: "formazin", context: "Die Energieberatung zeigt die inhaltliche Grundlage: konkrete Leistungen, fachliche Antworten und nachvollziehbare Projekte. Dieser Aufbau ist umgesetzt; eine erreichte Empfehlung durch KI-Systeme ist damit noch nicht nachgewiesen." },
+  ],
   measurement: {
     title: "Eine Stichprobe bleibt eine Stichprobe.",
     text: "KI-Antworten verändern sich mit Frage, Zeitpunkt und System. Einzelne Treffer zeigen deshalb keinen Marktanteil. Wir vergleichen dokumentierte Beobachtungen und erfassen erkennbare Website-Besuche sowie qualifizierte Anfragen separat. Crawl-Freigabe schafft eine technische Voraussetzung; sie garantiert weder Aufnahme als Quelle noch Empfehlung. Die Auswahl treffen die jeweiligen Suchsysteme.",

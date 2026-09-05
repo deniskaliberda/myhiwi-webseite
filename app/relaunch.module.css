@@ -254,7 +254,7 @@
 }
 .clientLogos {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: center;
   gap: 40px;
   flex: 1;
@@ -963,5 +963,99 @@
       BlinkMacSystemFont,
       "Segoe UI",
       sans-serif;
+  }
+}
+
+/* Current project evidence shares the main editorial layout. */
+.clientName {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.comparison figure {
+  margin: 0;
+  min-width: 0;
+}
+.comparisonImage {
+  background: var(--mh-surface);
+  border: 1px solid var(--mh-divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.comparisonImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.comparison figcaption {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--mh-text-secondary);
+}
+.comparisonFooter {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 28px;
+}
+.comparisonFooter p {
+  max-width: 65ch;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--mh-text-secondary);
+}
+.comparisonFooter p strong {
+  color: var(--mh-text-primary);
+}
+.comparisonFooter a {
+  flex-shrink: 0;
+}
+.cardMetric {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--mh-divider);
+}
+.cardMetric strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--mh-accent);
+  font-weight: 600;
+}
+.cardMetric strong span {
+  font-size: 14px;
+  color: var(--mh-text-primary);
+  letter-spacing: 0;
+}
+.cardMetric small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 5px;
+  color: var(--mh-text-secondary);
+}
+@media (max-width: 767px) {
+  .comparison {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .comparisonFooter {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .clientLogos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+  }
+  .clientName {
+    font-size: 14px;
   }
 }

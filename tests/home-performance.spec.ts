@@ -1,7 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Startseiten-Performance", () => {
-  test("priorisiert vor dem mobilen Hero keine Custom-Fonts", async ({ page }) => {
+  test("priorisiert vor dem mobilen Hero keine Custom-Fonts", async ({
+    page,
+  }) => {
     await page.goto("/");
 
     const fontPreloads = page.locator('link[rel="preload"][as="font"]');
@@ -35,34 +37,33 @@ test.describe("Startseiten-Performance", () => {
     await page.setViewportSize({ width: 412, height: 823 });
     await page.goto("/");
 
-    const fontFamily = await page.locator("h1.mh-hero-title").evaluate((hero) =>
-      getComputedStyle(hero).fontFamily,
-    );
+    const fontFamily = await page
+      .locator("h1.mh-hero-title")
+      .evaluate((hero) => getComputedStyle(hero).fontFamily);
 
     expect(fontFamily).not.toContain("Bricolage");
   });
 
-  test("liefert Kundenlogos responsiv über den Bildoptimierer aus", async ({
+  test("liefert echte Projektansichten responsiv über den Bildoptimierer aus", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const images = page.locator('main img[src*="%2Fcase-studies%2F"]');
+    expect(await images.count()).toBeGreaterThanOrEqual(5);
+    for (const image of await images.all()) {
+      await expect(image).toHaveAttribute("srcset", /(?:640|750|828)w/);
+      await expect(image).toHaveAttribute("sizes", /vw/);
+    }
+  });
+
+  test("verwendet für den Body nur die aktive Design-Schrift", async ({
     page,
   }) => {
     await page.goto("/");
 
-    const logoSources = await page
-      .locator('img[alt="Sonnenhof"], img[alt="Mr. Sherman"], img[alt="Formazin"], img[alt="Villa Gloria"]')
-      .evaluateAll((logos) => logos.map((logo) => (logo as HTMLImageElement).src));
-
-    expect(logoSources).toHaveLength(4);
-    expect(logoSources.every((source) => source.includes("/_next/image?url="))).toBe(
-      true,
-    );
-  });
-
-  test("verwendet für den Body nur die aktive Design-Schrift", async ({ page }) => {
-    await page.goto("/");
-
-    const fontFamily = await page.locator("body").evaluate((body) =>
-      getComputedStyle(body).fontFamily,
-    );
+    const fontFamily = await page
+      .locator("body")
+      .evaluate((body) => getComputedStyle(body).fontFamily);
 
     expect(fontFamily).toContain("Inter_Tight");
   });

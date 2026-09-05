@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ProjectTeaser } from "@/components/myhiwi/card/ProjectTeaser";
 import Image from "next/image";
 import { Container } from "@/components/myhiwi/layout/Container";
 import { Section } from "@/components/myhiwi/layout/Section";
@@ -262,13 +263,19 @@ export default function Page() {
                 einsehen.
               </p>
               <p className="fs-body mt-mh-4 max-w-[62ch] text-mh-text-secondary">
-                Wir zeigen Ihnen hier keine erfundenen Zahlen. Lieber zeigen
-                wir offen, wie wir messen — und legen die Messung bei Ihnen auf
-                den Tisch.
+                Bei Mannis Fahrschule zeigen wir inzwischen einen vollständigen Monatsbericht mit Web-Anfragen und Google-Klicks. Telefon, WhatsApp und bestätigte Fahrschulverträge sind darin noch nicht vollständig erfasst.
               </p>
             </div>
             <DossierMuster />
           </div>
+        </Container>
+      </Section>
+
+      <Section background="paper" padding="large">
+        <Container>
+          <SectionMark index="PRAXIS" label="Aus der Zusammenarbeit" />
+          <h2 className="mt-mh-4 mb-mh-6 mh-display-3">Ein Blick in ein echtes Projekt.</h2>
+          <ProjectTeaser slug="mannis-fahrschule" />
         </Container>
       </Section>
 

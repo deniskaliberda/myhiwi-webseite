@@ -75,15 +75,10 @@ const content: ServiceContent = {
       text: "Vor dem Start testen wir mobile Ansichten, Links und Kontaktwege. Bei einem Wechsel berücksichtigen wir bestehende Adressen. Anschließend klären wir Zugänge, Pflege und Verantwortlichkeiten.",
     },
   ],
-  evidence: {
-    eyebrow: "Projekt / Sonnenhof Herrsching",
-    title: "Ein eigener Weg zum Gast.",
-    text: "Beim Sonnenhof verbindet der Webauftritt Informationen zur Unterkunft mit einem direkten Anfrageweg. Der Projektbericht zeigt die Umsetzung und dokumentierte Anfragen mit Zeitraum. Das ist ein konkretes Beispiel für unser Vorgehen, keine Prognose für Ihren Betrieb.",
-    href: "/case-studies/sonnenhof-herrsching",
-    link: "Sonnenhof-Projekt ansehen",
-    image: "/case-studies/sonnenhof/sonnenhof-neu.png",
-    imageAlt: "Ausschnitt der von MyHiwi umgesetzten Sonnenhof-Website",
-  },
+  evidence: [
+    { slug: "physio-antje-foerster", context: "Von der alten Jimdo-Seite zum eigenen Praxisauftritt: verständliche Therapieseiten, mobile Kontaktwege und ein dokumentierter Vorher-nachher-Vergleich. Der August ist der erste vollständige Messmonat." },
+    { slug: "formazin", context: "Energieberatung wird zu einem klaren Angebot: fachliche Leistungen, regionale Einstiege und passende Anfragewege für private und gewerbliche Vorhaben. Der neue Gestaltungsstand ist seit 4. September online." },
+  ],
   measurement: {
     title: "Eine Website ist fertig, wenn der Weg funktioniert.",
     text: "Wir prüfen, ob Besucher Ihr Angebot verstehen und Sie zuverlässig erreichen können. Für die weitere Entwicklung vereinbaren wir sinnvolle Kennzahlen: erfolgreiche Anfragen, deren Qualität und nach Möglichkeit ihre Herkunft. Ein Button-Klick allein zählt dabei noch nicht als Anfrage. Mehr Besucher oder Aufträge lassen sich durch eine neue Website nicht garantieren.",

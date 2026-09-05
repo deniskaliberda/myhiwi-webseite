@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ProjectTeaser } from "@/components/myhiwi/card/ProjectTeaser";
 import { Check } from "lucide-react";
 import { BtnGhost } from "@/components/myhiwi/cta/BtnGhost";
 import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
@@ -130,6 +131,14 @@ export default function Page() {
               ))}
             </div>
           </div>
+        </Container>
+      </Section>
+
+      <Section background="paper" padding="large">
+        <Container>
+          <SectionMark index="PRAXIS" label="Aus der Zusammenarbeit" />
+          <h2 className="mt-mh-4 mb-mh-6 mh-display-3">Ein Blick in ein echtes Projekt.</h2>
+          <ProjectTeaser slug="physio-antje-foerster" />
         </Container>
       </Section>
 
