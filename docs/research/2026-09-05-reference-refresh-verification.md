@@ -33,3 +33,9 @@ Two existing Next.js `no-img-element` warnings and an outdated Browserslist data
 Authenticated read-only checks with `vercel curl` returned HTTP 200 and expected content for the homepage, overview, all five reference pages, AI service, project-aware contact page and sitemap. All five case canonicals match their production URLs. The sitemap contains 39 entries. A Sherman role WebP also returned HTTP 200. The removed public query export and a private research URL returned HTTP 404.
 
 Existing Vercel login protection is retained. The production domain has not been promoted. MyHiwi's own Search Console access and postlaunch measurement remain separate follow-up work; customer reference data does not establish MyHiwi's own search performance. Actual email delivery was not exercised.
+
+## Production release — 6 September 2026
+
+The user explicitly approved publication. PR #4 is merged as `00ad7dc3ba319e43e7be6034fd336d53a69905cd`. Vercel's production build completed successfully at `myhiwi-webseite-cymjn1he7-denis24.vercel.app`, with `myhiwi.de` and `www.myhiwi.de` attached. This supersedes the preview-only release status above.
+
+Direct unauthenticated production checks passed: all 39 sitemap pages return HTTP 200, expected canonical URLs and no `noindex`; all 23 curated WebP images return HTTP 200 with the correct content type. The homepage shows the current 607-inquiry evidence, and the contact entry displays the selected project. Robots and sitemap are publicly available. The removed raw query export returns HTTP 404. The live homepage was also verified in the browser. No real contact message was submitted.
