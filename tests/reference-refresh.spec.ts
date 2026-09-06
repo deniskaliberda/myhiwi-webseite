@@ -18,6 +18,7 @@ for (const project of projects) {
     request,
   }) => {
     const path = `/case-studies/${project.slug}`;
+    const updated = project.slug === "sonnenhof-herrsching" ? "2026-09-06" : "2026-09-05";
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(path);
@@ -28,7 +29,7 @@ for (const project of projects) {
       "href",
       `https://myhiwi.de${path}`,
     );
-    await expect(page.locator('time[datetime="2026-09-05"]')).toBeVisible();
+    await expect(page.locator(`time[datetime="${updated}"]`)).toBeVisible();
     const graphs = (
       await page.locator('script[type="application/ld+json"]').allTextContents()
     ).flatMap((raw) => {
@@ -39,7 +40,7 @@ for (const project of projects) {
       expect.arrayContaining([
         expect.objectContaining({
           "@type": "Article",
-          dateModified: "2026-09-05",
+          dateModified: updated,
           url: `https://myhiwi.de${path}`,
         }),
       ]),

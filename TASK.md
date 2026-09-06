@@ -1,12 +1,13 @@
 # Task
 
 ## Objective
-Completed: publish the approved MyHiwi relaunch for local businesses, including website, Google and AI visibility services and five current customer references.
+Publish the approved MyHiwi relaunch; follow-up correction replaces Sonnenhof's intermediate MyHiwi design with the original yellow website in the before/after comparison.
 
 ## Constraints
 Preserve existing URLs, AI training and Fahrschule functionality. Leave original checkout changes intact. No fabricated results or customer records in public assets. Keep German Sie voice and existing brand. Do not send test messages to real recipients.
 
 ## Decisions
+- User identified that Sonnenhof's previous before image already showed MyHiwi's work. The comparison now reuses the original archived yellow site (`sonnenhof-alt.jpg`) unchanged, with accurate caption and unknown capture date disclosed. Current Landhaus after image remains. Page/schema/sitemap modification date is 6 September. Build and focused Sonnenhof browser test pass.
 - User explicitly approved production publication on 6 September 2026.
 - Draft PR #4 was merged into main as 00ad7dc3ba319e43e7be6034fd336d53a69905cd.
 - Vercel production deployment myhiwi-webseite-cymjn1he7-denis24.vercel.app is READY and serves myhiwi.de and www.myhiwi.de.
@@ -18,7 +19,7 @@ Preserve existing URLs, AI training and Fahrschule functionality. Leave original
 None affecting publication.
 
 ## Next
-Obtain MyHiwi's own Search Console access to establish the postlaunch measurement baseline.
+Verify the corrected comparison after automatic production deployment. MyHiwi Search Console access remains a separate follow-up.
 
 ## accepted_commit
 00ad7dc3ba319e43e7be6034fd336d53a69905cd

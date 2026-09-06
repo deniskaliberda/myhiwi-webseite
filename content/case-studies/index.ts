@@ -14,7 +14,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     standfirst:
       "Für den Sonnenhof haben wir den Webauftritt neu geordnet, Unterkünfte und Preise verständlich erschlossen und die direkte Anfrage messbar gemacht. Im August 2026 folgte die nächste Ausbaustufe: ein neuer Landhaus-Auftritt mit digitalen Gastgeber-Inhalten, zusätzlichen Zimmerseiten und engerer interner Verlinkung.",
     website: "https://www.sonnenhof-herrsching.de",
-    updated: "2026-09-05",
+    updated: "2026-09-06",
     cover: {
       src: asset("sonnenhof-herrsching", "cover.webp"),
       alt: "Aktuelle Website des Sonnenhofs Herrsching im Landhaus-Stil",
@@ -69,10 +69,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     comparison: {
       before: {
-        src: asset("sonnenhof-herrsching", "before.webp"),
-        alt: "Grün-weiße Zwischenversion der Sonnenhof-Website vor dem Landhaus-Relaunch",
+        src: asset("sonnenhof", "sonnenhof-alt.jpg"),
+        alt: "Ursprüngliche gelbe Sonnenhof-Website vor der Zusammenarbeit mit MyHiwi",
         caption:
-          "Grün-weißer Zwischenstand vom 16. Juni 2026; der archivierte Cookie-Banner ist erhalten.",
+          "Ursprüngliche Website vor der Zusammenarbeit mit MyHiwi. Archivaufnahme; das genaue Aufnahmedatum ist nicht dokumentiert.",
       },
       after: {
         src: asset("sonnenhof-herrsching", "cover.webp"),
@@ -80,7 +80,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         caption:
           "Aktuelle Landhaus-Startseite, aufgenommen am 5. September 2026.",
       },
-      note: "Der Vergleich zeigt den ersten MyHiwi-Auftritt und die aktuelle Landhaus-Stufe. Er zeigt nicht die ursprüngliche gelbe Altseite.",
+      note: "Von der ursprünglichen gelben Website zum heutigen Landhaus-Auftritt: Der Vergleich zeigt die Ausgangslage vor unserer Zusammenarbeit und den aktuellen Stand nach zwei MyHiwi-Relaunches.",
     },
     gallery: [
       {
