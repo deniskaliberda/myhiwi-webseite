@@ -1,798 +1,566 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowDown,
   ArrowRight,
-  Bot,
-  CalendarClock,
+  ArrowUpRight,
   Check,
-  CreditCard,
-  Globe,
-  TrendingUp,
+  Globe2,
+  MapPin,
+  MessageSquare,
+  Search,
 } from "lucide-react";
-import { BrowserMockup } from "@/components/myhiwi/mockup/BrowserMockup";
-import { BtnGhost } from "@/components/myhiwi/cta/BtnGhost";
-import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
-import { BtnTertiary } from "@/components/myhiwi/cta/BtnTertiary";
-import { Card } from "@/components/myhiwi/card/Card";
-import { ComplianceNote } from "@/components/myhiwi/trust/ComplianceNote";
-import { Container } from "@/components/myhiwi/layout/Container";
-import { CtaRow } from "@/components/myhiwi/cta/CtaRow";
-import { FAQAccordion, type FAQItem } from "@/components/myhiwi/faq/FAQAccordion";
-import { FeatureCard } from "@/components/myhiwi/card/FeatureCard";
-import { FloatingMetricCard } from "@/components/myhiwi/hero/FloatingMetricCard";
-import { ProofCard } from "@/components/myhiwi/card/ProofCard";
-import { Section } from "@/components/myhiwi/layout/Section";
-import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
-import { TrustStrip } from "@/components/myhiwi/trust/TrustStrip";
-
-const primaryCta = {
-  label: "Kostenlosen Digital-Check anfragen",
-  href: "/kontakt",
-};
-
-const secondaryCta = {
-  label: "Cases ansehen",
-  href: "/case-studies",
-};
+import styles from "./relaunch.module.css";
+import { CASE_STUDIES, getCaseStudy } from "@/content/case-studies";
 
 export const metadata: Metadata = {
-  // Root segment: Next does NOT apply layout's title.template here, so the
-  // brand suffix must stay explicit (nested pages get "| MyHiwi" from the template).
-  title: "Mehr Direktanfragen für lokale Betriebe | MyHiwi",
+  title: {
+    absolute: "Webseiten, Google- & KI-Sichtbarkeit | MyHiwi Ahrensfelde",
+  },
   description:
-    "MyHiwi baut lokalen Dienstleistern, Pensionen & Ferienwohnungen den Weg von Google-Sichtbarkeit zu direkten Anfragen und Buchungen. Berlin-Ost & Bayern.",
-  alternates: {
-    canonical: "https://myhiwi.de",
+    "MyHiwi unterstützt lokale Betriebe mit modernen Webseiten, Local SEO und Sichtbarkeit in der KI-Suche. Persönlich mit Denis aus Ahrensfelde. Sichtbarkeit prüfen lassen.",
+  alternates: { canonical: "https://myhiwi.de" },
+  openGraph: {
+    title: "Gute Arbeit verdient Sichtbarkeit. | MyHiwi",
+    description:
+      "Webseiten, Google und KI-Suche für lokale Betriebe. Persönlich aus Ahrensfelde.",
+    url: "https://myhiwi.de",
   },
 };
 
-const trustItems = [
-  { label: "Sonnenhof", caption: "Pension · Herrsching", logo: "/clients/sonnenhof.png" },
-  { label: "Mr. Sherman", caption: "Tanzstudio · Berlin", logo: "/clients/mr-sherman.png" },
-  { label: "Formazin", caption: "Architektur · Pilot", logo: "/clients/formazin.png" },
-  { label: "Villa Gloria", caption: "Unterkunft · Projekt", logo: "/clients/villa-gloria.png" },
-  { label: "FeWo Taubenhaus", caption: "Direktanfragen" },
-];
-
-const pains = [
+const services = [
   {
-    title: "Die Website ist da, aber sie arbeitet nicht mit.",
-    text: "Viele Seiten sehen ordentlich aus, beantworten aber nicht, was Google, Gäste und Interessenten vor der Anfrage wirklich brauchen.",
+    number: "01",
+    name: "Webseiten",
+    icon: Globe2,
+    headline: "Ein Auftritt, der Ihrem Betrieb gerecht wird.",
+    description:
+      "Ihre Leistungen verständlich erklärt. Ihre Arbeit sichtbar gemacht. Und ein einfacher Weg, Sie zu erreichen – auf dem Handy genauso wie am Schreibtisch.",
+    details: "Konzept & Texte · Gestaltung · Technische Umsetzung",
+    href: "/leistungen/webseiten",
+    link: "Webseiten für lokale Betriebe",
   },
   {
-    title: "Sichtbarkeit endet vor dem nächsten Schritt.",
-    text: "Google Business Profil, Ads, Inhalte und Website laufen nebeneinander. Dadurch entsteht Aufmerksamkeit, aber kein sauberer Anfrageweg.",
+    number: "02",
+    name: "Google-Sichtbarkeit",
+    icon: Search,
+    headline: "Dort auftauchen, wo Ihre Kunden suchen.",
+    description:
+      "Wir bringen Website, Google-Unternehmensprofil und lokale Inhalte zusammen. Damit Menschen aus Ihrer Region verstehen, was Sie anbieten und warum Sie zu ihrer Suche passen.",
+    details: "Local SEO · Google Maps · Messbare Entwicklung",
+    href: "/leistungen/google-sichtbarkeit",
+    link: "Mehr über Google-Sichtbarkeit",
   },
   {
-    title: "Anfragen kommen unstrukturiert an.",
-    text: "Interessenten schreiben per Mail, Telefon oder Messenger. Danach beginnt Sortieren, Nachfragen und Hinterherlaufen.",
-  },
-  {
-    title: "Buchung und Zahlung bleiben Handarbeit.",
-    text: "Reservierungen, Anzahlungen, Bestätigungen und Rechnungen kosten Zeit, obwohl ein Teil davon verbindlich digital laufen könnte.",
-  },
-];
-
-const benefits = [
-  {
-    index: "01",
-    title: "Mehr Umsatz",
-    text: "Sichtbar werden ist kein Selbstzweck. Der Weg ist so gebaut, dass aus Suchenden konkrete Anfragen und direkte Buchungen werden — nicht nur Klicks in einer Statistik.",
-  },
-  {
-    index: "02",
-    title: "Weniger Zeit",
-    text: "Anfragen kommen strukturiert an — mit den Infos, die Sie für eine Antwort brauchen. Routine-Schritte laufen vorbereitet, die Entscheidung bleibt bei Ihnen.",
-  },
-  {
-    index: "03",
-    title: "Weniger Kosten",
-    text: "Jede Direktbuchung spart die Portal-Provision. Werbung läuft auf echte Anfragen statt auf Reichweite, die nichts bringt.",
+    number: "03",
+    name: "KI-Sichtbarkeit",
+    icon: MessageSquare,
+    headline: "Auch die neue Suche mitdenken.",
+    description:
+      "Menschen fragen ChatGPT, Google-KI und Perplexity nach passenden Anbietern. Wir machen Ihre Leistungen, Erfahrung und Referenzen für diese Suche klarer zugänglich – und prüfen, ob Ihr Betrieb genannt wird.",
+    details:
+      "Klare Unternehmensinfos · Belegbare Inhalte · Quellen & Erwähnungen",
+    href: "/leistungen/ki-sichtbarkeit",
+    link: "So funktioniert KI-Sichtbarkeit",
   },
 ];
-
-const featureBlocks = [
+const faqs = [
   {
-    index: "01",
-    icon: Globe,
-    title: "Sichtbarkeit",
-    subtitle: "GEFUNDEN WERDEN",
-    outcome:
-      "Website, Google Business Profil und Inhalte werden so gebaut, dass lokale Nachfrage überhaupt sauber landen kann.",
-    bullets: [
-      "Technische Website-Basis",
-      "Local-SEO-Struktur",
-      "Suchintentionen und Trust-Signale",
-    ],
-  },
-  {
-    index: "02",
-    icon: TrendingUp,
-    title: "Nachfrage",
-    subtitle: "PASSENDE BESUCHER",
-    outcome:
-      "Ads, Content und Landingpages werden nicht isoliert optimiert, sondern auf echte Anfragen und Buchungen ausgerichtet.",
-    bullets: [
-      "Google Ads mit klarer Rolle",
-      "Angebotsseiten statt Keyword-Silos",
-      "Auswertung ohne Vanity-Metriken",
-    ],
-  },
-  {
-    index: "03",
-    icon: CalendarClock,
-    title: "Anfrage & Buchung",
-    subtitle: "WENIGER REIBUNG",
-    outcome:
-      "Interessenten bekommen einen klaren nächsten Schritt. Der Betrieb bekommt bessere Informationen, bevor Arbeit entsteht.",
-    bullets: [
-      "Formulare und Anfrageflows",
-      "Termin- oder Buchungslogik",
-      "Übergabe in Mail, CRM oder Kalender",
-    ],
-  },
-  {
-    index: "04",
-    icon: CreditCard,
-    title: "Zahlung & Verbindlichkeit",
-    subtitle: "ERNSTHAFTE NACHFRAGE",
-    outcome:
-      "Wo es sinnvoll ist, werden Anzahlungen, Zahlungen und Bestätigungen direkt in den Ablauf integriert.",
-    bullets: [
-      "Stripe- oder Zahlungsintegration",
-      "Bestätigungsmails und Belege",
-      "Weniger manuelle Nacharbeit",
-    ],
-  },
-];
-
-const aiUseCases = [
-  {
-    title: "Antworten vorbereiten",
-    text: "AI hilft beim Sortieren und Vorformulieren, aber Entscheidungen bleiben beim Menschen.",
-  },
-  {
-    title: "Anfragen strukturieren",
-    text: "Aus losen Angaben werden saubere Übergaben für Mail, Kalender, CRM oder interne Abläufe.",
-  },
-  {
-    title: "Dokumente beschleunigen",
-    text: "Wiederkehrende Notizen, Protokolle oder Zusammenfassungen können als projektbezogener Pilot starten.",
-  },
-];
-
-const values = [
-  "Sie reden direkt mit Denis, nicht mit einer Account-Manager-Schicht.",
-  "Code, Inhalte und Prozesse werden als zusammenhängendes System betrachtet.",
-  "Zahlen werden nur gezeigt, wenn sie im Projekt belegbar sind.",
-];
-
-const faqCopy = [
-  {
-    question: "Was ist ein digitales Wachstumssystem?",
+    question: "Für welche Betriebe ist MyHiwi da?",
     answer:
-      "Ein digitales Wachstumssystem verbindet Sichtbarkeit, Website, Anfrageweg, Buchung, Zahlung und passende Automatisierung. Es ist keine einzelne neue Webseite, sondern ein Ablauf, der aus Aufmerksamkeit konkrete Anfragen machen soll.",
+      "Für lokale Unternehmen, die mit ihrer Arbeit überzeugen und online mehr passende Anfragen gewinnen möchten: zum Beispiel Handwerksbetriebe, Fahrschulen, Praxen, Salons und Unterkünfte. Mein Ausgangspunkt ist Ahrensfelde, mit Schwerpunkt Berlin-Ost und Barnim. Zusammenarbeit ist auch überregional möglich.",
   },
   {
-    question: "Ist MyHiwi eine klassische Webdesign-Agentur?",
+    question: "Brauche ich dafür eine komplett neue Webseite?",
     answer:
-      "Nein. Eine neue Website kann ein Baustein sein, aber sie wird immer im Zusammenhang mit Google-Sichtbarkeit, Anfragequalität und operativer Entlastung geplant. Ziel ist ein funktionierender Weg vom ersten Besuch bis zur verbindlichen Anfrage.",
+      "Das klären wir beim ersten Check. Manchmal reichen verständlichere Angebotsseiten, technische Korrekturen und ein besser gepflegtes Google-Profil. Ein Relaunch ist sinnvoll, wenn die bisherige Website Ihren Betrieb nicht mehr richtig zeigt oder wichtige Funktionen fehlen.",
   },
   {
-    question: "Wie läuft der kostenlose Digital-Check ab?",
+    question: "Was bedeutet Sichtbarkeit in der KI-Suche?",
     answer:
-      "Sie schicken kurz Ihre Ausgangslage. Danach schaut Denis persönlich auf Website, Google-Auftritt und Anfrageweg und meldet sich mit einer ehrlichen Einschätzung, wo ein sinnvoller erster Hebel liegen könnte.",
+      "Es geht darum, ob Ihr Betrieb in Antworten von Suchdiensten wie ChatGPT, Google AI Overviews oder Perplexity auftaucht. Dazu brauchen diese Dienste zugängliche, eindeutige und nachvollziehbare Informationen. Wir prüfen technische Voraussetzungen, verbessern Inhalte und beobachten Erwähnungen und Quellenlinks. Eine Empfehlung lässt sich nicht garantieren.",
   },
   {
-    question: "Für welche Betriebe passt das?",
+    question: "Wie schnell sehe ich Ergebnisse?",
     answer:
-      "MyHiwi passt besonders für lokale Unternehmen mit wiederkehrenden Anfragen, Terminen, Buchungen oder Zahlungen. Typische Beispiele sind Unterkünfte, Fahrschulen, Sportanbieter, Praxen, Kanzleien, Handwerk und regionale Dienstleister.",
+      "Eine neue Seite oder ein korrigiertes Profil kann schnell online sein. Bis Suchdienste Änderungen aufnehmen und relevante Anfragen entstehen, vergeht unterschiedlich viel Zeit. Wir legen zuerst den Ausgangsstand fest und beurteilen danach die Entwicklung. Einen festen Rankingtermin kann ich nicht seriös versprechen.",
   },
   {
-    question: "Wie gehen Sie mit Daten und DSGVO um?",
+    question: "Was kostet die Zusammenarbeit?",
     answer:
-      "Wir arbeiten DSGVO-bewusst, mit AVV und Anbieterübersicht projektbezogen. Vor Datenflüssen wird geklärt, welche Anbieter eingesetzt werden, welche Daten wirklich nötig sind und welche Abläufe besser reduziert werden.",
+      "Der erste Sichtbarkeitscheck ist kostenlos und unverbindlich. Für die Umsetzung erhalten Sie ein Angebot mit klar beschriebenem Umfang. Einmalige Arbeiten, laufende Betreuung und gegebenenfalls Werbebudget werden getrennt ausgewiesen. So sehen Sie vor Beginn, was enthalten ist.",
   },
   {
-    question: "Wann ist MyHiwi nicht passend?",
+    question: "Wie läuft der Sichtbarkeitscheck ab?",
     answer:
-      "Wenn Sie nur eine möglichst billige einzelne Unterseite oder schnelle Design-Kosmetik suchen, ist MyHiwi wahrscheinlich nicht der richtige Partner. Der Ansatz lohnt sich dort, wo Website, Nachfrage und Betrieb zusammen verbessert werden sollen.",
+      "Sie schicken Ihre Website oder Ihren Firmennamen, Ihren Ort und kurz Ihr Anliegen. Ich schaue auf Ihren öffentlichen Auftritt und melde mich in 1–3 Werktagen mit einer ersten Einschätzung. Wenn es passt, besprechen wir die nächsten Schritte persönlich.",
   },
 ];
 
-const faqItems: FAQItem[] = faqCopy.map((item) => ({
-  question: item.question,
-  answer: <p>{item.answer}</p>,
-}));
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqCopy.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
-
-export default function HomePage() {
+function SectionLabel({
+  number,
+  children,
+}: {
+  number: string;
+  children: React.ReactNode;
+}) {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-
-      <Section background="paper" padding="large" className="overflow-hidden lg:flex lg:flex-col lg:justify-center lg:min-h-[100svh]">
-        <Container>
-          <div className="grid gap-mh-8 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.9fr)] lg:items-center lg:gap-mh-10">
-            <div className="min-w-0 max-w-[760px]">
-              <SectionMark index="00" label="Positionierung" tone="accent" />
-              <h1 className="relative z-10 mt-mh-5 mh-display-1 mh-hero-title">
-                Aus Sichtbarkeit werden{" "}
-                <em className="mh-italic-accent">Buchungen</em>.
-              </h1>
-              <p className="mt-mh-6 max-w-mh-text mh-body-large text-mh-text-secondary">
-                Der Weg von der Google-Suche bis zur verbindlichen Buchung —
-                gebaut für lokale Betriebe. Mehr Umsatz, weniger Handarbeit.
-              </p>
-              <CtaRow
-                className="mt-mh-7"
-                microcopy="kostenlos · unverbindlich · Sie reden direkt mit Denis"
-              >
-                <BtnPrimary href={primaryCta.href} fullWidthOnMobile>
-                  {primaryCta.label}
-                </BtnPrimary>
-                <BtnGhost href={secondaryCta.href} fullWidthOnMobile>
-                  {secondaryCta.label}
-                </BtnGhost>
-              </CtaRow>
-            </div>
-
-            <div className="relative z-0 lg:pl-mh-3">
-              <BrowserMockup domain="myhiwi.de/anfragen" className="mx-auto max-w-[560px]">
-                <div className="bg-mh-paper p-mh-5">
-                  <div className="grid gap-mh-3">
-                    <div
-                      className="mh-funnel-step rounded-mh-lg border border-mh-divider bg-mh-subtle p-mh-4"
-                      style={{ animationDelay: "0s" }}
-                    >
-                      <div className="flex items-center justify-between gap-mh-3">
-                        <span className="mh-label-mono-sm text-mh-text-secondary">
-                          Besucher
-                        </span>
-                        <span className="h-2 w-24 rounded-mh-pill bg-mh-accent-soft" />
-                      </div>
-                    </div>
-                    {[
-                      { n: "01", Icon: Globe, title: "Sichtbarkeit", text: "gefunden werden" },
-                      { n: "02", Icon: TrendingUp, title: "Nachfrage", text: "passende Besucher" },
-                      { n: "03", Icon: CalendarClock, title: "Anfrage", text: "klarer nächster Schritt" },
-                      { n: "04", Icon: CreditCard, title: "Zahlung", text: "verbindlicher Ablauf" },
-                    ].map((step, i) => (
-                      <div
-                        key={step.n}
-                        className="mh-funnel-step grid grid-cols-[40px_1fr_auto] items-center gap-mh-3 rounded-mh-md border border-mh-divider bg-mh-paper p-mh-3"
-                        style={{ animationDelay: `${0.15 + i * 0.15}s` }}
-                      >
-                        <span className="flex h-10 w-10 items-center justify-center rounded-mh-pill bg-mh-accent-soft">
-                          <step.Icon
-                            className="h-5 w-5 text-mh-accent"
-                            strokeWidth={1.8}
-                            aria-hidden="true"
-                          />
-                        </span>
-                        <div>
-                          <p className="mh-body-small font-semibold text-mh-text-primary">
-                            <span className="mh-label-mono-sm text-mh-accent">{step.n} </span>
-                            {step.title}
-                          </p>
-                          <p className="mh-body-xs text-mh-text-secondary">{step.text}</p>
-                        </div>
-                        <ArrowRight
-                          className="h-4 w-4 text-mh-text-secondary"
-                          strokeWidth={1.6}
-                          aria-hidden="true"
-                        />
-                      </div>
-                    ))}
-                    <div
-                      className="mh-funnel-step rounded-mh-lg bg-mh-ink-950 p-mh-4 text-mh-text-on-dark"
-                      style={{ animationDelay: "0.78s" }}
-                    >
-                      <div className="flex items-center gap-mh-3">
-                        <Check
-                          className="h-5 w-5 text-mh-glow"
-                          strokeWidth={1.8}
-                          aria-hidden="true"
-                        />
-                        <div>
-                          <p className="mh-body-small font-semibold">
-                            Anfrage, Buchung oder Zahlung kommt sauber an.
-                          </p>
-                          <p className="mh-body-xs text-mh-text-on-dark/70">
-                            Der Betrieb sieht den nächsten Schritt.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </BrowserMockup>
-              <FloatingMetricCard
-                value="199 Anfragen / 4 Monate"
-                caption="Sonnenhof Herrsching"
-                tag="belegter Case 2026"
-                className="mt-mh-4 lg:absolute lg:-right-mh-4 lg:-top-mh-4 lg:mt-0"
-              />
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <Section background="paper" padding="large">
-        <Container>
-          <SectionMark index="00" label="Warum Betriebe mit mir arbeiten" tone="accent" />
-          <h2 className="mt-mh-4 mh-display-3">
-            Drei Dinge sollen besser werden.{" "}
-            <em className="mh-italic-accent">Mehr nicht.</em>
-          </h2>
-          <div className="mt-mh-7 grid gap-mh-4 sm:grid-cols-3">
-            {benefits.map((benefit) => (
-              <Card key={benefit.index} className="flex h-full flex-col gap-mh-3">
-                <span className="mh-label-mono text-mh-accent">{benefit.index}</span>
-                <h3 className="mh-body-large font-semibold text-mh-text-primary">
-                  {benefit.title}
-                </h3>
-                <p className="mh-body-medium text-mh-text-secondary">{benefit.text}</p>
-              </Card>
-            ))}
-          </div>
-          <p className="mt-mh-5 mh-body-small text-mh-text-secondary">
-            Die KI ist dabei nur das Werkzeug im Hintergrund — sie beschleunigt, sie
-            entscheidet nicht.
-          </p>
-        </Container>
-      </Section>
-
-      <Section background="paper" padding="compact">
-        <Container>
-          <TrustStrip items={trustItems} kicker="Ausgewählte Projekte" />
-        </Container>
-      </Section>
-
-      <Section background="subtle" padding="large">
-        <Container>
-          <div className="grid gap-mh-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-mh-8">
-            <div>
-              <SectionMark index="01" label="Diagnose" />
-              <h2 className="mt-mh-4 mh-display-3">
-                Die Einzelteile sind da. Das{" "}
-                <em className="mh-italic-accent">System</em> fehlt.
-              </h2>
-              <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
-                Viele lokale Unternehmen haben schon Website, Google-Profil,
-                Werbung oder ein Formular. Der Engpass entsteht dort, wo diese
-                Teile nicht miteinander arbeiten.
-              </p>
-              <div className="mt-mh-6 hidden overflow-hidden rounded-mh-xl border border-mh-divider bg-mh-paper shadow-mh-card lg:block">
-                <img
-                  src="/home/anfrage-flow.png"
-                  alt="Aus einzelnen Bausteinen wird ein verbundener Weg von der Suche bis zur Buchung"
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[3/2] w-full object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="grid gap-mh-4 sm:grid-cols-2">
-              {pains.map((pain, index) => (
-                <Card
-                  key={pain.title}
-                  as="article"
-                  interactive
-                  className="flex h-full flex-col justify-between gap-mh-4 sm:min-h-[220px] sm:gap-mh-5"
-                >
-                  <div>
-                    <span className="mh-label-mono-sm text-mh-accent">
-                      Diagnose {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="mt-mh-4 mh-display-5">{pain.title}</h3>
-                  </div>
-                  <p className="mh-body-small text-mh-text-secondary">
-                    {pain.text}
-                  </p>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <Card tone="ink" className="mt-mh-7 grid gap-mh-5 lg:grid-cols-[1fr_1.3fr] lg:items-center">
-            <p className="mh-label-mono text-mh-glow">Antwort von MyHiwi</p>
-            <p className="mh-body-large text-mh-text-on-dark/88">
-              Erst wird der Weg sichtbar gemacht: Woher kommen Menschen, was
-              sehen sie, wo bleiben sie hängen, was muss automatisiert oder
-              verbindlicher werden?
-            </p>
-          </Card>
-        </Container>
-      </Section>
-
-      <Section id="system" background="paper" padding="large">
-        <Container>
-          <div className="grid gap-mh-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <div>
-              <SectionMark index="02" label="Vier Bausteine" />
-              <h2 className="mt-mh-4 mh-display-3">
-                Vier Bausteine. Ein{" "}
-                <em className="mh-italic-accent">Wachstumssystem</em>.
-              </h2>
-            </div>
-            <p className="mh-body-medium text-mh-text-secondary">
-              Die AI-Schicht sitzt bewusst darüber. Erst muss der sichtbare
-              Weg funktionieren, dann kann Automatisierung sinnvoll verstärken.
-            </p>
-          </div>
-
-          <div className="mt-mh-7 grid gap-mh-5 md:grid-cols-2 xl:grid-cols-4">
-            {featureBlocks.map((block) => (
-              <FeatureCard key={block.index} {...block} />
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section background="subtle" padding="large">
-        <Container>
-          <div className="grid gap-mh-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <div>
-              <SectionMark index="03" label="Verstärker-Schicht" />
-              <h2 className="mt-mh-4 mh-display-3">
-                AI da, wo sie wirklich{" "}
-                <em className="mh-italic-accent">hilft</em>.
-              </h2>
-              <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
-                AI ist bei MyHiwi kein Hauptprodukt und kein Versprechen. Sie
-                wird dort eingesetzt, wo ein klarer Ablauf schon existiert und
-                menschliche Kontrolle erhalten bleibt.
-              </p>
-              <div className="mt-mh-6 overflow-hidden rounded-mh-xl border border-mh-divider bg-mh-paper shadow-mh-card">
-                <img
-                  src="/home/automatisierung.png"
-                  alt="MyHiwi — KI als Werkzeug im Hintergrund, mit menschlicher Freigabe"
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[16/10] w-full object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="grid gap-mh-4">
-              {aiUseCases.map((item) => (
-                <Card key={item.title} as="article" className="grid gap-mh-3 sm:grid-cols-[48px_1fr] sm:items-start">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-mh-md bg-mh-accent-soft text-mh-accent">
-                    <Bot className="h-[22px] w-[22px]" strokeWidth={1.6} />
-                  </span>
-                  <div>
-                    <h3 className="mh-display-5">{item.title}</h3>
-                    <p className="mt-mh-2 mh-body-small text-mh-text-secondary">
-                      {item.text}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <Section background="paper" padding="large">
-        <Container>
-          <div className="grid gap-mh-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div className="relative overflow-hidden rounded-mh-xl border border-mh-divider bg-mh-subtle p-mh-3 shadow-mh-card">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-mh-lg bg-mh-ink-950">
-                <img
-                  src="/ueber-mich/portrait.jpg"
-                  alt="Denis Kaliberda, Gründer von MyHiwi"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-mh-ink-950/82 via-mh-ink-950/18 to-transparent" aria-hidden="true" />
-                <div className="absolute inset-x-0 bottom-0 p-mh-5 text-mh-text-on-dark">
-                  <span className="mh-label-mono text-mh-text-on-dark/70">
-                    Gründer
-                  </span>
-                  <p className="mt-mh-3 font-mh-display text-[44px] font-bold leading-none tracking-mh-display">
-                    Denis
-                  </p>
-                  <p className="mt-mh-2 mh-body-small text-mh-text-on-dark/74">
-                    Ahrensfelde bei Berlin · Ammersee, Bayern
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <SectionMark index="04" label="Über MyHiwi" />
-              <h2 className="mt-mh-4 mh-display-3">
-                Persönlich, nicht{" "}
-                <em className="mh-italic-accent">skaliert</em>.
-              </h2>
-              <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
-                MyHiwi ist bewusst klein geführt. Sie reden direkt mit Denis
-                Kaliberda, und der Blick geht immer auf den konkreten Engpass
-                Ihres Betriebs.
-              </p>
-              <ul className="mt-mh-5 grid gap-mh-3">
-                {values.map((value) => (
-                  <li key={value} className="flex gap-mh-3 mh-body-small">
-                    <Check
-                      className="mt-0.5 h-[18px] w-[18px] shrink-0 text-mh-accent"
-                      strokeWidth={1.8}
-                      aria-hidden="true"
-                    />
-                    <span>{value}</span>
-                  </li>
-                ))}
-              </ul>
-              <BtnTertiary href="/ueber-mich" className="mt-mh-6">
-                Über MyHiwi lesen
-              </BtnTertiary>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <Section background="subtle" padding="large">
-        <Container>
-          <div className="grid gap-mh-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <div>
-              <SectionMark index="05" label="Proof" />
-              <h2 className="mt-mh-4 mh-display-3">
-                Belegte Cases, vorsichtig{" "}
-                <em className="mh-italic-accent">formuliert</em>.
-              </h2>
-            </div>
-            <p className="mh-body-medium text-mh-text-secondary">
-              Harte Zahlen erscheinen nur dort, wo sie als vorhandener Case im
-              Repo geführt werden. Alles andere bleibt bewusst als Projekt- oder
-              Pilotkontext beschrieben.
-            </p>
-          </div>
-
-          <div className="mt-mh-7 grid gap-mh-5">
-            <ProofCard
-              variant="lead-spread"
-              kicker="01 · BELEGTER CASE"
-              client="Sonnenhof Herrsching"
-              industry="Pension · Ammersee"
-              ausgangslage="Website und Sichtbarkeit mussten nach vielen Jahren neu sortiert werden."
-              gebaut="Relaunch, Local-SEO-Fundament, bessere Anfrageführung und sichtbare Trust-Signale."
-              pillars={["Sichtbarkeit", "Nachfrage", "Anfrage & Buchung"]}
-              stat="199 Anfragen / 4 Monate"
-              imageSrc="/case-studies/sonnenhof/sonnenhof-neu.png"
-              imageAlt="Neue Website des Sonnenhof Herrsching"
-              href="/case-studies/sonnenhof-herrsching"
-            />
-
-            <div className="grid gap-mh-5 md:grid-cols-2">
-              <ProofCard
-                kicker="02 · PROJEKT"
-                client="Mr. Sherman Tanzstudio"
-                industry="Tanz & Sport · Berlin"
-                ausgangslage="Mitgliedschaften, Studio-Website und operative Abläufe mussten zusammen gedacht werden."
-                gebaut="Brand-App, Mitgliederlogik und digitale Übergaben als verbundenes System."
-                pillars={["Anfrage & Buchung", "Zahlung", "Automation"]}
-                imageSrc="/case-studies/mr-sherman/cover.png"
-                imageAlt="Mr. Sherman Tanzstudio Projektansicht"
-                href="/case-studies/mr-sherman"
-              />
-              <ProofCard
-                kicker="03 · PILOT"
-                client="Formazin"
-                industry="Architektur · Dokumentation"
-                ausgangslage="Wiederkehrende Dokumentationsarbeit sollte schneller und strukturierter vorbereitet werden."
-                gebaut="AI-gestützter Pilot für Notizen, Fotos und projektbezogene Übergaben."
-                pillars={["AI & Automation", "Interne Abläufe"]}
-                imageSrc="/case-studies/formazin/cover.png"
-                imageAlt="Formazin Architektur Projektvisual"
-                href="/case-studies/formazin"
-              />
-            </div>
-          </div>
-          <p className="mt-mh-7 mh-body-small text-mh-text-secondary">
-            Ferienwohnung oder Hotel?{" "}
-            <Link
-              href="/fewo-direktbuchung"
-              className="font-semibold text-mh-accent hover:text-mh-accent-hover"
-            >
-              So holen Sie mehr Direktbuchungen — ohne Portal-Provision →
-            </Link>
-          </p>
-        </Container>
-      </Section>
-
-      <Section id="pakete" background="paper" padding="large">
-        <Container>
-          <div className="grid gap-mh-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <div>
-              <SectionMark index="06" label="Wo starten?" />
-              <h2 className="mt-mh-4 mh-display-3">
-                Drei Einstiege, ein{" "}
-                <em className="mh-italic-accent">Gespräch</em>.
-              </h2>
-            </div>
-            <p className="mh-body-medium text-mh-text-secondary">
-              Der Digital-Check klärt zuerst, welcher Einstieg sinnvoll ist.
-              Genaue Preise und Umfang gehören in das Erstgespräch, nicht in
-              eine pauschale Tabelle.
-            </p>
-          </div>
-
-          <div className="mt-mh-7 grid gap-mh-5 lg:grid-cols-3">
-            <StartCard
-              kicker="01 · ERST PRÜFEN"
-              title="Klein anfangen"
-              text="Für Betriebe, die Klarheit brauchen, bevor sie ein Projekt starten."
-              note="Digital-Check · kostenlos"
-              href={primaryCta.href}
-            />
-            <StartCard
-              kicker="02 · EMPFEHLUNG"
-              title="Gezielt loslegen"
-              text="Für Betriebe, bei denen Sichtbarkeit und Anfrageweg zusammen verbessert werden sollen."
-              note="Sichtbarkeit & Anfrageflow"
-              href={primaryCta.href}
-              highlighted
-            />
-            <StartCard
-              kicker="03 · SYSTEM BAUEN"
-              title="Komplettes System"
-              text="Für Betriebe, bei denen Buchung, Zahlung oder Automatisierung direkt mitgedacht werden müssen."
-              note="Wachstumssystem"
-              href={primaryCta.href}
-            />
-          </div>
-        </Container>
-      </Section>
-
-      <Section background="subtle" padding="large">
-        <Container>
-          <SectionMark index="07" label="FAQ" />
-          <div className="mt-mh-5">
-            <FAQAccordion
-              title="Fragen, die vor dem ersten Gespräch wichtig sind."
-              lead="Kurze Antworten ohne Funnel-Sprache. Details werden im Digital-Check projektbezogen geklärt."
-              items={faqItems}
-              defaultOpenIndex={0}
-            />
-          </div>
-          <ComplianceNote className="mt-mh-7" />
-        </Container>
-      </Section>
-
-      <Section background="ink" padding="finalCta" finalCta>
-        <Container>
-          <div className="max-w-4xl">
-            <SectionMark index="08" label="Final CTA" tone="accent" onDark />
-            <h2 className="mt-mh-4 mh-display-2">
-              Soll ich Ihren digitalen Anfrageweg kurz{" "}
-              <em className="mh-italic-accent text-mh-glow">prüfen</em>?
-            </h2>
-            <p className="mt-mh-5 max-w-mh-text mh-body-large text-mh-text-on-dark/80">
-              Schicken Sie mir Ihre Ausgangslage. Ich prüfe Website,
-              Sichtbarkeit und Anfrageweg und sage ehrlich, wo der erste Hebel
-              liegen könnte.
-            </p>
-            <CtaRow
-              className="mt-mh-7"
-              microcopy={
-                <span className="text-mh-text-on-dark/70">
-                  kostenlos · unverbindlich · 20 Minuten · Sie reden direkt mit
-                  Denis
-                </span>
-              }
-            >
-              <BtnPrimary
-                href={primaryCta.href}
-                pill
-                fullWidthOnMobile
-                className="bg-mh-text-on-dark text-mh-ink-950 hover:bg-mh-glow"
-              >
-                {primaryCta.label}
-              </BtnPrimary>
-            </CtaRow>
-          </div>
-        </Container>
-      </Section>
-    </>
+    <div className={styles.label}>
+      <span>{number}</span>
+      <span className={styles.rule} />
+      {children}
+    </div>
   );
 }
 
-function StartCard({
-  kicker,
-  title,
-  text,
-  note,
-  href,
-  highlighted = false,
-}: {
-  kicker: string;
-  title: string;
-  text: string;
-  note: string;
-  href: string;
-  highlighted?: boolean;
-}) {
+export default function HomePage() {
+  const sonnenhof = getCaseStudy("sonnenhof-herrsching");
+  const antje = getCaseStudy("physio-antje-foerster");
+  const result = sonnenhof.metrics[0];
   return (
-    <Card
-      as="article"
-      tone={highlighted ? "ink" : "paper"}
-      className="flex h-full flex-col gap-mh-5"
-      interactive={!highlighted}
-    >
-      <div className="flex items-start justify-between gap-mh-4">
-        <span
-          className={
-            highlighted
-              ? "mh-label-mono text-mh-glow"
-              : "mh-label-mono text-mh-text-secondary"
-          }
-        >
-          {kicker}
-        </span>
-        {highlighted ? (
-          <span className="mh-label-mono-sm rounded-mh-pill bg-mh-glow px-mh-3 py-1 text-mh-ink-950">
-            Empfehlung
-          </span>
-        ) : null}
-      </div>
-      <h3 className="mh-display-4">{title}</h3>
-      <p
-        className={
-          highlighted
-            ? "mh-body-medium text-mh-text-on-dark/82"
-            : "mh-body-medium text-mh-text-secondary"
-        }
+    <div className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          }),
+        }}
+      />
+      <section
+        className={`${styles.wrap} ${styles.hero}`}
+        aria-labelledby="hero-title"
       >
-        {text}
-      </p>
-      <div className="mt-auto flex flex-col gap-mh-4 border-t border-current/10 pt-mh-4">
-        <span
-          className={
-            highlighted
-              ? "mh-label-mono-sm text-mh-text-on-dark/70"
-              : "mh-label-mono-sm text-mh-text-secondary"
-          }
-        >
-          {note}
-        </span>
-        {highlighted ? (
-          <BtnPrimary
-            href={href}
-            fullWidthOnMobile
-            className="bg-mh-glow text-mh-ink-950 hover:bg-mh-cyan-500/90"
-          >
-            {primaryCta.label}
-          </BtnPrimary>
-        ) : (
-          <Link
-            href={href}
-            className={
-              highlighted
-                ? "mh-body-small font-semibold text-mh-glow"
-                : "mh-body-small font-semibold text-mh-text-primary border-b border-mh-accent self-start pb-1"
-            }
-          >
-            Erst prüfen lassen
-          </Link>
+        <div className={styles.heroCopy}>
+          <SectionLabel number="MYHIWI">
+            Ihr Betrieb. Online sichtbar.
+          </SectionLabel>
+          <h1 id="hero-title" className={`mh-hero-title ${styles.heroTitle}`}>
+            Gute Arbeit.
+            <br />
+            Endlich <span>gefunden.</span>
+          </h1>
+          <p className={styles.heroLead}>
+            Webseiten, Google und KI-Suche.
+            <br />
+            <strong>Für Betriebe, die vor Ort überzeugen.</strong>
+          </p>
+          <p className={styles.heroText}>
+            Ich helfe Ihnen, auch online die passenden Menschen zu erreichen.
+            Mit einem klaren Auftritt, lokaler Sichtbarkeit und einem einfachen
+            Weg zur Anfrage.
+          </p>
+          <div className={styles.actions}>
+            <Link href="/kontakt" className={styles.primary}>
+              Sichtbarkeit prüfen lassen{" "}
+              <ArrowUpRight size={20} aria-hidden="true" />
+            </Link>
+            <Link href="#projekte" className={styles.textLink}>
+              Arbeiten ansehen <ArrowDown size={17} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className={styles.heroNote}>
+            <Image
+              src="/ueber-mich/portrait.jpg"
+              alt=""
+              width={38}
+              height={38}
+              sizes="38px"
+            />
+            <span>Direkt mit Denis · kostenlos & unverbindlich</span>
+          </div>
+        </div>
+        <div className={styles.heroVisual}>
+          <div className={styles.visualTop}>
+            <span>Aus der Zusammenarbeit</span>
+            <ArrowUpRight size={19} aria-hidden="true" />
+          </div>
+          <div className={styles.projectWindow}>
+            <div className={styles.browserBar}>
+              <span className={styles.browserDots} aria-hidden="true">
+                <i />
+                <i />
+                <i />
+              </span>
+              <span>sonnenhof-herrsching.de</span>
+              <Globe2 size={12} aria-hidden="true" />
+            </div>
+            <Image
+              src={sonnenhof.cover.src}
+              alt={sonnenhof.cover.alt}
+              width={1420}
+              height={810}
+              priority
+              sizes="(max-width: 767px) 90vw, (max-width: 1100px) 48vw, 570px"
+              className={styles.projectImage}
+            />
+          </div>
+          <div className={styles.projectResult}>
+            <div>
+              <span className={styles.resultNumber}>
+                {result.value}
+                <span>↗</span>
+              </span>
+              <p>
+                {result.label}
+                <br />
+                <span>{result.period}</span>
+              </p>
+            </div>
+            <Link
+              href="/case-studies/sonnenhof-herrsching"
+              aria-label="Sonnenhof: Ergebnis und Messmethode ansehen"
+            >
+              <ArrowUpRight size={25} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className={styles.visualBottom}>
+            <span>Sonnenhof Herrsching</span>
+            <span>Website · SEO · Anzeigen</span>
+          </div>
+          <p className={styles.resultNote}>
+            Formularanfragen aus mehreren Kanälen, keine Buchungen. Quelle:{" "}
+            {result.source}. Details im{" "}
+            <Link href="/case-studies/sonnenhof-herrsching">
+              Projektbericht
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      <section
+        className={styles.clients}
+        aria-label="Ausgewählte Kundenprojekte"
+      >
+        <div className={`${styles.wrap} ${styles.clientRow}`}>
+          <p>
+            Gute Zusammenarbeit.
+            <br />
+            <strong>Echte Betriebe.</strong>
+          </p>
+          <div className={styles.clientLogos}>
+            {CASE_STUDIES.map((project) => (
+              <Link key={project.slug} href={`/case-studies/${project.slug}`}>
+                <span className={styles.clientName}>{project.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.wrap} ${styles.section}`}
+        aria-labelledby="before-after-title"
+      >
+        <SectionLabel number="01">Ein Relaunch, den man sieht</SectionLabel>
+        <div className={styles.sectionHeading}>
+          <h2 id="before-after-title">
+            Gleiche Praxis.
+            <br />
+            <span>Ein neuer Auftritt.</span>
+          </h2>
+          <p>
+            Bei Antje Förster zeigen wir, was sich verändert hat: von der alten
+            Website zu klaren Leistungen und kurzen Kontaktwegen.
+          </p>
+        </div>
+        {antje.comparison && (
+          <div className={styles.comparison}>
+            {[antje.comparison.before, antje.comparison.after].map(
+              (picture) => (
+                <figure key={picture.src}>
+                  <div className={styles.comparisonImage}>
+                    <Image
+                      src={picture.src}
+                      alt={picture.alt}
+                      width={1440}
+                      height={1000}
+                      sizes="(max-width: 767px) 90vw, 46vw"
+                    />
+                  </div>
+                  <figcaption>{picture.caption}</figcaption>
+                </figure>
+              ),
+            )}
+          </div>
         )}
-      </div>
-    </Card>
+        <div className={styles.comparisonFooter}>
+          <p>
+            <strong>
+              {antje.metrics[0].value} {antje.metrics[0].label}
+            </strong>{" "}
+            · {antje.metrics[0].period}. {antje.comparison?.note}
+          </p>
+          <Link
+            href={`/case-studies/${antje.slug}`}
+            className={styles.textLink}
+          >
+            Antjes Relaunch ansehen{" "}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      <section
+        id="leistungen"
+        className={`${styles.wrap} ${styles.section}`}
+        aria-labelledby="services-title"
+      >
+        <span id="system" className={styles.anchor} />
+        <span id="kompetenzen" className={styles.anchor} />
+        <SectionLabel number="02">Was ich für Sie tue</SectionLabel>
+        <div className={styles.sectionHeading}>
+          <h2 id="services-title">
+            Ihr Können ist da.
+            <br />
+            Jetzt darf man es <span>finden.</span>
+          </h2>
+          <p>
+            Von der ersten Suche bis zum Kontakt: Wir setzen dort an, wo Ihr
+            Betrieb heute Möglichkeiten liegen lässt.
+          </p>
+        </div>
+        <div className={styles.serviceList}>
+          {services.map((s) => (
+            <article key={s.href} className={styles.serviceRow}>
+              <div className={styles.serviceName}>
+                <s.icon size={27} strokeWidth={1.5} aria-hidden="true" />
+                <h3>{s.name}</h3>
+                <span>{s.number}</span>
+              </div>
+              <div className={styles.serviceBody}>
+                <h4>{s.headline}</h4>
+                <p>{s.description}</p>
+                <span className={styles.serviceDetails}>{s.details}</span>
+              </div>
+              <Link
+                href={s.href}
+                className={styles.serviceArrow}
+                aria-label={s.link}
+              >
+                <ArrowUpRight size={25} aria-hidden="true" />
+                <span>{s.link}</span>
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="projekte"
+        className={styles.workSection}
+        aria-labelledby="work-title"
+      >
+        <div className={styles.wrap}>
+          <SectionLabel number="03">Einblick in die Arbeit</SectionLabel>
+          <div className={styles.sectionHeading}>
+            <h2 id="work-title">
+              Keine Beispiele von der Stange.
+              <br />
+              <span>Echte Zusammenarbeit.</span>
+            </h2>
+            <Link href="/case-studies" className={styles.textLink}>
+              Alle Projekte ansehen{" "}
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className={styles.projectGrid}>
+            {[
+              "mannis-fahrschule",
+              "sonnenhof-herrsching",
+              "formazin",
+              "mr-sherman",
+            ].map((slug) => {
+              const project = getCaseStudy(slug);
+              const metric = project.metrics[0];
+              return (
+                <Link
+                  className={styles.workCard}
+                  href={`/case-studies/${slug}`}
+                  key={slug}
+                >
+                  <div className={styles.workImage}>
+                    <Image
+                      src={project.cover.src}
+                      alt={project.cover.alt}
+                      width={1440}
+                      height={1000}
+                      sizes="(max-width: 767px) 90vw, 46vw"
+                    />
+                  </div>
+                  <div className={styles.workCaption}>
+                    <div>
+                      <span>
+                        {project.industry} · {project.location}
+                      </span>
+                      <h3>{project.name}</h3>
+                      <p>{project.summary}</p>
+                      <div className={styles.cardMetric}>
+                        <strong>
+                          {metric.value} <span>{metric.label}</span>
+                        </strong>
+                        <small>{metric.period}</small>
+                      </div>
+                    </div>
+                    <ArrowUpRight size={25} aria-hidden="true" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.wrap} ${styles.section}`}
+        aria-labelledby="process-title"
+      >
+        <SectionLabel number="04">So kommen wir weiter</SectionLabel>
+        <div className={styles.sectionHeading}>
+          <h2 id="process-title">
+            Erst verstehen.
+            <br />
+            Dann richtig <span>anfangen.</span>
+          </h2>
+          <p>
+            Sie müssen vorher keine Fachbegriffe lernen. Wir klären gemeinsam,
+            was Ihrem Betrieb tatsächlich hilft.
+          </p>
+        </div>
+        <ol className={styles.steps}>
+          {[
+            [
+              "Hinschauen",
+              "Ich prüfe Ihre Website, Ihren öffentlichen Google-Auftritt und die Fragen Ihrer Kunden. Sie bekommen eine erste Einschätzung.",
+            ],
+            [
+              "Klar entscheiden",
+              "Wir legen Ziel, Umfang und Kosten fest. Sie wissen, welche Arbeiten nötig sind und wie wir Fortschritt beurteilen.",
+            ],
+            [
+              "Umsetzen & begleiten",
+              "Ich setze die vereinbarten Schritte um. Wir prüfen den Anfrageweg und schauen anschließend auf die Entwicklung.",
+            ],
+          ].map(([title, text], i) => (
+            <li key={title}>
+              <span className={styles.stepNumber}>0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section
+        className={styles.founderSection}
+        aria-labelledby="founder-title"
+      >
+        <div className={`${styles.wrap} ${styles.founderGrid}`}>
+          <div className={styles.founderPhoto}>
+            <Image
+              src="/ueber-mich/portrait.jpg"
+              alt="Denis Kaliberda, Gründer von MyHiwi aus Ahrensfelde"
+              width={768}
+              height={1024}
+              sizes="(max-width: 767px) 90vw, 420px"
+            />
+            <span>Denis Kaliberda · Gründer von MyHiwi</span>
+          </div>
+          <div className={styles.founderCopy}>
+            <SectionLabel number="05">Persönlich aus Ahrensfelde</SectionLabel>
+            <h2 id="founder-title">
+              Ihr Ansprechpartner?
+              <br />
+              <span>Bin ich.</span>
+            </h2>
+            <p>
+              Ich bin Denis. Früher stand ich als Volleyball-Nationalspieler auf
+              dem Feld. Heute unterstütze ich lokale Unternehmen dabei, digital
+              besser aufgestellt zu sein.
+            </p>
+            <p>
+              Vom ersten Gespräch bis zur Umsetzung arbeiten Sie direkt mit mir.
+              Ob Praxiswebsite, digitale Fahrschul-Anmeldung oder
+              Studio-Plattform: Ich möchte Ihren Betrieb verstehen und Dinge
+              bauen, die im Alltag funktionieren.
+            </p>
+            <Link href="/ueber-mich" className={styles.textLink}>
+              Mehr über mich <ArrowUpRight size={19} aria-hidden="true" />
+            </Link>
+            <div className={styles.localNote}>
+              <MapPin size={19} aria-hidden="true" />
+              <span>
+                Ahrensfelde · Berlin-Ost · Barnim
+                <br />
+                <Link href="/region/berlin-ost-barnim">
+                  In der Region zuhause. Auch überregional für Sie da.
+                </Link>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.wrap} ${styles.faqSection}`}
+        aria-labelledby="faq-title"
+      >
+        <div>
+          <SectionLabel number="06">Noch eine Frage?</SectionLabel>
+          <h2 id="faq-title">
+            Gut zu <span>wissen.</span>
+          </h2>
+          <p>Die wichtigsten Antworten vor unserem ersten Gespräch.</p>
+        </div>
+        <div className={styles.faqList}>
+          {faqs.map((f) => (
+            <details key={f.question}>
+              <summary>
+                {f.question}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p>{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.finalSection} aria-labelledby="final-title">
+        <div className={styles.wrap}>
+          <SectionLabel number="LOS GEHT’S">
+            Ein erster Blick auf Ihren Betrieb
+          </SectionLabel>
+          <div className={styles.finalGrid}>
+            <h2 id="final-title">
+              Wie sichtbar
+              <br />
+              sind <span>Sie schon?</span>
+            </h2>
+            <div>
+              <p>
+                Schicken Sie mir Ihre Website oder Ihren Firmennamen. Ich schaue
+                hin und sage Ihnen, wo sich ein nächster Schritt lohnt.
+              </p>
+              <Link href="/kontakt" className={styles.primary}>
+                Sichtbarkeit prüfen lassen{" "}
+                <ArrowUpRight size={20} aria-hidden="true" />
+              </Link>
+              <span className={styles.finalNote}>
+                <Check size={15} aria-hidden="true" /> Kostenlos · unverbindlich
+                · Antwort in 1–3 Werktagen
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

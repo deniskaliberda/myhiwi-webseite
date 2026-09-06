@@ -12,7 +12,7 @@ import {
 import { BlogArticleShell } from "@/components/myhiwi/blog/BlogArticleShell";
 
 export const metadata: Metadata = {
-  title: "Google Business Profil: Warum es für lokale Unternehmen unverzichtbar ist | MyHiwi Blog",
+  title: "Google Business Profil: Warum es für lokale Unternehmen unverzichtbar ist",
   description:
     "Warum Ihr Google Business Profil das wichtigste Werkzeug für lokale Sichtbarkeit ist — mit konkreten Schritten, wie Sie über Google Maps mehr Kunden gewinnen.",
   keywords: [

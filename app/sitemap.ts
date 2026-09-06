@@ -1,9 +1,16 @@
 import { MetadataRoute } from "next";
+import { CASE_STUDIES } from "@/content/case-studies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://myhiwi.de";
 
   return [
+    ...["webseiten", "google-sichtbarkeit", "ki-sichtbarkeit"].map((slug) => ({
+      url: `${baseUrl}/leistungen/${slug}`,
+      lastModified: new Date("2026-09-05"),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -40,24 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/case-studies/sonnenhof-herrsching`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+    ...CASE_STUDIES.map((project) => ({
+      url: `${baseUrl}/case-studies/${project.slug}`,
+      lastModified: new Date(project.updated),
+      changeFrequency: "monthly" as const,
       priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/case-studies/mr-sherman`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/case-studies/formazin`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
+    })),
     {
       url: `${baseUrl}/case-studies/villa-gloria`,
       lastModified: new Date(),

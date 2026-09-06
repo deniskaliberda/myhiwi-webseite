@@ -5,7 +5,7 @@ import SectionReveal from "@/components/shared/SectionReveal";
 import { BlogArticleShell } from "@/components/myhiwi/blog/BlogArticleShell";
 
 export const metadata: Metadata = {
-  title: "Schema.org für Hotels und KMU — was Google wirklich braucht | MyHiwi Blog",
+  title: "Schema.org für Hotels und KMU — was Google wirklich braucht",
   description:
     "Strukturierte Daten sind unsichtbare SEO-Arbeit mit sichtbarem Effekt. Welche Schema-Typen KMU brauchen (Hotel, LocalBusiness, FAQ), wie man sie richtig setzt, und warum das Rich Results entscheidet.",
   keywords: [

@@ -1,0 +1,260 @@
+{
+  "retrieved": "2026-09-05",
+  "project": {
+    "id": 12211679,
+    "keyword_count": 0
+  },
+  "audit": {
+    "items": [
+      {
+        "id": 701306992,
+        "group_id": 0,
+        "url": "http://myhiwi.de",
+        "title": "myhiwi.de",
+        "has_project": true,
+        "site_id": 12211679,
+        "last_update": "2026-06-01",
+        "status": "finished",
+        "error": null,
+        "error_params": null,
+        "stats": {
+          "score": 89,
+          "errors": 1,
+          "warnings": 5,
+          "notices": 63,
+          "crawled": 22
+        },
+        "prev_stats": null,
+        "version": "2.0",
+        "owner_account_id": 4901474,
+        "is_new": 1
+      }
+    ],
+    "total": 1
+  },
+  "backlinks": {
+    "summary": [
+      {
+        "target": "myhiwi.de",
+        "backlinks": 195,
+        "refdomains": 7,
+        "subnets": 3,
+        "ips": 9,
+        "nofollow_backlinks": 0,
+        "dofollow_backlinks": 195,
+        "edu_backlinks": 0,
+        "gov_backlinks": 0,
+        "inlink_rank": 3,
+        "domain_inlink_rank": 13,
+        "from_home_page_backlinks": 3,
+        "dofollow_from_home_page_backlinks": 3,
+        "text_backlinks": 195,
+        "dofollow_refdomains": 7,
+        "from_home_page_refdomains": 3,
+        "edu_refdomains": 0,
+        "gov_refdomains": 0,
+        "anchors": 5,
+        "dofollow_anchors": 5,
+        "pages_with_backlinks": 1,
+        "top_anchors_by_backlinks": [
+          {
+            "anchor": "Webdesign: MyHiwi",
+            "backlinks": 91
+          },
+          {
+            "anchor": "Umsetzung: MyHiwi",
+            "backlinks": 48
+          },
+          {
+            "anchor": "Website & Buchung: MyHiwi",
+            "backlinks": 34
+          },
+          {
+            "anchor": "Realisiert von MyHiwi",
+            "backlinks": 21
+          },
+          {
+            "anchor": "Website besuchen",
+            "backlinks": 1
+          }
+        ],
+        "top_anchors_by_refdomains": [
+          {
+            "anchor": "Webdesign: MyHiwi",
+            "refdomains": 3
+          },
+          {
+            "anchor": "Umsetzung: MyHiwi",
+            "refdomains": 1
+          },
+          {
+            "anchor": "Website & Buchung: MyHiwi",
+            "refdomains": 1
+          },
+          {
+            "anchor": "Realisiert von MyHiwi",
+            "refdomains": 1
+          },
+          {
+            "anchor": "Website besuchen",
+            "refdomains": 1
+          }
+        ],
+        "top_pages_by_backlinks": [
+          {
+            "url": "https://myhiwi.de/",
+            "backlinks": 195
+          }
+        ],
+        "top_pages_by_refdomains": [
+          {
+            "url": "https://myhiwi.de/",
+            "refdomains": 7
+          }
+        ],
+        "top_tlds": [
+          {
+            "tld": "de",
+            "count": 6
+          },
+          {
+            "tld": "com",
+            "count": 1
+          }
+        ],
+        "top_countries": [
+          {
+            "country": "us",
+            "count": 7
+          }
+        ]
+      }
+    ]
+  },
+  "refdomains": {
+    "refdomains": [
+      {
+        "refdomain": "mannis-fahrschule.com",
+        "backlinks": 56,
+        "dofollow_backlinks": 56,
+        "domain_inlink_rank": 24,
+        "first_seen": "2026-08-01"
+      },
+      {
+        "refdomain": "www.villa-gloria-istrien.de",
+        "backlinks": 34,
+        "dofollow_backlinks": 34,
+        "domain_inlink_rank": 5,
+        "first_seen": "2026-07-21"
+      },
+      {
+        "refdomain": "unternehmen16356.de",
+        "backlinks": 1,
+        "dofollow_backlinks": 1,
+        "domain_inlink_rank": 15,
+        "first_seen": "2026-07-20"
+      },
+      {
+        "refdomain": "www.formazin-partner.de",
+        "backlinks": 18,
+        "dofollow_backlinks": 18,
+        "domain_inlink_rank": 7,
+        "first_seen": "2026-07-16"
+      },
+      {
+        "refdomain": "formazin-partner.de",
+        "backlinks": 17,
+        "dofollow_backlinks": 17,
+        "domain_inlink_rank": 7,
+        "first_seen": "2026-06-08"
+      },
+      {
+        "refdomain": "www.mr-sherman.de",
+        "backlinks": 21,
+        "dofollow_backlinks": 21,
+        "domain_inlink_rank": 29,
+        "first_seen": "2026-06-08"
+      },
+      {
+        "refdomain": "www.sonnenhof-herrsching.de",
+        "backlinks": 48,
+        "dofollow_backlinks": 48,
+        "domain_inlink_rank": 7,
+        "first_seen": "2026-06-08"
+      }
+    ]
+  },
+  "organic_keywords": {
+    "data": [
+      {
+        "block_type": null,
+        "block_position": 27,
+        "keyword": "niwi haarstyling",
+        "position": 26,
+        "prev_pos": null,
+        "volume": 140,
+        "cpc": 0,
+        "competition": 0.01,
+        "url": "https://myhiwi.de/region/berlin-ost-barnim",
+        "difficulty": 10,
+        "total_sites": null,
+        "traffic": 0,
+        "traffic_percent": 0,
+        "price": 0,
+        "serp_features": [
+          "reviews",
+          "video",
+          "images",
+          "gmb"
+        ],
+        "intents": [
+          "L",
+          "C"
+        ]
+      }
+    ]
+  },
+  "ai": {
+    "archetype": "scorecard",
+    "title": "AI Search overview — myhiwi.de",
+    "subtitle": "DE • all engines",
+    "summary": "AI Search overview — myhiwi.de (DE • all engines): brand presence n/a, link presence 0, AI opportunity traffic 0, average position n/a.",
+    "tiles": [
+      {
+        "key": "brand_presence",
+        "label": "Brand presence",
+        "value": null,
+        "format": "integer",
+        "delta": null
+      },
+      {
+        "key": "link_presence",
+        "label": "Link presence",
+        "value": 0,
+        "format": "integer",
+        "delta": null
+      },
+      {
+        "key": "ai_opportunity_traffic",
+        "label": "AI opportunity traffic",
+        "value": 0,
+        "format": "integer",
+        "delta": null
+      },
+      {
+        "key": "average_position",
+        "label": "Average position",
+        "value": null,
+        "format": "rank",
+        "delta": null
+      }
+    ],
+    "notes": [
+      "No prior-period baseline in this account — period-over-period deltas are suppressed."
+    ]
+  },
+  "gsc": {
+    "se_ranking": "not connected",
+    "local_service_account": "HTTP 200 property list; no myhiwi.de property available"
+  }
+}

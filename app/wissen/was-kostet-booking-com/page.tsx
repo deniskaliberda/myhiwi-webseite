@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { getCaseStudy } from "@/content/case-studies";
+
+const sonnenhofResult = getCaseStudy("sonnenhof-herrsching").metrics[0];
 import Link from "next/link";
 import { CalendarClock } from "lucide-react";
 import { BtnGhost } from "@/components/myhiwi/cta/BtnGhost";
@@ -184,9 +187,7 @@ export default function Page() {
             <div className="mt-mh-4 rounded-mh-md border border-mh-divider bg-mh-paper px-mh-5 py-mh-4">
               <p className="mh-label-mono-sm text-mh-accent">Belegter Case · Sonnenhof Herrsching</p>
               <p className="mt-mh-2 mh-body-medium text-mh-text-primary">
-                Nach dem Relaunch durch MyHiwi: <strong>199 direkte Anfragen in 4 Monaten</strong>,
-                rund <strong>80 % der Belegung über die eigene Seite</strong> (Angabe der
-                Gastgeberin). Provision, die vorher an Portale ging — jetzt eigene Marge.
+                Der aktuelle Export dokumentiert <strong>{sonnenhofResult.value} {sonnenhofResult.label}</strong> · {sonnenhofResult.period}. Quelle: {sonnenhofResult.source}. Diese Anfragen stammen aus mehreren Kanälen; sie sind keine bestätigten Buchungen und belegen allein keine eingesparte Provision.
               </p>
               <Link
                 href="/case-studies/sonnenhof-herrsching"

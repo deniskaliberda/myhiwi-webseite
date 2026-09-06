@@ -5,7 +5,7 @@ import SectionReveal from "@/components/shared/SectionReveal";
 import { BlogArticleShell } from "@/components/myhiwi/blog/BlogArticleShell";
 
 export const metadata: Metadata = {
-  title: "Google Ads Performance Max für KMU — was 2026 funktioniert | MyHiwi Blog",
+  title: "Google Ads Performance Max für KMU — was 2026 funktioniert",
   description:
     "Performance Max ist seit 2023 Googles Standard-Kampagnentyp. Wie es funktioniert, wann es für KMU rechnet, und was beim Sonnenhof-Ammersee zu 0,30 € CPC geführt hat — bei Branchenschnitt 1–3 €.",
   keywords: [

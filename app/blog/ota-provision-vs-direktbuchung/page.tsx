@@ -5,7 +5,7 @@ import SectionReveal from "@/components/shared/SectionReveal";
 import { BlogArticleShell } from "@/components/myhiwi/blog/BlogArticleShell";
 
 export const metadata: Metadata = {
-  title: "OTA-Provision vs. Direktbuchung — die ehrliche Rechnung | MyHiwi Blog",
+  title: "OTA-Provision vs. Direktbuchung — die ehrliche Rechnung",
   description:
     "Booking.com und FeWo-Direkt behalten 15–18 % jeder Buchung. Wann sich eine eigene Direktbuchungs-Infrastruktur rechnet — konkret, mit Zahlen am Ammersee-Beispiel.",
   keywords: [

@@ -1,17 +1,11 @@
-import type { Metadata } from "next";
+import CaseStudyPage from "@/components/myhiwi/cases/CaseStudyPage";
+import { caseMetadata } from "@/components/myhiwi/cases/metadata";
+import { getCaseStudy } from "@/content/case-studies";
 
-import CaseStudyClient from "./client";
+const study = getCaseStudy("sonnenhof-herrsching");
 
-export const metadata: Metadata = {
-  title:
-    "Sonnenhof Herrsching — 199 direkte Gäste-Anfragen in 4 Monaten | MyHiwi Case Study",
-  description:
-    "Case Study: Wie MyHiwi für Sonnenhof Herrsching in 4 Monaten 199 direkte Anfragen, 1.158 organische Google-Klicks und einen 24-Monats-Folgevertrag aufgebaut hat.",
-  alternates: {
-    canonical: "https://myhiwi.de/case-studies/sonnenhof-herrsching",
-  },
-};
+export const metadata = caseMetadata(study);
 
-export default function SonnenhofCaseStudyPage() {
-  return <CaseStudyClient />;
+export default function Page() {
+  return <CaseStudyPage study={study} />;
 }

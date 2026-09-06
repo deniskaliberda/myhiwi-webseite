@@ -205,6 +205,13 @@
   overflow-wrap: break-word;
   hyphens: auto;
 }
+
+@media (max-width: 767px) {
+  .mh-hero-title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+}
+
 @media (min-width: 1024px) {
   .mh-hero-title {
     font-size: clamp(68px, 5.8vw, 80px);
@@ -316,6 +323,32 @@
   font-style: italic;
   font-variation-settings: "opsz" 96, "wght" 400;
   color: var(--mh-accent);
+}
+
+@media (max-width: 767px) {
+  body.font-mh-body,
+  .font-mh-body,
+  .mh-body-large,
+  .mh-body-medium,
+  .mh-body-small,
+  .mh-body-xs {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .font-mh-display,
+  .mh-display-1,
+  .mh-display-2,
+  .mh-display-3,
+  .mh-display-4,
+  .mh-display-5 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .font-mh-mono,
+  .mh-label-mono,
+  .mh-label-mono-sm {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
 }
 
 /* Final-CTA-Sektion gradient + glow overlay (DESIGN.md §3) */

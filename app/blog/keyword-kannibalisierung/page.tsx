@@ -5,7 +5,7 @@ import SectionReveal from "@/components/shared/SectionReveal";
 import { BlogArticleShell } from "@/components/myhiwi/blog/BlogArticleShell";
 
 export const metadata: Metadata = {
-  title: "Keyword-Kannibalisierung verstehen und fixen | MyHiwi Blog",
+  title: "Keyword-Kannibalisierung verstehen und fixen",
   description:
     "Was Keyword-Kannibalisierung ist, wie sie entsteht, und wie Sonnenhof Herrsching damit in 100 Tagen die Top-10-Keywords vervierfachen konnte. Praktischer Leitfaden für KMU-Websites.",
   keywords: [

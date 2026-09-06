@@ -18,7 +18,7 @@ import SectionReveal from "@/components/shared/SectionReveal";
 import Glossary from "@/components/Glossary";
 
 export const metadata: Metadata = {
-  title: "Villa Gloria Istrien — Custom Buchungs-Flow mit iCal-Sync | MyHiwi Case Study",
+  title: "Villa Gloria Istrien — Custom Buchungs-Flow mit iCal-Sync",
   description:
     "Wie ein Ferienhaus in Istrien das alte Smoobu-Widget durch einen Custom-Kalender mit echter Verfügbarkeitsprüfung ersetzt hat. Next.js + iCal-Parser + Property-Toggle + DE/EN.",
   alternates: {

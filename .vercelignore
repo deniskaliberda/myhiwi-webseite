@@ -1,0 +1,13 @@
+.git
+.next
+node_modules
+.vercel
+.env*
+.superpowers
+docs
+tests
+test-results
+playwright-report
+TASK.md
+AGENTS.md
+CLAUDE.md

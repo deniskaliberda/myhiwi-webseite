@@ -5,7 +5,7 @@ import SectionReveal from "@/components/shared/SectionReveal";
 import { BlogArticleShell } from "@/components/myhiwi/blog/BlogArticleShell";
 
 export const metadata: Metadata = {
-  title: "Sichtbarkeitsindex lesen — was Top-10-Keywords wirklich bedeuten | MyHiwi Blog",
+  title: "Sichtbarkeitsindex lesen — was Top-10-Keywords wirklich bedeuten",
   description:
     "Was der Sichtbarkeitsindex bei Sistrix und SE Ranking aussagt, warum nur Top-10-Keywords Traffic bringen, und wie man als KMU-Inhaber einen Monats-Bericht richtig interpretiert.",
   keywords: [
