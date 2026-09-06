@@ -21,6 +21,24 @@ export type CaseStudy = {
   cover: CaseImage;
   services: Array<{ label: string; href: string }>;
   metrics: CaseMetric[];
+  overviewMetricIndexes?: number[];
+  metricGroups?: Array<{
+    title: string;
+    description: string;
+    metrics: CaseMetric[];
+  }>;
+  inquiryHistory?: {
+    period: string;
+    source: string;
+    note: string;
+    rows: Array<{ label: string; value: number }>;
+  };
+  technicalComparison?: {
+    period: string;
+    source: string;
+    note: string;
+    rows: Array<{ label: string; before: string; after: string }>;
+  };
   challenge: { title: string; body: string };
   improvements: Array<{ title: string; body: string }>;
   comparison?: {

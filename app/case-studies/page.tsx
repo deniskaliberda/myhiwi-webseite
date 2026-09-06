@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CASE_STUDIES } from "@/content/case-studies";
+import type { CaseStudy } from "@/content/case-studies/types";
 import { caseUrl, jsonLd } from "@/components/myhiwi/cases/metadata";
 import styles from "@/components/myhiwi/cases/Cases.module.css";
 
@@ -67,6 +68,12 @@ const schema = {
   ],
 };
 
+function overviewMetrics(study: CaseStudy) {
+  return (study.overviewMetricIndexes ?? [0, 1, 2, 3]).map(
+    (index) => study.metrics[index],
+  );
+}
+
 export default function CaseStudiesOverviewPage() {
   return (
     <div className={styles.page}>
@@ -123,25 +130,28 @@ export default function CaseStudiesOverviewPage() {
                 </h2>
                 <h3>{study.title}</h3>
                 <p className={styles.sectionLead}>{study.summary}</p>
-                {study.metrics[0] && (
-                  <div className={styles.cardMetric}>
-                    <p>
-                      <strong>{study.metrics[0].value}</strong>{" "}
-                      {study.metrics[0].label}
-                    </p>
-                    <p className={styles.cardMetricContext}>
-                      {study.metrics[0].period}
-                    </p>
-                    <p className={styles.cardMetricContext}>
-                      Quelle: {study.metrics[0].source}
-                    </p>
-                    {study.metrics[0].note && (
-                      <p className={styles.cardMetricContext}>
-                        {study.metrics[0].note}
-                      </p>
-                    )}
-                  </div>
-                )}
+                <dl className={styles.cardMetrics}>
+                  {overviewMetrics(study).map((metric) => (
+                    <div key={metric.label} className={styles.cardMetric}>
+                      <dt>{metric.label}</dt>
+                      <dd>
+                        <strong>{metric.value}</strong>
+                        <span>{metric.period}</span>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <details className={styles.cardSources}>
+                  <summary>Quellen &amp; Einordnung der Zahlen</summary>
+                  <ul>
+                    {overviewMetrics(study).map((metric) => (
+                      <li key={metric.label}>
+                        <strong>{metric.label}:</strong> Quelle: {metric.source}
+                        . {metric.note}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
                 <Link
                   className={styles.textLink}
                   href={`/case-studies/${study.slug}`}

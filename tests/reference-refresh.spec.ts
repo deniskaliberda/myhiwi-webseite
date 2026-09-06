@@ -18,7 +18,7 @@ for (const project of projects) {
     request,
   }) => {
     const path = `/case-studies/${project.slug}`;
-    const updated = project.slug === "sonnenhof-herrsching" ? "2026-09-06" : "2026-09-05";
+    const updated = "2026-09-06";
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(path);
@@ -141,17 +141,70 @@ test("case context is visible and included in a mocked inquiry, arbitrary contex
   await expect(page.locator("main")).not.toContainText("Ihr Einstieg:");
 });
 
-test("overview presents dated evidence and Sherman distinguishes demo role views", async ({ page }) => {
+test("overview presents dated evidence and Sherman distinguishes demo role views", async ({
+  page,
+}) => {
   await page.goto("/case-studies");
-  const cards = page.locator('section[aria-label="Aktuelle Kundenprojekte"] article');
+  const cards = page.locator(
+    'section[aria-label="Aktuelle Kundenprojekte"] article',
+  );
   await expect(cards).toHaveCount(5);
   for (const card of await cards.all()) {
+    await expect(card.locator("dl > div")).toHaveCount(4);
     await expect(card).toContainText("2026");
     await expect(card).toContainText("Quelle:");
   }
+  await cards.first().locator("summary").click();
+  await expect(cards.first().locator("details ul")).toBeVisible();
   await page.goto("/case-studies/mr-sherman");
   const roles = page.locator('section[aria-labelledby="roles-heading"]');
   await expect(roles).toContainText("Entwicklungsstand Juli 2026");
   await expect(roles.locator("img")).toHaveCount(4);
   await expect(roles).toContainText("Testdaten");
+});
+
+test("Sonnenhof shows the complete inquiry series and distinct attribution totals", async ({
+  page,
+}) => {
+  await page.goto("/case-studies/sonnenhof-herrsching");
+  const history = page.locator(
+    'section[aria-labelledby="inquiry-history-heading"]',
+  );
+  await expect(history.locator("li")).toHaveCount(8);
+  const values = await history.locator("li strong").allTextContents();
+  expect(values.map((value) => parseInt(value, 10))).toEqual([
+    1, 11, 45, 57, 96, 125, 158, 114,
+  ]);
+  expect(values.reduce((sum, value) => sum + parseInt(value, 10), 0)).toBe(607);
+  await expect(history).toContainText("August endet am 30.08.");
+  await expect(
+    page.locator('section[aria-labelledby="evidence-heading-0"]'),
+  ).toContainText("568");
+  await expect(
+    page.locator('section[aria-labelledby="evidence-heading-1"]'),
+  ).toContainText("überschneiden");
+  await expect(
+    page.locator('section[aria-labelledby="comparison-heading"] img').first(),
+  ).toHaveAttribute("src", /sonnenhof-alt.jpg/);
+});
+
+test("technical lab comparisons and paid campaign figures retain their source scope", async ({
+  page,
+}) => {
+  await page.goto("/case-studies/physio-antje-foerster");
+  const technical = page.locator(
+    'section[aria-labelledby="technical-heading"]',
+  );
+  await expect(technical.locator("tbody tr")).toHaveCount(4);
+  await expect(technical).toContainText("4,9 s");
+  await expect(technical).toContainText("2,6 s");
+  await expect(technical).toContainText("keine Felddaten");
+  await page.goto("/case-studies/mr-sherman");
+  const ads = page.locator('section[aria-labelledby="evidence-heading-0"]');
+  await expect(ads).toContainText("38");
+  await expect(ads).toContainText("447");
+  await expect(ads).toContainText("24.839");
+  await expect(ads).toContainText("11,77 €");
+  await expect(ads).toContainText("7 Tage Klick / 1 Tag Ansicht");
+  await expect(ads).toContainText("keine abgeschlossenen Mitgliedschaften");
 });

@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import type { CaseImage, CaseStudy } from "@/content/case-studies/types";
+import type {
+  CaseImage,
+  CaseMetric,
+  CaseStudy,
+} from "@/content/case-studies/types";
 import { caseDate, caseSchema, jsonLd } from "./metadata";
 import styles from "./Cases.module.css";
 
@@ -61,6 +65,22 @@ function ProjectImage({
   );
 }
 
+function MetricGrid({ metrics }: { metrics: CaseMetric[] }) {
+  return (
+    <div className={styles.metrics}>
+      {metrics.map((metric) => (
+        <div key={metric.label} className={styles.metric}>
+          <p className={styles.value}>{metric.value}</p>
+          <h3>{metric.label}</h3>
+          <p>{metric.period}</p>
+          <p className={styles.source}>Quelle: {metric.source}</p>
+          {metric.note && <p className={styles.source}>{metric.note}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function CaseStudyPage({ study }: { study: CaseStudy }) {
   return (
     <article className={styles.page}>
@@ -103,23 +123,20 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
         <div className={styles.wrap}>
           <Marker number="01">Projektstand</Marker>
           <h2 id="results-heading">Was sich verändert hat.</h2>
-          <div className={styles.metrics}>
-            {study.metrics.map((metric) => (
-              <div key={metric.label} className={styles.metric}>
-                <p className={styles.value}>{metric.value}</p>
-                <h3>{metric.label}</h3>
-                <p>{metric.period}</p>
-                <p className={styles.source}>Quelle: {metric.source}</p>
-                {metric.note && <p className={styles.source}>{metric.note}</p>}
-              </div>
-            ))}
-          </div>
+          <MetricGrid metrics={study.metrics} />
           {study.searchHistory && (
             <div className={styles.searchHistory}>
-              <h3>Google-Suche im Monatsvergleich</h3>
+              <h3>
+                {study.searchHistory.length > 1
+                  ? "Google-Suche im Monatsvergleich"
+                  : "Google-Suche im dokumentierten Monat"}
+              </h3>
               <table>
                 <caption>
-                  Vollständige Kalendermonate · Google Search Console, Websuche
+                  {study.searchHistory.length > 1
+                    ? "Vollständige Kalendermonate"
+                    : "Vollständiger Kalendermonat"}{" "}
+                  · Google Search Console, Websuche · Abruf 05.09.2026
                 </caption>
                 <thead>
                   <tr>
@@ -145,6 +162,83 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
               </p>
             </div>
           )}
+          {study.inquiryHistory && (
+            <section
+              className={styles.evidenceBlock}
+              aria-labelledby="inquiry-history-heading"
+            >
+              <h3 id="inquiry-history-heading">
+                Website-Anfragen im Zeitverlauf
+              </h3>
+              <p>{study.inquiryHistory.period}</p>
+              <ol className={styles.historyBars}>
+                {study.inquiryHistory.rows.map((row) => (
+                  <li key={row.label}>
+                    <span>{row.label}</span>
+                    <span className={styles.barTrack} aria-hidden="true">
+                      <span
+                        style={{
+                          width: `${(row.value / Math.max(...study.inquiryHistory!.rows.map((r) => r.value), 1)) * 100}%`,
+                        }}
+                      />
+                    </span>
+                    <strong>
+                      {row.value}
+                      <span className="sr-only"> Anfragen</span>
+                    </strong>
+                  </li>
+                ))}
+              </ol>
+              <p className={styles.evidenceNote}>
+                Quelle: {study.inquiryHistory.source}.{" "}
+                {study.inquiryHistory.note}
+              </p>
+            </section>
+          )}
+          {study.technicalComparison && (
+            <section
+              className={`${styles.evidenceBlock} ${styles.searchHistory}`}
+              aria-labelledby="technical-heading"
+            >
+              <h3 id="technical-heading">
+                Technik im Vorher-Nachher-Vergleich
+              </h3>
+              <table>
+                <caption>
+                  {study.technicalComparison.period} ·{" "}
+                  {study.technicalComparison.source}
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Messwert</th>
+                    <th scope="col">Vorher</th>
+                    <th scope="col">Nachher</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {study.technicalComparison.rows.map((row) => (
+                    <tr key={row.label}>
+                      <th scope="row">{row.label}</th>
+                      <td>{row.before}</td>
+                      <td>{row.after}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p>{study.technicalComparison.note}</p>
+            </section>
+          )}
+          {study.metricGroups?.map((group, index) => (
+            <section
+              key={group.title}
+              className={styles.evidenceBlock}
+              aria-labelledby={`evidence-heading-${index}`}
+            >
+              <h3 id={`evidence-heading-${index}`}>{group.title}</h3>
+              <p>{group.description}</p>
+              <MetricGrid metrics={group.metrics} />
+            </section>
+          ))}
           <a className={styles.textLink} href="#messmethode">
             Daten &amp; Messmethode <ArrowRight size={16} aria-hidden="true" />
           </a>

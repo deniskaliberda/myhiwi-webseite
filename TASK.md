@@ -1,25 +1,25 @@
 # Task
 
 ## Objective
-Publish the approved MyHiwi relaunch; follow-up correction replaces Sonnenhof's intermediate MyHiwi design with the original yellow website in the before/after comparison.
+Expand the five customer case studies with verified, dated results and publish the extension on myhiwi.de.
 
 ## Constraints
-Preserve existing URLs, AI training and Fahrschule functionality. Leave original checkout changes intact. No fabricated results or customer records in public assets. Keep German Sie voice and existing brand. Do not send test messages to real recipients.
+Preserve existing URLs, AI training and Fahrschule functionality. Leave the original checkout unchanged. No fabricated results or customer records in public assets. Keep German Sie voice and existing brand. Do not send test messages to real recipients. Keep private source exports outside the public repository and deployment.
 
 ## Decisions
-- User identified that Sonnenhof's previous before image already showed MyHiwi's work. The comparison now reuses the original archived yellow site (`sonnenhof-alt.jpg`) unchanged, with accurate caption and unknown capture date disclosed. Current Landhaus after image remains. Page/schema/sitemap modification date is 6 September. Build and focused Sonnenhof browser test pass.
-- User explicitly approved production publication on 6 September 2026.
-- Draft PR #4 was merged into main as 00ad7dc3ba319e43e7be6034fd336d53a69905cd.
-- Vercel production deployment myhiwi-webseite-cymjn1he7-denis24.vercel.app is READY and serves myhiwi.de and www.myhiwi.de.
-- Production verification passed: 39 sitemap pages HTTP 200 with correct canonicals and no noindex; all 23 curated WebP assets HTTP 200; project-aware contact entry visible; removed raw query export HTTP 404. Existing 58-test suite passed before release; application code did not change during release.
-- Private research remains excluded from this public repository and deployment uploads. Own-company Search Console access and postlaunch outcomes are separate from the verified customer reference metrics.
-- Local preview server is no longer listening on port 3107. Reused homepage browser tab now displays the live deliverable. Other user/shared sessions remain untouched.
+- User explicitly authorized publication on 6 September 2026; the latest request extends the same release with more numerical evidence.
+- Each overview card now shows four dated metrics with expandable sources. Each detail page has six main metrics, supplemented by relevant monthly, technical or campaign results.
+- Sonnenhof shows all eight recorded months, totaling 607 inquiries; partial months are labeled. Accommodation and source subsets are identified, with overlapping attribution excluded from totals. Requested stays are not presented as bookings.
+- Antje has four technical before/after comparisons, explicitly identified as lab measurements. Mannis separates registration forms and contact inquiries. Formazin retains its pre-redesign baseline. Sherman separates Meta campaign results from Google and platform outcomes.
+- The original yellow Sonnenhof before image from d6757f2 remains unchanged.
+- Source reconciliation and the full 60-test browser suite passed. The final production build also passed after a single-month heading clarification; three focused final-build browser checks passed. Production verification follows.
+- Earlier relaunch PR #4 is merged. Public deployment uses the main branch; no other checkout or customer project is changed.
 
 ## Failed approaches
-None affecting publication.
+Do not infer results from incomplete months, historical unverified marketing claims, unmarked traffic sources or mixed measurement methods.
 
 ## Next
-Verify the corrected comparison after automatic production deployment. MyHiwi Search Console access remains a separate follow-up.
+Publish, verify the production pages, and confirm temporary test-server cleanup. Obtain MyHiwi's own Search Console access separately for the postlaunch baseline.
 
 ## accepted_commit
-00ad7dc3ba319e43e7be6034fd336d53a69905cd
+d6757f2

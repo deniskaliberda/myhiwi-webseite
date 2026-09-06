@@ -5,6 +5,7 @@ const asset = (slug: string, file: string) => `/case-studies/${slug}/${file}`;
 export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "sonnenhof-herrsching",
+    overviewMetricIndexes: [0, 1, 2, 4],
     name: "Sonnenhof Herrsching",
     industry: "Ferienwohnungen & Gastgewerbe",
     location: "Herrsching am Ammersee",
@@ -47,6 +48,100 @@ export const CASE_STUDIES: CaseStudy[] = [
         period: "August bis 30.08.2026 · Export 31.08.2026",
         source: "Formular-Export · _utm_source=chatgpt.com",
         note: "Die UTM-Kennung dokumentiert die übermittelte Quelle, nicht den auslösenden Prompt oder eine bestätigte Buchung.",
+      },
+      {
+        value: "51.868",
+        label: "Google-Impressionen",
+        period: "01.–31.08.2026",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "Einblendungen in der Websuche, keine einzelnen Personen.",
+      },
+      {
+        value: "+30,1 %",
+        label: "mehr Google-Klicks",
+        period: "Juli → August 2026",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "1.417 → 1.844 Klicks; vollständige Kalendermonate, kein isolierter Relaunch-Effekt.",
+      },
+      {
+        value: "43",
+        label: "Anfragen mit ChatGPT-Kennung insgesamt",
+        period: "30.01.–30.08.2026 · Export 31.08.2026",
+        source: "Formular-Export des Sonnenhofs · 31.08.2026",
+        note: "Übermittelte UTM-Kennung; die 20 August-Anfragen sind darin enthalten.",
+      },
+    ],
+    inquiryHistory: {
+      period: "30.01.–30.08.2026 · Export 31.08.2026",
+      source: "Formular-Export des Sonnenhofs · 31.08.2026",
+      note: "607 Anfragen insgesamt. Januar beginnt am 30.01., August endet am 30.08. Die Monatswerte enthalten alle erfassten Quellen; sie zählen keine bestätigten Buchungen. Der Rückgang von Juli auf August bleibt sichtbar.",
+      rows: [
+        { label: "30.–31. Januar", value: 1 },
+        { label: "Februar", value: 11 },
+        { label: "März", value: 45 },
+        { label: "April", value: 57 },
+        { label: "Mai", value: 96 },
+        { label: "Juni", value: 125 },
+        { label: "Juli", value: 158 },
+        { label: "1.–30. August", value: 114 },
+      ],
+    },
+    metricGroups: [
+      {
+        title: "Was Gäste konkret angefragt haben",
+        description:
+          "Der Formular-Export enthält die gewünschte Unterkunft. Deutsch- und englischsprachige Bezeichnungen sind hier zusammengefasst.",
+        metrics: [
+          {
+            value: "319",
+            label: "Anfragen für Ferienwohnungen",
+            period: "30.01.–30.08.2026 · Export 31.08.2026",
+            source: "Formular-Export des Sonnenhofs · 31.08.2026",
+            note: "316 „Ferienwohnung“ + 3 „Holiday Apartment“.",
+          },
+          {
+            value: "288",
+            label: "Anfragen für Gästezimmer",
+            period: "30.01.–30.08.2026 · Export 31.08.2026",
+            source: "Formular-Export des Sonnenhofs · 31.08.2026",
+            note: "280 „Gästezimmer“ + 8 „Guest Room“.",
+          },
+          {
+            value: "568",
+            label: "angefragte Nächte im August",
+            period: "01.–30.08.2026 · Export 31.08.2026",
+            source: "Formular-Export des Sonnenhofs · 31.08.2026",
+            note: "Summe der gewünschten Aufenthaltsnächte aus 114 Anfragen. Keine gebuchten Nächte und keine Personenübernachtungen.",
+          },
+        ],
+      },
+      {
+        title: "Welche Zugriffe im Formular markiert sind",
+        description:
+          "Kennungen geben Hinweise auf die Quelle. Sie sind keine vollständige Attribution; GCLID und UTM können sich überschneiden und werden nicht zu einer Gesamtzahl addiert.",
+        metrics: [
+          {
+            value: "211",
+            label: "Anfragen mit Google-Anzeigenkennung",
+            period: "30.01.–30.08.2026 · Export 31.08.2026",
+            source: "Formular-Export des Sonnenhofs · 31.08.2026",
+            note: "GCLID im Formular vorhanden. Ohne GCLID bedeutet nicht automatisch organischer Zugriff.",
+          },
+          {
+            value: "38",
+            label: "davon im August",
+            period: "01.–30.08.2026 · Export 31.08.2026",
+            source: "Formular-Export des Sonnenhofs · 31.08.2026",
+            note: "Teilmenge der 211 Anfragen mit GCLID, keine zusätzliche Anfragezahl.",
+          },
+          {
+            value: "20",
+            label: "mit ChatGPT-Kennung im August",
+            period: "01.–30.08.2026 · Export 31.08.2026",
+            source: "Formular-Export des Sonnenhofs · 31.08.2026",
+            note: "Teilmenge der insgesamt 43 Anfragen mit _utm_source=chatgpt.com.",
+          },
+        ],
       },
     ],
     challenge: {
@@ -148,7 +243,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     standfirst:
       "Die bisherige eigene Domain leitete auf eine Jimdo-Free-Subdomain. Wir haben den Auftritt auf die eigene Domain geholt, Leistungen neu strukturiert und die mobile Nutzung verbessert. Der erste vollständige Messmonat liefert eine belastbare Ausgangslage für die weitere Begleitung.",
     website: "https://www.physio-antjefoerster.de",
-    updated: "2026-09-05",
+    updated: "2026-09-06",
     cover: {
       src: asset("physio-antje-foerster", "cover.webp"),
       alt: "Neue Website der Physiotherapie Antje Förster in Berlin-Karlshorst",
@@ -179,7 +274,56 @@ export const CASE_STUDIES: CaseStudy[] = [
         source: "Google PageSpeed Insights · Performance-Score",
         note: "Punktuelle Labormessungen, keine Felddaten und kein ausgewiesener Wachstumsprozentsatz.",
       },
+      {
+        value: "4,9 → 2,6 s",
+        label: "Mobiler Seitenaufbau (LCP)",
+        period: "21.07. → 28.08.2026",
+        source: "Google PageSpeed Insights · dokumentierte Labormessungen",
+        note: "Zeit bis zum größten sichtbaren Inhalt; punktuelle Labormessung.",
+      },
+      {
+        value: "92 → 100",
+        label: "Technischer SEO-Score",
+        period: "21.07. → 28.08.2026",
+        source: "Google PageSpeed Insights · dokumentierte Labormessungen",
+        note: "Lighthouse-Prüfung technischer Grundlagen, kein Google-Ranking.",
+      },
+      {
+        value: "8,74 %",
+        label: "Klickrate in der Google-Suche",
+        period: "01.–31.08.2026",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "133 Klicks bei 1.522 Impressionen, erster vollständiger Monat.",
+      },
     ],
+    technicalComparison: {
+      period: "21.07. → 28.08.2026",
+      source: "Google PageSpeed Insights · dokumentierte Labormessungen",
+      note: "Alt: Jimdo-Auftritt, neu: eigene Praxisdomain. Labormessungen können schwanken; sie sind keine Felddaten. Ein SEO-Score misst technische Grundlagen, keine Platzierung. Der mobile LCP liegt mit 2,6 s noch über dem Ziel von 2,5 s.",
+      rows: [
+        {
+          label: "Performance mobil · Punkte / 100",
+          before: "72",
+          after: "96",
+        },
+        {
+          label: "Größter sichtbarer Inhalt mobil · LCP",
+          before: "4,9 s",
+          after: "2,6 s",
+        },
+        {
+          label: "Performance Desktop · Punkte / 100",
+          before: "99",
+          after: "100",
+        },
+        {
+          label: "Technischer SEO-Score · Punkte / 100",
+          before: "92",
+          after: "100",
+        },
+      ],
+    },
+    searchHistory: [{ month: "August 2026", clicks: 133, impressions: 1522 }],
     challenge: {
       title: "Die eigene Domain endlich als eigene Praxiswebsite nutzen",
       body: "Vor Projektstart führte die Praxisdomain auf eine Jimdo-Free-Seite. Viele Leistungen waren schwer zu erfassen, Meta-Beschreibungen fehlten auf 18 von 19 geprüften Seiten und die mobile Startseite lud in der Labormessung langsam. Die Aufgabe war ein eigenständiger, ruhiger Auftritt, der Patientinnen und Patienten schnell zur richtigen Information führt.",
@@ -258,6 +402,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: "mannis-fahrschule",
+    overviewMetricIndexes: [0, 1, 2, 5],
     name: "Mannis Fahrschule",
     industry: "Fahrschule",
     location: "Herrsching & Tutzing",
@@ -267,7 +412,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     standfirst:
       "Mannis Fahrschule war bereits sichtbar. Unsere Aufgabe war, den Weg vom Interesse zur Anfrage einfacher zu machen: mit einer neuen Website, lokalen und fachlichen Einstiegen, einem Anfrage-Assistenten und einer digitalen Anmeldung.",
     website: "https://mannis-fahrschule.com",
-    updated: "2026-09-05",
+    updated: "2026-09-06",
     cover: {
       src: asset("mannis-fahrschule", "cover.webp"),
       alt: "Neue Website von Mannis Fahrschule",
@@ -297,6 +442,27 @@ export const CASE_STUDIES: CaseStudy[] = [
         label: "Google-Impressionen",
         period: "01.–31.08.2026",
         source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+      },
+      {
+        value: "17",
+        label: "ausgefüllte Anmeldeformulare",
+        period: "August 2026 · Berichtstand 31.08.2026",
+        source: "Monatsbericht Mannis Fahrschule",
+        note: "Teilmenge der 21 Web-Anfragen, keine bestätigten Fahrschulverträge.",
+      },
+      {
+        value: "4",
+        label: "Kontaktanfragen",
+        period: "August 2026 · Berichtstand 31.08.2026",
+        source: "Monatsbericht Mannis Fahrschule",
+        note: "17 Anmeldeformulare + 4 Kontaktanfragen = 21 Web-Anfragen.",
+      },
+      {
+        value: "+348,0 %",
+        label: "mehr Google-Impressionen",
+        period: "Juli → August 2026",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "4.944 → 22.149 Einblendungen; beide Monate vollständig. Die Fahrschule hatte vorher bereits Sichtbarkeit.",
       },
     ],
     challenge: {
@@ -392,7 +558,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     standfirst:
       "Für Formazin entstand zunächst ein neuer Webauftritt. Danach haben wir die Energieberatung als eigenen Themenbereich ausgebaut und im September 2026 neu gestaltet: mit fachlichen Einstiegen, regionalen Seiten und passenden Wegen für private und gewerbliche Anfragen.",
     website: "https://formazin-partner.de",
-    updated: "2026-09-05",
+    updated: "2026-09-06",
     cover: {
       src: asset("formazin", "cover.webp"),
       alt: "Neu gestalteter Energieberatungsbereich von Formazin und Partner",
@@ -424,6 +590,30 @@ export const CASE_STUDIES: CaseStudy[] = [
         source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
         note: "Domainweiter Ausgangswert, nicht nur Energie-Seiten und kein Wirkungsnachweis des September-Redesigns.",
       },
+      {
+        value: "182",
+        label: "Google-Impressionen der Domain",
+        period: "01.–31.08.2026 · vor dem Redesign",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "Ausgangslage der gesamten Domain vor dem Redesign am 04.09.; keine gemessene Redesign-Wirkung.",
+      },
+      {
+        value: "9,34 %",
+        label: "Klickrate vor dem Redesign",
+        period: "01.–31.08.2026",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "17 Klicks bei 182 Impressionen; kleine Datenbasis.",
+      },
+      {
+        value: "16,3",
+        label: "Durchschnittliche Google-Position",
+        period: "01.–31.08.2026 · vor dem Redesign",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "Gewichteter Domain-Durchschnitt über die erfassten Suchanfragen, kein festes Keyword-Ranking.",
+      },
+    ],
+    searchHistory: [
+      { month: "August 2026 · vor Redesign", clicks: 17, impressions: 182 },
     ],
     challenge: {
       title:
@@ -503,6 +693,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: "mr-sherman",
+    overviewMetricIndexes: [5, 2, 3, 0],
     name: "Mr. Sherman",
     industry: "Tanzstudio & Plattform",
     location: "Berlin",
@@ -512,7 +703,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     standfirst:
       "Für Mr. Sherman greifen Website und Plattform ineinander. Mitglieder, Trainer, Leadcaller und Verwaltung erhalten jeweils die Werkzeuge für ihre tägliche Aufgabe – von der ersten Anfrage bis zur Buchungs- und Zahlungsstrecke.",
     website: "https://mr-sherman.de",
-    updated: "2026-09-05",
+    updated: "2026-09-06",
     cover: {
       src: asset("mr-sherman", "cover.webp"),
       alt: "Aktuelle öffentliche Startseite von Mr. Sherman",
@@ -541,6 +732,77 @@ export const CASE_STUDIES: CaseStudy[] = [
         period: "01.–31.08.2026",
         source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
         note: "Website-Wert; keine Aussage zu Plattformbuchungen oder Zahlungen.",
+      },
+      {
+        value: "25.715",
+        label: "Google-Impressionen",
+        period: "01.–31.08.2026",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "Einblendungen der Website in der Websuche.",
+      },
+      {
+        value: "+17,2 %",
+        label: "mehr Google-Klicks",
+        period: "Juli → August 2026",
+        source: "Google Search Console · finaler Property-Abruf am 05.09.2026",
+        note: "198 → 232 Klicks, vollständige Kalendermonate.",
+      },
+      {
+        value: "38",
+        label: "Meta-Leads im Kampagnenreport",
+        period: "30.07.–30.08.2026 · Abruf 05.09.2026",
+        source: "Meta Marketing API · Kampagnenexport",
+        note: "Meta-attribuierte Leads, keine bestätigten Mitglieder, Zahlungen oder Google-Anfragen.",
+      },
+    ],
+    metricGroups: [
+      {
+        title: "Meta-Kampagne: Reichweite und Anfragen",
+        description:
+          "Separater Werbe-Datensatz vom 30.07.–30.08.2026, abgerufen am 05.09. Die Auslieferung in diesem Zeitraum lag am 30.07.–10.08. Meta-Attribution: 7 Tage Klick / 1 Tag Ansicht; nachträgliche Zuordnungen sind möglich. Diese Werte werden nicht mit Google-Klicks oder Plattformbuchungen addiert.",
+        metrics: [
+          {
+            value: "38",
+            label: "Meta-attribuierte Leads",
+            period: "30.07.–30.08.2026",
+            source: "Meta Marketing API · Kampagnenexport",
+            note: "Gemeldete Lead-Aktionen, keine abgeschlossenen Mitgliedschaften.",
+          },
+          {
+            value: "447",
+            label: "Link-Klicks auf Anzeigen",
+            period: "30.07.–30.08.2026",
+            source: "Meta Marketing API · Kampagnenexport",
+            note: "Link-Klicks sind nicht gleich Landingpage-Aufrufe oder einzelne Personen.",
+          },
+          {
+            value: "24.839",
+            label: "Anzeigen-Impressionen",
+            period: "30.07.–30.08.2026",
+            source: "Meta Marketing API · Kampagnenexport",
+          },
+          {
+            value: "11.871",
+            label: "erreichte Personen laut Meta",
+            period: "30.07.–30.08.2026",
+            source: "Meta Marketing API · Kampagnenexport",
+            note: "Reichweite innerhalb dieses Berichtsfensters; nicht mit Google-Impressionen addieren.",
+          },
+          {
+            value: "1,80 %",
+            label: "Link-Klickrate",
+            period: "30.07.–30.08.2026",
+            source: "Meta Marketing API · Kampagnenexport",
+            note: "447 Link-Klicks / 24.839 Impressionen.",
+          },
+          {
+            value: "11,77 €",
+            label: "Werbekosten je Meta-Lead",
+            period: "30.07.–30.08.2026",
+            source: "Meta Marketing API · Kampagnenexport",
+            note: "447,31 € Anzeigenkosten / 38 Leads. Reine Werbekosten, keine Kosten pro Neukunde.",
+          },
+        ],
       },
     ],
     challenge: {

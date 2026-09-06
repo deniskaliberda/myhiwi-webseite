@@ -565,3 +565,112 @@
   line-height: 1.55;
   margin-top: 7px;
 }
+
+/* Dated evidence: compact overview, readable detail and visible month labels. */
+.cardMetrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
+  margin: 24px 0 16px;
+}
+.cardMetric dt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.cardMetric dd {
+  margin: 10px 0 0;
+}
+.cardMetric dd strong {
+  display: block;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  overflow-wrap: anywhere;
+}
+.cardMetric dd span {
+  display: block;
+  color: var(--mh-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.cardSources {
+  color: var(--mh-text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+.cardSources summary {
+  cursor: pointer;
+  padding-block: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.cardSources ul {
+  padding-left: 18px;
+}
+.cardSources li + li {
+  margin-top: 10px;
+}
+.evidenceBlock {
+  margin-top: 42px;
+  padding-top: 30px;
+  border-top: 1px solid var(--mh-divider);
+}
+.evidenceBlock > h3 {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  margin-bottom: 14px;
+}
+.evidenceBlock > p {
+  max-width: 850px;
+  color: var(--mh-text-secondary);
+  font-size: 0.95rem;
+}
+.evidenceBlock .evidenceNote {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+.historyBars {
+  list-style: none;
+  padding: 0;
+  margin: 26px 0;
+  display: grid;
+  gap: 16px;
+  max-width: 900px;
+}
+.historyBars li {
+  display: grid;
+  grid-template-columns: 145px 1fr 50px;
+  align-items: center;
+  gap: 18px;
+  font-size: 0.9rem;
+}
+.historyBars strong {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.barTrack {
+  height: 18px;
+  background: var(--mh-divider);
+  border-radius: 2px;
+}
+.barTrack > span {
+  display: block;
+  height: 100%;
+  background: var(--mh-accent);
+  min-width: 2px;
+  border-radius: 2px;
+}
+@media (min-width: 900px) {
+  .metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 500px) {
+  .cardMetrics {
+    gap: 18px 16px;
+  }
+  .historyBars li {
+    grid-template-columns: 112px 1fr 35px;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+}
