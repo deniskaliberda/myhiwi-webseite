@@ -8,7 +8,7 @@ const projects = [
     result: "133",
   },
   { slug: "mannis-fahrschule", name: "Mannis Fahrschule", result: "21" },
-  { slug: "formazin", name: "Formazin & Partner", result: "16" },
+  { slug: "formazin", name: "Formazin & Partner", result: "Live" },
   { slug: "mr-sherman", name: "Mr. Sherman", result: "4" },
 ];
 
@@ -18,7 +18,7 @@ for (const project of projects) {
     request,
   }) => {
     const path = `/case-studies/${project.slug}`;
-    const updated = "2026-09-06";
+    const updated = project.slug === "formazin" ? "2026-09-07" : "2026-09-06";
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(path);
@@ -52,7 +52,8 @@ for (const project of projects) {
     const og = await page
       .locator('meta[property="og:image"]')
       .getAttribute("content");
-    expect(og).toContain(`/case-studies/${project.slug}/cover.webp`);
+    const imageDirectory = project.slug === "formazin" ? "formazin/2026-09-07-gesamtprojekt" : project.slug;
+    expect(og).toContain(`/case-studies/${imageDirectory}/cover.webp`);
     const image = await request.get(new URL(og!).pathname);
     expect(image.ok()).toBe(true);
     expect(image.headers()["content-type"]).toContain("image/webp");
@@ -207,4 +208,21 @@ test("technical lab comparisons and paid campaign figures retain their source sc
   await expect(ads).toContainText("11,77 €");
   await expect(ads).toContainText("7 Tage Klick / 1 Tag Ansicht");
   await expect(ads).toContainText("keine abgeschlossenen Mitgliedschaften");
+});
+
+test("Formazin distinguishes website foundation from expansion without implying historical photos", async ({ page }) => {
+  await page.goto("/case-studies/formazin");
+  await expect(page.locator("h1")).toHaveText("Vom neuen Webauftritt zum gezielten Ausbau der Energieberatung");
+  const comparison = page.locator('section[aria-labelledby="comparison-heading"]');
+  await expect(comparison).toContainText("Grundlage: der komplette Webauftritt");
+  await expect(comparison).toContainText("Ausbau: Energieberatung anfragbar machen");
+  await expect(comparison).toContainText("keine historischen Vorher-Nachher-Aufnahmen");
+  await expect(comparison.locator("img").first()).toHaveAttribute("src", /2026-09-07-gesamtprojekt/);
+  await expect(comparison.locator("img").last()).toHaveAttribute("src", /2026-09-07%2Fcover/);
+  await expect(page.locator("main")).toContainText("kein Nachweis tatsächlich eingegangener Anfragen");
+  await page.goto("/case-studies/sonnenhof-herrsching");
+  const historicalComparison = page.locator('section[aria-labelledby="comparison-heading"]');
+  await expect(historicalComparison.getByRole("heading", {name: "Vorher", exact: true})).toBeVisible();
+  await expect(historicalComparison.getByRole("heading", {name: "Heute", exact: true})).toBeVisible();
+  await expect(historicalComparison).toContainText("Der Unterschied im direkten Vergleich.");
 });

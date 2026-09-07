@@ -42,6 +42,10 @@ export type CaseStudy = {
   challenge: { title: string; body: string };
   improvements: Array<{ title: string; body: string }>;
   comparison?: {
+    eyebrow?: string;
+    title?: string;
+    beforeLabel?: string;
+    afterLabel?: string;
     before: CaseImage;
     after: CaseImage;
     note: string;
