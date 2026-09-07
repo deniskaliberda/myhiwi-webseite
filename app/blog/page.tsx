@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import hiwiArticle from "@/content/blog/linkedin-hiwi.json";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  { slug: hiwiArticle.slug, title: hiwiArticle.title, excerpt: hiwiArticle.description, date: hiwiArticle.displayDate, readTime: hiwiArticle.readTime, category: hiwiArticle.category },
   {
     slug: "keyword-kannibalisierung",
     title: "Keyword-Kannibalisierung: der stille Killer Ihrer Top-10-Platzierungen",

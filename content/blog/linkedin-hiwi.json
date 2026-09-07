@@ -1,0 +1,555 @@
+{
+  "slug": "linkedin-hiwi",
+  "title": "Vom Erzählen zum Schreiben: Wie ich meinen LinkedIn-Hiwi aufbaue",
+  "description": "Ich rede gerne, Schreiben fällt mir schwerer. So hilft mir mein LinkedIn-Hiwi: mit Gesprächen, ausgewähltem Wissen, klaren Abläufen und passenden Bildern.",
+  "date": "2026-09-07",
+  "displayDate": "7. September 2026",
+  "readTime": "11 Min.",
+  "author": "Denis Kaliberda",
+  "category": "Einblicke in MyHiwi",
+  "lead": "Ich erzähle gerne über meine Arbeit. Mein Hiwi hilft mir, daraus Texte zu entwickeln. Hier erkläre ich, wie wir dabei vorgehen und welche Informationen dafür gebraucht werden.",
+  "image": "/blog/linkedin-hiwi/vom-gespraech-zum-artikel.webp",
+  "imageAlt": "Blaue Illustration: Aus einem Gespräch entstehen geordnete Notizen und anschließend ein Artikel.",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Ich rede gerne. Wer mich kennt, weiß das. Über Dinge, die mich beschäftigen, über meine Firma und über das, woran ich gerade arbeite. Das alles aufzuschreiben, fällt mir deutlich schwerer. Auf LinkedIn möchte ich mehr davon teilen: was ich mit MyHiwi mache, welche Probleme ich sehe und wie ich versuche, sie zu lösen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Ich rede gerne. Wer mich kennt, weiß das. Über Dinge, die mich beschäftigen, über meine Firma und über das, woran ich gerade arbeite. Das alles aufzuschreiben, fällt mir deutlich schwerer. Auf LinkedIn möchte ich mehr davon teilen: was ich mit MyHiwi mache, welche Probleme ich sehe und wie ich versuche, sie zu lösen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Genau dafür baue ich meinen LinkedIn-Hiwi auf. Das ist ein KI-Assistent, mit dem ich reden kann und aus diesen Gesprächen Texte entwickle. Ich bringe meine Erfahrungen, Fragen und Gedanken mit. Der Hiwi hilft mir, sie zu sortieren, fragt nach und arbeitet mit mir heraus, was ich eigentlich erzählen möchte. So soll aus dem, was ich im Gespräch gerne teile, auch ein lesbarer Blogartikel oder LinkedIn-Beitrag werden.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Genau dafür baue ich meinen LinkedIn-Hiwi auf. Das ist ein KI-Assistent, mit dem ich reden kann und aus diesen Gesprächen Texte entwickle. Ich bringe meine Erfahrungen, Fragen und Gedanken mit. Der Hiwi hilft mir, sie zu sortieren, fragt nach und arbeitet mit mir heraus, was ich eigentlich erzählen möchte. So soll aus dem, was ich im Gespräch gerne teile, auch ein lesbarer Blogartikel oder LinkedIn-Beitrag werden.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Mit MyHiwi löse ich digitale Probleme für Unternehmen. Mein Schwerpunkt liegt auf Websites und ihrer Sichtbarkeit in Suchmaschinen und KI-Antworten. Mich interessiert, wie ein Unternehmen im Internet verstanden wird und wie aus dieser Sichtbarkeit passende Anfragen entstehen. Eine Website, Inhalte, Werbung und der Umgang mit Anfragen hängen für mich zusammen. Welche Maßnahme sinnvoll ist, entscheidet sich am jeweiligen Unternehmen und an den Ergebnissen, die wir beobachten können.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Mit MyHiwi löse ich digitale Probleme für Unternehmen. Mein Schwerpunkt liegt auf Websites und ihrer Sichtbarkeit in Suchmaschinen und KI-Antworten. Mich interessiert, wie ein Unternehmen im Internet verstanden wird und wie aus dieser Sichtbarkeit passende Anfragen entstehen. Eine Website, Inhalte, Werbung und der Umgang mit Anfragen hängen für mich zusammen. Welche Maßnahme sinnvoll ist, entscheidet sich am jeweiligen Unternehmen und an den Ergebnissen, die wir beobachten können.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Dafür fange ich nicht bei null an. Es gibt dokumentiertes Wissen, Kundenprojekte, Arbeitsabläufe und Werkzeuge. Für die Arbeit an LinkedIn sind außerdem Strategie, Recherche und Entwürfe gespeichert. Jetzt geht es darum, daraus einen klar abgegrenzten Arbeitsbereich für meine Inhalte zu machen. Dabei kommen ein paar Fragen auf, die man einem fertigen Text später nicht ansieht: Woher kommen die Informationen? Was darf der Assistent lesen? Was bleibt intern? Und wie stelle ich sicher, dass der Text tatsächlich meine Sicht wiedergibt?",
+      "id": "",
+      "parts": [
+        {
+          "text": "Dafür fange ich nicht bei null an. Es gibt dokumentiertes Wissen, Kundenprojekte, Arbeitsabläufe und Werkzeuge. Für die Arbeit an LinkedIn sind außerdem Strategie, Recherche und Entwürfe gespeichert. Jetzt geht es darum, daraus einen klar abgegrenzten Arbeitsbereich für meine Inhalte zu machen. Dabei kommen ein paar Fragen auf, die man einem fertigen Text später nicht ansieht: Woher kommen die Informationen? Was darf der Assistent lesen? Was bleibt intern? Und wie stelle ich sicher, dass der Text tatsächlich meine Sicht wiedergibt?",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Der Auftrag beginnt bei meiner Arbeit",
+      "id": "der-auftrag-beginnt-bei-meiner-arbeit",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Der Hiwi soll verstehen, was ich mit MyHiwi mache und welche Fragen mich dabei beschäftigen. Wenn ich über eine Website spreche, meine ich beispielsweise mehr als ihre Gestaltung. Ich möchte verstehen, ob Besucher das Angebot erkennen, ob die Inhalte zu ihren Fragen passen und ob sie den nächsten Schritt finden. Für einen Beitrag kann genau so eine Verbindung interessant sein.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Der Hiwi soll verstehen, was ich mit MyHiwi mache und welche Fragen mich dabei beschäftigen. Wenn ich über eine Website spreche, meine ich beispielsweise mehr als ihre Gestaltung. Ich möchte verstehen, ob Besucher das Angebot erkennen, ob die Inhalte zu ihren Fragen passen und ob sie den nächsten Schritt finden. Für einen Beitrag kann genau so eine Verbindung interessant sein.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Was ich zu einem Thema denke, klären wir im Gespräch. Ich will einen Assistenten, der nachfragt, wenn etwas unklar ist, und Widersprüche sichtbar macht. Aus einer ersten Beobachtung soll nicht sofort eine vermeintlich fertige Meinung werden. Vielleicht fehlt mir noch ein Beleg. Vielleicht ist eine Erfahrung nur für ein bestimmtes Projekt aussagekräftig. Vielleicht steckt in meiner Aussage eigentlich eine offene Frage, über die sich ein guter Artikel schreiben lässt.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Was ich zu einem Thema denke, klären wir im Gespräch. Ich will einen Assistenten, der nachfragt, wenn etwas unklar ist, und Widersprüche sichtbar macht. Aus einer ersten Beobachtung soll nicht sofort eine vermeintlich fertige Meinung werden. Vielleicht fehlt mir noch ein Beleg. Vielleicht ist eine Erfahrung nur für ein bestimmtes Projekt aussagekräftig. Vielleicht steckt in meiner Aussage eigentlich eine offene Frage, über die sich ein guter Artikel schreiben lässt.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Der Hiwi hilft mir deshalb schon, bevor der erste Absatz steht. Wir klären das Thema, prüfen die Grundlage, entwickeln einen Aufbau und überarbeiten den Text. Ich entscheide, welche Aussagen meine Position treffen und was unter meinem Namen veröffentlicht wird.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Der Hiwi hilft mir deshalb schon, bevor der erste Absatz steht. Wir klären das Thema, prüfen die Grundlage, entwickeln einen Aufbau und überarbeiten den Text. Ich entscheide, welche Aussagen meine Position treffen und was unter meinem Namen veröffentlicht wird.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Welche Bausteine hinter dem Hiwi stehen",
+      "id": "welche-bausteine-hinter-dem-hiwi-stehen",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Wenn ich von meinem „Hiwi“ spreche, meine ich den Assistenten, den ich für diese Aufgabe einrichte. Ein Sprachmodell ist ein Teil davon. Es verarbeitet den Kontext, der ihm bereitgestellt wird, und formuliert daraus Antworten. Für meine Arbeit kommen aber weitere Bausteine hinzu: gespeichertes Wissen, ein konkreter Auftrag, Arbeitsanleitungen und Werkzeuge, mit denen der Assistent tatsächlich etwas bearbeiten kann.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Wenn ich von meinem „Hiwi“ spreche, meine ich den Assistenten, den ich für diese Aufgabe einrichte. Ein Sprachmodell ist ein Teil davon. Es verarbeitet den Kontext, der ihm bereitgestellt wird, und formuliert daraus Antworten. Für meine Arbeit kommen aber weitere Bausteine hinzu: gespeichertes Wissen, ein konkreter Auftrag, Arbeitsanleitungen und Werkzeuge, mit denen der Assistent tatsächlich etwas bearbeiten kann.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "In meinem Workspace liegen Prozesse und Verweise auf Kundenprojekte. Die einzelnen Projekte haben eigene Informationen über das Unternehmen und den jeweiligen Arbeitsstand. Zusätzlich gibt es einen Obsidian-Vault. Das ist eine organisierte Sammlung von Wissensdateien, in der Informationen und Entscheidungen festgehalten werden können. Diese Ablagen erfüllen unterschiedliche Aufgaben. Ein aktueller Projektstand beantwortet eine andere Frage als eine allgemeine Beschreibung meines Vorgehens.",
+      "id": "",
+      "parts": [
+        {
+          "text": "In meinem Workspace liegen Prozesse und Verweise auf Kundenprojekte. Die einzelnen Projekte haben eigene Informationen über das Unternehmen und den jeweiligen Arbeitsstand. Zusätzlich gibt es einen Obsidian-Vault. Das ist eine organisierte Sammlung von Wissensdateien, in der Informationen und Entscheidungen festgehalten werden können. Diese Ablagen erfüllen unterschiedliche Aufgaben. Ein aktueller Projektstand beantwortet eine andere Frage als eine allgemeine Beschreibung meines Vorgehens.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Entscheidend ist die Auswahl. Dass eine Datei auf meinem Computer liegt, bedeutet noch nicht, dass das Modell sie kennt. Relevante Inhalte müssen für den jeweiligen Auftrag gelesen und bereitgestellt werden. Wenn die falsche oder eine veraltete Datei gelesen wird, hilft mir auch ein gut formulierter Text wenig.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Entscheidend ist die Auswahl. Dass eine Datei auf meinem Computer liegt, bedeutet noch nicht, dass das Modell sie kennt. Relevante Inhalte müssen für den jeweiligen Auftrag gelesen und bereitgestellt werden. Wenn die falsche oder eine veraltete Datei gelesen wird, hilft mir auch ein gut formulierter Text wenig.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "diagram",
+      "text": "",
+      "id": "",
+      "parts": [],
+      "diagram": "workflow"
+    },
+    {
+      "type": "heading",
+      "text": "Wissen, Skills und Werkzeuge haben verschiedene Aufgaben",
+      "id": "wissen-skills-und-werkzeuge-haben-verschiedene-aufgaben",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Diese Begriffe klingen erst einmal ziemlich technisch. Für mich lassen sie sich so auseinanderhalten: Wissen liefert Informationen über ein Thema. Ein Skill beschreibt ein Vorgehen. Ein Werkzeug führt eine konkrete Handlung aus. Das Ergebnis ist beispielsweise ein überarbeiteter Text oder eine berechnete Auswertung.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Diese Begriffe klingen erst einmal ziemlich technisch. Für mich lassen sie sich so auseinanderhalten: Wissen liefert Informationen über ein Thema. Ein Skill beschreibt ein Vorgehen. Ein Werkzeug führt eine konkrete Handlung aus. Das Ergebnis ist beispielsweise ein überarbeiteter Text oder eine berechnete Auswertung.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Bei der Vorbereitung eines Sonnenhof-Beitrags wurden Skills für Datenvalidierung und Datenqualität verwendet. Diese Arbeitsanleitungen geben Prüfabläufe vor. Die eigentliche Berechnung wurde mit Code ausgeführt und ist im Prüfnotebook dokumentiert. Eine Arbeitsanleitung allein macht eine Zahl noch nicht richtig. Ich muss sehen können, was geprüft wurde und wie das Ergebnis zustande kommt.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Bei der Vorbereitung eines Sonnenhof-Beitrags wurden Skills für Datenvalidierung und Datenqualität verwendet. Diese Arbeitsanleitungen geben Prüfabläufe vor. Die eigentliche Berechnung wurde mit Code ausgeführt und ist im Prüfnotebook dokumentiert. Eine Arbeitsanleitung allein macht eine Zahl noch nicht richtig. Ich muss sehen können, was geprüft wurde und wie das Ergebnis zustande kommt.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Ähnlich ist es bei der Browserbedienung. Ein Assistent mit dem passenden Werkzeug kann eine Seite aufrufen, Informationen lesen oder Eingaben vornehmen. Mein LinkedIn-Profil wurde in dieser Zusammenarbeit bereits nach meinen Vorgaben überarbeitet und die Speicherung kontrolliert. Daraus folgt jedoch noch kein selbstständig veröffentlichender LinkedIn-Agent. Ein Werkzeug verfügbar zu haben und einen wiederholbaren Veröffentlichungsprozess einzurichten, sind unterschiedliche Schritte.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Ähnlich ist es bei der Browserbedienung. Ein Assistent mit dem passenden Werkzeug kann eine Seite aufrufen, Informationen lesen oder Eingaben vornehmen. Mein LinkedIn-Profil wurde in dieser Zusammenarbeit bereits nach meinen Vorgaben überarbeitet und die Speicherung kontrolliert. Daraus folgt jedoch noch kein selbstständig veröffentlichender LinkedIn-Agent. Ein Werkzeug verfügbar zu haben und einen wiederholbaren Veröffentlichungsprozess einzurichten, sind unterschiedliche Schritte.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Auch MCP gehört in diese Unterscheidung. Es ist ein Protokoll, über das Anwendungen einem KI-Assistenten unter anderem Werkzeuge und Ressourcen bereitstellen können. Es beschreibt damit eine Verbindungsmöglichkeit. Welche Daten darüber zugänglich werden und welche Aktionen möglich sind, hängt von der konkreten Anbindung und ihren Berechtigungen ab. Ein MCP-Zugang ersetzt weder einen guten Arbeitsauftrag noch die Prüfung der freigegebenen Daten. [MCP-Dokumentation](https://modelcontextprotocol.io/docs/getting-started/intro)",
+      "id": "",
+      "parts": [
+        {
+          "text": "Auch MCP gehört in diese Unterscheidung. Es ist ein Protokoll, über das Anwendungen einem KI-Assistenten unter anderem Werkzeuge und Ressourcen bereitstellen können. Es beschreibt damit eine Verbindungsmöglichkeit. Welche Daten darüber zugänglich werden und welche Aktionen möglich sind, hängt von der konkreten Anbindung und ihren Berechtigungen ab. Ein MCP-Zugang ersetzt weder einen guten Arbeitsauftrag noch die Prüfung der freigegebenen Daten. ",
+          "href": ""
+        },
+        {
+          "text": "MCP-Dokumentation",
+          "href": "https://modelcontextprotocol.io/docs/getting-started/intro"
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Wie der Zusammenhang zwischen Gesprächen erhalten bleibt",
+      "id": "wie-der-zusammenhang-zwischen-gesprachen-erhalten-bleibt",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Wir arbeiten nicht alles in einer einzigen Sitzung aus. Ich bringe neue Gedanken mit, korrigiere Formulierungen oder ändere die Richtung eines Artikels. Damit die nächste Sitzung daran anschließen kann, müssen die wichtigen Entscheidungen außerhalb des Gesprächs erhalten bleiben.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Wir arbeiten nicht alles in einer einzigen Sitzung aus. Ich bringe neue Gedanken mit, korrigiere Formulierungen oder ändere die Richtung eines Artikels. Damit die nächste Sitzung daran anschließen kann, müssen die wichtigen Entscheidungen außerhalb des Gesprächs erhalten bleiben.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Im LinkedIn-Ordner liegen bereits Strategie, Recherche und Entwürfe. Beim Weiterarbeiten können diese Dateien gezielt gelesen werden. So bleibt beispielsweise nachvollziehbar, warum wir einen Blog vor dem dazugehörigen LinkedIn-Beitrag vorbereiten oder warum ich den Hiwi ausdrücklich als fragenden Denkpartner einsetzen möchte.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Im LinkedIn-Ordner liegen bereits Strategie, Recherche und Entwürfe. Beim Weiterarbeiten können diese Dateien gezielt gelesen werden. So bleibt beispielsweise nachvollziehbar, warum wir einen Blog vor dem dazugehörigen LinkedIn-Beitrag vorbereiten oder warum ich den Hiwi ausdrücklich als fragenden Denkpartner einsetzen möchte.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "So funktioniert das „Gedächtnis“ in meinem Aufbau: Informationen festhalten und später erneut bereitstellen. Für den weiteren Ausbau möchte ich einen festen Einstieg definieren, der den Auftrag, die relevanten Quellen und bestätigte Stilregeln zusammenführt. Dieser Einstieg soll helfen, die Arbeit zuverlässig fortzusetzen. Noch werden die passenden Arbeitsstände dafür gezielt gelesen. Den automatischen Abruf müssen wir gesondert einrichten und prüfen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "So funktioniert das „Gedächtnis“ in meinem Aufbau: Informationen festhalten und später erneut bereitstellen. Für den weiteren Ausbau möchte ich einen festen Einstieg definieren, der den Auftrag, die relevanten Quellen und bestätigte Stilregeln zusammenführt. Dieser Einstieg soll helfen, die Arbeit zuverlässig fortzusetzen. Noch werden die passenden Arbeitsstände dafür gezielt gelesen. Den automatischen Abruf müssen wir gesondert einrichten und prüfen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Welche Kundendaten für einen Blog überhaupt nötig sind",
+      "id": "welche-kundendaten-fur-einen-blog-uberhaupt-notig-sind",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Wenn ein Artikel ein Kundenprojekt erklärt, braucht er eine verständliche und überprüfbare Grundlage. Dazu können das Ausgangsproblem, die umgesetzten Maßnahmen und ausgewählte Ergebnisse gehören. Der Schreibassistent braucht dafür aber nicht automatisch die vollständigen Unterlagen, aus denen diese Erkenntnisse stammen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Wenn ein Artikel ein Kundenprojekt erklärt, braucht er eine verständliche und überprüfbare Grundlage. Dazu können das Ausgangsproblem, die umgesetzten Maßnahmen und ausgewählte Ergebnisse gehören. Der Schreibassistent braucht dafür aber nicht automatisch die vollständigen Unterlagen, aus denen diese Erkenntnisse stammen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Ein Beispiel: Um zu erklären, wie eine Website Anfragen unterstützt, kann eine geprüfte Gesamtzahl für einen definierten Zeitraum relevant sein. Die Namen, E-Mail-Adressen oder Nachrichtentexte einzelner Anfragender sind dafür in der Regel nicht erforderlich. Auch Zugangsdaten, interne Preise und andere vertrauliche Informationen haben in einem solchen Redaktionsbriefing keinen Platz.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Ein Beispiel: Um zu erklären, wie eine Website Anfragen unterstützt, kann eine geprüfte Gesamtzahl für einen definierten Zeitraum relevant sein. Die Namen, E-Mail-Adressen oder Nachrichtentexte einzelner Anfragender sind dafür in der Regel nicht erforderlich. Auch Zugangsdaten, interne Preise und andere vertrauliche Informationen haben in einem solchen Redaktionsbriefing keinen Platz.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Meine Vorgabe für den weiteren Aufbau ist deshalb, die Informationen für den Blog bewusst auszuwählen. Der Hiwi soll eine reduzierte, für den jeweiligen Artikel geeignete Grundlage bekommen. Darin muss auch stehen, was eine Kennzahl bedeutet. Eine abgesendete Anfrage ist beispielsweise noch keine Buchung und kein nachgewiesener Umsatz. Das muss im Briefing stehen. Sonst wird aus einer richtigen Zahl schnell eine falsche Geschichte.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Meine Vorgabe für den weiteren Aufbau ist deshalb, die Informationen für den Blog bewusst auszuwählen. Der Hiwi soll eine reduzierte, für den jeweiligen Artikel geeignete Grundlage bekommen. Darin muss auch stehen, was eine Kennzahl bedeutet. Eine abgesendete Anfrage ist beispielsweise noch keine Buchung und kein nachgewiesener Umsatz. Das muss im Briefing stehen. Sonst wird aus einer richtigen Zahl schnell eine falsche Geschichte.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Dabei sind zwei Entscheidungen zu unterscheiden: Darf eine Information für die Textarbeit verarbeitet werden? Und darf sie später öffentlich im Artikel erscheinen? Eine interne Freigabe für die Arbeit mit einem Assistenten beantwortet die zweite Frage nicht automatisch.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Dabei sind zwei Entscheidungen zu unterscheiden: Darf eine Information für die Textarbeit verarbeitet werden? Und darf sie später öffentlich im Artikel erscheinen? Eine interne Freigabe für die Arbeit mit einem Assistenten beantwortet die zweite Frage nicht automatisch.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Wie ich die Trennung für die Textarbeit einrichten möchte",
+      "id": "wie-ich-die-trennung-fur-die-textarbeit-einrichten-mochte",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "An dieser Stelle geht es um den nächsten Ausbauschritt. Die technische Trennung zwischen Blog-Assistent und Kundenablagen müssen wir noch einrichten und prüfen. Dem Assistenten nur zu sagen, dass er bestimmte Dateien nicht lesen soll, reicht mir dafür nicht. Seine Zugriffsrechte müssen dazu passen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "An dieser Stelle geht es um den nächsten Ausbauschritt. Die technische Trennung zwischen Blog-Assistent und Kundenablagen müssen wir noch einrichten und prüfen. Dem Assistenten nur zu sagen, dass er bestimmte Dateien nicht lesen soll, reicht mir dafür nicht. Seine Zugriffsrechte müssen dazu passen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich möchte dafür bei einer einfachen Frage anfangen: Was soll der Artikel eigentlich erklären? Erst danach wählen wir die Informationen aus, die wir dafür brauchen. In einem geschützten Projektbereich werden die geeigneten Ergebnisse geprüft und zu einem separaten Briefing zusammengefasst. Der Blog-Assistent soll anschließend nur die für ihn freigegebene Ablage lesen können.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Ich möchte dafür bei einer einfachen Frage anfangen: Was soll der Artikel eigentlich erklären? Erst danach wählen wir die Informationen aus, die wir dafür brauchen. In einem geschützten Projektbereich werden die geeigneten Ergebnisse geprüft und zu einem separaten Briefing zusammengefasst. Der Blog-Assistent soll anschließend nur die für ihn freigegebene Ablage lesen können.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Ein solches Briefing kann das Thema, den Ausgangszustand, die beschriebenen Maßnahmen, geprüfte Kennzahlen und Grenzen der Aussage enthalten. Bei Zahlen gehören Zeitraum und Berechnung dazu. Bei einem Beispiel muss klar sein, ob es eine reale Erfahrung oder eine schematische Erklärung ist. Angaben, die für den Artikel nicht gebraucht werden, werden gar nicht erst übernommen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Ein solches Briefing kann das Thema, den Ausgangszustand, die beschriebenen Maßnahmen, geprüfte Kennzahlen und Grenzen der Aussage enthalten. Bei Zahlen gehören Zeitraum und Berechnung dazu. Bei einem Beispiel muss klar sein, ob es eine reale Erfahrung oder eine schematische Erklärung ist. Angaben, die für den Artikel nicht gebraucht werden, werden gar nicht erst übernommen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "diagram",
+      "text": "",
+      "id": "",
+      "parts": [],
+      "diagram": "data"
+    },
+    {
+      "type": "paragraph",
+      "text": "Wichtig ist, wo diese Vorarbeit passiert. Würden vollständige Kundendaten zunächst an denselben Assistenten übergeben und erst anschließend aus dem Text entfernt, wären sie bereits in dessen Verarbeitung gelangt. Die Auswahl soll deshalb vorher stattfinden. Auch der vorbereitende Schritt braucht einen passenden, geschützten Rahmen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Wichtig ist, wo diese Vorarbeit passiert. Würden vollständige Kundendaten zunächst an denselben Assistenten übergeben und erst anschließend aus dem Text entfernt, wären sie bereits in dessen Verarbeitung gelangt. Die Auswahl soll deshalb vorher stattfinden. Auch der vorbereitende Schritt braucht einen passenden, geschützten Rahmen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Was wir dabei über Datenschutz sagen können",
+      "id": "was-wir-dabei-uber-datenschutz-sagen-konnen",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Nur die für einen bestimmten Zweck erforderlichen personenbezogenen Daten zu verarbeiten, entspricht dem Grundsatz der Datenminimierung. Die DSGVO verlangt außerdem unter anderem eine geeignete Rechtsgrundlage und angemessene technische und organisatorische Schutzmaßnahmen. Datenminimierung allein ist deshalb kein Nachweis, dass ein gesamter KI-Arbeitsablauf rechtskonform eingerichtet ist. [DSGVO, Artikel 5, 6, 25 und 32](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32016R0679)",
+      "id": "",
+      "parts": [
+        {
+          "text": "Nur die für einen bestimmten Zweck erforderlichen personenbezogenen Daten zu verarbeiten, entspricht dem Grundsatz der Datenminimierung. Die DSGVO verlangt außerdem unter anderem eine geeignete Rechtsgrundlage und angemessene technische und organisatorische Schutzmaßnahmen. Datenminimierung allein ist deshalb kein Nachweis, dass ein gesamter KI-Arbeitsablauf rechtskonform eingerichtet ist. ",
+          "href": ""
+        },
+        {
+          "text": "DSGVO, Artikel 5, 6, 25 und 32",
+          "href": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32016R0679"
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Dafür müssen wir uns auch die eingesetzten Dienste ansehen: Welche Informationen bekommen sie? Welche Einstellungen und Vereinbarungen gelten? Dass die Ausgangsdatei lokal gespeichert ist, beantwortet noch nicht, wo ihre Inhalte nach einem Werkzeugaufruf verarbeitet werden. Für den Blog möchte ich deshalb konkrete Maßnahmen erklären, statt aus dem Wort „lokal“ ein pauschales Datenschutzversprechen abzuleiten.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Dafür müssen wir uns auch die eingesetzten Dienste ansehen: Welche Informationen bekommen sie? Welche Einstellungen und Vereinbarungen gelten? Dass die Ausgangsdatei lokal gespeichert ist, beantwortet noch nicht, wo ihre Inhalte nach einem Werkzeugaufruf verarbeitet werden. Für den Blog möchte ich deshalb konkrete Maßnahmen erklären, statt aus dem Wort „lokal“ ein pauschales Datenschutzversprechen abzuleiten.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Auch „anonymisiert“ sollte nur verwendet werden, wenn es zutrifft. Ein entfernter Name reicht nicht aus, wenn eine Person durch andere Angaben noch erkennbar bleibt. Die DSGVO unterscheidet anonyme Informationen von personenbezogenen Daten, bei denen die Identifizierung lediglich erschwert wurde. [DSGVO, Erwägungsgrund 26 und Artikel 4](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32016R0679)",
+      "id": "",
+      "parts": [
+        {
+          "text": "Auch „anonymisiert“ sollte nur verwendet werden, wenn es zutrifft. Ein entfernter Name reicht nicht aus, wenn eine Person durch andere Angaben noch erkennbar bleibt. Die DSGVO unterscheidet anonyme Informationen von personenbezogenen Daten, bei denen die Identifizierung lediglich erschwert wurde. ",
+          "href": ""
+        },
+        {
+          "text": "DSGVO, Erwägungsgrund 26 und Artikel 4",
+          "href": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32016R0679"
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Wie der Text meine Sprache treffen soll",
+      "id": "wie-der-text-meine-sprache-treffen-soll",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Dass wir mit Gesprächen beginnen, ist für mich der entscheidende Punkt. Ich erzähle gerne, während mir das Schreiben schwerer fällt. Im Gespräch muss ich nicht sofort druckreif formulieren. Ich kann einen Gedanken ausprobieren und erklären, weshalb mich etwas beschäftigt. Der Hiwi soll daran anknüpfen und die Stellen erkennen, an denen eine Aussage noch unklar ist.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Dass wir mit Gesprächen beginnen, ist für mich der entscheidende Punkt. Ich erzähle gerne, während mir das Schreiben schwerer fällt. Im Gespräch muss ich nicht sofort druckreif formulieren. Ich kann einen Gedanken ausprobieren und erklären, weshalb mich etwas beschäftigt. Der Hiwi soll daran anknüpfen und die Stellen erkennen, an denen eine Aussage noch unklar ist.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Eine mögliche Rückfrage wäre, an welchem Projekt sich eine Beobachtung zeigen lässt. Eine andere wäre, ob ich gerade ein Ergebnis beschreibe oder eine Vermutung. Solche Fragen helfen, den späteren Text genauer zu machen. Sie sind hier Beispiele für die gewünschte Zusammenarbeit und kein nachträglich erfundenes Gesprächsprotokoll.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Eine mögliche Rückfrage wäre, an welchem Projekt sich eine Beobachtung zeigen lässt. Eine andere wäre, ob ich gerade ein Ergebnis beschreibe oder eine Vermutung. Solche Fragen helfen, den späteren Text genauer zu machen. Sie sind hier Beispiele für die gewünschte Zusammenarbeit und kein nachträglich erfundenes Gesprächsprotokoll.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Aus dem geklärten Gedanken entsteht ein Entwurf. Bei der Überarbeitung geht es dann um Inhalt und Sprache zugleich. Stimmt die Aussage? Fehlt eine Erklärung? Klingt die Formulierung nach einer Position, die ich tatsächlich vertrete? Bestätigte Entscheidungen können anschließend als Stilregeln festgehalten werden. Dafür haben wir kein eigenes Sprachmodell auf mich trainiert. Wir arbeiten mit Gesprächen, ausgewähltem Kontext und festgehaltenen Vorgaben.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Aus dem geklärten Gedanken entsteht ein Entwurf. Bei der Überarbeitung geht es dann um Inhalt und Sprache zugleich. Stimmt die Aussage? Fehlt eine Erklärung? Klingt die Formulierung nach einer Position, die ich tatsächlich vertrete? Bestätigte Entscheidungen können anschließend als Stilregeln festgehalten werden. Dafür haben wir kein eigenes Sprachmodell auf mich trainiert. Wir arbeiten mit Gesprächen, ausgewähltem Kontext und festgehaltenen Vorgaben.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Wie Bilder den Text unterstützen sollen",
+      "id": "wie-bilder-den-text-unterstutzen-sollen",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich möchte diese Zusammenhänge ausführlich erklären. Dazu können Bilder und Diagramme helfen: Eine Illustration kann den Weg vom Gespräch zum Text zeigen. Ein beschriftetes Diagramm kann verdeutlichen, welche Aufgabe eine Wissensablage hat oder an welcher Stelle Informationen für die Redaktion ausgewählt werden. Die Darstellung muss zum beschriebenen Arbeitsstand passen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Ich möchte diese Zusammenhänge ausführlich erklären. Dazu können Bilder und Diagramme helfen: Eine Illustration kann den Weg vom Gespräch zum Text zeigen. Ein beschriftetes Diagramm kann verdeutlichen, welche Aufgabe eine Wissensablage hat oder an welcher Stelle Informationen für die Redaktion ausgewählt werden. Die Darstellung muss zum beschriebenen Arbeitsstand passen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die Titelillustration dieses Artikels ist damit entstanden. Sie zeigt schematisch, wie aus einem Gespräch geordnete Gedanken und ein Text werden. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die Titelillustration dieses Artikels ist damit entstanden. Sie zeigt schematisch, wie aus einem Gespräch geordnete Gedanken und ein Text werden. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Für eine schematische Darstellung reichen beispielsweise die Bezeichnungen der Bausteine und ihre Beziehungen. Interne Kundenunterlagen sind dafür nicht erforderlich. Ein erzeugtes Bild kennzeichnen wir als Illustration. Es soll keinen echten Bildschirm oder einen bereits eingerichteten Ablauf vortäuschen. Beschriftungen und Pfeile prüfen wir ebenso sorgfältig wie eine Aussage im Text.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Für eine schematische Darstellung reichen beispielsweise die Bezeichnungen der Bausteine und ihre Beziehungen. Interne Kundenunterlagen sind dafür nicht erforderlich. Ein erzeugtes Bild kennzeichnen wir als Illustration. Es soll keinen echten Bildschirm oder einen bereits eingerichteten Ablauf vortäuschen. Beschriftungen und Pfeile prüfen wir ebenso sorgfältig wie eine Aussage im Text.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "heading",
+      "text": "Was schon funktioniert und was als Nächstes kommt",
+      "id": "was-schon-funktioniert-und-was-als-nachstes-kommt",
+      "parts": [],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Meinen Workspace und den Vault verwalte ich mit Git. Damit lassen sich gespeicherte Änderungen nachvollziehen. GitHub ist dafür als Ziel eingerichtet. Meine LinkedIn-Gesprächsnotizen und Entwürfe liegen bislang in einer eigenen lokalen Ablage. Für diesen Bereich ist die Versionierung ein weiterer Schritt. Der fertige Blogartikel wird dagegen bereits mit der Website versioniert. Auch dabei gehört zur Einrichtung, festzulegen, welche Inhalte überhaupt in eine solche Versionshistorie dürfen.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Meinen Workspace und den Vault verwalte ich mit Git. Damit lassen sich gespeicherte Änderungen nachvollziehen. GitHub ist dafür als Ziel eingerichtet. Meine LinkedIn-Gesprächsnotizen und Entwürfe liegen bislang in einer eigenen lokalen Ablage. Für diesen Bereich ist die Versionierung ein weiterer Schritt. Der fertige Blogartikel wird dagegen bereits mit der Website versioniert. Auch dabei gehört zur Einrichtung, festzulegen, welche Inhalte überhaupt in eine solche Versionshistorie dürfen.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Bereits praktisch genutzt haben wir gespeicherten Kontext, Recherche, Zahlenprüfung und Browserarbeit am Profil. Weiterentwickeln möchte ich den festen Einstieg für neue Sitzungen, die bestätigten Stilregeln und die begrenzte Informationsgrundlage für die Redaktion. An diesen konkreten Schritten lässt sich zeigen, wie der Hiwi entsteht.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Bereits praktisch genutzt haben wir gespeicherten Kontext, Recherche, Zahlenprüfung und Browserarbeit am Profil. Weiterentwickeln möchte ich den festen Einstieg für neue Sitzungen, die bestätigten Stilregeln und die begrenzte Informationsgrundlage für die Redaktion. An diesen konkreten Schritten lässt sich zeigen, wie der Hiwi entsteht.",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Dieser Artikel ist selbst aus dieser Zusammenarbeit entstanden. Er erklärt ausführlich, wie die Bausteine zusammenhängen und welche Entscheidungen dafür nötig sind. Der spätere LinkedIn-Beitrag kann einen Gedanken daraus aufgreifen und zum Artikel führen. Die Veröffentlichung bleibt eine eigene Entscheidung, nachdem Inhalt, Belege und die verwendeten Informationen geprüft sind.",
+      "id": "",
+      "parts": [
+        {
+          "text": "Dieser Artikel ist selbst aus dieser Zusammenarbeit entstanden. Er erklärt ausführlich, wie die Bausteine zusammenhängen und welche Entscheidungen dafür nötig sind. Der spätere LinkedIn-Beitrag kann einen Gedanken daraus aufgreifen und zum Artikel führen. Die Veröffentlichung bleibt eine eigene Entscheidung, nachdem Inhalt, Belege und die verwendeten Informationen geprüft sind.\n",
+          "href": ""
+        }
+      ],
+      "diagram": ""
+    }
+  ]
+}
