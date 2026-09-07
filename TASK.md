@@ -3,28 +3,28 @@
 | Field | Value |
 |---|---|
 | status | active |
-| phase | publish |
+| phase | preview |
 | updated | 2026-09-07 |
 | agent | Codex |
 | repo | myhiwi-webseite |
-| accepted_commit | e30ebad |
+| accepted_commit | 9a33b3c (current production base) |
 
 ## Objective
-Update the Formazin case study with verified current public content and website screenshots. Deliver tested changes and a reviewable preview with the publication status.
+Tell the full Formazin project story: MyHiwi built and launched the complete website, then expanded energy consulting into a specific offer and inquiry process. Prepare a tested revised preview and report the publication state.
 
 ## Constraints
-Own worktree and branch codex/formazin-case-study-20260907 from origin/main. Preserve original checkout, customer sites and all blog work. Denis authorized publication with “go” on 7 September 2026. No external messages. Only public facts and approved live visuals; no internal customer information or invented results. Reuse canonical DESIGN.md and existing case components for this authorized content refresh.
+Own branch codex/formazin-project-story-20260907 from origin/main in the existing isolated worktree. No blog or customer-site edits. Previous revision is live; this expanded narrative is a new preview. Public facts and approved live photos only. Built inquiry routes are not measured inquiries, sales or revenue. No unsupported premium/performance claims or invented historical screenshots.
 
 ## Decisions
-- Current main and the public case use the shared case-study data, unlike the older original checkout.
-- Direct browser verification takes precedence over the stale web-search snapshot.
-- Use dated screenshots of the live energy overview and services. Remove the obsolete image comparison and unsupported delivery totals. Unknown outcomes remain explicitly open.
+- Homepage screenshot becomes the cover for the whole project.
+- Existing comparison component receives optional labels to show foundation and expansion using current screenshots, explicitly dated, rather than implying historical before/after photos.
+- Describe the actual portfolio filters, project detail pages, mobile navigation, structured inquiry steps and page metadata. Do not present implementation features as proven commercial outcomes.
 
 ## Failed approaches
-- Search crawl returns an older energy page; direct browser shows the current 6 September release.
+- Search crawl returned an older energy page; use direct public browser verification.
 
 ## Next
-Merge approved PR #7 and verify the automatic production deployment on myhiwi.de. Preserve all unrelated work.
+Build and four relevant Playwright checks passed. Prepare branch preview and draft PR, verify hosted HTML/images, then close task-owned sessions.
 
 ## Evidence
-See docs/verification/formazin-case-study-2026-09-07.md. Build 52 routes, lint/types passed; three Playwright checks passed. Desktop 1440/mobile 390 images loaded without overflow. Preview dpl_8PKX9fdo3kyQV27thBG6s85gWNKC Ready; authenticated HTML and byte-identical cover verified.
+See docs/verification/formazin-project-story-2026-09-07.md. Build52 routes/typecheck/lint and 4 Playwright checks passed. Desktop1440/mobile390 images and layout verified.
