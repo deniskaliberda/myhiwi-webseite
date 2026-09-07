@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowDown, ArrowRight } from "lucide-react";
 import article from "@/content/blog/linkedin-hiwi.json";
 import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
 import styles from "./article.module.css";
+import { EditorialAccessDiagram } from "./EditorialAccessDiagram";
 
 const canonical = `https://myhiwi.de/blog/${article.slug}`;
 
@@ -81,25 +81,6 @@ function WorkflowDiagram() {
   );
 }
 
-function DataDiagram() {
-  return (
-    <figure className={styles.diagram} aria-labelledby="data-title">
-      <p className={styles.label}>Geplanter Ausbau</p>
-      <h3 id="data-title">Die Auswahl kommt vor dem Schreiben</h3>
-      <div className={`${styles.node} ${styles.private}`}><strong>Geschützter Projektbereich</strong><span>Interne Unterlagen und Auswertung. Ausgangspunkt ist eine konkrete Frage für den Artikel.</span></div>
-      <Down />
-      <p className={styles.filter}><strong>Prüfen und gezielt auswählen</strong>Nur benötigte, geeignete Informationen übernehmen.<br />Bereits vor der Übergabe an den Blog-Assistenten.</p>
-      <Down />
-      <div className={`${styles.node} ${styles.allowed}`}><strong>Reduziertes Redaktionsbriefing</strong><span>Ausgangsproblem · Maßnahmen · geprüfte Ergebnisse<br />Zeitraum und Bedeutung der Zahlen · Grenzen der Aussage</span></div>
-      <Down />
-      <div className={styles.core}><strong>Blog-Assistent</strong><span>Zugriff auf die freigegebene Redaktionsablage</span></div>
-      <Down />
-      <div className={styles.node}><strong>Entwurf und redaktionelle Prüfung</strong><span>Ein Medienhelfer erhält ein eigenes, zum Bild passendes Briefing. Vor der Veröffentlichung werden Text und Medien geprüft.</span></div>
-      <figcaption>Geplanter Ablauf, keine Bestätigung einer bereits eingerichteten Zugriffstrennung. Diese muss technisch umgesetzt und geprüft werden.</figcaption>
-    </figure>
-  );
-}
-
 export default function LinkedInHiwiArticle() {
   return (
     <>
@@ -126,18 +107,8 @@ export default function LinkedInHiwiArticle() {
         </nav>
         <div className={styles.prose}>
           {article.body.map((block, index) => {
-            if (block.type === "heading") {
-              const illustration = article.illustrations.find(item => item.afterHeading === block.id);
-              return <Fragment key={block.id}>
-                <h2 id={block.id}>{block.text}</h2>
-                {illustration && <figure className={styles.illustration}>
-                  <p className={styles.label}>{illustration.label}</p>
-                  <Image src={illustration.src} width={illustration.width} height={illustration.height} alt={illustration.alt} sizes="(max-width: 768px) calc(100vw - 40px), 760px" />
-                  <figcaption>{illustration.caption}<span>Mit Higgsfield erstellte Illustration.</span></figcaption>
-                </figure>}
-              </Fragment>;
-            }
-            if (block.type === "diagram") return block.diagram === "workflow" ? <WorkflowDiagram key="workflow" /> : <DataDiagram key="data" />;
+            if (block.type === "heading") return <h2 key={block.id} id={block.id}>{block.text}</h2>;
+            if (block.type === "diagram") return block.diagram === "workflow" ? <WorkflowDiagram key="workflow" /> : <EditorialAccessDiagram key="data" />;
             return <p key={index}>{block.parts.map((part, partIndex) => part.href ? <a key={partIndex} href={part.href} target="_blank" rel="noopener noreferrer">{part.text}</a> : part.text)}</p>;
           })}
         </div>

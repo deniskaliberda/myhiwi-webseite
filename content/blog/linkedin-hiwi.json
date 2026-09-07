@@ -317,6 +317,13 @@
       "diagram": ""
     },
     {
+      "type": "diagram",
+      "text": "",
+      "id": "",
+      "parts": [],
+      "diagram": "data"
+    },
+    {
       "type": "paragraph",
       "text": "An dieser Stelle geht es um den nächsten Ausbauschritt. Die technische Trennung zwischen Blog-Assistent und Kundenablagen müssen wir noch einrichten und prüfen. Dem Assistenten nur zu sagen, dass er bestimmte Dateien nicht lesen soll, reicht mir dafür nicht. Seine Zugriffsrechte müssen dazu passen.",
       "id": "",
@@ -351,13 +358,6 @@
         }
       ],
       "diagram": ""
-    },
-    {
-      "type": "diagram",
-      "text": "",
-      "id": "",
-      "parts": [],
-      "diagram": "data"
     },
     {
       "type": "paragraph",
@@ -486,11 +486,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die beiden Illustrationen dieses Artikels sind damit entstanden. Das Hauptbild zeigt den Ablauf in sechs Szenen: vom Erzählen über Rückfragen, ausgewählte Belege und einen Entwurf bis zur gemeinsamen Prüfung und zum fertigen LinkedIn-Post. Das zweite Bild erklärt als Zielbild, wie ich künftig nur ein ausgewähltes Briefing an den Hiwi übergeben möchte. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
+      "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Das Hauptbild dieses Artikels ist damit entstanden. Das Hauptbild zeigt den Ablauf in sechs Szenen: vom Erzählen über Rückfragen, ausgewählte Belege und einen Entwurf bis zur gemeinsamen Prüfung und zum fertigen LinkedIn-Post. Eine separat gestaltete Webgrafik erklärt den geplanten Weg von der internen Ablage über meine Auswahl zum freigegebenen Briefing und zum Textentwurf. Sie zeigt auch die Zugriffstrennung, die wir noch einrichten und prüfen müssen. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
       "id": "",
       "parts": [
         {
-          "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die beiden Illustrationen dieses Artikels sind damit entstanden. Das Hauptbild zeigt den Ablauf in sechs Szenen: vom Erzählen über Rückfragen, ausgewählte Belege und einen Entwurf bis zur gemeinsamen Prüfung und zum fertigen LinkedIn-Post. Das zweite Bild erklärt als Zielbild, wie ich künftig nur ein ausgewähltes Briefing an den Hiwi übergeben möchte. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
+          "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Das Hauptbild dieses Artikels ist damit entstanden. Das Hauptbild zeigt den Ablauf in sechs Szenen: vom Erzählen über Rückfragen, ausgewählte Belege und einen Entwurf bis zur gemeinsamen Prüfung und zum fertigen LinkedIn-Post. Eine separat gestaltete Webgrafik erklärt den geplanten Weg von der internen Ablage über meine Auswahl zum freigegebenen Briefing und zum Textentwurf. Sie zeigt auch die Zugriffstrennung, die wir noch einrichten und prüfen müssen. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
           "href": ""
         }
       ],
@@ -554,18 +554,6 @@
   ],
   "imageWidth": 3504,
   "imageHeight": 2336,
-  "illustrations": [
-    {
-      "afterHeading": "wie-ich-die-trennung-fur-die-textarbeit-einrichten-mochte",
-      "src": "/blog/linkedin-hiwi/ausgewaehltes-briefing.webp",
-      "width": 2688,
-      "height": 1520,
-      "alt": "Zielbild: Eine Person hält ein ausgewähltes Briefing vor den digitalen Arbeitsbereich; die interne Ablage steht getrennt daneben.",
-      "label": "Geplanter Ausbau",
-      "caption": "Künftig soll der Hiwi mit einem vorbereiteten Redaktionsbriefing arbeiten. Die interne Ablage bleibt davon getrennt. Diese Zugriffstrennung müssen wir noch technisch einrichten und prüfen.",
-      "planned": true
-    }
-  ],
   "processSteps": [
     "Erzählen",
     "Nachfragen",
