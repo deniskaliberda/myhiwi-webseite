@@ -335,3 +335,13 @@ Jede Komponente trägt:
 - **Style/tokens**: `Cases.module.css`, existing `--mh-*` ink/blue/surface/divider variables, Bricolage headings, Inter Tight body, mono markers. 1240px content maximum; 40px desktop/20px mobile inset. At 700px comparisons, gallery, editorial splits and case rows stack; system fonts match relaunch mobile performance. Visible keyboard focus and reduced-motion handling included.
 
 `components/myhiwi/card/ProjectTeaser.tsx` is the compact project reference used on industry and about pages. It reads the shared case-study dataset so names, summary, current image and detail URL stay consistent with the editorial reference pages.
+
+## Persönlicher Blogartikel mit Prozessdiagrammen (07.09.2026)
+
+`app/blog/linkedin-hiwi/` rendert den von Denis bestätigten ausführlichen Artikel aus `content/blog/linkedin-hiwi.json`. Sprache: persönliche Ich-Perspektive, ausführlich und locker. Bild und Aufbau von Denis bestätigt; nach Sprach-/Faktencheck Veröffentlichung beauftragt.
+
+- Server-rendered article with one H1, visible author/date, local optimized Higgsfield illustration, native table of contents, readable paragraphs and two static diagrams.
+- `WorkflowDiagram`: conversation, selected facts, instructions, drafting and human review; MCP/tool access distinguished in the caption.
+- `DataDiagram`: planned selection of information before giving a reduced brief to the blog assistant; explicitly not presented as an existing isolation mechanism.
+- Scoped CSS uses the existing MyHiwi ink, blue, surface and divider tokens, Bricolage/Inter family and mobile system fonts. Diagram columns stack at 700px. No animation or new client-side code. Lucide arrows are decorative.
+- One final contact CTA uses the current relaunch wording. Canonical, article/share metadata, JSON-LD, blog listing, RSS and sitemap share article data.

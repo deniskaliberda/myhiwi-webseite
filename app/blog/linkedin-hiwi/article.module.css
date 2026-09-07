@@ -1,0 +1,42 @@
+.article{max-width:calc(760px + 40px);margin:auto;padding:64px 20px 100px;color:var(--mh-text-primary)}
+.hero h1,.prose h2,.diagram h3,.contact h2{font-family:var(--font-bricolage),system-ui,sans-serif;letter-spacing:-.025em;font-weight:700}
+.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.08;margin:22px 0 32px;overflow-wrap:break-word}
+.hero h1 em,.contact h2 em{color:var(--mh-accent);font-weight:500}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--mh-text-secondary);font-size:14px;margin-bottom:22px}
+.label{font-family:var(--font-jetbrains-mono),monospace;font-size:11px;line-height:1.6;letter-spacing:.14em;text-transform:uppercase;color:var(--mh-accent)}
+.lead{font-size:21px;line-height:1.6;color:var(--mh-text-secondary);max-width:64ch}
+.byline{display:flex;gap:8px 22px;flex-wrap:wrap;font-size:14px;color:var(--mh-text-secondary);margin-top:22px;align-items:center}
+.byline a{min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:4px}
+.cover{margin-top:32px;background:var(--mh-surface)}
+.cover img{width:100%;height:auto}
+.cover figcaption{padding:12px 16px;font-size:13px;line-height:1.6;color:var(--mh-text-secondary)}
+.contents{margin:32px 0 48px;padding:22px 0;border-block:1px solid var(--mh-divider)}
+.contents ol{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:4px 22px}
+.contents a{font-size:14px;line-height:1.6;display:flex;align-items:center;min-height:44px;color:var(--mh-accent-hover);text-decoration:underline;text-underline-offset:4px}
+.prose{font-size:17px;line-height:1.8}
+.prose>p{margin:0 0 22px}
+.prose>h2{font-size:40px;line-height:1.15;margin:64px 0 22px;scroll-margin-top:120px}
+.prose a{color:var(--mh-accent-hover);text-decoration:underline;text-underline-offset:4px}
+.article a:focus-visible,.contact a:focus-visible{outline:2px solid var(--mh-accent);outline-offset:4px}
+.diagram{margin:32px 0 48px;background:var(--mh-surface);padding:32px;border-top:4px solid var(--mh-accent)}
+.diagram h3{font-size:24px;line-height:1.2;margin:12px 0 22px}
+.inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.node{background:var(--mh-card);border:1px solid var(--mh-divider);padding:16px;min-width:0;font-size:14px;line-height:1.6}
+.node strong{display:block;font-size:17px;font-weight:600;margin-bottom:8px}
+.node span{color:var(--mh-text-secondary)}
+.down{display:block;width:24px;height:24px;margin:12px auto;color:var(--mh-accent)}
+.core{padding:22px;background:var(--mh-accent);color:var(--mh-text-on-dark);text-align:center;font-size:14px;line-height:1.6}
+.core strong{display:block;font-size:21px;font-weight:600;margin-bottom:8px}
+.process{display:grid;grid-template-columns:1fr 24px 1fr;gap:8px;align-items:center}
+.right{width:24px;height:24px;color:var(--mh-accent)}
+.diagramNote{font-size:14px;line-height:1.6;margin-top:22px;padding-top:16px;border-top:1px solid var(--mh-divider);color:var(--mh-text-secondary)}
+.diagram figcaption{font-size:13px;line-height:1.6;color:var(--mh-text-secondary);margin-top:22px}
+.private{border-left:4px solid var(--mh-text-primary)}
+.allowed{border-left:4px solid var(--mh-accent)}
+.filter{text-align:center;color:var(--mh-accent-hover);font-size:14px;line-height:1.6}
+.filter strong{display:block;font-weight:600;margin-bottom:8px}
+.contact{background:var(--mh-surface);padding:64px 20px}
+.contact>div{max-width:760px;margin:auto}
+.contact h2{font-size:40px;line-height:1.15;margin:22px 0}
+.contact>div>p:not(.label){font-size:17px;line-height:1.6;color:var(--mh-text-secondary);margin-bottom:32px}
+@media(max-width:700px){.article{padding-top:32px;padding-bottom:64px}.hero h1{font-size:36px}.lead{font-size:18px}.contents ol,.inputs,.process{grid-template-columns:1fr}.prose>h2,.contact h2{font-size:28px;margin-top:48px}.diagram{padding:22px 16px}.right{transform:rotate(90deg);margin:auto}.diagram h3{font-size:22px}.contact{padding-block:48px}.hero h1,.prose h2,.diagram h3,.contact h2,.label{font-family:inherit}}
