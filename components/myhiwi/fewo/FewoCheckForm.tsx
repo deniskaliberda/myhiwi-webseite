@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 
 import { useConsent } from "@/components/analytics/ConsentProvider";
+import { trackContactAction } from "@/lib/websiteAnalytics";
 import { fireLeadConversions } from "@/lib/conversions";
 import { BtnGhost } from "@/components/myhiwi/cta/BtnGhost";
 import { BtnPrimary } from "@/components/myhiwi/cta/BtnPrimary";
@@ -28,7 +29,7 @@ function newEventId() {
  * browser-side Lead conversions when ad-tracking consent was granted.
  */
 export function FewoCheckForm() {
-  const { decision } = useConsent();
+  const { decision, analyticsEnabled } = useConsent();
   const adConsent = decision === "granted";
 
   const [name, setName] = useState("");
@@ -88,14 +89,15 @@ export function FewoCheckForm() {
           source: "fewo-direktbuchung",
         }),
       });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Anfrage konnte nicht gesendet werden.");
+      const data = await res.json().catch(() => null);
+      if (!res.ok || data?.success !== true) {
+        throw new Error(data?.error || "Anfrage konnte nicht gesendet werden.");
       }
       // Browser-side ad conversions (dedup against the server CAPI via eventId).
       if (adConsent) {
         fireLeadConversions(eventId);
       }
+      trackContactAction(analyticsEnabled, { form: "fewo" });
       setDone(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unbekannter Fehler");

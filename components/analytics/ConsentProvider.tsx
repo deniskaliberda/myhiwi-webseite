@@ -10,16 +10,19 @@ import {
 
 export type ConsentValue = "granted" | "denied";
 
-const STORAGE_KEY = "mh-consent-v1";
+// New vendor scope: do not reuse a previous ad-only opt-in.
+export const CONSENT_STORAGE_KEY = "mh-consent-v2";
 
 type ConsentState = {
   /** null = no decision yet (banner shown). */
   decision: ConsentValue | null;
+  analyticsEnabled: boolean;
   setDecision: (value: ConsentValue) => void;
 };
 
 const ConsentContext = createContext<ConsentState>({
   decision: null,
+  analyticsEnabled: false,
   setDecision: () => {},
 });
 
@@ -42,13 +45,19 @@ function applyGtagConsent(value: ConsentValue) {
   });
 }
 
-export function ConsentProvider({ children }: { children: React.ReactNode }) {
+export function ConsentProvider({
+  children,
+  analyticsEnabled = false,
+}: {
+  children: React.ReactNode;
+  analyticsEnabled?: boolean;
+}) {
   const [decision, setDecisionState] = useState<ConsentValue | null>(null);
 
   // Restore a previous choice on load.
   useEffect(() => {
     try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
+      const stored = window.localStorage.getItem(CONSENT_STORAGE_KEY);
       if (stored === "granted" || stored === "denied") {
         setDecisionState(stored);
       }
@@ -67,14 +76,14 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
   const setDecision = useCallback((value: ConsentValue) => {
     setDecisionState(value);
     try {
-      window.localStorage.setItem(STORAGE_KEY, value);
+      window.localStorage.setItem(CONSENT_STORAGE_KEY, value);
     } catch {
       // ignore storage access errors
     }
   }, []);
 
   return (
-    <ConsentContext.Provider value={{ decision, setDecision }}>
+    <ConsentContext.Provider value={{ decision, setDecision, analyticsEnabled }}>
       {children}
     </ConsentContext.Provider>
   );

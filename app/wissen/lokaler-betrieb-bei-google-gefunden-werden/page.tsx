@@ -9,7 +9,7 @@ import { FAQAccordion, type FAQItem } from "@/components/myhiwi/faq/FAQAccordion
 import { Section } from "@/components/myhiwi/layout/Section";
 import { SectionMark } from "@/components/myhiwi/layout/SectionMark";
 
-const UPDATED = "2026-06-02";
+const UPDATED = "2026-09-07";
 
 export const metadata: Metadata = {
   title: "Wie wird mein lokaler Betrieb bei Google gefunden? (2026)",
@@ -28,22 +28,22 @@ const faqCopy = [
   {
     question: "Was ist der schnellste Weg, lokal bei Google gefunden zu werden?",
     answer:
-      "Ein vollständig ausgefülltes Google-Unternehmensprofil mit präziser Kategorie, echten Fotos und aktuellen Bewertungen. Es erscheint in der Karten-Suche und ist der schnellste lokale Hebel — oft mit ersten Effekten in 30–90 Tagen, weitgehend unabhängig von der Website.",
+      "Prüfen Sie zuerst Ihr Google-Unternehmensprofil: passende Kategorie, korrekte Öffnungszeiten und Kontaktdaten sowie echte Fotos. Es kann in Google Maps und der Google-Suche erscheinen. Welche Maßnahme zuerst wirkt, hängt von der Ausgangslage und dem lokalen Wettbewerb ab.",
   },
   {
     question: "Brauche ich dafür eine Website?",
     answer:
-      "Zum Start nicht zwingend — das Profil reicht für die reine Auffindbarkeit. Sobald Anfragen strukturiert reinkommen, Buchungen/Zahlungen laufen oder Sie in der Google-Suche (nicht nur in der Karte) gefunden werden wollen, ist die eigene Website der nächste Schritt.",
+      "Ein Google-Unternehmensprofil kann auch ohne Website sichtbar sein. Eine eigene Website ergänzt ausführliche Leistungen, Referenzen und einen direkten Anfrage- oder Buchungsweg. Ob sie der nächste Schritt ist, hängt davon ab, welche Informationen und Funktionen Ihren Kunden fehlen.",
   },
   {
     question: "Wie lange dauert es, bis man Wirkung sieht?",
     answer:
-      "Im Map Pack oft 30–90 Tage für lokale Begriffe. Klassisches SEO (Google-Suche) ist ein 6–12-Monats-Aufbau. Wer sofort Anfragen braucht, kombiniert das mit Google Ads — Ads für jetzt, Profil + SEO als Fundament.",
+      "Eine feste Frist lässt sich nicht seriös zusagen. Erfassung und Bewertung von Änderungen brauchen Zeit; Ausgangslage, Wettbewerb und Nachfrage unterscheiden sich. Vergleichen Sie über mehrere Wochen passende Suchanfragen, Profilaktionen und tatsächlich eingegangene Anfragen.",
   },
   {
     question: "Werde ich damit auch in ChatGPT oder Perplexity empfohlen?",
     answer:
-      "Zunehmend ja. KI-Suchen greifen auf dieselben Signale zurück: ein gepflegtes Profil, konsistente Einträge in Verzeichnissen, Bewertungen und klare, fragen­orientierte Inhalte auf der Website. Wer lokal sauber aufgestellt ist, taucht auch in den KI-Antworten häufiger auf.",
+      "Das lässt sich nicht garantieren. Zugängliche Inhalte, klare Unternehmensangaben und belegbare Referenzen schaffen eine überprüfbare Grundlage. Welche Quellen ChatGPT, Perplexity oder Google für eine konkrete Antwort verwenden, hängt vom jeweiligen System und der Frage ab.",
   },
 ];
 
@@ -89,19 +89,19 @@ const steps = [
   {
     icon: MapPin,
     title: "1. Google-Unternehmensprofil",
-    text: "Der schnellste Hebel. Präzise Hauptkategorie, jedes Feld ausgefüllt, echte Fotos, Öffnungszeiten. Erscheint in der Karten-Suche.",
+    text: "Profil prüfen: passende Hauptkategorie, vollständige Unternehmensangaben, echte Fotos und aktuelle Öffnungszeiten. Kann in Maps und der Google-Suche erscheinen.",
     link: { href: "/wissen/brauche-ich-website-oder-google-profil", label: "Profil oder Website?" },
   },
   {
     icon: Star,
     title: "2. Bewertungen",
-    text: "Aktuelle, echte Bewertungen mit Text (Leistung + Region genannt) sind ein starkes lokales Signal. Recency schlägt reine Menge.",
+    text: "Bitten Sie Kunden um ehrliches Feedback zu ihrer Erfahrung und antworten Sie darauf. Keine Gegenleistungen und keine vorgegebenen Bewertungstexte.",
     link: null,
   },
   {
     icon: Globe,
     title: "3. Lokale Website",
-    text: "Eine Seite, die für „Betrieb + Ort“-Suchen gebaut ist — und in der Google-Suche, nicht nur in der Karte, gefunden wird.",
+    text: "Erklären Sie Ihre Leistungen und Ihr tatsächliches Einzugsgebiet. Echte Referenzen und klare Kontaktmöglichkeiten helfen Interessenten, Ihren Betrieb einzuschätzen.",
     link: { href: "/region/berlin-ost-barnim", label: "Region Berlin-Ost & Barnim" },
   },
   {
@@ -113,7 +113,7 @@ const steps = [
   {
     icon: TrendingUp,
     title: "5. Anzeigen (optional)",
-    text: "Für den sofortigen Hebel, während Profil + SEO wachsen. Optimiert auf echte Anfragen, nicht auf Klicks.",
+    text: "Anzeigen können zusätzliche Reichweite einkaufen. Ob daraus wirtschaftliche Anfragen entstehen, muss mit passender Zielseite, Budget und Messung geprüft werden.",
     link: { href: "/wissen/lohnt-sich-google-ads-kleine-unternehmen", label: "Lohnt sich Google Ads?" },
   },
 ];
@@ -133,15 +133,15 @@ export default function Page() {
             <em className="mh-italic-accent">Google gefunden</em>?
           </h1>
           <p className="mt-mh-3 mh-label-mono-sm text-mh-text-secondary">
-            <Link href="/ueber-mich" className="hover:text-mh-accent">Von Denis Kaliberda</Link> · aktualisiert 2. Juni 2026
+            <Link href="/ueber-mich" className="hover:text-mh-accent">Von Denis Kaliberda</Link> · aktualisiert 7. September 2026
           </p>
           <div className="mt-mh-5 rounded-mh-md border-l-4 border-mh-accent bg-mh-subtle px-mh-5 py-mh-4">
             <p className="mh-body-large text-mh-text-primary">
               Lokal gefunden zu werden hängt an fünf Bausteinen: einem vollständigen
               <strong> Google-Unternehmensprofil</strong>, <strong>Bewertungen</strong>, einer
               <strong> lokal optimierten Website</strong>, einem klaren <strong>Anfrageweg</strong>
-              {" "}und — optional — <strong>Anzeigen</strong> für den sofortigen Hebel. Der schnellste
-              davon ist das Profil: oft erste Effekte in 30–90 Tagen.
+              {" "}und — optional — <strong>Anzeigen</strong>. Beginnen Sie mit der Lücke, die
+              Ihren Kunden heute das Finden oder die Kontaktaufnahme erschwert.
             </p>
           </div>
         </Container>
@@ -153,6 +153,14 @@ export default function Page() {
           <h2 className="mt-mh-4 mh-display-3">
             Von der Suche zur <em className="mh-italic-accent">Anfrage</em>.
           </h2>
+          <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
+            Suchen Sie zuerst nach Ihrem Firmennamen und anschließend nach Ihrer Leistung
+            am tatsächlichen Standort. Fehlt schon der Firmeneintrag, prüfen Sie Profil
+            und Indexierung. Wird der Betrieb gefunden, aber selten kontaktiert, prüfen
+            Sie Leistungsbeschreibung, Referenzen und den Kontaktweg. Die konkrete
+            Unterstützung finden Sie unter{" "}
+            <Link href="/leistungen/google-sichtbarkeit" className="font-semibold text-mh-accent hover:text-mh-accent-hover">Google-Sichtbarkeit für lokale Betriebe</Link>.
+          </p>
           <div className="mt-mh-7 grid gap-mh-4">
             {steps.map((s) => (
               <Card key={s.title} as="article" className="grid gap-mh-4 sm:grid-cols-[52px_1fr] sm:items-start">
@@ -197,6 +205,14 @@ export default function Page() {
               </Link>
             ))}
           </div>
+          <p className="mt-mh-5 mh-body-medium text-mh-text-secondary">
+            Ein Beispiel für die Verbindung aus klarer Leistungsdarstellung und direktem
+            Kontaktweg ist die{" "}
+            <Link href="/case-studies/physio-antje-foerster" className="font-semibold text-mh-accent hover:text-mh-accent-hover">Website für Physiotherapie Antje Förster in Berlin-Karlshorst</Link>.
+            Für die lokale Reihenfolge nennt Google Relevanz, Entfernung und Bekanntheit
+            als zentrale Faktoren:{" "}
+            <a href="https://support.google.com/business/answer/7091?hl=de" className="font-semibold text-mh-accent hover:text-mh-accent-hover">Googles Hinweise zum lokalen Ranking</a>.
+          </p>
           <p className="mt-mh-5 mh-body-medium text-mh-text-secondary">
             Was das kostet, steht offen in{" "}
             <Link href="/wissen/was-kostet-website-handwerker" className="font-semibold text-mh-accent hover:text-mh-accent-hover">„Was kostet eine Website?"</Link>{" "}

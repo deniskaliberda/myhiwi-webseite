@@ -1,5 +1,7 @@
 "use client";
 
+import { useConsent } from "@/components/analytics/ConsentProvider";
+import { trackContactAction } from "@/lib/websiteAnalytics";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -26,6 +28,7 @@ export default function KontaktClient({
 }: {
   projectName?: string;
 }) {
+  const { analyticsEnabled } = useConsent();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -98,6 +101,7 @@ export default function KontaktClient({
         );
         return;
       }
+      trackContactAction(analyticsEnabled, { form: "kontakt" });
       setDone(true);
     } catch {
       setError(
