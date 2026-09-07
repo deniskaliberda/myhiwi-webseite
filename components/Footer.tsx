@@ -12,7 +12,7 @@ const leistungen = [
 const caseStudies = [
   { label: "Sonnenhof Herrsching", href: "/case-studies/sonnenhof-herrsching" },
   { label: "Mr. Sherman Tanzstudio", href: "/case-studies/mr-sherman" },
-  { label: "Formazin · KI-Agent", href: "/case-studies/formazin" },
+  { label: "Formazin · Energieberatung", href: "/case-studies/formazin" },
   { label: "Alle Case Studies", href: "/case-studies" },
 ];
 

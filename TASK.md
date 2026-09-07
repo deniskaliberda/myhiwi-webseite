@@ -7,28 +7,24 @@
 | updated | 2026-09-07 |
 | agent | Codex |
 | repo | myhiwi-webseite |
-| accepted_commit | 5226331 (base) |
+| accepted_commit | e30ebad |
 
 ## Objective
-Publish the user-approved long LinkedIn-Hiwi blog on myhiwi.de after casual-language and factual review. Then prepare a LinkedIn post based on its verified live URL.
+Update the Formazin case study with verified current public content and website screenshots. Deliver tested changes and a reviewable preview with the publication status.
 
 ## Constraints
-Denis explicitly authorized publishing after the review on 7 September. Preserve unrelated work in the original checkout. Worktree based on origin/main. Keep planned data isolation distinct from verified capabilities. No blanket GDPR claims. Use the approved Higgsfield illustration and two accurate diagrams. No LinkedIn post publication authorized yet.
-
-## Acceptance
-Production build and lint pass. Article, cover, author/date, canonical, structured data, listing, sitemap and RSS resolve correctly. Production URL verified after release.
+Own worktree and branch codex/formazin-case-study-20260907 from origin/main. Preserve original checkout, customer sites and all blog work. Denis authorized publication with “go” on 7 September 2026. No external messages. Only public facts and approved live visuals; no internal customer information or invented results. Reuse canonical DESIGN.md and existing case components for this authorized content refresh.
 
 ## Decisions
-- Existing brand tokens, isolated article CSS, server-rendered content.
-- Publication source: content/blog/linkedin-hiwi.json, reused by discovery pages.
-- Local image asset avoids a third-party media request from readers.
+- Current main and the public case use the shared case-study data, unlike the older original checkout.
+- Direct browser verification takes precedence over the stale web-search snapshot.
+- Use dated screenshots of the live energy overview and services. Remove the obsolete image comparison and unsupported delivery totals. Unknown outcomes remain explicitly open.
 
 ## Failed approaches
-- Old README names master; repository default branch is main.
-- A browser attempt to open the earlier local HTML file was blocked by URL policy. Do not bypass that block.
+- Search crawl returns an older energy page; direct browser shows the current 6 September release.
 
 ## Next
-Build, lint and generated-page checks passed. Publish the isolated change, then verify production article, image, metadata and discovery routes.
+Merge approved PR #7 and verify the automatic production deployment on myhiwi.de. Preserve all unrelated work.
 
 ## Evidence
-Production build passed for 52 routes. Lint passed with two existing image warnings in unrelated components. Generated-page check passed: one H1, three figures, valid anchors, author/date/canonical/BlogPosting, listing/RSS/sitemap and no internal paths or remote media URLs.
+See docs/verification/formazin-case-study-2026-09-07.md. Build 52 routes, lint/types passed; three Playwright checks passed. Desktop 1440/mobile 390 images loaded without overflow. Preview dpl_8PKX9fdo3kyQV27thBG6s85gWNKC Ready; authenticated HTML and byte-identical cover verified.
