@@ -358,3 +358,8 @@ Die zugehörige Karte in der Blogübersicht übernimmt Bild, Maße und Alternati
 **Tokens:** Bricolage/Inter, `mh-surface`, `mh-card`, `mh-divider`, `mh-accent`, `mh-text-primary`, `mh-text-secondary`.
 **Mobile:** Prozesskarten untereinander, Pfeile drehen in Leserichtung; Fließtexte mit mindestens 14px und kleinere Schrittmarkierungen. Die Zugriffsgrenze bleibt als eigener beschrifteter Bereich sichtbar.
 **Verwenden:** Nur im Abschnitt zum geplanten Redaktionszugriff. Kein Nachweis eingerichteter Berechtigungen; Herkunft „Schematische Webgrafik · MyHiwi“, keine Higgsfield-Zuschreibung.
+
+
+### Einwilligungseinstellungen (Datenschutz)
+
+`components/analytics/ConsentSettings.tsx` ergänzt den vorhandenen Consent-Banner. Zeigt den gespeicherten Status und ermöglicht Widerruf oder Zustimmung. Verwendet bestehende Text-, Abstands-, Rand- und Pill-Tokens; Schaltflächen umbrechen auf schmalen Geräten. Keine neue visuelle Variante außerhalb der Rechtstextseite.

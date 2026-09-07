@@ -1,28 +1,19 @@
 # Task
 
-| Field | Value |
-|---|---|
-| status | active |
-| phase | release |
-| updated | 2026-09-07 |
-| agent | Codex |
-| accepted_commit | fada8c1 (release base) |
-
 ## Objective
-Manni-Projektdarstellung auf MyHiwi mit echten aktuellen Desktop-/Mobilaufnahmen aktualisieren und autorisiert veröffentlichen.
+Autorisiertes Go zum organischen 90-Tage-Plan: Messgrundlage, wichtige Inhaltskorrekturen und interne Links umsetzen; Google-Indexierungsauffälligkeiten live untersuchen.
 
 ## Constraints
-Isolierter Worktree ab origin/main inklusive fada8c1. Keine Änderungen an Manni-Kundenwebsite, fremden Worktrees, Formazin oder Blog. Historisches Vorherbild und weiterhin gültiges Anmeldedetail erhalten. Keine Kennzahlen-/Erfolgsbehauptungen ändern, keine Formularsendung.
+Eigener Worktree ab origin/main 418009b. Fremde Änderungen erhalten. Keine Kontakt-E-Mails als Live-Test, kein Outreach. Optionale Messung nur nach Einwilligung, keine Formulardaten in Analytics. Keine erfundenen Rankings oder Kundenergebnisse.
 
 ## Decisions
-Frische Browseraufnahmen der öffentlichen Manni-Startseite am 07.09., Desktop1440×900 und Mobil390×844. Optimierte WebP-Dateien in datiertem Unterordner; zentrale Verweise aktualisieren Cover, Teaser, Nachheransicht, Mobilgalerie, OG/Twitter/JSON-LD gemeinsam. Bildunterschriften und Aktualisierungsdatum auf Aufnahmetag setzen.
+Vercel Web Analytics zählt nur Produktion auf myhiwi.de nach Zustimmung. Bestätigte Formularsendungen und Telefon-/E-Mail-Klicks getrennt auswerten. Query-Parameter und Fragmente entfernen; interne QA kann Messung abschalten. Vorhandene Leistungsseiten stärken statt doppelte Inhalte bauen.
 
 ## Failed approaches
-Keine offenen Fehlversuche.
+Baseline-Build erfolgreich, aber ESLint kollidiert im verschachtelten Worktree mit der übergeordneten Konfiguration. root:true isoliert die Repository-Konfiguration.
 
 ## Next
-Build, TypeScript/Lint, responsive Darstellung, Datenvergleich und Metadatenprüfung grün. Eigenen Commit/PR veröffentlichen, Produktion öffentlich verifizieren und Arbeitsmittel schließen.
+Build inkl. TypeScript/Lint und 26 relevante Prüfungen grün. Mobile Einwilligungseinstellungen und drei Inhaltsseiten geprüft; ungültige alte Banner-Hintergrundklasse korrigiert. Beide auffälligen URLs sind im GSC-Live-Test abrufbar und selbstkanonisch; erneute Indexierung beantragt. Änderungen veröffentlichen, Produktion messen und aktuelle Sitemap einreichen.
 
-## Evidence
-/Users/myhiwi/Documents/Codex/2026-09-07/myhiwi-manni-reference-refresh
-Claim 20260907-131539-codex-manni-referenzbilder-auf-fre
+## accepted_commit
+418009b8d7eb9b43afcc90e49cd047fba1842dd9 (Ausgangsbasis)

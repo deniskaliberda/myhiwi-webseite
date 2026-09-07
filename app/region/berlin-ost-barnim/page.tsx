@@ -42,7 +42,7 @@ const faqCopy = [
   {
     question: "Werde ich damit für „in der Nähe“-Suchen gefunden?",
     answer:
-      "Genau darauf ist die Arbeit ausgerichtet: ein vollständiges Google-Unternehmensprofil plus eine Website, die für lokale Suchen (z. B. „Betrieb + Ort“) optimiert ist. Die Nähe zu Ahrensfelde/Barnim ist dabei ein Vorteil — für regionale Suchen ist die Hürde deutlich niedriger als für ein generisches „Berlin“.",
+      "Darauf arbeiten wir hin: mit passenden Unternehmensangaben, nachvollziehbaren Leistungen und einem klaren Kontaktweg. Google berücksichtigt bei lokalen Ergebnissen unter anderem Relevanz, Entfernung und Bekanntheit. Ob Ihr Betrieb erscheint, hängt auch vom Suchstandort und Wettbewerb ab; eine Platzierung lässt sich nicht garantieren.",
   },
   {
     question: "Was kostet das?",
@@ -162,15 +162,15 @@ export default function Page() {
                 Nähe ist Ihr <em className="mh-italic-accent">Vorteil</em>.
               </h2>
               <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
-                Für lokale Suchen zählt die Distanz. Ein Betrieb in Ahrensfelde oder im Barnim
-                rankt für regionale Suchen deutlich leichter als für ein generisches „Berlin" —
-                wenn das Google-Profil und die Website sauber darauf ausgerichtet sind. Genau das
-                bauen wir.
+                MyHiwi sitzt in Ahrensfelde. Wir beschreiben Ihr tatsächliches Einzugsgebiet
+                und die Leistungen, für die Kunden Sie suchen. Relevanz, Entfernung und
+                Bekanntheit beeinflussen lokale Ergebnisse; der Standort allein reicht
+                deshalb nicht für eine gute Platzierung.
               </p>
             </div>
             <div className="grid gap-mh-3">
               {[
-                "Vollständiges Google-Unternehmensprofil, das in der Karten-Suche erscheint.",
+                "Vollständiges Google-Unternehmensprofil für Maps und Google-Suche.",
                 "Website, die für „Betrieb + Ort“-Suchen optimiert ist.",
                 "Sauberer Anfrage-/Buchungsweg statt verstreuter Anrufe.",
                 "Persönlich vor Ort — kein Account-Manager dazwischen.",
@@ -182,6 +182,19 @@ export default function Page() {
               ))}
             </div>
           </div>
+        </Container>
+      </Section>
+
+      <Section background="paper" padding="compact">
+        <Container className="max-w-[820px]">
+          <h2 className="mh-display-4">Projekte aus Berlin und Brandenburg</h2>
+          <p className="mt-mh-4 mh-body-medium text-mh-text-secondary">
+            Die <Link href="/case-studies/physio-antje-foerster" className="font-semibold text-mh-accent hover:text-mh-accent-hover">Website für Physiotherapie Antje Förster in Berlin-Karlshorst</Link> und
+            die <Link href="/case-studies/formazin" className="font-semibold text-mh-accent hover:text-mh-accent-hover">Website für Formazin in Berlin und Brandenburg</Link> zeigen
+            konkrete Arbeiten. Umfang und Umsetzung sind in den Projektbeschreibungen dokumentiert.
+            Mehr zu unserer Arbeit an Profil, Website und Kontaktweg steht unter{" "}
+            <Link href="/leistungen/google-sichtbarkeit" className="font-semibold text-mh-accent hover:text-mh-accent-hover">Google-Sichtbarkeit</Link>.
+          </p>
         </Container>
       </Section>
 

@@ -1,3 +1,4 @@
+import { ConsentSettings } from "@/components/analytics/ConsentSettings";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -226,7 +227,7 @@ export default function DatenschutzPage() {
               6. Cookies, Reichweitenmessung und Werbeerfolgsmessung
             </h2>
             <p className="text-slate-700 mb-4">
-              Optionale Cookies sowie Mess- und Werbe-Tools (Meta, Google) werden
+              Optionale Cookies sowie Mess- und Werbe-Tools (Vercel, Meta, Google) werden
               auf myhiwi.de <strong>erst nach Ihrer aktiven Einwilligung</strong> über
               unseren Cookie-Banner geladen (Opt-in, keine Vorauswahl). Ohne
               Zustimmung werden weder das Meta-Pixel noch Google Ads/Analytics
@@ -238,9 +239,34 @@ export default function DatenschutzPage() {
               Rechtsgrundlage für den Einsatz der optionalen Tools ist Ihre
               Einwilligung gemäß <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> sowie
               § 25 Abs. 1 TDDDG. Ihre Einwilligung ist freiwillig und kann jederzeit
-              mit Wirkung für die Zukunft widerrufen werden — durch erneutes Öffnen
-              des Cookie-Banners oder durch Löschen der lokal gespeicherten
-              Entscheidung in Ihrem Browser.
+              mit Wirkung für die Zukunft über die folgenden Einstellungen widerrufen werden.
+              Ihre Entscheidung speichern wir lokal in Ihrem Browser.
+            </p>
+
+            <ConsentSettings />
+
+            <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
+              Vercel Web Analytics
+            </h3>
+            <p className="text-slate-700 mb-4">
+              Nach Ihrer Zustimmung nutzen wir Vercel Web Analytics (Vercel Inc.,
+              Anschrift siehe Hosting), um Seitenaufrufe, bestätigte Formularsendungen
+              und Klicks auf Telefon- oder E-Mail-Links statistisch auszuwerten.
+              Vercel verarbeitet unter anderem die aufgerufene Seite, die Herkunftsseite,
+              Zeitpunkt, Geräte- und Browserinformationen sowie einen ungefähren Standort.
+              Die Messung verwendet keine Drittanbieter-Cookies. Vercel bildet eine
+              Kennung aus der eingehenden Anfrage; diese wird nach 24 Stunden verworfen.
+            </p>
+            <p className="text-slate-700 mb-4">
+              Wir entfernen Query-Parameter und URL-Fragmente aus der gemessenen
+              Seitenadresse. Inhalte der Kontaktfelder werden nicht als
+              Analytics-Ereignisdaten übermittelt. Bei Kontaktaktionen speichern wir
+              nur die Formularart oder den Kanal (Telefon/E-Mail). Es können Daten
+              in den USA verarbeitet werden; die Hinweise zu Vercel unter Hosting gelten
+              entsprechend. Weitere Informationen zur Verarbeitung und Speicherung:{" "}
+              <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                Vercel Web Analytics – Datenschutz
+              </a>.
             </p>
 
             <h3 className="text-xl font-inter font-bold text-primary mb-3 mt-6">
@@ -443,7 +469,7 @@ export default function DatenschutzPage() {
               9. Aktualität und Änderungen dieser Datenschutzerklärung
             </h2>
             <p className="text-slate-700">
-              Diese Datenschutzerklärung hat den Stand <strong>Juni 2026</strong>. Durch die
+              Diese Datenschutzerklärung hat den Stand <strong>September 2026</strong>. Durch die
               Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter
               gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden,
               diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung

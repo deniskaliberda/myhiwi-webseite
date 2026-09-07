@@ -12,6 +12,7 @@ import "./globals.css";
 import SiteShell from "@/components/layout/SiteShell";
 import { ConsentProvider } from "@/components/analytics/ConsentProvider";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
+import { WebsiteAnalytics } from "@/components/analytics/WebsiteAnalytics";
 import { MetaPixel } from "@/components/analytics/MetaPixel";
 
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID?.trim() || "";
@@ -178,9 +179,10 @@ export default function RootLayout({
             />
           </>
         ) : null}
-        <ConsentProvider>
+        <ConsentProvider analyticsEnabled={process.env.VERCEL_ENV === "production"}>
           <SiteShell>{children}</SiteShell>
           <MetaPixel />
+          <WebsiteAnalytics />
           <ConsentBanner />
         </ConsentProvider>
       </body>

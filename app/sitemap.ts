@@ -129,7 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/wissen/brauche-ich-website-oder-google-profil`,
-      lastModified: new Date("2026-06-02"),
+      lastModified: new Date("2026-09-07"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -147,7 +147,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/wissen/lokaler-betrieb-bei-google-gefunden-werden`,
-      lastModified: new Date("2026-06-02"),
+      lastModified: new Date("2026-09-07"),
       changeFrequency: "monthly",
       priority: 0.85,
     },
@@ -159,7 +159,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/region/berlin-ost-barnim`,
-      lastModified: new Date("2026-06-02"),
+      lastModified: new Date("2026-09-07"),
       changeFrequency: "monthly",
       priority: 0.85,
     },

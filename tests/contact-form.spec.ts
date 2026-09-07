@@ -1,5 +1,9 @@
 import { expect, test, type Page } from "@playwright/test";
 
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("mh-consent-v2", "denied"));
+});
+
 async function fillInquiry(page: Page) {
   await page.locator("#name").fill("Mara Muster");
   await page.locator("#email").fill("mara@example.test");
