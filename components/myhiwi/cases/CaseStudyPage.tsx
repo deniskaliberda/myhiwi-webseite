@@ -251,18 +251,18 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
             className={styles.section}
             aria-labelledby="comparison-heading"
           >
-            <Marker number="02">Vorher &amp; heute</Marker>
+            <Marker number="02">{study.comparison.eyebrow ?? "Vorher & heute"}</Marker>
             <h2 id="comparison-heading">
-              Der Unterschied im direkten Vergleich.
+              {study.comparison.title ?? "Der Unterschied im direkten Vergleich."}
             </h2>
             <p className={styles.sectionLead}>{study.comparison.note}</p>
             <div className={styles.pair}>
               <div>
-                <h3 className={styles.imageLabel}>Vorher</h3>
+                <h3 className={styles.imageLabel}>{study.comparison.beforeLabel ?? "Vorher"}</h3>
                 <ProjectImage image={study.comparison.before} full />
               </div>
               <div>
-                <h3 className={styles.imageLabel}>Heute</h3>
+                <h3 className={styles.imageLabel}>{study.comparison.afterLabel ?? "Heute"}</h3>
                 <ProjectImage image={study.comparison.after} full />
               </div>
             </div>
