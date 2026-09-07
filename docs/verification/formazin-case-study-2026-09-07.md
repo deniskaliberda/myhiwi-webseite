@@ -49,3 +49,13 @@ Diese Änderung ist für die Vorschau und Prüfung vorbereitet. Sie veröffentli
 ## Freigabe zur Veröffentlichung
 
 Denis hat die geprüfte Änderung am 7. September 2026 mit „go“ zur Veröffentlichung freigegeben. Die oben dokumentierte Vorschauprüfung bleibt gültig; die Produktionsprüfung folgt nach dem Merge.
+
+## Veröffentlichung abgeschlossen
+
+- Denis-Freigabe „go“ ausgeführt. PR #7 am 7. September 2026 zusammengeführt, Main `9a33b3c`.
+- Produktion `dpl_EJKAmbV1ojJ7iWuLv8wzUsng2j5R` Ready, Aliase myhiwi.de und www.myhiwi.de zugewiesen.
+- Öffentliche Fallstudie direkt im Browser geprüft: aktueller Titel, Datum 07.09.2026, drei datierte Bilder vollständig geladen, korrekter Canonical und Open-Graph-Bildpfad, Ergebnisse ausdrücklich offen.
+- Desktop 1440 und Mobil 390 ohne horizontale Überbreite. Keine Browser-Laufzeitfehler. Kein Formular versendet.
+- Startseite, Referenzübersicht und beide Formazin-Leistungsteaser liefern HTTP 200 und referenzieren das neue Cover. Sitemap und alle drei neuen Original-Bilddateien liefern HTTP 200.
+- Eigene Browser-Sitzung beendet. Keine lokalen Server gestartet. Originalcheckout und separate Blogarbeit unverändert.
+- Diese Abschlussnotiz ist auf dem Arbeitsbranch gesichert; die veröffentlichte Implementierung ist Main `9a33b3c`.

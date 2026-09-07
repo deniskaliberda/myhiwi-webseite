@@ -2,12 +2,12 @@
 
 | Field | Value |
 |---|---|
-| status | active |
-| phase | publish |
+| status | complete |
+| phase | live |
 | updated | 2026-09-07 |
 | agent | Codex |
 | repo | myhiwi-webseite |
-| accepted_commit | e30ebad |
+| accepted_commit | 9a33b3c (merged and live) |
 
 ## Objective
 Update the Formazin case study with verified current public content and website screenshots. Deliver tested changes and a reviewable preview with the publication status.
@@ -24,7 +24,7 @@ Own worktree and branch codex/formazin-case-study-20260907 from origin/main. Pre
 - Search crawl returns an older energy page; direct browser shows the current 6 September release.
 
 ## Next
-Merge approved PR #7 and verify the automatic production deployment on myhiwi.de. Preserve all unrelated work.
+No remaining action. PR #7 merged, production Ready, public domain verified. Original checkout and blog work preserved.
 
 ## Evidence
-See docs/verification/formazin-case-study-2026-09-07.md. Build 52 routes, lint/types passed; three Playwright checks passed. Desktop 1440/mobile 390 images loaded without overflow. Preview dpl_8PKX9fdo3kyQV27thBG6s85gWNKC Ready; authenticated HTML and byte-identical cover verified.
+See docs/verification/formazin-case-study-2026-09-07.md. Build 52 routes, lint/types passed; three Playwright checks passed. Desktop 1440/mobile 390 images loaded without overflow. Production dpl_EJKAmbV1ojJ7iWuLv8wzUsng2j5R Ready; myhiwi.de desktop/mobile, updated images, cards, metadata and links verified.
