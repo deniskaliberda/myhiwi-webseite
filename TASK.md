@@ -10,10 +10,10 @@ Eigener Worktree ab origin/main 418009b. Fremde Änderungen erhalten. Keine Kont
 Vercel Web Analytics zählt nur Produktion auf myhiwi.de nach Zustimmung. Bestätigte Formularsendungen und Telefon-/E-Mail-Klicks getrennt auswerten. Query-Parameter und Fragmente entfernen; interne QA kann Messung abschalten. Vorhandene Leistungsseiten stärken statt doppelte Inhalte bauen.
 
 ## Failed approaches
-Baseline-Build erfolgreich, aber ESLint kollidiert im verschachtelten Worktree mit der übergeordneten Konfiguration. root:true isoliert die Repository-Konfiguration.
+Baseline-Build erfolgreich, aber ESLint kollidiert im verschachtelten Worktree mit der übergeordneten Konfiguration. root:true isoliert die Repository-Konfiguration. Headless-Live-Messung wird vom Vercel-Script ausgeschlossen; regulärer Chrome bestätigt die Datenaufnahme.
 
 ## Next
-Build inkl. TypeScript/Lint und 26 relevante Prüfungen grün. Mobile Einwilligungseinstellungen und drei Inhaltsseiten geprüft; ungültige alte Banner-Hintergrundklasse korrigiert. Beide auffälligen URLs sind im GSC-Live-Test abrufbar und selbstkanonisch; erneute Indexierung beantragt. Änderungen veröffentlichen, Produktion messen und aktuelle Sitemap einreichen.
+Erste Prioritäten abgeschlossen und live: PR #11, Produktionsdeployment bereit, drei dokumentierte QA-Seitenaufrufe in Vercel bestätigt. Fünf GSC-Indexierungsanträge bestätigt; Sitemap am 07.09. erfolgreich neu gelesen mit 40 URLs. Eigene Tabs und Testserver geschlossen. Spätere Indexaufnahme und 28-Tage-Vergleich bleiben Folgearbeit im 90-Tage-Plan.
 
 ## accepted_commit
-418009b8d7eb9b43afcc90e49cd047fba1842dd9 (Ausgangsbasis)
+1e1233497da0261026a4b65a0e51382d02714cff (verifizierte Produktion)
