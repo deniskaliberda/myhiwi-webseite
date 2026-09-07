@@ -77,7 +77,7 @@ const content: ServiceContent = {
   ],
   evidence: [
     { slug: "physio-antje-foerster", context: "Von der alten Jimdo-Seite zum eigenen Praxisauftritt: verständliche Therapieseiten, mobile Kontaktwege und ein dokumentierter Vorher-nachher-Vergleich. Der August ist der erste vollständige Messmonat." },
-    { slug: "formazin", context: "Energieberatung wird zu einem klaren Angebot: fachliche Leistungen, regionale Einstiege und passende Anfragewege für private und gewerbliche Vorhaben. Der neue Gestaltungsstand ist seit 4. September online." },
+    { slug: "formazin", context: "Architektur, Ingenieurleistungen und Energieberatung werden mit echten Projektfotos, verständlichen Erklärgrafiken und passenden Anfragewegen erschlossen. Die aktuelle Überarbeitung ist seit 6. September 2026 online." },
   ],
   measurement: {
     title: "Eine Website ist fertig, wenn der Weg funktioniert.",

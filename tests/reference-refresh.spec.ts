@@ -8,7 +8,7 @@ const projects = [
     result: "133",
   },
   { slug: "mannis-fahrschule", name: "Mannis Fahrschule", result: "21" },
-  { slug: "formazin", name: "Formazin & Partner", result: "16" },
+  { slug: "formazin", name: "Formazin & Partner", result: "5" },
   { slug: "mr-sherman", name: "Mr. Sherman", result: "4" },
 ];
 
@@ -18,7 +18,7 @@ for (const project of projects) {
     request,
   }) => {
     const path = `/case-studies/${project.slug}`;
-    const updated = "2026-09-06";
+    const updated = project.slug === "formazin" ? "2026-09-07" : "2026-09-06";
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(path);
@@ -52,7 +52,8 @@ for (const project of projects) {
     const og = await page
       .locator('meta[property="og:image"]')
       .getAttribute("content");
-    expect(og).toContain(`/case-studies/${project.slug}/cover.webp`);
+    const imageDirectory = project.slug === "formazin" ? "formazin/2026-09-07" : project.slug;
+    expect(og).toContain(`/case-studies/${imageDirectory}/cover.webp`);
     const image = await request.get(new URL(og!).pathname);
     expect(image.ok()).toBe(true);
     expect(image.headers()["content-type"]).toContain("image/webp");
