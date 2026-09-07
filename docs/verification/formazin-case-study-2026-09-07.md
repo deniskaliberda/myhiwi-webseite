@@ -45,3 +45,7 @@ Diese Änderung ist für die Vorschau und Prüfung vorbereitet. Sie veröffentli
 - Bestehender Vercel-Login-Schutz aktiv. Authentifizierter CLI-Abruf: Fallstudie und Cover HTTP 200. Titel, Datum, Canonical, datierter Bildpfad, offene Ergebnisse und entfernter Altvergleich bestätigt. Geliefertes Cover bytegleich mit geprüftem lokalem Asset.
 - Visuelle Desktop-/Mobilprüfung erfolgte lokal mit dem Produktionsbuild desselben Code-Commits. Die gehostete Vorschau wurde per authentifiziertem Abruf geprüft, nicht als eingeloggter Browsernutzer.
 - MyHiwi-Produktion zeigt weiterhin die frühere Fallstudie. Kein Merge und keine Veröffentlichung durchgeführt.
+
+## Freigabe zur Veröffentlichung
+
+Denis hat die geprüfte Änderung am 7. September 2026 mit „go“ zur Veröffentlichung freigegeben. Die oben dokumentierte Vorschauprüfung bleibt gültig; die Produktionsprüfung folgt nach dem Merge.

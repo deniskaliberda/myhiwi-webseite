@@ -2,8 +2,8 @@
 
 | Field | Value |
 |---|---|
-| status | complete |
-| phase | review |
+| status | active |
+| phase | publish |
 | updated | 2026-09-07 |
 | agent | Codex |
 | repo | myhiwi-webseite |
@@ -13,7 +13,7 @@
 Update the Formazin case study with verified current public content and website screenshots. Deliver tested changes and a reviewable preview with the publication status.
 
 ## Constraints
-Own worktree and branch codex/formazin-case-study-20260907 from origin/main. Preserve original checkout, customer sites and all blog work. No production publication or external messages. Only public facts and approved live visuals; no internal customer information or invented results. Reuse canonical DESIGN.md and existing case components for this authorized content refresh.
+Own worktree and branch codex/formazin-case-study-20260907 from origin/main. Preserve original checkout, customer sites and all blog work. Denis authorized publication with “go” on 7 September 2026. No external messages. Only public facts and approved live visuals; no internal customer information or invented results. Reuse canonical DESIGN.md and existing case components for this authorized content refresh.
 
 ## Decisions
 - Current main and the public case use the shared case-study data, unlike the older original checkout.
@@ -24,7 +24,7 @@ Own worktree and branch codex/formazin-case-study-20260907 from origin/main. Pre
 - Search crawl returns an older energy page; direct browser shows the current 6 September release.
 
 ## Next
-Review draft PR #7 and the protected Ready preview. Production publication is a separate next step; no merge performed.
+Merge approved PR #7 and verify the automatic production deployment on myhiwi.de. Preserve all unrelated work.
 
 ## Evidence
 See docs/verification/formazin-case-study-2026-09-07.md. Build 52 routes, lint/types passed; three Playwright checks passed. Desktop 1440/mobile 390 images loaded without overflow. Preview dpl_8PKX9fdo3kyQV27thBG6s85gWNKC Ready; authenticated HTML and byte-identical cover verified.
