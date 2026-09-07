@@ -2,29 +2,26 @@
 
 | Field | Value |
 |---|---|
-| status | complete |
-| phase | review |
+| status | active |
+| phase | release |
 | updated | 2026-09-07 |
 | agent | Codex |
-| repo | myhiwi-webseite |
-| accepted_commit | e3efddb |
+| accepted_commit | 55443cd (current production base, including Formazin PRs 7 and 8) |
 
 ## Objective
-Tell the full Formazin project story: MyHiwi built and launched the complete website, then expanded energy consulting into a specific offer and inquiry process. Prepare a tested revised preview and report the publication state.
+Publish the approved six-scene LinkedIn-Hiwi mosaic consistently as article hero, blog-listing image and social metadata image. Retain the selected briefing illustration and Higgsfield attribution. Verify the public article and image after release.
 
 ## Constraints
-Own branch codex/formazin-project-story-20260907 from origin/main in the existing isolated worktree. No blog or customer-site edits. Previous revision is live; this expanded narrative is a new preview. Public facts and approved live photos only. Built inquiry routes are not measured inquiries, sales or revenue. No unsupported premium/performance claims or invented historical screenshots.
+Denis explicitly authorized this publication and requested completion of the missing image update. Preserve the long article, existing diagrams and planned-state wording. No new image generation or LinkedIn-post changes. Preserve all current Formazin work and unrelated local files.
 
 ## Decisions
-- Homepage screenshot becomes the cover for the whole project.
-- Existing comparison component receives optional labels to show foundation and expansion using current screenshots, explicitly dated, rather than implying historical before/after photos.
-- Describe the actual portfolio filters, project detail pages, mobile navigation, structured inquiry steps and page metadata. Do not present implementation features as proven commercial outcomes.
+Continue existing PR 6 and its dedicated worktree. Merge current main into this branch; only TASK.md conflicted. Keep the approved mosaic uncropped, with accessible step text and a full-size link. Use the shared article image for hero, listing, OpenGraph, Twitter and BlogPosting metadata. Formazin production work from PRs 7 and 8 remains unchanged; its evidence is in docs/verification/formazin-project-story-2026-09-07.md.
 
 ## Failed approaches
-- Search crawl returned an older energy page; use direct public browser verification.
+The approved image update remained in unmerged PR 6. Newer changes to the shared TASK.md caused a merge conflict; no blog or Formazin application files conflicted.
 
 ## Next
-Review draft PR #8 and Ready preview dpl_DM5D6o5hzh6LvHJyFiAJgQr36KDJ. This expanded narrative is not published; current production remains 9a33b3c.
+Push the existing PR, merge after checks, wait for production, then verify public image bytes and page metadata.
 
 ## Evidence
-See docs/verification/formazin-project-story-2026-09-07.md. Build52 routes/typecheck/lint and 4 Playwright checks passed. Desktop1440/mobile390 images and layout verified. Hosted preview HTML and byte-identical cover verified.
+Approved mosaic 3504x2336; briefing 2688x1520. Combined production build passed. Desktop 1440px and mobile 390px browser verification passed for article and listing: no horizontal overflow, both illustrations load with natural aspect ratios, process text and attribution visible. Static HTML confirms article OG/Twitter/BlogPosting image consistency. Formazin implementation diff against current main is empty. See docs/verification/linkedin-hiwi-mosaic-2026-09-07.md.
