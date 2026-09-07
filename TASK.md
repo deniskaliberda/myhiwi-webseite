@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | status | active |
-| phase | verification |
+| phase | release |
 | updated | 2026-09-07 |
 | agent | Codex |
 | accepted_commit | 55443cd (current production base, including Formazin PRs 7 and 8) |
@@ -21,7 +21,7 @@ Continue existing PR 6 and its dedicated worktree. Merge current main into this 
 The approved image update remained in unmerged PR 6. Newer changes to the shared TASK.md caused a merge conflict; no blog or Formazin application files conflicted.
 
 ## Next
-Verify the combined build, desktop/mobile article and listing, and metadata. Push the existing PR, merge after checks, wait for production, then verify public image bytes and page metadata.
+Push the existing PR, merge after checks, wait for production, then verify public image bytes and page metadata.
 
 ## Evidence
-Approved mosaic 3504x2336; briefing 2688x1520. Previous image and build verification passed. Current release verification is pending after merging the newer production base.
+Approved mosaic 3504x2336; briefing 2688x1520. Combined production build passed. Desktop 1440px and mobile 390px browser verification passed for article and listing: no horizontal overflow, both illustrations load with natural aspect ratios, process text and attribution visible. Static HTML confirms article OG/Twitter/BlogPosting image consistency. Formazin implementation diff against current main is empty. See docs/verification/linkedin-hiwi-mosaic-2026-09-07.md.

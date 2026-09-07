@@ -349,3 +349,5 @@ Jede Komponente trägt:
 ### LinkedIn-Hiwi Prozessmosaik und Briefing-Illustration
 
 Das Hauptbild zeigt sechs nummerierte Szenen des redaktionellen Ablaufs. Eine native Liste wiederholt die Schrittbezeichnungen lesbar und zugänglich, auch mobil. Ein Link öffnet das Mosaik in voller Größe. `article.image` definiert zugleich das Social-Preview. Die ergänzende Briefing-Illustration steht unter der zugehörigen Artikelüberschrift. `article.illustrations` definiert Zuordnung, intrinsische Maße, Alternativtext, Label und Bildunterschrift. Beide vollbreit in der vorhandenen Textspalte, natürliches Seitenverhältnis, keine Beschneidung. Geplanter Datenzugriff ist direkt über dem zweiten Motiv als „Geplanter Ausbau“ gekennzeichnet. Bildunterschriften erläutern die schematische Darstellung und nennen Higgsfield. Die frühere dekorative Hero-Illustration entfällt.
+
+Die zugehörige Karte in der Blogübersicht übernimmt Bild, Maße und Alternativtext aus derselben Artikelquelle und zeigt das Mosaik ebenfalls unbeschnitten.

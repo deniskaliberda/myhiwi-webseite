@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import hiwiArticle from "@/content/blog/linkedin-hiwi.json";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -118,6 +119,16 @@ export default function BlogPage() {
               <li key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <Card interactive className="flex flex-col gap-mh-3">
+                  {post.slug === hiwiArticle.slug && (
+                    <Image
+                      src={hiwiArticle.image}
+                      width={hiwiArticle.imageWidth}
+                      height={hiwiArticle.imageHeight}
+                      alt={hiwiArticle.imageAlt}
+                      sizes="(max-width: 768px) calc(100vw - 80px), 820px"
+                      className="h-auto w-full"
+                    />
+                  )}
                   <div className="flex flex-wrap items-center gap-x-mh-3 gap-y-mh-2">
                     <span className="mh-label-mono-sm rounded-mh-pill bg-mh-accent-soft px-mh-3 py-1 text-mh-accent">
                       {post.category}
