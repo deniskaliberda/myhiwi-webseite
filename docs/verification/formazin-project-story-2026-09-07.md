@@ -36,3 +36,11 @@ Neue Revision als Vorschau vorbereitet. Produktion bleibt vorerst PR #7 / Main `
 ## Validierung der Revision
 
 Produktionsbuild mit 52 Routen, TypeScript und eingebundenem ESLint bestanden. Zwei bekannte `no-img-element`-Warnungen außerhalb der Änderung bleiben bestehen. Vier Playwright-Prüfungen bestanden: Formazin ohne JavaScript mit Kontaktweg/Metadaten/Bild, Startseite/Leistungen/Sitemap bei 360 px, Quellenangaben der Übersicht sowie die neue Entwicklungsdarstellung mit Regression der bisherigen Vergleichslabels bei Sonnenhof. Desktop 1440 und Mobil 390 visuell geprüft, alle fünf Bilder geladen und keine horizontale Überbreite oder Browser-Laufzeitfehler.
+
+## Geprüfte Vorschau
+
+- Code `e3efddb`, [Entwurfs-PR #8](https://github.com/deniskaliberda/myhiwi-webseite/pull/8).
+- [Vorschau der Gesamtgeschichte](https://myhiwi-webseite-joe6nkrtq-denis24.vercel.app/case-studies/formazin), Deployment `dpl_DM5D6o5hzh6LvHJyFiAJgQr36KDJ`, Target Preview, Ready.
+- Authentifizierte Vorschauabrufe von Fallstudie und Cover HTTP 200. Titel, Entwicklungslabels, Bilddatierung und offene Ergebnisgrenze im ausgelieferten HTML bestätigt. Neues Cover bytegleich mit dem lokal geprüften Asset.
+- Der bestehende Vercel-Zugriffsschutz bleibt bestehen. Visuelle Prüfung lokal mit dem Produktionsbuild desselben Code-Commits.
+- Kein Merge und keine neue Produktionsveröffentlichung. Task-Browser und lokaler Prüfserver nach Abschluss geschlossen.

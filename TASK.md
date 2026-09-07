@@ -2,12 +2,12 @@
 
 | Field | Value |
 |---|---|
-| status | active |
-| phase | preview |
+| status | complete |
+| phase | review |
 | updated | 2026-09-07 |
 | agent | Codex |
 | repo | myhiwi-webseite |
-| accepted_commit | 9a33b3c (current production base) |
+| accepted_commit | e3efddb |
 
 ## Objective
 Tell the full Formazin project story: MyHiwi built and launched the complete website, then expanded energy consulting into a specific offer and inquiry process. Prepare a tested revised preview and report the publication state.
@@ -24,7 +24,7 @@ Own branch codex/formazin-project-story-20260907 from origin/main in the existin
 - Search crawl returned an older energy page; use direct public browser verification.
 
 ## Next
-Build and four relevant Playwright checks passed. Prepare branch preview and draft PR, verify hosted HTML/images, then close task-owned sessions.
+Review draft PR #8 and Ready preview dpl_DM5D6o5hzh6LvHJyFiAJgQr36KDJ. This expanded narrative is not published; current production remains 9a33b3c.
 
 ## Evidence
-See docs/verification/formazin-project-story-2026-09-07.md. Build52 routes/typecheck/lint and 4 Playwright checks passed. Desktop1440/mobile390 images and layout verified.
+See docs/verification/formazin-project-story-2026-09-07.md. Build52 routes/typecheck/lint and 4 Playwright checks passed. Desktop1440/mobile390 images and layout verified. Hosted preview HTML and byte-identical cover verified.
