@@ -6,22 +6,19 @@
 | phase | release |
 | updated | 2026-09-07 |
 | agent | Codex |
-| accepted_commit | 55443cd (current production base, including Formazin PRs 7 and 8) |
+| accepted_commit | 3259d318220a3ce016a0bbe9bca13cf739276209 |
 
 ## Objective
-Publish the approved six-scene LinkedIn-Hiwi mosaic consistently as article hero, blog-listing image and social metadata image. Retain the selected briefing illustration and Higgsfield attribution. Verify the public article and image after release.
+Replace the rejected briefing illustration and redundant data diagram with one clear responsive web graphic explaining planned editorial access. Preserve the approved six-scene hero mosaic and publish the correction after coordinating screenshot review.
 
 ## Constraints
-Denis explicitly authorized this publication and requested completion of the missing image update. Preserve the long article, existing diagrams and planned-state wording. No new image generation or LinkedIn-post changes. Preserve all current Formazin work and unrelated local files.
+Explicitly authorized correction and release. Show internal customer files, Denis selecting and checking, separate approved briefing, text draft and final human review. No direct Text-Hiwi access to customer files; actual permissions still need implementation and verification. No legal compliance promise. Correct provenance, static/reduced-motion support, preserve other tasks and Formazin.
 
 ## Decisions
-Continue existing PR 6 and its dedicated worktree. Merge current main into this branch; only TASK.md conflicted. Keep the approved mosaic uncropped, with accessible step text and a full-size link. Use the shared article image for hero, listing, OpenGraph, Twitter and BlogPosting metadata. Formazin production work from PRs 7 and 8 remains unchanged; its evidence is in docs/verification/formazin-project-story-2026-09-07.md.
+New branch from current production main in existing isolated blog worktree. Default static HTML graphic with optional short animation. One illustration in this section; remove redundant data diagram and obsolete Higgsfield wording. Source task 01a07580-82b1-7bb2-adfa-839f306d1118 reviews screenshot before merge.
 
 ## Failed approaches
-The approved image update remained in unmerged PR 6. Newer changes to the shared TASK.md caused a merge conflict; no blog or Formazin application files conflicted.
+The generated image with a hand, folder and monitor did not explain selection or access boundaries and was rejected.
 
 ## Next
-Push the existing PR, merge after checks, wait for production, then verify public image bytes and page metadata.
-
-## Evidence
-Approved mosaic 3504x2336; briefing 2688x1520. Combined production build passed. Desktop 1440px and mobile 390px browser verification passed for article and listing: no horizontal overflow, both illustrations load with natural aspect ratios, process text and attribution visible. Static HTML confirms article OG/Twitter/BlogPosting image consistency. Formazin implementation diff against current main is empty. See docs/verification/linkedin-hiwi-mosaic-2026-09-07.md.
+Desktop screenshot reviewed by coordinating task: ready, no corrections. Production build and mobile/animation checks passed. Push PR, wait checks, merge authorized correction, verify public graphic and preserved mosaic.

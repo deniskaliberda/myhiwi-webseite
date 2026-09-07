@@ -340,14 +340,21 @@ Jede Komponente trägt:
 
 `app/blog/linkedin-hiwi/` rendert den von Denis bestätigten ausführlichen Artikel aus `content/blog/linkedin-hiwi.json`. Sprache: persönliche Ich-Perspektive, ausführlich und locker. Bild und Aufbau von Denis bestätigt; nach Sprach-/Faktencheck Veröffentlichung beauftragt.
 
-- Server-rendered article with one H1, visible author/date, local optimized Higgsfield illustration, native table of contents, readable paragraphs and two static diagrams.
+- Server-rendered article with one H1, visible author/date, local optimized Higgsfield illustration, native table of contents, readable paragraphs and two accessible diagrams.
 - `WorkflowDiagram`: conversation, selected facts, instructions, drafting and human review; MCP/tool access distinguished in the caption.
-- `DataDiagram`: planned selection of information before giving a reduced brief to the blog assistant; explicitly not presented as an existing isolation mechanism.
-- Scoped CSS uses the existing MyHiwi ink, blue, surface and divider tokens, Bricolage/Inter family and mobile system fonts. Diagram columns stack at 700px. No animation or new client-side code. Lucide arrows are decorative.
+- `EditorialAccessDiagram`: planned selection, separate briefing and explicit access boundary; optional short animation, complete static HTML content.
+- Scoped CSS uses the existing MyHiwi ink, blue, surface and divider tokens, Bricolage/Inter family and mobile system fonts. Diagram columns stack at 700px. The editorial-access graphic adds an optional 4.8-second highlight with reduced-motion support; Lucide arrows are decorative.
 - One final contact CTA uses the current relaunch wording. Canonical, article/share metadata, JSON-LD, blog listing, RSS and sitemap share article data.
 
-### LinkedIn-Hiwi Prozessmosaik und Briefing-Illustration
+### LinkedIn-Hiwi Prozessmosaik
 
-Das Hauptbild zeigt sechs nummerierte Szenen des redaktionellen Ablaufs. Eine native Liste wiederholt die Schrittbezeichnungen lesbar und zugänglich, auch mobil. Ein Link öffnet das Mosaik in voller Größe. `article.image` definiert zugleich das Social-Preview. Die ergänzende Briefing-Illustration steht unter der zugehörigen Artikelüberschrift. `article.illustrations` definiert Zuordnung, intrinsische Maße, Alternativtext, Label und Bildunterschrift. Beide vollbreit in der vorhandenen Textspalte, natürliches Seitenverhältnis, keine Beschneidung. Geplanter Datenzugriff ist direkt über dem zweiten Motiv als „Geplanter Ausbau“ gekennzeichnet. Bildunterschriften erläutern die schematische Darstellung und nennen Higgsfield. Die frühere dekorative Hero-Illustration entfällt.
+Das Hauptbild zeigt sechs nummerierte Szenen des redaktionellen Ablaufs. Eine native Liste wiederholt die Schrittbezeichnungen lesbar und zugänglich, auch mobil. Ein Link öffnet das Mosaik in voller Größe. `article.image` definiert zugleich das Social-Preview. Das Mosaik nutzt sein natürliches Seitenverhältnis ohne Beschneidung und nennt Higgsfield in der Bildunterschrift. Die abgelehnte ergänzende Illustration wird durch die unten beschriebene Webgrafik ersetzt.
 
 Die zugehörige Karte in der Blogübersicht übernimmt Bild, Maße und Alternativtext aus derselben Artikelquelle und zeigt das Mosaik ebenfalls unbeschnitten.
+
+### Geplanter Redaktionszugriff · LinkedIn-Hiwi
+**Zweck:** Ersetzt die abgelehnte Briefing-Illustration und das bisherige Datendiagramm durch eine gemeinsame Erklärung: interne Kundenablage, menschliche Auswahl, separates Briefing, Textentwurf, Prüfung.
+**Varianten:** Statisch als Standard; freiwillige, einmalige Hervorhebung über „Ablauf abspielen“. Bei `prefers-reduced-motion` bleibt die Darstellung statisch.
+**Tokens:** Bricolage/Inter, `mh-surface`, `mh-card`, `mh-divider`, `mh-accent`, `mh-text-primary`, `mh-text-secondary`.
+**Mobile:** Prozesskarten untereinander, Pfeile drehen in Leserichtung; Fließtexte mit mindestens 14px und kleinere Schrittmarkierungen. Die Zugriffsgrenze bleibt als eigener beschrifteter Bereich sichtbar.
+**Verwenden:** Nur im Abschnitt zum geplanten Redaktionszugriff. Kein Nachweis eingerichteter Berechtigungen; Herkunft „Schematische Webgrafik · MyHiwi“, keine Higgsfield-Zuschreibung.
