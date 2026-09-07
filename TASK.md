@@ -2,12 +2,12 @@
 
 | Field | Value |
 |---|---|
-| status | active |
-| phase | preview |
+| status | complete |
+| phase | review |
 | updated | 2026-09-07 |
 | agent | Codex |
 | repo | myhiwi-webseite |
-| accepted_commit | 21cd792 (origin/main base) |
+| accepted_commit | e30ebad |
 
 ## Objective
 Update the Formazin case study with verified current public content and website screenshots. Deliver tested changes and a reviewable preview with the publication status.
@@ -24,7 +24,7 @@ Own worktree and branch codex/formazin-case-study-20260907 from origin/main. Pre
 - Search crawl returns an older energy page; direct browser shows the current 6 September release.
 
 ## Next
-Build, lint and three relevant browser tests passed. Create the branch preview and draft PR, verify deployed pages, then close task-owned browser/server.
+Review draft PR #7 and the protected Ready preview. Production publication is a separate next step; no merge performed.
 
 ## Evidence
-See docs/verification/formazin-case-study-2026-09-07.md. Build 52 routes, lint/types passed; three Playwright checks passed. Desktop 1440/mobile 390 images loaded without overflow.
+See docs/verification/formazin-case-study-2026-09-07.md. Build 52 routes, lint/types passed; three Playwright checks passed. Desktop 1440/mobile 390 images loaded without overflow. Preview dpl_8PKX9fdo3kyQV27thBG6s85gWNKC Ready; authenticated HTML and byte-identical cover verified.

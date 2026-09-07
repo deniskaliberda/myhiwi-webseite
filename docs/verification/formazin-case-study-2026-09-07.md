@@ -36,3 +36,12 @@ Der Suchmaschinenabruf lieferte noch eine längere, ältere Energieübersicht mi
 ## Veröffentlichungsgrenze
 
 Diese Änderung ist für die Vorschau und Prüfung vorbereitet. Sie veröffentlicht die MyHiwi-Fallstudie nicht auf Produktion. Die in den Bildern gezeigte Formazin-Kundenwebsite ist bereits öffentlich.
+
+## Geprüfte Vorschau
+
+- Code-Commit: `e30ebad`.
+- [Entwurfs-PR #7](https://github.com/deniskaliberda/myhiwi-webseite/pull/7), offen und mergebar.
+- [Vercel-Vorschau](https://myhiwi-webseite-bzsbaguqn-denis24.vercel.app/case-studies/formazin), Target Preview, Ready, Deployment `dpl_8PKX9fdo3kyQV27thBG6s85gWNKC`.
+- Bestehender Vercel-Login-Schutz aktiv. Authentifizierter CLI-Abruf: Fallstudie und Cover HTTP 200. Titel, Datum, Canonical, datierter Bildpfad, offene Ergebnisse und entfernter Altvergleich bestätigt. Geliefertes Cover bytegleich mit geprüftem lokalem Asset.
+- Visuelle Desktop-/Mobilprüfung erfolgte lokal mit dem Produktionsbuild desselben Code-Commits. Die gehostete Vorschau wurde per authentifiziertem Abruf geprüft, nicht als eingeloggter Browsernutzer.
+- MyHiwi-Produktion zeigt weiterhin die frühere Fallstudie. Kein Merge und keine Veröffentlichung durchgeführt.
