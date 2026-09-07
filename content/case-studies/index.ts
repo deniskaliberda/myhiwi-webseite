@@ -412,12 +412,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     standfirst:
       "Mannis Fahrschule war bereits sichtbar. Unsere Aufgabe war, den Weg vom Interesse zur Anfrage einfacher zu machen: mit einer neuen Website, lokalen und fachlichen Einstiegen, einem Anfrage-Assistenten und einer digitalen Anmeldung.",
     website: "https://mannis-fahrschule.com",
-    updated: "2026-09-06",
+    updated: "2026-09-07",
     cover: {
-      src: asset("mannis-fahrschule", "cover.webp"),
+      src: asset("mannis-fahrschule", "2026-09-07/cover.webp"),
       alt: "Neue Website von Mannis Fahrschule",
       caption:
-        "Aktuelle Startseite mit direktem Anmeldeweg, aufgenommen am 5. September 2026.",
+        "Aktuelle Startseite mit Fahrlehrerfoto und direktem Anmeldeweg, aufgenommen am 7. September 2026.",
     },
     services: [
       { label: "Webseiten", href: "/leistungen/webseiten" },
@@ -492,18 +492,18 @@ export const CASE_STUDIES: CaseStudy[] = [
           "Archivierte Startseite vom 23. Juni 2026; der damalige Cookie-Zustand ist erhalten.",
       },
       after: {
-        src: asset("mannis-fahrschule", "cover.webp"),
+        src: asset("mannis-fahrschule", "2026-09-07/cover.webp"),
         alt: "Neue Website von Mannis Fahrschule nach dem Relaunch",
-        caption: "Aktuelle Startseite, aufgenommen am 5. September 2026.",
+        caption: "Aktuelle Startseite mit überarbeitetem Hero, aufgenommen am 7. September 2026.",
       },
       note: "Der Vergleich zeigt den dokumentierten Webauftritt vor und nach dem Relaunch; die Fahrschule hatte bereits zuvor Google-Sichtbarkeit.",
     },
     gallery: [
       {
-        src: asset("mannis-fahrschule", "mobile.webp"),
+        src: asset("mannis-fahrschule", "2026-09-07/mobile.webp"),
         alt: "Mobile Startseite von Mannis Fahrschule mit Kontaktmöglichkeiten",
         caption:
-          "Aktuelle mobile Startseite mit Kontaktwegen, aufgenommen am 5. September 2026.",
+          "Aktuelle mobile Startseite mit Fahrlehrerfoto und Kontaktwegen, aufgenommen am 7. September 2026.",
       },
       {
         src: asset("mannis-fahrschule", "detail.webp"),
