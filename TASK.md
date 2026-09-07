@@ -3,32 +3,25 @@
 | Field | Value |
 |---|---|
 | status | active |
-| phase | publish |
+| phase | preview |
 | updated | 2026-09-07 |
 | agent | Codex |
-| repo | myhiwi-webseite |
-| accepted_commit | 5226331 (base) |
+| accepted_commit | 21cd79276ddb7e439009b8c45c7467a289b68669 (base) |
 
 ## Objective
-Publish the user-approved long LinkedIn-Hiwi blog on myhiwi.de after casual-language and factual review. Then prepare a LinkedIn post based on its verified live URL.
+Replace the rejected hero with a six-scene mosaic showing the entire editorial process ending in a reviewed LinkedIn post. Retain the approved briefing illustration later in the article. Inspect actual images and the article layout.
 
 ## Constraints
-Denis explicitly authorized publishing after the review on 7 September. Preserve unrelated work in the original checkout. Worktree based on origin/main. Keep planned data isolation distinct from verified capabilities. No blanket GDPR claims. Use the approved Higgsfield illustration and two accurate diagrams. No LinkedIn post publication authorized yet.
-
-## Acceptance
-Production build and lint pass. Article, cover, author/date, canonical, structured data, listing, sitemap and RSS resolve correctly. Production URL verified after release.
+Denis explicitly requested the new images and contextual placement; preserve the Higgsfield attribution. No invented likeness, customer details or apparent real product screens. Data isolation remains explicitly planned. Preserve the long article, existing precise diagrams and unrelated checkout changes. No LinkedIn publication.
 
 ## Decisions
-- Existing brand tokens, isolated article CSS, server-rendered content.
-- Publication source: content/blog/linkedin-hiwi.json, reused by discovery pages.
-- Local image asset avoids a third-party media request from readers.
+Denis likes the newly generated pair visually but wants a multi-scene process mosaic as the main image and one section illustration later. Six steps: tell, clarify, select evidence, draft, review, finished post. The briefing image is retained. Additional mosaic batch capped at eight credits. The prior pair cost four credits total. Layout labels remain accessible real text.
 
 ## Failed approaches
-- Old README names master; repository default branch is main.
-- A browser attempt to open the earlier local HTML file was blocked by URL policy. Do not bypass that block.
+The original two-human conversation illustration was rejected as semantically unclear. Microphone/still-life alternatives were superseded before generation.
 
 ## Next
-Build, lint and generated-page checks passed. Publish the isolated change, then verify production article, image, metadata and discovery routes.
+Final mosaic and briefing figure integrated. Build including lint/typecheck passed; generated article assertions passed. Verify deployed preview desktop/mobile, then update the authorized public article.
 
 ## Evidence
-Production build passed for 52 routes. Lint passed with two existing image warnings in unrelated components. Generated-page check passed: one H1, three figures, valid anchors, author/date/canonical/BlogPosting, listing/RSS/sitemap and no internal paths or remote media URLs.
+Two section candidates cost four credits; final mosaic cost 2.5 credits. Only mosaic plus briefing selected. Both selected assets inspected directly. Build and embedded lint/typecheck passed (two existing unrelated image warnings). Generated output: one H1, four figures, correct new image metadata, accessible six-step list, original attribution and planned-isolation label.

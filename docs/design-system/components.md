@@ -345,3 +345,7 @@ Jede Komponente trägt:
 - `DataDiagram`: planned selection of information before giving a reduced brief to the blog assistant; explicitly not presented as an existing isolation mechanism.
 - Scoped CSS uses the existing MyHiwi ink, blue, surface and divider tokens, Bricolage/Inter family and mobile system fonts. Diagram columns stack at 700px. No animation or new client-side code. Lucide arrows are decorative.
 - One final contact CTA uses the current relaunch wording. Canonical, article/share metadata, JSON-LD, blog listing, RSS and sitemap share article data.
+
+### LinkedIn-Hiwi Prozessmosaik und Briefing-Illustration
+
+Das Hauptbild zeigt sechs nummerierte Szenen des redaktionellen Ablaufs. Eine native Liste wiederholt die Schrittbezeichnungen lesbar und zugänglich, auch mobil. Ein Link öffnet das Mosaik in voller Größe. `article.image` definiert zugleich das Social-Preview. Die ergänzende Briefing-Illustration steht unter der zugehörigen Artikelüberschrift. `article.illustrations` definiert Zuordnung, intrinsische Maße, Alternativtext, Label und Bildunterschrift. Beide vollbreit in der vorhandenen Textspalte, natürliches Seitenverhältnis, keine Beschneidung. Geplanter Datenzugriff ist direkt über dem zweiten Motiv als „Geplanter Ausbau“ gekennzeichnet. Bildunterschriften erläutern die schematische Darstellung und nennen Higgsfield. Die frühere dekorative Hero-Illustration entfällt.

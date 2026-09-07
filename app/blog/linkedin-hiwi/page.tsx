@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowDown, ArrowRight } from "lucide-react";
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     publishedTime: article.date,
     modifiedTime: article.date,
     authors: [article.author],
-    images: [{ url: article.image, width: 2752, height: 1536, alt: article.imageAlt }],
+    images: [{ url: article.image, width: article.imageWidth, height: article.imageHeight, alt: article.imageAlt }],
   },
   twitter: { card: "summary_large_image", title: article.title, description: article.description, images: [article.image] },
 };
@@ -110,10 +111,14 @@ export default function LinkedInHiwiArticle() {
           <h1>Vom Erzählen zum <em>Schreiben</em>: Wie ich meinen LinkedIn-Hiwi aufbaue</h1>
           <p className={styles.lead}>{article.lead}</p>
           <div className={styles.byline}><Link href="/ueber-mich">{article.author}</Link><time dateTime={article.date}>{article.displayDate}</time><span>{article.readTime} Lesezeit</span></div>
-          <figure className={styles.cover}>
-            <Image src={article.image} width={2752} height={1536} alt={article.imageAlt} priority sizes="(max-width: 768px) calc(100vw - 40px), 760px" />
-            <figcaption>Mit Higgsfield erstellte Illustration.</figcaption>
+          <figure className={`${styles.illustration} ${styles.heroIllustration}`}>
+            <a href={article.image} target="_blank" rel="noopener noreferrer" aria-label="Prozessmosaik in voller Größe öffnen">
+              <Image src={article.image} width={article.imageWidth} height={article.imageHeight} alt={article.imageAlt} priority sizes="(max-width: 768px) calc(100vw - 40px), 760px" />
+            </a>
+            <ol className={styles.steps}>{article.processSteps.map(step => <li key={step}>{step}</li>)}</ol>
+            <figcaption>Vom Gespräch zum geprüften LinkedIn-Post. Das Mosaik zeigt den redaktionellen Ablauf schematisch; die Veröffentlichung bleibt meine Entscheidung.<span>Mit Higgsfield erstellte Illustration. <a href={article.image} target="_blank" rel="noopener noreferrer">Bild vergrößern</a></span></figcaption>
           </figure>
+
         </header>
         <nav className={styles.contents} aria-label="In diesem Artikel">
           <p className={styles.label}>In diesem Artikel</p>
@@ -121,7 +126,17 @@ export default function LinkedInHiwiArticle() {
         </nav>
         <div className={styles.prose}>
           {article.body.map((block, index) => {
-            if (block.type === "heading") return <h2 id={block.id} key={block.id}>{block.text}</h2>;
+            if (block.type === "heading") {
+              const illustration = article.illustrations.find(item => item.afterHeading === block.id);
+              return <Fragment key={block.id}>
+                <h2 id={block.id}>{block.text}</h2>
+                {illustration && <figure className={styles.illustration}>
+                  <p className={styles.label}>{illustration.label}</p>
+                  <Image src={illustration.src} width={illustration.width} height={illustration.height} alt={illustration.alt} sizes="(max-width: 768px) calc(100vw - 40px), 760px" />
+                  <figcaption>{illustration.caption}<span>Mit Higgsfield erstellte Illustration.</span></figcaption>
+                </figure>}
+              </Fragment>;
+            }
             if (block.type === "diagram") return block.diagram === "workflow" ? <WorkflowDiagram key="workflow" /> : <DataDiagram key="data" />;
             return <p key={index}>{block.parts.map((part, partIndex) => part.href ? <a key={partIndex} href={part.href} target="_blank" rel="noopener noreferrer">{part.text}</a> : part.text)}</p>;
           })}

@@ -8,8 +8,8 @@
   "author": "Denis Kaliberda",
   "category": "Einblicke in MyHiwi",
   "lead": "Ich erzähle gerne über meine Arbeit. Mein Hiwi hilft mir, daraus Texte zu entwickeln. Hier erkläre ich, wie wir dabei vorgehen und welche Informationen dafür gebraucht werden.",
-  "image": "/blog/linkedin-hiwi/vom-gespraech-zum-artikel.webp",
-  "imageAlt": "Blaue Illustration: Aus einem Gespräch entstehen geordnete Notizen und anschließend ein Artikel.",
+  "image": "/blog/linkedin-hiwi/vom-gespraech-zum-linkedin-post.webp",
+  "imageAlt": "Sechs Szenen des redaktionellen Ablaufs: Erzählen, Nachfragen, Belege auswählen, Entwurf schreiben, gemeinsam prüfen und ein fertiger LinkedIn-Post.",
   "body": [
     {
       "type": "paragraph",
@@ -25,11 +25,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Genau dafür baue ich meinen LinkedIn-Hiwi auf. Das ist ein KI-Assistent, mit dem ich reden kann und aus diesen Gesprächen Texte entwickle. Ich bringe meine Erfahrungen, Fragen und Gedanken mit. Der Hiwi hilft mir, sie zu sortieren, fragt nach und arbeitet mit mir heraus, was ich eigentlich erzählen möchte. So soll aus dem, was ich im Gespräch gerne teile, auch ein lesbarer Blogartikel oder LinkedIn-Beitrag werden.",
+      "text": "Genau dafür baue ich meinen LinkedIn-Hiwi auf. Ich sehe ihn wie einen digitalen Mitarbeiter, dem ich eine Aufgabe erkläre und dessen Arbeit ich anschließend prüfe. Konkret ist das ein KI-Assistent, mit dem ich reden kann und aus diesen Gesprächen Texte entwickle. Ich bringe meine Erfahrungen, Fragen und Gedanken mit. Der Hiwi hilft mir, sie zu sortieren, fragt nach und arbeitet mit mir heraus, was ich eigentlich erzählen möchte. So soll aus dem, was ich im Gespräch gerne teile, auch ein lesbarer Blogartikel oder LinkedIn-Beitrag werden.",
       "id": "",
       "parts": [
         {
-          "text": "Genau dafür baue ich meinen LinkedIn-Hiwi auf. Das ist ein KI-Assistent, mit dem ich reden kann und aus diesen Gesprächen Texte entwickle. Ich bringe meine Erfahrungen, Fragen und Gedanken mit. Der Hiwi hilft mir, sie zu sortieren, fragt nach und arbeitet mit mir heraus, was ich eigentlich erzählen möchte. So soll aus dem, was ich im Gespräch gerne teile, auch ein lesbarer Blogartikel oder LinkedIn-Beitrag werden.",
+          "text": "Genau dafür baue ich meinen LinkedIn-Hiwi auf. Ich sehe ihn wie einen digitalen Mitarbeiter, dem ich eine Aufgabe erkläre und dessen Arbeit ich anschließend prüfe. Konkret ist das ein KI-Assistent, mit dem ich reden kann und aus diesen Gesprächen Texte entwickle. Ich bringe meine Erfahrungen, Fragen und Gedanken mit. Der Hiwi hilft mir, sie zu sortieren, fragt nach und arbeitet mit mir heraus, was ich eigentlich erzählen möchte. So soll aus dem, was ich im Gespräch gerne teile, auch ein lesbarer Blogartikel oder LinkedIn-Beitrag werden.",
           "href": ""
         }
       ],
@@ -486,11 +486,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die Titelillustration dieses Artikels ist damit entstanden. Sie zeigt schematisch, wie aus einem Gespräch geordnete Gedanken und ein Text werden. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
+      "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die beiden Illustrationen dieses Artikels sind damit entstanden. Das Hauptbild zeigt den Ablauf in sechs Szenen: vom Erzählen über Rückfragen, ausgewählte Belege und einen Entwurf bis zur gemeinsamen Prüfung und zum fertigen LinkedIn-Post. Das zweite Bild erklärt als Zielbild, wie ich künftig nur ein ausgewähltes Briefing an den Hiwi übergeben möchte. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
       "id": "",
       "parts": [
         {
-          "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die Titelillustration dieses Artikels ist damit entstanden. Sie zeigt schematisch, wie aus einem Gespräch geordnete Gedanken und ein Text werden. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
+          "text": "Für die begleitenden Medien haben wir mein Higgsfield-Konto angebunden und den Zugriff mit einer Kontoabfrage geprüft. Es soll beim Erstellen passender Bilder und gegebenenfalls bewegter Inhalte helfen. Die beiden Illustrationen dieses Artikels sind damit entstanden. Das Hauptbild zeigt den Ablauf in sechs Szenen: vom Erzählen über Rückfragen, ausgewählte Belege und einen Entwurf bis zur gemeinsamen Prüfung und zum fertigen LinkedIn-Post. Das zweite Bild erklärt als Zielbild, wie ich künftig nur ein ausgewähltes Briefing an den Hiwi übergeben möchte. Für jedes weitere Medium legen wir zuerst fest, welchen Zusammenhang es erklären soll und welche Informationen es dafür braucht.",
           "href": ""
         }
       ],
@@ -551,5 +551,27 @@
       ],
       "diagram": ""
     }
+  ],
+  "imageWidth": 3504,
+  "imageHeight": 2336,
+  "illustrations": [
+    {
+      "afterHeading": "wie-ich-die-trennung-fur-die-textarbeit-einrichten-mochte",
+      "src": "/blog/linkedin-hiwi/ausgewaehltes-briefing.webp",
+      "width": 2688,
+      "height": 1520,
+      "alt": "Zielbild: Eine Person hält ein ausgewähltes Briefing vor den digitalen Arbeitsbereich; die interne Ablage steht getrennt daneben.",
+      "label": "Geplanter Ausbau",
+      "caption": "Künftig soll der Hiwi mit einem vorbereiteten Redaktionsbriefing arbeiten. Die interne Ablage bleibt davon getrennt. Diese Zugriffstrennung müssen wir noch technisch einrichten und prüfen.",
+      "planned": true
+    }
+  ],
+  "processSteps": [
+    "Erzählen",
+    "Nachfragen",
+    "Belege auswählen",
+    "Entwurf schreiben",
+    "Gemeinsam prüfen",
+    "Fertiger Post"
   ]
 }

@@ -7,9 +7,10 @@
 .lead{font-size:21px;line-height:1.6;color:var(--mh-text-secondary);max-width:64ch}
 .byline{display:flex;gap:8px 22px;flex-wrap:wrap;font-size:14px;color:var(--mh-text-secondary);margin-top:22px;align-items:center}
 .byline a{min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:4px}
-.cover{margin-top:32px;background:var(--mh-surface)}
-.cover img{width:100%;height:auto}
-.cover figcaption{padding:12px 16px;font-size:13px;line-height:1.6;color:var(--mh-text-secondary)}
+.illustration{margin:0 0 32px;background:var(--mh-surface)}
+.illustration>.label{padding:16px 16px 12px}
+.illustration img{width:100%;height:auto}
+.illustration figcaption{padding:12px 16px;font-size:13px;line-height:1.6;color:var(--mh-text-secondary)}
 .contents{margin:32px 0 48px;padding:22px 0;border-block:1px solid var(--mh-divider)}
 .contents ol{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:4px 22px}
 .contents a{font-size:14px;line-height:1.6;display:flex;align-items:center;min-height:44px;color:var(--mh-accent-hover);text-decoration:underline;text-underline-offset:4px}
@@ -40,3 +41,12 @@
 .contact h2{font-size:40px;line-height:1.15;margin:22px 0}
 .contact>div>p:not(.label){font-size:17px;line-height:1.6;color:var(--mh-text-secondary);margin-bottom:32px}
 @media(max-width:700px){.article{padding-top:32px;padding-bottom:64px}.hero h1{font-size:36px}.lead{font-size:18px}.contents ol,.inputs,.process{grid-template-columns:1fr}.prose>h2,.contact h2{font-size:28px;margin-top:48px}.diagram{padding:22px 16px}.right{transform:rotate(90deg);margin:auto}.diagram h3{font-size:22px}.contact{padding-block:48px}.hero h1,.prose h2,.diagram h3,.contact h2,.label{font-family:inherit}}
+
+.illustration figcaption span{display:block;margin-top:8px}
+
+.heroIllustration{margin-top:32px}
+.heroIllustration>a{display:block}
+.heroIllustration figcaption a{color:var(--mh-accent-hover);text-decoration:underline;text-underline-offset:4px;display:inline-flex;min-height:44px;align-items:center}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 22px;list-style:decimal;padding:16px 16px 0 36px;margin:0;font-size:13px;line-height:1.6;color:var(--mh-text-secondary)}
+.steps li::marker{color:var(--mh-accent);font-weight:600}
+@media(max-width:700px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
