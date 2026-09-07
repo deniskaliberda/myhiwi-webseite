@@ -44,3 +44,13 @@ Produktionsbuild mit 52 Routen, TypeScript und eingebundenem ESLint bestanden. Z
 - Authentifizierte Vorschauabrufe von Fallstudie und Cover HTTP 200. Titel, Entwicklungslabels, Bilddatierung und offene Ergebnisgrenze im ausgelieferten HTML bestätigt. Neues Cover bytegleich mit dem lokal geprüften Asset.
 - Der bestehende Vercel-Zugriffsschutz bleibt bestehen. Visuelle Prüfung lokal mit dem Produktionsbuild desselben Code-Commits.
 - Kein Merge und keine neue Produktionsveröffentlichung. Task-Browser und lokaler Prüfserver nach Abschluss geschlossen.
+
+## Gesamtgeschichte veröffentlicht
+
+- Denis hat die erweiterte Fassung am 7. September mit „live“ freigegeben. PR #8 zusammengeführt, Main `55443cd`.
+- Produktion `dpl_D1Y1e4upjGFEzK3nFWQdyX1cVgUc` Ready und myhiwi.de/www.myhiwi.de zugeordnet.
+- Öffentliche Fallstudie direkt geprüft: neuer Gesamttitel, Einleitung, Grundlage-/Ausbau-Labels, Datum, Canonical und OG-Motiv korrekt; Ergebnisgrenze weiterhin offen.
+- Desktop 1440 und Mobil 390: fünf Bilder geladen, keine horizontale Überbreite oder Browser-Laufzeitfehler. Visuelle Belege in der tasklokalen Vorschauablage.
+- Startseite, Referenzübersicht, beide Formazin-Leistungsteaser, Kontaktweg und beide neuen Originalbilder HTTP 200. Karten verwenden das Gesamtwebsite-Cover. Kein Formular versendet.
+- Task-Browser geschlossen, kein lokaler Server gestartet. Originalcheckout, Blog und Kundenwebsite unverändert.
+- Abschlussdokumentation auf Arbeitsbranch gesichert; veröffentlichte Implementierung ist Main `55443cd`.

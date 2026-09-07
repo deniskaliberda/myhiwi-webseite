@@ -3,17 +3,17 @@
 | Field | Value |
 |---|---|
 | status | complete |
-| phase | review |
+| phase | live |
 | updated | 2026-09-07 |
 | agent | Codex |
 | repo | myhiwi-webseite |
-| accepted_commit | e3efddb |
+| accepted_commit | 55443cd (merged and live) |
 
 ## Objective
 Tell the full Formazin project story: MyHiwi built and launched the complete website, then expanded energy consulting into a specific offer and inquiry process. Prepare a tested revised preview and report the publication state.
 
 ## Constraints
-Own branch codex/formazin-project-story-20260907 from origin/main in the existing isolated worktree. No blog or customer-site edits. Previous revision is live; this expanded narrative is a new preview. Public facts and approved live photos only. Built inquiry routes are not measured inquiries, sales or revenue. No unsupported premium/performance claims or invented historical screenshots.
+Own branch codex/formazin-project-story-20260907 from origin/main in the existing isolated worktree. No blog or customer-site edits. Denis explicitly authorized this expanded narrative for publication with “live” on 7 September 2026. Public facts and approved live photos only. Built inquiry routes are not measured inquiries, sales or revenue. No unsupported premium/performance claims or invented historical screenshots.
 
 ## Decisions
 - Homepage screenshot becomes the cover for the whole project.
@@ -24,7 +24,7 @@ Own branch codex/formazin-project-story-20260907 from origin/main in the existin
 - Search crawl returned an older energy page; use direct public browser verification.
 
 ## Next
-Review draft PR #8 and Ready preview dpl_DM5D6o5hzh6LvHJyFiAJgQr36KDJ. This expanded narrative is not published; current production remains 9a33b3c.
+No remaining action. PR #8 merged and production verified. Do not re-publish the old preview.
 
 ## Evidence
-See docs/verification/formazin-project-story-2026-09-07.md. Build52 routes/typecheck/lint and 4 Playwright checks passed. Desktop1440/mobile390 images and layout verified. Hosted preview HTML and byte-identical cover verified.
+See docs/verification/formazin-project-story-2026-09-07.md. Build52 routes/typecheck/lint and 4 Playwright checks passed. Desktop1440/mobile390 images and layout verified. Production dpl_D1Y1e4upjGFEzK3nFWQdyX1cVgUc Ready; public desktop/mobile, images, comparison labels, cards, canonical/OG and links verified.
