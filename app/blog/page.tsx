@@ -1,3 +1,4 @@
+import comunioArticle from "@/content/blog/comunio-ki-bots.json";
 import type { Metadata } from "next";
 import Image from "next/image";
 import hiwiArticle from "@/content/blog/linkedin-hiwi.json";
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  { slug: comunioArticle.slug, title: comunioArticle.title, excerpt: comunioArticle.description, date: comunioArticle.displayDate, readTime: comunioArticle.readTime, category: comunioArticle.category },
   { slug: hiwiArticle.slug, title: hiwiArticle.title, excerpt: hiwiArticle.description, date: hiwiArticle.displayDate, readTime: hiwiArticle.readTime, category: hiwiArticle.category },
   {
     slug: "keyword-kannibalisierung",
@@ -119,6 +121,9 @@ export default function BlogPage() {
               <li key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <Card interactive className="flex flex-col gap-mh-3">
+                  {post.slug === comunioArticle.slug && (
+                    <Image src="/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png" width={2048} height={2048} alt="Fünf KI-Bots gegen meine Freunde: Comunio-Experiment, Folge 1" sizes="(max-width: 768px) calc(100vw - 80px), 820px" className="h-auto w-full" />
+                  )}
                   {post.slug === hiwiArticle.slug && (
                     <Image
                       src={hiwiArticle.image}

@@ -1,9 +1,11 @@
+import comunioArticle from "@/content/blog/comunio-ki-bots.json";
 import { NextResponse } from "next/server";
 import hiwiArticle from "@/content/blog/linkedin-hiwi.json";
 
 const SITE = "https://myhiwi.de";
 
 const posts = [
+  { slug: comunioArticle.slug, title: comunioArticle.title, description: comunioArticle.description, date: comunioArticle.date, category: comunioArticle.category },
   { slug: hiwiArticle.slug, title: hiwiArticle.title, description: hiwiArticle.description, date: hiwiArticle.date, category: hiwiArticle.category },
   {
     slug: "keyword-kannibalisierung",
