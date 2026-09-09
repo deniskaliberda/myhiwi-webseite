@@ -24,6 +24,7 @@ export default function ComunioArticle() {
     lead="Zu spät bei Comunio eingestiegen, fünf Helfer mit Grok Bot gebaut. Folge 1: mein Start, die Rollen und die ersten zwei Spieltage. Mit echten Einblicken ins Spiel und ins Bot-Team."
     ctaTitle="Was ich sonst mit KI mache"
     ctaLead="Mit MyHiwi unterstütze ich Unternehmen bei ihrer Website, ihrer digitalen Sichtbarkeit und passenden Arbeitsabläufen. Hier im Blog zeige ich auch, wie ich selbst dazulerne.">
+    <Link className={styles.quickRead} href="/blog/comunio-ki-bots/kurz">Keine Zeit? Die Kurzfassung in 60 Sekunden →</Link>
     <div className={styles.draft}>Folge 01 · Woche drei des Experiments · Rückblick auf Spieltag 1 und 2 · Vorschau</div>
     {article.body.map((block,i)=>{
       if(block.type==='contents') return <details className={styles.contents} key={i}>

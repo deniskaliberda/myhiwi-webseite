@@ -16,3 +16,8 @@
 .tableWrap caption { text-align:left; font-weight:700; margin-bottom:12px; }
 .sources { font-size:17px; }
 @media(max-width:767px) { .draft,.contents,.sources {padding:16px;} .tableWrap th,.tableWrap td {padding:8px;font-size:14px;} .figure {margin:32px 0 !important;} }
+
+.quickRead {display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 22px;background:#2563eb;color:#fff !important;border-radius:999px;font-size:17px;font-weight:700;line-height:1.4;text-decoration:none !important;}
+.quickRead:hover {background:#1d4ed8;}
+.quickRead:focus-visible {outline:3px solid #60a5fa;outline-offset:4px;}
+@media(max-width:600px){.quickRead{width:100%;text-align:center;}}
