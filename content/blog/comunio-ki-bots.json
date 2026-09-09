@@ -1,33 +1,70 @@
 {
   "slug": "comunio-ki-bots",
   "status": "draft",
-  "title": "Fünf KI-Bots, mein Comunio-Team und die ersten zwei Spieltage",
-  "description": "Mein Comunio-Experiment mit fünf KI-Bots: Aufbau, erste Spieltage, eine Aufstellung und die Fehler, aus denen ich beim Arbeiten mit KI lerne.",
+  "title": "Fünf KI-Bots gegen meine Freunde: Mein Comunio-Experiment, Folge 1",
+  "description": "Zu spät bei Comunio eingestiegen, fünf Helfer mit Grok Bot gebaut: mein Start, die Rollen und die ersten zwei Spieltage – mit echten Screenshots.",
   "date": "2026-09-09",
   "sourceDate": "2026-09-08",
   "author": "Denis Kaliberda",
-  "readTime": "10 Min.",
+  "readTime": "13 Min.",
   "body": [
     {
-      "type": "paragraph",
-      "text": "Ich spiele mit Freunden Comunio. Und weil ich inzwischen bei ziemlich vielen Dingen denke „Das müsste man doch mit KI ausprobieren können“, habe ich mir dafür ein kleines Bot-Team gebaut. Mit Grok-Bot, fünf verschiedenen Rollen und der Idee, die Mannschaft über eine ganze Saison begleiten zu lassen."
+      "type": "image",
+      "alt": "Folge 1: Scout, Markt, Elf, Chief und Study als mein digitales Comunio-Team. Im Bildschirm steckt der echte Aufstellungsausschnitt vom 8. September; er zeigt einen bearbeitbaren Zwischenstand für Spieltag 3.",
+      "src": "/blog/comunio-ki-bots/comunio-folge-01-robot-team.png",
+      "width": 2048,
+      "height": 2048,
+      "imageKind": "cover",
+      "mobile": ""
     },
     {
       "type": "paragraph",
-      "text": "Am Anfang war da vor allem der Spaß am Ausprobieren. So ähnlich war es auch, als ich mich nach dem Zocken immer mehr mit KI beschäftigt habe: etwas bauen, schauen, was passiert, verbessern und direkt die nächste Idee ausprobieren. Bei Comunio kommt noch dazu, dass ich gegen Freunde spiele. Da interessiert mich dann natürlich schon, ob das Ganze auch Punkte bringt."
+      "text": "Ich bin zu spät in die Comunio-Runde mit meinen Freunden eingestiegen. Viele interessante Spieler waren schon weg. Und eigentlich hatte ich auch keine große Lust darauf, jeden Tag den Transfermarkt zu beobachten, Verletzungen nachzulesen und meine Aufstellung zu überdenken. Ich hatte früher schon einmal gespielt. Wie viel Zeit das fressen kann, wusste ich also noch."
     },
     {
       "type": "paragraph",
-      "text": "Die ersten beiden Spieltage sind vorbei. Hier zeige ich, wie ich das Team aufgebaut habe, welche Ergebnisse bereits belegt sind und warum mich bisher manche Fehler im Ablauf fast mehr beschäftigen als die Spielerwahl."
+      "text": "Angemeldet habe ich mich trotzdem. Ungefähr in dieser Phase habe ich Grok Bot entdeckt. Da kam die Idee: Kann ich mir ein kleines Team aus KI-Helfern bauen, das sich um die Arbeit rund um meine Mannschaft kümmert? Und bekomme ich damit eine Mannschaft hin, die gegen meine Freunde mithalten kann?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Also habe ich fünf Rollen eingerichtet: Scout, Markt, Elf, Chief und Study. Für mich sind das meine digitalen Mitarbeiter für dieses Experiment. Einer recherchiert, einer schaut auf Transfers, einer plant die Elf. Die anderen führen die Arbeit zusammen und halten fest, was passiert."
+    },
+    {
+      "type": "paragraph",
+      "text": "Wir sind inzwischen in Woche drei des Experiments. Dieser erste Artikel holt den Anfang nach: warum ich das gemacht habe, wie mein Grok-Bot-Team aufgebaut ist und was in den ersten beiden Spieltagen passiert ist. Der geprüfte zweite Spieltag: 39 Punkte, Platz drei von fünf. Ganz ordentlich als Zwischenstand. Ob mir die Bots wirklich Arbeit abnehmen und langfristig besser spielen, ist damit noch offen."
+    },
+    {
+      "type": "contents"
+    },
+    {
+      "type": "heading",
+      "text": "Warum ich für den Versuch Grok Bot genommen habe",
+      "id": "warum-grok-bot"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich hatte mir auch Hermes und OpenClaw angeschaut. Für mich war der Weg von der Idee zu einem funktionierenden Setup damit nicht so einfach, wie ich ihn mir gewünscht hatte. Mit Grok Bot fiel mir der Einstieg leichter. Das ist meine Erfahrung mit meinem Aufbau, kein großer Vergleichstest der drei Werkzeuge."
+    },
+    {
+      "type": "paragraph",
+      "text": "Was mich angesprochen hat: Ich kann mir Helfer mit einem Namen, einer Aufgabe und einem eigenen Avatar anlegen und mit ihnen schreiben. Dadurch fühlt sich die Arbeit für mich eher wie die Zusammenarbeit mit einem kleinen Team an. In meiner Comunio-Gruppe sitzen die fünf Rollen zusammen. Die kleinen Figuren machen sichtbar, mit wem ich gerade spreche."
+    },
+    {
+      "type": "paragraph",
+      "text": "Grok Bot beschreibt diese Bots als dauerhafte KI-Teammitglieder mit eigenen Gesprächen und Arbeitskontext. Sie können Informationen über Nachrichten, Gruppen und gemeinsame Dateien weitergeben. Genauere Grundlagen stehen in der [Dokumentation zu Bots und ihrem Kontext](https://docs.x.ai/grok-bot/bots). Die Figuren sind die Darstellung dieser Helfer in der Oberfläche; die eigentliche Arbeit hängt an ihren Aufträgen, Informationen und verfügbaren Werkzeugen."
     },
     {
       "type": "image",
-      "alt": "Mein Comunio-Experiment mit einer echten Aufstellungsansicht vom 8. September 2026. Der Ausschnitt zeigt einen Entwurf für Spieltag 3, keine bestätigte Speicherung.",
-      "src": "/blog/comunio-ki-bots/linkedin-screenshot-v3.png",
-      "width": 1200,
-      "height": 1200,
-      "imageKind": "screenshot",
+      "alt": "Echte Mitgliederliste meiner Comunio-Gruppe in Grok Bot: Chief, Markt, Elf, Scout und Study. Aufnahme vom 9. September 2026; nur der relevante App-Ausschnitt.",
+      "src": "/blog/comunio-ki-bots/grok-rollen-original.png",
+      "width": 245,
+      "height": 201,
+      "imageKind": "grok",
       "mobile": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich musste dafür trotzdem festlegen, was jede Rolle wissen soll und wofür sie zuständig ist. „Spiel mal gut Comunio“ ist als Auftrag ziemlich dünn. Ein brauchbarer Auftrag beschreibt zum Beispiel, welche Spieler der Scout prüfen soll, welche Quellen aktuell sein müssen und an wen sein Ergebnis geht. Dass sich ein Bot schnell anlegen lässt, bedeutet noch nicht, dass der ganze Ablauf von allein zuverlässig läuft."
     },
     {
       "type": "heading",
@@ -79,6 +116,32 @@
     {
       "type": "paragraph",
       "text": "Mit fünf Namen ist das Problem natürlich noch nicht gelöst. Ich musste auch festlegen, wie die Rollen ihre Ergebnisse weitergeben und wer am Ende prüft, ob eine Aktion wirklich stattgefunden hat. Genau daran arbeiten wir seit dem Start immer wieder."
+    },
+    {
+      "type": "heading",
+      "text": "Wie die Bots miteinander arbeiten",
+      "id": "grok-zusammenarbeit"
+    },
+    {
+      "type": "paragraph",
+      "text": "In der Oberfläche öffne ich entweder einen einzelnen Bot oder die gemeinsame Comunio-Gruppe. Dort sehe ich Nachrichten, Rückfragen und Übergaben. Laut [Grok-Bot-Dokumentation zur Zusammenarbeit](https://docs.x.ai/grok-bot/chat-and-collaboration) können Bots einander Aufgaben schicken und später antworten. Kontext weitergeben heißt hier ganz praktisch: Die nächste Rolle bekommt die Informationen, die sie für ihre Aufgabe braucht. Ich muss nicht jede Recherche selbst aus einem Chat in den nächsten kopieren."
+    },
+    {
+      "type": "paragraph",
+      "text": "Ein einfaches Beispiel für die gewünschte Arbeitsteilung: Der Scout meldet, dass ein Spieler vermutlich wenig Einsatzzeit bekommt. Markt prüft, ob es eine bezahlbare Alternative gibt. Elf schaut, was das für die Aufstellung bedeutet. Chief führt die Vorschläge zusammen. Study hält die Entscheidung und später das Ergebnis fest. Das ist das Prinzip unseres Teams, keine Garantie, dass jede Übergabe schon fehlerfrei funktioniert."
+    },
+    {
+      "type": "image",
+      "alt": "Originalaustausch in der Grok-Bot-Gruppe, aufgenommen am 9. September: Markt nennt den Budgetrahmen, Elf passt die Vorlage an, Scout präzisiert eine Einschätzung und Study dokumentiert die Klärung. Die sichtbaren Nachrichten sind Planung und Diskussion, kein Nachweis ausgeführter Transfers oder offizieller Ergebnisse.",
+      "src": "/blog/comunio-ki-bots/grok-uebergabe-original.png",
+      "width": 930,
+      "height": 427,
+      "imageKind": "grok",
+      "mobile": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "In diesem Ausschnitt sieht man auch, warum mir die gemeinsame Gruppe hilft. Eine Einschätzung wie „Bankspieler“ kann bedeuten, dass wenig Einsatzzeit erwartet wird. Trotzdem kann die Aufstellung dieses Spielers gegenüber einem leeren Platz sinnvoll sein. Erst im Austausch wird klar, was die jeweilige Rolle meint. Genau solche Missverständnisse will ich sichtbar machen, statt nachher nur eine glatte Erfolgsgeschichte zu erzählen."
     },
     {
       "type": "heading",
@@ -226,12 +289,12 @@
     },
     {
       "type": "heading",
-      "text": "Was ich ab jetzt wöchentlich zeigen möchte",
+      "text": "Folge 1 ist der Anfang: So geht die Serie weiter",
       "id": "was-ich-ab-jetzt-w-chentlich-zeigen-m-chte"
     },
     {
       "type": "paragraph",
-      "text": "Die Reihe soll über die Saison wachsen. Ich möchte nach den Spieltagen zeigen, wo meine Mannschaft steht, welche Entscheidungen das Team vorbereitet und umgesetzt hat, was gut lief und was daneben ging. Dazu gehören die Aufstellung, die Punkte, interessante Transfers und die Änderungen am Ablauf."
+      "text": "Das hier ist Folge 1 und der Einstieg in die Serie. Ab jetzt möchte ich jede Woche ein Update geben: Wo steht meine Mannschaft, was hat das Bot-Team gemacht, wo musste ich eingreifen und was habe ich daraus gelernt? Woche drei des Experiments ist dabei nicht automatisch ein bereits abgerechneter dritter Spieltag. Die Daten bekommen immer ihren tatsächlichen Stand."
     },
     {
       "type": "paragraph",
@@ -264,7 +327,8 @@
     },
     {
       "type": "paragraph",
-      "text": "Text, Rahmengestaltung und erklärende Diagramme entstanden mit KI-Unterstützung aus meinen Gesprächen und den Projektunterlagen. Aufstellung, Kader und Transferliste zeigen echte, lediglich zugeschnittene Comunio-Screenshots. Die dargestellten Spieler und Werte wurden darin nicht mit KI neu erzeugt. Wie ich meine Texte erarbeite, erkläre ich im Artikel [über meinen LinkedIn-Hiwi](https://myhiwi.de/blog/linkedin-hiwi). Quellenstand: 8. September 2026; redaktionell vorbereitet am 9. September."
+      "text": "Text und erklärende Diagramme entstanden mit KI-Unterstützung aus meinen Gesprächen und den Projektunterlagen. Die Roboter-Illustration des Covers wurde mit GPT Image 2.5 über Higgsfield generiert. In ihren Bildschirm wurde der Originalausschnitt aus Comunio eingesetzt. Die Spielansichten und die beiden Grok-Bot-Ausschnitte sind echte Screenshots; dargestellte Spieler, Werte und Nachrichten wurden darin nicht mit KI neu erzeugt. Wie ich meine Texte erarbeite, erkläre ich im Artikel [über meinen LinkedIn-Hiwi](https://myhiwi.de/blog/linkedin-hiwi). Spielbelege bis 8. September 2026; Grok-Bot-Oberfläche und redaktioneller Stand vom 9. September."
     }
-  ]
+  ],
+  "episode": 1
 }

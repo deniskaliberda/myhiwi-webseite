@@ -19,23 +19,23 @@ function InlineLinks({text}: {text: string}) {
 }
 
 export default function ComunioArticle() {
-  return <BlogArticleShell category="Mein KI-Experiment · Entwurf" date="9. September 2026" readTime={article.readTime}
-    title={<>Fünf KI-Bots, mein Comunio-Team und die <em className="mh-italic-accent">ersten zwei Spieltage</em></>}
-    lead="Sport, Freunde und die Frage, wie viel Arbeit ein Bot-Team wirklich übernehmen kann. Ein Blick auf meinen Aufbau, die ersten Ergebnisse und die Dinge, die noch nicht rund laufen."
+  return <BlogArticleShell category="Comunio-Experiment · Folge 01" date="9. September 2026" readTime={article.readTime}
+    title={<>Fünf KI-Bots <em className="mh-italic-accent">gegen meine Freunde.</em></>}
+    lead="Zu spät bei Comunio eingestiegen, fünf Helfer mit Grok Bot gebaut. Folge 1: mein Start, die Rollen und die ersten zwei Spieltage. Mit echten Einblicken ins Spiel und ins Bot-Team."
     ctaTitle="Was ich sonst mit KI mache"
     ctaLead="Mit MyHiwi unterstütze ich Unternehmen bei ihrer Website, ihrer digitalen Sichtbarkeit und passenden Arbeitsabläufen. Hier im Blog zeige ich auch, wie ich selbst dazulerne.">
-    <div className={styles.draft}>Vorschau · noch nicht veröffentlicht · Quellenstand 8. September 2026</div>
-    <nav aria-label="Inhalt" className={styles.contents}>
-      <strong>In diesem Artikel</strong>
-      {article.body.filter(b=>b.type==='heading').map(b=><a key={b.id} href={`#${b.id}`}>{b.text}</a>)}
-    </nav>
+    <div className={styles.draft}>Folge 01 · Woche drei des Experiments · Rückblick auf Spieltag 1 und 2 · Vorschau</div>
     {article.body.map((block,i)=>{
+      if(block.type==='contents') return <details className={styles.contents} key={i}>
+        <summary>Die Themen in Folge 1</summary>
+        <nav aria-label="Inhalt">{article.body.filter(b=>b.type==='heading').map(b=><a key={b.id} href={`#${b.id}`}>{b.text}</a>)}</nav>
+      </details>;
       if(block.type==='heading') return <h2 className={styles.heading} id={block.id} key={i}>{block.text}</h2>;
-      if(block.type==='image') return <figure className={styles.figure} key={i}>
+      if(block.type==='image') return <figure className={`${styles.figure} ${block.src?.endsWith('grok-rollen-original.png') ? styles.roleShot : ''}`} key={i}>
         <picture>{block.mobile && <source media="(max-width: 600px)" srcSet={block.mobile} />}
-        <Image unoptimized src={block.src!} alt={block.alt!} width={block.width!} height={block.height!} priority={block.src!.endsWith('linkedin-screenshot-v3.png')} /></picture>
-        <figcaption>{block.alt} {block.imageKind === 'diagram' ? 'Eigene schematische Darstellung mit KI-Unterstützung.' : 'Quelle: Comunio. Originalansicht zugeschnitten; private Bildränder entfernt.'}</figcaption>
-        {block.imageKind === 'screenshot' && <a className={styles.enlarge} href={block.src} target="_blank" rel="noopener noreferrer">Screenshot in voller Größe öffnen</a>}
+        <Image unoptimized src={block.src!} alt={block.alt!} width={block.width!} height={block.height!} priority={block.imageKind === 'cover'} /></picture>
+        <figcaption>{block.alt} {block.imageKind === 'diagram' ? 'Eigene schematische Darstellung mit KI-Unterstützung.' : block.imageKind === 'cover' ? 'Illustration: GPT Image 2.5 über Higgsfield. Spielansicht: Original-Screenshot aus Comunio.' : block.imageKind === 'grok' ? 'Quelle: eigene Aufnahme aus Grok Bot; Ausschnitt der unveränderten Oberfläche.' : 'Quelle: Comunio. Originalansicht zugeschnitten; private Bildränder entfernt.'}</figcaption>
+        {['screenshot','grok','cover'].includes(block.imageKind || '') && <a className={styles.enlarge} href={block.src} target="_blank" rel="noopener noreferrer">Bild in voller Größe öffnen</a>}
       </figure>;
       if(block.type==='results') return <div className={styles.tableWrap} key={i}><table>
         <caption>Erste Spieltage und jeweiliger Nachweisstand</caption>
@@ -47,7 +47,7 @@ export default function ComunioArticle() {
     })}
     <aside className={styles.sources}>
       <h2>Was hinter den Angaben steckt</h2>
-      <p>Grundlagen des Spiels: <a href="https://www.comunio.de/">Comunio</a>. Für diesen Rückblick wurden die Projektberichte, der geprüfte Spieltagsbeleg vom 7. September und die dokumentierte Aufstellungsansicht vom 8. September ausgewertet. Die Screenshots zeigen ausgewählte Ausschnitte der Plattform. Private Kontokennungen, Ligaangaben und Sitzungsdaten bleiben außerhalb der veröffentlichten Bildausschnitte.</p>
+      <p>Grundlagen des Spiels: <a href="https://www.comunio.de/">Comunio</a>. Für diesen Rückblick wurden die Projektberichte, der geprüfte Spieltagsbeleg vom 7. September und die dokumentierte Aufstellungsansicht vom 8. September ausgewertet. Die Screenshots zeigen ausgewählte Ausschnitte aus Comunio und Grok Bot. Die Grok-Aufnahmen vom 9. September belegen die Oberfläche und den sichtbaren Austausch, keine ausgeführten Kontoaktionen. Private Kontokennungen, Ligaangaben und Sitzungsdaten bleiben außerhalb der veröffentlichten Bildausschnitte.</p>
       <p>Die übrigen Mannschaften im Spieltagsvergleich sind anonymisiert. Die erste Woche ist nur als Berichtsstand aufgenommen. Ein Gesamtplatz, Spieler-Einzelpunkte und eine Wirkung der Bot-Entscheidungen werden daraus nicht abgeleitet.</p>
       <Link href="/blog/linkedin-hiwi">So entsteht ein Text mit meinem LinkedIn-Hiwi</Link>
     </aside>
