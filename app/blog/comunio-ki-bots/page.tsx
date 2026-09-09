@@ -33,7 +33,7 @@ export default function ComunioArticle() {
       if(block.type==='heading') return <h2 className={styles.heading} id={block.id} key={i}>{block.text}</h2>;
       if(block.type==='image') return <figure className={styles.figure} key={i}>
         <picture>{block.mobile && <source media="(max-width: 600px)" srcSet={block.mobile} />}
-        <Image unoptimized src={block.src!} alt={block.alt!} width={block.width!} height={block.height!} priority={block.src!.endsWith('linkedin-screenshot.png')} /></picture>
+        <Image unoptimized src={block.src!} alt={block.alt!} width={block.width!} height={block.height!} priority={block.src!.endsWith('linkedin-screenshot-v3.png')} /></picture>
         <figcaption>{block.alt} {block.imageKind === 'diagram' ? 'Eigene schematische Darstellung mit KI-Unterstützung.' : 'Quelle: Comunio. Originalansicht zugeschnitten; private Bildränder entfernt.'}</figcaption>
         {block.imageKind === 'screenshot' && <a className={styles.enlarge} href={block.src} target="_blank" rel="noopener noreferrer">Screenshot in voller Größe öffnen</a>}
       </figure>;

@@ -9,6 +9,8 @@ Isolated worktree from origin/main 1e12334. No deployment, posting, account acti
 ## Decisions
 Reuse BlogArticleShell. Article route /blog/comunio-ki-bots is a noindex draft, omitted from listing and sitemap. User revised visual direction: four screenshot-based figures (including cover) plus two diagrams. Original lineup, roster and computer-only offer list excerpts, no private headers/footers. Exact MD2 scores remain in HTML; no fabricated results screenshot. Keep source evidence outside public files.
 
+Cover revised: large competition headline “Fünf KI-Bots gegen meine Freunde.” with unchanged original lineup excerpt, brand fonts and logo. Asset linkedin-screenshot-v3.png. No generative alteration of player data.
+
 ## Failed approaches
 None.
 
