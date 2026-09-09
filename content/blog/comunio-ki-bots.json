@@ -22,8 +22,12 @@
     },
     {
       "type": "image",
-      "alt": "Fünf Bot-Rollen begleiten Denis' Comunio-Team: Scout, Markt, Elf, Chief und Study.",
-      "src": "/blog/comunio-ki-bots/cover.svg"
+      "alt": "Mein Comunio-Experiment mit einer echten Aufstellungsansicht vom 8. September 2026. Der Ausschnitt zeigt einen Entwurf für Spieltag 3, keine bestätigte Speicherung.",
+      "src": "/blog/comunio-ki-bots/linkedin-screenshot.png",
+      "width": 1200,
+      "height": 1200,
+      "imageKind": "screenshot",
+      "mobile": ""
     },
     {
       "type": "heading",
@@ -62,7 +66,11 @@
     {
       "type": "image",
       "alt": "Das Bot-Team: Scout recherchiert, Markt prüft Transfers, Elf plant die Aufstellung. Chief führt zusammen, Study dokumentiert.",
-      "src": "/blog/comunio-ki-bots/team.svg"
+      "src": "/blog/comunio-ki-bots/team.svg",
+      "width": 1200,
+      "height": 900,
+      "imageKind": "diagram",
+      "mobile": "/blog/comunio-ki-bots/team-mobile.svg"
     },
     {
       "type": "paragraph",
@@ -82,6 +90,15 @@
       "text": "Bevor das Team etwas entscheiden kann, braucht es den tatsächlichen Kontostand: den Kader, das verfügbare Spielgeld, offene Verpflichtungen und die angezeigte Aufstellung. Dazu kommen die relevanten Fristen. Diese Grundlage muss aktuell sein. Sonst plant das Team womöglich mit einem Spieler oder einem Budget, das so gar nicht mehr verfügbar ist."
     },
     {
+      "type": "image",
+      "src": "/blog/comunio-ki-bots/kader-original.png",
+      "alt": "Original-Kaderansicht aus dem Export vom 5. September 2026: 18 Spieler mit damaligen Marktwerten, Punkten und Positionen. Historischer Zwischenstand, keine aktuelle Bewertung.",
+      "width": 925,
+      "height": 744,
+      "imageKind": "screenshot",
+      "mobile": ""
+    },
+    {
       "type": "paragraph",
       "text": "Darauf bauen die Vorschläge der Fachrollen auf. Der Chief führt sie zusammen. Ein zusätzliches Prüfmodul kontrolliert Voraussetzungen für Gebote und Aufstellungen und protokolliert den Ablauf. Das Modul selbst bedient Comunio nicht. Der Schritt von einer geprüften Entscheidung zur tatsächlichen Aktion im Konto bleibt eine eigene Aufgabe."
     },
@@ -91,8 +108,21 @@
     },
     {
       "type": "image",
+      "src": "/blog/comunio-ki-bots/transfer-original.png",
+      "alt": "Originalausschnitt der Angebotsliste aus dem Export vom 5. September 2026. Sichtbar sind ältere Angebote an den Computer mit Status „Processed“ oder „Declined“. Die Aufnahmen belegen für sich allein nicht, wer die Aktionen ausgelöst hat.",
+      "width": 823,
+      "height": 168,
+      "imageKind": "screenshot",
+      "mobile": ""
+    },
+    {
+      "type": "image",
       "alt": "Sechs Arbeitsschritte: Kontostand lesen, Vorschläge sammeln, entscheiden, ausführen, Ergebnis kontrollieren und dokumentieren.",
-      "src": "/blog/comunio-ki-bots/ablauf.svg"
+      "src": "/blog/comunio-ki-bots/ablauf.svg",
+      "width": 1200,
+      "height": 940,
+      "imageKind": "diagram",
+      "mobile": "/blog/comunio-ki-bots/ablauf-mobile.svg"
     },
     {
       "type": "paragraph",
@@ -106,11 +136,6 @@
     {
       "type": "paragraph",
       "text": "Am zweiten Spieltag hat mein Team 39 Punkte geholt. Damit lag ich an diesem Spieltag auf Platz drei von fünf. Die Spitze hatte 46 Punkte, der nächste Platz vor mir 40. Das ist direkt anhand der Comunio-Spieltagsansicht geprüft."
-    },
-    {
-      "type": "image",
-      "alt": "Spieltagsvergleich: 46, 40, Denis mit 39, 30 und 24 Punkten. Denis liegt am zweiten Spieltag auf Platz drei von fünf.",
-      "src": "/blog/comunio-ki-bots/spieltag-2.svg"
     },
     {
       "type": "paragraph",
@@ -134,7 +159,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Damit das Ganze nicht nur aus Bot-Namen und Abläufen besteht, gehört für mich auch die Mannschaft ins Bild. Die folgende Grafik zeigt die elf Spieler, die am 8. September in der Aufstellungsansicht für den dritten Spieltag zu sehen waren."
+      "text": "Damit das Ganze nicht nur aus Bot-Namen und Abläufen besteht, gehört für mich auch die Mannschaft ins Bild. Der folgende Original-Screenshot zeigt die elf Spieler, die am 8. September in der Aufstellungsansicht für den dritten Spieltag zu sehen waren."
     },
     {
       "type": "paragraph",
@@ -142,12 +167,16 @@
     },
     {
       "type": "image",
-      "alt": "Aufstellungsentwurf vom 8. September: Philippe, Pimpong, Ilić; Sabitzer, El Khannouss, Chuki; Querfeld, Badé, Katić, W. Orbán; Flekken.",
-      "src": "/blog/comunio-ki-bots/elf.svg"
+      "alt": "Originalausschnitt aus Comunio vom 8. September 2026: sichtbare 4-3-3-Elf und Bestätigungsbutton. Die Zahlen neben den Spielern beziehen sich auf frühere Spieltage, nicht auf Spieltag 3. Speicherung nicht separat bestätigt.",
+      "src": "/blog/comunio-ki-bots/aufstellung-original.png",
+      "width": 505,
+      "height": 630,
+      "imageKind": "screenshot",
+      "mobile": ""
     },
     {
       "type": "paragraph",
-      "text": "Die Grafik zeigt einen Zwischenstand, keine rückwirkend bestätigte Elf der ersten beiden Spieltage. Die Ansicht war noch bearbeitbar. Ob diese Aufstellung anschließend gespeichert wurde, war in diesem Beleg nicht separat bestätigt. Deshalb stehen hier auch keine vermeintlichen Punkte für den dritten Spieltag daneben."
+      "text": "Der Screenshot zeigt einen Zwischenstand, keine rückwirkend bestätigte Elf der ersten beiden Spieltage. Die Ansicht war noch bearbeitbar. Ob diese Aufstellung anschließend gespeichert wurde, war in diesem Beleg nicht separat bestätigt. Die neben den Spielern sichtbaren Punkte stammen aus früheren Spieltagen. Sie sind keine Abrechnung für Spieltag 3."
     },
     {
       "type": "paragraph",
@@ -235,7 +264,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Text und schematische Grafiken entstanden mit KI-Unterstützung aus meinen Gesprächen und den Projektunterlagen. Die Grafiken sind eigene Darstellungen, keine Original-Screenshots des Spiels. Wie ich meine Texte erarbeite, erkläre ich im Artikel [über meinen LinkedIn-Hiwi](https://myhiwi.de/blog/linkedin-hiwi). Quellenstand: 8. September 2026; redaktionell vorbereitet am 9. September."
+      "text": "Text, Rahmengestaltung und erklärende Diagramme entstanden mit KI-Unterstützung aus meinen Gesprächen und den Projektunterlagen. Aufstellung, Kader und Transferliste zeigen echte, lediglich zugeschnittene Comunio-Screenshots. Die dargestellten Spieler und Werte wurden darin nicht mit KI neu erzeugt. Wie ich meine Texte erarbeite, erkläre ich im Artikel [über meinen LinkedIn-Hiwi](https://myhiwi.de/blog/linkedin-hiwi). Quellenstand: 8. September 2026; redaktionell vorbereitet am 9. September."
     }
   ]
 }

@@ -6,6 +6,7 @@
 .figure { margin: 48px 0 !important; }
 .figure img { display:block; width:100%; height:auto; border-radius:12px; }
 .figure figcaption { font-size:15px; line-height:1.6; color: var(--color-text-secondary, #64748B); margin-top:12px; }
+.enlarge { display:inline-flex; align-items:center; min-height:44px; font-size:16px; margin-top:8px; }
 .tableWrap { overflow-x:auto; }
 .tableWrap table { border-collapse:collapse; width:100%; font-size:16px; }
 .tableWrap th,.tableWrap td { padding:12px; border-bottom:1px solid var(--color-border, #CBD5E1); text-align:left; vertical-align:top; }

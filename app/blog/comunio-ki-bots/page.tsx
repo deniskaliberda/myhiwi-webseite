@@ -32,9 +32,10 @@ export default function ComunioArticle() {
     {article.body.map((block,i)=>{
       if(block.type==='heading') return <h2 className={styles.heading} id={block.id} key={i}>{block.text}</h2>;
       if(block.type==='image') return <figure className={styles.figure} key={i}>
-        <picture><source media="(max-width: 600px)" srcSet={block.src!.replace('.svg','-mobile.svg')} />
-        <Image unoptimized src={block.src!} alt={block.alt!} width={1200} height={block.src!.endsWith('elf.svg')?1350:block.src!.endsWith('cover.svg')?760:block.src!.endsWith('ablauf.svg')?940:900} priority={block.src!.endsWith('cover.svg')} /></picture>
-        <figcaption>{block.alt} Eigene schematische Darstellung mit KI-Unterstützung.</figcaption>
+        <picture>{block.mobile && <source media="(max-width: 600px)" srcSet={block.mobile} />}
+        <Image unoptimized src={block.src!} alt={block.alt!} width={block.width!} height={block.height!} priority={block.src!.endsWith('linkedin-screenshot.png')} /></picture>
+        <figcaption>{block.alt} {block.imageKind === 'diagram' ? 'Eigene schematische Darstellung mit KI-Unterstützung.' : 'Quelle: Comunio. Originalansicht zugeschnitten; private Bildränder entfernt.'}</figcaption>
+        {block.imageKind === 'screenshot' && <a className={styles.enlarge} href={block.src} target="_blank" rel="noopener noreferrer">Screenshot in voller Größe öffnen</a>}
       </figure>;
       if(block.type==='results') return <div className={styles.tableWrap} key={i}><table>
         <caption>Erste Spieltage und jeweiliger Nachweisstand</caption>
@@ -46,7 +47,7 @@ export default function ComunioArticle() {
     })}
     <aside className={styles.sources}>
       <h2>Was hinter den Angaben steckt</h2>
-      <p>Grundlagen des Spiels: <a href="https://www.comunio.de/">Comunio</a>. Für diesen Rückblick wurden die Projektberichte, der geprüfte Spieltagsbeleg vom 7. September und die dokumentierte Aufstellungsansicht vom 8. September ausgewertet. Private Originalaufnahmen und Kontodaten werden nicht veröffentlicht.</p>
+      <p>Grundlagen des Spiels: <a href="https://www.comunio.de/">Comunio</a>. Für diesen Rückblick wurden die Projektberichte, der geprüfte Spieltagsbeleg vom 7. September und die dokumentierte Aufstellungsansicht vom 8. September ausgewertet. Die Screenshots zeigen ausgewählte Ausschnitte der Plattform. Private Kontokennungen, Ligaangaben und Sitzungsdaten bleiben außerhalb der veröffentlichten Bildausschnitte.</p>
       <p>Die übrigen Mannschaften im Spieltagsvergleich sind anonymisiert. Die erste Woche ist nur als Berichtsstand aufgenommen. Ein Gesamtplatz, Spieler-Einzelpunkte und eine Wirkung der Bot-Entscheidungen werden daraus nicht abgeleitet.</p>
       <Link href="/blog/linkedin-hiwi">So entsteht ein Text mit meinem LinkedIn-Hiwi</Link>
     </aside>
