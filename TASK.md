@@ -18,9 +18,7 @@ Three new AI-generated landscape scenes on the summary illustrate scouting, role
 Prior text-heavy cover did not meet the user’s desired visual direction; replaced by generated character scene. Generated monitor left blank intentionally so an original screenshot could be inserted.
 
 ## Next
-Publication in progress: build and verify public metadata, deploy authorized blog, check live routes/images, then show LinkedIn draft with verified public link.
-
-Prepared and checked: production build including types/lint, desktop 1440 and mobile 390, eight loaded figures and eleven anchors per viewport, no horizontal overflow or browser errors, noindex. Generated composite cover, five original screenshot excerpts and two explanatory diagrams. Summary and return links tested on desktop and mobile; five roles, no overflow, no browser errors and correct cover verified. User preview opened on the summary. Recheck links after any subsequent image changes. Local preview port 3819 intentionally retained for Denis. No deployment. Next: Denis reviews copy and graphics; after separate publishing instruction add canonical/listing/sitemap and replace editorial link note in LinkedIn draft with verified public URL.
+Blog and illustrated summary live at https://myhiwi.de/blog/comunio-ki-bots and /kurz. PR 12 merged; production deployment myhiwi-webseite-kctzlqqkx-denis24.vercel.app ready. Live desktop/mobile checks passed: 8 article figures, 4 summary figures, 11 anchors, navigation, canonical/share image, sitemap and RSS. No browser errors or overflow. LinkedIn draft includes verified public URL and awaits Denis's next review before posting.
 
 ## accepted_commit
-1e1233497da0261026a4b65a0e51382d02714cff (baseline)
+b1c75ace37f5891073d3485fc187d9e5edd91a59 (published and verified)
