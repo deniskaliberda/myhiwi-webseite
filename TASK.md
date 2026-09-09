@@ -1,19 +1,19 @@
 # Task
 
 ## Objective
-Autorisiertes Go zum organischen 90-Tage-Plan: Messgrundlage, wichtige Inhaltskorrekturen und interne Links umsetzen; Google-Indexierungsauffälligkeiten live untersuchen.
+Prepare the approved Comunio editorial concept as a LinkedIn draft and illustrated MyHiwi blog preview.
 
 ## Constraints
-Eigener Worktree ab origin/main 418009b. Fremde Änderungen erhalten. Keine Kontakt-E-Mails als Live-Test, kein Outreach. Optionale Messung nur nach Einwilligung, keine Formulardaten in Analytics. Keine erfundenen Rankings oder Kundenergebnisse.
+Isolated worktree from origin/main 1e12334. No deployment, posting, account actions, private screenshots or participant identities. Use sourced data and explicit historical dates. Keep the published website unchanged.
 
 ## Decisions
-Vercel Web Analytics zählt nur Produktion auf myhiwi.de nach Zustimmung. Bestätigte Formularsendungen und Telefon-/E-Mail-Klicks getrennt auswerten. Query-Parameter und Fragmente entfernen; interne QA kann Messung abschalten. Vorhandene Leistungsseiten stärken statt doppelte Inhalte bauen.
+Reuse BlogArticleShell. Article route /blog/comunio-ki-bots is a noindex draft, omitted from listing and sitemap. Six original graphics with phone variants, exact MD2 scores and an explicitly unconfirmed displayed lineup from September 8. Keep source evidence outside public files.
 
 ## Failed approaches
-Baseline-Build erfolgreich, aber ESLint kollidiert im verschachtelten Worktree mit der übergeordneten Konfiguration. root:true isoliert die Repository-Konfiguration.
+None.
 
 ## Next
-Build inkl. TypeScript/Lint und 26 relevante Prüfungen grün. Mobile Einwilligungseinstellungen und drei Inhaltsseiten geprüft; ungültige alte Banner-Hintergrundklasse korrigiert. Beide auffälligen URLs sind im GSC-Live-Test abrufbar und selbstkanonisch; erneute Indexierung beantragt. Änderungen veröffentlichen, Produktion messen und aktuelle Sitemap einreichen.
+Prepared and checked: production build including types/lint, desktop 1440 and mobile 390, five loaded figures and nine anchors per viewport, no horizontal overflow or browser errors, noindex. Six PNG exports and five narrow SVG variants. Local preview port 3819 intentionally retained for Denis. No deployment. Next: Denis reviews copy and graphics; after separate publishing instruction add canonical/listing/sitemap and replace editorial link note in LinkedIn draft with verified public URL.
 
 ## accepted_commit
-418009b8d7eb9b43afcc90e49cd047fba1842dd9 (Ausgangsbasis)
+1e1233497da0261026a4b65a0e51382d02714cff (baseline)

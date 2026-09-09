@@ -1,0 +1,241 @@
+{
+  "slug": "comunio-ki-bots",
+  "status": "draft",
+  "title": "Fünf KI-Bots, mein Comunio-Team und die ersten zwei Spieltage",
+  "description": "Mein Comunio-Experiment mit fünf KI-Bots: Aufbau, erste Spieltage, eine Aufstellung und die Fehler, aus denen ich beim Arbeiten mit KI lerne.",
+  "date": "2026-09-09",
+  "sourceDate": "2026-09-08",
+  "author": "Denis Kaliberda",
+  "readTime": "10 Min.",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Ich spiele mit Freunden Comunio. Und weil ich inzwischen bei ziemlich vielen Dingen denke „Das müsste man doch mit KI ausprobieren können“, habe ich mir dafür ein kleines Bot-Team gebaut. Mit Grok-Bot, fünf verschiedenen Rollen und der Idee, die Mannschaft über eine ganze Saison begleiten zu lassen."
+    },
+    {
+      "type": "paragraph",
+      "text": "Am Anfang war da vor allem der Spaß am Ausprobieren. So ähnlich war es auch, als ich mich nach dem Zocken immer mehr mit KI beschäftigt habe: etwas bauen, schauen, was passiert, verbessern und direkt die nächste Idee ausprobieren. Bei Comunio kommt noch dazu, dass ich gegen Freunde spiele. Da interessiert mich dann natürlich schon, ob das Ganze auch Punkte bringt."
+    },
+    {
+      "type": "paragraph",
+      "text": "Die ersten beiden Spieltage sind vorbei. Hier zeige ich, wie ich das Team aufgebaut habe, welche Ergebnisse bereits belegt sind und warum mich bisher manche Fehler im Ablauf fast mehr beschäftigen als die Spielerwahl."
+    },
+    {
+      "type": "image",
+      "alt": "Fünf Bot-Rollen begleiten Denis' Comunio-Team: Scout, Markt, Elf, Chief und Study.",
+      "src": "/blog/comunio-ki-bots/cover.svg"
+    },
+    {
+      "type": "heading",
+      "text": "Worum es bei Comunio überhaupt geht",
+      "id": "worum-es-bei-comunio-berhaupt-geht"
+    },
+    {
+      "type": "paragraph",
+      "text": "Wer Comunio nicht kennt: Man stellt eine Mannschaft aus echten Fußballspielern zusammen. Wie diese Spieler bewertet werden, bestimmt die Punkte im Spiel. Dazu kommen Transfers, ein begrenztes Budget und die Frage, wen man für den nächsten Spieltag aufstellt. Die Grundlagen erklärt auch [Comunio selbst](https://www.comunio.de/)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Das klingt erst einmal überschaubar. Aber sobald man sich damit beschäftigt, kommen ziemlich viele Fragen zusammen. Wer spielt voraussichtlich? Wer fällt möglicherweise aus? Ist ein Spieler auf dem Markt seinen Preis wert? Und hilft mir ein weiterer Angreifer überhaupt, wenn an einer anderen Stelle jemand fehlt?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich wollte deshalb mehr ausprobieren, als eine KI einmal nach einer guten Elf zu fragen. Meine Idee war ein Team, das die Arbeit drumherum mit übernimmt: recherchieren, Vorschläge machen, Entscheidungen zusammenführen und später nachhalten, was daraus geworden ist."
+    },
+    {
+      "type": "heading",
+      "text": "Warum ich fünf Rollen eingerichtet habe",
+      "id": "warum-ich-f-nf-rollen-eingerichtet-habe"
+    },
+    {
+      "type": "paragraph",
+      "text": "Die fünf Rollen heißen Scout, Markt, Elf, Chief und Study. Jede hat einen eigenen Auftrag. Das ist für mich ein Versuch, eine große Aufgabe in kleinere Aufgaben aufzuteilen, bei denen klarer ist, welche Informationen gebraucht werden und was am Ende herauskommen soll."
+    },
+    {
+      "type": "paragraph",
+      "text": "Der Scout beschäftigt sich mit den Spielern. Er sammelt Informationen zu möglichen Einsätzen, Verletzungen und offenen Fragen. Der Markt schaut auf Kauf- und Verkaufsmöglichkeiten und darauf, was mit dem vorhandenen Spielgeld überhaupt machbar ist. Die Elf-Rolle bereitet aus dem Kader eine Aufstellung vor."
+    },
+    {
+      "type": "paragraph",
+      "text": "Beim Chief läuft das zusammen. Er soll die Einschätzungen vergleichen, eine Entscheidung daraus machen und die Kontoaktionen koordinieren. In der inzwischen klarer geregelten Aufgabenverteilung liegt die Ausführung beim Chief. Study hält fest, was vorgeschlagen wurde, was tatsächlich passiert ist und welches Ergebnis später dabei herauskam."
+    },
+    {
+      "type": "image",
+      "alt": "Das Bot-Team: Scout recherchiert, Markt prüft Transfers, Elf plant die Aufstellung. Chief führt zusammen, Study dokumentiert.",
+      "src": "/blog/comunio-ki-bots/team.svg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Warum diese Aufteilung? Eine interessante Transferidee allein hilft noch nicht viel. Sie muss zum Kader passen, bezahlbar sein und rechtzeitig umgesetzt werden. Wenn zwei Bots gleichzeitig mit demselben Budget planen, kann jeder einzelne Vorschlag vernünftig aussehen und die Kombination trotzdem nicht funktionieren."
+    },
+    {
+      "type": "paragraph",
+      "text": "Mit fünf Namen ist das Problem natürlich noch nicht gelöst. Ich musste auch festlegen, wie die Rollen ihre Ergebnisse weitergeben und wer am Ende prüft, ob eine Aktion wirklich stattgefunden hat. Genau daran arbeiten wir seit dem Start immer wieder."
+    },
+    {
+      "type": "heading",
+      "text": "Wie aus einer Idee eine Aktion im Spiel wird",
+      "id": "wie-aus-einer-idee-eine-aktion-im-spiel-wird"
+    },
+    {
+      "type": "paragraph",
+      "text": "Bevor das Team etwas entscheiden kann, braucht es den tatsächlichen Kontostand: den Kader, das verfügbare Spielgeld, offene Verpflichtungen und die angezeigte Aufstellung. Dazu kommen die relevanten Fristen. Diese Grundlage muss aktuell sein. Sonst plant das Team womöglich mit einem Spieler oder einem Budget, das so gar nicht mehr verfügbar ist."
+    },
+    {
+      "type": "paragraph",
+      "text": "Darauf bauen die Vorschläge der Fachrollen auf. Der Chief führt sie zusammen. Ein zusätzliches Prüfmodul kontrolliert Voraussetzungen für Gebote und Aufstellungen und protokolliert den Ablauf. Das Modul selbst bedient Comunio nicht. Der Schritt von einer geprüften Entscheidung zur tatsächlichen Aktion im Konto bleibt eine eigene Aufgabe."
+    },
+    {
+      "type": "paragraph",
+      "text": "Und danach kommt noch eine Kontrolle: Ist die Aufstellung wirklich gespeichert? Ist das Gebot tatsächlich abgegeben? Oder stand irgendwo nur eine Zusammenfassung, die nach „erledigt“ klang? Diese Unterscheidung ist inzwischen ein ziemlich wichtiger Teil des Experiments."
+    },
+    {
+      "type": "image",
+      "alt": "Sechs Arbeitsschritte: Kontostand lesen, Vorschläge sammeln, entscheiden, ausführen, Ergebnis kontrollieren und dokumentieren.",
+      "src": "/blog/comunio-ki-bots/ablauf.svg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich finde gerade diesen Teil spannend. Man kann mit KI schnell einen Ablauf beschreiben, der sinnvoll klingt. Sobald er in einem echten Konto funktionieren soll, merkt man, welche Übergaben noch fehlen. Eine gute Empfehlung und eine erledigte Aufgabe sind zwei getrennte Schritte, die beide funktionieren müssen."
+    },
+    {
+      "type": "heading",
+      "text": "Die ersten Ergebnisse: 39 Punkte am zweiten Spieltag",
+      "id": "die-ersten-ergebnisse-39-punkte-am-zweiten-spieltag"
+    },
+    {
+      "type": "paragraph",
+      "text": "Am zweiten Spieltag hat mein Team 39 Punkte geholt. Damit lag ich an diesem Spieltag auf Platz drei von fünf. Die Spitze hatte 46 Punkte, der nächste Platz vor mir 40. Das ist direkt anhand der Comunio-Spieltagsansicht geprüft."
+    },
+    {
+      "type": "image",
+      "alt": "Spieltagsvergleich: 46, 40, Denis mit 39, 30 und 24 Punkten. Denis liegt am zweiten Spieltag auf Platz drei von fünf.",
+      "src": "/blog/comunio-ki-bots/spieltag-2.svg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Für den ersten Spieltag nennt der damalige Botbericht 32 Punkte und Platz vier von fünf. Dafür fehlt in der vorliegenden Sammlung noch der separate Abgleich mit der offiziellen Ergebnisansicht. Die beiden Wochen stehen deshalb bewusst mit unterschiedlichem Nachweisstand in der Übersicht."
+    },
+    {
+      "type": "results"
+    },
+    {
+      "type": "paragraph",
+      "text": "Das ist noch keine Aussage darüber, ob die KI besser spielt als ich. Dazu müsste ich vorher festhalten, welche Mannschaft ich ohne die Bots aufstellen würde, und den Vergleich über längere Zeit beobachten. Im Nachhinein einfach eine schlechtere Vergleichself auszudenken, wäre ziemlich sinnlos."
+    },
+    {
+      "type": "paragraph",
+      "text": "Auch die Gesamttabelle ist etwas anderes als der Platz an einem einzelnen Spieltag. In dieser ersten Folge zeige ich deshalb den belegten Spieltagsvergleich. Den vollständigen Gesamtstand ergänze ich, sobald der passende Tabellenbeleg dabei ist."
+    },
+    {
+      "type": "heading",
+      "text": "So sah die Elf im Zwischenstand aus",
+      "id": "so-sah-die-elf-im-zwischenstand-aus"
+    },
+    {
+      "type": "paragraph",
+      "text": "Damit das Ganze nicht nur aus Bot-Namen und Abläufen besteht, gehört für mich auch die Mannschaft ins Bild. Die folgende Grafik zeigt die elf Spieler, die am 8. September in der Aufstellungsansicht für den dritten Spieltag zu sehen waren."
+    },
+    {
+      "type": "paragraph",
+      "text": "Vorne standen Philippe, Pimpong und Ilić. Im Mittelfeld Sabitzer, El Khannouss und Chuki. Dahinter Querfeld, Badé, Katić und W. Orbán, mit Flekken im Tor. Aus den angezeigten Positionen ergibt sich ein 4-3-3."
+    },
+    {
+      "type": "image",
+      "alt": "Aufstellungsentwurf vom 8. September: Philippe, Pimpong, Ilić; Sabitzer, El Khannouss, Chuki; Querfeld, Badé, Katić, W. Orbán; Flekken.",
+      "src": "/blog/comunio-ki-bots/elf.svg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Die Grafik zeigt einen Zwischenstand, keine rückwirkend bestätigte Elf der ersten beiden Spieltage. Die Ansicht war noch bearbeitbar. Ob diese Aufstellung anschließend gespeichert wurde, war in diesem Beleg nicht separat bestätigt. Deshalb stehen hier auch keine vermeintlichen Punkte für den dritten Spieltag daneben."
+    },
+    {
+      "type": "paragraph",
+      "text": "Genau so ein Detail hat tatsächlich schon zu einer Korrektur geführt: In einer gespeicherten Beschreibung stand 4-4-2, obwohl das Bild drei Stürmer, drei Mittelfeldspieler, vier Verteidiger und einen Torwart zeigte. Wir haben die Beschreibung daraufhin korrigiert. Für mich ein gutes Beispiel dafür, warum man nicht jede Zusammenfassung einfach übernehmen sollte."
+    },
+    {
+      "type": "heading",
+      "text": "Was bisher schiefging",
+      "id": "was-bisher-schiefging"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ein Teil der Probleme hatte erstaunlich wenig mit Fußballwissen zu tun. Es gab gescheiterte Anmeldungen und pausierte Abläufe. Dann kann sich ein Bot noch so viele Gedanken über einen Transfer machen: Wenn er nicht ins Konto kommt, bleibt es bei der Idee."
+    },
+    {
+      "type": "paragraph",
+      "text": "Auch bei den Fristen gab es widersprüchliche Angaben. Für den Aufbau heißt das, verschiedene Termine sauber auseinanderzuhalten und die passende Quelle zu prüfen. Das Ende eines Angebots und der Zeitpunkt für die Aufstellung dürfen nicht einfach in einem allgemeinen Freitagsplan verschwimmen."
+    },
+    {
+      "type": "paragraph",
+      "text": "Ein anderer Fehler steckte in der Speicherung der Kontodaten. Ein Ablauf sollte nur dann einen neuen Stand ablegen, wenn sich Werte geändert hatten. Wenn alles gleich geblieben war, konnte später ein alter Datensatz übrig bleiben. Aus dem war dann nicht mehr klar erkennbar, dass tatsächlich noch einmal nachgeschaut worden war."
+    },
+    {
+      "type": "paragraph",
+      "text": "Wir haben das geändert: Nach einem vollständigen neuen Abgleich wird auch ein neuer Stand gespeichert. Selbst dann, wenn Kader und Budget unverändert sind. Der Zeitpunkt der Beobachtung gehört zur Information dazu."
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich kann aus diesen Fehlern nicht seriös ableiten, dass sie mich eine bestimmte Anzahl an Punkten gekostet haben. Aber ich kann zeigen, wo der Ablauf gehakt hat und was daraus geändert wurde. Genau das soll in dieser Reihe genauso vorkommen wie ein guter Spieltag."
+    },
+    {
+      "type": "heading",
+      "text": "Was inzwischen besser funktioniert",
+      "id": "was-inzwischen-besser-funktioniert"
+    },
+    {
+      "type": "paragraph",
+      "text": "Am 7. September wurde ein begleiteter Kontoabgleich mit 18 Spielern, der angezeigten Elf, dem Spielgeldstand und offenen Verpflichtungen durchgeführt und anschließend geprüft. Am 8. September ist auch für einen geplanten Mittagslauf ein tatsächlicher lesender Kontoabgleich mit abgelegten Ergebnissen belegt."
+    },
+    {
+      "type": "paragraph",
+      "text": "Das ist ein Fortschritt. Es bedeutet aber noch nicht, dass das Team schon dauerhaft ohne Hilfe durch die Saison kommt. Gerade bei der Frage, wie frisch die Daten sind und ob eine Aufstellung tatsächlich gespeichert wurde, bleiben genaue Kontrollen wichtig. Eine komplette unbeaufsichtigte Spieltagskette ist damit noch nicht nachgewiesen."
+    },
+    {
+      "type": "paragraph",
+      "text": "Für die nächsten Wochen will ich deshalb auch festhalten, wo ich selbst eingreifen muss. Wenn ich am Ende jeden Schritt von Hand retten müsste, wäre das ein anderes Ergebnis, als wenn das Team die vorgesehenen Aufgaben tatsächlich zuverlässig erledigt. Beides gehört in den Rückblick."
+    },
+    {
+      "type": "heading",
+      "text": "Was ich ab jetzt wöchentlich zeigen möchte",
+      "id": "was-ich-ab-jetzt-w-chentlich-zeigen-m-chte"
+    },
+    {
+      "type": "paragraph",
+      "text": "Die Reihe soll über die Saison wachsen. Ich möchte nach den Spieltagen zeigen, wo meine Mannschaft steht, welche Entscheidungen das Team vorbereitet und umgesetzt hat, was gut lief und was daneben ging. Dazu gehören die Aufstellung, die Punkte, interessante Transfers und die Änderungen am Ablauf."
+    },
+    {
+      "type": "paragraph",
+      "text": "Damit die Wochen vergleichbar bleiben, soll jeder Bericht dieselben Bestandteile bekommen: ein geprüftes Ergebnis, die dazugehörige Mannschaft, eine interessante Entscheidung, einen Fehler oder Eingriff und den nächsten Schritt. Falls noch kein neuer Spieltag abgerechnet ist, gibt es ein Update zum Aufbau statt eines erfundenen neuen Zwischenstands."
+    },
+    {
+      "type": "paragraph",
+      "text": "Study soll die Entscheidungen möglichst schon vor dem Ergebnis dokumentieren. Dann kann man später nachlesen, was das Team damals wusste und erwartet hat. Das macht den Verlauf für mich deutlich interessanter, als am Saisonende nur die gelungenen Momente zusammenzusuchen."
+    },
+    {
+      "type": "heading",
+      "text": "Warum das auch auf meinem MyHiwi-Blog landet",
+      "id": "warum-das-auch-auf-meinem-myhiwi-blog-landet"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sport, Spielen und KI kommen in diesem Projekt ziemlich gut zusammen. Der Sport war lange mein Beruf. Heute baue ich mit MyHiwi an digitalen Lösungen für Unternehmen. Die Lust, Dinge zu verstehen und auszuprobieren, zieht sich für mich durch beides."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bei Comunio kann ich an einer eigenen Aufgabe sehen, wie ich Arbeit an KI übergebe: Was muss sie wissen? Wer entscheidet? Woran erkenne ich, dass etwas erledigt ist? Bei einem Kundenprojekt sind die Aufgaben und Folgen natürlich andere. Ein guter Comunio-Spieltag ist kein Beleg für mehr Umsatz bei einem Unternehmen."
+    },
+    {
+      "type": "paragraph",
+      "text": "Aber der Versuch zeigt ziemlich gut, wie ich mich in solche Themen reinarbeite. Ich will etwas bauen, das mir Arbeit abnimmt, und dabei verstehen, was wirklich funktioniert. Wenn dabei noch ein paar gute Spieltage gegen meine Freunde herauskommen, nehme ich die gerne mit."
+    },
+    {
+      "type": "paragraph",
+      "text": "Auf LinkedIn erzähle ich jeweils eine Geschichte daraus. Hier im Blog gibt es die ausführlichere Version mit Mannschaft, Zahlen und Bildern. Auch wenn es mal nicht so läuft, wie ich mir das vorgestellt habe."
+    },
+    {
+      "type": "paragraph",
+      "text": "Text und schematische Grafiken entstanden mit KI-Unterstützung aus meinen Gesprächen und den Projektunterlagen. Die Grafiken sind eigene Darstellungen, keine Original-Screenshots des Spiels. Wie ich meine Texte erarbeite, erkläre ich im Artikel [über meinen LinkedIn-Hiwi](https://myhiwi.de/blog/linkedin-hiwi). Quellenstand: 8. September 2026; redaktionell vorbereitet am 9. September."
+    }
+  ]
+}

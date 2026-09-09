@@ -363,3 +363,6 @@ Die zugehörige Karte in der Blogübersicht übernimmt Bild, Maße und Alternati
 ### Einwilligungseinstellungen (Datenschutz)
 
 `components/analytics/ConsentSettings.tsx` ergänzt den vorhandenen Consent-Banner. Zeigt den gespeicherten Status und ermöglicht Widerruf oder Zustimmung. Verwendet bestehende Text-, Abstands-, Rand- und Pill-Tokens; Schaltflächen umbrechen auf schmalen Geräten. Keine neue visuelle Variante außerhalb der Rechtstextseite.
+
+## Comunio editorial figures (draft, September 2026)
+Original static diagrams inside the existing BlogArticleShell, only /blog/comunio-ki-bots. Six source SVGs: title/social cover, role map, numbered workflow, exact matchday ranking, displayed lineup. Existing ink/blue/paper palette and embedded Bricolage Grotesque/Inter Tight. Dedicated narrow SVGs selected below 600px; captions and equivalent names/numbers remain HTML-readable. No stock/AI player faces or raw account screenshots. No new shared component or motion.
