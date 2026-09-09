@@ -21,3 +21,8 @@
 .quickRead:hover {background:#1d4ed8;}
 .quickRead:focus-visible {outline:3px solid #60a5fa;outline-offset:4px;}
 @media(max-width:600px){.quickRead{width:100%;text-align:center;}}
+
+/* Keep the hero within the article reading width on desktop. */
+@media(min-width:768px) {
+  .heroFigure { max-width:64ch; margin-inline:auto !important; }
+}

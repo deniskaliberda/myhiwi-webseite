@@ -24,3 +24,5 @@
 .storyCopy p {line-height:1.65;}.storyCopy .step {color:#2563eb;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
 .reverse .scene {order:2;}.reverse .storyCopy {order:1;}
 @media(max-width:700px){.story{grid-template-columns:1fr;gap:18px;margin:32px 0;}.reverse .scene,.reverse .storyCopy{order:initial;}.storyCopy .step{margin-top:0;}}
+
+@media(min-width:701px) { .cover {width:100%;max-width:460px;justify-self:center;} }
