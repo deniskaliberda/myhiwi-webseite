@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     type: 'article', url: 'https://myhiwi.de/blog/comunio-ki-bots',
     title: article.title, description: article.description,
     publishedTime: article.date, authors: [article.author], locale: 'de_DE',
-    images: [{ url: 'https://myhiwi.de/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png', width: 2048, height: 2048, alt: 'Fünf KI-Bots gegen meine Freunde – mein Comunio-Team mit Grok Bot' }],
+    images: [{ url: 'https://myhiwi.de/blog/comunio-ki-bots/comunio-football-hero-v1.png', width: 1672, height: 941, alt: 'Fünf KI-Bots gegen meine Freunde – mein Comunio-Team mit Grok Bot' }],
   },
-  twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: ['https://myhiwi.de/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png'] },
+  twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: ['https://myhiwi.de/blog/comunio-ki-bots/comunio-football-hero-v1.png'] },
 };
 
 function InlineLinks({text}: {text: string}) {
@@ -43,7 +43,7 @@ export default function ComunioArticle() {
       if(block.type==='image') return <figure className={`${styles.figure} ${block.src?.endsWith('grok-rollen-original.png') ? styles.roleShot : ''}`} key={i}>
         <picture>{block.mobile && <source media="(max-width: 600px)" srcSet={block.mobile} />}
         <Image unoptimized src={block.src!} alt={block.alt!} width={block.width!} height={block.height!} priority={block.imageKind === 'cover'} /></picture>
-        <figcaption>{block.alt} {block.imageKind === 'diagram' ? 'Eigene schematische Darstellung mit KI-Unterstützung.' : block.imageKind === 'cover' ? 'Illustration: GPT Image 2.5 über Higgsfield. Spielansicht: Original-Screenshot aus Comunio.' : block.imageKind === 'grok' ? 'Quelle: eigene Aufnahme aus Grok Bot; Ausschnitt der unveränderten Oberfläche.' : 'Quelle: Comunio. Originalansicht zugeschnitten; private Bildränder entfernt.'}</figcaption>
+        <figcaption>{block.alt} {block.imageKind === 'diagram' ? 'Eigene schematische Darstellung mit KI-Unterstützung.' : block.imageKind === 'cover' ? 'KI-generierte Illustration: die fünf Bot-Rollen als Fußballteam.' : block.imageKind === 'grok' ? 'Quelle: eigene Aufnahme aus Grok Bot; Ausschnitt der unveränderten Oberfläche.' : 'Quelle: Comunio. Originalansicht zugeschnitten; private Bildränder entfernt.'}</figcaption>
         {['screenshot','grok','cover'].includes(block.imageKind || '') && <a className={styles.enlarge} href={block.src} target="_blank" rel="noopener noreferrer">Bild in voller Größe öffnen</a>}
       </figure>;
       if(block.type==='results') return <div className={styles.tableWrap} key={i}><table>

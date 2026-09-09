@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Fünf KI-Helfer, eine Comunio-Mannschaft und meine Freunde als Gegner. Die Idee, der Aufbau und der erste Zwischenstand auf einer Seite.',
   alternates: { canonical: 'https://myhiwi.de/blog/comunio-ki-bots/kurz' },
   robots: { index: false, follow: true },
-  openGraph: { title: 'Mein Comunio-Experiment in 60 Sekunden', description: 'Fünf KI-Helfer, eine Mannschaft: die Idee, das Team und die ersten Ergebnisse.', url: 'https://myhiwi.de/blog/comunio-ki-bots/kurz', images: ['https://myhiwi.de/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png'] },
+  openGraph: { title: 'Mein Comunio-Experiment in 60 Sekunden', description: 'Fünf KI-Helfer, eine Mannschaft: die Idee, das Team und die ersten Ergebnisse.', url: 'https://myhiwi.de/blog/comunio-ki-bots/kurz', images: ['https://myhiwi.de/blog/comunio-ki-bots/comunio-football-hero-v1.png'] },
 };
 const roles = [
   ['Scout', 'Prüft Spieler und mögliche Einsätze.'],
@@ -34,8 +34,8 @@ export default function ComunioSummary() {
 
       </div>
       <figure className={styles.cover}>
-        <Image unoptimized priority src={cover.src!} width={2048} height={2048} alt="Fünf Roboterrollen mit meiner echten Comunio-Aufstellung im gemeinsamen Bildschirm"/>
-        <figcaption>Illustration: GPT Image 2.5 über Higgsfield. Spielansicht: Original-Screenshot aus Comunio, 8. September 2026.</figcaption>
+        <Image unoptimized priority src={cover.src!} width={cover.width!} height={cover.height!} alt={cover.alt!}/>
+        <figcaption>KI-generierte Illustration: Scout, Markt, Elf, Chief und Study spielen Fußball.</figcaption>
       </figure>
     </div>
     <div className={styles.story}>

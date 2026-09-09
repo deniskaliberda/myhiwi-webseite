@@ -122,7 +122,7 @@ export default function BlogPage() {
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <Card interactive className="flex flex-col gap-mh-3">
                   {post.slug === comunioArticle.slug && (
-                    <Image src="/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png" width={2048} height={2048} alt="Fünf KI-Bots gegen meine Freunde: Comunio-Experiment, Folge 1" sizes="(max-width: 768px) calc(100vw - 80px), 820px" className="h-auto w-full" />
+                    <Image src="/blog/comunio-ki-bots/comunio-football-hero-v1.png" width={1672} height={941} alt="Fünf KI-Bots gegen meine Freunde: Comunio-Experiment, Folge 1" sizes="(max-width: 768px) calc(100vw - 80px), 820px" className="h-auto w-full" />
                   )}
                   {post.slug === hiwiArticle.slug && (
                     <Image
