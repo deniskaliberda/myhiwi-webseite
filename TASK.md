@@ -12,6 +12,8 @@ Cover generated with GPT Image 2.5 via Higgsfield, job 018dabeb-e77b-4af5-81d2-d
 
 A compact noindex /blog/comunio-ki-bots/kurz route provides the requested 60-second summary, linked prominently from the full article and back. Cover fit updated edge-to-edge inside the monitor: original field excerpt cropped to remove controls, original foreground restored above the display; all eleven players remain visible.
 
+Three new AI-generated landscape scenes on the summary illustrate scouting, role handoffs, and checking mistakes. Built-in image generation with the approved cover as character/style reference; WebP assets, captions and alt text. Exact prompts and generation source paths archived in linkedIn/output/comunio-2026-09-09/kurz-illustrationen.json.
+
 ## Failed approaches
 Prior text-heavy cover did not meet the user’s desired visual direction; replaced by generated character scene. Generated monitor left blank intentionally so an original screenshot could be inserted.
 
