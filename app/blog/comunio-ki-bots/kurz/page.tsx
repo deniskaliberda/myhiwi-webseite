@@ -9,7 +9,9 @@ import styles from './summary.module.css';
 export const metadata: Metadata = {
   title: 'Mein Comunio-Experiment in 60 Sekunden · Folge 1',
   description: 'Fünf KI-Helfer, eine Comunio-Mannschaft und meine Freunde als Gegner. Die Idee, der Aufbau und der erste Zwischenstand auf einer Seite.',
-  robots: { index: false, follow: false },
+  alternates: { canonical: 'https://myhiwi.de/blog/comunio-ki-bots/kurz' },
+  robots: { index: false, follow: true },
+  openGraph: { title: 'Mein Comunio-Experiment in 60 Sekunden', description: 'Fünf KI-Helfer, eine Mannschaft: die Idee, das Team und die ersten Ergebnisse.', url: 'https://myhiwi.de/blog/comunio-ki-bots/kurz', images: ['https://myhiwi.de/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png'] },
 };
 const roles = [
   ['Scout', 'Prüft Spieler und mögliche Einsätze.'],
@@ -22,7 +24,7 @@ export default function ComunioSummary() {
   const cover = article.body.find(block => block.imageKind === 'cover')!;
   return <Section background="paper" padding="large"><Container className="max-w-[1060px]">
     <Link className={styles.back} href="/blog/comunio-ki-bots">← Zum ausführlichen Artikel</Link>
-    <p className={styles.eyebrow}>Folge 01 · Kurzfassung · etwa 60 Sekunden · Vorschau</p>
+    <p className={styles.eyebrow}>Folge 01 · Kurzfassung · etwa 60 Sekunden</p>
     <h1 className={styles.title}>Fünf KI-Bots<br/><em className="mh-italic-accent">gegen meine Freunde.</em></h1>
     <div className={styles.intro}>
       <div>

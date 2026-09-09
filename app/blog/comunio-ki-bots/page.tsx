@@ -8,7 +8,15 @@ import styles from './article.module.css';
 export const metadata: Metadata = {
   title: article.title,
   description: article.description,
-  robots: { index: false, follow: false },
+  alternates: { canonical: 'https://myhiwi.de/blog/comunio-ki-bots' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article', url: 'https://myhiwi.de/blog/comunio-ki-bots',
+    title: article.title, description: article.description,
+    publishedTime: article.date, authors: [article.author], locale: 'de_DE',
+    images: [{ url: 'https://myhiwi.de/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png', width: 2048, height: 2048, alt: 'Fünf KI-Bots gegen meine Freunde – mein Comunio-Team mit Grok Bot' }],
+  },
+  twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: ['https://myhiwi.de/blog/comunio-ki-bots/comunio-folge-01-robot-team-v3.png'] },
 };
 
 function InlineLinks({text}: {text: string}) {
@@ -25,7 +33,7 @@ export default function ComunioArticle() {
     ctaTitle="Was ich sonst mit KI mache"
     ctaLead="Mit MyHiwi unterstütze ich Unternehmen bei ihrer Website, ihrer digitalen Sichtbarkeit und passenden Arbeitsabläufen. Hier im Blog zeige ich auch, wie ich selbst dazulerne.">
     <Link className={styles.quickRead} href="/blog/comunio-ki-bots/kurz">Keine Zeit? Die Kurzfassung in 60 Sekunden →</Link>
-    <div className={styles.draft}>Folge 01 · Woche drei des Experiments · Rückblick auf Spieltag 1 und 2 · Vorschau</div>
+    <div className={styles.draft}>Folge 01 · Woche drei des Experiments · Rückblick auf Spieltag 1 und 2</div>
     {article.body.map((block,i)=>{
       if(block.type==='contents') return <details className={styles.contents} key={i}>
         <summary>Die Themen in Folge 1</summary>

@@ -1,6 +1,6 @@
 {
   "slug": "comunio-ki-bots",
-  "status": "draft",
+  "status": "published",
   "title": "Fünf KI-Bots gegen meine Freunde: Mein Comunio-Experiment, Folge 1",
   "description": "Zu spät bei Comunio eingestiegen, fünf Helfer mit Grok Bot gebaut: mein Start, die Rollen und die ersten zwei Spieltage – mit echten Screenshots.",
   "date": "2026-09-09",
@@ -330,5 +330,7 @@
       "text": "Text und erklärende Diagramme entstanden mit KI-Unterstützung aus meinen Gesprächen und den Projektunterlagen. Die Roboter-Illustration des Covers wurde mit GPT Image 2.5 über Higgsfield generiert. In ihren Bildschirm wurde der Originalausschnitt aus Comunio eingesetzt. Die Spielansichten und die beiden Grok-Bot-Ausschnitte sind echte Screenshots; dargestellte Spieler, Werte und Nachrichten wurden darin nicht mit KI neu erzeugt. Wie ich meine Texte erarbeite, erkläre ich im Artikel [über meinen LinkedIn-Hiwi](https://myhiwi.de/blog/linkedin-hiwi). Spielbelege bis 8. September 2026; Grok-Bot-Oberfläche und redaktioneller Stand vom 9. September."
     }
   ],
-  "episode": 1
+  "episode": 1,
+  "displayDate": "9. September 2026",
+  "category": "KI-Experiment"
 }
