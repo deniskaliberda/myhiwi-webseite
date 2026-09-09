@@ -40,7 +40,7 @@ export default function ComunioArticle() {
         <nav aria-label="Inhalt">{article.body.filter(b=>b.type==='heading').map(b=><a key={b.id} href={`#${b.id}`}>{b.text}</a>)}</nav>
       </details>;
       if(block.type==='heading') return <h2 className={styles.heading} id={block.id} key={i}>{block.text}</h2>;
-      if(block.type==='image') return <figure className={`${styles.figure} ${block.src?.endsWith('grok-rollen-original.png') ? styles.roleShot : ''}`} key={i}>
+      if(block.type==='image') return <figure className={`${styles.figure} ${block.imageKind === 'cover' ? styles.heroFigure : ''} ${block.src?.endsWith('grok-rollen-original.png') ? styles.roleShot : ''}`} key={i}>
         <picture>{block.mobile && <source media="(max-width: 600px)" srcSet={block.mobile} />}
         <Image unoptimized src={block.src!} alt={block.alt!} width={block.width!} height={block.height!} priority={block.imageKind === 'cover'} /></picture>
         <figcaption>{block.alt} {block.imageKind === 'diagram' ? 'Eigene schematische Darstellung mit KI-Unterstützung.' : block.imageKind === 'cover' ? 'KI-generierte Illustration: die fünf Bot-Rollen als Fußballteam.' : block.imageKind === 'grok' ? 'Quelle: eigene Aufnahme aus Grok Bot; Ausschnitt der unveränderten Oberfläche.' : 'Quelle: Comunio. Originalansicht zugeschnitten; private Bildränder entfernt.'}</figcaption>

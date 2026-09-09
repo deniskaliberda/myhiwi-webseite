@@ -1,16 +1,16 @@
 # Task
 
 ## Objective
-Replace Comunio blog hero with five football-playing robots and MyHiwi wordmark; publish as authorized.
-
-## Constraints
-Preserve article evidence and screenshots. No LinkedIn changes. New illustration accurately labeled.
+Constrain Comunio blog hero on desktop while preserving mobile layout; publish.
 
 ## Decisions
-New landscape hero shared by article, summary, listing and social metadata. Built-in Imagegen using approved robot cover as style reference.
+Article hero uses existing 64ch reading-width rule on desktop, centered without crop. Summary desktop cover capped at its existing mobile maximum of 460px.
+
+## Constraints
+Only cover sizing; no asset or LinkedIn changes.
 
 ## Next
-Build, inspect, merge and verify production.
+Build and verify responsive sizing, then deploy.
 
 ## accepted_commit
-b1c75ace37f5891073d3485fc187d9e5edd91a59
+6dfc73acd2fcae5dc63f396fa5734127685eaa54
