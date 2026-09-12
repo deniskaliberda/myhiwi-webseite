@@ -1,0 +1,38 @@
+{
+  "checked": "2026-09-12",
+  "environment": "isolated local production build; no .env.local, no forms submitted",
+  "checks": [
+    {
+      "width": 390,
+      "statisticRecords": 25,
+      "canonical": true,
+      "anchors": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "downloads": true,
+      "internalLinks": 6
+    },
+    {
+      "width": 768,
+      "statisticRecords": 25,
+      "canonical": true,
+      "anchors": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "downloads": true,
+      "internalLinks": 6
+    },
+    {
+      "width": 1440,
+      "statisticRecords": 25,
+      "canonical": true,
+      "anchors": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "downloads": true,
+      "internalLinks": 6
+    }
+  ],
+  "noJavaScriptRecords": 25,
+  "sitemap": true
+}

@@ -15,6 +15,12 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    href: "/wissen/digitalisierung-ki-statistiken",
+    title: "Digitalisierung & KI: 25 Statistiken für kleine Unternehmen",
+    teaser: "Originalquellen, Größenklassen und Datenzeiträume verständlich eingeordnet – mit Grafiken und CSV-Download.",
+    tag: "Zahlen & Quellen",
+  },
+  {
     href: "/wissen/lokaler-betrieb-bei-google-gefunden-werden",
     title: "Wie wird mein lokaler Betrieb bei Google gefunden?",
     teaser: "Der komplette Leitfaden: Profil, Bewertungen, Website, Anfrageweg, Anzeigen.",

@@ -1,0 +1,321 @@
+{
+  "title": "Digitalisierung & KI in kleinen Unternehmen: 25 Statistiken",
+  "slug": "digitalisierung-ki-statistiken",
+  "published": "2026-09-12",
+  "checked": "2026-09-12",
+  "sources": [
+    {
+      "id": "destatis",
+      "publisher": "Statistisches Bundesamt (Destatis)",
+      "title": "KI-Nutzung nach Beschäftigtengrößenklassen",
+      "date": "2025-11-24",
+      "url": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Unternehmen/IKT-in-Unternehmen-IKT-Branche/Tabellen/ikti-unternehmen-kuenstliche-intelligenz.html",
+      "period": "2025",
+      "population": "Unternehmen ab 10 Beschäftigten in den erfassten Wirtschaftsbereichen",
+      "method": "Amtliche IKT-Erhebung. Ab 2025 gilt der EU-Unternehmensbegriff. Betriebe unter 10 Beschäftigten sind hier nicht abgebildet. Die oberste Größenklasse ist in dieser Tabelle als „mehr als 250“ beschriftet.",
+      "section": "Wie viele Unternehmen nutzen KI laut Destatis?",
+      "intro": "Die amtliche Tabelle erlaubt einen Größenvergleich innerhalb derselben Erhebung. Sie beantwortet keine Frage zur KI-Nutzung von Soloselbstständigen."
+    },
+    {
+      "id": "kfw-ki",
+      "publisher": "KfW Research",
+      "title": "Künstliche Intelligenz kommt im Mittelstand immer häufiger zum Einsatz",
+      "date": "2026-02-11",
+      "url": "https://www.kfw.de/%C3%9Cber-die-KfW/Newsroom/Aktuelles/Pressemitteilungen-Details_880896.html",
+      "period": "2022–2024",
+      "population": "Mittelständische Unternehmen in Deutschland, einschließlich Kleinstunternehmen",
+      "method": "Sonderauswertung des KfW-Mittelstandspanels. Die Veröffentlichung von 2026 bezieht sich auf 2022–2024. Branchen- und Forschungsgruppen sind Teilmengen, keine addierbaren Anteile.",
+      "section": "Was wissen wir über KI in Kleinstbetrieben?",
+      "intro": "Die KfW berücksichtigt auch Unternehmen unter fünf Beschäftigten. Diese Perspektive ist für viele lokale Betriebe näher am Alltag als eine Statistik ausschließlich größerer Firmen."
+    },
+    {
+      "id": "ifo",
+      "publisher": "ifo Institut",
+      "title": "Mehr als die Hälfte der Unternehmen nutzt Künstliche Intelligenz",
+      "date": "2026-06-05",
+      "url": "https://www.ifo.de/pressemitteilung/2026-06-05/mehr-als-die-haelfte-der-unternehmen-nutzt-kuenstliche-intelligenz",
+      "period": "Mai 2026",
+      "population": "Unternehmen der ifo-Umfrage; Industrie, Dienstleistungen, Handel und Bauhauptgewerbe",
+      "method": "Befragung zur KI-Nutzung in Geschäftsprozessen. Die Pressemitteilung nennt keine Stichprobengröße. Wegen anderer Erhebung und anderem Zeitraum kein direkter Anschluss an Destatis oder KfW.",
+      "section": "Was zeigt die jüngere ifo-Umfrage?",
+      "intro": "Für eine aktuellere Momentaufnahme liegt eine ifo-Befragung aus Mai 2026 vor. Nutzung, Planung und Diskussion werden getrennt ausgewiesen."
+    },
+    {
+      "id": "bitkom",
+      "publisher": "Bitkom Research / Bitkom e. V.",
+      "title": "Kleine Unternehmen zu oft planlos in der Digitalisierung",
+      "date": "2026-03-16",
+      "url": "https://www.bitkom.org/Presse/Presseinformation/Kleine-Unternehmen-oft-planlos-in-Digitalisierung",
+      "period": "Kalenderwochen 2–6, 2026",
+      "population": "Hier: Unternehmen mit 20–99 Beschäftigten; gesamte Befragung: 604 Unternehmen ab 20 Beschäftigten",
+      "method": "Telefonische Befragung im Auftrag des Digitalverbands Bitkom. Die 604 Unternehmen sind die Gesamtstichprobe, nicht die Fallzahl der Größenklasse 20–99. Kleinstbetriebe unter 20 Beschäftigten sind nicht erfasst.",
+      "section": "Wie verbreitet ist eine Digitalstrategie?",
+      "intro": "Die Bitkom-Zahlen unterscheiden zwischen keiner Strategie, Plänen für einzelne Bereiche und einer zentralen Strategie. Das sind Aussagen zur Organisation, nicht zur KI-Nutzungsquote."
+    },
+    {
+      "id": "kfw-digital",
+      "publisher": "KfW Research",
+      "title": "Digitalisierungsbericht Mittelstand 2025",
+      "date": "2026-04-23",
+      "url": "https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Digitalisierungsbericht-Mittelstand/KfW-Digitalisierungsbericht-2025.pdf",
+      "companion": "https://www.kfw.de/%C3%9Cber-die-KfW/KfW-Research/Digitalisierung.html",
+      "period": "Projekte: 2022–2024; Ausgaben: 2024",
+      "population": "Private Unternehmen in Deutschland mit höchstens 500 Mio. € Jahresumsatz; ohne Banken, öffentlichen Sektor und Non-Profit-Organisationen",
+      "method": "KfW-Mittelstandspanel. Projektquoten betreffen einen Dreijahreszeitraum, Ausgaben ein Kalenderjahr. Beschäftigtenzahl einschließlich aktiver Inhaber, ohne Auszubildende und mit Teilzeitumrechnung. Unternehmensanteile und Ausgabenanteile haben unterschiedliche Nenner.",
+      "section": "Wie viel digitalisiert und investiert der Mittelstand?",
+      "intro": "Digitalisierung umfasst mehr als KI. Deshalb stehen Projektquoten und Ausgaben hier in einer eigenen Gruppe. Eine fehlende Projektaktivität bedeutet nicht automatisch, dass ein Betrieb ohne digitale Werkzeuge arbeitet."
+    }
+  ],
+  "statistics": [
+    {
+      "id": "ki-gesamt",
+      "source": "destatis",
+      "value": 26,
+      "unit": "%",
+      "label": "KI-Nutzung insgesamt",
+      "period": "2025",
+      "basis": "Unternehmen der jeweiligen Größenklasse in der IKT-Erhebung; Gesamtwert ab 10 Beschäftigten",
+      "location": "Tabelle: Unternehmen, die künstliche Intelligenz nutzen"
+    },
+    {
+      "id": "ki-10-49",
+      "source": "destatis",
+      "value": 23,
+      "unit": "%",
+      "label": "KI-Nutzung: 10–49 Beschäftigte",
+      "period": "2025",
+      "basis": "Unternehmen der jeweiligen Größenklasse in der IKT-Erhebung; Gesamtwert ab 10 Beschäftigten",
+      "location": "Tabelle: Unternehmen, die künstliche Intelligenz nutzen"
+    },
+    {
+      "id": "ki-50-249",
+      "source": "destatis",
+      "value": 36,
+      "unit": "%",
+      "label": "KI-Nutzung: 50–249 Beschäftigte",
+      "period": "2025",
+      "basis": "Unternehmen der jeweiligen Größenklasse in der IKT-Erhebung; Gesamtwert ab 10 Beschäftigten",
+      "location": "Tabelle: Unternehmen, die künstliche Intelligenz nutzen"
+    },
+    {
+      "id": "ki-gross",
+      "source": "destatis",
+      "value": 57,
+      "unit": "%",
+      "label": "KI-Nutzung: mehr als 250 Beschäftigte",
+      "period": "2025",
+      "basis": "Unternehmen der jeweiligen Größenklasse in der IKT-Erhebung; Gesamtwert ab 10 Beschäftigten",
+      "location": "Tabelle: Unternehmen, die künstliche Intelligenz nutzen"
+    },
+    {
+      "id": "ki-mittelstand",
+      "source": "kfw-ki",
+      "value": 20,
+      "unit": "%",
+      "label": "Mittelstand mit KI-Einsatz",
+      "period": "2022–2024",
+      "basis": "Mittelständische Unternehmen insgesamt",
+      "location": "Pressemitteilung: Absätze zur Nutzung, Branche und Forschung"
+    },
+    {
+      "id": "ki-unter-5",
+      "source": "kfw-ki",
+      "value": 19,
+      "unit": "%",
+      "label": "KI-Einsatz bei weniger als 5 Beschäftigten",
+      "period": "2022–2024",
+      "basis": "Mittelständische Unternehmen unter 5 Beschäftigten",
+      "location": "Pressemitteilung: Absätze zur Nutzung, Branche und Forschung"
+    },
+    {
+      "id": "ki-wissensdienste",
+      "source": "kfw-ki",
+      "value": 28,
+      "unit": "%",
+      "label": "KI-Einsatz in wissensbasierten Dienstleistungen",
+      "period": "2022–2024",
+      "basis": "Mittelständische Unternehmen in wissensbasierten Dienstleistungen",
+      "location": "Pressemitteilung: Absätze zur Nutzung, Branche und Forschung"
+    },
+    {
+      "id": "ki-forschungsindustrie",
+      "source": "kfw-ki",
+      "value": 23,
+      "unit": "%",
+      "label": "KI-Einsatz im forschungsintensiven Verarbeitenden Gewerbe",
+      "period": "2022–2024",
+      "basis": "Mittelständische Unternehmen im Verarbeitenden Gewerbe mit intensiver Forschung und Entwicklung",
+      "location": "Pressemitteilung: Absätze zur Nutzung, Branche und Forschung"
+    },
+    {
+      "id": "ki-bau-kfw",
+      "source": "kfw-ki",
+      "value": 8,
+      "unit": "%",
+      "label": "KI-Einsatz im Baugewerbe",
+      "period": "2022–2024",
+      "basis": "Mittelständische Bauunternehmen",
+      "location": "Pressemitteilung: Absätze zur Nutzung, Branche und Forschung"
+    },
+    {
+      "id": "ki-fue",
+      "source": "kfw-ki",
+      "value": 53,
+      "unit": "%",
+      "label": "KI-Einsatz in Unternehmen mit eigener Forschung und Entwicklung",
+      "period": "2022–2024",
+      "basis": "Mittelständische Unternehmen mit Forschung und Entwicklung",
+      "location": "Pressemitteilung: Absätze zur Nutzung, Branche und Forschung"
+    },
+    {
+      "id": "ifo-nutzung",
+      "source": "ifo",
+      "value": 54.5,
+      "unit": "%",
+      "label": "KI wird in Geschäftsprozessen genutzt",
+      "period": "Mai 2026",
+      "basis": "Unternehmen der ifo-Umfrage insgesamt",
+      "location": "Pressemitteilung: erste zwei Absätze"
+    },
+    {
+      "id": "ifo-planung",
+      "source": "ifo",
+      "value": 16,
+      "unit": "%",
+      "label": "KI-Einsatz ist geplant",
+      "period": "Mai 2026",
+      "basis": "Unternehmen der ifo-Umfrage insgesamt",
+      "location": "Pressemitteilung: erste zwei Absätze"
+    },
+    {
+      "id": "ifo-diskussion",
+      "source": "ifo",
+      "value": 21.6,
+      "unit": "%",
+      "label": "KI-Einsatz wird diskutiert",
+      "period": "Mai 2026",
+      "basis": "Unternehmen der ifo-Umfrage insgesamt",
+      "location": "Pressemitteilung: erste zwei Absätze"
+    },
+    {
+      "id": "ifo-industrie",
+      "source": "ifo",
+      "value": 58.7,
+      "unit": "%",
+      "label": "KI-Nutzung in der Industrie",
+      "period": "Mai 2026",
+      "basis": "Industrieunternehmen der ifo-Umfrage",
+      "location": "Pressemitteilung: erste zwei Absätze"
+    },
+    {
+      "id": "ifo-dienstleistung",
+      "source": "ifo",
+      "value": 56.2,
+      "unit": "%",
+      "label": "KI-Nutzung im Dienstleistungssektor",
+      "period": "Mai 2026",
+      "basis": "Dienstleistungsunternehmen der ifo-Umfrage",
+      "location": "Pressemitteilung: erste zwei Absätze"
+    },
+    {
+      "id": "ifo-bau",
+      "source": "ifo",
+      "value": 39.8,
+      "unit": "%",
+      "label": "KI-Nutzung im Bauhauptgewerbe",
+      "period": "Mai 2026",
+      "basis": "Unternehmen des Bauhauptgewerbes in der ifo-Umfrage",
+      "location": "Pressemitteilung: erste zwei Absätze"
+    },
+    {
+      "id": "strategie-fehlt",
+      "source": "bitkom",
+      "value": 22,
+      "unit": "%",
+      "label": "Keine Digitalstrategie",
+      "period": "Kalenderwochen 2–6, 2026",
+      "basis": "Unternehmen mit 20–99 Beschäftigten in der Bitkom-Befragung",
+      "location": "Pressemitteilung: erster Absatz und Methodik"
+    },
+    {
+      "id": "strategie-bereiche",
+      "source": "bitkom",
+      "value": 57,
+      "unit": "%",
+      "label": "Digitalstrategien in einzelnen Bereichen",
+      "period": "Kalenderwochen 2–6, 2026",
+      "basis": "Unternehmen mit 20–99 Beschäftigten in der Bitkom-Befragung",
+      "location": "Pressemitteilung: erster Absatz und Methodik"
+    },
+    {
+      "id": "strategie-zentral",
+      "source": "bitkom",
+      "value": 21,
+      "unit": "%",
+      "label": "Eine zentrale Digitalstrategie",
+      "period": "Kalenderwochen 2–6, 2026",
+      "basis": "Unternehmen mit 20–99 Beschäftigten in der Bitkom-Befragung",
+      "location": "Pressemitteilung: erster Absatz und Methodik"
+    },
+    {
+      "id": "digital-projekte",
+      "source": "kfw-digital",
+      "value": 30,
+      "unit": "%",
+      "label": "Mindestens ein Digitalisierungsprojekt abgeschlossen",
+      "period": "2022–2024",
+      "basis": "Mittelständische Unternehmen insgesamt",
+      "location": "Bericht S. 5, Grafik 1"
+    },
+    {
+      "id": "digital-projekte-vorperiode",
+      "source": "kfw-digital",
+      "value": 35,
+      "unit": "%",
+      "label": "Projektquote der Vorjahreserhebung",
+      "period": "2021–2023",
+      "basis": "Mittelständische Unternehmen insgesamt",
+      "location": "Bericht S. 5, Grafik 1"
+    },
+    {
+      "id": "digital-ausgaben",
+      "source": "kfw-digital",
+      "value": 23.8,
+      "unit": "Mrd. €",
+      "label": "Ausgaben für Digitalisierung",
+      "period": "2024",
+      "basis": "Gesamtausgaben des Mittelstands, auch für noch nicht abgeschlossene Vorhaben",
+      "location": "Bericht S. 17, Grafik 13"
+    },
+    {
+      "id": "digital-kleine-unternehmen",
+      "source": "kfw-digital",
+      "value": 73,
+      "unit": "%",
+      "label": "Anteil der Kleinstunternehmen an Unternehmen mit Digitalisierungsvorhaben",
+      "period": "2022–2024",
+      "basis": "Unternehmen unter 5 Beschäftigten; Nenner: Mittelständler mit abgeschlossenen Digitalisierungsvorhaben",
+      "location": "Bericht S. 27, Grafik 20"
+    },
+    {
+      "id": "digital-kleine-budget",
+      "source": "kfw-digital",
+      "value": 5.5,
+      "unit": "Mrd. €",
+      "label": "Digitalisierungsausgaben der Kleinstunternehmen",
+      "period": "2024",
+      "basis": "Mittelständische Unternehmen unter 5 Beschäftigten",
+      "location": "Bericht S. 17, Abschnitt zur Konzentration der Ausgaben"
+    },
+    {
+      "id": "digital-grosse-ausgaben",
+      "source": "kfw-digital",
+      "value": 9.6,
+      "unit": "Mrd. €",
+      "label": "Digitalisierungsausgaben größerer Mittelständler",
+      "period": "2024",
+      "basis": "Mittelständische Unternehmen ab 50 Beschäftigten",
+      "location": "Bericht S. 17, Grafik 14"
+    }
+  ]
+}
