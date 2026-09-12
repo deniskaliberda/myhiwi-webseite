@@ -1,0 +1,48 @@
+{
+  "checked": "2026-09-12",
+  "checks": [
+    {
+      "url": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Unternehmen/IKT-in-Unternehmen-IKT-Branche/Tabellen/ikti-unternehmen-kuenstliche-intelligenz.html",
+      "status": 200,
+      "finalUrl": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Unternehmen/IKT-in-Unternehmen-IKT-Branche/Tabellen/ikti-unternehmen-kuenstliche-intelligenz.html",
+      "bytes": 75361,
+      "sha256": "1b4a5ea8fc44b7f764f87a5f51693278afa604e59d98d0904c12cdc68c167a23"
+    },
+    {
+      "url": "https://www.kfw.de/%C3%9Cber-die-KfW/Newsroom/Aktuelles/Pressemitteilungen-Details_880896.html",
+      "status": 200,
+      "finalUrl": "https://www.kfw.de/%C3%9Cber-die-KfW/Newsroom/Aktuelles/Pressemitteilungen-Details_880896.html",
+      "bytes": 39990,
+      "sha256": "75b062e64b057167bafdf61610a0974525a39b4aa130c93f6242f427f424b178"
+    },
+    {
+      "url": "https://www.ifo.de/pressemitteilung/2026-06-05/mehr-als-die-haelfte-der-unternehmen-nutzt-kuenstliche-intelligenz",
+      "status": 200,
+      "finalUrl": "https://www.ifo.de/pressemitteilung/2026-06-05/mehr-als-die-haelfte-der-unternehmen-nutzt-kuenstliche-intelligenz",
+      "bytes": 69319,
+      "sha256": "7bebb5da4717fb4354cbf998a91f677e600c2e1934d596a9eed0ddcac20ff96c"
+    },
+    {
+      "url": "https://www.bitkom.org/Presse/Presseinformation/Kleine-Unternehmen-oft-planlos-in-Digitalisierung",
+      "status": 200,
+      "finalUrl": "https://www.bitkom.org/Presse/Presseinformation/Kleine-Unternehmen-oft-planlos-in-Digitalisierung",
+      "bytes": 87602,
+      "sha256": "eafba49fe60a6ed13868b13f03c7cc01a9365995ad614d36cc146778080972fd"
+    },
+    {
+      "url": "https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Digitalisierungsbericht-Mittelstand/KfW-Digitalisierungsbericht-2025.pdf",
+      "status": 200,
+      "finalUrl": "https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Digitalisierungsbericht-Mittelstand/KfW-Digitalisierungsbericht-2025.pdf",
+      "bytes": 1452803,
+      "sha256": "1b54a91102fe12d4c3061bee066bcffe2471f630e7d650a8248cbfe08f683710"
+    },
+    {
+      "url": "https://www.kfw.de/%C3%9Cber-die-KfW/KfW-Research/Digitalisierung.html",
+      "status": 200,
+      "finalUrl": "https://www.kfw.de/%C3%9Cber-die-KfW/KfW-Research/Digitalisierung.html",
+      "bytes": 303880,
+      "sha256": "2ab2e8ebbe664c9f007fcbbb02caa6c8015e3341f1a6f40203bba3acccac362f"
+    }
+  ],
+  "verification": "HTTP status and content fingerprints; editorial claim checks recorded separately. No automatic semantic certification."
+}
