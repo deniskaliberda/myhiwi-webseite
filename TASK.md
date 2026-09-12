@@ -12,13 +12,16 @@ Separate worktree from origin/main; preserve other tasks. Existing MyHiwi design
 - Existing canonical DESIGN.md and completed design handover govern the extension; document statistics components before building.
 
 ## accepted_commit
-904dd8f
+a99d38e1cbf3fb67cd705cc063a564c3d5559dac
 
 ## Failed approaches
 X direct fetch and web-tool Destatis fetch blocked; public mirror exposed original article, direct HTTP fetched Destatis successfully. Do not claim that search-result snippets alone verified values.
 
 ## Next
-Implementation and local checks complete. Publish via PR, verify production URL/downloads/sitemap, then record deployment and close task-owned browser/server.
+Complete: PR #15 merged, production Ready, live page/CSV/figures/sitemap/listing verified. Next editorial maintenance and 3/6-month measurement follow the documented plan; no automation scheduled.
 
 ## Evidence
 Build + TypeScript/lint pass; DESIGN.md lint clean; 3 responsive widths, no-JS rendering, all records and actual downloads verified. See docs/research/2026-09-12-citation-hub-pilot.md and adjacent JSON evidence.
+
+## Status
+Complete. Production evidence: docs/research/2026-09-12-statistics-live-check.json. Task-owned browser closed and port 3137 verified free; other sessions preserved.

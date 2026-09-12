@@ -44,3 +44,13 @@ Keine automatische Wiedervorlage oder wiederkehrende Aufgabe eingerichtet. Keine
 Produktions-Build einschließlich TypeScript und Lint erfolgreich. Bestehende zwei `no-img-element`-Warnungen und veraltete Browserslist-Daten unverändert. DESIGN.md-Lint ohne Befunde. Browserprüfung bei 390, 768 und 1440 Pixeln: kein Seitenüberlauf, eine H1, Canonical und Article-Datum korrekt, 25 adressierbare Datensätze, alle Sprungziele vorhanden, keine JavaScript-Seitenfehler, interne Zielseiten HTTP 200. Tatsächlich angeklickten CSV-Download mit CSV-Parser gegen alle 25 Werte, Bezugsgruppen und Zeiträume geprüft. Beide SVG-Downloads HTTP 200 und gültiger SVG-Inhalt. Ohne JavaScript bleiben alle 25 Datensätze sichtbar. Wissensübersicht und Sitemap verweisen auf die neue URL. Screenshots und beide Exportgrafiken visuell geprüft.
 
 Die erste Hilfsprüfung hatte für SVG-Requests eine relative URL ohne Basis verwendet; das Prüfskript wurde korrigiert und der vollständige Lauf anschließend bestanden. Kein Produktfehler. Beleg: `2026-09-12-statistics-local-check.json`.
+
+## Veröffentlichung und Übergabe
+
+Live seit 12.09.2026, ca. 16:05 MESZ: https://myhiwi.de/wissen/digitalisierung-ki-statistiken. PR #15 zusammengeführt; Produktionscommit `a99d38e1cbf3fb67cd705cc063a564c3d5559dac`, Vercel `dpl_5LQokWTPrq4LbXyUQpNP9YKDBMrM` ist Ready und auf myhiwi.de aliasiert. Die geschützte Vorschau wurde per angemeldeter Vercel-CLI inhaltlich geprüft; der normale Browser zeigte die Zugangsanmeldung. Der erste CLI-Versuch scheiterte an der Position des Scope-Arguments, der bereinigte Aufruf war erfolgreich.
+
+Live-GETs bestätigt: Seite, CSV, zwei SVGs, Social-PNG, Sitemap und Wissen jeweils HTTP 200. HTML enthält eine H1, den korrekten Canonical, indexierbare Robots-Angaben und alle 25 Direktziele. CSV wurde erneut geparst und mit sämtlichen Werten, Bezugsgruppen und Datenzeiträumen verglichen; Exportdateien stimmen bytegenau mit den geprüften lokalen Dateien überein. Beleg: `2026-09-12-statistics-live-check.json`.
+
+Messfenster: erste Indexierungsdiagnose etwa 10.10.2026, erste Auswertung am 12.12.2026, zweite am 12.03.2027. Das sind dokumentierte Prüftermine, keine eingerichtete Automation. Google-Indexaufnahme nicht bestätigt. Vorhandenes einwilligungsabhängiges Tracking unverändert.
+
+Task-eigener Browser `myhiwi-stats` geschlossen, lokaler Server Port 3137 beendet und freier Port geprüft. Fremde Browser-Sitzungen und Website-Worktrees erhalten. Die öffentliche Seite wird als Ergebnis in Codex geöffnet.

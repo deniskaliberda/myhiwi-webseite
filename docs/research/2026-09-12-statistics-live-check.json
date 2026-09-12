@@ -1,0 +1,50 @@
+{
+  "checked": "2026-09-12",
+  "productionCommit": "a99d38e1cbf3fb67cd705cc063a564c3d5559dac",
+  "deployment": "dpl_5LQokWTPrq4LbXyUQpNP9YKDBMrM",
+  "urls": [
+    {
+      "url": "https://myhiwi.de/wissen/digitalisierung-ki-statistiken",
+      "status": 200,
+      "sha256": "1ff2a9574619645ce3958ea61189a3efbbd02ae34c6bd193a359c954d9256ff7"
+    },
+    {
+      "url": "https://myhiwi.de/wissen/digitalisierung-ki-statistiken/daten.csv",
+      "status": 200,
+      "sha256": "6f18fcac179dd566a9d1beb0ebbb4f7041b9ee04fd431a5b4686c7cc141ac0d4"
+    },
+    {
+      "url": "https://myhiwi.de/wissen/digitalisierung-ki/ki-groessenklassen.svg",
+      "status": 200,
+      "sha256": "46ba9e831544d6eaed9b3ec8eedcd3369b59aa864822545a35fda7334224854a"
+    },
+    {
+      "url": "https://myhiwi.de/wissen/digitalisierung-ki/digitalstrategie.svg",
+      "status": 200,
+      "sha256": "c0c4ebbc76e2e702ca377b224a9d3a66ea872865062f397ac92602411ee15fd7"
+    },
+    {
+      "url": "https://myhiwi.de/wissen/digitalisierung-ki/ki-groessenklassen.png",
+      "status": 200,
+      "sha256": "76dddd532c80c0020a9d649896a15b245d0b8bd1b00aeae56a453fceca0ad31c"
+    },
+    {
+      "url": "https://myhiwi.de/sitemap.xml",
+      "status": 200,
+      "sha256": "12c30fccbfca3f94659411ce59fe6342d03f5b1d180d2990e18c6f5deff7450d"
+    },
+    {
+      "url": "https://myhiwi.de/wissen",
+      "status": 200,
+      "sha256": "09e709daee29d0a74018536e6c24b9de290f138a948be90159d3410e3de5afc7"
+    }
+  ],
+  "h1": 1,
+  "canonical": "https://myhiwi.de/wissen/digitalisierung-ki-statistiken",
+  "robots": [],
+  "statisticRecords": 25,
+  "csvRecordsMatch": 25,
+  "exportHashesMatch": true,
+  "sitemapAndListing": true,
+  "googleIndexed": "not yet verified"
+}
