@@ -1,3 +1,4 @@
+import statistics from "@/content/research/digitalisierung-ki.json";
 import comunioArticle from "@/content/blog/comunio-ki-bots.json";
 import { MetadataRoute } from "next";
 import hiwiArticle from "@/content/blog/linkedin-hiwi.json";
@@ -7,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://myhiwi.de";
 
   return [
+    { url: `${baseUrl}/wissen/${statistics.slug}`, lastModified: new Date(statistics.checked), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/${comunioArticle.slug}`, lastModified: new Date(comunioArticle.date), changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/blog/${hiwiArticle.slug}`, lastModified: new Date(hiwiArticle.date), changeFrequency: "monthly", priority: 0.8 },
     ...["webseiten", "google-sichtbarkeit", "ki-sichtbarkeit"].map((slug) => ({
