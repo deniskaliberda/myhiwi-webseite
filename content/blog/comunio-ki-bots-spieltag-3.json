@@ -1,0 +1,171 @@
+{
+  "title": "47 Punkte. Erster Spieltagssieg. Komplett eskaliert.",
+  "description": "Mein Comunio-Experiment nach drei Spieltagen: die Elf, die Punkte, Entscheidungen, offene Transferdaten und eure Tipps für mein Bot-Team.",
+  "date": "2026-09-15",
+  "author": "Denis Kaliberda",
+  "readTime": "8 Min.",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Ich habe in der dritten Woche selbst nichts an der Mannschaft gemacht. Nach dem Einrichten und Bereitstellen der Daten habe ich das Bot-Team entscheiden lassen. Und ausgerechnet in dieser Woche gewinnt es unseren Comunio-Spieltag. Das finde ich schon ziemlich witzig. 😄"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meine Freunde hatten mich in ihre Comunio-Runde eingeladen. Ich wollte mitspielen, aber nicht jeden Tag Transfers und Aufstellungen prüfen. Deshalb habe ich mir fünf digitale Mitarbeiter in Grok Bot eingerichtet. Meine Freunde wissen von dem Experiment. Wie das Team aufgebaut ist, steht in Folge 1 – hier geht es um das Ergebnis."
+    },
+    {
+      "type": "heading",
+      "text": "Der Spieltag in Zahlen",
+      "id": "drei-spieltage-ein-erster-ueberblick"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Spieltag",
+        "Punkte",
+        "Platz an diesem Spieltag"
+      ],
+      "rows": [
+        [
+          "1",
+          "32",
+          "4 von 5"
+        ],
+        [
+          "2",
+          "39",
+          "3 von 5"
+        ],
+        [
+          "3",
+          "47",
+          "1 von 5"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Der Spieltagssieg bringt mich näher an die Spitze. In der Gesamttabelle stehen aber noch zwei Teams vor mir. Für die große Meisterfeier ist es also etwas früh."
+    },
+    {
+      "type": "heading",
+      "text": "Wer die 47 Punkte geholt hat",
+      "id": "wer-in-meiner-mannschaft-stand"
+    },
+    {
+      "type": "image",
+      "src": "/blog/comunio-ki-bots-spieltag-3/02-startelf-v2.png",
+      "alt": "Meine Startelf im 4-4-2 mit Vereinsfarben und Einzelpunkten. Orbán liefert 13 Punkte; Badé und Pimpong bleiben ohne Einsatz.",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "type": "paragraph",
+      "text": "Orbán liefert mit 13 Punkten den größten Beitrag. Katić und Chuki folgen mit jeweils acht. Badé und Pimpong kamen dagegen nicht zum Einsatz. Der Sieg zeigt, dass der Ablauf in dieser Woche funktioniert hat – bei der Aufstellung bleibt trotzdem Luft nach oben."
+    },
+    {
+      "type": "heading",
+      "text": "Eine konkrete Entscheidung: Götze statt Ilić",
+      "id": "eine-konkrete-entscheidung-goetze-statt-ili"
+    },
+    {
+      "type": "paragraph",
+      "text": "Vor dem Spieltag empfahlen die Bots Götze statt Ilić. In den späteren Kontodaten stand Götze tatsächlich in der Elf und Ilić draußen. Götze wird im Abschlussbericht mit sechs Punkten geführt."
+    },
+    {
+      "type": "paragraph",
+      "text": "Das ist ein Beispiel, das sich vom Vorschlag bis zur später sichtbaren Aufstellung verfolgen lässt. Was ich daraus nicht ableiten kann: dass genau dieser Wechsel den Spieltag gewonnen hat. Dafür müsste ich auch die Alternative und die damals verfügbaren Informationen vollständig vergleichen."
+    },
+    {
+      "type": "paragraph",
+      "text": "Für mich liegt der Lernwert darin, diese Schritte zusammenzubringen. Was wusste der Scout? Was empfahl Elf? Was hat Chief umgesetzt? Und was hält Study hinterher fest?"
+    },
+    {
+      "type": "heading",
+      "text": "Und was wurde getradet?",
+      "id": "und-was-wurde-getradet"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hier ist der Stand noch weniger vollständig als bei den Punkten. Die vorhandenen Berichte enthalten Marktideen, aber keine lückenlose Liste aller bestätigten Käufe und Verkäufe."
+    },
+    {
+      "type": "paragraph",
+      "text": "Zum Beispiel wurden Juranović und Gyamerah zur Prüfung genannt. Daraus ist in der vorliegenden Sammlung kein bestätigter Kauf belegt. Bei anderen Vorschlägen sprach der Budgetrahmen gegen eine Umsetzung. Auch nichts zu kaufen kann eine vernünftige Entscheidung sein. Es ist nur kein Trade, den ich nachträglich als Erfolg verbuchen kann."
+    },
+    {
+      "type": "paragraph",
+      "text": "Das gilt ebenso für die Kasse. Sonntagmorgen waren 5,62 Millionen Spielgeld und 46,48 Millionen Teammarktwert erfasst. Der Montagbericht nennt 6,09 Millionen in der Kasse und 48,41 Millionen Marktwert."
+    },
+    {
+      "type": "paragraph",
+      "text": "Das sind 470.000 mehr in der Kasse und 1,93 Millionen mehr Marktwert. Woher die zusätzliche Buchung genau kam, ist noch nicht abgeglichen. Ein gestiegener Marktwert ist außerdem kein realisierter Verkaufserlös. Deshalb steht hier bewusst noch keine Tradingrendite."
+    },
+    {
+      "type": "image",
+      "src": "/blog/comunio-ki-bots-spieltag-3/oekonomie.png",
+      "alt": "Spielgeld und Mannschaftsmarktwert zu drei Zeitpunkten. Ein höherer Kontostand ist kein belegter Handelsgewinn.",
+      "width": 2000,
+      "height": 1320
+    },
+    {
+      "type": "heading",
+      "text": "Was ich am Team verbessern will",
+      "id": "was-ich-am-team-verbessern-will"
+    },
+    {
+      "type": "paragraph",
+      "text": "Comunio ist für diesen Versuch spannend, weil mehrere Dinge gleichzeitig zusammenpassen müssen: sportliche Einschätzungen, Geld, Fristen und die tatsächliche Umsetzung im Konto."
+    },
+    {
+      "type": "paragraph",
+      "text": "In der Auswertung ist beispielsweise eine Aufstellungsspeicherung dokumentiert, deren internes Freigabeticket schon abgelaufen war. Das ist ein Fehler im eigenen Ablauf. Eine später sichtbare Aufstellung macht die vorherige Freigabe nicht nachträglich gültig."
+    },
+    {
+      "type": "paragraph",
+      "text": "Dazu kommt die Frage, ob Informationen wirklich aktuell sind. Eine alte Momentaufnahme darf nicht wie ein neuer Kontoabruf aussehen. Und eine Prognose muss so gespeichert bleiben, wie sie vor dem Ergebnis war. Sonst könnte sich das Team hinterher besser rechnen, als es war."
+    },
+    {
+      "type": "paragraph",
+      "text": "Nach diesem Spieltag habe ich das Bot-Team nachgebessert und zusätzlichen Input aufgenommen, auch Ideen von anderen. Die Abläufe sollen dadurch strukturierter werden. Was sich davon in den nächsten Spieltagen bewährt, will ich hier zeigen."
+    },
+    {
+      "type": "heading",
+      "text": "Habt ihr einen Tipp für mein Bot-Team?",
+      "id": "habt-ihr-einen-tipp-fuer-mein-bot-team"
+    },
+    {
+      "type": "paragraph",
+      "text": "Und bevor wir weiter von „meinem Bot-Team“ reden: Die Mannschaft braucht einen Namen. Wie würdet ihr unser KI-Team nennen? Schreibt euren Vorschlag unter den LinkedIn-Beitrag – ich bin gespannt auf eure Ideen."
+    },
+    {
+      "type": "paragraph",
+      "text": "Dann schreibt ihn unter meinen LinkedIn-Beitrag. Welchen Spieler würdet ihr beobachten? Was würdet ihr an der Aufstellung ändern? Oder wie würdet ihr die fünf Bots besser zusammenarbeiten lassen?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Am hilfreichsten ist ein konkreter Vorschlag mit einer kurzen Begründung. Eine Quelle oder ein Beispiel könnt ihr gerne dazupacken."
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich möchte eure Ideen in das Experiment aufnehmen: Die Kommentare werden gesammelt und dem Bot-Team zur Prüfung gegeben. Wir schauen, was zur Mannschaft und zum Budget passt und was wir sinnvoll ausprobieren können. Ein Kommentar bedeutet also nicht, dass sofort ein Spieler gekauft wird."
+    },
+    {
+      "type": "paragraph",
+      "text": "In den nächsten Folgen will ich zeigen, welche Tipps wir getestet haben, wie wir sie umgesetzt haben und was daraus geworden ist. Auch wenn etwas nicht funktioniert hat oder wir es noch nicht beurteilen können. So könnt ihr nicht nur zuschauen, sondern das Experiment mitgestalten."
+    },
+    {
+      "type": "heading",
+      "text": "Was im nächsten Bericht dazukommen soll",
+      "id": "was-im-naechsten-bericht-dazukommen-soll"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ich möchte eine nachvollziehbare Liste der tatsächlichen Transfers, die dazugehörigen Preise und eine bessere Gegenüberstellung von vorheriger Einschätzung und späterem Einsatz. Außerdem soll sichtbar werden, wann ich selbst eingreifen musste."
+    },
+    {
+      "type": "paragraph",
+      "text": "Diese Woche hat mein Team ohne meinen Eingriff einen Spieltag gewonnen. Jetzt bin ich gespannt, was die Anpassungen bringen: Werden die Entscheidungen besser? Lernt das Team aus Fehlern? Und handelt es mit dem Spielgeld tatsächlich wirtschaftlicher? Das ist die Frage für die nächste Folge."
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import { Section } from "@/components/myhiwi/layout/Section";
 type BlogArticleShellProps = {
   /** Mono-Kategorie-Tag, z. B. „Technisches SEO". */
   category: string;
+  hero?: ReactNode;
   /** Anzeigedatum, z. B. „24. April 2026". */
   date: string;
   /** Lesezeit, z. B. „7 Min.". */
@@ -32,6 +33,7 @@ type BlogArticleShellProps = {
  * identisch zum Flow der übrigen Seiten.
  */
 export function BlogArticleShell({
+  hero,
   category,
   date,
   readTime,
@@ -44,7 +46,7 @@ export function BlogArticleShell({
   return (
     <>
       {/* HERO */}
-      <Section background="paper" padding="large">
+      {hero ?? <Section background="paper" padding="large">
         <Container className="max-w-[760px]">
           <Link
             href="/blog"
@@ -66,7 +68,7 @@ export function BlogArticleShell({
           <h1 className="mt-mh-4 mh-display-3">{title}</h1>
           <p className="mt-mh-5 mh-body-large text-mh-text-secondary">{lead}</p>
         </Container>
-      </Section>
+      </Section>}
 
       {/* BODY */}
       <Section background="paper" padding="none" className="pb-mh-9 md:pb-mh-10">

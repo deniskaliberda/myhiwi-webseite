@@ -4,6 +4,8 @@ import Link from 'next/link';
 import article from '@/content/blog/comunio-ki-bots.json';
 import { BlogArticleShell } from '@/components/myhiwi/blog/BlogArticleShell';
 import styles from './article.module.css';
+import { SeriesArticleHero } from '@/components/myhiwi/blog/SeriesArticleHero';
+import layout from '@/components/myhiwi/blog/SeriesArticle.module.css';
 
 export const metadata: Metadata = {
   title: article.title,
@@ -27,14 +29,19 @@ function InlineLinks({text}: {text: string}) {
 }
 
 export default function ComunioArticle() {
-  return <BlogArticleShell category="Comunio-Experiment · Folge 01" date="9. September 2026" readTime={article.readTime}
+  return <div className={layout.article}><BlogArticleShell hero={<SeriesArticleHero episode={1}
+      title={<>Fünf KI-Bots<br/><span>gegen meine Freunde.</span></>}
+      lead="Zu spät bei Comunio eingestiegen, fünf Helfer mit Grok Bot gebaut. Mein Start, die Rollen und die ersten zwei Spieltage – mit echten Einblicken ins Spiel und ins Bot-Team."
+      date="2026-09-09" dateLabel="9. September 2026" readTime={article.readTime}
+      image="/blog/comunio-ki-bots/comunio-football-hero-v1.png" imageAlt="Fünf KI-Bots als Fußballteam: mein Comunio-Experiment mit Grok Bot." width={1672} height={941}
+      caption="Mein digitales Team tritt an. KI-generierte Illustration."/>} category="Comunio-Experiment · Folge 01" date="9. September 2026" readTime={article.readTime}
     title={<>Fünf KI-Bots <em className="mh-italic-accent">gegen meine Freunde.</em></>}
     lead="Zu spät bei Comunio eingestiegen, fünf Helfer mit Grok Bot gebaut. Folge 1: mein Start, die Rollen und die ersten zwei Spieltage. Mit echten Einblicken ins Spiel und ins Bot-Team."
     ctaTitle="Was ich sonst mit KI mache"
     ctaLead="Mit MyHiwi unterstütze ich Unternehmen bei ihrer Website, ihrer digitalen Sichtbarkeit und passenden Arbeitsabläufen. Hier im Blog zeige ich auch, wie ich selbst dazulerne.">
     <Link className={styles.quickRead} href="/blog/comunio-ki-bots/kurz">Keine Zeit? Die Kurzfassung in 60 Sekunden →</Link>
     <div className={styles.draft}>Folge 01 · Woche drei des Experiments · Rückblick auf Spieltag 1 und 2</div>
-    {article.body.map((block,i)=>{
+    {article.body.filter(block=>block.imageKind !== 'cover').map((block,i)=>{
       if(block.type==='contents') return <details className={styles.contents} key={i}>
         <summary>Die Themen in Folge 1</summary>
         <nav aria-label="Inhalt">{article.body.filter(b=>b.type==='heading').map(b=><a key={b.id} href={`#${b.id}`}>{b.text}</a>)}</nav>
@@ -60,5 +67,5 @@ export default function ComunioArticle() {
       <p>Die übrigen Mannschaften im Spieltagsvergleich sind anonymisiert. Die erste Woche ist nur als Berichtsstand aufgenommen. Ein Gesamtplatz, Spieler-Einzelpunkte und eine Wirkung der Bot-Entscheidungen werden daraus nicht abgeleitet.</p>
       <Link href="/blog/linkedin-hiwi">So entsteht ein Text mit meinem LinkedIn-Hiwi</Link>
     </aside>
-  </BlogArticleShell>;
+  </BlogArticleShell></div>;
 }
