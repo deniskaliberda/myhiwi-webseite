@@ -10,16 +10,19 @@ import layout from '@/components/myhiwi/blog/SeriesArticle.module.css';
 export const metadata: Metadata = {
   title: article.title,
   description: article.description,
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://myhiwi.de/blog/comunio-ki-bots-spieltag-3' },
+  openGraph: { type: 'article', title: article.title, description: article.description, url: 'https://myhiwi.de/blog/comunio-ki-bots-spieltag-3', images: [{url:'https://myhiwi.de/blog/comunio-ki-bots-spieltag-3/meme-v2.png',width:1209,height:1301}], publishedTime: article.date, authors: [article.author] },
+  twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: ['https://myhiwi.de/blog/comunio-ki-bots-spieltag-3/meme-v2.png'] },
 };
 
 export default function ComunioEpisodeTwo() {
-  return <div className={layout.article}><BlogArticleShell hero={<EpisodeHero />} category="Comunio-Experiment · Folge 02 · Vorschau" date="15. September 2026" readTime={article.readTime}
+  return <div className={layout.article}><BlogArticleShell hero={<EpisodeHero />} category="Comunio-Experiment · Folge 02" date="15. September 2026" readTime={article.readTime}
     title={<>Erster Spieltagssieg. <em className="mh-italic-accent">Komplett eskaliert.</em></>}
     lead="47 Punkte am dritten Spieltag. Insgesamt noch Dritter. Zeit, genauer hinzuschauen: auf meine Elf, die Entscheidungen der Bots und das, was wir noch besser machen müssen."
     ctaTitle="Was ich aus solchen Experimenten mitnehme"
     ctaLead="Ich probiere KI an konkreten Aufgaben aus. Bei MyHiwi nutze ich diese Erfahrung für Websites, digitale Sichtbarkeit und Arbeitsabläufe in Unternehmen.">
-    <p className={layout.notice}>Unveröffentlichte Vorschau · Datenstand: 14. September 2026</p>
+    <p className={layout.notice}>Datenstand: 14. September 2026</p>
     <Link className={layout.introLink} href="/blog/comunio-ki-bots">Neu dabei? Hier beginnt das Experiment mit Folge 1 →</Link>
     <details className={styles.contents}>
       <summary>Die Themen in Folge 2</summary>

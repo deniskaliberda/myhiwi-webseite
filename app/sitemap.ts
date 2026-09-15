@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://myhiwi.de";
 
   return [
+    { url: `${baseUrl}/blog/comunio-ki-bots-spieltag-3`, lastModified: new Date("2026-09-15"), changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/wissen/${statistics.slug}`, lastModified: new Date(statistics.checked), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/${comunioArticle.slug}`, lastModified: new Date(comunioArticle.date), changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/blog/${hiwiArticle.slug}`, lastModified: new Date(hiwiArticle.date), changeFrequency: "monthly", priority: 0.8 },
