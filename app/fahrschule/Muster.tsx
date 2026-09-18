@@ -6,6 +6,8 @@ import { Check } from "lucide-react";
  * WICHTIG (Anti-Slop): beides sind klar beschriftete MUSTER —
  * Produkt-Illustrationen der Artefakte, die der Kunde bekommt.
  * Keine erfundenen Summen, keine erfundenen Messwerte.
+ * Der Anfragen-Zettel ist laut v6 §5 eine Leistung von Tür 2 (Reform-Partner)
+ * und wird deshalb im Muster und in der Bildunterschrift so zugeordnet.
  */
 
 const zettelRows = [
@@ -20,7 +22,7 @@ export function ZettelMuster() {
       <div className="rounded-mh-md border border-mh-divider bg-white p-mh-5 shadow-mh-hero">
         <div className="flex items-baseline justify-between border-b-2 border-mh-ink-950 pb-mh-3">
           <span className="font-mh-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-mh-text-primary">
-            Anfragen-Zettel
+            Anfragen-Zettel · Reform-Partner
           </span>
           <span className="rounded-mh-pill border border-mh-divider px-mh-3 py-1 font-mh-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-mh-text-secondary">
             Muster
@@ -54,8 +56,9 @@ export function ZettelMuster() {
         </ul>
       </div>
       <figcaption className="mt-mh-3 text-center font-mh-body text-[14px] leading-relaxed text-mh-text-secondary">
-        Jede Zeile ist eine gezählte Anfrage. Diesen Zettel bekommen Sie
-        jeden Monat per WhatsApp — schwarz auf weiß.
+        Jede Zeile ist eine gezählte Anfrage, Anfrage und Anmeldung getrennt.
+        Diesen Zettel bekommen Sie bei Reform-Partner jeden Monat per
+        WhatsApp, schwarz auf weiß.
       </figcaption>
     </figure>
   );

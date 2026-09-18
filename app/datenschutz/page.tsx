@@ -370,6 +370,103 @@ export default function DatenschutzPage() {
             </p>
           </div>
 
+          <div className="card mb-8" id="interessenten-telefonkontakt">
+            <h2 className="text-2xl font-inter font-bold text-primary mb-4">
+              6b. Hinweise für Interessenten (Telefonkontakt)
+            </h2>
+            <p className="text-slate-700 mb-4">
+              Wir sprechen Fahrschulen und andere Gewerbebetriebe zeitweise
+              telefonisch an, um einen Gesprächstermin mit Denis Kaliberda
+              anzubieten. Dafür setzen wir einen beauftragten Telefon-Dienstleister
+              ein. Weil wir die Daten dabei nicht bei Ihnen selbst erheben,
+              informieren wir Sie hier gemäß Art. 14 DSGVO. Für diese telefonische
+              Ansprache gelten die folgenden Angaben; sie gehen den allgemeinen
+              Angaben in Abschnitt 6a vor.
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Verantwortlicher:</strong> Kaliberda Digital Intelligence UG
+              (haftungsbeschränkt), Marke MyHiwi, Dorfstraße 1a, 16356 Ahrensfelde,
+              E-Mail kontakt@myhiwi.de, Telefon +49 1511 4993066 (siehe Abschnitt 3).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Zwecke:</strong> Vereinbarung eines Gesprächstermins mit
+              Gewerbebetrieben (B2B), Vorbereitung und Nachbereitung dieses
+              Gesprächs, Dokumentation des Kontaktverlaufs sowie Führung einer
+              Sperrliste, damit Betriebe, die keine Ansprache wünschen, nicht
+              erneut angerufen werden.
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Datenkategorien:</strong> Name des Betriebs, Geschäftsadresse,
+              geschäftliche Telefonnummer, Website-Adresse, Öffnungszeiten und
+              öffentlich sichtbare Angaben zum Betrieb wie die Anzahl und der
+              Durchschnitt der Google-Bewertungen; der Name der Inhaberin, des
+              Inhabers oder der Geschäftsführung, soweit im Impressum genannt;
+              Gesprächsnotizen zum Anruf (Ergebnis, Rückrufwunsch, vereinbarter
+              Termin, gewünschter Rückrufkanal).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Datenquellen:</strong> Öffentlich zugängliche
+              Google-Unternehmenseinträge (Google Maps und Google-Suche) und das
+              Impressum der jeweiligen Website. Wir kaufen keine Adresslisten.
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+              (berechtigtes Interesse). Unser berechtigtes Interesse ist die
+              Anbahnung von Geschäftsbeziehungen mit Gewerbebetrieben. In die
+              Abwägung fließen ein, dass wir nur öffentlich zugängliche
+              geschäftliche Daten verwenden, die Ansprache im geschäftlichen
+              Zusammenhang erfolgt und Sie jederzeit widersprechen können.
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Empfänger:</strong> Der von uns beauftragte
+              Telefon-Dienstleister, der die Anrufe in unserem Auftrag und nach
+              unseren Weisungen führt (Auftragsverarbeitung nach Art. 28 DSGVO),
+              sowie die technischen Dienstleister, die unsere Kontaktverwaltung und
+              das gemeinsame Anruf-Arbeitsblatt bereitstellen (Auftragsverarbeitung
+              nach Art. 28 DSGVO). Soweit ein Dienstleister Daten außerhalb der EU
+              verarbeitet, gelten die in Abschnitt 7 beschriebenen Schutzmaßnahmen
+              (Angemessenheitsbeschluss oder Standardvertragsklauseln).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Speicherdauer:</strong> Kommt es innerhalb von 180 Tagen nach
+              dem letzten Kontaktversuch zu keinem Gespräch mit Interesse und zu
+              keinem Termin, löschen wir die personenbezogenen Angaben. Ein bloßer
+              Kontaktversuch ohne Gespräch verlängert diese Frist nicht. Kommt ein
+              Gespräch oder ein Termin zustande, speichern wir die Daten für die
+              Dauer der Geschäftsanbahnung; danach gelten die Fristen aus
+              Abschnitt 5. Bei einem Widerspruch löschen wir Ihre Daten sofort. Um
+              Ihren Widerspruch dauerhaft beachten zu können, bleiben nur die
+              Angaben in unserer Sperrliste, die nötig sind, um eine erneute
+              Ansprache zu verhindern (Betriebsname und geschäftliche
+              Telefonnummer).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Ihre Rechte:</strong> Sie haben die Rechte auf Auskunft
+              (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17
+              DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Widerspruch
+              (Art. 21 DSGVO) und Beschwerde bei einer Aufsichtsbehörde (Art. 77
+              DSGVO, siehe Abschnitt 8).
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Widerspruch:</strong> Sie können der telefonischen Ansprache
+              jederzeit widersprechen, direkt im Telefonat (ein Satz wie
+              &bdquo;Bitte nicht mehr anrufen&ldquo; genügt) oder per E-Mail an
+              kontakt@myhiwi.de. Wir nehmen Ihren Betrieb dann in die Sperrliste
+              auf und rufen nicht mehr an.
+            </p>
+            <p className="text-slate-700 mb-4">
+              <strong>Keine automatisierte Entscheidung:</strong> Wir treffen keine
+              automatisierten Entscheidungen im Einzelfall und kein Profiling im
+              Sinne von Art. 22 DSGVO. Die Auswahl der Betriebe erfolgt nach
+              öffentlichen Geschäftsmerkmalen; jeden Anruf führt ein Mensch.
+            </p>
+            <p className="text-slate-700">
+              <strong>Bereitstellung:</strong> Diese Hinweise sind auf dieser Seite
+              dauerhaft abrufbar. Auf Wunsch senden wir sie Ihnen per Post oder
+              E-Mail zu. Version v1, Stand 8. September 2026.
+            </p>
+          </div>
+
           <div className="card mb-8">
             <h2 className="text-2xl font-inter font-bold text-primary mb-4">
               7. Eingesetzte Dienstleister (Subunternehmer)
@@ -395,6 +492,11 @@ export default function DatenschutzPage() {
                 <strong>Google Ireland Ltd.</strong> (Irland) — Google Analytics 4
                 und Google Ads Conversion-Tracking,{" "}
                 <em>nur nach Einwilligung</em> (siehe Abschnitt 6)
+              </li>
+              <li>
+                <strong>Beauftragter Telefon-Dienstleister</strong>: telefonische
+                Terminvereinbarung mit Gewerbebetrieben in unserem Auftrag und nach
+                unseren Weisungen (siehe Abschnitt 6b)
               </li>
             </ul>
             <p className="text-slate-700">
@@ -443,7 +545,7 @@ export default function DatenschutzPage() {
               9. Aktualität und Änderungen dieser Datenschutzerklärung
             </h2>
             <p className="text-slate-700">
-              Diese Datenschutzerklärung hat den Stand <strong>Juni 2026</strong>. Durch die
+              Diese Datenschutzerklärung hat den Stand <strong>September 2026</strong>. Durch die
               Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter
               gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden,
               diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung

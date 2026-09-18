@@ -3,8 +3,18 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt =
-  "Das Volle-Kurse-System — mehr Anfragen für Ihre Fahrschule in Berlin";
+export const alt = "Das Volle-Kurse-System: mehr Anfragen für Ihre Fahrschule";
+
+/**
+ * Preissatz wortgleich aus MyHiwi_Fahrschul_Offer_v6_2026-09.md §13 (T1_PREIS).
+ * tests/fahrschule-wording.spec.ts prüft diese Datei auf genau diesen Satz,
+ * weil der Bildtext nicht per OCR geprüft wird.
+ */
+const PRICE_SENTENCE =
+  "Reform-Start kostet 399 Euro im Monat zuzüglich Mehrwertsteuer.";
+
+/** Einsatzgebiet laut Plan Kaltakquise D4, als Kurzform für die Fußzeile. */
+const REGION_SHORT = "Berlin · Brandenburg · München · Oberbayern";
 
 /**
  * OG-Bild für /fahrschule — der Link wird vor allem per WhatsApp geteilt,
@@ -45,7 +55,7 @@ export default function OgImage() {
               borderRadius: 3,
             }}
           />
-          MyHiwi · Für Fahrschulen in Berlin
+          MyHiwi · Für Fahrschul-Inhaber
         </div>
         <div
           style={{
@@ -58,22 +68,31 @@ export default function OgImage() {
             Das Volle-Kurse-System
           </div>
           <div style={{ fontSize: 34, color: "#E2E8F0", lineHeight: 1.3 }}>
-            Wir zählen jede Anfrage ab Tag 0 — schwarz auf weiß per WhatsApp.
+            Jeden Monat schwarz auf weiß, wo Ihre Fahrschule steht.
           </div>
         </div>
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontSize: 26,
-            color: "#CBD5E1",
+            flexDirection: "column",
+            gap: 18,
           }}
         >
-          <span>myhiwi.de/fahrschule</span>
-          <span style={{ color: "#D97706", fontWeight: 700 }}>
-            349 € im Monat zzgl. MwSt.
-          </span>
+          <div style={{ fontSize: 28, fontWeight: 700, color: "#D97706" }}>
+            {PRICE_SENTENCE}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              fontSize: 24,
+              color: "#CBD5E1",
+            }}
+          >
+            <span>myhiwi.de/fahrschule</span>
+            <span>{REGION_SHORT}</span>
+          </div>
         </div>
       </div>
     ),

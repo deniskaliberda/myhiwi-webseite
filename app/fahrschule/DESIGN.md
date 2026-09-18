@@ -4,11 +4,11 @@ display-name: myhiwi.de/fahrschule — Beweis-Schicht für den Fahrschul-Vertrie
 version: 1.0.0
 status: review
 owner: Denis Kaliberda (Kaliberda Digital Intelligence UG)
-last-updated: 2026-07-03
+last-updated: 2026-09-08
 derived-from:
   - ../../DESIGN.md (Repo-Root, canonical — Tokens gelten, sofern hier nicht überschrieben)
   - denis-workspace/dokumente/MyHiwi_Fahrschule_Web_Konzept_2026-07-03.md (§8 Design-Direction, Denis-gelockt)
-  - denis-workspace/dokumente/MyHiwi_Fahrschul_Offer_v4_2026-07-03.md (Kanon-Wording)
+  - denis-workspace/dokumente/MyHiwi_Fahrschul_Offer_v6_2026-09.md (Kanon-Wording seit 2026-09-08: §11 Sprachregeln, §13 WORTGLEICH; ersetzt v4/v5)
 scope: NUR app/fahrschule/** (+ /fs/<rep>-Redirects). Kein Token dieser Shell darf auf andere Seiten leaken.
 
 tokens:
@@ -34,9 +34,15 @@ tokens:
 
 > **Zweck der Seite (Haupt-Job):** Beweis-Schicht für Tür/Telefon — der Fahrschul-Inhaber googelt
 > nach dem Besuch „MyHiwi" und muss einen Fahrschul-Spezialisten finden. Nicht Traffic, nicht Funnel.
-> **Avatar:** Inhaber Berlin/Brandenburg, 45–60, Telefon/WhatsApp-first, Lesebrillen-Realität,
+> **Avatar:** Inhaber in Berlin und Brandenburg sowie München und Oberbayern (seit 2026-09-08,
+> Plan Kaltakquise D4), 45–60, Telefon/WhatsApp-first, Lesebrillen-Realität,
 > misstraut Marketing-Sprech. Vokabeln: „Anfragen", „auf der Karte", „gefunden werden" —
-> nie „Leads/SEO/Conversion" (SEO nur im FAQ, wo er selbst danach fragt).
+> nie „Leads/SEO/Conversion" (seit v6 auch nicht im FAQ; Sprachregeln v6 §11).
+>
+> **Wording-Stand 2026-09-08 (v6, Branch `fix/fahrschule-v6-wording`):** kein Garantie-Block,
+> keine Zusage einer Anfragen-Zahl, zwei Pakete Reform-Start / Reform-Partner mit Sätzen
+> wortgleich aus v6 §13, keine Fahrschul-Referenz ohne belegte Freigabe (D9).
+> Prüfung: `tests/fahrschule-wording.spec.ts`.
 
 ## 1. Verhältnis zum Root-Design-System
 
@@ -45,7 +51,7 @@ JetBrains Mono — keine neuen Fonts), Ink-Skala, Spacing-Logik, SectionMark-Pat
 Motion-Regeln, Anti-Slop-Verbote. Sie **überschreibt** gezielt drei Dinge (Konzept §8, Denis-gelockt):
 
 1. **Akzentfarbe:** gedecktes **Signal-Amber `#B45309`** (Hover `#92400E`) — **exklusiv** für
-   CTAs (Anruf/WhatsApp-Buttons) und den Garantie-Block. Betrieb/Handwerk statt Tech-Startup.
+   CTAs (Anruf/WhatsApp-Buttons); der frühere Garantie-Block ist seit v6 entfallen. Betrieb/Handwerk statt Tech-Startup.
    Blau `#2563EB` wird auf dieser Seite NICHT als CTA-Farbe verwendet; Cyan `#06B6D4` nur
    funktional für Messwerte/Daten (Zettel-Mock, Mess-Grafik). **Finale Amber-Entscheidung: `#B45309`**
    (dunkles Ende des Konzept-Richtwerts — höherer Kontrast auf Weiß, weniger „Werbe-Orange";
@@ -66,12 +72,12 @@ Datenschutz-Links. Begründung: Beweis-Schicht, ein Job, keine Ausstiege in die 
 |---|---------|------|
 | 1 | **Hero** | „Wenn in Ihrem Kiez jemand eine Fahrschule sucht — landet er bei Ihnen oder drüben?" · CTAs = Anruf + WhatsApp (KEIN Formular) · Microcopy „Sie reden direkt mit Denis" |
 | 2 | **Problem-Spiegel** | 3 Inhaber-Sätze aus dem v4-Stack (weniger Anmeldungen · „drüben 200 Bewertungen" · Portale ab 2027) — spiegeln, nicht belehren; KEINE Marktprozente |
-| 3 | **Das System in 3 Schritten** | 14-Tage-Start-Sprint → wir zählen jede Anfrage ab Tag 0 → monatlicher Anfragen-Zettel per WhatsApp. Der **Zettel als Bild** (gebauter Muster-Mock, klar als „Muster" beschriftet — das Artefakt verkauft) |
-| 4 | **Anfragen-Garantie (Held-Block, Amber)** | NUR Kurzfassung bis Anwalts-Freigabe: „Wir zählen jede Anfrage ab Tag 0 — die genaue Zusage legen wir gemeinsam schriftlich fest." **Floor-12 NIE öffentlich.** |
-| 5 | **Beweis-Schicht „So messen wir"** | Anonymisiertes Punkt-A-Dossier (Struktur-Mock) + Erklärung der Zählung + Einsichtsrecht. Solange keine Case Study: Transparenz statt erfundener Ergebnisse |
-| 6 | **Preis-Block** | Kanon-Preisblock offen (s. §4 unten). KEINE Tier-Tabelle, keine Website-Range, kein 699-Upsell |
-| 7 | **Wer dahinter steht** | Denis, echtes Foto (`public/ueber-mich/portrait.jpg`), Ahrensfelde/Berlin-Ost, „Lokale Wachstumssysteme" — nie „AI-/KI-Agentur" |
-| 8 | **FAQ** | Computer · Was wenn's nicht klappt · Wem gehört die Website · Laufzeit · SEO/Werbung — ausgeschriebene Sätze, FAQ-Schema |
+| 3 | **Das System in 3 Schritten** | Start-Sprint nach Website-Gate (v6 §2: bestehende Seite taugt → bleibt; sonst Umzug auf sauberes Fundament) → Nullpunkt + monatlicher Sichtbarkeits-Bericht (beide Türen) → Anfragen-Zettel per WhatsApp **nur Tür 2 / Reform-Partner** (v6 §5, F23); Fotoshooting wird separat gescoped, nie als Leistung versprochen. Der **Zettel als Bild** (gebauter Muster-Mock, klar als „Muster" beschriftet — das Artefakt verkauft) |
+| 4 | ~~Anfragen-Garantie (Held-Block, Amber)~~ **entfallen seit v6 (2026-09-08)** | Kein Garantie-Wort und keine Zusage einer Anfragen-Zahl auf der Seite (Anwalts-Gate offen, Plan Kaltakquise D7). Amber bleibt CTA-exklusiv. |
+| 5 | **Beweis-Schicht „So messen wir"** | Anonymisiertes Punkt-A-Dossier (Struktur-Mock) + Erklärung der Zählung + Einsichtsrecht. Transparenz statt erfundener Ergebnisse. Referenz-Teaser („PRAXIS") nur mit veröffentlichter Projektseite; keine Fahrschul-Referenz ohne belegte Freigabe (D9) |
+| 6 | **Preis-Block** | Zwei Pakete Reform-Start / Reform-Partner, jeder Preis-, Laufzeit- und Website-Satz wortgleich aus v6 §13 (s. §4 unten). KEINE Tier-Tabelle, keine eigenen Zahlen außerhalb der v6-Sätze, kein Downsell auf der Seite (v6 §9) |
+| 7 | **Wer dahinter steht** | Denis, echtes Foto (`public/ueber-mich/portrait.jpg`), Ahrensfelde bei Berlin, Einsatzgebiet-Satz (D4), „Lokale Wachstumssysteme" — nie „AI-/KI-Agentur" |
+| 8 | **FAQ** | Computer · Was wenn's nicht klappt (Risk-Reversal wortgleich v6 §11) · Wem gehört die Website · Laufzeit (Tür 1 / Tür 2 wortgleich v6 §13) · Google/Werbung — ausgeschriebene Sätze ohne Fachwörter, FAQ-Schema |
 | 9 | **Schluss-CTA** | Anruf/WhatsApp, Amber, Pill erlaubt (Final-CTA-Ritual des Root-Systems) |
 
 **Ausgelassen in Phase 0 (bewusst):** Sichtbarkeits-Check (Phase 1) · Kiez-Knappheit (erst nach
@@ -91,12 +97,13 @@ Beide Buttons Amber; WhatsApp als Outline-Variante (Amber-Border, Amber-Text) zu
 
 ## 4. Wortgleichheits-Kanon (UWG — identisch auf Blatt, Seite, Tür-Skript)
 
-- **Produktname:** „Das Volle-Kurse-System"
-- **Preis:** „349 € im Monat zzgl. MwSt. · 12 Monate · ab dem ersten Monat" +
-  „Dazu einmalig Ihre neue Website — Preis nach Zustand Ihrer heutigen Seite, auf Wunsch in
-  drei Raten. Einmal bezahlt, gehört sie Ihnen für immer."
-- **Garantie (öffentlich, bis Anwalts-Freigabe):** „Wir zählen jede Anfrage ab Tag 0 —
-  die genaue Zusage legen wir gemeinsam schriftlich fest."
+- **Produktname:** „Das Volle-Kurse-System" (Seiten-Rahmen); Paketnamen „Reform-Start" / „Reform-Partner" (v6)
+- **Preis, Laufzeit, Website (seit v6, 2026-09-08):** ausschließlich die Sätze aus
+  `MyHiwi_Fahrschul_Offer_v6_2026-09.md` §13 (T1_NAME/PREIS/LAUFZEIT/WEBSITE, T2_…, CALLER_PREISSATZ),
+  auf der Seite im Objekt `v6` in `page.tsx`; „12 Monate" nur im Satz T2_LAUFZEIT.
+  Geprüft durch `tests/fahrschule-wording.spec.ts`. (Vorher v4: „349 € im Monat zzgl. MwSt. · 12 Monate".)
+- **Keine Garantie-Formulierung** (seit v6; Anwalts-Gate offen). Risk-Reversal-Antwort im FAQ
+  wortgleich v6 §11.
 - **Null-Computer:** „Sie müssen nichts am Computer machen — alles läuft über WhatsApp."
 
 ## 5. Bildwelt & Verbote
