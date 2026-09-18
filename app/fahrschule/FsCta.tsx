@@ -12,7 +12,7 @@ import { Phone, MessageCircle } from "lucide-react";
 export const PHONE_E164 = "+4915114993066";
 export const PHONE_DISPLAY = "01511 4993066";
 const WA_TEXT = encodeURIComponent(
-  "Hallo, ich komme von myhiwi.de/fahrschule — bitte melden Sie sich bei mir."
+  "Hallo, ich komme von myhiwi.de/fahrschule. Bitte melden Sie sich bei mir."
 );
 export const WA_HREF = `https://wa.me/4915114993066?text=${WA_TEXT}`;
 

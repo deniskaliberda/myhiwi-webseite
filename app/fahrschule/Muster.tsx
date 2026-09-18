@@ -101,8 +101,8 @@ export function DossierMuster() {
         </ul>
       </div>
       <figcaption className="mt-mh-3 text-center font-mh-body text-[14px] leading-relaxed text-mh-text-secondary">
-        Wird vor dem Start bei Ihnen gemessen und schriftlich festgehalten —
-        gegen diesen Ausgangspunkt zählen wir.
+        Wird vor dem Start bei Ihnen gemessen und schriftlich festgehalten.
+        Gegen diesen Ausgangspunkt zählen wir.
       </figcaption>
     </figure>
   );

@@ -12,7 +12,7 @@ import { DossierMuster, ZettelMuster } from "./Muster";
  * myhiwi.de/fahrschule — kanonische Landingpage (Phase 0, statisch).
  *
  * Bauplan: denis-workspace/dokumente/MyHiwi_Fahrschule_Web_Konzept_2026-07-03.md §4
- * Wording-Kanon (seit 2026-09-08): denis-workspace/dokumente/MyHiwi_Fahrschul_Offer_v6_2026-09.md
+ * Wording-Kanon (v6.1, Stand 2026-09-18): denis-workspace/dokumente/MyHiwi_Fahrschul_Offer_v6_2026-09.md
  *   §11 Sprachregeln + §13 WORTGLEICH-Block. Preise, Laufzeiten und Website-Beträge
  *   stehen NUR im Objekt `v6` unten und müssen dort wortgleich mit §13 bleiben.
  *   tests/fahrschule-wording.spec.ts prüft das gegen den gerenderten DOM.
@@ -26,10 +26,18 @@ import { DossierMuster, ZettelMuster } from "./Muster";
  * GBP-Pflege und Messloop in beiden Türen; Anfragen-Zettel (Anfrage und
  * Anmeldung getrennt) nur bei Reform-Partner; Fotoshooting wird separat
  * gescoped, vorhandene Fotos werden eingebaut.
+ *
+ * v6.1 (Denis 2026-09-18): Reform-Start 349 ohne Assistent, Assistent als
+ * Zubuchung (Satz T1_ASSISTENT); feste Monatstakte für Ratgeber-Texte und
+ * Profil-Beiträge; Reform-Partner mit Kampagnenbetreuung (frühestens ab dem
+ * dritten Monat, Werbebudget zahlt die Fahrschule direkt) und zwei
+ * Flyer-Motiven pro Jahr. Leistungszeilen nennen Mengen, aber keine Preise:
+ * Beträge stehen weiterhin nur in den v6-Sätzen. Sichtbarer Text ohne
+ * Gedankenstriche als Satzzeichen.
  */
 
 /**
- * WORTGLEICH-Block aus MyHiwi_Fahrschul_Offer_v6_2026-09.md §13 (Stand 2026-09-08).
+ * WORTGLEICH-Block aus MyHiwi_Fahrschul_Offer_v6_2026-09.md §13 (v6.1, Stand 2026-09-18).
  * Nur diese Sätze nennen Preise und Laufzeiten. Nicht umformulieren, nicht kürzen.
  * "12 Monate" darf nur im Satz T2_LAUFZEIT vorkommen.
  * DOWNSELL (Reform-Fahrplan) steht bewusst nicht auf der Seite: v6 §9 sagt,
@@ -37,7 +45,9 @@ import { DossierMuster, ZettelMuster } from "./Muster";
  */
 const v6 = {
   T1_NAME: "Das Einstiegspaket heißt Reform-Start.",
-  T1_PREIS: "Reform-Start kostet 399 Euro im Monat zuzüglich Mehrwertsteuer.",
+  T1_PREIS: "Reform-Start kostet 349 Euro im Monat zuzüglich Mehrwertsteuer.",
+  T1_ASSISTENT:
+    "Den Digitalen Anfrage-Assistenten können Sie bei Reform-Start im ersten Jahr für 50 Euro im Monat zusätzlich dazubuchen.",
   T1_LAUFZEIT: "Reform-Start läuft sechs Monate, danach monatlich kündbar.",
   T1_WEBSITE:
     "Bei Reform-Start kommt einmalig der Start-Sprint für Ihre Website dazu: 490 Euro, wenn Ihre bestehende Seite als Fundament taugt, 1.490 Euro für den standardisierten Umzug auf ein sauberes Fundament, ein kompletter Neubau wird separat angeboten.",
@@ -47,7 +57,7 @@ const v6 = {
   T2_WEBSITE:
     "Bei Reform-Partner ist der Start-Sprint für Ihre Website im Paket enthalten, bis zum Wert des standardisierten Umzugs von 1.490 Euro, ein kompletter Neubau wird separat angeboten, und wer vor dem zwölften Monat aussteigt, zahlt den noch nicht abgedeckten Anteil nach.",
   CALLER_PREISSATZ:
-    "Der Einstieg liegt bei 399 Euro im Monat zuzüglich Mehrwertsteuer plus einem einmaligen Betrag für die Website, das größere Paket bei 599 Euro im Monat mit der Website im Paket, die Details besprechen Sie im Termin mit Herrn Kaliberda.",
+    "Der Einstieg liegt bei 349 Euro im Monat zuzüglich Mehrwertsteuer plus einem einmaligen Betrag für die Website, das größere Paket bei 599 Euro im Monat mit der Website im Paket, die Details besprechen Sie im Termin mit Herrn Kaliberda.",
 } as const;
 
 /** Einsatzgebiet laut Plan Kaltakquise D4 (E3). Ein Satzbaustein, überall gleich. */
@@ -87,12 +97,12 @@ const faqCopy = [
   },
   {
     question: "Wie lange bin ich gebunden?",
-    answer: `${v6.T1_LAUFZEIT} ${v6.T2_LAUFZEIT} Was der Vertrag genau enthält, gehen wir vor der Unterschrift gemeinsam durch.`,
+    answer: `${v6.T1_LAUFZEIT} ${v6.T2_LAUFZEIT} ${v6.T1_ASSISTENT} Bei Reform-Partner ist er im Paket enthalten. Was der Vertrag genau enthält, gehen wir vor der Unterschrift gemeinsam durch.`,
   },
   {
     question: "Was ist mit Google und bezahlter Werbung?",
     answer:
-      "Dass Sie gefunden werden, wenn jemand im Kiez nach einer Fahrschule sucht, ist der Kern unserer Arbeit: auf der Karte und in der Suche. Das ist in beiden Paketen enthalten. Ob Sie auch in den Google-Antworten auftauchen, halten wir vor dem Start fest, laufend daran arbeiten wir bei Reform-Partner. Bezahlte Anzeigen verkaufen wir Ihnen am Anfang nicht. Erst wenn die Zahlen nach ein paar Monaten zeigen, was eine Anfrage bei Ihnen wert ist, lohnt sich das Gespräch darüber.",
+      "Dass Sie gefunden werden, wenn jemand im Kiez nach einer Fahrschule sucht, ist der Kern unserer Arbeit: auf der Karte und in der Suche. Das ist in beiden Paketen enthalten. Ob Sie auch in den Google-Antworten auftauchen, halten wir vor dem Start fest, laufend daran arbeiten wir bei Reform-Partner. Bezahlte Anzeigen starten wir nie am Anfang. Bei Reform-Partner ist die Betreuung einer Kampagne im Paket: ein Werbekanal, ein Schwerpunkt, frühestens ab dem dritten Monat und erst, wenn Ihre Zahlen zeigen, wo Werbung bei Ihnen ansetzt. Bei Reform-Start können Sie das später dazubuchen. Das Werbebudget zahlen Sie in beiden Fällen direkt an Google oder Meta, es ist nicht im Paketpreis enthalten.",
   },
 ];
 
@@ -176,8 +186,15 @@ const pakete = [
     preis: v6.T1_PREIS,
     laufzeit: v6.T1_LAUFZEIT,
     website: v6.T1_WEBSITE,
-    laufend:
-      "Laufend drin: Google-Profil gepflegt, jeden Monat gegen Ihren Ausgangspunkt gemessen, Sichtbarkeits-Bericht, Änderungen bis zwei Stunden im Monat.",
+    assistent: `${v6.T1_ASSISTENT} Er bereitet Antworten auf Standardfragen vor, und ein Mensch gibt jede Antwort frei.`,
+    laufendTitel: "Jeden Monat drin",
+    leistungen: [
+      "Laufende Betreuung Ihrer Website.",
+      "Ihr Google-Profil gepflegt, dazu 2 Beiträge im Monat in Ihrem Profil.",
+      "1 Ratgeber-Text im Monat für Ihre Region auf Ihrer Website.",
+      "Jeden Monat gegen Ihren Ausgangspunkt gemessen, mit Ihrem Sichtbarkeits-Bericht.",
+      "Änderungen bis zwei Stunden im Monat, Antwort innerhalb eines Werktags.",
+    ],
   },
   {
     key: "reform-partner",
@@ -186,8 +203,17 @@ const pakete = [
     preis: v6.T2_PREIS,
     laufzeit: v6.T2_LAUFZEIT,
     website: v6.T2_WEBSITE,
-    laufend:
-      "Alles aus Reform-Start, dazu Ihr Anfragen-Zettel mit Anfrage und Anmeldung getrennt, aktiv betreute Anfragewege und Änderungen bis vier Stunden im Monat.",
+    assistent:
+      "Der Digitale Anfrage-Assistent ist im Paket enthalten. Er bereitet Antworten auf Standardfragen vor, und ein Mensch gibt jede Antwort frei.",
+    laufendTitel: "Jeden Monat drin",
+    leistungen: [
+      "Alles aus Reform-Start, mit Änderungen bis vier Stunden im Monat.",
+      "Bei Reform-Partner dazu: Ihr Anfragen-Zettel mit Anfrage und Anmeldung getrennt und aktiv betreute Anfragewege.",
+      "2 Ratgeber-Texte und 4 Beiträge in Ihrem Google-Profil im Monat.",
+      "Wir halten fest und beobachten laufend, ob Sie in den Google-Antworten und bei ChatGPT auftauchen. Eine Nennung kann dort niemand zusagen.",
+      "Kampagnenbetreuung: ein Werbekanal, ein Schwerpunkt. Start frühestens ab dem dritten Monat und erst, wenn Ihre Zahlen zeigen, wo Werbung bei Ihnen ansetzt. Das Werbebudget zahlen Sie direkt an Google oder Meta, es ist nicht im Paketpreis enthalten. Welches Budget mindestens nötig ist, klären wir vor dem Start.",
+      "2 Flyer-Motive pro Jahr gestalten wir mit. Den Druck zahlen Sie selbst, weitere Motive bieten wir einzeln an.",
+    ],
   },
 ];
 
@@ -212,7 +238,7 @@ export default function Page() {
               tone="accent"
             />
             <h1 className="fs-h1 mt-mh-4">
-              Wenn in Ihrem Kiez jemand eine Fahrschule sucht — landet er bei
+              Wenn in Ihrem Kiez jemand eine Fahrschule sucht, landet er bei
               Ihnen <em className="mh-italic-accent">oder drüben?</em>
             </h1>
             <p className="fs-body mt-mh-5 max-w-[62ch]">
@@ -220,7 +246,7 @@ export default function Page() {
               Sie sehen jeden Monat schwarz auf weiß, was sich verändert.
             </p>
             <div className="mt-mh-6">
-              <FsCtaRow microcopy="Sie reden direkt mit Denis — kein Callcenter, kein Formular." />
+              <FsCtaRow microcopy="Sie reden direkt mit Denis. Kein Callcenter, kein Formular." />
             </div>
           </div>
         </Container>
@@ -241,7 +267,7 @@ export default function Page() {
             ))}
           </div>
           <p className="fs-body mt-mh-6 max-w-[62ch]">
-            Dabei wollen so viele junge Leute wie nie den Führerschein — viele
+            Dabei wollen so viele junge Leute wie nie den Führerschein. Viele
             warten nur ab. Und die, die jetzt suchen, landen irgendwo. Bei
             Ihnen oder beim Wettbewerber.
           </p>
@@ -349,12 +375,27 @@ export default function Page() {
                 <p className="fs-body mt-mh-4 border-t border-mh-divider pt-mh-4">
                   {p.website}
                 </p>
-                <p className="fs-body mt-mh-4 text-mh-text-secondary">{p.laufend}</p>
+                <p className="fs-body mt-mh-4 border-t border-mh-divider pt-mh-4">
+                  {p.assistent}
+                </p>
+                <p className="font-mh-mono mt-mh-5 text-[13px] text-mh-text-secondary">
+                  {p.laufendTitel}
+                </p>
+                <ul className="mt-mh-2 flex flex-col">
+                  {p.leistungen.map((zeile) => (
+                    <li
+                      key={zeile}
+                      className="fs-body border-t border-mh-divider py-mh-3 text-mh-text-secondary"
+                    >
+                      {zeile}
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
           <p className="fs-body mt-mh-6 max-w-[62ch] font-medium">
-            Sie müssen nichts am Computer machen — alles läuft über WhatsApp.
+            Sie müssen nichts am Computer machen, alles läuft über WhatsApp.
           </p>
         </Container>
       </Section>
@@ -409,7 +450,7 @@ export default function Page() {
               Reden wir über <em className="mh-italic-accent">volle</em> Kurse.
             </h2>
             <p className="fs-body mt-mh-4 max-w-[54ch] text-mh-text-on-dark/85">
-              Ein Anruf reicht. Sie erreichen mich direkt — und wir schauen
+              Ein Anruf reicht. Sie erreichen mich direkt, und wir schauen
               gemeinsam, wo Ihre Fahrschule heute steht.
             </p>
             <div className="mt-mh-6">

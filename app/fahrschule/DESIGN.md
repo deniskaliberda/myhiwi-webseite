@@ -8,7 +8,7 @@ last-updated: 2026-09-08
 derived-from:
   - ../../DESIGN.md (Repo-Root, canonical — Tokens gelten, sofern hier nicht überschrieben)
   - denis-workspace/dokumente/MyHiwi_Fahrschule_Web_Konzept_2026-07-03.md (§8 Design-Direction, Denis-gelockt)
-  - denis-workspace/dokumente/MyHiwi_Fahrschul_Offer_v6_2026-09.md (Kanon-Wording seit 2026-09-08: §11 Sprachregeln, §13 WORTGLEICH; ersetzt v4/v5)
+  - denis-workspace/dokumente/MyHiwi_Fahrschul_Offer_v6_2026-09.md (Kanon-Wording seit 2026-09-08, Stand v6.1 vom 2026-09-18: §11 Sprachregeln, §13 WORTGLEICH; ersetzt v4/v5)
 scope: NUR app/fahrschule/** (+ /fs/<rep>-Redirects). Kein Token dieser Shell darf auf andere Seiten leaken.
 
 tokens:
@@ -43,6 +43,14 @@ tokens:
 > keine Zusage einer Anfragen-Zahl, zwei Pakete Reform-Start / Reform-Partner mit Sätzen
 > wortgleich aus v6 §13, keine Fahrschul-Referenz ohne belegte Freigabe (D9).
 > Prüfung: `tests/fahrschule-wording.spec.ts`.
+>
+> **Wording-Stand 2026-09-18 (v6.1, Denis-Entscheidung):** Reform-Start 349 ohne Assistent,
+> Assistent als Zubuchung (Satz T1_ASSISTENT), Reform-Partner 599 unverändert. Beide Pakete
+> bleiben mit Preis sichtbar. Neue Leistungszeilen im Preis-Block: Websitebetreuung,
+> Ratgeber-Texte und Profil-Beiträge im Monatstakt (1 und 2 bei Reform-Start, 2 und 4 bei
+> Reform-Partner), bei Reform-Partner Kampagnenbetreuung (frühestens ab dem dritten Monat,
+> Werbebudget zahlt die Fahrschule direkt) und 2 Flyer-Motive pro Jahr. Die Zahl 399 steht
+> nicht auf der Seite. Sichtbarer Text ohne Gedankenstriche als Satzzeichen.
 
 ## 1. Verhältnis zum Root-Design-System
 
@@ -75,9 +83,9 @@ Datenschutz-Links. Begründung: Beweis-Schicht, ein Job, keine Ausstiege in die 
 | 3 | **Das System in 3 Schritten** | Start-Sprint nach Website-Gate (v6 §2: bestehende Seite taugt → bleibt; sonst Umzug auf sauberes Fundament) → Nullpunkt + monatlicher Sichtbarkeits-Bericht (beide Türen) → Anfragen-Zettel per WhatsApp **nur Tür 2 / Reform-Partner** (v6 §5, F23); Fotoshooting wird separat gescoped, nie als Leistung versprochen. Der **Zettel als Bild** (gebauter Muster-Mock, klar als „Muster" beschriftet — das Artefakt verkauft) |
 | 4 | ~~Anfragen-Garantie (Held-Block, Amber)~~ **entfallen seit v6 (2026-09-08)** | Kein Garantie-Wort und keine Zusage einer Anfragen-Zahl auf der Seite (Anwalts-Gate offen, Plan Kaltakquise D7). Amber bleibt CTA-exklusiv. |
 | 5 | **Beweis-Schicht „So messen wir"** | Anonymisiertes Punkt-A-Dossier (Struktur-Mock) + Erklärung der Zählung + Einsichtsrecht. Transparenz statt erfundener Ergebnisse. Referenz-Teaser („PRAXIS") nur mit veröffentlichter Projektseite; keine Fahrschul-Referenz ohne belegte Freigabe (D9) |
-| 6 | **Preis-Block** | Zwei Pakete Reform-Start / Reform-Partner, jeder Preis-, Laufzeit- und Website-Satz wortgleich aus v6 §13 (s. §4 unten). KEINE Tier-Tabelle, keine eigenen Zahlen außerhalb der v6-Sätze, kein Downsell auf der Seite (v6 §9) |
+| 6 | **Preis-Block** | Zwei Pakete Reform-Start / Reform-Partner, jeder Preis-, Laufzeit- und Website-Satz wortgleich aus v6 §13 (s. §4 unten). Seit v6.1 je Paket eine kurze Leistungsliste „Jeden Monat drin" (Mengen wie 1/2/4 Texte und Beiträge, 2 Flyer-Motive pro Jahr, aber keine Preise). KEINE Tier-Tabelle, keine eigenen Beträge außerhalb der v6-Sätze, kein Mindest-Werbebudget als Zahl, kein Downsell auf der Seite (v6 §9) |
 | 7 | **Wer dahinter steht** | Denis, echtes Foto (`public/ueber-mich/portrait.jpg`), Ahrensfelde bei Berlin, Einsatzgebiet-Satz (D4), „Lokale Wachstumssysteme" — nie „AI-/KI-Agentur" |
-| 8 | **FAQ** | Computer · Was wenn's nicht klappt (Risk-Reversal wortgleich v6 §11) · Wem gehört die Website · Laufzeit (Tür 1 / Tür 2 wortgleich v6 §13) · Google/Werbung — ausgeschriebene Sätze ohne Fachwörter, FAQ-Schema |
+| 8 | **FAQ** | Computer · Was wenn's nicht klappt (Risk-Reversal wortgleich v6 §11) · Wem gehört die Website · Laufzeit (Tür 1 / Tür 2 und T1_ASSISTENT wortgleich v6 §13) · Google/Werbung (seit v6.1: Kampagnenbetreuung bei Reform-Partner, Budget direkt an Google oder Meta) — ausgeschriebene Sätze ohne Fachwörter, FAQ-Schema |
 | 9 | **Schluss-CTA** | Anruf/WhatsApp, Amber, Pill erlaubt (Final-CTA-Ritual des Root-Systems) |
 
 **Ausgelassen in Phase 0 (bewusst):** Sichtbarkeits-Check (Phase 1) · Kiez-Knappheit (erst nach
@@ -99,12 +107,12 @@ Beide Buttons Amber; WhatsApp als Outline-Variante (Amber-Border, Amber-Text) zu
 
 - **Produktname:** „Das Volle-Kurse-System" (Seiten-Rahmen); Paketnamen „Reform-Start" / „Reform-Partner" (v6)
 - **Preis, Laufzeit, Website (seit v6, 2026-09-08):** ausschließlich die Sätze aus
-  `MyHiwi_Fahrschul_Offer_v6_2026-09.md` §13 (T1_NAME/PREIS/LAUFZEIT/WEBSITE, T2_…, CALLER_PREISSATZ),
+  `MyHiwi_Fahrschul_Offer_v6_2026-09.md` §13 (T1_NAME/PREIS/ASSISTENT/LAUFZEIT/WEBSITE, T2_…, CALLER_PREISSATZ; Stand v6.1, 2026-09-18),
   auf der Seite im Objekt `v6` in `page.tsx`; „12 Monate" nur im Satz T2_LAUFZEIT.
   Geprüft durch `tests/fahrschule-wording.spec.ts`. (Vorher v4: „349 € im Monat zzgl. MwSt. · 12 Monate".)
 - **Keine Garantie-Formulierung** (seit v6; Anwalts-Gate offen). Risk-Reversal-Antwort im FAQ
   wortgleich v6 §11.
-- **Null-Computer:** „Sie müssen nichts am Computer machen — alles läuft über WhatsApp."
+- **Null-Computer:** „Sie müssen nichts am Computer machen, alles läuft über WhatsApp."
 
 ## 5. Bildwelt & Verbote
 

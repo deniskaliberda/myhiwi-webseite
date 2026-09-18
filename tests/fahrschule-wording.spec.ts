@@ -3,17 +3,21 @@ import { join } from "node:path";
 import { expect, test, type Page } from "@playwright/test";
 
 /**
- * Wording test for /fahrschule on the v6 offer
- * (denis-workspace: dokumente/fahrschule/PLAN_Kaltakquise_Fahrschule_2026-09-08.md, W8 / AK8.1).
+ * Wording test for /fahrschule on the v6.1 offer
+ * (denis-workspace: dokumente/fahrschule/PLAN_Kaltakquise_Fahrschule_2026-09-08.md, W8 / AK8.1;
+ * package decision v6.1: dokumente/fahrschule/ABSCHLUSSPLAN_2026-09-18.md §2).
  *
  * The sentences below are an intentional, independent copy of the WORTGLEICH
- * block in dokumente/MyHiwi_Fahrschul_Offer_v6_2026-09.md §13 (2026-09-08).
+ * block in dokumente/MyHiwi_Fahrschul_Offer_v6_2026-09.md §13 (v6.1, 2026-09-18):
+ * Reform-Start costs 349, the assistant is an optional add-on (T1_ASSISTENT).
  * If v6 changes, update the page AND this file. DOWNSELL is not expected on
  * the page (v6 §9: the Reform-Fahrplan is never offered proactively).
  */
 const V6 = {
   T1_NAME: "Das Einstiegspaket heißt Reform-Start.",
-  T1_PREIS: "Reform-Start kostet 399 Euro im Monat zuzüglich Mehrwertsteuer.",
+  T1_PREIS: "Reform-Start kostet 349 Euro im Monat zuzüglich Mehrwertsteuer.",
+  T1_ASSISTENT:
+    "Den Digitalen Anfrage-Assistenten können Sie bei Reform-Start im ersten Jahr für 50 Euro im Monat zusätzlich dazubuchen.",
   T1_LAUFZEIT: "Reform-Start läuft sechs Monate, danach monatlich kündbar.",
   T1_WEBSITE:
     "Bei Reform-Start kommt einmalig der Start-Sprint für Ihre Website dazu: 490 Euro, wenn Ihre bestehende Seite als Fundament taugt, 1.490 Euro für den standardisierten Umzug auf ein sauberes Fundament, ein kompletter Neubau wird separat angeboten.",
@@ -23,18 +27,30 @@ const V6 = {
   T2_WEBSITE:
     "Bei Reform-Partner ist der Start-Sprint für Ihre Website im Paket enthalten, bis zum Wert des standardisierten Umzugs von 1.490 Euro, ein kompletter Neubau wird separat angeboten, und wer vor dem zwölften Monat aussteigt, zahlt den noch nicht abgedeckten Anteil nach.",
   CALLER_PREISSATZ:
-    "Der Einstieg liegt bei 399 Euro im Monat zuzüglich Mehrwertsteuer plus einem einmaligen Betrag für die Website, das größere Paket bei 599 Euro im Monat mit der Website im Paket, die Details besprechen Sie im Termin mit Herrn Kaliberda.",
+    "Der Einstieg liegt bei 349 Euro im Monat zuzüglich Mehrwertsteuer plus einem einmaligen Betrag für die Website, das größere Paket bei 599 Euro im Monat mit der Website im Paket, die Details besprechen Sie im Termin mit Herrn Kaliberda.",
 } as const;
 
 const REGION = "Berlin und Brandenburg sowie München und Oberbayern";
 
-/** Strings that must not appear anywhere on /fahrschule (old v4 wording). */
+/**
+ * Strings that must not appear anywhere on /fahrschule.
+ * v4: Garantie, "vereinbarte Anfragen-Zahl", "349 € ... 12 Monate" as one offer.
+ * v6 (superseded 2026-09-18): 399 as the Reform-Start price. Since v6.1 the price
+ * is 349 and the page does not state the 399 sum at all.
+ */
 const BANNED: Array<{ label: string; re: RegExp }> = [
   { label: "Garantie", re: /garantie/i },
   { label: "vereinbarte Anfragen-Zahl", re: /vereinbarte Anfragen-Zahl/ },
-  { label: "349 €", re: /349(\s|&nbsp;| )*€/ },
+  { label: "399 as a price", re: /399(\s|&nbsp;| )*(€|Euro|EUR)/ },
+  { label: "349 € (v4 notation; v6.1 spells the price with 'Euro')", re: /349(\s|&nbsp;| )*€/ },
   { label: "12 Monate", re: /12 Monate/ },
 ];
+
+/** Emoji ranges without the `u` flag (tsconfig target is below es6). */
+const EMOJI = /[\u2600-\u27BF\uFE0F]|[\uD83C-\uD83E][\uDC00-\uDFFF]/;
+
+/** Dashes used as punctuation in visible copy (anti-slop rule of the page). */
+const DASH = /[—–]/;
 
 /** "12 Monate" is allowed only inside the exact T2_LAUFZEIT sentence. */
 function withoutT2Laufzeit(text: string): string {
@@ -103,7 +119,7 @@ test.describe("/fahrschule wording v6", () => {
     await expect(main).toContainText("Reform-Partner");
   });
 
-  test("(b) keine alten Aussagen: Garantie, vereinbarte Anfragen-Zahl, 349 €, 12 Monate außerhalb des Tür-2-Satzes", async ({
+  test("(b) keine alten Aussagen: Garantie, vereinbarte Anfragen-Zahl, 399 als Preis, 12 Monate außerhalb des Tür-2-Satzes", async ({
     page,
   }) => {
     const texts = await collectTexts(page);
@@ -113,6 +129,11 @@ test.describe("/fahrschule wording v6", () => {
     // The T2 sentence itself must be present, otherwise the stripping above is meaningless.
     const bodyText = texts.find(([where]) => where === "body text")![1];
     expect(bodyText.split(V6.T2_LAUFZEIT).length - 1).toBeGreaterThanOrEqual(1);
+
+    // v6.1: the bare number 399 is not part of any visible text, metadata or JSON-LD.
+    for (const [where, text] of texts) {
+      expect(text, `${where} must not contain 399`).not.toMatch(/(?<![\d.,])399(?!\d)/);
+    }
 
     // Belt and braces: the whole served HTML, including the RSC payload.
     const html = await page.content();
@@ -132,6 +153,7 @@ test.describe("/fahrschule wording v6", () => {
     expect(laufzeit).toBeTruthy();
     expect(laufzeit!.acceptedAnswer.text).toContain(V6.T1_LAUFZEIT);
     expect(laufzeit!.acceptedAnswer.text).toContain(V6.T2_LAUFZEIT);
+    expect(laufzeit!.acceptedAnswer.text).toContain(V6.T1_ASSISTENT);
     const klappt = questions.find((q) => q.name === "Was ist, wenn es nicht klappt?");
     expect(klappt).toBeTruthy();
     expect(klappt!.acceptedAnswer.text).toContain("Wir dokumentieren Ihren Startpunkt");
@@ -167,7 +189,7 @@ test.describe("/fahrschule wording v6", () => {
     );
     expect(source).toContain(V6.T1_PREIS);
     expectClean(source, "opengraph-image.tsx");
-    expect(source).not.toContain("349");
+    expect(source).not.toContain("399");
   });
 
   test("(e) Referenzbereich ohne Mannis: DOM-Text, alt-Attribute, Links", async ({
@@ -187,6 +209,75 @@ test.describe("/fahrschule wording v6", () => {
     ).toBeVisible();
     const html = await page.content();
     expect(html).not.toMatch(/mannis/i);
+  });
+});
+
+test.describe("/fahrschule Pakete v6.1 (Denis 2026-09-18)", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("/fahrschule");
+  });
+
+  test("(i) Preisblock: beide Pakete mit Preis, Assistent als Zubuchung, neue Leistungszeilen richtig zugeordnet", async ({
+    page,
+  }) => {
+    const cards = page.locator("main article");
+    const start = cards.filter({ hasText: V6.T1_NAME });
+    const partner = cards.filter({ hasText: V6.T2_NAME });
+    await expect(start).toHaveCount(1);
+    await expect(partner).toHaveCount(1);
+
+    for (const s of [V6.T1_PREIS, V6.T1_ASSISTENT, V6.T1_LAUFZEIT, V6.T1_WEBSITE]) {
+      await expect(start, s).toContainText(s);
+    }
+    await expect(start).toContainText("Laufende Betreuung Ihrer Website");
+    await expect(start).toContainText("1 Ratgeber-Text im Monat");
+    await expect(start).toContainText("2 Beiträge im Monat");
+
+    for (const s of [V6.T2_PREIS, V6.T2_LAUFZEIT, V6.T2_WEBSITE]) {
+      await expect(partner, s).toContainText(s);
+    }
+    await expect(partner).toContainText("Der Digitale Anfrage-Assistent ist im Paket enthalten");
+    await expect(partner).toContainText("2 Ratgeber-Texte und 4 Beiträge");
+    await expect(partner).toContainText("Kampagnenbetreuung");
+    await expect(partner).toContainText("frühestens ab dem dritten Monat");
+    await expect(partner).toContainText("Das Werbebudget zahlen Sie direkt an Google oder Meta");
+    await expect(partner).toContainText("2 Flyer-Motive pro Jahr");
+    await expect(partner).toContainText("Eine Nennung kann dort niemand zusagen");
+
+    // Campaign management and flyer designs belong to Reform-Partner only.
+    expect(await start.innerText()).not.toMatch(/Kampagnenbetreuung|Flyer/);
+    // The optional add-on sentence is not part of the partner card (the assistant is included there).
+    expect(await partner.innerText()).not.toContain(V6.T1_ASSISTENT);
+  });
+
+  test("(j) eigener sichtbarer Text ohne Gedankenstriche, Überschriften und Buttons ohne Emoji", async ({
+    page,
+  }) => {
+    // Only the page's own copy: the shared project teaser carries case-study content.
+    const own = await page.evaluate(() => {
+      const main = document.querySelector("main")!.cloneNode(true) as HTMLElement;
+      // Remove the teaser card: the grid wrapper two levels above the case-study link.
+      main
+        .querySelectorAll('a[href^="/case-studies/"]')
+        .forEach((a) => (a.parentElement?.parentElement ?? a).remove());
+      // innerText of a detached clone falls back to textContent semantics, which is fine here.
+      return main.textContent ?? "";
+    });
+    const hits = own.match(/.{0,40}[—–].{0,40}/g) ?? [];
+    expect(hits, "dashes used as punctuation").toEqual([]);
+
+    const labels = await page
+      .locator("main h1, main h2, main h3, main a, main button, header a")
+      .allInnerTexts();
+    for (const text of labels) {
+      expect(text, `emoji in "${text}"`).not.toMatch(EMOJI);
+    }
+    const aria = await page
+      .locator("[aria-label]")
+      .evaluateAll((els) => els.map((el) => el.getAttribute("aria-label") ?? ""));
+    for (const value of aria) {
+      expect(value, `dash in aria-label "${value}"`).not.toMatch(DASH);
+    }
   });
 });
 

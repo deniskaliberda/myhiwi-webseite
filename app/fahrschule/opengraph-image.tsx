@@ -6,12 +6,12 @@ export const contentType = "image/png";
 export const alt = "Das Volle-Kurse-System: mehr Anfragen für Ihre Fahrschule";
 
 /**
- * Preissatz wortgleich aus MyHiwi_Fahrschul_Offer_v6_2026-09.md §13 (T1_PREIS).
+ * Preissatz wortgleich aus MyHiwi_Fahrschul_Offer_v6_2026-09.md §13 (T1_PREIS, v6.1 vom 2026-09-18).
  * tests/fahrschule-wording.spec.ts prüft diese Datei auf genau diesen Satz,
  * weil der Bildtext nicht per OCR geprüft wird.
  */
 const PRICE_SENTENCE =
-  "Reform-Start kostet 399 Euro im Monat zuzüglich Mehrwertsteuer.";
+  "Reform-Start kostet 349 Euro im Monat zuzüglich Mehrwertsteuer.";
 
 /** Einsatzgebiet laut Plan Kaltakquise D4, als Kurzform für die Fußzeile. */
 const REGION_SHORT = "Berlin · Brandenburg · München · Oberbayern";

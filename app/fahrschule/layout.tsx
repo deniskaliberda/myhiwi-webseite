@@ -18,7 +18,7 @@ export default function FahrschuleLayout({
       <header className="border-b border-mh-divider">
         <div className="mx-auto flex max-w-mh-container items-center justify-between px-5 py-mh-4 md:px-16">
           <div className="flex items-center gap-mh-4">
-            <Link href="/fahrschule" aria-label="MyHiwi — Fahrschulen">
+            <Link href="/fahrschule" aria-label="MyHiwi Fahrschulen">
               <Image
                 src="/brand/myhiwi-h-logo.svg"
                 alt="MyHiwi"
