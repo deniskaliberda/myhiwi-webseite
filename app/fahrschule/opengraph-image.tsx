@@ -4,7 +4,7 @@ export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt =
-  "Das Volle-Kurse-System — mehr Anfragen für Ihre Fahrschule in Berlin";
+  "Für Fahrschulen: gefunden werden, Anfragen bekommen. MyHiwi";
 
 /**
  * OG-Bild für /fahrschule — der Link wird vor allem per WhatsApp geteilt,
@@ -55,10 +55,10 @@ export default function OgImage() {
           }}
         >
           <div style={{ fontSize: 74, fontWeight: 800, lineHeight: 1.05 }}>
-            Das Volle-Kurse-System
+            Ihre Fahrschule ist gut.
           </div>
           <div style={{ fontSize: 34, color: "#E2E8F0", lineHeight: 1.3 }}>
-            Wir zählen jede Anfrage ab Tag 0 — schwarz auf weiß per WhatsApp.
+            Im Internet sieht man das noch nicht. Wir ändern das und bleiben dran.
           </div>
         </div>
         <div
@@ -72,7 +72,7 @@ export default function OgImage() {
         >
           <span>myhiwi.de/fahrschule</span>
           <span style={{ color: "#D97706", fontWeight: 700 }}>
-            349 € im Monat zzgl. MwSt.
+            ab 349 € im Monat zzgl. MwSt.
           </span>
         </div>
       </div>
