@@ -159,16 +159,20 @@ export function ManniBeispiel() {
   );
 }
 
-export function Ansprechpartner({ ich = false }: { ich?: boolean }) {
-  // Portrait intentionally left out until Denis supplies a new photo (2026-09-21).
+export function Ansprechpartner({ ich = false, onDark = false }: { ich?: boolean; onDark?: boolean }) {
   return (
-    <div className="fsp-stack fsp-gap-8">
-      <h3 className="fsp-h3">Mit wem Sie sprechen</h3>
-      <p className="fsp-p">
-        {ich
-          ? "Denis Kaliberda, Geschäftsführer von MyHiwi in Ahrensfelde bei Berlin. Ich führe das Gespräch selbst und bleibe danach Ihr Ansprechpartner."
-          : "Denis Kaliberda, Geschäftsführer von MyHiwi in Ahrensfelde bei Berlin. Er schaut sich Ihre Fahrschule vor dem Gespräch selbst an und bleibt Ihr Ansprechpartner. Pro Monat nehmen wir höchstens drei neue Fahrschulen auf."}
-      </p>
+    <div style={{ display: "flex", gap: 22, alignItems: "flex-start" }}>
+      <div className="fsp-portrait">
+        <Image src="/ueber-mich/portrait.jpg" alt="Denis Kaliberda" width={525} height={700} sizes="270px" />
+      </div>
+      <div className="fsp-stack fsp-gap-8">
+        <h3 className="fsp-h3" style={onDark ? { color: "inherit" } : undefined}>Mit wem Sie sprechen</h3>
+        <p className="fsp-p">
+          {ich
+            ? "Denis Kaliberda, Geschäftsführer von MyHiwi in Ahrensfelde bei Berlin. Ich führe das Gespräch selbst und bleibe danach Ihr Ansprechpartner."
+            : "Denis Kaliberda, Geschäftsführer von MyHiwi in Ahrensfelde bei Berlin. Er schaut sich Ihre Fahrschule vor dem Gespräch selbst an und bleibt Ihr Ansprechpartner. Pro Monat nehmen wir höchstens drei neue Fahrschulen auf."}
+        </p>
+      </div>
     </div>
   );
 }

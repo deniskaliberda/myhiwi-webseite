@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { FsCtaRow } from "./FsCta";
-import { ManniBeispiel, Phone, REFORM_ARTIKEL, ReformInfografik } from "./sections";
+import { Ansprechpartner, ManniBeispiel, Phone, REFORM_ARTIKEL, ReformInfografik } from "./sections";
 
 /**
  * myhiwi.de/fahrschule — Landingpage für Fahrschul-Inhaber (v2, Papier-Look).
@@ -48,7 +48,7 @@ const PARTNER = [
   ["Neue Preise?", "Eine kurze Nachricht genügt, auch per WhatsApp. Innerhalb eines Werktags steht es auf der Seite."],
   ["Kurstermine ohne Aufwand", "Ihr Büro trägt Termine in eine einfache Verwaltungsseite ein, die Website zeigt sie automatisch. Oder Sie schreiben uns kurz."],
   ["Jeden Monat neue Texte", "Zu den Fragen, die Schüler und Eltern in Ihrer Region wirklich googeln: Kosten, Prüfung, Ablauf, Reform. Dazu frische Beiträge in Ihrem Google-Eintrag."],
-  ["Flyer mit Ihren aktuellen Preisen", "Im selben Look wie Ihre Seite. Ändern sich Preise oder Angebote, passen wir die Flyer an, damit nichts Altes im Umlauf bleibt. Im großen Paket."],
+  ["Flyer-Begleitung", "Klassen- und Preis-Flyer im selben Look wie Ihre Seite. Ändern sich Preise oder Angebote, passen wir sie an, damit nichts Altes im Umlauf bleibt. Im großen Paket immer dabei."],
   ["Einmal im Monat die Zahlen", "Eine Seite, in normalem Deutsch: wie viele Anfragen kamen, wie oft Sie gefunden wurden, was wir gemacht haben. Zwei Minuten lesen."],
 ];
 
@@ -65,8 +65,8 @@ const GROSS = [
   ["Anfrage-Assistent", "Ein Chatbot auf Ihrer Seite, der Ihrem Büro die immer gleichen Fragen abnimmt. Rund um die Uhr."],
   ["Gefunden werden, auch wenn jemand eine KI fragt", "Immer mehr junge Leute fragen ChatGPT statt Google. Wir arbeiten messbar daran, dass Ihre Fahrschule dort genannt wird. Zusagen können wir eine Nennung nicht."],
   ["Werbekampagne ab dem dritten Monat", "Erst wenn die Zahlen zeigen, wo Werbung sich lohnt. Das Werbebudget zahlen Sie direkt an Google, nie an uns."],
-  ["Flyer mit Ihren aktuellen Preisen", "Ändern sich Preise oder Angebote, passen wir die Flyer an."],
-  ["Wir begleiten, was bei Ihnen los ist", "Jubiläum, Tag der offenen Tür, neues Fahrzeug, neuer Kurs: Wir bringen es auf Ihre Seite und in den Google-Eintrag."],
+  ["Flyer-Begleitung inklusive", "Klassen- und Preis-Flyer im Look Ihrer Seite. Ändern sich Preise oder Angebote, passen wir sie an. Ohne Aufpreis je Motiv, nur den Druck zahlen Sie."],
+  ["Unterstützung bei Veranstaltungen und besonderen Anlässen", "Jubiläum, Tag der offenen Tür, neues Fahrzeug, neuer Kurs: Wir bringen es auf Ihre Seite und in den Google-Eintrag."],
   ["Website-Start bis 1.490 € enthalten", "Bei Ausstieg vor Monat 12 wird er anteilig berechnet."],
 ];
 
@@ -274,14 +274,7 @@ export default function FahrschulePage() {
       <section id="termin" className="fsp-wrap fsp-section">
         <div className="fsp-dark fsp-bleed">
           <div className="fsp-grid-2" style={{ alignItems: "center" }}>
-            <div style={{ color: "var(--fsp-on-dark)" }}>
-              <div className="fsp-stack fsp-gap-8">
-                <h3 className="fsp-h3" style={{ color: "inherit" }}>Mit wem Sie sprechen</h3>
-                <p className="fsp-p">
-                  Denis Kaliberda, Geschäftsführer von MyHiwi in Ahrensfelde bei Berlin. Er schaut sich Ihre Fahrschule vor dem Gespräch selbst an und bleibt Ihr Ansprechpartner. Pro Monat nehmen wir höchstens drei neue Fahrschulen auf.
-                </p>
-              </div>
-            </div>
+            <Ansprechpartner onDark />
             <div className="fsp-stack fsp-gap-16">
               <h2 className="fsp-h2" style={{ color: "inherit" }}>30 Minuten, online, ohne Verpflichtung</h2>
               <p className="fsp-p">

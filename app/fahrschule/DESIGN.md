@@ -100,9 +100,10 @@ Tracking der Klicks wie in §6.
 - **Pakete v6.1:** Basis 349 € netto im Monat, 6 Monate, danach monatlich. Anfrage-Assistent optional + 50 €.
   Großes Paket 599 € netto, 12 Monate, Website-Start bis 1.490 € enthalten, anteilige Nachberechnung bei
   Ausstieg vor Monat 12. Website-Start einzeln: 490 / 1.490 / ab 2.990.
-- **OFFEN, von Denis am 21.09.2026 für die Seite so gewollt, aber noch nicht im Offer Register:**
-  „Flyer mit Ihren aktuellen Preisen" statt „2 Flyer-Motive pro Jahr" und „Wir begleiten, was bei Ihnen los
-  ist" im großen Paket. Vor dem Go-live ins Offer Register und ins Produkt-Profil der Agentur nachziehen.
+- **Denis-Entscheid 21.09.2026 (in Offer v6, Register, Abschlussplan und Produkt-Profil nachgezogen):**
+  Im großen Paket ist die Flyer-Begleitung immer enthalten, ohne Aufpreis je Motiv (die 190 € je weiterem
+  Motiv entfallen dort), den Druck zahlt der Kunde. Dazu „Unterstützung bei Veranstaltungen und besonderen
+  Anlässen".
 - **Manni (mit Zustimmung):** 21 Anfragen im ersten Monat · Einblendungen rund 4.900 auf rund 18.100 ·
   Search Console 28.07. bis 19.09.2026: 531 Klicks über Ratgeber-Artikel, 297 über den Reform-Artikel,
   1.357 Klicks gesamt · seit 2006 · 4,8 Sterne bei über 300 Bewertungen.
@@ -113,9 +114,9 @@ Tracking der Klicks wie in §6.
 
 ## 5. Bildwelt und Verbote
 
-Nur echte Aufnahmen: Screenshots von mannis-fahrschule.com (Desktop und Handy), später ein neues Foto von
-Denis (das bisherige Porträt wird auf dieser Seite nicht verwendet, bis ein neues da ist: kein Platzhalter
-live, der Block läuft ohne Bild). **Verboten:** generierte Fotos, Stockfotos, L-Schild-Kitsch, Emoji,
+Nur echte Aufnahmen: Screenshots von mannis-fahrschule.com (Desktop und Handy), dazu das Porträt von
+Denis (`public/ueber-mich/portrait.jpg`, von Denis am 21.09.2026 bestätigt). Mannis Fahrschule hat der Nennung,
+den Zahlen und den Screenshots zugestimmt (Denis, 21.09.2026). **Verboten:** generierte Fotos, Stockfotos, L-Schild-Kitsch, Emoji,
 Tailwind-Indigo, Trust-Gradients, erfundene Zahlen oder Stimmen, das Wort Garantie, Zusagen zu Plätzen bei
 Google, Anfragen oder Anmeldungen, Fachwörter (SEO, Ranking, Leads, Conversion), Sätze aus dem
 Telefonskript. Ton: SIE, kurze Sätze, keine Gedankenstriche.
